@@ -1,0 +1,25 @@
+title: catch-all-favorite
+description: 毎週の情報のキャッチアップ情報を管理する
+theme: minima
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-relative-links
+
+relative_links:
+  enabled: true
+  collections: true
+
+include:
+  - "フロントエンド情報キャッチアップ"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .github
+  - README.md
