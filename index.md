@@ -14,4 +14,5 @@ title: catch-all-favorite
 
 ## cve
 
+- [Axios の脆弱性レポート（CVE-2025-62718）](./cve/cve-2025-62718.md)
 - [Axios の脆弱性レポート（CVE-2026-40175）](./cve/cve-2026-40175.md)
