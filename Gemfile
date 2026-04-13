@@ -7,6 +7,8 @@ group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.17"
   gem "jekyll-sitemap", "~> 1.4"
   gem "jekyll-relative-links", "~> 0.7"
+  gem "jekyll-optional-front-matter", "~> 0.3"
+  gem "jekyll-titles-from-headings", "~> 0.5"
 end
 
 # Windows and JRuby does not include zoneinfo files
