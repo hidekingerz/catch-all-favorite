@@ -3,8 +3,6 @@ layout: home
 title: catch-all-favorite
 ---
 
-# catch-all-favorite
-
 毎週の情報のキャッチアップ情報を管理するサイトです。
 
 ## フロントエンド情報キャッチアップ
