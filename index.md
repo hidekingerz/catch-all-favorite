@@ -7,6 +7,7 @@ title: catch-all-favorite
 
 ## フロントエンド情報キャッチアップ
 
+- [date-fns / date-fns-tz から Temporal API への移行可能性レポート](./frontend/temporal-migration-from-date-fns.md)
 - [This Week in React 2026-04-15](./frontend/twir-2026-04-15.md)
 - [JSer.info #769 キャッチアップ: 2026-04-15のJS](./frontend/jser-info-2026-04-15.md)
 - [JSer.info #768 キャッチアップ: 2026-04-06のJS](./frontend/jser-info-2026-04-06.md)
