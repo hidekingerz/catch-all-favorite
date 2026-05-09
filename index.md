@@ -18,6 +18,7 @@ title: catch-all-favorite
 
 ## cve
 
+- [Next.js v16.2.6 セキュリティアドバイザリレポート（13件）](./cve/nextjs-v16.2.6-security-advisory.md)
 - [Lodash の脆弱性レポート（CVE-2025-13465）](./cve/cve-2025-13465.md)
 - [Axios の脆弱性レポート（CVE-2025-62718）](./cve/cve-2025-62718.md)
 - [Axios の脆弱性レポート（CVE-2026-40175）](./cve/cve-2026-40175.md)
