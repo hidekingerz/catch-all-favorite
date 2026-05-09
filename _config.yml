@@ -40,3 +40,6 @@ exclude:
   - vendor
   - .github
   - README.md
+  - dist
+  - scripts
+  - "*.skill"
