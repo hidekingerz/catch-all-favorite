@@ -1,6 +1,6 @@
 ---
 layout: home
-title: catch-all-favorite
+title: index
 ---
 
 毎週の情報のキャッチアップ情報を管理するサイトです。
