@@ -7,6 +7,8 @@ title: index
 
 ## フロントエンド情報キャッチアップ
 
+- [This Week in React 2026-05-13](./frontend/twir-2026-05-13.md)
+- [JSer.info #771 キャッチアップ: 2026-05-11のJS](./frontend/jser-info-2026-05-11.md)
 - [This Week in React 2026-05-06](./frontend/twir-2026-05-06.md)
 - [JSer.info #770 キャッチアップ: 2026-04-29のJS](./frontend/jser-info-2026-04-29.md)
 - [This Week in React 2026-04-29](./frontend/twir-2026-04-29.md)
