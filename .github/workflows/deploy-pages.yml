@@ -55,3 +55,39 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  notify:
+    needs: [build, deploy]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify publish result (ntfy)
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          BUILD_RESULT: ${{ needs.build.result }}
+          DEPLOY_RESULT: ${{ needs.deploy.result }}
+        run: |
+          if [ -z "$NTFY_TOPIC" ]; then
+            echo "NTFY_TOPIC is not set; skipping notification."
+            exit 0
+          fi
+          if [ "$DEPLOY_RESULT" = "success" ]; then
+            TITLE="✅ サイトを公開しました"
+            MESSAGE="キャッチアップ情報が公開されました"
+            TAGS='["white_check_mark"]'
+            PRIORITY="default"
+          else
+            TITLE="❌ デプロイ失敗"
+            MESSAGE="build=${BUILD_RESULT} / deploy=${DEPLOY_RESULT}"
+            TAGS='["rotating_light"]'
+            PRIORITY="high"
+          fi
+          jq -nc \
+            --arg topic "$NTFY_TOPIC" \
+            --arg title "$TITLE" \
+            --arg message "$MESSAGE" \
+            --arg click "https://hidekingerz.github.io/catch-all-favorite/" \
+            --arg priority "$PRIORITY" \
+            --argjson tags "$TAGS" \
+            '{topic:$topic, title:$title, message:$message, click:$click, priority:$priority, tags:$tags}' \
+          | curl -fsS -H "Content-Type: application/json" -d @- https://ntfy.sh
