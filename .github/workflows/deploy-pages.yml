@@ -64,6 +64,8 @@ jobs:
       - name: Notify publish result (ntfy)
         env:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          # アクセストークン(任意)。設定すると認証送信になり、共有IPのレート制限を回避できる。
+          NTFY_TOKEN: ${{ secrets.NTFY_TOKEN }}
           BUILD_RESULT: ${{ needs.build.result }}
           DEPLOY_RESULT: ${{ needs.deploy.result }}
         run: |
@@ -82,12 +84,33 @@ jobs:
             TAGS='["rotating_light"]'
             PRIORITY="high"
           fi
-          jq -nc \
+          # トークンがあれば認証送信(レート制限がアカウント単位になり確実に届く)。
+          auth=()
+          if [ -n "$NTFY_TOKEN" ]; then
+            auth=(-H "Authorization: Bearer ${NTFY_TOKEN}")
+          else
+            echo "::warning::NTFY_TOKEN 未設定のため匿名送信します（共有IPのレート制限で失敗しやすい）。"
+          fi
+          payload=$(jq -nc \
             --arg topic "$NTFY_TOPIC" \
             --arg title "$TITLE" \
             --arg message "$MESSAGE" \
             --arg click "https://hidekingerz.github.io/catch-all-favorite/" \
             --arg priority "$PRIORITY" \
             --argjson tags "$TAGS" \
-            '{topic:$topic, title:$title, message:$message, click:$click, priority:$priority, tags:$tags}' \
-          | curl -fsS -H "Content-Type: application/json" -d @- https://ntfy.sh
+            '{topic:$topic, title:$title, message:$message, click:$click, priority:$priority, tags:$tags}')
+          # 通知は補助。失敗してもデプロイ結果には影響させないが、429等は短いバックオフで数回再送する。
+          code=000
+          for attempt in 1 2 3; do
+            code=$(printf '%s' "$payload" | curl -sS -o /dev/null -w '%{http_code}' \
+              "${auth[@]}" -H "Content-Type: application/json" -d @- https://ntfy.sh) || code=000
+            if [ "$code" = "200" ]; then
+              echo "Notification sent."
+              break
+            fi
+            echo "ntfy 送信失敗 (HTTP ${code}) attempt ${attempt}/3"
+            if [ "$attempt" -lt 3 ]; then sleep $((attempt * 5)); fi
+          done
+          if [ "$code" != "200" ]; then
+            echo "::warning::ntfy notification failed (HTTP ${code}; 通知の上限の可能性)。デプロイ結果には影響しません。"
+          fi
