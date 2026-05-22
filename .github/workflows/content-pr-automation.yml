@@ -18,22 +18,25 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # レポート系（コンテンツのみ）のPRだけ通知する。
-          # CI/設定/コードに触れるPRは通知しない（自分で作る前提のため）。
-          # 新しい調査系ディレクトリは自動的に対象になる（denylist 方式）。
+          # レポート系PR = 変更が content/ 配下と index.md のみ（allowlist 方式）。
+          # レポートは content/{catchup,research,security}/... に置かれ、一覧 index.md を伴う。
+          # CI/設定/コードを含むPRは通知しない（自分で作る前提のため）。
+          # content/ 配下に新カテゴリを足しても自動的に対象になる。
           files=$(gh api --paginate \
             "repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/files" \
             --jq '.[].filename')
           echo "Changed files:"
           echo "$files"
-          sensitive='^(\.github/|\.claude/|scripts/|_includes/|_config\.yml|Gemfile(\.lock)?)'
+          # 許可リスト(content/ または index.md)に該当しない変更ファイル数を数える。
+          # grep 実装差を避けるため -v の出力を wc で数える方式にする。
+          bad=$(printf '%s\n' "$files" | grep -vE '^(content/|index\.md$)' | wc -l | tr -d ' ')
           if [ -z "$files" ]; then
             echo "report=false" >> "$GITHUB_OUTPUT"
-          elif echo "$files" | grep -Eq "$sensitive"; then
-            echo "CI/設定/コードを含むため通知対象外。"
+          elif [ "$bad" -gt 0 ]; then
+            echo "content/ 以外の変更を含むため通知対象外。"
             echo "report=false" >> "$GITHUB_OUTPUT"
           else
-            echo "コンテンツのみ。通知対象。"
+            echo "content/ と index.md のみ。通知対象。"
             echo "report=true" >> "$GITHUB_OUTPUT"
           fi
 
