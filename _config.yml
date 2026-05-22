@@ -31,8 +31,7 @@ defaults:
       layout: page
 
 include:
-  - "frontend"
-  - "cve"
+  - "content"
 
 exclude:
   - Gemfile

@@ -17,7 +17,7 @@ This Week in React（https://thisweekinreact.com/newsletter）の最新ニュー
 このスキルはローカルClaude Code（CLI）とデスクトップ版Claudeアプリのコードモードの両方で動作する。利用可能なツールセットが環境ごとに異なるため、Web取得は「優先するツール → フォールバック」を順に試すこと。
 
 - **Web取得**: ブラウザツール（Chrome / Brave 等のMCPサーバ）が利用可能ならそれを最優先（ローカルマシンで動くためサーバ側のネットワーク制限を受けない）。利用不可な場合は `WebFetch` を使う
-- **ファイル保存**: 本リポジトリでは `frontend/` ディレクトリ配下に保存する（デスクトップ版コードモードではワークスペースフォルダがリポジトリのルートに対応する）
+- **ファイル保存**: 本リポジトリでは `content/catchup/` ディレクトリ配下に保存する（デスクトップ版コードモードではワークスペースフォルダがリポジトリのルートに対応する）
 
 ## This Week in React について
 
@@ -75,7 +75,7 @@ This Week in React は Sébastien Lorber が毎週発行しているニュース
 取得した情報を以下のフォーマットでMarkdownファイルにまとめる。
 
 **ファイル名**: `twir-YYYY-MM-DD.md`（発行日ベース）
-**保存先**: リポジトリの `frontend/` ディレクトリ
+**保存先**: リポジトリの `content/catchup/` ディレクトリ
 
 **テンプレート**:
 
@@ -120,7 +120,7 @@ This Week in React は Sébastien Lorber が毎週発行しているニュース
 
 ### 4. ファイルの保存
 
-完成したMarkdownファイルをリポジトリの `frontend/` ディレクトリに保存する（デスクトップ版コードモードではワークスペースフォルダ配下の `frontend/` サブディレクトリに対応する）。
+完成したMarkdownファイルをリポジトリの `content/catchup/` ディレクトリに保存する（デスクトップ版コードモードではワークスペースフォルダ配下の `content/catchup/` サブディレクトリに対応する）。
 
 このスキル単体ではpushを行わない。push まで自動化したい場合は `frontend-catchup-and-push` スキルを使う。
 

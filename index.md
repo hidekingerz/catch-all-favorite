@@ -5,24 +5,28 @@ title: index
 
 毎週の情報のキャッチアップ情報を管理するサイトです。
 
-## フロントエンド情報キャッチアップ
+## キャッチアップ（定期）
 
-- [This Week in React 2026-05-20](./frontend/twir-2026-05-20.md)
-- [This Week in React 2026-05-13](./frontend/twir-2026-05-13.md)
-- [JSer.info #771 キャッチアップ: 2026-05-11のJS](./frontend/jser-info-2026-05-11.md)
-- [This Week in React 2026-05-06](./frontend/twir-2026-05-06.md)
-- [JSer.info #770 キャッチアップ: 2026-04-29のJS](./frontend/jser-info-2026-04-29.md)
-- [This Week in React 2026-04-29](./frontend/twir-2026-04-29.md)
-- [This Week in React 2026-04-22](./frontend/twir-2026-04-22.md)
-- [date-fns / date-fns-tz から Temporal API への移行可能性レポート](./frontend/temporal-migration-from-date-fns.md)
-- [This Week in React 2026-04-15](./frontend/twir-2026-04-15.md)
-- [JSer.info #769 キャッチアップ: 2026-04-15のJS](./frontend/jser-info-2026-04-15.md)
-- [JSer.info #768 キャッチアップ: 2026-04-06のJS](./frontend/jser-info-2026-04-06.md)
-- [This Week in React 2026-04-08](./frontend/twir-2026-04-08.md)
+- [This Week in React 2026-05-20](./content/catchup/twir-2026-05-20.md)
+- [This Week in React 2026-05-13](./content/catchup/twir-2026-05-13.md)
+- [JSer.info #771 キャッチアップ: 2026-05-11のJS](./content/catchup/jser-info-2026-05-11.md)
+- [This Week in React 2026-05-06](./content/catchup/twir-2026-05-06.md)
+- [JSer.info #770 キャッチアップ: 2026-04-29のJS](./content/catchup/jser-info-2026-04-29.md)
+- [This Week in React 2026-04-29](./content/catchup/twir-2026-04-29.md)
+- [This Week in React 2026-04-22](./content/catchup/twir-2026-04-22.md)
+- [This Week in React 2026-04-15](./content/catchup/twir-2026-04-15.md)
+- [JSer.info #769 キャッチアップ: 2026-04-15のJS](./content/catchup/jser-info-2026-04-15.md)
+- [JSer.info #768 キャッチアップ: 2026-04-06のJS](./content/catchup/jser-info-2026-04-06.md)
+- [This Week in React 2026-04-08](./content/catchup/twir-2026-04-08.md)
 
-## cve
+## 技術調査レポート
 
-- [Next.js v16.2.6 セキュリティアドバイザリまとめ（13件）](./cve/nextjs-v16.2.6-summary.md)
-- [Lodash の脆弱性レポート（CVE-2025-13465）](./cve/cve-2025-13465.md)
-- [Axios の脆弱性レポート（CVE-2025-62718）](./cve/cve-2025-62718.md)
-- [Axios の脆弱性レポート（CVE-2026-40175）](./cve/cve-2026-40175.md)
+- [React Compilerの最適化を効かせるための型・Lint整理](./content/research/react-compiler-purity-type-lint.md)
+- [date-fns / date-fns-tz から Temporal API への移行可能性レポート](./content/research/temporal-migration-from-date-fns.md)
+
+## セキュリティ（CVE）
+
+- [Next.js v16.2.6 セキュリティアドバイザリまとめ（13件）](./content/security/nextjs-v16.2.6-summary.md)
+- [Lodash の脆弱性レポート（CVE-2025-13465）](./content/security/cve-2025-13465.md)
+- [Axios の脆弱性レポート（CVE-2025-62718）](./content/security/cve-2025-62718.md)
+- [Axios の脆弱性レポート（CVE-2026-40175）](./content/security/cve-2026-40175.md)
