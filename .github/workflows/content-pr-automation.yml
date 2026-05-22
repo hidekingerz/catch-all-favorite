@@ -1,0 +1,79 @@
+name: Content PR automation
+
+on:
+  pull_request:
+    types: [opened]
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write
+
+jobs:
+  automate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Determine auto-merge eligibility
+        id: gate
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # キャッチアップ・CVE・調査系レポートはコンテンツ(*.md 等)のみを変更する。
+          # CI/設定/コードに触れるPRは手動レビュー対象とし、自動マージしない。
+          # 新しい調査系ディレクトリは自動的に対象になる（denylist 方式）。
+          files=$(gh api --paginate \
+            "repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/files" \
+            --jq '.[].filename')
+          echo "Changed files:"
+          echo "$files"
+          sensitive='^(\.github/|\.claude/|scripts/|_includes/|_config\.yml|Gemfile(\.lock)?)'
+          if [ -z "$files" ]; then
+            echo "変更ファイルが取得できなかったため対象外。"
+            echo "eligible=false" >> "$GITHUB_OUTPUT"
+          elif echo "$files" | grep -Eq "$sensitive"; then
+            echo "CI/設定/コードの変更を含むため自動マージ対象外。"
+            echo "eligible=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "コンテンツのみの変更。自動マージ対象。"
+            echo "eligible=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Notify PR opened (ntfy)
+        if: steps.gate.outputs.eligible == 'true'
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+        run: |
+          if [ -z "$NTFY_TOPIC" ]; then
+            echo "NTFY_TOPIC is not set; skipping notification."
+            exit 0
+          fi
+          jq -nc \
+            --arg topic "$NTFY_TOPIC" \
+            --arg title "📝 レポートPRを作成しました（自動マージします）" \
+            --arg message "${PR_TITLE} (#${PR_NUMBER})" \
+            --arg click "$PR_URL" \
+            '{topic:$topic, title:$title, message:$message, click:$click, tags:["rocket"]}' \
+          | curl -fsS -H "Content-Type: application/json" -d @- https://ntfy.sh
+
+      - name: Auto-merge PR
+        if: steps.gate.outputs.eligible == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr merge "${{ github.event.pull_request.number }}" \
+            --squash --delete-branch \
+            --repo "${{ github.repository }}"
+
+      - name: Trigger deploy
+        if: steps.gate.outputs.eligible == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # GITHUB_TOKEN によるマージは push トリガーを再起動しないため、
+          # workflow_dispatch（再帰防止の例外）でデプロイを明示的に起動する。
+          gh workflow run deploy-pages.yml \
+            --ref main \
+            --repo "${{ github.repository }}"
