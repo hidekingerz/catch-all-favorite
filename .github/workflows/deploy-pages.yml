@@ -82,7 +82,8 @@ jobs:
             TAGS='["rotating_light"]'
             PRIORITY="high"
           fi
-          jq -nc \
+          # 通知は補助。レート制限(通知の上限=HTTP 429)等で失敗してもデプロイ結果には影響させない。
+          code=$(jq -nc \
             --arg topic "$NTFY_TOPIC" \
             --arg title "$TITLE" \
             --arg message "$MESSAGE" \
@@ -90,4 +91,10 @@ jobs:
             --arg priority "$PRIORITY" \
             --argjson tags "$TAGS" \
             '{topic:$topic, title:$title, message:$message, click:$click, priority:$priority, tags:$tags}' \
-          | curl -fsS -H "Content-Type: application/json" -d @- https://ntfy.sh
+          | curl -sS -o /dev/null -w '%{http_code}' \
+              -H "Content-Type: application/json" -d @- https://ntfy.sh) || code=000
+          if [ "$code" = "200" ]; then
+            echo "Notification sent."
+          else
+            echo "::warning::ntfy notification failed (HTTP ${code}; 通知の上限の可能性)。デプロイ結果には影響しません。"
+          fi

@@ -52,10 +52,17 @@ jobs:
             echo "NTFY_TOPIC is not set; skipping notification."
             exit 0
           fi
-          jq -nc \
+          # 通知は補助。レート制限(通知の上限=HTTP 429)等で失敗してもワークフローは落とさない。
+          code=$(jq -nc \
             --arg topic "$NTFY_TOPIC" \
             --arg title "📝 レポートPRが作成されました（確認してマージしてください）" \
             --arg message "${PR_TITLE} (#${PR_NUMBER})" \
             --arg click "$PR_URL" \
             '{topic:$topic, title:$title, message:$message, click:$click, tags:["memo"]}' \
-          | curl -fsS -H "Content-Type: application/json" -d @- https://ntfy.sh
+          | curl -sS -o /dev/null -w '%{http_code}' \
+              -H "Content-Type: application/json" -d @- https://ntfy.sh) || code=000
+          if [ "$code" = "200" ]; then
+            echo "Notification sent."
+          else
+            echo "::warning::ntfy notification failed (HTTP ${code}; 通知の上限の可能性)。ワークフローは継続します。"
+          fi
