@@ -73,7 +73,7 @@ jobs:
           fi
           if [ "$DEPLOY_RESULT" = "success" ]; then
             TITLE="✅ サイトを公開しました"
-            MESSAGE="キャッチアップ情報が公開されました"
+            MESSAGE="最新のレポートが公開されました"
             TAGS='["white_check_mark"]'
             PRIORITY="default"
           else
