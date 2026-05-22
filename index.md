@@ -7,17 +7,22 @@ title: index
 
 ## キャッチアップ（定期）
 
+### This Week in React
+
 - [This Week in React 2026-05-20](./content/catchup/twir-2026-05-20.md)
 - [This Week in React 2026-05-13](./content/catchup/twir-2026-05-13.md)
-- [JSer.info #771 キャッチアップ: 2026-05-11のJS](./content/catchup/jser-info-2026-05-11.md)
 - [This Week in React 2026-05-06](./content/catchup/twir-2026-05-06.md)
-- [JSer.info #770 キャッチアップ: 2026-04-29のJS](./content/catchup/jser-info-2026-04-29.md)
 - [This Week in React 2026-04-29](./content/catchup/twir-2026-04-29.md)
 - [This Week in React 2026-04-22](./content/catchup/twir-2026-04-22.md)
 - [This Week in React 2026-04-15](./content/catchup/twir-2026-04-15.md)
+- [This Week in React 2026-04-08](./content/catchup/twir-2026-04-08.md)
+
+### JSer.info
+
+- [JSer.info #771 キャッチアップ: 2026-05-11のJS](./content/catchup/jser-info-2026-05-11.md)
+- [JSer.info #770 キャッチアップ: 2026-04-29のJS](./content/catchup/jser-info-2026-04-29.md)
 - [JSer.info #769 キャッチアップ: 2026-04-15のJS](./content/catchup/jser-info-2026-04-15.md)
 - [JSer.info #768 キャッチアップ: 2026-04-06のJS](./content/catchup/jser-info-2026-04-06.md)
-- [This Week in React 2026-04-08](./content/catchup/twir-2026-04-08.md)
 
 ## 技術調査レポート
 
