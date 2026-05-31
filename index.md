@@ -9,6 +9,7 @@ title: index
 
 ### This Week in React
 
+- [This Week in React 2026-05-27](./content/catchup/twir-2026-05-27.md)
 - [This Week in React 2026-05-20](./content/catchup/twir-2026-05-20.md)
 - [This Week in React 2026-05-13](./content/catchup/twir-2026-05-13.md)
 - [This Week in React 2026-05-06](./content/catchup/twir-2026-05-06.md)
@@ -19,6 +20,7 @@ title: index
 
 ### JSer.info
 
+- [JSer.info #772 キャッチアップ: 2026-05-24のJS](./content/catchup/jser-info-2026-05-24.md)
 - [JSer.info #771 キャッチアップ: 2026-05-11のJS](./content/catchup/jser-info-2026-05-11.md)
 - [JSer.info #770 キャッチアップ: 2026-04-29のJS](./content/catchup/jser-info-2026-04-29.md)
 - [JSer.info #769 キャッチアップ: 2026-04-15のJS](./content/catchup/jser-info-2026-04-15.md)
