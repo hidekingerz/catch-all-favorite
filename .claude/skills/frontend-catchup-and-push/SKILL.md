@@ -88,12 +88,26 @@ git commit -m "chore: add frontend catchup YYYY-MM-DD"
 git push origin main
 ```
 
-### ステップ5: 結果報告
+### ステップ5: Pull Request 作成
+
+pushが `main` 以外のブランチに対して行われた場合（ブランチ保護等で `main` への直接pushが不可能な場合）、Pull Request を作成する。
+
+- タイトル: `chore: add frontend catchup YYYY-MM-DD`
+- base: `main`
+- head: pushしたブランチ名
+- body: 追加したファイルの一覧と、各記事の号数・日付を記載
+
+GitHub MCP ツール（`mcp__github__create_pull_request`）が利用可能な場合はそれを使う。利用不可な場合は Bash で `gh pr create` を試みる。
+
+`main` に直接pushできた場合はこのステップをスキップする。
+
+### ステップ6: 結果報告
 
 実行結果を簡潔に報告する:
 
 - 取得した記事のタイトルと日付
 - pushしたファイル名
+- 作成したPRのURL（該当する場合）
 - pushに失敗した場合はエラー内容
 
 ## 注意事項
