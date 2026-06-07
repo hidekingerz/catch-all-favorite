@@ -1,24 +1,28 @@
 ---
 name: chrome-blog-catchup
 description: >
-  Chrome for Developers ブログ（developer.chrome.com/blog）の最新情報をキャッチアップし、
-  Markdownダイジェストを作成してGitHubリポジトリ（hidekingerz/catch-all-favorite）へpushするスキル。
+  Chrome for Developers ブログ（developer.chrome.com/blog）の最新記事を取得し、フロントエンド技術情報をMarkdownファイルにまとめるスキル。
   「Chrome blog をキャッチアップして」「Chrome for Developers の最新情報をまとめて」
   「developer.chrome.com の新着記事を調べて」「Chromeの新機能をキャッチアップして」
   などと言われたら必ずこのスキルを使う。Chrome blog、Chrome for Developers、
-  developer.chrome.com、Chrome 新機能、DevTools 更新、What's new in Chrome といった
-  キーワードが含まれる場合も積極的に使う。
+  developer.chrome.com、Chrome 新機能、DevTools 更新、What's new in Chrome
+  といったキーワードが含まれる場合も積極的に使う。定期スケジュールでの自動実行にも対応。
 ---
 
 # Chrome for Developers ブログ キャッチアップスキル
 
-Chrome for Developers ブログの新着記事をキャッチアップし、1回の実行につき1つのMarkdownダイジェストを作成して、GitHubリポジトリ（`hidekingerz/catch-all-favorite`）の `frontend/` ディレクトリへpushする。pushされたファイルは既存のGitHub Actions（Jekyll）により自動でGitHub Pagesに公開される。
+Chrome for Developers ブログ（https://developer.chrome.com/blog）の新着記事を取得して、要約付きのMarkdownダイジェストとして保存する。1回の実行につき1つのダイジェストファイルを作成する。
 
-このスキルは、リポジトリ `/Users/hidekingerz/ghq/github.com/hidekingerz/catch-all-favorite` 上で作業することを前提とする。
+## 実行環境
+
+このスキルはローカルClaude Code（CLI）とデスクトップ版Claudeアプリのコードモードの両方で動作する。利用可能なツールセットが環境ごとに異なるため、Web取得は「優先するツール → フォールバック」を順に試すこと。
+
+- **Web取得**: ブラウザツール（Chrome / Brave 等のMCPサーバ）が利用可能ならそれを最優先（ローカルマシンで動くためサーバ側のネットワーク制限を受けない）。利用不可な場合は `WebFetch` を使う
+- **ファイル保存**: 本リポジトリでは `content/catchup/` ディレクトリ配下に保存する（デスクトップ版コードモードではワークスペースフォルダがリポジトリのルートに対応する）
 
 ## 最重要: 記事一覧の取得方法
 
-**ブログ一覧ページ `https://developer.chrome.com/blog` を WebFetch で取得してはいけない。** このページは記事一覧をクライアントサイド（JavaScript）でレンダリングするため、WebFetch が取得する静的HTMLにはナビゲーションしか含まれず、記事を取得できない。一覧ページから記事を拾おうとすると時間を浪費する。
+**ブログ一覧ページ `https://developer.chrome.com/blog` から記事一覧を取得してはいけない。** このページは記事一覧をクライアントサイド（JavaScript）でレンダリングするため、`WebFetch` が取得する静的HTMLにはナビゲーションしか含まれず、記事を取得できない。一覧ページから記事を拾おうとすると時間を浪費する。
 
 **記事一覧は必ずRSSフィードから取得する:**
 
@@ -26,35 +30,34 @@ Chrome for Developers ブログの新着記事をキャッチアップし、1回
 https://developer.chrome.com/static/blog/feed.xml
 ```
 
-このフィードには各記事の **タイトル・URL・公開日・説明** が構造化された形で含まれている。WebFetch でこのURLを取得すること。
+このフィードには各記事の **タイトル・URL・公開日・説明** が構造化された形で含まれている。
 
 - フィード内のリンクは `?hl=en` 付きで返ってくることがあるが、各記事は `?hl=ja` に差し替えると日本語版にアクセスできる。**記事に記録するURL・本文を取得するURLは `?hl=ja` に統一する。**
 - 推測でフィードURLを作らない（`/feeds/blog.xml` などは 404）。上記の正しいURLを使う。
 
 ## 絶対に守るべきルール
 
+このスキルで最も重要なのは**正確性**。以下は必ず守ること:
+
 1. **一覧ページ（`/blog`）を記事取得に使わない。** 必ずRSSフィード（`https://developer.chrome.com/static/blog/feed.xml`）を使う
 2. **取得したページの内容だけを使う。** 自分の記憶や推測で記事・要約・公開日を補完しない
 3. **URLはフィード・記事ページに記載のものを使う。** URLを推測しない。記録するURLは `?hl=ja` に統一する
 4. **新着記事を漏れなく拾う。** 既存ファイルと重複しない記事はすべて対象にする
-5. **新しいブランチを作成しない。** mainブランチ上で直接作業し、mainにpushする
-6. **`.skill` ファイルや設定ファイルを作成しない。** Markdownダイジェストと index.md の更新のみ行う
-7. **新着がなければファイルを作らない。** すべて既存の場合は「新しい記事はありませんでした」と報告して終了する
+5. **新着がなければファイルを作らない。** すべて既存の場合は「新しい記事はありませんでした」と報告して終了する
+6. **ブラウザツールで開いたタブは必ず閉じる**（ブラウザツールを利用した場合のみ）
 
 ## 実行手順
 
-### ステップ1: RSSフィードの取得
+### 1. RSSフィードの取得
 
-WebFetch で `https://developer.chrome.com/static/blog/feed.xml` を取得し、掲載されている記事の **タイトル・URL・公開日・説明** を一覧として抽出する。
+`https://developer.chrome.com/static/blog/feed.xml` を取得し、掲載されている記事の **タイトル・URL・公開日・説明** を一覧として抽出する。
 
-WebFetch が使えない場合は `ToolSearch` で `select:WebFetch` を実行してロードする。
+### 2. 重複チェック（新着記事の特定）
 
-### ステップ2: 重複チェック（新着記事の特定）
-
-`frontend/` ディレクトリ内の既存の `chrome-blog-*.md` ファイルを確認し、すでに記録済みの記事URLを把握する。
+`content/catchup/` ディレクトリ内の既存の `chrome-blog-*.md` ファイルを確認し、すでに記録済みの記事URLを把握する。
 
 ```bash
-ls frontend/chrome-blog-*.md 2>/dev/null
+ls content/catchup/chrome-blog-*.md 2>/dev/null
 ```
 
 フィードの記事のうち、既存ファイルにまだ含まれていない記事（URLが未掲載のもの）を「新着記事」とする。
@@ -62,19 +65,20 @@ ls frontend/chrome-blog-*.md 2>/dev/null
 - 新着記事が1件もない場合は、ファイルを作成せず「新しい記事はありませんでした」と報告して終了する
 - 既存ファイルが1つもない場合（初回）は、フィード上の記事をすべて新着として扱う
 
-### ステップ3: 各記事の要約作成
+### 3. 各記事の要約作成
 
-新着記事それぞれについて、`?hl=ja` 付きの記事URLを WebFetch で取得し、本文に基づいて日本語で2〜3行の要約を作成する。
+新着記事それぞれについて、`?hl=ja` 付きの記事URLを取得し、本文に基づいて日本語で2〜3行の要約を作成する。
 
 - フィードの説明文だけでは要約として不十分な場合があるため、記事本文を取得して要約する
-- 記事本文が取得できなかった場合は、フィードの説明文をもとに要約し、その旨を踏まえて記述する（推測で内容を作らない）
+- 記事本文が取得できなかった場合は、フィードの説明文をもとに要約する（推測で内容を作らない）
+- 読んだ人が「自分のプロジェクトに影響があるか」を判断できるように、背景や影響度を簡潔に添える
 
-### ステップ4: Markdownダイジェストの作成
+### 4. Markdownダイジェストの作成
 
 新着記事を以下のフォーマットで **1つのファイル** にまとめる。
 
 **ファイル名**: `chrome-blog-YYYY-MM-DD.md`（YYYY-MM-DD は実行日）
-**保存先**: リポジトリの `frontend/` ディレクトリ
+**保存先**: リポジトリの `content/catchup/` ディレクトリ
 
 **テンプレート**:
 
@@ -102,40 +106,19 @@ ls frontend/chrome-blog-*.md 2>/dev/null
 
 新着記事をすべて漏れなく含める。記事タイトルは元記事のものをそのまま使う（英語タイトルのままでよい）。
 
-### ステップ5: index.md の更新
+このスキル単体ではpushを行わない。push まで自動化したい場合は `frontend-catchup-and-push` スキルを使う（jser.info / This Week in React と合わせて1回でcommit & pushされる）。
 
-リポジトリ直下の `index.md` を読み、`## フロントエンド情報キャッチアップ` セクションの見出し直下（既存エントリの上）に新しいエントリを追加する:
+### 5. 定期実行について
 
-```markdown
-- [Chrome for Developers キャッチアップ YYYY-MM-DD](./frontend/chrome-blog-YYYY-MM-DD.md)
-```
+このスキルは `frontend-catchup-and-push` スキルのステップに組み込まれており、`schedule` スキルによる定期キャッチアップの一部として自動実行される。Chrome blog 単独で定期実行したい場合は `schedule` スキルで週次タスクとして登録できる。
 
-既存のエントリは消さず、新しいエントリを先頭に追加する。`frontend` は既に `_config.yml` の include に含まれているため、`_config.yml` の変更は不要。
-
-### ステップ6: commit & push
-
-```bash
-git add frontend/ index.md
-git commit -m "chore: add Chrome blog catchup YYYY-MM-DD"
-git push origin main
-```
-
-### ステップ7: 結果報告
-
-実行結果を簡潔に報告する:
-
-- 取得した新着記事の件数とタイトル一覧
-- 作成したファイル名
-- pushの成否
-- GitHub PagesのURL（`https://hidekingerz.github.io/catch-all-favorite/frontend/chrome-blog-YYYY-MM-DD/`）
-
-新着がなかった場合は「新しい記事はありませんでした」とだけ報告する。
+Chrome for Developers ブログは不定期更新（概ね週数本）なので、週1回のスケジュールが適切。
 
 ## よくある失敗と対処
 
 | 失敗 | 対処 |
 |------|------|
-| `/blog` 一覧ページをWebFetchして記事が取れない | 一覧ページはJSレンダリング。RSSフィード `static/blog/feed.xml` を使う |
+| `/blog` 一覧ページを取得して記事が取れない | 一覧ページはJSレンダリング。RSSフィード `static/blog/feed.xml` を使う |
 | フィードURLを推測して404 | `https://developer.chrome.com/static/blog/feed.xml` を使う。推測しない |
 | 記事URLが `?hl=en` のまま | `?hl=ja` に差し替えて統一する |
 | 既存記事まで重複してダイジェストに入れる | ステップ2の重複チェックを必ず行う |
