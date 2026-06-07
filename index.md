@@ -7,8 +7,13 @@ title: index
 
 ## キャッチアップ（定期）
 
+### Chrome for Developers
+
+- [Chrome for Developers キャッチアップ: 2026-06-07](./content/catchup/chrome-blog-2026-06-07.md)
+
 ### This Week in React
 
+- [This Week in React 2026-06-03](./content/catchup/twir-2026-06-03.md)
 - [This Week in React 2026-05-27](./content/catchup/twir-2026-05-27.md)
 - [This Week in React 2026-05-20](./content/catchup/twir-2026-05-20.md)
 - [This Week in React 2026-05-13](./content/catchup/twir-2026-05-13.md)
