@@ -33,6 +33,7 @@ title: index
 
 ## 技術調査レポート
 
+- [SPAのfetch APIを zod・OpenAPI で型安全にする調査レポート](./content/research/spa-fetch-zod-openapi-typing.md)
 - [TypeScript Branded Types（ブランド型）調査レポート](./content/research/typescript-branded-types.md)
 - [React Compilerの最適化を効かせるための型・Lint整理](./content/research/react-compiler-purity-type-lint.md)
 - [date-fns / date-fns-tz から Temporal API への移行可能性レポート](./content/research/temporal-migration-from-date-fns.md)
