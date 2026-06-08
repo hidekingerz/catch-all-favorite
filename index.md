@@ -7,6 +7,10 @@ title: index
 
 ## キャッチアップ（定期）
 
+### Google Search Central
+
+- [Google 検索セントラル ブログ キャッチアップ: 2026-06-08](./content/catchup/google-search-blog-2026-06-08.md)
+
 ### Chrome for Developers
 
 - [Chrome for Developers キャッチアップ: 2026-06-07](./content/catchup/chrome-blog-2026-06-07.md)
