@@ -1,0 +1,28 @@
+---
+---
+
+@import "minima";
+
+// トップページの3カラム段組み
+// 1列目: Web / フロントエンド, 2列目: Apple / Google, 3列目: 技術調査レポート / CVE
+// 「キャッチアップ（定期）」見出しは1〜2列目の上にまたがる
+@media screen and (min-width: 1100px) {
+  .home-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "catchup catchup reports"
+      "web     mobile  reports";
+    column-gap: 2.5rem;
+    // minima の .wrapper (約740px) を抜けて画面幅いっぱいに広げる
+    width: min(1440px, calc(100vw - 4rem));
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .home-grid__catchup { grid-area: catchup; }
+  .home-grid__web { grid-area: web; }
+  .home-grid__mobile { grid-area: mobile; }
+  .home-grid__reports { grid-area: reports; }
+}
