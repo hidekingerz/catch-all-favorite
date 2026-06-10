@@ -152,6 +152,8 @@ GitHubリポジトリの `content/catchup/` ディレクトリに同名ファイ
 - `### Apple` — iOS & iPadOS リリースノート, Apple セキュリティリリース, Apple Developer News
 - `### Google` — Android リリースノート, Android Security Bulletin, Google Play
 
+なお、トップページは3カラム段組みのため、各グループは `<div class="home-grid__web" markdown="1">` などのHTMLラッパーで囲まれている（`### Web / フロントエンド` は `home-grid__web`、`### Apple` と `### Google` は `home-grid__mobile` 内）。**リンク追加時にこれらの `<div>` タグや `markdown="1"` 属性を削除・移動しないこと。**
+
 各ソースごとに、対応するセクションの先頭（最新が上）にリンクを追加する:
 
 - **JSer.info** の新規ファイル → `#### JSer.info` セクションの先頭に追加

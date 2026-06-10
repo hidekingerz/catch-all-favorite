@@ -5,7 +5,13 @@ title: index
 
 毎週の情報のキャッチアップ情報を管理するサイトです。
 
+<div class="home-grid" markdown="1">
+<div class="home-grid__catchup" markdown="1">
+
 ## キャッチアップ（定期）
+
+</div>
+<div class="home-grid__web" markdown="1">
 
 ### Web / フロントエンド
 
@@ -38,6 +44,9 @@ title: index
 
 - [Google 検索セントラル ブログ キャッチアップ: 2026-06-08](./content/catchup/google-search-blog-2026-06-08.md)
 
+</div>
+<div class="home-grid__mobile" markdown="1">
+
 ### Apple
 
 #### iOS & iPadOS リリースノート
@@ -66,6 +75,9 @@ title: index
 
 - [Google Play 最新情報 キャッチアップ: 2026-06-10](./content/catchup/google-play-news-2026-06-10.md)
 
+</div>
+<div class="home-grid__reports" markdown="1">
+
 ## 技術調査レポート
 
 - [SPAのfetch APIを zod・OpenAPI で型安全にする調査レポート](./content/research/spa-fetch-zod-openapi-typing.md)
@@ -79,3 +91,6 @@ title: index
 - [Lodash の脆弱性レポート（CVE-2025-13465）](./content/security/cve-2025-13465.md)
 - [Axios の脆弱性レポート（CVE-2025-62718）](./content/security/cve-2025-62718.md)
 - [Axios の脆弱性レポート（CVE-2026-40175）](./content/security/cve-2026-40175.md)
+
+</div>
+</div>
