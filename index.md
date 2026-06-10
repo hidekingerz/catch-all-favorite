@@ -38,19 +38,11 @@ title: index
 
 - [Google 検索セントラル ブログ キャッチアップ: 2026-06-08](./content/catchup/google-search-blog-2026-06-08.md)
 
-### モバイル / プラットフォーム
+### Apple
 
 #### iOS & iPadOS リリースノート
 
 - [iOS & iPadOS リリースノート キャッチアップ: 2026-06-10](./content/catchup/ios-release-notes-2026-06-10.md)
-
-#### Android リリースノート
-
-- [Android リリースノート キャッチアップ: 2026-06-10](./content/catchup/android-release-notes-2026-06-10.md)
-
-#### Android Security Bulletin
-
-- [Android Security Bulletin キャッチアップ: 2026-06-10](./content/catchup/android-security-bulletin-2026-06-10.md)
 
 #### Apple セキュリティリリース
 
@@ -59,6 +51,16 @@ title: index
 #### Apple Developer News
 
 - [Apple Developer News キャッチアップ: 2026-06-10](./content/catchup/apple-news-2026-06-10.md)
+
+### Google
+
+#### Android リリースノート
+
+- [Android リリースノート キャッチアップ: 2026-06-10](./content/catchup/android-release-notes-2026-06-10.md)
+
+#### Android Security Bulletin
+
+- [Android Security Bulletin キャッチアップ: 2026-06-10](./content/catchup/android-security-bulletin-2026-06-10.md)
 
 #### Google Play
 

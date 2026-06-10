@@ -149,7 +149,8 @@ GitHubリポジトリの `content/catchup/` ディレクトリに同名ファイ
 `## キャッチアップ（定期）` セクションは、ジャンル別のグループ見出し（`###`）とソース別の見出し（`####`）の2階層で構成されている:
 
 - `### Web / フロントエンド` — JSer.info, This Week in React, Chrome for Developers, Google Search Central
-- `### モバイル / プラットフォーム` — iOS & iPadOS リリースノート, Android リリースノート, Android Security Bulletin, Apple セキュリティリリース, Apple Developer News, Google Play
+- `### Apple` — iOS & iPadOS リリースノート, Apple セキュリティリリース, Apple Developer News
+- `### Google` — Android リリースノート, Android Security Bulletin, Google Play
 
 各ソースごとに、対応するセクションの先頭（最新が上）にリンクを追加する:
 
