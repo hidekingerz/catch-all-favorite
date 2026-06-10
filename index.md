@@ -7,6 +7,10 @@ title: index
 
 ## キャッチアップ（定期）
 
+### Apple Developer News
+
+- [Apple Developer News キャッチアップ: 2026-06-10](./content/catchup/apple-news-2026-06-10.md)
+
 ### Google Search Central
 
 - [Google 検索セントラル ブログ キャッチアップ: 2026-06-08](./content/catchup/google-search-blog-2026-06-08.md)
@@ -29,6 +33,7 @@ title: index
 
 ### JSer.info
 
+- [JSer.info #773 キャッチアップ: 2026-06-09のJS](./content/catchup/jser-info-2026-06-09.md)
 - [JSer.info #772 キャッチアップ: 2026-05-24のJS](./content/catchup/jser-info-2026-05-24.md)
 - [JSer.info #771 キャッチアップ: 2026-05-11のJS](./content/catchup/jser-info-2026-05-11.md)
 - [JSer.info #770 キャッチアップ: 2026-04-29のJS](./content/catchup/jser-info-2026-04-29.md)
