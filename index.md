@@ -7,10 +7,6 @@ title: index
 
 ## キャッチアップ（定期）
 
-### Apple Developer News
-
-- [Apple Developer News キャッチアップ: 2026-06-10](./content/catchup/apple-news-2026-06-10.md)
-
 ### Google Search Central
 
 - [Google 検索セントラル ブログ キャッチアップ: 2026-06-08](./content/catchup/google-search-blog-2026-06-08.md)
