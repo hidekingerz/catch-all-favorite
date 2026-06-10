@@ -7,39 +7,18 @@ title: index
 
 ## キャッチアップ（定期）
 
-### iOS & iPadOS リリースノート
+### Web / フロントエンド
 
-- [iOS & iPadOS リリースノート キャッチアップ: 2026-06-10](./content/catchup/ios-release-notes-2026-06-10.md)
+#### JSer.info
 
-### Android Security Bulletin
+- [JSer.info #773 キャッチアップ: 2026-06-09のJS](./content/catchup/jser-info-2026-06-09.md)
+- [JSer.info #772 キャッチアップ: 2026-05-24のJS](./content/catchup/jser-info-2026-05-24.md)
+- [JSer.info #771 キャッチアップ: 2026-05-11のJS](./content/catchup/jser-info-2026-05-11.md)
+- [JSer.info #770 キャッチアップ: 2026-04-29のJS](./content/catchup/jser-info-2026-04-29.md)
+- [JSer.info #769 キャッチアップ: 2026-04-15のJS](./content/catchup/jser-info-2026-04-15.md)
+- [JSer.info #768 キャッチアップ: 2026-04-06のJS](./content/catchup/jser-info-2026-04-06.md)
 
-- [Android Security Bulletin キャッチアップ: 2026-06-10](./content/catchup/android-security-bulletin-2026-06-10.md)
-
-### Android リリースノート
-
-- [Android リリースノート キャッチアップ: 2026-06-10](./content/catchup/android-release-notes-2026-06-10.md)
-
-### Apple セキュリティリリース
-
-- [Apple セキュリティリリース キャッチアップ: 2026-06-10](./content/catchup/apple-security-releases-2026-06-10.md)
-
-### Google Play
-
-- [Google Play 最新情報 キャッチアップ: 2026-06-10](./content/catchup/google-play-news-2026-06-10.md)
-
-### Apple Developer News
-
-- [Apple Developer News キャッチアップ: 2026-06-10](./content/catchup/apple-news-2026-06-10.md)
-
-### Google Search Central
-
-- [Google 検索セントラル ブログ キャッチアップ: 2026-06-08](./content/catchup/google-search-blog-2026-06-08.md)
-
-### Chrome for Developers
-
-- [Chrome for Developers キャッチアップ: 2026-06-07](./content/catchup/chrome-blog-2026-06-07.md)
-
-### This Week in React
+#### This Week in React
 
 - [This Week in React 2026-06-03](./content/catchup/twir-2026-06-03.md)
 - [This Week in React 2026-05-27](./content/catchup/twir-2026-05-27.md)
@@ -51,14 +30,39 @@ title: index
 - [This Week in React 2026-04-15](./content/catchup/twir-2026-04-15.md)
 - [This Week in React 2026-04-08](./content/catchup/twir-2026-04-08.md)
 
-### JSer.info
+#### Chrome for Developers
 
-- [JSer.info #773 キャッチアップ: 2026-06-09のJS](./content/catchup/jser-info-2026-06-09.md)
-- [JSer.info #772 キャッチアップ: 2026-05-24のJS](./content/catchup/jser-info-2026-05-24.md)
-- [JSer.info #771 キャッチアップ: 2026-05-11のJS](./content/catchup/jser-info-2026-05-11.md)
-- [JSer.info #770 キャッチアップ: 2026-04-29のJS](./content/catchup/jser-info-2026-04-29.md)
-- [JSer.info #769 キャッチアップ: 2026-04-15のJS](./content/catchup/jser-info-2026-04-15.md)
-- [JSer.info #768 キャッチアップ: 2026-04-06のJS](./content/catchup/jser-info-2026-04-06.md)
+- [Chrome for Developers キャッチアップ: 2026-06-07](./content/catchup/chrome-blog-2026-06-07.md)
+
+#### Google Search Central
+
+- [Google 検索セントラル ブログ キャッチアップ: 2026-06-08](./content/catchup/google-search-blog-2026-06-08.md)
+
+### モバイル / プラットフォーム
+
+#### iOS & iPadOS リリースノート
+
+- [iOS & iPadOS リリースノート キャッチアップ: 2026-06-10](./content/catchup/ios-release-notes-2026-06-10.md)
+
+#### Android リリースノート
+
+- [Android リリースノート キャッチアップ: 2026-06-10](./content/catchup/android-release-notes-2026-06-10.md)
+
+#### Android Security Bulletin
+
+- [Android Security Bulletin キャッチアップ: 2026-06-10](./content/catchup/android-security-bulletin-2026-06-10.md)
+
+#### Apple セキュリティリリース
+
+- [Apple セキュリティリリース キャッチアップ: 2026-06-10](./content/catchup/apple-security-releases-2026-06-10.md)
+
+#### Apple Developer News
+
+- [Apple Developer News キャッチアップ: 2026-06-10](./content/catchup/apple-news-2026-06-10.md)
+
+#### Google Play
+
+- [Google Play 最新情報 キャッチアップ: 2026-06-10](./content/catchup/google-play-news-2026-06-10.md)
 
 ## 技術調査レポート
 
