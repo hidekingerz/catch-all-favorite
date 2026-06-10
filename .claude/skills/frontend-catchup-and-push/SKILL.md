@@ -146,30 +146,36 @@ GitHubリポジトリの `content/catchup/` ディレクトリに同名ファイ
 - GitHub MCP ツールが利用可能な場合は `mcp__github__get_file_contents`（owner: `hidekingerz`, repo: `catch-all-favorite`, path: `index.md`）で現在の内容を取得
 - 利用不可な場合はローカルの `index.md` を読み取る
 
+`## キャッチアップ（定期）` セクションは、ジャンル別のグループ見出し（`###`）とソース別の見出し（`####`）の2階層で構成されている:
+
+- `### Web / フロントエンド` — JSer.info, This Week in React, Chrome for Developers, Google Search Central
+- `### Apple` — iOS & iPadOS リリースノート, Apple セキュリティリリース, Apple Developer News
+- `### Google` — Android リリースノート, Android Security Bulletin, Google Play
+
 各ソースごとに、対応するセクションの先頭（最新が上）にリンクを追加する:
 
-- **JSer.info** の新規ファイル → `### JSer.info` セクションの先頭に追加
+- **JSer.info** の新規ファイル → `#### JSer.info` セクションの先頭に追加
   - 形式: `- [JSer.info #NNN キャッチアップ: YYYY-MM-DDのJS](./content/catchup/jser-info-YYYY-MM-DD.md)`
-- **This Week in React** の新規ファイル → `### This Week in React` セクションの先頭に追加
+- **This Week in React** の新規ファイル → `#### This Week in React` セクションの先頭に追加
   - 形式: `- [This Week in React YYYY-MM-DD](./content/catchup/twir-YYYY-MM-DD.md)`
-- **Chrome for Developers** の新規ファイル → `### Chrome for Developers` セクションの先頭に追加
+- **Chrome for Developers** の新規ファイル → `#### Chrome for Developers` セクションの先頭に追加
   - 形式: `- [Chrome for Developers キャッチアップ: YYYY-MM-DD](./content/catchup/chrome-blog-YYYY-MM-DD.md)`
-- **Google 検索セントラル** の新規ファイル → `### Google Search Central` セクションの先頭に追加
+- **Google 検索セントラル** の新規ファイル → `#### Google Search Central` セクションの先頭に追加
   - 形式: `- [Google 検索セントラル ブログ キャッチアップ: YYYY-MM-DD](./content/catchup/google-search-blog-YYYY-MM-DD.md)`
-- **Apple Developer News** の新規ファイル → `### Apple Developer News` セクションの先頭に追加
+- **Apple Developer News** の新規ファイル → `#### Apple Developer News` セクションの先頭に追加
   - 形式: `- [Apple Developer News キャッチアップ: YYYY-MM-DD](./content/catchup/apple-news-YYYY-MM-DD.md)`
-- **iOS & iPadOS リリースノート** の新規ファイル → `### iOS & iPadOS リリースノート` セクションの先頭に追加
+- **iOS & iPadOS リリースノート** の新規ファイル → `#### iOS & iPadOS リリースノート` セクションの先頭に追加
   - 形式: `- [iOS & iPadOS リリースノート キャッチアップ: YYYY-MM-DD](./content/catchup/ios-release-notes-YYYY-MM-DD.md)`
-- **Android Security Bulletin** の新規ファイル → `### Android Security Bulletin` セクションの先頭に追加
+- **Android Security Bulletin** の新規ファイル → `#### Android Security Bulletin` セクションの先頭に追加
   - 形式: `- [Android Security Bulletin キャッチアップ: YYYY-MM-DD](./content/catchup/android-security-bulletin-YYYY-MM-DD.md)`
-- **Android リリースノート** の新規ファイル → `### Android リリースノート` セクションの先頭に追加
+- **Android リリースノート** の新規ファイル → `#### Android リリースノート` セクションの先頭に追加
   - 形式: `- [Android リリースノート キャッチアップ: YYYY-MM-DD](./content/catchup/android-release-notes-YYYY-MM-DD.md)`
-- **Apple セキュリティリリース** の新規ファイル → `### Apple セキュリティリリース` セクションの先頭に追加
+- **Apple セキュリティリリース** の新規ファイル → `#### Apple セキュリティリリース` セクションの先頭に追加
   - 形式: `- [Apple セキュリティリリース キャッチアップ: YYYY-MM-DD](./content/catchup/apple-security-releases-YYYY-MM-DD.md)`
-- **Google Play** の新規ファイル → `### Google Play` セクションの先頭に追加
+- **Google Play** の新規ファイル → `#### Google Play` セクションの先頭に追加
   - 形式: `- [Google Play 最新情報 キャッチアップ: YYYY-MM-DD](./content/catchup/google-play-news-YYYY-MM-DD.md)`
 
-対応するセクションがまだ存在しない場合は、`## キャッチアップ（定期）` の直後、他のセクションの前に新規作成する。重複チェック（ステップ11）でスキップされたファイルのリンクは追加しない。
+対応するソースの見出し（`####`）がまだ存在しない場合は、上記の分類に従って対応するグループ見出し（`###`）の直下に新規作成する（グループ見出し自体が無い場合はそれも作成する）。重複チェック（ステップ11）でスキップされたファイルのリンクは追加しない。
 
 更新した `index.md` はステップ13のpush対象ファイルに含める。
 
