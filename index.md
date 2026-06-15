@@ -26,6 +26,7 @@ title: index
 
 #### This Week in React
 
+- [This Week in React 2026-06-10](./content/catchup/twir-2026-06-10.md)
 - [This Week in React 2026-06-03](./content/catchup/twir-2026-06-03.md)
 - [This Week in React 2026-05-27](./content/catchup/twir-2026-05-27.md)
 - [This Week in React 2026-05-20](./content/catchup/twir-2026-05-20.md)
@@ -38,6 +39,7 @@ title: index
 
 #### Chrome for Developers
 
+- [Chrome for Developers キャッチアップ: 2026-06-14](./content/catchup/chrome-blog-2026-06-14.md)
 - [Chrome for Developers キャッチアップ: 2026-06-07](./content/catchup/chrome-blog-2026-06-07.md)
 
 #### Google Search Central
@@ -59,6 +61,7 @@ title: index
 
 #### Apple Developer News
 
+- [Apple Developer News キャッチアップ: 2026-06-14](./content/catchup/apple-news-2026-06-14.md)
 - [Apple Developer News キャッチアップ: 2026-06-10](./content/catchup/apple-news-2026-06-10.md)
 
 ### Google
