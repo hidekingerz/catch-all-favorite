@@ -41,4 +41,5 @@ exclude:
   - README.md
   - dist
   - scripts
+  - templates
   - "*.skill"
