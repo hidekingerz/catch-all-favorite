@@ -151,11 +151,13 @@ ls content/catchup/claude-code-*.md 2>/dev/null
 
 新着をすべて漏れなく含める。バージョン番号・公開日は取得した内容のものを正確に転記する。
 
-このスキル単体ではpushを行わない。push まで自動化したい場合は、push を行うキャッチアップスキル（`frontend-catchup-and-push`）と同様に、生成後に `content/catchup/` をcommit & pushする。
+このスキル単体ではpushを行わない。push まで自動化したい場合は `frontend-catchup-and-push` スキルを使う（他のキャッチアップソースと合わせて1回でcommit & push、index.md 更新、PR 作成まで行われる）。
 
 ### 6. 定期実行について
 
-このスキルは `schedule` スキルで定期タスクとして登録できる。Claude Code の changelog は**ほぼ毎日**更新されるため、週1回のスケジュールが適切（1回でその週の全新着バージョンをまとめて拾える）。新機能を素早く追いたい場合は隔日でもよい。
+このスキルは `frontend-catchup-and-push` スキルのステップに組み込まれており、`schedule` スキルによる定期キャッチアップの一部として自動実行される。Claude Code 単独で定期実行したい場合は `schedule` スキルで登録できる。
+
+Claude Code の changelog は**ほぼ毎日**更新されるため、週1回のスケジュールが適切（1回でその週の全新着バージョンをまとめて拾える）。新機能を素早く追いたい場合は隔日でもよい。
 
 ## よくある失敗と対処
 
