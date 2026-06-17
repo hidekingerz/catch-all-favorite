@@ -46,6 +46,12 @@ title: index
 
 - [Google 検索セントラル ブログ キャッチアップ: 2026-06-08](./content/catchup/google-search-blog-2026-06-08.md)
 
+### AI / 開発ツール
+
+#### Claude Code
+
+- [Claude Code キャッチアップ: 2026-06-17](./content/catchup/claude-code-2026-06-17.md)
+
 </div>
 <div class="home-grid__mobile" markdown="1">
 
@@ -61,6 +67,7 @@ title: index
 
 #### Apple Developer News
 
+- [Apple Developer News キャッチアップ: 2026-06-17](./content/catchup/apple-news-2026-06-17.md)
 - [Apple Developer News キャッチアップ: 2026-06-14](./content/catchup/apple-news-2026-06-14.md)
 - [Apple Developer News キャッチアップ: 2026-06-10](./content/catchup/apple-news-2026-06-10.md)
 
