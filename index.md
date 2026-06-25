@@ -27,6 +27,7 @@ title: index
 
 #### This Week in React
 
+- [This Week in React 2026-06-24](./content/catchup/twir-2026-06-24.md)
 - [This Week in React 2026-06-17](./content/catchup/twir-2026-06-17.md)
 - [This Week in React 2026-06-10](./content/catchup/twir-2026-06-10.md)
 - [This Week in React 2026-06-03](./content/catchup/twir-2026-06-03.md)
@@ -41,6 +42,7 @@ title: index
 
 #### Chrome for Developers
 
+- [Chrome for Developers キャッチアップ: 2026-06-24](./content/catchup/chrome-blog-2026-06-24.md)
 - [Chrome for Developers キャッチアップ: 2026-06-14](./content/catchup/chrome-blog-2026-06-14.md)
 - [Chrome for Developers キャッチアップ: 2026-06-07](./content/catchup/chrome-blog-2026-06-07.md)
 
@@ -53,6 +55,7 @@ title: index
 
 #### Claude Code
 
+- [Claude Code キャッチアップ: 2026-06-24](./content/catchup/claude-code-2026-06-24.md)
 - [Claude Code キャッチアップ: 2026-06-23](./content/catchup/claude-code-2026-06-23.md)
 - [Claude Code キャッチアップ: 2026-06-21](./content/catchup/claude-code-2026-06-21.md)
 - [Claude Code キャッチアップ: 2026-06-17](./content/catchup/claude-code-2026-06-17.md)
@@ -64,6 +67,7 @@ title: index
 
 #### iOS & iPadOS リリースノート
 
+- [iOS & iPadOS リリースノート キャッチアップ: 2026-06-24](./content/catchup/ios-release-notes-2026-06-24.md)
 - [iOS & iPadOS リリースノート キャッチアップ: 2026-06-10](./content/catchup/ios-release-notes-2026-06-10.md)
 
 #### Apple セキュリティリリース
@@ -73,6 +77,7 @@ title: index
 
 #### Apple Developer News
 
+- [Apple Developer News キャッチアップ: 2026-06-24](./content/catchup/apple-news-2026-06-24.md)
 - [Apple Developer News キャッチアップ: 2026-06-23](./content/catchup/apple-news-2026-06-23.md)
 - [Apple Developer News キャッチアップ: 2026-06-21](./content/catchup/apple-news-2026-06-21.md)
 - [Apple Developer News キャッチアップ: 2026-06-17](./content/catchup/apple-news-2026-06-17.md)
