@@ -17,6 +17,7 @@ title: index
 
 #### JSer.info
 
+- [JSer.info #774 キャッチアップ: 2026-06-22のJS](./content/catchup/jser-info-2026-06-22.md)
 - [JSer.info #773 キャッチアップ: 2026-06-09のJS](./content/catchup/jser-info-2026-06-09.md)
 - [JSer.info #772 キャッチアップ: 2026-05-24のJS](./content/catchup/jser-info-2026-05-24.md)
 - [JSer.info #771 キャッチアップ: 2026-05-11のJS](./content/catchup/jser-info-2026-05-11.md)
@@ -52,6 +53,7 @@ title: index
 
 #### Claude Code
 
+- [Claude Code キャッチアップ: 2026-06-23](./content/catchup/claude-code-2026-06-23.md)
 - [Claude Code キャッチアップ: 2026-06-21](./content/catchup/claude-code-2026-06-21.md)
 - [Claude Code キャッチアップ: 2026-06-17](./content/catchup/claude-code-2026-06-17.md)
 
@@ -71,6 +73,7 @@ title: index
 
 #### Apple Developer News
 
+- [Apple Developer News キャッチアップ: 2026-06-23](./content/catchup/apple-news-2026-06-23.md)
 - [Apple Developer News キャッチアップ: 2026-06-21](./content/catchup/apple-news-2026-06-21.md)
 - [Apple Developer News キャッチアップ: 2026-06-17](./content/catchup/apple-news-2026-06-17.md)
 - [Apple Developer News キャッチアップ: 2026-06-14](./content/catchup/apple-news-2026-06-14.md)
