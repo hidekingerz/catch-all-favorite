@@ -1,16 +1,55 @@
-name: Content PR notification
+name: Content PR automation
 
 on:
   pull_request:
-    types: [opened]
+    types: [opened, synchronize, reopened]
 
-# 通知のみ。マージは ruleset(main 保護) を尊重し、管理者が手動で行う。
+# content-guard: 変更が content/ と index.md のみかを検証する「必須チェック」。
+#   これを main の ruleset で required status check に登録することで、
+#   レポート系スキルが有効化した auto-merge は「content/ と index.md だけのPR」が
+#   CI を通った時にのみ発火する（保護はバイパスせず尊重）。
+#   content/ 以外を含むPR（コード/CI/設定）ではこのチェックが fail し、auto-merge は発火しない。
+#   それらのPRをマージするには管理者の明示的な操作（override）が必要 = 人手のゲートが残る。
+# notify: レポートPRが開かれた時の補助通知（マージ判定には関与しない）。
 permissions:
   contents: read
   pull-requests: read
 
 jobs:
+  content-guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate changed files are report-only
+        id: guard
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # レポート系PR = 変更が content/ 配下と index.md のみ（allowlist 方式）。
+          # レポートは content/{catchup,research,security}/... に置かれ、一覧 index.md を伴う。
+          # content/ 配下に新カテゴリを足しても自動的に対象になる。
+          files=$(gh api --paginate \
+            "repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/files" \
+            --jq '.[].filename')
+          echo "Changed files:"
+          echo "$files"
+          if [ -z "$files" ]; then
+            echo "::error::変更ファイルを取得できませんでした。安全側に倒して fail します。"
+            exit 1
+          fi
+          # 許可リスト(content/ または index.md)に該当しない変更ファイルを抽出する。
+          bad=$(printf '%s\n' "$files" | grep -vE '^(content/|index\.md$)' || true)
+          if [ -n "$bad" ]; then
+            echo "::error::content/ と index.md 以外の変更が含まれています（auto-merge 対象外）:"
+            printf '%s\n' "$bad"
+            echo "report=false" >> "$GITHUB_OUTPUT"
+            exit 1
+          fi
+          echo "content/ と index.md のみ。レポート系PRとして検証 OK。"
+          echo "report=true" >> "$GITHUB_OUTPUT"
+
   notify:
+    # 通知は PR が開かれた時だけ（synchronize の度には鳴らさない）。
+    if: github.event.action == 'opened'
     runs-on: ubuntu-latest
     steps:
       - name: Determine report PR
@@ -18,17 +57,11 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # レポート系PR = 変更が content/ 配下と index.md のみ（allowlist 方式）。
-          # レポートは content/{catchup,research,security}/... に置かれ、一覧 index.md を伴う。
-          # CI/設定/コードを含むPRは通知しない（自分で作る前提のため）。
-          # content/ 配下に新カテゴリを足しても自動的に対象になる。
           files=$(gh api --paginate \
             "repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/files" \
             --jq '.[].filename')
           echo "Changed files:"
           echo "$files"
-          # 許可リスト(content/ または index.md)に該当しない変更ファイル数を数える。
-          # grep 実装差を避けるため -v の出力を wc で数える方式にする。
           bad=$(printf '%s\n' "$files" | grep -vE '^(content/|index\.md$)' | wc -l | tr -d ' ')
           if [ -z "$files" ]; then
             echo "report=false" >> "$GITHUB_OUTPUT"
