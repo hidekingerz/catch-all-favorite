@@ -108,7 +108,8 @@ title: index
 - [TypeScript Branded Types（ブランド型）調査レポート](./content/research/typescript-branded-types.md)
 - [React Compilerの最適化を効かせるための型・Lint整理](./content/research/react-compiler-purity-type-lint.md)
 - [date-fns / date-fns-tz から Temporal API への移行可能性レポート](./content/research/temporal-migration-from-date-fns.md)
-- [Single Agent Loop / Loop Engineering 調査レポート](./content/research/single-agent-loop.md)
+- [Single Agent Loop / Loop Engineering 調査レポート](./content/research/loop/single-agent-loop.md)
+  - [single-agent-loop 実験レポート（mekuri 移行での実践振り返り）](./content/research/loop/loop-experiment-report.md)
   - [検証: loop-arch-evaluation（雛形を用いたアーキテクチャ検証）](https://github.com/hidekingerz/loop-arch-evaluation)
 
 ## セキュリティ（CVE）
