@@ -17,7 +17,10 @@ Apple セキュリティリリース（https://support.apple.com/ja-jp/100100）
 
 このスキルはローカルClaude Code（CLI）とデスクトップ版Claudeアプリのコードモードの両方で動作する。利用可能なツールセットが環境ごとに異なるため、Web取得は「優先するツール → フォールバック」を順に試すこと。
 
-- **Web取得**: ブラウザツール（Chrome / Brave 等のMCPサーバ）が利用可能ならそれを最優先。利用不可な場合は `WebFetch` を使う
+- **Web取得**: 以下の 3 段階フォールバックを順に試す:
+  1. **ブラウザツール**（Chrome / Brave 等の MCP サーバ）が利用可能ならそれを最優先。
+  2. **`WebFetch`**: ブラウザツール不在時。ただし対象ページは約 1.28MB の大容量 HTML のため、Markdown 変換中にテーブル到達前で切り詰められる（「Content truncated due to length」）ことがある。テーブル行が 1 件も取れなかった場合は次へ。
+  3. **Bash + `curl`**: WebFetch でテーブル行が取れなかった場合のみ使用。生 HTML を取得してテーブル行を直接パースする（詳細は実行手順ステップ 1 参照）。
 - **ファイル保存**: 本リポジトリでは `content/catchup/` ディレクトリ配下に保存する
 
 ## 最重要: 取得方法の注意
@@ -52,6 +55,49 @@ https://support.apple.com/ja-jp/100100
 `https://support.apple.com/ja-jp/100100` を取得し、掲載されているセキュリティリリースの **名称（製品・バージョン）・対象・公開日・詳細ページへのリンク** を一覧として抽出する。一覧は公開日の新しい順に並んでいる。直近のもの（過去1〜2か月分）を対象にすれば十分。
 
 - 公開日が「リリース日」列に記載されている。「この文書は、新しい情報が…」のような注記行はリリースではないので除外する
+
+#### WebFetch が切り詰まる場合のフォールバック（Bash + curl + Python）
+
+WebFetch の結果にテーブル行が含まれない（「Content truncated due to length」などが出る、または行が 0 件）場合は、Bash ツールで次の手順を実行する:
+
+```bash
+# 生 HTML をファイルに保存
+curl -sL "https://support.apple.com/ja-jp/100100" -o /tmp/apple_releases.html
+# ファイルサイズ確認（数 KB 以下ならアクセス失敗）
+wc -c /tmp/apple_releases.html
+```
+
+> **注意**: このページはテーブルの全行が HTML 1 行に連結されているため `grep -c '<tr'` は常に 1 を返す。Python で解析すること。
+
+```bash
+python3 - <<'EOF'
+import re
+
+with open('/tmp/apple_releases.html', encoding='utf-8') as f:
+    html = f.read()
+
+# セキュリティアップデートのテーブルを探す
+idx = html.find('Appleセキュリティアップデート')
+if idx == -1:
+    print('ERROR: section not found')
+    exit(1)
+
+table_html = html[idx:]
+rows = re.findall(r'<tr>(.*?)</tr>', table_html, re.DOTALL)
+print(f'テーブル行数: {len(rows) - 1} 件（ヘッダー除く）')  # 1行目はヘッダー
+
+for row in rows[1:10]:  # 直近10件を確認
+    cells = re.findall(r'<td[^>]*>(.*?)</td>', row, re.DOTALL)
+    if len(cells) >= 3:
+        link_match = re.search(r'href="([^"]+)"', cells[0])
+        name = re.sub(r'<[^>]+>', '', cells[0]).strip().split('\n')[0]
+        link = link_match.group(1) if link_match else '（リンクなし）'
+        date = re.sub(r'<[^>]+>', '', cells[2]).strip()
+        print(f'{date} | {name} | {link}')
+EOF
+```
+
+curl の終了コードが 0 でない、またはファイルサイズが 100KB 以下の場合はアクセス失敗とみなしてスキップする。Python で行数が 1 件以上取れれば取得成功。取得した全行（`rows[1:]`）を解析して名称・対象・公開日・詳細 URL の一覧を組み立てる。
 
 ### 2. 重複チェック（新着リリースの特定）
 
@@ -122,3 +168,4 @@ ls content/catchup/apple-security-releases-*.md 2>/dev/null
 | 記憶でリリース内容を補完してしまう | 取得できた内容のみ使う。取得失敗時はスキップ |
 | 既存リリースまで重複してダイジェストに入れる | ステップ2の重複チェックを必ず行う |
 | 新着ゼロなのに空ファイルを作る | ファイルを作らず「新しいセキュリティリリースはありませんでした」と報告 |
+| WebFetch でテーブル行が 0 件（切り詰め） | Bash + curl で生 HTML を取得してパース（ステップ 1 のフォールバック参照） |
