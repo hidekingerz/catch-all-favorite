@@ -13,19 +13,27 @@
    gh issue list --label catchup-maintenance --state open --json number,title,labels,createdAt --limit 100
    ```
 2. 次を除外する:
-   - `loop-wip` または `loop-needs-human` ラベルが付いている issue。
-   - 紐付くオープン PR がある issue:
+   - `loop-needs-human` ラベルが付いている issue（人間対応待ち）。
+   - 紐付くオープン PR がある issue。**人手の修正PR（非標準ブランチ名）も検出する**ため body 検索と
+     ブランチ名一致の両方で確認する:
      ```bash
-     # 紐付くオープン PR（このissue用ブランチから出たPR）を厳密に確認
+     # 人手PR含む紐付きPR（広めに検出）
+     gh pr list --state open --search "<issue#> in:body" --json number,headRefName
+     # ループ自身のブランチから出たPR（厳密一致）
      gh pr list --state open --head "fix/catchup-maintenance-<issue#>" --json number
-     # リモートブランチの存在確認（スタック復旧判定に使用）
-     git ls-remote --heads origin "fix/catchup-maintenance-<issue#>"
      ```
-   - ただし `loop-wip` 付きでも「紐付くオープン PR も リモートブランチ も 無く、`loop-wip` 付与から 24h 以上経過」した
-     ものはスタックとみなし候補に戻す。付与時刻はラベルイベントで確認:
+     どちらかが 1 件以上ならスキップ。
+   - `loop-wip` ラベルが付いている issue はスキップ。ただし「**紐付くオープン PR が無く**、`loop-wip`
+     付与から 24h 以上経過」したものはスタックとみなし候補に戻す（残存ブランチの有無は問わない）。
+     付与時刻はラベルイベントで確認:
      ```bash
      gh api repos/hidekingerz/catch-all-favorite/issues/<issue#>/events \
        --jq '[.[] | select(.event=="labeled" and .label.name=="loop-wip")][-1].created_at'
+     ```
+     スタック復旧時、`git push` 済みで PR 未作成のまま残った古いブランチがあれば掃除してから再開する:
+     ```bash
+     git ls-remote --heads origin "fix/catchup-maintenance-<issue#>"     # 残存確認
+     git push origin --delete "fix/catchup-maintenance-<issue#>" 2>/dev/null || true
      ```
 3. 残った候補のうち **issue 番号が最小（最古）の 1 件**を選ぶ。
    候補が無ければ「対象 issue なし」と報告して **即 `LOOP_DONE`**（正常終了）。
