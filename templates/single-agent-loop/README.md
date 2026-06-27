@@ -3,7 +3,7 @@
 **Closed × Single-agent** のコーディングループ雛形です。特定のリポジトリに依存しないよう
 プレースホルダ化してあるので、**このフォルダごと別リポジトリにコピー**して使えます。
 
-> 背景・理論は [`content/research/single-agent-loop.md`](../../content/research/single-agent-loop.md) を参照。
+> 背景・理論は [`content/research/loop/single-agent-loop.md`](../../content/research/loop/single-agent-loop.md) を参照。
 
 ## 構成
 
