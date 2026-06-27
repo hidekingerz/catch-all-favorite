@@ -30,12 +30,19 @@
 | 項目 | 値 |
 |---|---|
 | 名前 | catchup-maintenance 自動修正ループ |
-| 環境 | FullNetworkAccess（`env_01WfQPJxjEDR1TQrYbb761pt`）※VERIFY の実ソース到達のため |
+| 環境 | キャッチアップ用環境（`env_01AbbYYf4ouTQ37iLhvrrDBk`）※起票元 routine と同一環境で VERIFY し本番を反映する（案A）|
 | repo | `https://github.com/hidekingerz/catch-all-favorite` |
 | cron | `0 0 * * *`（09:00 JST。起票元 routine の 08:00 JST の後）|
-| model | `claude-opus-4-8[1m]` |
+| model | `claude-sonnet-4-6` |
 | allowed_tools | `Bash, Read, Write, Edit, Glob, Grep, WebFetch, WebSearch` |
+| 通知 | push + email（PR 作成・エスカレを取りこぼさないため）|
 | プロンプト | 下記 |
+
+> 環境について（案A）: fix-loop を起票元 catchup と同じ「キャッチアップ用環境」で回すことで、
+> VERIFY（実ソース再取得）が本番と同じネットワーク条件で行われる。FullNetworkAccess で検証して
+> 本番で効かない、という環境差の "green の嘘" を避けるための選択。本番環境で到達不能なソースは
+> INCONCLUSIVE として正直にエスカレーションされる（host_not_allowed 系はそもそも orchestrator が
+> 起票しないため、実害は小さい）。
 
 プロンプト本文:
 
@@ -49,6 +56,10 @@
 
 fix-loop が出す PR は skill 変更のため **content-guard が fail** する（auto-merge 対象外）。
 レビューのうえ `gh pr merge <PR#> --squash --admin` で人間がマージする（= 安全弁）。
+
+routine 本体は Sonnet で回す（多くの発火は空振り or 機械的修正で十分・低コスト）。
+**判断の重い修正は、マージ前に `/code-review`（必要なら高 effort）をオンデマンドで回す**ことで
+capable モデルのレビューを当てる。Opus レビュー段を routine に常設はしない（毎回課金を避ける）。
 
 ## 前提（崩さない運用ルール）
 
