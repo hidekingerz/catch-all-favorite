@@ -55,6 +55,7 @@ title: index
 
 #### Claude Code
 
+- [Claude Code キャッチアップ: 2026-06-30](./content/catchup/claude-code-2026-06-30.md)
 - [Claude Code キャッチアップ: 2026-06-26](./content/catchup/claude-code-2026-06-26.md)
 - [Claude Code キャッチアップ: 2026-06-25](./content/catchup/claude-code-2026-06-25.md)
 - [Claude Code キャッチアップ: 2026-06-24](./content/catchup/claude-code-2026-06-24.md)
