@@ -119,6 +119,7 @@ title: index
 - [Single Agent Loop / Loop Engineering 調査レポート](./content/research/loop/single-agent-loop.md)
   - [single-agent-loop 実験レポート（mekuri 移行での実践振り返り）](./content/research/loop/loop-experiment-report.md)
   - [検証: loop-arch-evaluation（雛形を用いたアーキテクチャ検証）](https://github.com/hidekingerz/loop-arch-evaluation)
+- [20 Loop Design Patterns 調査レポート](./content/research/loop/loop-design-patterns.md)
 
 ## セキュリティ（CVE）
 
