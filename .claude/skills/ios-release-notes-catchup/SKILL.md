@@ -13,12 +13,9 @@ description: >
 
 iOS & iPadOS リリースノート（https://developer.apple.com/documentation/ios-ipados-release-notes）の新着バージョンを取得して、要約付きのMarkdownダイジェストとして保存する。1回の実行につき1つのダイジェストファイルを作成する。
 
-## 実行環境
+## 共通事項
 
-このスキルはローカルClaude Code（CLI）とデスクトップ版Claudeアプリのコードモードの両方で動作する。利用可能なツールセットが環境ごとに異なるため、Web取得は「優先するツール → フォールバック」を順に試すこと。
-
-- **Web取得**: ブラウザツール（Chrome / Brave 等のMCPサーバ）が利用可能ならそれを最優先。利用不可な場合は `WebFetch` を使う
-- **ファイル保存**: 本リポジトリでは `content/catchup/` ディレクトリ配下に保存する（デスクトップ版コードモードではワークスペースフォルダがリポジトリのルートに対応する）
+実行環境・正確性の共通ルール・重複チェックの方針・ファイル保存/push・定期実行は [`../_shared/catchup-common.md`](../_shared/catchup-common.md) にまとめてある。**実行前に必ず読んで従うこと。** 以下はこのソース固有の事項のみ記載する。
 
 ## 最重要: 一覧の取得方法
 
@@ -51,14 +48,10 @@ https://developer.apple.com/tutorials/data/documentation/ios-ipados-release-note
 
 ## 絶対に守るべきルール
 
-このスキルで最も重要なのは**正確性**。以下は必ず守ること:
+共通ルール（`../_shared/catchup-common.md`）に加えて、このスキル固有のルール:
 
 1. **ドキュメントページのHTMLを一覧取得に使わない。** 必ず DocC JSON（`.../tutorials/data/documentation/ios-ipados-release-notes.json`）を使う
-2. **取得したJSONの内容だけを使う。** 自分の記憶や推測でバージョン・要約・変更点を補完しない
-3. **URLはJSONに記載のものを使う。** URLを推測しない
-4. **新着バージョンを漏れなく拾う。** 既存ファイルと重複しないバージョンはすべて対象にする
-5. **新着がなければファイルを作らない。** すべて既存の場合は「新しいリリースノートはありませんでした」と報告して終了する
-6. **ブラウザツールで開いたタブは必ず閉じる**（ブラウザツールを利用した場合のみ）
+2. **URLは一覧JSONの `references[].url` に記載のものから組み立てる。** 推測しない
 
 ## 実行手順
 
@@ -120,13 +113,11 @@ ls content/catchup/ios-release-notes-*.md 2>/dev/null
 
 新着バージョンをすべて漏れなく含める。タイトルは JSON の `title` をそのまま使う（英語のままでよい）。
 
-このスキル単体ではpushを行わない。push まで自動化したい場合は `frontend-catchup-and-push` スキルを使う（他のソースと合わせて1回でcommit & pushされる）。
+保存・push方針は共通事項の通り（このスキル単体ではpushしない）。
 
 ### 5. 定期実行について
 
-このスキルは `frontend-catchup-and-push` スキルのステップに組み込まれており、Claude の routine（スケジュールトリガー）による定期キャッチアップの一部として自動実行される。iOS/iPadOS リリースノート単独で定期実行したい場合はスケジュールトリガー機能（`create_trigger` 等）で週次の routine として登録できる。
-
-リリースノートはベータ期間中は頻繁に、正式版は不定期に更新されるため、週1回のスケジュールが適切。
+共通事項の通り（`frontend-catchup-and-push` 経由の routine で自動実行）。リリースノートはベータ期間中は頻繁に、正式版は不定期に更新されるため、週1回のスケジュールが適切。
 
 ## よくある失敗と対処
 
@@ -135,5 +126,5 @@ ls content/catchup/ios-release-notes-*.md 2>/dev/null
 | ドキュメントHTMLを取得して一覧が取れない | DocC はJSレンダリング。`.../tutorials/data/documentation/ios-ipados-release-notes.json` を使う |
 | JSON URLを推測して404 | 一覧JSONの `references[].url` をそのまま使ってJSON URLを組み立てる。推測しない |
 | 古いバージョンまで全部ダイジェストに入れる | 最新メジャー系列に絞る。重複チェックで既存slugを除外 |
-| 記憶で変更点を補完してしまう | 取得したJSONの内容のみ使う。取得失敗時は abstract のみで要約 |
-| 新着ゼロなのに空ファイルを作る | ファイルを作らず「新しいリリースノートはありませんでした」と報告 |
+
+共通の失敗（記憶での補完・重複・空ファイル等）は `../_shared/catchup-common.md` を参照。
