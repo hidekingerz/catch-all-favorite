@@ -108,7 +108,7 @@ ls content/catchup/android-release-notes-*.md 2>/dev/null
 
 ### 5. 定期実行について
 
-このスキルは `frontend-catchup-and-push` スキルのステップに組み込まれており、`schedule` スキルによる定期キャッチアップの一部として自動実行される。Android リリースノートは不定期更新のため、週1回のスケジュールが適切。
+このスキルは `frontend-catchup-and-push` スキルのステップに組み込まれており、Claude の routine（スケジュールトリガー）による定期キャッチアップの一部として自動実行される。Android リリースノートは不定期更新のため、週1回のスケジュールが適切。
 
 ## よくある失敗と対処
 

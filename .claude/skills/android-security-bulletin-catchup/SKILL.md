@@ -109,7 +109,7 @@ ls content/catchup/android-security-bulletin-*.md 2>/dev/null
 
 ### 5. 定期実行について
 
-このスキルは `frontend-catchup-and-push` スキルのステップに組み込まれており、`schedule` スキルによる定期キャッチアップの一部として自動実行される。Android Security Bulletin は通常**毎月**更新されるため、週1回のスケジュールで十分に新着を拾える。
+このスキルは `frontend-catchup-and-push` スキルのステップに組み込まれており、Claude の routine（スケジュールトリガー）による定期キャッチアップの一部として自動実行される。Android Security Bulletin は通常**毎月**更新されるため、週1回のスケジュールで十分に新着を拾える。
 
 ## よくある失敗と対処
 

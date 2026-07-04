@@ -110,7 +110,7 @@ ls content/catchup/apple-news-*.md 2>/dev/null
 
 ### 5. 定期実行について
 
-このスキルは `frontend-catchup-and-push` スキルのステップに組み込まれており、`schedule` スキルによる定期キャッチアップの一部として自動実行される。Apple Developer News 単独で定期実行したい場合は `schedule` スキルで週次タスクとして登録できる。
+このスキルは `frontend-catchup-and-push` スキルのステップに組み込まれており、Claude の routine（スケジュールトリガー）による定期キャッチアップの一部として自動実行される。Apple Developer News 単独で定期実行したい場合はスケジュールトリガー機能（`create_trigger` 等）で週次の routine として登録できる。
 
 Apple Developer News は不定期更新（概ね週数本、WWDC 前後は集中）なので、週1回のスケジュールが適切。
 

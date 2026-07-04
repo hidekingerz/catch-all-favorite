@@ -124,7 +124,7 @@ ls content/catchup/ios-release-notes-*.md 2>/dev/null
 
 ### 5. 定期実行について
 
-このスキルは `frontend-catchup-and-push` スキルのステップに組み込まれており、`schedule` スキルによる定期キャッチアップの一部として自動実行される。iOS/iPadOS リリースノート単独で定期実行したい場合は `schedule` スキルで週次タスクとして登録できる。
+このスキルは `frontend-catchup-and-push` スキルのステップに組み込まれており、Claude の routine（スケジュールトリガー）による定期キャッチアップの一部として自動実行される。iOS/iPadOS リリースノート単独で定期実行したい場合はスケジュールトリガー機能（`create_trigger` 等）で週次の routine として登録できる。
 
 リリースノートはベータ期間中は頻繁に、正式版は不定期に更新されるため、週1回のスケジュールが適切。
 

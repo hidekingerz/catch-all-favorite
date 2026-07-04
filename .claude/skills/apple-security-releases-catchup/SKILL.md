@@ -157,7 +157,7 @@ ls content/catchup/apple-security-releases-*.md 2>/dev/null
 
 ### 5. 定期実行について
 
-このスキルは `frontend-catchup-and-push` スキルのステップに組み込まれており、`schedule` スキルによる定期キャッチアップの一部として自動実行される。Apple セキュリティリリースは不定期（OS更新時に集中）なので、週1回のスケジュールが適切。
+このスキルは `frontend-catchup-and-push` スキルのステップに組み込まれており、Claude の routine（スケジュールトリガー）による定期キャッチアップの一部として自動実行される。Apple セキュリティリリースは不定期（OS更新時に集中）なので、週1回のスケジュールが適切。
 
 ## よくある失敗と対処
 

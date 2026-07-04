@@ -155,7 +155,7 @@ ls content/catchup/claude-code-*.md 2>/dev/null
 
 ### 6. 定期実行について
 
-このスキルは `frontend-catchup-and-push` スキルのステップに組み込まれており、`schedule` スキルによる定期キャッチアップの一部として自動実行される。Claude Code 単独で定期実行したい場合は `schedule` スキルで登録できる。
+このスキルは `frontend-catchup-and-push` スキルのステップに組み込まれており、Claude の routine（スケジュールトリガー）による定期キャッチアップの一部として自動実行される。Claude Code 単独で定期実行したい場合はスケジュールトリガー機能（`create_trigger` 等）で routine として登録できる。
 
 Claude Code の changelog は**ほぼ毎日**更新されるため、週1回のスケジュールが適切（1回でその週の全新着バージョンをまとめて拾える）。新機能を素早く追いたい場合は隔日でもよい。
 
