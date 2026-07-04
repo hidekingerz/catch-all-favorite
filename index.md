@@ -56,6 +56,7 @@ title: index
 
 #### Claude Code
 
+- [Claude Code キャッチアップ: 2026-07-04](./content/catchup/claude-code-2026-07-04.md)
 - [Claude Code キャッチアップ: 2026-07-03](./content/catchup/claude-code-2026-07-03.md)
 - [Claude Code キャッチアップ: 2026-07-01](./content/catchup/claude-code-2026-07-01.md)
 - [Claude Code キャッチアップ: 2026-06-30](./content/catchup/claude-code-2026-06-30.md)
@@ -85,6 +86,7 @@ title: index
 
 #### Apple Developer News
 
+- [Apple Developer News キャッチアップ: 2026-07-04](./content/catchup/apple-news-2026-07-04.md)
 - [Apple Developer News キャッチアップ: 2026-06-24](./content/catchup/apple-news-2026-06-24.md)
 - [Apple Developer News キャッチアップ: 2026-06-23](./content/catchup/apple-news-2026-06-23.md)
 - [Apple Developer News キャッチアップ: 2026-06-21](./content/catchup/apple-news-2026-06-21.md)
