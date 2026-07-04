@@ -13,12 +13,9 @@ description: >
 
 Apple Developer News（https://developer.apple.com/jp/news/）の新着記事を取得して、要約付きのMarkdownダイジェストとして保存する。1回の実行につき1つのダイジェストファイルを作成する。
 
-## 実行環境
+## 共通事項
 
-このスキルはローカルClaude Code（CLI）とデスクトップ版Claudeアプリのコードモードの両方で動作する。利用可能なツールセットが環境ごとに異なるため、Web取得は「優先するツール → フォールバック」を順に試すこと。
-
-- **Web取得**: ブラウザツール（Chrome / Brave 等のMCPサーバ）が利用可能ならそれを最優先（ローカルマシンで動くためサーバ側のネットワーク制限を受けない）。利用不可な場合は `WebFetch` を使う
-- **ファイル保存**: 本リポジトリでは `content/catchup/` ディレクトリ配下に保存する（デスクトップ版コードモードではワークスペースフォルダがリポジトリのルートに対応する）
+実行環境・正確性の共通ルール・重複チェックの方針・ファイル保存/push・定期実行は [`../_shared/catchup-common.md`](../_shared/catchup-common.md) にまとめてある。**実行前に必ず読んで従うこと。** 以下はこのソース固有の事項のみ記載する。
 
 ## 最重要: 記事一覧の取得方法
 
@@ -37,14 +34,10 @@ https://developer.apple.com/news/rss/news.rss
 
 ## 絶対に守るべきルール
 
-このスキルで最も重要なのは**正確性**。以下は必ず守ること:
+共通ルール（`../_shared/catchup-common.md`）に加えて、このスキル固有のルール:
 
 1. **一覧ページ（`/jp/news/`）を記事取得に使わない。** 必ずRSSフィード（`https://developer.apple.com/news/rss/news.rss`）を使う
-2. **取得したページの内容だけを使う。** 自分の記憶や推測で記事・要約・公開日を補完しない
-3. **URLはフィード・記事ページに記載のものを使う。** URLを推測しない。記録するURLは `/jp/news/` の日本語版に統一する
-4. **新着記事を漏れなく拾う。** 既存ファイルと重複しない記事はすべて対象にする
-5. **新着がなければファイルを作らない。** すべて既存の場合は「新しい記事はありませんでした」と報告して終了する
-6. **ブラウザツールで開いたタブは必ず閉じる**（ブラウザツールを利用した場合のみ）
+2. **記録するURLはパスに `/jp/` を挿入した日本語版（`/jp/news/?id=XXXX`）に統一する**
 
 ## 実行手順
 
@@ -106,13 +99,11 @@ ls content/catchup/apple-news-*.md 2>/dev/null
 
 新着記事をすべて漏れなく含める。記事タイトルは日本語版記事ページのものをそのまま使う。
 
-このスキル単体ではpushを行わない。push まで自動化したい場合は `frontend-catchup-and-push` スキルを使う（jser.info / This Week in React / Chrome for Developers / Google 検索セントラル と合わせて1回でcommit & pushされる）。
+保存・push方針は共通事項の通り（このスキル単体ではpushしない）。
 
 ### 5. 定期実行について
 
-このスキルは `frontend-catchup-and-push` スキルのステップに組み込まれており、Claude の routine（スケジュールトリガー）による定期キャッチアップの一部として自動実行される。Apple Developer News 単独で定期実行したい場合はスケジュールトリガー機能（`create_trigger` 等）で週次の routine として登録できる。
-
-Apple Developer News は不定期更新（概ね週数本、WWDC 前後は集中）なので、週1回のスケジュールが適切。
+共通事項の通り（`frontend-catchup-and-push` 経由の routine で自動実行）。Apple Developer News は不定期更新（概ね週数本、WWDC 前後は集中）なので、週1回のスケジュールが適切。
 
 ## よくある失敗と対処
 
@@ -121,5 +112,5 @@ Apple Developer News は不定期更新（概ね週数本、WWDC 前後は集中
 | `/jp/news/` 一覧ページを取得して記事が取れない | 一覧ページはJSレンダリング。RSSフィード `news/rss/news.rss` を使う |
 | フィードURLを推測して404 | `https://developer.apple.com/news/rss/news.rss` を使う。推測しない |
 | 記事URLが英語版（`/news/?id=`）のまま | パスに `/jp/` を挿入して `/jp/news/?id=` に統一する |
-| 既存記事まで重複してダイジェストに入れる | ステップ2の重複チェック（記事ID）を必ず行う |
-| 新着ゼロなのに空ファイルを作る | ファイルを作らず「新しい記事はありませんでした」と報告 |
+
+共通の失敗（記憶での補完・重複・空ファイル等）は `../_shared/catchup-common.md` を参照。
