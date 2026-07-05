@@ -17,6 +17,7 @@ title: index
 
 #### JSer.info
 
+- [JSer.info #775 キャッチアップ: 2026-07-05のJS](./content/catchup/jser-info-2026-07-05.md)
 - [JSer.info #774 キャッチアップ: 2026-06-22のJS](./content/catchup/jser-info-2026-06-22.md)
 - [JSer.info #773 キャッチアップ: 2026-06-09のJS](./content/catchup/jser-info-2026-06-09.md)
 - [JSer.info #772 キャッチアップ: 2026-05-24のJS](./content/catchup/jser-info-2026-05-24.md)
