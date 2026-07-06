@@ -50,6 +50,7 @@ title: index
 
 #### Google Search Central
 
+- [Google 検索セントラル ブログ キャッチアップ: 2026-07-06](./content/catchup/google-search-blog-2026-07-06.md)
 - [Google 検索セントラル ブログ キャッチアップ: 2026-06-21](./content/catchup/google-search-blog-2026-06-21.md)
 - [Google 検索セントラル ブログ キャッチアップ: 2026-06-08](./content/catchup/google-search-blog-2026-06-08.md)
 
@@ -57,6 +58,7 @@ title: index
 
 #### Claude Code
 
+- [Claude Code キャッチアップ: 2026-07-06](./content/catchup/claude-code-2026-07-06.md)
 - [Claude Code キャッチアップ: 2026-07-04](./content/catchup/claude-code-2026-07-04.md)
 - [Claude Code キャッチアップ: 2026-07-03](./content/catchup/claude-code-2026-07-03.md)
 - [Claude Code キャッチアップ: 2026-07-01](./content/catchup/claude-code-2026-07-01.md)
@@ -75,6 +77,7 @@ title: index
 
 #### iOS & iPadOS リリースノート
 
+- [iOS & iPadOS リリースノート キャッチアップ: 2026-07-06](./content/catchup/ios-release-notes-2026-07-06.md)
 - [iOS & iPadOS リリースノート キャッチアップ: 2026-06-29](./content/catchup/ios-release-notes-2026-06-29.md)
 - [iOS & iPadOS リリースノート キャッチアップ: 2026-06-24](./content/catchup/ios-release-notes-2026-06-24.md)
 - [iOS & iPadOS リリースノート キャッチアップ: 2026-06-10](./content/catchup/ios-release-notes-2026-06-10.md)
@@ -104,6 +107,7 @@ title: index
 
 #### Android Security Bulletin
 
+- [Android Security Bulletin キャッチアップ: 2026-07-06](./content/catchup/android-security-bulletin-2026-07-06.md)
 - [Android Security Bulletin キャッチアップ: 2026-06-10](./content/catchup/android-security-bulletin-2026-06-10.md)
 
 #### Google Play
