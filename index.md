@@ -50,6 +50,7 @@ title: index
 
 #### Google Search Central
 
+- [Google 検索セントラル ブログ キャッチアップ: 2026-07-07](./content/catchup/google-search-blog-2026-07-07.md)
 - [Google 検索セントラル ブログ キャッチアップ: 2026-07-06](./content/catchup/google-search-blog-2026-07-06.md)
 - [Google 検索セントラル ブログ キャッチアップ: 2026-06-21](./content/catchup/google-search-blog-2026-06-21.md)
 - [Google 検索セントラル ブログ キャッチアップ: 2026-06-08](./content/catchup/google-search-blog-2026-06-08.md)
@@ -58,6 +59,7 @@ title: index
 
 #### Claude Code
 
+- [Claude Code キャッチアップ: 2026-07-07](./content/catchup/claude-code-2026-07-07.md)
 - [Claude Code キャッチアップ: 2026-07-06](./content/catchup/claude-code-2026-07-06.md)
 - [Claude Code キャッチアップ: 2026-07-04](./content/catchup/claude-code-2026-07-04.md)
 - [Claude Code キャッチアップ: 2026-07-03](./content/catchup/claude-code-2026-07-03.md)
@@ -90,6 +92,7 @@ title: index
 
 #### Apple Developer News
 
+- [Apple Developer News キャッチアップ: 2026-07-07](./content/catchup/apple-news-2026-07-07.md)
 - [Apple Developer News キャッチアップ: 2026-07-04](./content/catchup/apple-news-2026-07-04.md)
 - [Apple Developer News キャッチアップ: 2026-06-24](./content/catchup/apple-news-2026-06-24.md)
 - [Apple Developer News キャッチアップ: 2026-06-23](./content/catchup/apple-news-2026-06-23.md)
