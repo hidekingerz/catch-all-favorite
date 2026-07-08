@@ -28,6 +28,7 @@ title: index
 
 #### This Week in React
 
+- [This Week in React 2026-07-08](./content/catchup/twir-2026-07-08.md)
 - [This Week in React 2026-07-01](./content/catchup/twir-2026-07-01.md)
 - [This Week in React 2026-06-24](./content/catchup/twir-2026-06-24.md)
 - [This Week in React 2026-06-17](./content/catchup/twir-2026-06-17.md)
@@ -59,6 +60,7 @@ title: index
 
 #### Claude Code
 
+- [Claude Code キャッチアップ: 2026-07-08](./content/catchup/claude-code-2026-07-08.md)
 - [Claude Code キャッチアップ: 2026-07-07](./content/catchup/claude-code-2026-07-07.md)
 - [Claude Code キャッチアップ: 2026-07-06](./content/catchup/claude-code-2026-07-06.md)
 - [Claude Code キャッチアップ: 2026-07-04](./content/catchup/claude-code-2026-07-04.md)
