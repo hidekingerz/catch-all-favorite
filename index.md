@@ -94,6 +94,7 @@ title: index
 
 #### Apple Developer News
 
+- [Apple Developer News キャッチアップ: 2026-07-09](./content/catchup/apple-news-2026-07-09.md)
 - [Apple Developer News キャッチアップ: 2026-07-07](./content/catchup/apple-news-2026-07-07.md)
 - [Apple Developer News キャッチアップ: 2026-07-04](./content/catchup/apple-news-2026-07-04.md)
 - [Apple Developer News キャッチアップ: 2026-06-24](./content/catchup/apple-news-2026-06-24.md)
