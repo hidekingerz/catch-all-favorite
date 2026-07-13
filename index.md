@@ -83,6 +83,7 @@ title: index
 
 #### iOS & iPadOS リリースノート
 
+- [iOS & iPadOS リリースノート キャッチアップ: 2026-07-13](./content/catchup/ios-release-notes-2026-07-13.md)
 - [iOS & iPadOS リリースノート キャッチアップ: 2026-07-06](./content/catchup/ios-release-notes-2026-07-06.md)
 - [iOS & iPadOS リリースノート キャッチアップ: 2026-06-29](./content/catchup/ios-release-notes-2026-06-29.md)
 - [iOS & iPadOS リリースノート キャッチアップ: 2026-06-24](./content/catchup/ios-release-notes-2026-06-24.md)
