@@ -185,27 +185,27 @@ GitHubリポジトリの `content/catchup/` ディレクトリに同名ファイ
 各ソースごとに、対応するセクションの先頭（最新が上）にリンクを追加する:
 
 - **JSer.info** の新規ファイル → `#### JSer.info` セクションの先頭に追加
-  - 形式: `- [JSer.info #NNN キャッチアップ: YYYY-MM-DDのJS](./content/catchup/jser-info-YYYY-MM-DD.md)`
+  - 形式: `- [JSer.info #NNN キャッチアップ: YYYY-MM-DDのJS](/content/catchup/jser-info-YYYY-MM-DD)`
 - **This Week in React** の新規ファイル → `#### This Week in React` セクションの先頭に追加
-  - 形式: `- [This Week in React YYYY-MM-DD](./content/catchup/twir-YYYY-MM-DD.md)`
+  - 形式: `- [This Week in React YYYY-MM-DD](/content/catchup/twir-YYYY-MM-DD)`
 - **Chrome for Developers** の新規ファイル → `#### Chrome for Developers` セクションの先頭に追加
-  - 形式: `- [Chrome for Developers キャッチアップ: YYYY-MM-DD](./content/catchup/chrome-blog-YYYY-MM-DD.md)`
+  - 形式: `- [Chrome for Developers キャッチアップ: YYYY-MM-DD](/content/catchup/chrome-blog-YYYY-MM-DD)`
 - **Google 検索セントラル** の新規ファイル → `#### Google Search Central` セクションの先頭に追加
-  - 形式: `- [Google 検索セントラル ブログ キャッチアップ: YYYY-MM-DD](./content/catchup/google-search-blog-YYYY-MM-DD.md)`
+  - 形式: `- [Google 検索セントラル ブログ キャッチアップ: YYYY-MM-DD](/content/catchup/google-search-blog-YYYY-MM-DD)`
 - **Apple Developer News** の新規ファイル → `#### Apple Developer News` セクションの先頭に追加
-  - 形式: `- [Apple Developer News キャッチアップ: YYYY-MM-DD](./content/catchup/apple-news-YYYY-MM-DD.md)`
+  - 形式: `- [Apple Developer News キャッチアップ: YYYY-MM-DD](/content/catchup/apple-news-YYYY-MM-DD)`
 - **iOS & iPadOS リリースノート** の新規ファイル → `#### iOS & iPadOS リリースノート` セクションの先頭に追加
-  - 形式: `- [iOS & iPadOS リリースノート キャッチアップ: YYYY-MM-DD](./content/catchup/ios-release-notes-YYYY-MM-DD.md)`
+  - 形式: `- [iOS & iPadOS リリースノート キャッチアップ: YYYY-MM-DD](/content/catchup/ios-release-notes-YYYY-MM-DD)`
 - **Android Security Bulletin** の新規ファイル → `#### Android Security Bulletin` セクションの先頭に追加
-  - 形式: `- [Android Security Bulletin キャッチアップ: YYYY-MM-DD](./content/catchup/android-security-bulletin-YYYY-MM-DD.md)`
+  - 形式: `- [Android Security Bulletin キャッチアップ: YYYY-MM-DD](/content/catchup/android-security-bulletin-YYYY-MM-DD)`
 - **Android リリースノート** の新規ファイル → `#### Android リリースノート` セクションの先頭に追加
-  - 形式: `- [Android リリースノート キャッチアップ: YYYY-MM-DD](./content/catchup/android-release-notes-YYYY-MM-DD.md)`
+  - 形式: `- [Android リリースノート キャッチアップ: YYYY-MM-DD](/content/catchup/android-release-notes-YYYY-MM-DD)`
 - **Apple セキュリティリリース** の新規ファイル → `#### Apple セキュリティリリース` セクションの先頭に追加
-  - 形式: `- [Apple セキュリティリリース キャッチアップ: YYYY-MM-DD](./content/catchup/apple-security-releases-YYYY-MM-DD.md)`
+  - 形式: `- [Apple セキュリティリリース キャッチアップ: YYYY-MM-DD](/content/catchup/apple-security-releases-YYYY-MM-DD)`
 - **Google Play** の新規ファイル → `#### Google Play` セクションの先頭に追加
-  - 形式: `- [Google Play 最新情報 キャッチアップ: YYYY-MM-DD](./content/catchup/google-play-news-YYYY-MM-DD.md)`
+  - 形式: `- [Google Play 最新情報 キャッチアップ: YYYY-MM-DD](/content/catchup/google-play-news-YYYY-MM-DD)`
 - **Claude Code** の新規ファイル → `#### Claude Code` セクションの先頭に追加
-  - 形式: `- [Claude Code キャッチアップ: YYYY-MM-DD](./content/catchup/claude-code-YYYY-MM-DD.md)`
+  - 形式: `- [Claude Code キャッチアップ: YYYY-MM-DD](/content/catchup/claude-code-YYYY-MM-DD)`
   - `#### Claude Code` 見出しは `### AI / 開発ツール` グループ内（`#### Google Search Central` の後ろ）に置く
 
 対応するソースの見出し（`####`）がまだ存在しない場合は、上記の分類に従って対応するグループ見出し（`###`）の直下に新規作成する（グループ見出し自体が無い場合はそれも作成する）。重複チェック（ステップ12）でスキップされたファイルのリンクは追加しない。
