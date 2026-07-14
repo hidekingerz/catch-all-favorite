@@ -1,0 +1,6 @@
+# Node / Blume (Astro)
+node_modules/
+dist/
+.blume/
+.blume-verify/
+.astro/

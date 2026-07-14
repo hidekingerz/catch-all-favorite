@@ -1,17 +1,9 @@
 ---
-layout: home
-title: index
+title: catch-all-favorite
+description: 毎週の情報のキャッチアップ情報を管理するサイトです。
 ---
 
-毎週の情報のキャッチアップ情報を管理するサイトです。
-
-<div class="home-grid" markdown="1">
-<div class="home-grid__catchup" markdown="1">
-
 ## キャッチアップ（定期）
-
-</div>
-<div class="home-grid__web" markdown="1">
 
 ### Web / フロントエンド
 
@@ -76,9 +68,6 @@ title: index
 - [Claude Code キャッチアップ: 2026-06-21](./content/catchup/claude-code-2026-06-21.md)
 - [Claude Code キャッチアップ: 2026-06-17](./content/catchup/claude-code-2026-06-17.md)
 
-</div>
-<div class="home-grid__mobile" markdown="1">
-
 ### Apple
 
 #### iOS & iPadOS リリースノート
@@ -123,9 +112,6 @@ title: index
 
 - [Google Play 最新情報 キャッチアップ: 2026-06-10](./content/catchup/google-play-news-2026-06-10.md)
 
-</div>
-<div class="home-grid__reports" markdown="1">
-
 ## 技術調査レポート
 
 - [Git `history fixup` / `reword` 技術調査レポート](./content/research/git-history-fixup-reword.md)
@@ -147,5 +133,3 @@ title: index
 - [Axios の脆弱性レポート（CVE-2025-62718）](./content/security/cve-2025-62718.md)
 - [Axios の脆弱性レポート（CVE-2026-40175）](./content/security/cve-2026-40175.md)
 
-</div>
-</div>

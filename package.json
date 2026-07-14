@@ -1,0 +1,16 @@
+{
+  "name": "catch-all-favorite",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "blume dev",
+    "build": "blume build",
+    "preview": "blume preview"
+  },
+  "engines": {
+    "node": ">=22.12"
+  },
+  "dependencies": {
+    "blume": "^1.0.3"
+  }
+}

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# .claude/skills/ 配下のスキルディレクトリから dist/skills/ に .skill ZIPを生成する。
+# .claude/skills/ 配下のスキルディレクトリから artifacts/skills/ に .skill ZIPを生成する。
 #
 # .skill バンドル形式: ZIP内に <skill-name>/SKILL.md を含む
 # （デスクトップ版Claudeアプリのコードモードでアップロードできる形式）
@@ -16,7 +16,7 @@ set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 SRC_DIR="${REPO_ROOT}/.claude/skills"
-DIST_DIR="${REPO_ROOT}/dist/skills"
+DIST_DIR="${REPO_ROOT}/artifacts/skills"
 
 if ! command -v zip >/dev/null 2>&1; then
   echo "エラー: zip コマンドが見つかりません" >&2
