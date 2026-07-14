@@ -180,7 +180,7 @@ GitHubリポジトリの `content/catchup/` ディレクトリに同名ファイ
 - `### Apple` — iOS & iPadOS リリースノート, Apple セキュリティリリース, Apple Developer News
 - `### Google` — Android リリースノート, Android Security Bulletin, Google Play
 
-なお、トップページは3カラム段組みのため、各グループは `<div class="home-grid__web" markdown="1">` などのHTMLラッパーで囲まれている（`### Web / フロントエンド` と `### AI / 開発ツール` は `home-grid__web`、`### Apple` と `### Google` は `home-grid__mobile` 内）。**リンク追加時にこれらの `<div>` タグや `markdown="1"` 属性を削除・移動しないこと。**
+なお、`index.md` はプレーンなMarkdown（見出し＋リストのみ）で構成されている。サイトは Blume（Astro ベース）でビルドされるため、**HTMLラッパー（`<div>` 等）を追加しないこと**（CommonMark ではHTMLブロック内のMarkdownが描画されない）。
 
 各ソースごとに、対応するセクションの先頭（最新が上）にリンクを追加する:
 
@@ -206,7 +206,7 @@ GitHubリポジトリの `content/catchup/` ディレクトリに同名ファイ
   - 形式: `- [Google Play 最新情報 キャッチアップ: YYYY-MM-DD](./content/catchup/google-play-news-YYYY-MM-DD.md)`
 - **Claude Code** の新規ファイル → `#### Claude Code` セクションの先頭に追加
   - 形式: `- [Claude Code キャッチアップ: YYYY-MM-DD](./content/catchup/claude-code-YYYY-MM-DD.md)`
-  - `#### Claude Code` 見出しは `### AI / 開発ツール` グループ内。このグループは `home-grid__web` の `<div>` 内（`#### Google Search Central` の後ろ）に置く
+  - `#### Claude Code` 見出しは `### AI / 開発ツール` グループ内（`#### Google Search Central` の後ろ）に置く
 
 対応するソースの見出し（`####`）がまだ存在しない場合は、上記の分類に従って対応するグループ見出し（`###`）の直下に新規作成する（グループ見出し自体が無い場合はそれも作成する）。重複チェック（ステップ12）でスキップされたファイルのリンクは追加しない。
 
