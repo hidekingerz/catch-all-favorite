@@ -76,7 +76,9 @@ ls content/catchup/apple-news-*.md 2>/dev/null
 **テンプレート**:
 
 ```markdown
-# Apple Developer News キャッチアップ: YYYY-MM-DD
+---
+title: "Apple Developer News キャッチアップ: YYYY-MM-DD"
+---
 
 > 取得日: YYYY-MM-DD
 > ソース: [Apple Developer News](https://developer.apple.com/jp/news/)

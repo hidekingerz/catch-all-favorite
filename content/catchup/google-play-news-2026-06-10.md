@@ -1,4 +1,6 @@
-# Google Play 最新情報 キャッチアップ: 2026-06-10
+---
+title: "Google Play 最新情報 キャッチアップ: 2026-06-10"
+---
 
 > 取得日: 2026-06-10
 > ソース: [Google Play の最新情報](https://support.google.com/googleplay/android-developer/table/12921780?hl=ja)

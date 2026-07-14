@@ -1,4 +1,6 @@
-# Email Verification Protocol（EVP）技術調査レポート
+---
+title: "Email Verification Protocol（EVP）技術調査レポート"
+---
 
 > 発行日: 2026-07-11
 > テーマ: 確認メール（OTP・マジックリンク）を送らずにメールアドレスの所有をブラウザ経由で暗号学的に証明する新プロトコル「Email Verification Protocol（EVP）」の仕組み・トークン形式・実装方法・セキュリティ/プライバシー設計・現在のステータスの整理

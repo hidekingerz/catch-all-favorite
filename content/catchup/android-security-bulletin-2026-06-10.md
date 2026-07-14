@@ -1,4 +1,6 @@
-# Android Security Bulletin キャッチアップ: 2026-06-10
+---
+title: "Android Security Bulletin キャッチアップ: 2026-06-10"
+---
 
 > 取得日: 2026-06-10
 > ソース: [Android Security Bulletins](https://source.android.com/docs/security/bulletin?hl=ja)

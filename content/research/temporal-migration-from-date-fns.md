@@ -1,4 +1,6 @@
-# date-fns / date-fns-tz から Temporal API への移行可能性レポート
+---
+title: "date-fns / date-fns-tz から Temporal API への移行可能性レポート"
+---
 
 > 調査日: 2026-04-22
 

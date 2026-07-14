@@ -73,7 +73,9 @@ ls content/catchup/android-release-notes-*.md 2>/dev/null
 **テンプレート**:
 
 ```markdown
-# Android リリースノート キャッチアップ: YYYY-MM-DD
+---
+title: "Android リリースノート キャッチアップ: YYYY-MM-DD"
+---
 
 > 取得日: YYYY-MM-DD
 > ソース: [Android Release Notes](https://source.android.com/docs/whatsnew/release-notes?hl=ja)

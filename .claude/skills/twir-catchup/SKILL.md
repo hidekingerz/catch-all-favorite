@@ -74,7 +74,9 @@ This Week in React は Sébastien Lorber が毎週発行しているニュース
 **テンプレート**:
 
 ```markdown
-# This Week in React #NNN キャッチアップ
+---
+title: "This Week in React #NNN キャッチアップ"
+---
 
 > 発行日: YYYY-MM-DD
 > ソース: [号のタイトル](号のURL)

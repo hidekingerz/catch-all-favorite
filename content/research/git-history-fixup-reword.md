@@ -1,4 +1,6 @@
-# Git `history fixup` / `reword` 技術調査レポート
+---
+title: "Git `history fixup` / `reword` 技術調査レポート"
+---
 
 > 発行日: 2026-07-01
 > テーマ: Git 2.54 / 2.55 で新規導入された実験的コマンド `git history`（`reword` / `split` / `fixup`）の仕組み・使い方・従来手法との違い・制約の整理

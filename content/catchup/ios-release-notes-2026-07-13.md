@@ -1,4 +1,6 @@
-# iOS & iPadOS リリースノート キャッチアップ: 2026-07-13
+---
+title: "iOS & iPadOS リリースノート キャッチアップ: 2026-07-13"
+---
 
 > 取得日: 2026-07-13
 > ソース: [iOS & iPadOS Release Notes](https://developer.apple.com/documentation/ios-ipados-release-notes)

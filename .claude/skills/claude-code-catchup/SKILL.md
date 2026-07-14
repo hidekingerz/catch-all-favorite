@@ -102,7 +102,9 @@ ls content/catchup/claude-code-*.md 2>/dev/null
 **テンプレート**:
 
 ```markdown
-# Claude Code キャッチアップ: YYYY-MM-DD
+---
+title: "Claude Code キャッチアップ: YYYY-MM-DD"
+---
 
 > 取得日: YYYY-MM-DD
 > ソース: [changelog](https://github.com/anthropics/claude-code/releases) / [docs](https://code.claude.com/docs) / [blog](https://claude.com/blog)

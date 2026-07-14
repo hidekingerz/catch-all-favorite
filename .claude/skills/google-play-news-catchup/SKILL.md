@@ -78,7 +78,9 @@ ls content/catchup/google-play-news-*.md 2>/dev/null
 **テンプレート**:
 
 ```markdown
-# Google Play 最新情報 キャッチアップ: YYYY-MM-DD
+---
+title: "Google Play 最新情報 キャッチアップ: YYYY-MM-DD"
+---
 
 > 取得日: YYYY-MM-DD
 > ソース: [Google Play の最新情報](https://support.google.com/googleplay/android-developer/table/12921780?hl=ja)

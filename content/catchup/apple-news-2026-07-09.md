@@ -1,4 +1,6 @@
-# Apple Developer News キャッチアップ: 2026-07-09
+---
+title: "Apple Developer News キャッチアップ: 2026-07-09"
+---
 
 > 取得日: 2026-07-09
 > ソース: [Apple Developer News](https://developer.apple.com/jp/news/)

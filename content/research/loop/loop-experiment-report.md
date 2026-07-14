@@ -1,4 +1,6 @@
-# single-agent-loop 実験レポート
+---
+title: "single-agent-loop 実験レポート"
+---
 
 mekuri の Tauri → Deno Desktop 移行を題材にした、自律コーディングループ（catch-all-favorite の
 single-agent-loop）の振り返り。

@@ -1,4 +1,6 @@
-# React Compilerの最適化を効かせるための型・Lint整理
+---
+title: "React Compilerの最適化を効かせるための型・Lint整理"
+---
 
 > 発行日: 2026-05-22
 > テーマ: React Compiler（自動メモ化）が前提とする「純粋性 / Rules of React」を、TypeScriptの型と各Linter（ESLint / Biome / Oxlint）でどこまで担保できるかの整理

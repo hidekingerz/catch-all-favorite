@@ -75,7 +75,9 @@ JSer.info は azu さんが運営する週刊のJavaScript/フロントエンド
 **テンプレート**:
 
 ```markdown
-# JSer.info #NNN キャッチアップ: YYYY-MM-DDのJS
+---
+title: "JSer.info #NNN キャッチアップ: YYYY-MM-DDのJS"
+---
 
 > 投稿日: YYYY-MM-DD
 > ソース: [記事タイトル](記事URL)

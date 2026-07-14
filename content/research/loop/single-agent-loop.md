@@ -1,4 +1,6 @@
-# Single Agent Loop / Loop Engineering 調査レポート
+---
+title: "Single Agent Loop / Loop Engineering 調査レポート"
+---
 
 > 発行日: 2026-06-17
 > テーマ: 「エージェントにプロンプトする」から「エージェントにプロンプトするループを設計する」へ。@sairahul1 のスレッドを起点に、Single Agent Loop / Loop Engineering の思想・構成部品・実践パターン・コストとリスクを整理する。

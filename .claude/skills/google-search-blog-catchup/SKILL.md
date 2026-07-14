@@ -76,7 +76,9 @@ ls content/catchup/google-search-blog-*.md 2>/dev/null
 **テンプレート**:
 
 ```markdown
-# Google 検索セントラル ブログ キャッチアップ: YYYY-MM-DD
+---
+title: "Google 検索セントラル ブログ キャッチアップ: YYYY-MM-DD"
+---
 
 > 取得日: YYYY-MM-DD
 > ソース: [Google Search Central Blog](https://developers.google.com/search/blog?hl=ja)

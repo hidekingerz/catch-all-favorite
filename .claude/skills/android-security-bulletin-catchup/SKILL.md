@@ -73,7 +73,9 @@ ls content/catchup/android-security-bulletin-*.md 2>/dev/null
 **テンプレート**:
 
 ```markdown
-# Android Security Bulletin キャッチアップ: YYYY-MM-DD
+---
+title: "Android Security Bulletin キャッチアップ: YYYY-MM-DD"
+---
 
 > 取得日: YYYY-MM-DD
 > ソース: [Android Security Bulletins](https://source.android.com/docs/security/bulletin?hl=ja)

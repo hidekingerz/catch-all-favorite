@@ -1,4 +1,6 @@
-# Android リリースノート キャッチアップ: 2026-06-21
+---
+title: "Android リリースノート キャッチアップ: 2026-06-21"
+---
 
 > 取得日: 2026-06-21
 > ソース: [Android Release Notes](https://source.android.com/docs/whatsnew/release-notes?hl=ja)

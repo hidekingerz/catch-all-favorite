@@ -1,4 +1,6 @@
-# 20 Loop Design Patterns 調査レポート
+---
+title: "20 Loop Design Patterns 調査レポート"
+---
 
 > 発行日: 2026-07-01
 > テーマ: @sairahul1 の記事「20 Loop Design Patterns Every AI Engineer Should Know」を起点に、AIエージェントの「ループ設計パターン」20種を5カテゴリで整理し、既知の研究・実務との対応と使い分けをまとめる。
@@ -6,7 +8,7 @@
 
 ## TL;DR
 
-- 前回の [Single Agent Loop / Loop Engineering 調査レポート](./single-agent-loop.md) が「ループという働き方（思想・規模・型）」を扱ったのに対し、今回は**ループの中身の設計パターンカタログ**。同じ著者による続編的な位置づけ。
+- 前回の [Single Agent Loop / Loop Engineering 調査レポート](/content/research/loop/single-agent-loop) が「ループという働き方（思想・規模・型）」を扱ったのに対し、今回は**ループの中身の設計パターンカタログ**。同じ著者による続編的な位置づけ。
 - 中心メッセージ: エージェント（worker）を作るだけでは足りない。**`Generate → Evaluate → Learn → Improve` を出力が実際に良くなるまで回す「ループ」こそが品質を作る**。
 - 20パターンは5カテゴリ: **品質改善（5）/ メモリ（5）/ 計画（5）/ 探索（3）/ システム最適化（2）**。全パターンの共通骨格は **`Act → Observe → Evaluate → Adjust`**。
 - 多くは既知の研究に対応する（Reflexion、Self-Refine、LLM-as-a-Judge、Tree of Thoughts、Multi-agent Debate、DSPy/GEPA 系プロンプト最適化）。**カタログとしての網羅性が価値**であり、個々の新規性は高くない。
@@ -60,7 +62,7 @@
 
 **対応する既知の研究**: #6 はそのまま Reflexion (Shinn et al., 2023)。#8 は記事自身が "the most underused pattern in production AI" と呼ぶ。#10 はエージェントメモリの要約・階層化（いわゆる memory consolidation）。
 
-**本リポジトリとの接点**: [single-agent-loop 実験レポート](./loop-experiment-report.md)で「白眉」と評価した `loop/MEMORY.md` の規律（何を/なぜ/落とし穴を毎周記録し、フレッシュ context + 外部記憶で50周超を継続）は、**#7 Memory Update の実装例そのもの**。実験で観測した「MEMORY が肥大化して読み込みが重くなる」問題への処方箋が #10 Memory Compression にあたる。
+**本リポジトリとの接点**: [single-agent-loop 実験レポート](/content/research/loop/loop-experiment-report)で「白眉」と評価した `loop/MEMORY.md` の規律（何を/なぜ/落とし穴を毎周記録し、フレッシュ context + 外部記憶で50周超を継続）は、**#7 Memory Update の実装例そのもの**。実験で観測した「MEMORY が肥大化して読み込みが重くなる」問題への処方箋が #10 Memory Compression にあたる。
 
 ---
 
@@ -132,6 +134,6 @@
 
 ## 関連
 
-- [Single Agent Loop / Loop Engineering 調査レポート](./single-agent-loop.md) — 同著者の前スレッド。ループの思想・規模（single vs fleet）・型（open vs closed）
-- [single-agent-loop 実験レポート](./loop-experiment-report.md) — mekuri 移行での実践。#7 Memory Update / #14 Progress Evaluation の実例と課題
+- [Single Agent Loop / Loop Engineering 調査レポート](/content/research/loop/single-agent-loop) — 同著者の前スレッド。ループの思想・規模（single vs fleet）・型（open vs closed）
+- [single-agent-loop 実験レポート](/content/research/loop/loop-experiment-report) — mekuri 移行での実践。#7 Memory Update / #14 Progress Evaluation の実例と課題
 - ポータブル雛形: [`templates/single-agent-loop/`](https://github.com/hidekingerz/catch-all-favorite/tree/main/templates/single-agent-loop)
