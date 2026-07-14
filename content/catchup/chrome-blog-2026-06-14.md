@@ -1,4 +1,6 @@
-# Chrome for Developers キャッチアップ: 2026-06-14
+---
+title: "Chrome for Developers キャッチアップ: 2026-06-14"
+---
 
 > 取得日: 2026-06-14
 > ソース: [Chrome for Developers Blog](https://developer.chrome.com/blog?hl=ja)

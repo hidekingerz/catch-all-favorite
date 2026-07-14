@@ -91,7 +91,9 @@ ls content/catchup/ios-release-notes-*.md 2>/dev/null
 **テンプレート**:
 
 ```markdown
-# iOS & iPadOS リリースノート キャッチアップ: YYYY-MM-DD
+---
+title: "iOS & iPadOS リリースノート キャッチアップ: YYYY-MM-DD"
+---
 
 > 取得日: YYYY-MM-DD
 > ソース: [iOS & iPadOS Release Notes](https://developer.apple.com/documentation/ios-ipados-release-notes)

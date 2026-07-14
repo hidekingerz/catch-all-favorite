@@ -1,4 +1,6 @@
-# Google 検索セントラル ブログ キャッチアップ: 2026-06-08
+---
+title: "Google 検索セントラル ブログ キャッチアップ: 2026-06-08"
+---
 
 > 取得日: 2026-06-08
 > ソース: [Google Search Central Blog](https://developers.google.com/search/blog)

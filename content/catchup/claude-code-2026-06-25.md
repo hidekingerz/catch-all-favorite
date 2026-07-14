@@ -1,4 +1,6 @@
-# Claude Code キャッチアップ: 2026-06-25
+---
+title: "Claude Code キャッチアップ: 2026-06-25"
+---
 
 > 取得日: 2026-06-25
 > ソース: [changelog](https://github.com/anthropics/claude-code/releases) / [docs](https://code.claude.com/docs) / [blog](https://claude.com/blog)

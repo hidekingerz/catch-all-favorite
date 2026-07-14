@@ -1,4 +1,6 @@
-# TypeScript Branded Types（ブランド型）調査レポート
+---
+title: "TypeScript Branded Types（ブランド型）調査レポート"
+---
 
 > 発行日: 2026-05-23
 > テーマ: TypeScriptの構造的型付けの穴を埋める「Branded Types（ブランド型 / 公称型エミュレーション）」の仕組み・実装手法・実践パターン・落とし穴の整理

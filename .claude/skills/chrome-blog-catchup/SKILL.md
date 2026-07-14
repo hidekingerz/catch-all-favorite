@@ -76,7 +76,9 @@ ls content/catchup/chrome-blog-*.md 2>/dev/null
 **テンプレート**:
 
 ```markdown
-# Chrome for Developers キャッチアップ: YYYY-MM-DD
+---
+title: "Chrome for Developers キャッチアップ: YYYY-MM-DD"
+---
 
 > 取得日: YYYY-MM-DD
 > ソース: [Chrome for Developers Blog](https://developer.chrome.com/blog?hl=ja)

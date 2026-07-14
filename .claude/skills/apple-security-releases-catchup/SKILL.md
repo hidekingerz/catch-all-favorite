@@ -120,7 +120,9 @@ ls content/catchup/apple-security-releases-*.md 2>/dev/null
 **テンプレート**:
 
 ```markdown
-# Apple セキュリティリリース キャッチアップ: YYYY-MM-DD
+---
+title: "Apple セキュリティリリース キャッチアップ: YYYY-MM-DD"
+---
 
 > 取得日: YYYY-MM-DD
 > ソース: [Apple セキュリティリリース](https://support.apple.com/ja-jp/100100)
