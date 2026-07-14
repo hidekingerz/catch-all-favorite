@@ -1,0 +1,43 @@
+{/*
+  サイドバーのスクロール位置をページ遷移をまたいで維持する。
+  静的サイトのため遷移ごとにフルロードされ、スクロールが先頭に戻ってしまう問題への対処。
+  - sessionStorage に保存した位置を復元する
+  - 保存が無い場合（直リンク・検索から到達など）はアクティブ項目を中央に表示する
+  - 復元後にアクティブ項目が見えていなければ中央へスクロールする
+*/}
+<script is:inline>
+  (() => {
+    const KEY = "blume-sidebar-scroll";
+    const nav = document.querySelector("[data-blume-nav-drawer]");
+    if (!nav) return;
+
+    const active = nav.querySelector('[aria-current="page"]');
+    const saved = sessionStorage.getItem(KEY);
+
+    if (saved !== null) {
+      nav.scrollTop = parseInt(saved, 10) || 0;
+      // 検索やページ内リンクなど、クリック以外で遠くへ遷移した場合に備えて
+      // アクティブ項目が可視範囲外なら中央へ
+      if (active) {
+        const navRect = nav.getBoundingClientRect();
+        const itemRect = active.getBoundingClientRect();
+        if (itemRect.top < navRect.top || itemRect.bottom > navRect.bottom) {
+          active.scrollIntoView({ block: "center" });
+        }
+      }
+    } else if (active) {
+      active.scrollIntoView({ block: "center" });
+    }
+
+    const save = () => sessionStorage.setItem(KEY, String(nav.scrollTop));
+    // サイドバー内のリンククリック時と、ページ離脱時に保存する
+    nav.addEventListener(
+      "click",
+      (e) => {
+        if (e.target instanceof Element && e.target.closest("a")) save();
+      },
+      true,
+    );
+    window.addEventListener("pagehide", save);
+  })();
+</script>
