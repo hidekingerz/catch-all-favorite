@@ -4,13 +4,17 @@
   "type": "module",
   "scripts": {
     "dev": "blume dev",
-    "build": "blume build",
-    "preview": "blume preview"
+    "build": "BLUME_OG_FONT=assets/fonts/NotoSansJP.woff2 blume build",
+    "preview": "blume preview",
+    "postinstall": "patch-package"
   },
   "engines": {
     "node": ">=22.12"
   },
   "dependencies": {
     "blume": "^1.0.3"
+  },
+  "devDependencies": {
+    "patch-package": "^8.0.1"
   }
 }
