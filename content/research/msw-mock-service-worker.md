@@ -2,7 +2,7 @@
 title: "MSW (Mock Service Worker) 技術調査レポート"
 ---
 
-> 発行日: 2026-07-17
+> 発行日: 2026-07-17（更新: 2026-07-18 DevToolsでの見え方とデバッグ方法を追記）
 > テーマ: APIモッキングライブラリ **MSW (Mock Service Worker)** の仕組み・設計思想・使い方・他ツールとの比較を、公式ドキュメント（https://mswjs.io/docs/ ）をもとに整理する
 
 ## TL;DR
@@ -14,6 +14,7 @@ title: "MSW (Mock Service Worker) 技術調査レポート"
 - Web標準（WHATWG Fetch API）に準拠しており、ハンドラ内で扱うのは素の `Request` / `Response` インスタンス。**MSW独自のDSLをほぼ覚えなくてよい**。
 - 使い方の基本は3ステップ: ① `handlers.ts` にハンドラを定義 → ② ブラウザは `setupWorker`、Node.jsは `setupServer` で統合 → ③ テストでは `server.use()` でシナリオ別に上書き。
 - ベストプラクティスは「`handlers.js` には**ハッピーパスだけ**を書き、エラー系はテスト内で `server.use()` によるランタイム上書きで表現する」。
+- モックされたリクエストは**DevToolsのNetworkタブに通常どおり表示される**（Sizeカラムが `(ServiceWorker)` になる）。monkey-patch系ツールと違い、ステータス・ヘッダー・ボディをNetworkタブでそのまま検証できる。デバッグはConsoleの `[MSW]` ログ＋ライフサイクルイベントAPI＋公式Runbookの4ステップで行う。
 
 ---
 
@@ -387,6 +388,98 @@ MSWの優位点をまとめると:
 
 ---
 
+## 12. ブラウザDevToolsでの見え方とデバッグ方法
+
+> 補足: MSWに公式のブラウザ拡張機能は存在しない。ここでいう「拡張ツール」はブラウザ標準の**開発者ツール（DevTools）**を指す。Service Worker方式の利点として、**標準のDevToolsだけで本番同様のデバッグができる**ことがMSWの売りである。
+
+### 12-1. NetworkタブでのXHR/fetchの見え方
+
+MSWのブラウザ統合はService Workerの `fetch` イベントで割り込むため、`fetch` だけでなく **XMLHttpRequest（Axios等のXHRベースのクライアント）も同じように捕捉**される。Networkタブでの見え方は次のとおり。
+
+| 観点 | 見え方 |
+| --- | --- |
+| 表示有無 | **通常のリクエストと同様に表示される**。「Fetch/XHR」フィルタにもそのまま載る |
+| Sizeカラム | **`(ServiceWorker)`** と表示される（Chrome/Edge）。これが「モックされた」ことの見分け方。Firefoxでは「転送量」欄に「service worker」と出る |
+| Status | ハンドラで返した値がそのまま表示される（200/400/500など）。`HttpResponse.error()` はネットワークエラー（failed）として表示 |
+| Headers / Response / Preview | `HttpResponse` で定義したヘッダーとボディが**本物のレスポンスとしてそのまま検証できる** |
+| Timing | Service Workerの処理時間（Startup / `respondWith`）が計測される。`delay()` を入れた場合はここに反映される |
+
+ポイントは2つ:
+
+1. **Mirage等のmonkey-patch系はNetworkタブに一切表示されない**（`window.fetch` 自体を差し替えるためリクエストがネットワーク層に到達しない）のに対し、MSWはネットワーク層を通るので**普段どおりのデバッグフローが使える**。これは公式が比較ページで強調する差別化点。
+2. リクエストが**2行に見えるケースがある**が正常である。`passthrough()` や未ハンドルのリクエストを素通しした場合、①ページが発行した元リクエスト（Service Workerが処理）と、②Service Worker自身が実サーバーへ再発行したリクエスト（イニシエータがWorker由来として表示される）の両方が記録されるため。モックで完結した場合は1行のみ。
+
+### 12-2. Consoleタブ: `[MSW]` ログ
+
+`worker.start()` が成功すると `[MSW] Mocking enabled.` が出力される。以降、インターセプトしたリクエストごとに次の形式のログが出る（クリックで詳細グループが展開でき、対応したハンドラも確認できる）。
+
+```
+[MSW] 12:34:56 GET /user (200 OK)
+```
+
+関連する `worker.start()` のオプション:
+
+```javascript
+worker.start({
+  // trueにするとMSWのログを全て抑制（デフォルト: false）
+  quiet: false,
+  // ハンドラ未定義のリクエストの扱い。
+  // 'warn'（デフォルト: 警告して素通し） / 'error'（エラーにする） / 'bypass'（黙って素通し）
+  onUnhandledRequest: 'warn',
+})
+```
+
+**モック漏れの検知には `onUnhandledRequest: 'error'`** が有効。「ハンドラを書いたつもりなのにモックされない」場合、まずConsoleに warning が出ていないかを見るのが最短ルート。URLのtypoやパス述語の不一致はここで発覚する。
+
+### 12-3. Application パネル: Service Worker自体の状態確認
+
+DevToolsの **Application → Service Workers** で `mockServiceWorker.js` の登録状態を確認できる。ここはトラブルシューティングの起点になる。
+
+- **登録確認**: `mockServiceWorker.js` が「activated and is running」になっているか。そもそも登録がなければ `npx msw init <PUBLIC_DIR>` の配置ミスを疑い、ブラウザで `/mockServiceWorker.js` を直接開いて404でないか確認する
+- **Unregister**: 古いWorkerが残って挙動が不可解なときは一度登録解除してリロードする
+- **Update on reload**: Workerスクリプト更新時の反映を確実にする
+- ⚠️ **「Bypass for network」を有効にするとService Workerが素通しになり、MSWのモックが一切効かなくなる**。「昨日まで動いていたモックが突然効かない」ときは、このチェックボックスが入っていないかを真っ先に確認する
+
+### 12-4. ライフサイクルイベントAPIによるトレース
+
+Networkタブ・Consoleより細かくリクエストの流れを追いたい場合は、**ライフサイクルイベントAPI**（`worker.events` / `server.events`）を使う。読み取り専用（挙動には影響しない）の観測用APIで、Node.js側（Networkタブが存在しない環境）でのデバッグ手段としても重要。
+
+```javascript
+worker.events.on('request:start', ({ request, requestId }) => {
+  console.log('Outgoing:', request.method, request.url)
+})
+
+worker.events.on('request:match', ({ request }) => {
+  console.log('matched a handler:', request.method, request.url)
+})
+
+worker.events.on('request:unhandled', ({ request }) => {
+  console.warn('no handler for:', request.method, request.url)
+})
+
+worker.events.on('response:mocked', async ({ request, response }) => {
+  // ボディを読むときは必ずclone()する（本体のストリームを消費しないため）
+  console.log('mocked:', request.url, response.status, await response.clone().text())
+})
+```
+
+主なイベント: `request:start` / `request:match` / `request:unhandled` / `request:end`、`response:mocked` / `response:bypass`（素通しされた本物のレスポンス）、`unhandledException`（リゾルバ内の例外）。
+
+あわせて `worker.listHandlers()` / `server.listHandlers()` で**現在有効なハンドラの一覧**（`server.use()` によるランタイム上書き含む）を確認できる。
+
+### 12-5. 公式Runbookの4ステップ・デバッグ手順
+
+「モックが効かない」ときに公式が推奨する切り分け順序:
+
+1. **セットアップの検証** — `request:start` リスナーで、問題のリクエストがそもそもMSWに到達しているかを確認する。出てこなければ統合（`worker.start()` のawait漏れ、Workerの未登録など）の問題
+2. **ハンドラの検証** — リゾルバ内に `console.log` を置き、ハンドラがマッチしているかを確認する。出なければ**述語（URLパターン）の不一致**が原因
+3. **レスポンスの検証** — ダミーの固定レスポンスに差し替えて、レスポンス構築側の問題かを切り分ける
+4. **アプリケーションの検証** — ここまで正常なら、アプリ側のリクエスト/レスポンス処理ロジックを疑う
+
+よくあるハマりどころ（Runbookより）: SWR等の**リクエストライブラリのキャッシュがテスト間で残って古いモックが見える**、非同期UIの検証を `findBy*` ではなくタイムアウトで待っている、`jest.useFakeTimers` が `queueMicrotask` までモックして応答が返らない、など。
+
+---
+
 ## 参考リンク
 
 - 公式ドキュメント: https://mswjs.io/docs/
@@ -399,4 +492,7 @@ MSWの優位点をまとめると:
 - 他ツールとの比較: https://mswjs.io/docs/comparison
 - ハンドラ構成のベストプラクティス: https://mswjs.io/docs/best-practices/structuring-handlers
 - `setupServer` APIリファレンス: https://mswjs.io/docs/api/setup-server
+- `worker.start()` APIリファレンス: https://mswjs.io/docs/api/setup-worker/start
+- デバッグRunbook: https://mswjs.io/docs/runbook
+- ライフサイクルイベントAPI: https://mswjs.io/docs/api/life-cycle-events
 - データモデリング用パッケージ: https://github.com/mswjs/data
