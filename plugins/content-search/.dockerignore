@@ -1,0 +1,4 @@
+server/node_modules
+server/dist
+server/test
+**/*.test.ts
