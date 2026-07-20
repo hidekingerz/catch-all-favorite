@@ -1,0 +1,13 @@
+{
+  "content-search": {
+    "command": "docker",
+    "args": [
+      "run",
+      "-i",
+      "--rm",
+      "-v",
+      "${CATCH_ALL_FAVORITE_DIR}/content:/data:ro",
+      "ghcr.io/hidekingerz/catch-all-favorite-mcp:latest"
+    ]
+  }
+}

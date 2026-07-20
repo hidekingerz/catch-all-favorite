@@ -1,0 +1,8 @@
+{
+  "name": "content-search",
+  "version": "0.1.0",
+  "description": "catch-all-favorite の蓄積コンテンツ（catchup/security/research）を検索する MCP プラグイン",
+  "author": {
+    "name": "hidekingerz"
+  }
+}
