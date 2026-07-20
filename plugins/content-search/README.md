@@ -55,3 +55,4 @@ printf '%s\n' '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocol
 - **MCP 接続自体が失敗する**: Docker が起動しているか確認する（`docker info`）
 - **「CATCH_ALL_FAVORITE_DIR が設定されていないかマウントに失敗しています」**: 環境変数が Claude Code 起動シェルで export されているか、パスが正しいかを確認する
 - **検索結果が古い**: ローカル clone を `git pull` する（コンテナはローカルの content/ をそのまま読む）
+- **docker pull が denied になる**: 初回公開直後の GHCR パッケージは private がデフォルト。リポジトリオーナーが GitHub の Packages 設定で catch-all-favorite-mcp を public に変更する（または `docker login ghcr.io` する）
