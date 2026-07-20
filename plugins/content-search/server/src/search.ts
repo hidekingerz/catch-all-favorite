@@ -41,6 +41,7 @@ export function searchDocuments(
   limit = 10,
 ): SearchResult[] {
   const q = query.toLowerCase();
+  if (q.trim() === "") return [];
   const results: SearchResult[] = [];
   for (const doc of filterDocuments(docs, filters)) {
     const lower = doc.content.toLowerCase();

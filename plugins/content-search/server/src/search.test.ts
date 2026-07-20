@@ -37,6 +37,26 @@ describe("searchDocuments", () => {
   it("マッチなしは空配列を返す", () => {
     expect(searchDocuments(docs, "存在しない語句xyz")).toEqual([]);
   });
+
+  it("空文字・空白のみのクエリは空配列を返す（ハングしない）", () => {
+    expect(searchDocuments(docs, "")).toEqual([]);
+    expect(searchDocuments(docs, "   ")).toEqual([]);
+  });
+
+  it("抜粋は 1 文書あたり最大 3 件に制限される", () => {
+    const manyMatches = {
+      meta: {
+        path: "research/many.md",
+        category: "research" as const,
+        source: "research",
+        date: null,
+        title: "many",
+      },
+      content: Array.from({ length: 10 }, (_, i) => `hit ${i}`).join("\n\n\n\n\n"),
+    };
+    const results = searchDocuments([manyMatches], "hit");
+    expect(results[0].excerpts).toHaveLength(3);
+  });
 });
 
 describe("filterDocuments", () => {
