@@ -36,10 +36,8 @@ jobs:
         run: npm ci
 
       - name: Build with Blume
+        # OG画像の日本語フォントは blume.config.ts の seo.og.fonts で指定（Google Fonts から取得）
         run: npx blume build --base "${{ steps.pages.outputs.base_path }}"
-        env:
-          # OG画像の日本語描画用フォント（patches/blume+*.patch で読み込みを追加している）
-          BLUME_OG_FONT: assets/fonts/NotoSansJP.woff2
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
