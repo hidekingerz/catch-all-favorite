@@ -4,7 +4,42 @@
 このリポジトリの catchup スキルの取得不具合を 1 件直し、PR にするのが今回の仕事です。
 まず同ディレクトリの `VISION.md`（完了の定義）と `RULES.md`（安全境界）を読み、厳守してください。
 
-**1 発火 = 1 issue = 1 PR。** 以下の 5 段階を順に実行し、最後に `LOOP_DONE` を出力して終了します。
+**1 発火 = 1 issue = 1 PR。** 以下の段階を順に実行し、最後に `LOOP_DONE` を出力して終了します。
+
+## INTEGRITY — index 整合性チェック（DISCOVER の前に毎回実行）
+
+`content/catchup/*.md` が `index.md` に漏れなくリンクされているかを確認する。
+定期実行が「コンテンツファイルだけ commit して index.md 更新を漏らす」事故（実例:
+`jser-info-2026-07-17` / `twir-2026-07-15` が index 未掲載のままサイトから見えなかった）を
+翌日に自動検知・修復するためのステップ。
+
+1. main を最新化してからスキャンする:
+   ```bash
+   git checkout main && git pull --ff-only
+   for f in $(ls content/catchup | sed 's/\.md$//'); do
+     grep -q "catchup/$f)" index.md || echo "MISSING: $f"
+   done
+   ```
+2. **MISSING が 0 件**なら整合。そのまま DISCOVER へ進む。
+3. **MISSING が 1 件以上**なら、この不整合を本発火の対象として扱う（DISCOVER はスキップ）:
+   1. 既存の open な整合性 issue（label: `catchup-maintenance`、タイトルが `index 整合性:` で始まる）を確認する。
+      無ければ起票する（重複起票しない）:
+      ```bash
+      gh issue create --label catchup-maintenance \
+        --title "index 整合性: index.md 未掲載ファイルあり（<N>件）" \
+        --body "スキャン結果:<改行><MISSING 一覧>"
+      ```
+      既存 issue がある場合は DISCOVER と同じ除外規則（`loop-needs-human`・紐付きオープン PR・24h 未満の `loop-wip`）を適用し、除外に該当したら DISCOVER へ進む。
+   2. `loop-wip` を付与し、ブランチ `fix/catchup-maintenance-<issue#>` を切る。
+   3. **`index.md` に不足リンク行を追加する（変更はリンク行の追加のみ）**:
+      - 各ファイル先頭の H1 見出しをリンクテキストに使う（既存エントリの表記と形式を揃える）
+      - リンク先は拡張子なしの `/content/catchup/<basename>` 形式
+      - 該当ソースのセクション内に日付降順で挿入する
+      - `content/` 配下・index.md の既存行は一切変更しない（RULES.md の INTEGRITY 例外の範囲厳守）
+   4. VERIFY: 手順 1 のスキャンを再実行し **MISSING 0 件なら PASS**。
+   5. 以降（コミット・PR 作成・`loop-wip` 解除・`LOOP_DONE`）は ITERATE の PASS フローと同じ。
+      コミット/PR は `fix(index): index.md 未掲載リンクを追加（catchup-maintenance #<issue#>）` とし、
+      PR 本文の VERIFY エビデンスにはスキャンの前後出力を貼る。
 
 ## DISCOVER — 対象を 1 件選ぶ
 

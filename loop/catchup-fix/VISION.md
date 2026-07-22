@@ -4,6 +4,8 @@
 
 定期キャッチアップが起票した `catchup-maintenance` issue を修正し、
 **該当ソースから期待データを再取得できる状態**に戻す。
+あわせて `content/catchup` と `index.md` の**整合性を毎発火で検査**し、
+取得済みなのにサイトから見えないコンテンツ（index 未掲載）を自動修復する。
 
 ## 完了の定義（DoD）
 
@@ -11,6 +13,8 @@
 
 - **修正成功**: 対象スキルを直し、修正後の手順で実ソースを再取得して
   期待データが取れること（VERIFY=PASS）を確認し、`Closes #<issue>` の PR を作成した。
+- **整合性修復**: INTEGRITY チェックで index 未掲載を検知し、`index.md` に不足リンクを
+  追加（追加のみ）して再スキャンで不足 0 件（VERIFY=PASS）を確認し、PR を作成した。
 - **正直なエスカレーション**: 環境起因等で検証不能（VERIFY=INCONCLUSIVE）、
   または 3 回試行しても直らない場合、PR は作らず `loop-needs-human` を付けて所見をコメントした。
 - **対象なし**: 未処理の open `catchup-maintenance` issue が無かった。
@@ -19,7 +23,8 @@
 
 - PR のマージ（人間ゲートに委ねる）。
 - 1 発火で複数 issue を処理すること。
-- `content/`・`index.md` などレポート成果物の編集。
+- `content/` などレポート成果物本体の編集（`index.md` は INTEGRITY 修復での
+  リンク行追加のみ例外。詳細は `RULES.md`）。
 - VERIFY を省いて「直っただろう」で PR を出すこと（green の嘘の禁止）。
 
 ## 拠り所

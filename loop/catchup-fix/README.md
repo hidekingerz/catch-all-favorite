@@ -9,7 +9,7 @@
 |---|---|
 | `VISION.md` | 完了の定義・非目標 |
 | `RULES.md` | 安全境界（許可/禁止・規律・green の嘘防止）|
-| `LOOP_PROMPT.md` | 5 段階の本体。routine がこれを読んで実行する |
+| `LOOP_PROMPT.md` | INTEGRITY（index 整合性チェック）+ 5 段階の本体。routine がこれを読んで実行する |
 | `README.md` | 本ドキュメント（運用手順・routine 設定）|
 
 `run.sh` は無い。実行者は Claude routine（cloud agent）自身（アプローチ A）。
