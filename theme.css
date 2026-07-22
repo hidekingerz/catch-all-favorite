@@ -1,0 +1,36 @@
+/*
+ * サイドバー項目の見きれ対策。
+ * レポートのタイトルは日本語で長く、既定のサイドバー幅(デスクトップ 17.5rem /
+ * ドロワー 16rem)+ 1行省略(truncate)ではほぼ全項目が判別不能になるため、
+ * 列幅を広げたうえでラベルを折り返して全文表示する。
+ */
+
+/* デスクトップ: ドキュメントグリッドのサイドバー列を 17.5rem -> 21rem に拡張 */
+@media (min-width: 1024px) {
+  [data-blume-doc-grid] {
+    grid-template-columns: 21rem minmax(0, 1fr);
+  }
+}
+
+/* xl 以上は右側の「On this page」列(17.5rem)を維持したまま拡張 */
+@media (min-width: 1280px) {
+  [data-blume-doc-grid] {
+    grid-template-columns: 21rem minmax(0, 1fr) 17.5rem;
+  }
+}
+
+/* モバイルドロワー: 16rem -> 20rem(画面の 85vw を上限に) */
+@media (max-width: 1023.98px) {
+  [data-blume-nav-drawer] {
+    width: 20rem;
+    max-width: 85vw;
+  }
+}
+
+/* 項目ラベルを1行省略せず折り返す */
+[data-blume-nav-drawer] .truncate {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  overflow-wrap: anywhere;
+}
