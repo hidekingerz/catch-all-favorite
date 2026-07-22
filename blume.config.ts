@@ -107,6 +107,12 @@ const config: BlumeConfig = {
       items: ["/", buildCatchupGroup(), buildResearchGroup(), buildSecurityGroup()],
     },
   },
+  seo: {
+    og: {
+      // OG画像の日本語描画用フォント（ビルド時に Google Fonts から取得）
+      fonts: ["Noto Sans JP"],
+    },
+  },
   github: {
     owner: "hidekingerz",
     repo: "catch-all-favorite",
