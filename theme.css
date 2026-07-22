@@ -27,6 +27,25 @@
 }
 
 /*
+ * サイドバー: 選択中項目をアクセントで強調（デザイン案 2c のモックに合わせる）。
+ * Blume 標準は muted 背景 + foreground 文字だが、モックはアンバー薄敷き + アンバー文字。
+ * Tailwind の aria-[current=page]:* ユーティリティ（詳細度 0,2,0）に勝つため
+ * 祖先の data 属性を含めて詳細度 0,2,1 にしている。
+ */
+[data-blume-doc-grid] aside a[aria-current="page"],
+[data-blume-nav-drawer] a[aria-current="page"] {
+  background: rgba(194, 104, 12, 0.12);
+  color: #c2680c;
+  font-weight: 600;
+}
+
+:root[data-theme="dark"] [data-blume-doc-grid] aside a[aria-current="page"],
+:root[data-theme="dark"] [data-blume-nav-drawer] a[aria-current="page"] {
+  background: rgba(224, 138, 46, 0.16);
+  color: #e08a2e;
+}
+
+/*
  * サイドバー項目の見きれ対策。
  * レポートのタイトルは日本語で長く、既定のサイドバー幅(デスクトップ 17.5rem /
  * ドロワー 16rem)+ 1行省略(truncate)ではほぼ全項目が判別不能になるため、
