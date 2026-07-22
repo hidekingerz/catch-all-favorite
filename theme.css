@@ -1,3 +1,31 @@
+/* =========================================================================
+ * テーマトークン（2c: Amber Contrast / 温かみ × モダン）
+ * blume.config.ts の theme.fonts / accent / radius と対になる色定義。
+ * theme.css はカスケードの最終レイヤーなので、ここでの値が最優先される。
+ * ========================================================================= */
+
+/* ライト: 白地寄り・本文を濃く・下地はほんのり暖色 */
+:root {
+  --blume-background: #fffdf9;
+  --blume-foreground: #1f1b16;
+  --blume-muted: #f3eee4;
+  --blume-muted-foreground: #6d6458;
+  --blume-border: #ece4d6;
+  --blume-code-background: #f5efe4;
+  --blume-accent-foreground: #ffffff;
+}
+
+/* ダーク: 温度感を揃えた暖色チャコール（mode: system で自動切替） */
+:root[data-theme="dark"] {
+  --blume-background: #1c1a17;
+  --blume-foreground: #ece7df;
+  --blume-muted: #26231f;
+  --blume-muted-foreground: #a39a8d;
+  --blume-border: #34302a;
+  --blume-code-background: #211e1a;
+  --blume-accent-foreground: #1c1a17;
+}
+
 /*
  * サイドバー項目の見きれ対策。
  * レポートのタイトルは日本語で長く、既定のサイドバー幅(デスクトップ 17.5rem /
