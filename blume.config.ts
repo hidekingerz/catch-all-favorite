@@ -96,6 +96,18 @@ const buildSecurityGroup = () => ({
 const config: BlumeConfig = {
   title: "catch-all-favorite",
   description: "毎週の情報のキャッチアップ情報を管理する",
+  // テーマ（2c: Amber Contrast / 温かみ × モダン）。
+  // 色の実値は theme.css の --blume-* トークンで上書きしている。
+  theme: {
+    accent: { light: "#c2680c", dark: "#e08a2e" },
+    radius: "md",
+    mode: "system",
+    fonts: {
+      display: "space-grotesk",
+      body: "geist",
+      mono: "geist-mono",
+    },
+  },
   content: {
     root: ".",
     include: ["index.md", "content/**/*.{md,mdx}"],
