@@ -21,7 +21,9 @@ Apple Developer News（https://developer.apple.com/jp/news/）の新着記事を
 
 **ニュース一覧ページ `https://developer.apple.com/jp/news/` から記事一覧を取得してはいけない。** このページは記事一覧をクライアントサイド（JavaScript）でレンダリングするため、`WebFetch` が取得する静的HTMLには記事を十分に取得できないことがある。一覧ページから記事を拾おうとすると時間を浪費する。
 
-**記事一覧は必ずRSSフィードから取得する:**
+**記事一覧の取得は以下の順で試みる:**
+
+### Step 1a: RSSフィード（一次取得）
 
 ```
 https://developer.apple.com/news/rss/news.rss
@@ -32,18 +34,34 @@ https://developer.apple.com/news/rss/news.rss
 - フィード内のリンクは英語版（`https://developer.apple.com/news/?id=XXXX`）で返ってくる。各記事は **パスに `/jp/` を挿入**（`https://developer.apple.com/jp/news/?id=XXXX`）すると日本語版にアクセスできる。**記事に記録するURL・本文を取得するURLは `/jp/news/` の日本語版に統一する。**
 - 推測で別のフィードURLを作らない（`/jp/news/rss/...` などは存在しない場合がある）。フィードURLは英語の `https://developer.apple.com/news/rss/news.rss` を使い、記事URLだけ `/jp/` に差し替える。
 
+### Step 1b: WebSearch フォールバック（RSSが非200の場合のみ）
+
+RSSフィードが HTTP 500 など非200を返した場合は、`WebSearch` で記事 URL を収集する。
+
+```
+WebSearch: site:developer.apple.com/news <YYYY>
+```
+
+- `<YYYY>` は実行年（例: 2026）。
+- 検索結果から `https://developer.apple.com/news/?id=XXXX` 形式の URL を抽出する（`?id=` を持たない `/news/releases/`・`/news/upcoming-requirements/` 等のインデックスページは除外）。
+- 各記事の公開日は Step 3 で `/jp/news/?id=XXXX` をフェッチした際に記事ページから取得する（検索結果スニペットの日付は参考程度とし、記事本文の日付を正とする）。
+- WebSearch が記事URLを 0 件返した場合、および取得した記事がすべて既掲載だった場合は「新着なし」として終了する（推測で内容を作らない）。
+
 ## 絶対に守るべきルール
 
 共通ルール（`../_shared/catchup-common.md`）に加えて、このスキル固有のルール:
 
-1. **一覧ページ（`/jp/news/`）を記事取得に使わない。** 必ずRSSフィード（`https://developer.apple.com/news/rss/news.rss`）を使う
+1. **一覧ページ（`/jp/news/`）を記事取得に使わない。** RSSフィード（Step 1a）または WebSearch フォールバック（Step 1b）を使う
 2. **記録するURLはパスに `/jp/` を挿入した日本語版（`/jp/news/?id=XXXX`）に統一する**
+3. **WebSearch フォールバックは RSS が非200の場合のみ使う**（RSSが正常なら常に RSS を優先）
 
 ## 実行手順
 
-### 1. RSSフィードの取得
+### 1. 記事一覧の取得
 
-`https://developer.apple.com/news/rss/news.rss` を取得し、掲載されている記事の **タイトル・URL・公開日（pubDate）・説明** を一覧として抽出する。
+まず `https://developer.apple.com/news/rss/news.rss` を取得し、掲載されている記事の **タイトル・URL・公開日（pubDate）・説明** を一覧として抽出する（Step 1a）。
+
+RSSフィードが HTTP 500 などの非200ステータスを返した場合は、Step 1b（WebSearch フォールバック）に切り替える。WebSearch で `site:developer.apple.com/news <実行年>` を実行し、`?id=XXXX` を含む記事 URL を収集する。インデックスページ（`/news/releases/` 等）は除外する。詳細は「最重要: 記事一覧の取得方法」を参照。
 
 ### 2. 重複チェック（新着記事の特定）
 
@@ -114,5 +132,6 @@ title: "Apple Developer News キャッチアップ: YYYY-MM-DD"
 | `/jp/news/` 一覧ページを取得して記事が取れない | 一覧ページはJSレンダリング。RSSフィード `news/rss/news.rss` を使う |
 | フィードURLを推測して404 | `https://developer.apple.com/news/rss/news.rss` を使う。推測しない |
 | 記事URLが英語版（`/news/?id=`）のまま | パスに `/jp/` を挿入して `/jp/news/?id=` に統一する |
+| RSSフィードが HTTP 500 を返す | Apple 側 CDN 障害の可能性。WebSearch フォールバック（Step 1b）に切り替える。WebSearch で記事URLを収集し、各記事を `/jp/news/?id=XXXX` でフェッチして通常通り処理する |
 
 共通の失敗（記憶での補完・重複・空ファイル等）は `../_shared/catchup-common.md` を参照。
