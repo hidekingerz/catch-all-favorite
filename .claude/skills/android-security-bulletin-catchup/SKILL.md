@@ -67,7 +67,7 @@ ls content/catchup/android-security-bulletin/*.md 2>/dev/null
 
 新着速報を以下のフォーマットで **1つのファイル** にまとめる。
 
-**ファイル名**: `YYYY-MM-DD.md`（YYYY-MM-DD は実行日）
+**ファイル名**: `YYYYMMDD.md`（YYYYMMDD は実行日）
 **保存先**: リポジトリの `content/catchup/android-security-bulletin/`
 
 **テンプレート**:

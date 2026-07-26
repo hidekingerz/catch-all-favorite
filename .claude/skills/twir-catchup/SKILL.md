@@ -68,7 +68,7 @@ This Week in React は Sébastien Lorber が毎週発行しているニュース
 
 取得した情報を以下のフォーマットでMarkdownファイルにまとめる。
 
-**ファイル名**: `YYYY-MM-DD.md`（発行日ベース）
+**ファイル名**: `YYYYMMDD.md`（発行日ベース）
 **保存先**: リポジトリの `content/catchup/twir/`
 
 **テンプレート**:

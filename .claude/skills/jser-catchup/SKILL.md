@@ -69,7 +69,7 @@ JSer.info は azu さんが運営する週刊のJavaScript/フロントエンド
 
 取得した情報を以下のフォーマットでMarkdownファイルにまとめる。
 
-**ファイル名**: `YYYY-MM-DD.md`（投稿日ベース）
+**ファイル名**: `YYYYMMDD.md`（投稿日ベース）
 **保存先**: リポジトリの `content/catchup/jser-info/`
 
 **テンプレート**:

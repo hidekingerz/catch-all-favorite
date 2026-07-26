@@ -9,7 +9,7 @@
 各スキルはローカルClaude Code（CLI）・デスクトップ版Claudeアプリのコードモード・リモート実行環境（Claude Code on the web / routine）のいずれでも動作する。利用可能なツールセットが環境ごとに異なるため、Web取得は「優先するツール → フォールバック」を順に試すこと。
 
 - **Web取得**: ブラウザツール（Chrome / Brave 等のMCPサーバ）が利用可能ならそれを最優先（ローカルマシンで動くためサーバ側のネットワーク制限を受けない）。利用不可な場合は `WebFetch` を使う。SKILL.md に追加のフォールバック（Bash + `curl` 等）が定義されている場合はそれに従う
-- **ファイル保存**: リポジトリの `content/catchup/<ソース名>/` ディレクトリ配下に、ファイル名 `YYYY-MM-DD.md` で保存する（ソース名は各 SKILL.md に記載。デスクトップ版コードモードではワークスペースフォルダがリポジトリのルートに対応する）
+- **ファイル保存**: リポジトリの `content/catchup/<ソース名>/` ディレクトリ配下に、ファイル名 `YYYYMMDD.md` で保存する（ソース名は各 SKILL.md に記載。デスクトップ版コードモードではワークスペースフォルダがリポジトリのルートに対応する）
 
 ## 絶対に守るべき共通ルール
 
@@ -33,7 +33,7 @@
 
 ## ファイルの保存とpush
 
-完成したMarkdownファイルは `content/catchup/<ソース名>/YYYY-MM-DD.md` に保存する。**各スキル単体ではpushを行わない。** push・`index.md` 更新・PR作成・auto-merge まで自動化する場合は `frontend-catchup-and-push` スキルを使う。
+完成したMarkdownファイルは `content/catchup/<ソース名>/YYYYMMDD.md` に保存する。**各スキル単体ではpushを行わない。** push・`index.md` 更新・PR作成・auto-merge まで自動化する場合は `frontend-catchup-and-push` スキルを使う。
 
 ## 定期実行
 
