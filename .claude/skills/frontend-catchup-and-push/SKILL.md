@@ -52,7 +52,7 @@ jser.info・This Week in React・Chrome for Developers ブログ・Google 検索
 キャッチアップを開始する前に、**前回のキャッチアップPRが未マージのまま残っていないか**を確認する。
 
 - GitHub MCP ツール（`mcp__github__list_pull_requests`、owner: `hidekingerz`, repo: `catch-all-favorite`, state: `open`）でオープンPRの一覧を取得し、タイトルが `chore: add frontend catchup` で始まるPRを探す。利用不可な場合は Bash で `gh pr list` を試みる
-- **該当PRが残っている場合**: そのPRに含まれる `content/catchup/*.md` はまだ `main`（＝ローカルクローン）に存在しないため、各スキルの重複チェックをすり抜けて**同じ記事を別日付のファイルとして重複作成してしまう**。これを防ぐため、そのPRのブランチの差分ファイルを取得し（`git fetch origin <headブランチ>` して `git diff --name-only main...FETCH_HEAD`、または `mcp__github__get_file_contents` でPRブランチ側の `content/catchup/` を確認）、そこに含まれる記事・バージョン・URLも各ステップの重複チェックで「既存」として扱う
+- **該当PRが残っている場合**: そのPRに含まれる `content/catchup/**/*.md` はまだ `main`（＝ローカルクローン）に存在しないため、各スキルの重複チェックをすり抜けて**同じ記事を別日付のファイルとして重複作成してしまう**。これを防ぐため、そのPRのブランチの差分ファイルを取得し（`git fetch origin <headブランチ>` して `git diff --name-only main...FETCH_HEAD`、または `mcp__github__get_file_contents` でPRブランチ側の `content/catchup/` を確認）、そこに含まれる記事・バージョン・URLも各ステップの重複チェックで「既存」として扱う
 - 前回PRが未マージのまま残っている場合は、その理由（`content-guard` 失敗・auto-merge 前提未整備・コンフリクト等）をステップ18の結果報告に含める。特に `index.md` のコンフリクトで auto-merge が止まっている場合、今回のPRも同様に止まる可能性が高いため必ず報告する
 - 該当PRが無ければそのままステップ1へ進む
 

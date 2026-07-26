@@ -1,15 +1,18 @@
-import { readdirSync } from "node:fs";
+import { existsSync, readdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import type { BlumeConfig } from "blume";
 
 const root = dirname(fileURLToPath(import.meta.url));
 
-/** ディレクトリ内の .md/.mdx をスラッグ（拡張子なし）で返す */
-const slugsIn = (dir: string): string[] =>
-  readdirSync(join(root, dir))
+/** ディレクトリ内の .md/.mdx をスラッグ（拡張子なし）で返す（ディレクトリ未作成なら空） */
+const slugsIn = (dir: string): string[] => {
+  const abs = join(root, dir);
+  if (!existsSync(abs)) return [];
+  return readdirSync(abs)
     .filter((f) => /\.mdx?$/.test(f))
     .map((f) => f.replace(/\.mdx?$/, ""));
+};
 
 /** スラッグ列をルートに変換（新しい日付が上にくるよう降順） */
 const routes = (dir: string, slugs: string[]): string[] =>
@@ -65,7 +68,8 @@ const buildCatchupGroup = () => {
   // サイドバーから消えないようにグループ末尾にぶら下げる
   const unknownDirs = readdirSync(join(root, "content/catchup"), { withFileTypes: true })
     .filter((e) => e.isDirectory() && !known.has(e.name))
-    .map((e) => e.name);
+    .map((e) => e.name)
+    .sort();
   return {
     label: "キャッチアップ（定期）",
     items: [
