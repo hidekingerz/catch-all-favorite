@@ -8,15 +8,15 @@
 
 ## INTEGRITY — index 整合性チェック（DISCOVER の前に毎回実行）
 
-`content/catchup/*.md` が `index.md` に漏れなくリンクされているかを確認する。
+`content/catchup/**/*.md` が `index.md` に漏れなくリンクされているかを確認する。
 定期実行が「コンテンツファイルだけ commit して index.md 更新を漏らす」事故（実例:
-`jser-info-2026-07-17` / `twir-2026-07-15` が index 未掲載のままサイトから見えなかった）を
+`jser-info/2026-07-17` / `twir/2026-07-15` が index 未掲載のままサイトから見えなかった）を
 翌日に自動検知・修復するためのステップ。
 
 1. main を最新化してからスキャンする:
    ```bash
    git checkout main && git pull --ff-only
-   for f in $(ls content/catchup | sed 's/\.md$//'); do
+   for f in $(find content/catchup -mindepth 2 -name '*.md' | sed 's#^content/catchup/##; s/\.md$//'); do
      grep -q "catchup/$f)" index.md || echo "MISSING: $f"
    done
    ```
@@ -33,7 +33,7 @@
    2. `loop-wip` を付与し、ブランチ `fix/catchup-maintenance-<issue#>` を切る。
    3. **`index.md` に不足リンク行を追加する（変更はリンク行の追加のみ）**:
       - 各ファイル先頭の H1 見出しをリンクテキストに使う（既存エントリの表記と形式を揃える）
-      - リンク先は拡張子なしの `/content/catchup/<basename>` 形式
+      - リンク先は拡張子なしの `/content/catchup/<source>/<date>` 形式
       - 該当ソースのセクション内に日付降順で挿入する
       - `content/` 配下・index.md の既存行は一切変更しない（RULES.md の INTEGRITY 例外の範囲厳守）
    4. VERIFY: 手順 1 のスキャンを再実行し **MISSING 0 件なら PASS**。
