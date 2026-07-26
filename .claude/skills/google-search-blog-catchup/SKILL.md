@@ -47,10 +47,10 @@ https://developers.google.com/search/blog/feed.xml
 
 ### 2. 重複チェック（新着記事の特定）
 
-`content/catchup/` ディレクトリ内の既存の `google-search-blog-*.md` ファイルを確認し、すでに記録済みの記事URLを把握する。
+`content/catchup/google-search-blog/` ディレクトリ内の既存ファイルを確認し、すでに記録済みの記事URLを把握する。
 
 ```bash
-ls content/catchup/google-search-blog-*.md 2>/dev/null
+ls content/catchup/google-search-blog/*.md 2>/dev/null
 ```
 
 フィードの記事のうち、既存ファイルにまだ含まれていない記事（URLが未掲載のもの）を「新着記事」とする。
@@ -70,8 +70,8 @@ ls content/catchup/google-search-blog-*.md 2>/dev/null
 
 新着記事を以下のフォーマットで **1つのファイル** にまとめる。
 
-**ファイル名**: `google-search-blog-YYYY-MM-DD.md`（YYYY-MM-DD は実行日）
-**保存先**: リポジトリの `content/catchup/` ディレクトリ
+**ファイル名**: `YYYY-MM-DD.md`（YYYY-MM-DD は実行日）
+**保存先**: リポジトリの `content/catchup/google-search-blog/`
 
 **テンプレート**:
 
@@ -101,11 +101,9 @@ title: "Google 検索セントラル ブログ キャッチアップ: YYYY-MM-DD
 
 新着記事をすべて漏れなく含める。記事タイトルは元記事のものをそのまま使う（英語タイトルのままでよい）。
 
-保存・push方針は共通事項の通り（このスキル単体ではpushしない）。
-
 ### 5. 定期実行について
 
-共通事項の通り（`frontend-catchup-and-push` 経由の routine で自動実行）。Google 検索セントラル ブログは不定期更新（概ね週数本〜月数本）なので、週1回のスケジュールが適切。
+Google 検索セントラル ブログは不定期更新（概ね週数本〜月数本）なので、週1回のスケジュールが適切。
 
 ## よくある失敗と対処
 
