@@ -125,6 +125,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 ## 技術調査レポート
 
+- [UAFX Dream '65 / Enigmatic '82 を Loupedeck CT から MIDI コントロールする構成 調査レポート](/content/research/uafx-midi-loupedeck-ct)
 - [Git `history fixup` / `reword` 技術調査レポート](/content/research/git-history-fixup-reword)
 - [SPAのfetch APIを zod・OpenAPI で型安全にする調査レポート](/content/research/spa-fetch-zod-openapi-typing)
 - [TypeScript Branded Types（ブランド型）調査レポート](/content/research/typescript-branded-types)
