@@ -92,10 +92,10 @@ curl の終了コードが 0 でない、またはファイルサイズが 100KB
 
 ### 2. 重複チェック（新着リリースの特定）
 
-`content/catchup/` ディレクトリ内の既存の `apple-security-releases-*.md` ファイルを確認し、すでに記録済みのリリース（名称＋公開日／詳細ページURL）を把握する。
+`content/catchup/apple-security-releases/` ディレクトリ内の既存ファイルを確認し、すでに記録済みのリリース（名称＋公開日／詳細ページURL）を把握する。
 
 ```bash
-ls content/catchup/apple-security-releases-*.md 2>/dev/null
+ls content/catchup/apple-security-releases/*.md 2>/dev/null
 ```
 
 一覧のリリースのうち、既存ファイルにまだ含まれていないもの（詳細ページURL、なければ名称＋公開日が未掲載のもの）を「新着」とする。
@@ -114,8 +114,8 @@ ls content/catchup/apple-security-releases-*.md 2>/dev/null
 
 新着リリースを以下のフォーマットで **1つのファイル** にまとめる。
 
-**ファイル名**: `apple-security-releases-YYYY-MM-DD.md`（YYYY-MM-DD は実行日）
-**保存先**: リポジトリの `content/catchup/` ディレクトリ
+**ファイル名**: `YYYY-MM-DD.md`（YYYY-MM-DD は実行日）
+**保存先**: リポジトリの `content/catchup/apple-security-releases/`
 
 **テンプレート**:
 
@@ -146,11 +146,9 @@ title: "Apple セキュリティリリース キャッチアップ: YYYY-MM-DD"
 
 新着リリースをすべて漏れなく含める。名称はページのものをそのまま使う。
 
-保存・push方針は共通事項の通り（このスキル単体ではpushしない）。
-
 ### 5. 定期実行について
 
-共通事項の通り（`frontend-catchup-and-push` 経由の routine で自動実行）。Apple セキュリティリリースは不定期（OS更新時に集中）なので、週1回のスケジュールが適切。
+Apple セキュリティリリースは不定期（OS更新時に集中）なので、週1回のスケジュールが適切。
 
 ## よくある失敗と対処
 

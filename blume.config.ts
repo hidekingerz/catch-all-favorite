@@ -1,15 +1,18 @@
-import { readdirSync } from "node:fs";
+import { existsSync, readdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import type { BlumeConfig } from "blume";
 
 const root = dirname(fileURLToPath(import.meta.url));
 
-/** ディレクトリ内の .md/.mdx をスラッグ（拡張子なし）で返す */
-const slugsIn = (dir: string): string[] =>
-  readdirSync(join(root, dir))
+/** ディレクトリ内の .md/.mdx をスラッグ（拡張子なし）で返す（ディレクトリ未作成なら空） */
+const slugsIn = (dir: string): string[] => {
+  const abs = join(root, dir);
+  if (!existsSync(abs)) return [];
+  return readdirSync(abs)
     .filter((f) => /\.mdx?$/.test(f))
     .map((f) => f.replace(/\.mdx?$/, ""));
+};
 
 /** スラッグ列をルートに変換（新しい日付が上にくるよう降順） */
 const routes = (dir: string, slugs: string[]): string[] =>
@@ -19,57 +22,64 @@ const routes = (dir: string, slugs: string[]): string[] =>
     .map((s) => `/${dir}/${s}`);
 
 // index.md の「キャッチアップ（定期）」と同じ粒度のグループ定義。
-// content/catchup/ 配下のファイル名プレフィックスで振り分ける。
-const CATCHUP_GENRES: { label: string; sources: { label: string; prefix: string }[] }[] = [
+// content/catchup/ 配下のソース別サブディレクトリで振り分ける。
+const CATCHUP_GENRES: { label: string; sources: { label: string; dir: string }[] }[] = [
   {
     label: "Web / フロントエンド",
     sources: [
-      { label: "JSer.info", prefix: "jser-info-" },
-      { label: "This Week in React", prefix: "twir-" },
-      { label: "Chrome for Developers", prefix: "chrome-blog-" },
-      { label: "Google Search Central", prefix: "google-search-blog-" },
+      { label: "JSer.info", dir: "jser-info" },
+      { label: "This Week in React", dir: "twir" },
+      { label: "Chrome for Developers", dir: "chrome-blog" },
+      { label: "Google Search Central", dir: "google-search-blog" },
     ],
   },
   {
     label: "AI / 開発ツール",
-    sources: [{ label: "Claude Code", prefix: "claude-code-" }],
+    sources: [{ label: "Claude Code", dir: "claude-code" }],
   },
   {
     label: "Apple",
     sources: [
-      { label: "iOS & iPadOS リリースノート", prefix: "ios-release-notes-" },
-      { label: "Apple セキュリティリリース", prefix: "apple-security-releases-" },
-      { label: "Apple Developer News", prefix: "apple-news-" },
+      { label: "iOS & iPadOS リリースノート", dir: "ios-release-notes" },
+      { label: "Apple セキュリティリリース", dir: "apple-security-releases" },
+      { label: "Apple Developer News", dir: "apple-news" },
     ],
   },
   {
     label: "Google",
     sources: [
-      { label: "Android リリースノート", prefix: "android-release-notes-" },
-      { label: "Android Security Bulletin", prefix: "android-security-bulletin-" },
-      { label: "Google Play", prefix: "google-play-news-" },
+      { label: "Android リリースノート", dir: "android-release-notes" },
+      { label: "Android Security Bulletin", dir: "android-security-bulletin" },
+      { label: "Google Play", dir: "google-play-news" },
     ],
   },
 ];
 
 const buildCatchupGroup = () => {
-  const remaining = new Set(slugsIn("content/catchup"));
+  const known = new Set(CATCHUP_GENRES.flatMap((g) => g.sources.map((s) => s.dir)));
   const genres = CATCHUP_GENRES.map((genre) => ({
     label: genre.label,
-    items: genre.sources.map((source) => {
-      const matched = [...remaining].filter((s) => s.startsWith(source.prefix));
-      for (const s of matched) remaining.delete(s);
-      return {
-        label: source.label,
-        items: routes("content/catchup", matched),
-      };
-    }),
+    items: genre.sources.map((source) => ({
+      label: source.label,
+      items: routes(`content/catchup/${source.dir}`, slugsIn(`content/catchup/${source.dir}`)),
+    })),
   }));
-  // どのプレフィックスにも一致しないファイルはグループ末尾に直接ぶら下げる
-  // （新ソース追加時にサイドバーから消えるのを防ぐ）
+  // グループ定義にない新ソースのディレクトリ・直下に置かれた .md も
+  // サイドバーから消えないようにグループ末尾にぶら下げる
+  const unknownDirs = readdirSync(join(root, "content/catchup"), { withFileTypes: true })
+    .filter((e) => e.isDirectory() && !known.has(e.name))
+    .map((e) => e.name)
+    .sort();
   return {
     label: "キャッチアップ（定期）",
-    items: [...genres, ...routes("content/catchup", [...remaining])],
+    items: [
+      ...genres,
+      ...unknownDirs.map((d) => ({
+        label: d,
+        items: routes(`content/catchup/${d}`, slugsIn(`content/catchup/${d}`)),
+      })),
+      ...routes("content/catchup", slugsIn("content/catchup")),
+    ],
   };
 };
 

@@ -71,10 +71,10 @@ Best practices: https://code.claude.com/docs/en/best-practices
 
 ### 2. 重複チェック（新着の特定）
 
-`content/catchup/` ディレクトリ内の既存の `claude-code-*.md` ファイルを確認し、すでに記録済みの **バージョン番号・ブログ記事URL** を把握する。
+`content/catchup/claude-code/` ディレクトリ内の既存ファイルを確認し、すでに記録済みの **バージョン番号・ブログ記事URL** を把握する。
 
 ```bash
-ls content/catchup/claude-code-*.md 2>/dev/null
+ls content/catchup/claude-code/*.md 2>/dev/null
 ```
 
 - changelog: 既存ファイルに未掲載のバージョンを「新着」とする
@@ -96,8 +96,8 @@ ls content/catchup/claude-code-*.md 2>/dev/null
 
 新着を以下のフォーマットで **1つのファイル** にまとめる。
 
-**ファイル名**: `claude-code-YYYY-MM-DD.md`（YYYY-MM-DD は実行日）
-**保存先**: リポジトリの `content/catchup/` ディレクトリ
+**ファイル名**: `YYYY-MM-DD.md`（YYYY-MM-DD は実行日）
+**保存先**: リポジトリの `content/catchup/claude-code/`
 
 **テンプレート**:
 
@@ -146,11 +146,9 @@ title: "Claude Code キャッチアップ: YYYY-MM-DD"
 
 新着をすべて漏れなく含める。バージョン番号・公開日は取得した内容のものを正確に転記する。
 
-保存・push方針は共通事項の通り（このスキル単体ではpushしない）。
-
 ### 6. 定期実行について
 
-共通事項の通り（`frontend-catchup-and-push` 経由の routine で自動実行）。Claude Code の changelog は**ほぼ毎日**更新されるため、週1回のスケジュールが適切（1回でその週の全新着バージョンをまとめて拾える）。新機能を素早く追いたい場合は隔日でもよい。
+Claude Code の changelog は**ほぼ毎日**更新されるため、週1回のスケジュールが適切（1回でその週の全新着バージョンをまとめて拾える）。新機能を素早く追いたい場合は隔日でもよい。
 
 ## よくある失敗と対処
 

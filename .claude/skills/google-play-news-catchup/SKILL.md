@@ -50,10 +50,10 @@ https://support.google.com/googleplay/android-developer/table/12921780?hl=ja
 
 ### 2. 重複チェック（新着お知らせの特定）
 
-`content/catchup/` ディレクトリ内の既存の `google-play-news-*.md` ファイルを確認し、すでに記録済みのお知らせ（日付＋タイトル）を把握する。
+`content/catchup/google-play-news/` ディレクトリ内の既存ファイルを確認し、すでに記録済みのお知らせ（日付＋タイトル）を把握する。
 
 ```bash
-ls content/catchup/google-play-news-*.md 2>/dev/null
+ls content/catchup/google-play-news/*.md 2>/dev/null
 ```
 
 テーブルのお知らせのうち、既存ファイルにまだ含まれていないもの（**日付＋タイトルの組み合わせ**が未掲載のもの）を「新着」とする。このソースはお知らせごとの固有URLがない場合があるため、重複判定はURLではなく日付＋タイトルで行う。
@@ -72,8 +72,8 @@ ls content/catchup/google-play-news-*.md 2>/dev/null
 
 新着お知らせを以下のフォーマットで **1つのファイル** にまとめる。
 
-**ファイル名**: `google-play-news-YYYY-MM-DD.md`（YYYY-MM-DD は実行日）
-**保存先**: リポジトリの `content/catchup/` ディレクトリ
+**ファイル名**: `YYYY-MM-DD.md`（YYYY-MM-DD は実行日）
+**保存先**: リポジトリの `content/catchup/google-play-news/`
 
 **テンプレート**:
 
@@ -103,11 +103,9 @@ title: "Google Play 最新情報 キャッチアップ: YYYY-MM-DD"
 
 新着お知らせをすべて漏れなく含める。タイトルはページのものをそのまま使う。
 
-保存・push方針は共通事項の通り（このスキル単体ではpushしない）。
-
 ### 5. 定期実行について
 
-共通事項の通り（`frontend-catchup-and-push` 経由の routine で自動実行）。Google Play の最新情報は不定期更新（概ね月数本、ポリシー更新時期は集中）なので、週1回のスケジュールが適切。
+Google Play の最新情報は不定期更新（概ね月数本、ポリシー更新時期は集中）なので、週1回のスケジュールが適切。
 
 ## よくある失敗と対処
 

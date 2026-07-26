@@ -63,10 +63,10 @@ https://developer.apple.com/tutorials/data/documentation/ios-ipados-release-note
 
 ### 2. 重複チェック（新着バージョンの特定）
 
-`content/catchup/` ディレクトリ内の既存の `ios-release-notes-*.md` ファイルを確認し、すでに記録済みのバージョン（リリースノートの相対URL／slug）を把握する。
+`content/catchup/ios-release-notes/` ディレクトリ内の既存ファイルを確認し、すでに記録済みのバージョン（リリースノートの相対URL／slug）を把握する。
 
 ```bash
-ls content/catchup/ios-release-notes-*.md 2>/dev/null
+ls content/catchup/ios-release-notes/*.md 2>/dev/null
 ```
 
 一覧JSONのバージョンのうち、既存ファイルにまだ含まれていないもの（slug が未掲載のもの）を「新着」とする。
@@ -85,8 +85,8 @@ ls content/catchup/ios-release-notes-*.md 2>/dev/null
 
 新着バージョンを以下のフォーマットで **1つのファイル** にまとめる。
 
-**ファイル名**: `ios-release-notes-YYYY-MM-DD.md`（YYYY-MM-DD は実行日）
-**保存先**: リポジトリの `content/catchup/` ディレクトリ
+**ファイル名**: `YYYY-MM-DD.md`（YYYY-MM-DD は実行日）
+**保存先**: リポジトリの `content/catchup/ios-release-notes/`
 
 **テンプレート**:
 
@@ -115,11 +115,9 @@ title: "iOS & iPadOS リリースノート キャッチアップ: YYYY-MM-DD"
 
 新着バージョンをすべて漏れなく含める。タイトルは JSON の `title` をそのまま使う（英語のままでよい）。
 
-保存・push方針は共通事項の通り（このスキル単体ではpushしない）。
-
 ### 5. 定期実行について
 
-共通事項の通り（`frontend-catchup-and-push` 経由の routine で自動実行）。リリースノートはベータ期間中は頻繁に、正式版は不定期に更新されるため、週1回のスケジュールが適切。
+リリースノートはベータ期間中は頻繁に、正式版は不定期に更新されるため、週1回のスケジュールが適切。
 
 ## よくある失敗と対処
 

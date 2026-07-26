@@ -49,10 +49,10 @@ https://source.android.com/docs/whatsnew/release-notes
 
 ### 2. 重複チェック（新着項目の特定）
 
-`content/catchup/` ディレクトリ内の既存の `android-release-notes-*.md` ファイルを確認し、すでに記録済みの項目（**バージョン＋セクション見出し**）を把握する。
+`content/catchup/android-release-notes/` ディレクトリ内の既存ファイルを確認し、すでに記録済みの項目（**バージョン＋セクション見出し**）を把握する。
 
 ```bash
-ls content/catchup/android-release-notes-*.md 2>/dev/null
+ls content/catchup/android-release-notes/*.md 2>/dev/null
 ```
 
 ページの項目のうち、既存ファイルにまだ含まれていないもの（バージョン＋セクション見出しが未掲載のもの）を「新着」とする。ページには項目ごとの日付・固有URLがないため、重複判定は**バージョン＋セクション見出し**で行う（アンカー付きURL `.../android-17-release#security` を記録しておくと次回以降の判定に使える）。
@@ -71,8 +71,8 @@ ls content/catchup/android-release-notes-*.md 2>/dev/null
 
 新着項目を以下のフォーマットで **1つのファイル** にまとめる。
 
-**ファイル名**: `android-release-notes-YYYY-MM-DD.md`（YYYY-MM-DD は実行日）
-**保存先**: リポジトリの `content/catchup/` ディレクトリ
+**ファイル名**: `YYYY-MM-DD.md`（YYYY-MM-DD は実行日）
+**保存先**: リポジトリの `content/catchup/android-release-notes/`
 
 **テンプレート**:
 
@@ -101,11 +101,9 @@ title: "Android リリースノート キャッチアップ: YYYY-MM-DD"
 
 新着項目をすべて漏れなく含める。
 
-保存・push方針は共通事項の通り（このスキル単体ではpushしない）。
-
 ### 5. 定期実行について
 
-共通事項の通り（`frontend-catchup-and-push` 経由の routine で自動実行）。Android リリースノートは不定期更新のため、週1回のスケジュールが適切。
+Android リリースノートは不定期更新のため、週1回のスケジュールが適切。
 
 ## よくある失敗と対処
 

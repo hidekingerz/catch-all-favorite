@@ -45,10 +45,10 @@ https://source.android.com/docs/security/bulletin?hl=ja
 
 ### 2. 重複チェック（新着速報の特定）
 
-`content/catchup/` ディレクトリ内の既存の `android-security-bulletin-*.md` ファイルを確認し、すでに記録済みの速報（対象月／詳細ページURL）を把握する。
+`content/catchup/android-security-bulletin/` ディレクトリ内の既存ファイルを確認し、すでに記録済みの速報（対象月／詳細ページURL）を把握する。
 
 ```bash
-ls content/catchup/android-security-bulletin-*.md 2>/dev/null
+ls content/catchup/android-security-bulletin/*.md 2>/dev/null
 ```
 
 一覧の速報のうち、既存ファイルにまだ含まれていないもの（対象月の詳細ページURLが未掲載のもの）を「新着」とする。
@@ -67,8 +67,8 @@ ls content/catchup/android-security-bulletin-*.md 2>/dev/null
 
 新着速報を以下のフォーマットで **1つのファイル** にまとめる。
 
-**ファイル名**: `android-security-bulletin-YYYY-MM-DD.md`（YYYY-MM-DD は実行日）
-**保存先**: リポジトリの `content/catchup/` ディレクトリ
+**ファイル名**: `YYYY-MM-DD.md`（YYYY-MM-DD は実行日）
+**保存先**: リポジトリの `content/catchup/android-security-bulletin/`
 
 **テンプレート**:
 
@@ -99,11 +99,9 @@ title: "Android Security Bulletin キャッチアップ: YYYY-MM-DD"
 
 新着速報をすべて漏れなく含める。
 
-保存・push方針は共通事項の通り（このスキル単体ではpushしない）。
-
 ### 5. 定期実行について
 
-共通事項の通り（`frontend-catchup-and-push` 経由の routine で自動実行）。Android Security Bulletin は通常**毎月**更新されるため、週1回のスケジュールで十分に新着を拾える。
+Android Security Bulletin は通常**毎月**更新されるため、週1回のスケジュールで十分に新着を拾える。
 
 ## よくある失敗と対処
 
