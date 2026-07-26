@@ -12,6 +12,7 @@ export interface DocumentMeta {
 
 const CATEGORIES: readonly Category[] = ["catchup", "security", "research"];
 const DATED_FILE = /^(.+)-(\d{4}-\d{2}-\d{2})\.md$/;
+const DATE_ONLY_FILE = /^(\d{4}-\d{2}-\d{2})\.md$/;
 const HEADING = /^#{1,6}\s+(.+)$/m;
 
 export function extractMetadata(relPath: string, content: string): DocumentMeta | null {
@@ -26,11 +27,17 @@ export function extractMetadata(relPath: string, content: string): DocumentMeta 
   let date: string | null = null;
 
   const dated = filename.match(DATED_FILE);
+  const dateOnly = filename.match(DATE_ONLY_FILE);
   if (category === "security") {
     source = "cve";
   } else if (category === "research") {
     source = "research";
+  } else if (dateOnly && segments.length >= 3) {
+    // 新形式: catchup/<source>/<YYYY-MM-DD>.md — 親ディレクトリがソース名
+    source = segments[segments.length - 2];
+    date = dateOnly[1];
   } else if (dated) {
+    // 旧形式: catchup/<source>-<YYYY-MM-DD>.md（後方互換）
     source = dated[1];
     date = dated[2];
   } else {

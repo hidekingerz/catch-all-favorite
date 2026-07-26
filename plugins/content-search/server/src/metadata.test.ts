@@ -44,4 +44,20 @@ describe("extractMetadata", () => {
   it("未知のカテゴリは null を返す", () => {
     expect(extractMetadata("unknown/file.md", "# x")).toBeNull();
   });
+
+  it("新形式 catchup/<source>/<date>.md はディレクトリ名を source、ファイル名を date にする", () => {
+    const meta = extractMetadata("catchup/jser-info/2026-07-17.md", "# JSer.info #776\n本文");
+    expect(meta).toEqual({
+      path: "catchup/jser-info/2026-07-17.md",
+      category: "catchup",
+      source: "jser-info",
+      date: "2026-07-17",
+      title: "JSer.info #776",
+    });
+  });
+
+  it("旧形式 catchup/<source>-<date>.md も引き続きパースできる（後方互換）", () => {
+    const meta = extractMetadata("catchup/twir-2026-07-15.md", "# TWIR\n本文");
+    expect(meta).toMatchObject({ source: "twir", date: "2026-07-15" });
+  });
 });
