@@ -18,7 +18,7 @@ jser.info・This Week in React・Chrome for Developers ブログ・Google 検索
 このスキルはローカルClaude Code（CLI）とデスクトップ版Claudeアプリのコードモードの両方で動作する。利用可能なツールセットが環境ごとに異なるため、各ステップでは「優先するツール → 利用不可な場合のフォールバック」を順に試すこと。
 
 - **GitHub操作**: GitHub MCP ツール（`mcp__github__*`）が利用可能ならそれを優先。利用不可なら Bash ツールで `git` コマンドを実行する
-- **作業ディレクトリ**: リポジトリの `content/catchup/<ソース名>/` ディレクトリ配下に `YYYY-MM-DD.md` として配置する（ソース名は各ステップの出力先を参照）。デスクトップ版コードモードではワークスペースフォルダがリポジトリのルートに対応する
+- **作業ディレクトリ**: リポジトリの `content/catchup/<ソース名>/` ディレクトリ配下に `YYYYMMDD.md` として配置する（ソース名は各ステップの出力先を参照）。デスクトップ版コードモードではワークスペースフォルダがリポジトリのルートに対応する
 - **ネットワークポリシー**: 一部のソース（`source.android.com`・`support.apple.com`・`support.google.com`）は環境のネットワーク許可リストに当該ホストが含まれていないとアクセスできない（`host_not_allowed`）。アクセスできないソースはスキップして他を続行する
 
 ## 概要
@@ -58,21 +58,21 @@ jser.info・This Week in React・Chrome for Developers ブログ・Google 検索
 
 ### ステップ1: JSer.info キャッチアップ
 
-`jser-catchup` スキルを呼び出して実行する。スキルの指示に従い、最新記事を取得してMarkdownファイル（`YYYY-MM-DD.md`）を作成する。
+`jser-catchup` スキルを呼び出して実行する。スキルの指示に従い、最新記事を取得してMarkdownファイル（`YYYYMMDD.md`）を作成する。
 
 - `jser-catchup` スキルの指示に従う
 - 出力先: リポジトリの `content/catchup/jser-info/` ディレクトリ
 
 ### ステップ2: This Week in React キャッチアップ
 
-`twir-catchup` スキルを呼び出して実行する。スキルの指示に従い、最新号を取得してMarkdownファイル（`YYYY-MM-DD.md`）を作成する。
+`twir-catchup` スキルを呼び出して実行する。スキルの指示に従い、最新号を取得してMarkdownファイル（`YYYYMMDD.md`）を作成する。
 
 - `twir-catchup` スキルの指示に従う
 - 出力先: リポジトリの `content/catchup/twir/` ディレクトリ
 
 ### ステップ3: Chrome for Developers ブログ キャッチアップ
 
-`chrome-blog-catchup` スキルを呼び出して実行する。スキルの指示に従い、新着記事を取得してMarkdownダイジェスト（`YYYY-MM-DD.md`）を作成する。
+`chrome-blog-catchup` スキルを呼び出して実行する。スキルの指示に従い、新着記事を取得してMarkdownダイジェスト（`YYYYMMDD.md`）を作成する。
 
 - `chrome-blog-catchup` スキルの指示に従う
 - 記事一覧はRSSフィード（`https://developer.chrome.com/static/blog/feed.xml`）から取得する。一覧ページ `/blog` はJSレンダリングのため使わない
@@ -81,7 +81,7 @@ jser.info・This Week in React・Chrome for Developers ブログ・Google 検索
 
 ### ステップ4: Google 検索セントラル ブログ キャッチアップ
 
-`google-search-blog-catchup` スキルを呼び出して実行する。スキルの指示に従い、新着記事を取得してMarkdownダイジェスト（`YYYY-MM-DD.md`）を作成する。
+`google-search-blog-catchup` スキルを呼び出して実行する。スキルの指示に従い、新着記事を取得してMarkdownダイジェスト（`YYYYMMDD.md`）を作成する。
 
 - `google-search-blog-catchup` スキルの指示に従う
 - 記事一覧はRSS（Atom）フィード（`https://developers.google.com/search/blog/feed.xml`）から取得する。一覧ページ `/search/blog` はJSレンダリングのため使わない
@@ -90,7 +90,7 @@ jser.info・This Week in React・Chrome for Developers ブログ・Google 検索
 
 ### ステップ5: Apple Developer News キャッチアップ
 
-`apple-news-catchup` スキルを呼び出して実行する。スキルの指示に従い、新着記事を取得してMarkdownダイジェスト（`YYYY-MM-DD.md`）を作成する。
+`apple-news-catchup` スキルを呼び出して実行する。スキルの指示に従い、新着記事を取得してMarkdownダイジェスト（`YYYYMMDD.md`）を作成する。
 
 - `apple-news-catchup` スキルの指示に従う
 - 記事一覧はRSSフィード（`https://developer.apple.com/news/rss/news.rss`）から取得する。一覧ページ `/jp/news/` はJSレンダリングのため使わない
@@ -100,7 +100,7 @@ jser.info・This Week in React・Chrome for Developers ブログ・Google 検索
 
 ### ステップ6: iOS & iPadOS リリースノート キャッチアップ
 
-`ios-release-notes-catchup` スキルを呼び出して実行する。スキルの指示に従い、新着バージョンを取得してMarkdownダイジェスト（`YYYY-MM-DD.md`）を作成する。
+`ios-release-notes-catchup` スキルを呼び出して実行する。スキルの指示に従い、新着バージョンを取得してMarkdownダイジェスト（`YYYYMMDD.md`）を作成する。
 
 - `ios-release-notes-catchup` スキルの指示に従う
 - 一覧は DocC JSON（`https://developer.apple.com/tutorials/data/documentation/ios-ipados-release-notes.json`）から取得する。ドキュメントHTMLはJSレンダリングのため使わない
@@ -109,7 +109,7 @@ jser.info・This Week in React・Chrome for Developers ブログ・Google 検索
 
 ### ステップ7: Android Security Bulletin キャッチアップ
 
-`android-security-bulletin-catchup` スキルを呼び出して実行する。スキルの指示に従い、新着月次速報を取得してMarkdownダイジェスト（`YYYY-MM-DD.md`）を作成する。
+`android-security-bulletin-catchup` スキルを呼び出して実行する。スキルの指示に従い、新着月次速報を取得してMarkdownダイジェスト（`YYYYMMDD.md`）を作成する。
 
 - `android-security-bulletin-catchup` スキルの指示に従う
 - 一覧ページ（`https://source.android.com/docs/security/bulletin?hl=ja`）から取得する。RSSフィードは存在しない
@@ -119,7 +119,7 @@ jser.info・This Week in React・Chrome for Developers ブログ・Google 検索
 
 ### ステップ8: Android リリースノート キャッチアップ
 
-`android-release-notes-catchup` スキルを呼び出して実行する。スキルの指示に従い、新着を取得してMarkdownダイジェスト（`YYYY-MM-DD.md`）を作成する。
+`android-release-notes-catchup` スキルを呼び出して実行する。スキルの指示に従い、新着を取得してMarkdownダイジェスト（`YYYYMMDD.md`）を作成する。
 
 - `android-release-notes-catchup` スキルの指示に従う
 - ページ（`https://source.android.com/docs/whatsnew/release-notes?hl=ja`）から取得する。RSSフィードは存在しない
@@ -129,7 +129,7 @@ jser.info・This Week in React・Chrome for Developers ブログ・Google 検索
 
 ### ステップ9: Apple セキュリティリリース キャッチアップ
 
-`apple-security-releases-catchup` スキルを呼び出して実行する。スキルの指示に従い、新着を取得してMarkdownダイジェスト（`YYYY-MM-DD.md`）を作成する。
+`apple-security-releases-catchup` スキルを呼び出して実行する。スキルの指示に従い、新着を取得してMarkdownダイジェスト（`YYYYMMDD.md`）を作成する。
 
 - `apple-security-releases-catchup` スキルの指示に従う
 - 一覧ページ（`https://support.apple.com/ja-jp/100100`）から取得する。公式RSSフィードは存在しない
@@ -139,7 +139,7 @@ jser.info・This Week in React・Chrome for Developers ブログ・Google 検索
 
 ### ステップ10: Google Play 最新情報 キャッチアップ
 
-`google-play-news-catchup` スキルを呼び出して実行する。スキルの指示に従い、新着お知らせを取得してMarkdownダイジェスト（`YYYY-MM-DD.md`）を作成する。
+`google-play-news-catchup` スキルを呼び出して実行する。スキルの指示に従い、新着お知らせを取得してMarkdownダイジェスト（`YYYYMMDD.md`）を作成する。
 
 - `google-play-news-catchup` スキルの指示に従う
 - 一覧テーブル（`https://support.google.com/googleplay/android-developer/table/12921780?hl=ja`）から取得する。RSSフィードは存在しない
@@ -149,7 +149,7 @@ jser.info・This Week in React・Chrome for Developers ブログ・Google 検索
 
 ### ステップ11: Claude Code キャッチアップ
 
-`claude-code-catchup` スキルを呼び出して実行する。スキルの指示に従い、新機能・使い方トレンドを取得してMarkdownダイジェスト（`YYYY-MM-DD.md`）を作成する。
+`claude-code-catchup` スキルを呼び出して実行する。スキルの指示に従い、新機能・使い方トレンドを取得してMarkdownダイジェスト（`YYYYMMDD.md`）を作成する。
 
 - `claude-code-catchup` スキルの指示に従う
 - changelog は Atom フィード（`https://github.com/anthropics/claude-code/releases.atom`）または raw Markdown（`https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md`）から取得する。これがバックボーン
@@ -159,7 +159,7 @@ jser.info・This Week in React・Chrome for Developers ブログ・Google 検索
 
 ### ステップ12: 重複チェック
 
-GitHubリポジトリの `content/catchup/<ソース名>/` ディレクトリ配下に同名ファイル（`YYYY-MM-DD.md`）が既に存在しないかを、ステップ1〜11で作成したファイルごとに、そのソースのディレクトリを対象として確認する。**ソースの判別はファイル名ではなくディレクトリ名で行う**（`YYYY-MM-DD.md` はソース間で重複しうるため）。
+GitHubリポジトリの `content/catchup/<ソース名>/` ディレクトリ配下に同名ファイル（`YYYYMMDD.md`）が既に存在しないかを、ステップ1〜11で作成したファイルごとに、そのソースのディレクトリを対象として確認する。**ソースの判別はファイル名ではなくディレクトリ名で行う**（`YYYYMMDD.md` はソース間で重複しうるため）。
 
 - GitHub MCP ツールが利用可能な場合は `mcp__github__get_file_contents`（owner: `hidekingerz`, repo: `catch-all-favorite`, path: `content/catchup/<ソース名>`）で確認
 - 利用不可な場合は Bash で `ls content/catchup/<ソース名>/` を実行して確認
@@ -185,27 +185,27 @@ GitHubリポジトリの `content/catchup/<ソース名>/` ディレクトリ配
 各ソースごとに、対応するセクションの先頭（最新が上）にリンクを追加する:
 
 - **JSer.info** の新規ファイル → `#### JSer.info` セクションの先頭に追加
-  - 形式: `- [JSer.info #NNN キャッチアップ: YYYY-MM-DDのJS](/content/catchup/jser-info/YYYY-MM-DD)`
+  - 形式: `- [JSer.info #NNN キャッチアップ: YYYY-MM-DDのJS](/content/catchup/jser-info/YYYYMMDD)`
 - **This Week in React** の新規ファイル → `#### This Week in React` セクションの先頭に追加
-  - 形式: `- [This Week in React YYYY-MM-DD](/content/catchup/twir/YYYY-MM-DD)`
+  - 形式: `- [This Week in React YYYY-MM-DD](/content/catchup/twir/YYYYMMDD)`
 - **Chrome for Developers** の新規ファイル → `#### Chrome for Developers` セクションの先頭に追加
-  - 形式: `- [Chrome for Developers キャッチアップ: YYYY-MM-DD](/content/catchup/chrome-blog/YYYY-MM-DD)`
+  - 形式: `- [Chrome for Developers キャッチアップ: YYYY-MM-DD](/content/catchup/chrome-blog/YYYYMMDD)`
 - **Google 検索セントラル** の新規ファイル → `#### Google Search Central` セクションの先頭に追加
-  - 形式: `- [Google 検索セントラル ブログ キャッチアップ: YYYY-MM-DD](/content/catchup/google-search-blog/YYYY-MM-DD)`
+  - 形式: `- [Google 検索セントラル ブログ キャッチアップ: YYYY-MM-DD](/content/catchup/google-search-blog/YYYYMMDD)`
 - **Apple Developer News** の新規ファイル → `#### Apple Developer News` セクションの先頭に追加
-  - 形式: `- [Apple Developer News キャッチアップ: YYYY-MM-DD](/content/catchup/apple-news/YYYY-MM-DD)`
+  - 形式: `- [Apple Developer News キャッチアップ: YYYY-MM-DD](/content/catchup/apple-news/YYYYMMDD)`
 - **iOS & iPadOS リリースノート** の新規ファイル → `#### iOS & iPadOS リリースノート` セクションの先頭に追加
-  - 形式: `- [iOS & iPadOS リリースノート キャッチアップ: YYYY-MM-DD](/content/catchup/ios-release-notes/YYYY-MM-DD)`
+  - 形式: `- [iOS & iPadOS リリースノート キャッチアップ: YYYY-MM-DD](/content/catchup/ios-release-notes/YYYYMMDD)`
 - **Android Security Bulletin** の新規ファイル → `#### Android Security Bulletin` セクションの先頭に追加
-  - 形式: `- [Android Security Bulletin キャッチアップ: YYYY-MM-DD](/content/catchup/android-security-bulletin/YYYY-MM-DD)`
+  - 形式: `- [Android Security Bulletin キャッチアップ: YYYY-MM-DD](/content/catchup/android-security-bulletin/YYYYMMDD)`
 - **Android リリースノート** の新規ファイル → `#### Android リリースノート` セクションの先頭に追加
-  - 形式: `- [Android リリースノート キャッチアップ: YYYY-MM-DD](/content/catchup/android-release-notes/YYYY-MM-DD)`
+  - 形式: `- [Android リリースノート キャッチアップ: YYYY-MM-DD](/content/catchup/android-release-notes/YYYYMMDD)`
 - **Apple セキュリティリリース** の新規ファイル → `#### Apple セキュリティリリース` セクションの先頭に追加
-  - 形式: `- [Apple セキュリティリリース キャッチアップ: YYYY-MM-DD](/content/catchup/apple-security-releases/YYYY-MM-DD)`
+  - 形式: `- [Apple セキュリティリリース キャッチアップ: YYYY-MM-DD](/content/catchup/apple-security-releases/YYYYMMDD)`
 - **Google Play** の新規ファイル → `#### Google Play` セクションの先頭に追加
-  - 形式: `- [Google Play 最新情報 キャッチアップ: YYYY-MM-DD](/content/catchup/google-play-news/YYYY-MM-DD)`
+  - 形式: `- [Google Play 最新情報 キャッチアップ: YYYY-MM-DD](/content/catchup/google-play-news/YYYYMMDD)`
 - **Claude Code** の新規ファイル → `#### Claude Code` セクションの先頭に追加
-  - 形式: `- [Claude Code キャッチアップ: YYYY-MM-DD](/content/catchup/claude-code/YYYY-MM-DD)`
+  - 形式: `- [Claude Code キャッチアップ: YYYY-MM-DD](/content/catchup/claude-code/YYYYMMDD)`
   - `#### Claude Code` 見出しは `### AI / 開発ツール` グループ内（`#### Google Search Central` の後ろ）に置く
 
 対応するソースの見出し（`####`）がまだ存在しない場合は、上記の分類に従って対応するグループ見出し（`###`）の直下に新規作成する（グループ見出し自体が無い場合はそれも作成する）。重複チェック（ステップ12）でスキップされたファイルのリンクは追加しない。
@@ -229,7 +229,7 @@ GitHub MCP ツール（`mcp__github__push_files`）が利用可能な場合は�
 - repo: `catch-all-favorite`
 - branch: 上記の作業ブランチ名（`main` ではない）
 - message: `chore: add frontend catchup YYYY-MM-DD`
-- files: 作成された各Markdownファイルと `index.md` を含める（`index.md` と、新規作成された各ソースの `content/catchup/<ソース名>/YYYY-MM-DD.md` を `path` / `content` のペアで列挙する）
+- files: 作成された各Markdownファイルと `index.md` を含める（`index.md` と、新規作成された各ソースの `content/catchup/<ソース名>/YYYYMMDD.md` を `path` / `content` のペアで列挙する）
 
 新着がなく作成されなかったソースのファイルは含めない。
 

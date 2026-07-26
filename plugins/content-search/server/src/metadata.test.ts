@@ -60,4 +60,14 @@ describe("extractMetadata", () => {
     const meta = extractMetadata("catchup/twir-2026-07-15.md", "# TWIR\n本文");
     expect(meta).toMatchObject({ source: "twir", date: "2026-07-15" });
   });
+
+  it("YYYYMMDD.md 形式は date を YYYY-MM-DD に整形する", () => {
+    const meta = extractMetadata("catchup/jser-info/20260717.md", "# JSer.info #776\n本文");
+    expect(meta).toMatchObject({ source: "jser-info", date: "2026-07-17" });
+  });
+
+  it("同日複数の英字サフィックス付き（20260722b.md）も date を抽出できる", () => {
+    const meta = extractMetadata("catchup/chrome-blog/20260722b.md", "# Chrome (2)\n本文");
+    expect(meta).toMatchObject({ source: "chrome-blog", date: "2026-07-22" });
+  });
 });

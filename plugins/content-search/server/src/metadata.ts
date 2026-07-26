@@ -12,7 +12,8 @@ export interface DocumentMeta {
 
 const CATEGORIES: readonly Category[] = ["catchup", "security", "research"];
 const DATED_FILE = /^(.+)-(\d{4}-\d{2}-\d{2})\.md$/;
-const DATE_ONLY_FILE = /^(\d{4}-\d{2}-\d{2})\.md$/;
+// YYYYMMDD.md / YYYY-MM-DD.md（同日複数の英字サフィックス付き 20260722b.md も許容）
+const DATE_ONLY_FILE = /^(\d{4})-?(\d{2})-?(\d{2})[a-z]?\.md$/;
 const HEADING = /^#{1,6}\s+(.+)$/m;
 
 export function extractMetadata(relPath: string, content: string): DocumentMeta | null {
@@ -33,9 +34,9 @@ export function extractMetadata(relPath: string, content: string): DocumentMeta 
   } else if (category === "research") {
     source = "research";
   } else if (dateOnly && segments.length >= 3) {
-    // 新形式: catchup/<source>/<YYYY-MM-DD>.md — 親ディレクトリがソース名
+    // 新形式: catchup/<source>/<YYYYMMDD>.md — 親ディレクトリがソース名
     source = segments[segments.length - 2];
-    date = dateOnly[1];
+    date = `${dateOnly[1]}-${dateOnly[2]}-${dateOnly[3]}`;
   } else if (dated) {
     // 旧形式: catchup/<source>-<YYYY-MM-DD>.md（後方互換）
     source = dated[1];

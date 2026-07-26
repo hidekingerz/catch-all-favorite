@@ -9,124 +9,125 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### JSer.info
 
-- [JSer.info #776 キャッチアップ: 2026-07-17のJS](/content/catchup/jser-info/2026-07-17)
-- [JSer.info #775 キャッチアップ: 2026-07-05のJS](/content/catchup/jser-info/2026-07-05)
-- [JSer.info #774 キャッチアップ: 2026-06-22のJS](/content/catchup/jser-info/2026-06-22)
-- [JSer.info #773 キャッチアップ: 2026-06-09のJS](/content/catchup/jser-info/2026-06-09)
-- [JSer.info #772 キャッチアップ: 2026-05-24のJS](/content/catchup/jser-info/2026-05-24)
-- [JSer.info #771 キャッチアップ: 2026-05-11のJS](/content/catchup/jser-info/2026-05-11)
-- [JSer.info #770 キャッチアップ: 2026-04-29のJS](/content/catchup/jser-info/2026-04-29)
-- [JSer.info #769 キャッチアップ: 2026-04-15のJS](/content/catchup/jser-info/2026-04-15)
-- [JSer.info #768 キャッチアップ: 2026-04-06のJS](/content/catchup/jser-info/2026-04-06)
+- [JSer.info #776 キャッチアップ: 2026-07-17のJS](/content/catchup/jser-info/20260717)
+- [JSer.info #775 キャッチアップ: 2026-07-05のJS](/content/catchup/jser-info/20260705)
+- [JSer.info #774 キャッチアップ: 2026-06-22のJS](/content/catchup/jser-info/20260622)
+- [JSer.info #773 キャッチアップ: 2026-06-09のJS](/content/catchup/jser-info/20260609)
+- [JSer.info #772 キャッチアップ: 2026-05-24のJS](/content/catchup/jser-info/20260524)
+- [JSer.info #771 キャッチアップ: 2026-05-11のJS](/content/catchup/jser-info/20260511)
+- [JSer.info #770 キャッチアップ: 2026-04-29のJS](/content/catchup/jser-info/20260429)
+- [JSer.info #769 キャッチアップ: 2026-04-15のJS](/content/catchup/jser-info/20260415)
+- [JSer.info #768 キャッチアップ: 2026-04-06のJS](/content/catchup/jser-info/20260406)
 
 #### This Week in React
 
-- [This Week in React 2026-07-22](/content/catchup/twir/2026-07-22)
-- [This Week in React 2026-07-15](/content/catchup/twir/2026-07-15)
-- [This Week in React 2026-07-08](/content/catchup/twir/2026-07-08)
-- [This Week in React 2026-07-01](/content/catchup/twir/2026-07-01)
-- [This Week in React 2026-06-24](/content/catchup/twir/2026-06-24)
-- [This Week in React 2026-06-17](/content/catchup/twir/2026-06-17)
-- [This Week in React 2026-06-10](/content/catchup/twir/2026-06-10)
-- [This Week in React 2026-06-03](/content/catchup/twir/2026-06-03)
-- [This Week in React 2026-05-27](/content/catchup/twir/2026-05-27)
-- [This Week in React 2026-05-20](/content/catchup/twir/2026-05-20)
-- [This Week in React 2026-05-13](/content/catchup/twir/2026-05-13)
-- [This Week in React 2026-05-06](/content/catchup/twir/2026-05-06)
-- [This Week in React 2026-04-29](/content/catchup/twir/2026-04-29)
-- [This Week in React 2026-04-22](/content/catchup/twir/2026-04-22)
-- [This Week in React 2026-04-15](/content/catchup/twir/2026-04-15)
-- [This Week in React 2026-04-08](/content/catchup/twir/2026-04-08)
+- [This Week in React 2026-07-22](/content/catchup/twir/20260722)
+- [This Week in React 2026-07-15](/content/catchup/twir/20260715)
+- [This Week in React 2026-07-08](/content/catchup/twir/20260708)
+- [This Week in React 2026-07-01](/content/catchup/twir/20260701)
+- [This Week in React 2026-06-24](/content/catchup/twir/20260624)
+- [This Week in React 2026-06-17](/content/catchup/twir/20260617)
+- [This Week in React 2026-06-10](/content/catchup/twir/20260610)
+- [This Week in React 2026-06-03](/content/catchup/twir/20260603)
+- [This Week in React 2026-05-27](/content/catchup/twir/20260527)
+- [This Week in React 2026-05-20](/content/catchup/twir/20260520)
+- [This Week in React 2026-05-13](/content/catchup/twir/20260513)
+- [This Week in React 2026-05-06](/content/catchup/twir/20260506)
+- [This Week in React 2026-04-29](/content/catchup/twir/20260429)
+- [This Week in React 2026-04-22](/content/catchup/twir/20260422)
+- [This Week in React 2026-04-15](/content/catchup/twir/20260415)
+- [This Week in React 2026-04-08](/content/catchup/twir/20260408)
 
 #### Chrome for Developers
 
-- [Chrome for Developers キャッチアップ: 2026-07-26](/content/catchup/chrome-blog/2026-07-26)
-- [Chrome for Developers キャッチアップ: 2026-07-22 (2)](/content/catchup/chrome-blog/2026-07-22b)
-- [Chrome for Developers キャッチアップ: 2026-07-22](/content/catchup/chrome-blog/2026-07-22)
-- [Chrome for Developers キャッチアップ: 2026-06-24](/content/catchup/chrome-blog/2026-06-24)
-- [Chrome for Developers キャッチアップ: 2026-06-14](/content/catchup/chrome-blog/2026-06-14)
-- [Chrome for Developers キャッチアップ: 2026-06-07](/content/catchup/chrome-blog/2026-06-07)
+- [Chrome for Developers キャッチアップ: 2026-07-26](/content/catchup/chrome-blog/20260726)
+- [Chrome for Developers キャッチアップ: 2026-07-22 (2)](/content/catchup/chrome-blog/20260722b)
+- [Chrome for Developers キャッチアップ: 2026-07-22](/content/catchup/chrome-blog/20260722)
+- [Chrome for Developers キャッチアップ: 2026-06-24](/content/catchup/chrome-blog/20260624)
+- [Chrome for Developers キャッチアップ: 2026-06-14](/content/catchup/chrome-blog/20260614)
+- [Chrome for Developers キャッチアップ: 2026-06-07](/content/catchup/chrome-blog/20260607)
 
 #### Google Search Central
 
-- [Google 検索セントラル ブログ キャッチアップ: 2026-07-07](/content/catchup/google-search-blog/2026-07-07)
-- [Google 検索セントラル ブログ キャッチアップ: 2026-07-06](/content/catchup/google-search-blog/2026-07-06)
-- [Google 検索セントラル ブログ キャッチアップ: 2026-06-21](/content/catchup/google-search-blog/2026-06-21)
-- [Google 検索セントラル ブログ キャッチアップ: 2026-06-08](/content/catchup/google-search-blog/2026-06-08)
+- [Google 検索セントラル ブログ キャッチアップ: 2026-07-07](/content/catchup/google-search-blog/20260707)
+- [Google 検索セントラル ブログ キャッチアップ: 2026-07-06](/content/catchup/google-search-blog/20260706)
+- [Google 検索セントラル ブログ キャッチアップ: 2026-06-21](/content/catchup/google-search-blog/20260621)
+- [Google 検索セントラル ブログ キャッチアップ: 2026-06-08](/content/catchup/google-search-blog/20260608)
 
 ### AI / 開発ツール
 
 #### Claude Code
 
-- [Claude Code キャッチアップ: 2026-07-26](/content/catchup/claude-code/2026-07-26)
-- [Claude Code キャッチアップ: 2026-07-24](/content/catchup/claude-code/2026-07-24)
-- [Claude Code キャッチアップ: 2026-07-22](/content/catchup/claude-code/2026-07-22)
-- [Claude Code キャッチアップ: 2026-07-21](/content/catchup/claude-code/2026-07-21)
-- [Claude Code キャッチアップ: 2026-07-11](/content/catchup/claude-code/2026-07-11)
-- [Claude Code キャッチアップ: 2026-07-10](/content/catchup/claude-code/2026-07-10)
-- [Claude Code キャッチアップ: 2026-07-08](/content/catchup/claude-code/2026-07-08)
-- [Claude Code キャッチアップ: 2026-07-07](/content/catchup/claude-code/2026-07-07)
-- [Claude Code キャッチアップ: 2026-07-06](/content/catchup/claude-code/2026-07-06)
-- [Claude Code キャッチアップ: 2026-07-04](/content/catchup/claude-code/2026-07-04)
-- [Claude Code キャッチアップ: 2026-07-03](/content/catchup/claude-code/2026-07-03)
-- [Claude Code キャッチアップ: 2026-07-01](/content/catchup/claude-code/2026-07-01)
-- [Claude Code キャッチアップ: 2026-06-30](/content/catchup/claude-code/2026-06-30)
-- [Claude Code キャッチアップ: 2026-06-26](/content/catchup/claude-code/2026-06-26)
-- [Claude Code キャッチアップ: 2026-06-25](/content/catchup/claude-code/2026-06-25)
-- [Claude Code キャッチアップ: 2026-06-24](/content/catchup/claude-code/2026-06-24)
-- [Claude Code キャッチアップ: 2026-06-23](/content/catchup/claude-code/2026-06-23)
-- [Claude Code キャッチアップ: 2026-06-21](/content/catchup/claude-code/2026-06-21)
-- [Claude Code キャッチアップ: 2026-06-17](/content/catchup/claude-code/2026-06-17)
+- [Claude Code キャッチアップ: 2026-07-26](/content/catchup/claude-code/20260726)
+- [Claude Code キャッチアップ: 2026-07-24](/content/catchup/claude-code/20260724)
+- [Claude Code キャッチアップ: 2026-07-22](/content/catchup/claude-code/20260722)
+- [Claude Code キャッチアップ: 2026-07-21](/content/catchup/claude-code/20260721)
+- [Claude Code キャッチアップ: 2026-07-11](/content/catchup/claude-code/20260711)
+- [Claude Code キャッチアップ: 2026-07-10](/content/catchup/claude-code/20260710)
+- [Claude Code キャッチアップ: 2026-07-08](/content/catchup/claude-code/20260708)
+- [Claude Code キャッチアップ: 2026-07-07](/content/catchup/claude-code/20260707)
+- [Claude Code キャッチアップ: 2026-07-06](/content/catchup/claude-code/20260706)
+- [Claude Code キャッチアップ: 2026-07-04](/content/catchup/claude-code/20260704)
+- [Claude Code キャッチアップ: 2026-07-03](/content/catchup/claude-code/20260703)
+- [Claude Code キャッチアップ: 2026-07-01](/content/catchup/claude-code/20260701)
+- [Claude Code キャッチアップ: 2026-06-30](/content/catchup/claude-code/20260630)
+- [Claude Code キャッチアップ: 2026-06-26](/content/catchup/claude-code/20260626)
+- [Claude Code キャッチアップ: 2026-06-25](/content/catchup/claude-code/20260625)
+- [Claude Code キャッチアップ: 2026-06-24](/content/catchup/claude-code/20260624)
+- [Claude Code キャッチアップ: 2026-06-23](/content/catchup/claude-code/20260623)
+- [Claude Code キャッチアップ: 2026-06-21](/content/catchup/claude-code/20260621)
+- [Claude Code キャッチアップ: 2026-06-17](/content/catchup/claude-code/20260617)
 
 ### Apple
 
 #### iOS & iPadOS リリースノート
 
-- [iOS & iPadOS リリースノート キャッチアップ: 2026-07-21](/content/catchup/ios-release-notes/2026-07-21)
-- [iOS & iPadOS リリースノート キャッチアップ: 2026-07-13](/content/catchup/ios-release-notes/2026-07-13)
-- [iOS & iPadOS リリースノート キャッチアップ: 2026-07-06](/content/catchup/ios-release-notes/2026-07-06)
-- [iOS & iPadOS リリースノート キャッチアップ: 2026-06-29](/content/catchup/ios-release-notes/2026-06-29)
-- [iOS & iPadOS リリースノート キャッチアップ: 2026-06-24](/content/catchup/ios-release-notes/2026-06-24)
-- [iOS & iPadOS リリースノート キャッチアップ: 2026-06-10](/content/catchup/ios-release-notes/2026-06-10)
+- [iOS & iPadOS リリースノート キャッチアップ: 2026-07-21](/content/catchup/ios-release-notes/20260721)
+- [iOS & iPadOS リリースノート キャッチアップ: 2026-07-13](/content/catchup/ios-release-notes/20260713)
+- [iOS & iPadOS リリースノート キャッチアップ: 2026-07-06](/content/catchup/ios-release-notes/20260706)
+- [iOS & iPadOS リリースノート キャッチアップ: 2026-06-29](/content/catchup/ios-release-notes/20260629)
+- [iOS & iPadOS リリースノート キャッチアップ: 2026-06-24](/content/catchup/ios-release-notes/20260624)
+- [iOS & iPadOS リリースノート キャッチアップ: 2026-06-10](/content/catchup/ios-release-notes/20260610)
 
 #### Apple セキュリティリリース
 
-- [Apple セキュリティリリース キャッチアップ: 2026-07-01](/content/catchup/apple-security-releases/2026-07-01)
-- [Apple セキュリティリリース キャッチアップ: 2026-06-21](/content/catchup/apple-security-releases/2026-06-21)
-- [Apple セキュリティリリース キャッチアップ: 2026-06-10](/content/catchup/apple-security-releases/2026-06-10)
+- [Apple セキュリティリリース キャッチアップ: 2026-07-01](/content/catchup/apple-security-releases/20260701)
+- [Apple セキュリティリリース キャッチアップ: 2026-06-21](/content/catchup/apple-security-releases/20260621)
+- [Apple セキュリティリリース キャッチアップ: 2026-06-10](/content/catchup/apple-security-releases/20260610)
 
 #### Apple Developer News
 
-- [Apple Developer News キャッチアップ: 2026-07-09](/content/catchup/apple-news/2026-07-09)
-- [Apple Developer News キャッチアップ: 2026-07-07](/content/catchup/apple-news/2026-07-07)
-- [Apple Developer News キャッチアップ: 2026-07-04](/content/catchup/apple-news/2026-07-04)
-- [Apple Developer News キャッチアップ: 2026-06-24](/content/catchup/apple-news/2026-06-24)
-- [Apple Developer News キャッチアップ: 2026-06-23](/content/catchup/apple-news/2026-06-23)
-- [Apple Developer News キャッチアップ: 2026-06-21](/content/catchup/apple-news/2026-06-21)
-- [Apple Developer News キャッチアップ: 2026-06-17](/content/catchup/apple-news/2026-06-17)
-- [Apple Developer News キャッチアップ: 2026-06-14](/content/catchup/apple-news/2026-06-14)
-- [Apple Developer News キャッチアップ: 2026-06-10](/content/catchup/apple-news/2026-06-10)
+- [Apple Developer News キャッチアップ: 2026-07-09](/content/catchup/apple-news/20260709)
+- [Apple Developer News キャッチアップ: 2026-07-07](/content/catchup/apple-news/20260707)
+- [Apple Developer News キャッチアップ: 2026-07-04](/content/catchup/apple-news/20260704)
+- [Apple Developer News キャッチアップ: 2026-06-24](/content/catchup/apple-news/20260624)
+- [Apple Developer News キャッチアップ: 2026-06-23](/content/catchup/apple-news/20260623)
+- [Apple Developer News キャッチアップ: 2026-06-21](/content/catchup/apple-news/20260621)
+- [Apple Developer News キャッチアップ: 2026-06-17](/content/catchup/apple-news/20260617)
+- [Apple Developer News キャッチアップ: 2026-06-14](/content/catchup/apple-news/20260614)
+- [Apple Developer News キャッチアップ: 2026-06-10](/content/catchup/apple-news/20260610)
 
 ### Google
 
 #### Android リリースノート
 
-- [Android リリースノート キャッチアップ: 2026-07-23](/content/catchup/android-release-notes/2026-07-23)
-- [Android リリースノート キャッチアップ: 2026-06-21](/content/catchup/android-release-notes/2026-06-21)
-- [Android リリースノート キャッチアップ: 2026-06-10](/content/catchup/android-release-notes/2026-06-10)
+- [Android リリースノート キャッチアップ: 2026-07-23](/content/catchup/android-release-notes/20260723)
+- [Android リリースノート キャッチアップ: 2026-06-21](/content/catchup/android-release-notes/20260621)
+- [Android リリースノート キャッチアップ: 2026-06-10](/content/catchup/android-release-notes/20260610)
 
 #### Android Security Bulletin
 
-- [Android Security Bulletin キャッチアップ: 2026-07-06](/content/catchup/android-security-bulletin/2026-07-06)
-- [Android Security Bulletin キャッチアップ: 2026-06-10](/content/catchup/android-security-bulletin/2026-06-10)
+- [Android Security Bulletin キャッチアップ: 2026-07-06](/content/catchup/android-security-bulletin/20260706)
+- [Android Security Bulletin キャッチアップ: 2026-06-10](/content/catchup/android-security-bulletin/20260610)
 
 #### Google Play
 
-- [Google Play 最新情報 キャッチアップ: 2026-07-21](/content/catchup/google-play-news/2026-07-21)
-- [Google Play 最新情報 キャッチアップ: 2026-06-10](/content/catchup/google-play-news/2026-06-10)
+- [Google Play 最新情報 キャッチアップ: 2026-07-21](/content/catchup/google-play-news/20260721)
+- [Google Play 最新情報 キャッチアップ: 2026-06-10](/content/catchup/google-play-news/20260610)
 
 ## 技術調査レポート
 
+- [UAFX Dream '65 / Enigmatic '82 を Loupedeck CT から MIDI コントロールする構成 調査レポート](/content/research/uafx-midi-loupedeck-ct)
 - [Git `history fixup` / `reword` 技術調査レポート](/content/research/git-history-fixup-reword)
 - [SPAのfetch APIを zod・OpenAPI で型安全にする調査レポート](/content/research/spa-fetch-zod-openapi-typing)
 - [TypeScript Branded Types（ブランド型）調査レポート](/content/research/typescript-branded-types)

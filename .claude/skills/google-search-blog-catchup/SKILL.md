@@ -70,7 +70,7 @@ ls content/catchup/google-search-blog/*.md 2>/dev/null
 
 新着記事を以下のフォーマットで **1つのファイル** にまとめる。
 
-**ファイル名**: `YYYY-MM-DD.md`（YYYY-MM-DD は実行日）
+**ファイル名**: `YYYYMMDD.md`（YYYYMMDD は実行日）
 **保存先**: リポジトリの `content/catchup/google-search-blog/`
 
 **テンプレート**:
