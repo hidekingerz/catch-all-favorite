@@ -7,6 +7,8 @@ title: "MCPサーバー作成ベストプラクティス 技術調査レポー�
 
 ## TL;DR
 
+> **追記（2026-07-29）**: 2026-07-28 改訂は予定どおり**正式リリース**され、Anthropic は Claude 製品への展開開始を発表した。確定内容と本レポートへの影響は文末の[「追記: 2026-07-28 改訂の正式リリース」](#追記2026-07-29-2026-07-28-改訂の正式リリース)を参照。
+
 - **現行の安定版仕様は `2025-11-25`**。2026-07-28 に**プロトコル開始以来最大の改訂**（ステートレスコア・Extensions・Tasks・MCP Apps）が確定公開予定で、RC が既に出ている。今から作るサーバーは「**ステートレス前提**」で設計しておくと移行コストが最小になる。
 - SDK は **TypeScript v1.x / Python v1.x が本番推奨**。両 SDK とも v2 が 2026-07 末の新仕様と同時に安定化予定（TS v2 はパッケージ名が `@modelcontextprotocol/sdk` → `@modelcontextprotocol/server` に変わる）。
 - ツール設計の定石は「**API のラッパーではなく、エージェントのワークフロー単位で切る**」。1サーバー = 1つの境界づけられたコンテキスト、ツール数は **5〜15 個**が目安。`list_*` より `search_*`、冗長な JSON より `response_format`（concise/detailed）でトークンを節約する。
@@ -427,10 +429,42 @@ await server.connect(transport);
 
 ---
 
+## 追記（2026-07-29）: 2026-07-28 改訂の正式リリース
+
+本文執筆時点（2026-07-04）で RC だった **`2026-07-28` 改訂が予定どおり正式公開**され、Anthropic も同日「[Bringing MCP 2026-07-28 to Claude](https://claude.com/blog/bringing-mcp-2026-07-28-to-claude)」で **Claude 製品への順次展開**を発表した（製品別の展開日程は未公表）。確定した changelog（[公式](https://modelcontextprotocol.io/specification/2026-07-28/changelog)）のうち、本文の予想からの差分・開発者影響が大きい点:
+
+### 確定した主要変更（本文の予想との対応）
+
+| 本文での予想 | 確定内容 |
+|---|---|
+| ステートレスコア | 確定。`initialize` ハンドシェイク・`Mcp-Session-Id` 廃止。プロトコルバージョン・クライアント capabilities は**毎リクエストの `_meta`** で運ぶ（SEP-2575, SEP-2567） |
+| Extensions フレームワーク | 確定。`ClientCapabilities`/`ServerCapabilities` に `extensions` フィールド追加 |
+| Tasks の拡張化 | 確定。`io.modelcontextprotocol/tasks` 拡張へ移動し、ブロッキングの `tasks/result` は**ポーリング型 `tasks/get`** に再設計 |
+| Roots / Sampling / Logging 非推奨 | 確定（12ヶ月の削除猶予、[非推奨レジストリ](https://modelcontextprotocol.io/specification/2026-07-28/deprecated)で管理） |
+
+### 本文で触れていなかった確定事項（要注意）
+
+- **`server/discover` RPC が必須化**: サーバーは対応バージョン・capabilities・identity を広告する `server/discover` を MUST 実装
+- **サーバー発リクエストの廃止 → MRTR パターンへ**: `roots/list` / `sampling/createMessage` / `elicitation/create` のようなサーバー→クライアント要求は、`resultType: "input_required"` を返してクライアントが**元リクエストを再試行**する Multi Round-Trip Requests に置き換え（SEP-2322）。**全結果に `resultType` フィールドが必須**になった
+- **通知系の再編**: HTTP GET エンドポイントと `resources/subscribe` は **`subscriptions/listen`**（単一の長寿命 POST ストリーム）に統合。`ping`・`logging/setLevel` は削除、ログレベルは `_meta` の `io.modelcontextprotocol/logLevel` でリクエスト単位指定
+- **SSE 再開機構の削除**: `Last-Event-ID` によるストリーム再開・再配送は廃止。切断されたら**新しいリクエスト ID で再発行**が MUST
+- **キャッシュの一級市民化**: `tools/list` 等の一覧系は `ttlMs` / `cacheScope` が必須（`CacheableResult`）。`tools/list` は**決定的順序で返す**ことが SHOULD に（LLM のプロンプトキャッシュ効率に直結）
+- **認可まわり**: RFC 9207 の `iss` 検証がクライアント MUST に、**Dynamic Client Registration（RFC 7591）は非推奨**入りし Client ID Metadata Documents へ移行。資格情報は発行元 AS 単位で分離保存が MUST
+- **エラーコード再配置**: `-32020`〜`-32099` が MCP 仕様予約に。resource not found は `-32002` → `-32602` に変更
+
+### 本レポートへの影響
+
+本文の推奨（ステートレス前提設計・セッションに業務ロジックを載せない・stdio ログは stderr・Roots/Sampling/Logging 回避）は**そのまま有効**で、いずれも正式版と整合する。今後の新規開発は `2026-07-28` 前提とし、既存サーバーは (1) `server/discover` 実装、(2) `resultType` 対応、(3) 一覧系への `ttlMs`/`cacheScope` 付与、(4) サーバー発リクエスト依存の MRTR 移行、の順で対応するのが現実的。SDK（TS v2 / Python v2）の安定化状況は別途確認が必要（本追記時点では未確認）。
+
+---
+
 ## 参考リンク
 
 - [MCP Specification 2025-11-25（現行安定版）](https://modelcontextprotocol.io/specification/2025-11-25)
 - [2025-11-25 Changelog](https://modelcontextprotocol.io/specification/2025-11-25/changelog)
+- [MCP Specification 2026-07-28（正式版）](https://modelcontextprotocol.io/specification/2026-07-28)
+- [2026-07-28 Changelog](https://modelcontextprotocol.io/specification/2026-07-28/changelog)
+- [Bringing MCP 2026-07-28 to Claude — Anthropic](https://claude.com/blog/bringing-mcp-2026-07-28-to-claude)
 - [The 2026-07-28 MCP Specification Release Candidate（公式ブログ）](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/)
 - [The 2026 MCP Roadmap（公式ブログ）](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/)
 - [Security Best Practices（公式仕様）](https://modelcontextprotocol.io/specification/2025-11-25/basic/security_best_practices)
