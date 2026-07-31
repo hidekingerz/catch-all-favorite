@@ -21,6 +21,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### This Week in React
 
+- [This Week in React 2026-07-29](/content/catchup/twir/20260729)
 - [This Week in React 2026-07-22](/content/catchup/twir/20260722)
 - [This Week in React 2026-07-15](/content/catchup/twir/20260715)
 - [This Week in React 2026-07-08](/content/catchup/twir/20260708)
@@ -41,6 +42,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 #### Chrome for Developers
 
 - [Chrome for Developers キャッチアップ: 2026-07-30](/content/catchup/chrome-blog/20260730)
+- [Chrome for Developers キャッチアップ: 2026-07-29](/content/catchup/chrome-blog/20260729)
 - [Chrome for Developers キャッチアップ: 2026-07-28](/content/catchup/chrome-blog/20260728)
 - [Chrome for Developers キャッチアップ: 2026-07-26](/content/catchup/chrome-blog/20260726)
 - [Chrome for Developers キャッチアップ: 2026-07-22 (2)](/content/catchup/chrome-blog/20260722b)
@@ -51,6 +53,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Google Search Central
 
+- [Google 検索セントラル ブログ キャッチアップ: 2026-07-29](/content/catchup/google-search-blog/20260729)
 - [Google 検索セントラル ブログ キャッチアップ: 2026-07-07](/content/catchup/google-search-blog/20260707)
 - [Google 検索セントラル ブログ キャッチアップ: 2026-07-06](/content/catchup/google-search-blog/20260706)
 - [Google 検索セントラル ブログ キャッチアップ: 2026-06-21](/content/catchup/google-search-blog/20260621)
