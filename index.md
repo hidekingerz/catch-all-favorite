@@ -87,6 +87,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### iOS & iPadOS リリースノート
 
+- [iOS & iPadOS リリースノート キャッチアップ: 2026-08-01](/content/catchup/ios-release-notes/20260801)
 - [iOS & iPadOS リリースノート キャッチアップ: 2026-07-21](/content/catchup/ios-release-notes/20260721)
 - [iOS & iPadOS リリースノート キャッチアップ: 2026-07-13](/content/catchup/ios-release-notes/20260713)
 - [iOS & iPadOS リリースノート キャッチアップ: 2026-07-06](/content/catchup/ios-release-notes/20260706)
