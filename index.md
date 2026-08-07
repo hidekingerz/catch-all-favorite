@@ -134,6 +134,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 ## 技術調査レポート
 
+- [WebMCP 調査レポート — ブラウザページを MCP ツール化する提案と Cloudflare の developer preview](/content/research/webmcp)
 - [CISA BOD 26-04 調査レポート — Prioritizing Security Updates Based on Risk](/content/research/cisa-bod-26-04)
 - [UAFX Dream '65 / Enigmatic '82 を Loupedeck CT から MIDI コントロールする構成 調査レポート](/content/research/uafx-midi-loupedeck-ct)
 - [Git `history fixup` / `reword` 技術調査レポート](/content/research/git-history-fixup-reword)
