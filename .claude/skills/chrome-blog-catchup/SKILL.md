@@ -57,12 +57,16 @@ https://developer.chrome.com/static/blog/feed.xml
 
 **(b) WebSearch での探索（先に実施）**: WebSearch が利用可能なら「site:developer.chrome.com/blog 直近1か月」または「developer.chrome.com/blog <直近月名> 2026」を検索し、見つかった記事URL（`developer.chrome.com/blog/` 配下のもののみ採用。他ドメインは使わない）を候補に加える。バージョン別記事だけでなくポリシー更新・機能紹介など非定型の記事もカバーできる。
 
-**(a) 定番シリーズ記事のバージョン探索（WebSearch の補完として実施）**: Chrome はリリースサイクルに沿って定番記事が出る。既存のキャッチアップファイルから最後に把握した Chrome バージョン N を起点に、N+1〜N+4 について以下のURLを curl で確認する（HTTP 200 かつ `<h1>` にタイトルが取れれば記事が存在する）。Chrome のリリースサイクルは約 4 週間なので、フィードが 30 日停止した場合は最大 2 バージョン進んでいる可能性がある。**現在の起点: Chrome 151（2026-07-28 確認済み）。次回以降は 152 から探索を始める**:
+**(a) 定番シリーズ記事のバージョン探索（WebSearch の補完として実施）**: Chrome はリリースサイクルに沿って定番記事が出る。既存のキャッチアップファイルから最後に把握した Chrome バージョン N を起点に、N+1〜N+4 について以下のURLを curl で確認する（HTTP 200 かつ canonical URL がそのスラッグを含むタイトルが取れれば記事が存在する）。Chrome のリリースサイクルは約 4 週間なので、フィードが 30 日停止した場合は最大 2 バージョン進んでいる可能性がある。**現在の起点: Chrome 152（2026-07-30 確認済み）。次回以降は 153 から探索を始める**:
 
 ```bash
-for v in 152 153 154 155; do  # 例: Chrome 151 が最後に確認済みの場合
+for v in 153 154 155 156; do  # 例: Chrome 152 が最後に確認済みの場合
   for slug in "new-in-chrome-$v" "chrome-$v-beta" "new-in-devtools-$v"; do
     code=$(curl -sL -o /tmp/cb-probe.html -w '%{http_code}' "https://developer.chrome.com/blog/$slug")
+    # ソフト404チェック: canonical URL がこのスラッグを含まない場合はリダイレクト扱いで除外
+    # 例: new-in-devtools-153/154 は /docs/devtools/release-notes にリダイレクト (HTTP 200 だが別ページ)
+    canonical=$(grep -o '<link rel="canonical" href="[^"]*"' /tmp/cb-probe.html | grep -o 'href="[^"]*"' | sed 's/href="//;s/"//')
+    [[ "$canonical" == *"$slug"* ]] || { [ "$code" = "200" ] && echo "ソフト404: $slug → $canonical"; continue; }
     title=$(grep -o '<title>[^<]*' /tmp/cb-probe.html | head -1 | sed 's/<title>//')
     [ "$code" = "200" ] && [ -n "$title" ] && echo "存在: $slug | $title"
   done
@@ -141,6 +145,7 @@ Chrome for Developers ブログは不定期更新（概ね週数本）なので�
 | フィードURLを推測して404 | `https://developer.chrome.com/static/blog/feed.xml` を使う。推測しない |
 | 記事URLが `?hl=en` のまま | `?hl=ja` に差し替えて統一する |
 | **フィードが古いまま「新着なし」と誤判定** | `lastBuildDate` が7日以上前ならフィード停止。ステップ1b（主経路: WebSearch → バージョンプローブ）を必ず実施する。現在のフィードは2026-06-23のまま停止継続中 |
+| **`new-in-devtools-N` が HTTP 200 でも記事なし** | `/docs/devtools/release-notes` へのソフト404リダイレクト（実績: 153/154）。canonical URL がスラッグを含まなければ除外する（プローブの canonical チェック参照） |
 | sitemap から記事を探そうとして失敗 | `sitemap_*_of_*.xml` は 500 を返すことがある。フォールバックはステップ1bの方法を使う |
 
 共通の失敗（記憶での補完・重複・空ファイル等）は `../_shared/catchup-common.md` を参照。
