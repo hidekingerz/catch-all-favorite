@@ -34,11 +34,9 @@ https://developer.apple.com/news/rss/news.rss
 - フィード内のリンクは英語版（`https://developer.apple.com/news/?id=XXXX`）で返ってくる。各記事は **パスに `/jp/` を挿入**（`https://developer.apple.com/jp/news/?id=XXXX`）すると日本語版にアクセスできる。**記事に記録するURL・本文を取得するURLは `/jp/news/` の日本語版に統一する。**
 - 推測で別のフィードURLを作らない（`/jp/news/rss/...` などは存在しない場合がある）。フィードURLは英語の `https://developer.apple.com/news/rss/news.rss` を使い、記事URLだけ `/jp/` に差し替える。
 
-### Step 1b: 英語版一覧ページ直接取得（RSSが非200の場合の主経路）
+### Step 1b: 英語版一覧ページ直接取得（RSSが非200の場合のフォールバック）
 
 RSSフィードが HTTP 500 など非200を返した場合は、**英語版ニュース一覧ページ `https://developer.apple.com/news/` を `WebFetch` で直接取得する**。このページは静的HTMLで記事一覧（タイトル・`?id=XXXX`・日付）を配信しており、WebFetch で記事リストを取得できる。
-
-> **注**: 2026-08-04 以降、RSSフィード（`news.rss`）が HTTP 500 を継続して返す状態が続いている。複数回の実行にわたって 500 が続く場合、RSSリトライを繰り返さず **Step 1b（英語版一覧ページ）を主経路として直接使用する**。RSS が回復したことを確認できるまでこの方針を維持する。
 
 - **注意**: 日本語版 `https://developer.apple.com/jp/news/` はクライアントサイドJSレンダリングのため記事一覧を十分に取得できない場合がある。英語版 `https://developer.apple.com/news/` を使う。
 - 一覧から `?id=XXXX` を含む記事URLを抽出し、記録するURLは `/jp/` を挿入した日本語版（`https://developer.apple.com/jp/news/?id=XXXX`）に統一する。
@@ -64,7 +62,7 @@ WebSearch: site:developer.apple.com/news <YYYY>
 
 1. **日本語版一覧ページ（`/jp/news/`）を記事一覧取得に使わない。** JSレンダリングのため記事を十分に取得できない場合がある。代わりに RSSフィード（Step 1a）、英語版一覧ページ（Step 1b）、WebSearch（Step 1c）の順で試みる
 2. **記録するURLはパスに `/jp/` を挿入した日本語版（`/jp/news/?id=XXXX`）に統一する**
-3. **Step 1b（英語版一覧ページ）と Step 1c（WebSearch）は RSS が非200の場合のみ使う**（RSSが正常なら常に RSS を優先）。ただし複数回の実行にわたって RSS が 500 を返し続けている場合は、Step 1b を主経路として使用し不要なリトライをしない
+3. **Step 1b（英語版一覧ページ）と Step 1c（WebSearch）は RSS が非200の場合のみ使う**（RSSが正常なら常に RSS を優先）
 4. **WebSearch（Step 1c）で取得した URL は必ず実在確認する**（各記事をフェッチして内容が取れたものだけを採用）
 
 ## 実行手順
@@ -74,8 +72,6 @@ WebSearch: site:developer.apple.com/news <YYYY>
 まず `https://developer.apple.com/news/rss/news.rss` を取得し、掲載されている記事の **タイトル・URL・公開日（pubDate）・説明** を一覧として抽出する（Step 1a）。
 
 RSSフィードが HTTP 500 などの非200ステータスを返した場合は、Step 1b（英語版一覧ページ直接取得）に切り替える。`https://developer.apple.com/news/` を WebFetch で取得し、`?id=XXXX` を含む記事URLとタイトルを抽出する。Step 1b でも記事が取得できなかった場合は Step 1c（WebSearch フォールバック）に進む。詳細は「最重要: 記事一覧の取得方法」を参照。
-
-**現在の状況（2026-08-04〜）**: RSSフィードが HTTP 500 を継続して返している。複数回の実行で 500 が確認されているため、Step 1a はスキップして Step 1b（英語版一覧ページ: `https://developer.apple.com/news/`）から開始してよい。
 
 ### 2. 重複チェック（新着記事の特定）
 
@@ -144,7 +140,7 @@ Apple Developer News は不定期更新（概ね週数本、WWDC 前後は集中
 | `/jp/news/` 日本語版一覧ページを取得して記事が取れない | 日本語版一覧ページはJSレンダリング。RSSフィード `news/rss/news.rss`（Step 1a）または英語版一覧ページ `https://developer.apple.com/news/`（Step 1b）を使う |
 | フィードURLを推測して404 | `https://developer.apple.com/news/rss/news.rss` を使う。推測しない |
 | 記事URLが英語版（`/news/?id=`）のまま | パスに `/jp/` を挿入して `/jp/news/?id=` に統一する |
-| RSSフィードが HTTP 500 を返す | Apple 側 CDN 障害の可能性。英語版一覧ページ（Step 1b: `https://developer.apple.com/news/`）に切り替える。英語版一覧ページも失敗した場合のみ WebSearch（Step 1c）を使う。**複数回の実行にわたって 500 が続く場合（実績: 2026-08-04〜）はリトライせず Step 1b を主経路として使用する** |
+| RSSフィードが HTTP 500 を返す | Apple 側 CDN 障害の可能性。英語版一覧ページ（Step 1b: `https://developer.apple.com/news/`）に切り替える。英語版一覧ページも失敗した場合のみ WebSearch（Step 1c）を使う |
 | WebSearch が存在しない記事URLを返す | Step 1c では取得した URL を必ず `/jp/news/?id=XXXX` でフェッチして実在確認する。本文が取れなかった URL は採用しない |
 
 共通の失敗（記憶での補完・重複・空ファイル等）は `../_shared/catchup-common.md` を参照。
