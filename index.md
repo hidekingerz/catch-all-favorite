@@ -65,6 +65,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Claude Code
 
+- [Claude Code キャッチアップ: 2026-08-10](/content/catchup/claude-code/20260810)
 - [Claude Code キャッチアップ: 2026-08-08](/content/catchup/claude-code/20260808)
 - [Claude Code キャッチアップ: 2026-08-07](/content/catchup/claude-code/20260807)
 - [Claude Code キャッチアップ: 2026-08-06](/content/catchup/claude-code/20260806)
@@ -139,6 +140,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Google Play
 
+- [Google Play 最新情報 キャッチアップ: 2026-08-10](/content/catchup/google-play-news/20260810)
 - [Google Play 最新情報 キャッチアップ: 2026-08-05](/content/catchup/google-play-news/20260805)
 - [Google Play 最新情報 キャッチアップ: 2026-07-21](/content/catchup/google-play-news/20260721)
 - [Google Play 最新情報 キャッチアップ: 2026-06-10](/content/catchup/google-play-news/20260610)
