@@ -67,6 +67,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Claude Code
 
+- [Claude Code キャッチアップ: 2026-08-17](/content/catchup/claude-code/20260817)
 - [Claude Code キャッチアップ: 2026-08-14](/content/catchup/claude-code/20260814)
 - [Claude Code キャッチアップ: 2026-08-13](/content/catchup/claude-code/20260813)
 - [Claude Code キャッチアップ: 2026-08-12](/content/catchup/claude-code/20260812)
@@ -100,6 +101,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### iOS & iPadOS リリースノート
 
+- [iOS & iPadOS リリースノート キャッチアップ: 2026-08-17](/content/catchup/ios-release-notes/20260817)
 - [iOS & iPadOS リリースノート キャッチアップ: 2026-08-11](/content/catchup/ios-release-notes/20260811)
 - [iOS & iPadOS リリースノート キャッチアップ: 2026-08-01](/content/catchup/ios-release-notes/20260801)
 - [iOS & iPadOS リリースノート キャッチアップ: 2026-07-21](/content/catchup/ios-release-notes/20260721)
