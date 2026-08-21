@@ -43,6 +43,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Chrome for Developers
 
+- [Chrome for Developers キャッチアップ: 2026-08-20](/content/catchup/chrome-blog/20260820)
 - [Chrome for Developers キャッチアップ: 2026-08-14](/content/catchup/chrome-blog/20260814)
 - [Chrome for Developers キャッチアップ: 2026-07-30](/content/catchup/chrome-blog/20260730)
 - [Chrome for Developers キャッチアップ: 2026-07-29](/content/catchup/chrome-blog/20260729)
@@ -67,6 +68,8 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Claude Code
 
+- [Claude Code キャッチアップ: 2026-08-20](/content/catchup/claude-code/20260820)
+- [Claude Code キャッチアップ: 2026-08-18](/content/catchup/claude-code/20260818)
 - [Claude Code キャッチアップ: 2026-08-17](/content/catchup/claude-code/20260817)
 - [Claude Code キャッチアップ: 2026-08-14](/content/catchup/claude-code/20260814)
 - [Claude Code キャッチアップ: 2026-08-13](/content/catchup/claude-code/20260813)
@@ -113,6 +116,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Apple セキュリティリリース
 
+- [Apple セキュリティリリース キャッチアップ: 2026-08-18](/content/catchup/apple-security-releases/20260818)
 - [Apple セキュリティリリース キャッチアップ: 2026-08-07](/content/catchup/apple-security-releases/20260807)
 - [Apple セキュリティリリース キャッチアップ: 2026-07-28](/content/catchup/apple-security-releases/20260728)
 - [Apple セキュリティリリース キャッチアップ: 2026-07-01](/content/catchup/apple-security-releases/20260701)
@@ -121,6 +125,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Apple Developer News
 
+- [Apple Developer News キャッチアップ: 2026-08-18](/content/catchup/apple-news/20260818)
 - [Apple Developer News キャッチアップ: 2026-08-12](/content/catchup/apple-news/20260812)
 - [Apple Developer News キャッチアップ: 2026-08-05](/content/catchup/apple-news/20260805)
 - [Apple Developer News キャッチアップ: 2026-07-09](/content/catchup/apple-news/20260709)
