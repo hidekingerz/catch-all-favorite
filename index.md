@@ -71,6 +71,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Claude Code
 
+- [Claude Code キャッチアップ: 2026-08-23](/content/catchup/claude-code/20260823)
 - [Claude Code キャッチアップ: 2026-08-22](/content/catchup/claude-code/20260822)
 - [Claude Code キャッチアップ: 2026-08-21](/content/catchup/claude-code/20260821)
 - [Claude Code キャッチアップ: 2026-08-20](/content/catchup/claude-code/20260820)
