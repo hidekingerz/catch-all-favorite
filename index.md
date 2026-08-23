@@ -22,6 +22,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### This Week in React
 
+- [This Week in React 2026-08-19](/content/catchup/twir/20260819)
 - [This Week in React 2026-08-05](/content/catchup/twir/20260805)
 - [This Week in React 2026-07-29](/content/catchup/twir/20260729)
 - [This Week in React 2026-07-22](/content/catchup/twir/20260722)
@@ -73,6 +74,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 - [Claude Code キャッチアップ: 2026-08-22](/content/catchup/claude-code/20260822)
 - [Claude Code キャッチアップ: 2026-08-21](/content/catchup/claude-code/20260821)
 - [Claude Code キャッチアップ: 2026-08-20](/content/catchup/claude-code/20260820)
+- [Claude Code キャッチアップ: 2026-08-19](/content/catchup/claude-code/20260819)
 - [Claude Code キャッチアップ: 2026-08-18](/content/catchup/claude-code/20260818)
 - [Claude Code キャッチアップ: 2026-08-17](/content/catchup/claude-code/20260817)
 - [Claude Code キャッチアップ: 2026-08-14](/content/catchup/claude-code/20260814)
@@ -159,6 +161,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Google Play
 
+- [Google Play 最新情報 キャッチアップ: 2026-08-19](/content/catchup/google-play-news/20260819)
 - [Google Play 最新情報 キャッチアップ: 2026-08-10](/content/catchup/google-play-news/20260810)
 - [Google Play 最新情報 キャッチアップ: 2026-08-05](/content/catchup/google-play-news/20260805)
 - [Google Play 最新情報 キャッチアップ: 2026-07-21](/content/catchup/google-play-news/20260721)
