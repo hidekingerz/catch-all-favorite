@@ -1,6 +1,6 @@
 # キャッチアップスキル 共通ルール
 
-`.claude/skills/` 配下の各キャッチアップスキル（jser-catchup / twir-catchup / chrome-blog-catchup / google-search-blog-catchup / apple-news-catchup / ios-release-notes-catchup / android-security-bulletin-catchup / android-release-notes-catchup / apple-security-releases-catchup / google-play-news-catchup / claude-code-catchup）に共通する実行環境・ルール・方針をまとめたもの。各スキルの SKILL.md はソース固有の事項だけを記載し、共通部分は本ファイルを参照する。
+`.claude/skills/` 配下の各キャッチアップスキル（jser-catchup / twir-catchup / chrome-blog-catchup / google-search-blog-catchup / apple-news-catchup / ios-release-notes-catchup / android-security-bulletin-catchup / android-release-notes-catchup / apple-security-releases-catchup / google-play-news-catchup / claude-code-catchup / firefox-catchup）に共通する実行環境・ルール・方針をまとめたもの。各スキルの SKILL.md はソース固有の事項だけを記載し、共通部分は本ファイルを参照する。
 
 **各キャッチアップスキルを実行するときは、まず本ファイルを読み、そのうえで SKILL.md のソース固有の手順に従うこと。** 本ファイルと SKILL.md の記述が矛盾する場合は SKILL.md（ソース固有）を優先する。
 

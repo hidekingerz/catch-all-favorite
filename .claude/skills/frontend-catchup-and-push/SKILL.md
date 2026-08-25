@@ -1,7 +1,7 @@
 ---
 name: frontend-catchup-and-push
 description: >
-  jser.info・This Week in React・Chrome for Developers ブログ・Google 検索セントラル ブログ・Apple Developer News・iOS & iPadOS リリースノート・Android Security Bulletin・Android リリースノート・Apple セキュリティリリース・Google Play 最新情報・Claude Code をキャッチアップし、Markdownファイル作成後にGitHubリポジトリへ自動でcommit & pushするスキル。
+  jser.info・This Week in React・Chrome for Developers ブログ・Google 検索セントラル ブログ・Apple Developer News・iOS & iPadOS リリースノート・Android Security Bulletin・Android リリースノート・Apple セキュリティリリース・Google Play 最新情報・Claude Code・Firefox をキャッチアップし、Markdownファイル作成後にGitHubリポジトリへ自動でcommit & pushするスキル。
   「キャッチアップしてpushして」「フロントエンド情報をまとめてgitに入れて」「定期キャッチアップ実行」
   「jserとtwirをまとめて取得してpush」「フロントエンド情報の自動更新」などと言われたら必ずこのスキルを使う。
   キャッチアップ、catchup、定期実行、自動更新、push、git、まとめて取得
@@ -11,7 +11,7 @@ description: >
 
 # frontend & Git Push スキル
 
-jser.info・This Week in React・Chrome for Developers ブログ・Google 検索セントラル ブログ・Apple Developer News・iOS & iPadOS リリースノート・Android Security Bulletin・Android リリースノート・Apple セキュリティリリース・Google Play 最新情報・Claude Code を取得してMarkdownファイルを作成し、GitHub リポジトリ（`hidekingerz/catch-all-favorite`）へ自動で commit & push する統合スキル。
+jser.info・This Week in React・Chrome for Developers ブログ・Google 検索セントラル ブログ・Apple Developer News・iOS & iPadOS リリースノート・Android Security Bulletin・Android リリースノート・Apple セキュリティリリース・Google Play 最新情報・Claude Code・Firefox を取得してMarkdownファイルを作成し、GitHub リポジトリ（`hidekingerz/catch-all-favorite`）へ自動で commit & push する統合スキル。
 
 ## 実行環境
 
@@ -37,13 +37,14 @@ jser.info・This Week in React・Chrome for Developers ブログ・Google 検索
 9. **apple-security-releases-catchup スキル**を実行して Apple セキュリティリリースの新着を取得・Markdown化
 10. **google-play-news-catchup スキル**を実行して Google Play 最新情報の新着お知らせを取得・Markdown化
 11. **claude-code-catchup スキル**を実行して Claude Code の新機能・使い方トレンドを取得・Markdown化
-12. **重複チェック**: リポジトリに同名ファイルが既に存在しないか確認
-13. `index.md` に新規ファイルへのリンクを追加
-14. 作成されたファイルと更新した `index.md` を GitHub リポジトリへ **commit & push**
-15. `main` への **Pull Request を作成**
-16. 作成した PR に **GitHub auto-merge を有効化**し、必須チェック（`content-guard`）通過時に GitHub が保護を尊重したまま自動マージ（レポート系PRに限る。バイパスはしない）
-17. キャッチアップ中に検知した**スキル/取得処理の不具合**（RSSのURL変更・取得フォーマット崩れ・恒常的な取得失敗など）を GitHub issue として **自動起票**（重複は作らない）
-18. **結果報告**
+12. **firefox-catchup スキル**を実行して Firefox の新バージョン（安定版・ESR）を取得・Markdown化
+13. **重複チェック**: リポジトリに同名ファイルが既に存在しないか確認
+14. `index.md` に新規ファイルへのリンクを追加
+15. 作成されたファイルと更新した `index.md` を GitHub リポジトリへ **commit & push**
+16. `main` への **Pull Request を作成**
+17. 作成した PR に **GitHub auto-merge を有効化**し、必須チェック（`content-guard`）通過時に GitHub が保護を尊重したまま自動マージ（レポート系PRに限る。バイパスはしない）
+18. キャッチアップ中に検知した**スキル/取得処理の不具合**（RSSのURL変更・取得フォーマット崩れ・恒常的な取得失敗など）を GitHub issue として **自動起票**（重複は作らない）
+19. **結果報告**
 
 ## 実行手順
 
@@ -53,7 +54,7 @@ jser.info・This Week in React・Chrome for Developers ブログ・Google 検索
 
 - GitHub MCP ツール（`mcp__github__list_pull_requests`、owner: `hidekingerz`, repo: `catch-all-favorite`, state: `open`）でオープンPRの一覧を取得し、タイトルが `chore: add frontend catchup` で始まるPRを探す。利用不可な場合は Bash で `gh pr list` を試みる
 - **該当PRが残っている場合**: そのPRに含まれる `content/catchup/**/*.md` はまだ `main`（＝ローカルクローン）に存在しないため、各スキルの重複チェックをすり抜けて**同じ記事を別日付のファイルとして重複作成してしまう**。これを防ぐため、そのPRのブランチの差分ファイルを取得し（`git fetch origin <headブランチ>` して `git diff --name-only main...FETCH_HEAD`、または `mcp__github__get_file_contents` でPRブランチ側の `content/catchup/` を確認）、そこに含まれる記事・バージョン・URLも各ステップの重複チェックで「既存」として扱う
-- 前回PRが未マージのまま残っている場合は、その理由（`content-guard` 失敗・auto-merge 前提未整備・コンフリクト等）をステップ18の結果報告に含める。特に `index.md` のコンフリクトで auto-merge が止まっている場合、今回のPRも同様に止まる可能性が高いため必ず報告する
+- 前回PRが未マージのまま残っている場合は、その理由（`content-guard` 失敗・auto-merge 前提未整備・コンフリクト等）をステップ19の結果報告に含める。特に `index.md` のコンフリクトで auto-merge が止まっている場合、今回のPRも同様に止まる可能性が高いため必ず報告する
 - 該当PRが無ければそのままステップ1へ進む
 
 ### ステップ1: JSer.info キャッチアップ
@@ -157,16 +158,25 @@ jser.info・This Week in React・Chrome for Developers ブログ・Google 検索
 - 出力先: リポジトリの `content/catchup/claude-code/` ディレクトリ
 - 新着がない場合はファイルを作成しない（このソースだけスキップして次へ進む）
 
-### ステップ12: 重複チェック
+### ステップ12: Firefox キャッチアップ
 
-GitHubリポジトリの `content/catchup/<ソース名>/` ディレクトリ配下に同名ファイル（`YYYYMMDD.md`）が既に存在しないかを、ステップ1〜11で作成したファイルごとに、そのソースのディレクトリを対象として確認する。**ソースの判別はファイル名ではなくディレクトリ名で行う**（`YYYYMMDD.md` はソース間で重複しうるため）。
+`firefox-catchup` スキルを呼び出して実行する。スキルの指示に従い、新着バージョン（安定版・ESR）を取得してMarkdownダイジェスト（`YYYYMMDD.md`）を作成する。
+
+- `firefox-catchup` スキルの指示に従う
+- バージョン検知はバージョンJSON（`https://product-details.mozilla.org/1.0/firefox_versions.json`）から行う。リリースノート本文は `https://www.firefox.com/en-US/firefox/<バージョン>/releasenotes/`（サーバーサイドレンダリング）から取得する
+- 出力先: リポジトリの `content/catchup/firefox/` ディレクトリ
+- 新着バージョンがない場合はファイルを作成しない（このソースだけスキップして次へ進む）
+
+### ステップ13: 重複チェック
+
+GitHubリポジトリの `content/catchup/<ソース名>/` ディレクトリ配下に同名ファイル（`YYYYMMDD.md`）が既に存在しないかを、ステップ1〜12で作成したファイルごとに、そのソースのディレクトリを対象として確認する。**ソースの判別はファイル名ではなくディレクトリ名で行う**（`YYYYMMDD.md` はソース間で重複しうるため）。
 
 - GitHub MCP ツールが利用可能な場合は `mcp__github__get_file_contents`（owner: `hidekingerz`, repo: `catch-all-favorite`, path: `content/catchup/<ソース名>`）で確認
 - 利用不可な場合は Bash で `ls content/catchup/<ソース名>/` を実行して確認
 
-ステップ1〜11で作成したファイルが対応するソースディレクトリに既に存在する場合、またはステップ0で確認したオープンPRに同内容のファイルが含まれている場合は、そのファイルのpushをスキップする。新規ファイルのみをステップ13に進める。すべてのファイルが既に存在する（=新着なし）場合は「新しい記事はありませんでした」と報告して終了する。
+ステップ1〜12で作成したファイルが対応するソースディレクトリに既に存在する場合、またはステップ0で確認したオープンPRに同内容のファイルが含まれている場合は、そのファイルのpushをスキップする。新規ファイルのみをステップ14に進める。すべてのファイルが既に存在する（=新着なし）場合は「新しい記事はありませんでした」と報告して終了する。
 
-### ステップ13: index.md の更新
+### ステップ14: index.md の更新
 
 リポジトリのルートにある `index.md` に、新規作成したファイルへのリンクを追加する。
 
@@ -175,7 +185,7 @@ GitHubリポジトリの `content/catchup/<ソース名>/` ディレクトリ配
 
 `## キャッチアップ（定期）` セクションは、ジャンル別のグループ見出し（`###`）とソース別の見出し（`####`）の2階層で構成されている:
 
-- `### Web / フロントエンド` — JSer.info, This Week in React, Chrome for Developers, Google Search Central
+- `### Web / フロントエンド` — JSer.info, This Week in React, Chrome for Developers, Google Search Central, Firefox
 - `### AI / 開発ツール` — Claude Code
 - `### Apple` — iOS & iPadOS リリースノート, Apple セキュリティリリース, Apple Developer News
 - `### Google` — Android リリースノート, Android Security Bulletin, Google Play
@@ -207,16 +217,19 @@ GitHubリポジトリの `content/catchup/<ソース名>/` ディレクトリ配
 - **Claude Code** の新規ファイル → `#### Claude Code` セクションの先頭に追加
   - 形式: `- [Claude Code キャッチアップ: YYYY-MM-DD](/content/catchup/claude-code/YYYYMMDD)`
   - `#### Claude Code` 見出しは `### AI / 開発ツール` グループ内（`#### Google Search Central` の後ろ）に置く
+- **Firefox** の新規ファイル → `#### Firefox` セクションの先頭に追加
+  - 形式: `- [Firefox リリースノート キャッチアップ: YYYY-MM-DD](/content/catchup/firefox/YYYYMMDD)`
+  - `#### Firefox` 見出しは `### Web / フロントエンド` グループ内（`#### Google Search Central` の後ろ）に置く
 
-対応するソースの見出し（`####`）がまだ存在しない場合は、上記の分類に従って対応するグループ見出し（`###`）の直下に新規作成する（グループ見出し自体が無い場合はそれも作成する）。重複チェック（ステップ12）でスキップされたファイルのリンクは追加しない。
+対応するソースの見出し（`####`）がまだ存在しない場合は、上記の分類に従って対応するグループ見出し（`###`）の直下に新規作成する（グループ見出し自体が無い場合はそれも作成する）。重複チェック（ステップ13）でスキップされたファイルのリンクは追加しない。
 
-更新した `index.md` はステップ14のpush対象ファイルに含める。
+更新した `index.md` はステップ15のpush対象ファイルに含める。
 
-### ステップ14: GitHub へ Push
+### ステップ15: GitHub へ Push
 
 作成されたMarkdownファイルと更新した `index.md` を GitHub リポジトリへ push する。コミットは1回にまとめる。
 
-> **重要**: このリポジトリの `main` はブランチ保護されており、直接 push は拒否される。そのため **必ず作業ブランチへ push し、ステップ15で PR を作成する**。`main` へ直接 push しようとしないこと。
+> **重要**: このリポジトリの `main` はブランチ保護されており、直接 push は拒否される。そのため **必ず作業ブランチへ push し、ステップ16で PR を作成する**。`main` へ直接 push しようとしないこと。
 
 - push先ブランチ:
   - セッションに指定された開発用ブランチ（例: `claude/...`）がある場合は **そのブランチ** に push する
@@ -241,9 +254,9 @@ git commit -m "chore: add frontend catchup YYYY-MM-DD"
 git push -u origin <作業ブランチ名>
 ```
 
-### ステップ15: Pull Request 作成（必須・省略不可）
+### ステップ16: Pull Request 作成（必須・省略不可）
 
-ステップ14で push したら、**必ず** その作業ブランチから `main` への Pull Request を作成する。新着が1件でもあって push が行われた場合、このステップを省略してはならない。push 後にターンを終えず、PR 作成まで必ず完了させること。
+ステップ15で push したら、**必ず** その作業ブランチから `main` への Pull Request を作成する。新着が1件でもあって push が行われた場合、このステップを省略してはならない。push 後にターンを終えず、PR 作成まで必ず完了させること。
 
 - タイトル: `chore: add frontend catchup YYYY-MM-DD`
 - base: `main`
@@ -254,18 +267,18 @@ GitHub MCP ツール（`mcp__github__create_pull_request`）が利用可能な�
 
 同じ head ブランチに対して既にオープンな PR が存在する場合は、新規作成せず既存 PR にコミットが反映されたことを確認すればよい。
 
-唯一の例外: ステップ12で**全ソースが新着なし**となり push 自体を行わなかった場合のみ、PR は作成しない（「新しい記事はありませんでした」と報告して終了）。
+唯一の例外: ステップ13で**全ソースが新着なし**となり push 自体を行わなかった場合のみ、PR は作成しない（「新しい記事はありませんでした」と報告して終了）。
 
-### ステップ16: auto-merge の有効化
+### ステップ17: auto-merge の有効化
 
-ステップ15で PR を作成（または既存PRを確認）したら、その PR に **GitHub の auto-merge（自動マージ予約）を有効化**する。**スキル側で CI をポーリングしたり、保護をバイパスしてマージしたりはしない**。マージするかどうかの判定は GitHub 側に委ね、`main` のブランチ保護（ruleset）で設定された**必須チェック（`content-guard`）がグリーンになった時にのみ、GitHub が保護を尊重したまま自動でマージ**する。
+ステップ16で PR を作成（または既存PRを確認）したら、その PR に **GitHub の auto-merge（自動マージ予約）を有効化**する。**スキル側で CI をポーリングしたり、保護をバイパスしてマージしたりはしない**。マージするかどうかの判定は GitHub 側に委ね、`main` のブランチ保護（ruleset）で設定された**必須チェック（`content-guard`）がグリーンになった時にのみ、GitHub が保護を尊重したまま自動でマージ**する。
 
 > **設計方針**: 「保護をバイパスしてエージェントがマージ」ではなく、「保護を維持し、CI 通過を条件に GitHub が自動マージ」する方式。マージ可否の判断は外部から取得したコンテンツに影響され得るエージェントではなく、サーバ側の決定論的なチェックに委ねる（セキュリティ上このリポジトリ＝パブリックでの推奨構成）。
 >
 > **必須の前提（リポジトリ設定・1回だけ）**: この方式は以下が設定済みであることが前提。未設定だと auto-merge が機能しない／意図せず即マージされる:
 > 1. リポジトリ設定で **Allow auto-merge** が有効
 > 2. `main` の ruleset で **`content-guard`（`content-pr-automation.yml`）が required status check** に登録済み
-> これらが未整備の場合は auto-merge を有効化せず、ステップ18で「auto-merge 前提のリポジトリ設定が未整備のため手動マージが必要」と報告する。
+> これらが未整備の場合は auto-merge を有効化せず、ステップ19で「auto-merge 前提のリポジトリ設定が未整備のため手動マージが必要」と報告する。
 
 **手順:**
 
@@ -276,15 +289,15 @@ GitHub MCP ツール（`mcp__github__create_pull_request`）が利用可能な�
    - 利用不可な場合は Bash で `gh pr merge <PR番号> --squash --auto` を試みる（`--admin` は使わない。バイパスしない）
 2. 有効化に成功したら **そのままターンを終える**（CI 完了は待たない）。GitHub が必須チェック通過後に自動でマージする
 3. auto-merge の有効化自体が失敗した場合の扱い:
-   - 「Allow auto-merge 無効」「required check 未登録」等の理由で有効化できない → マージせず、ステップ18で前提設定の不足として報告
+   - 「Allow auto-merge 無効」「required check 未登録」等の理由で有効化できない → マージせず、ステップ19で前提設定の不足として報告
    - **このPRが `content/` と `index.md` 以外を含む場合**は `content-guard` が fail し auto-merge は発火しない（これは正常な挙動）。その旨を報告する
 4. 認証/権限/設定に起因する失敗はスキルの不具合ではないため **issue 化はしない**
 
 > **注意**: スキル自身が `merge_pull_request` で能動的にマージしたり、`--admin` でブランチ保護をバイパスしたりしてはならない。マージの実行は常に GitHub の auto-merge に任せる。
 
-### ステップ17: 改善項目の GitHub issue 化（不具合検知時・自動起票）
+### ステップ18: 改善項目の GitHub issue 化（不具合検知時・自動起票）
 
-ステップ1〜11のキャッチアップ実行中に**スキル/取得処理の不具合**を検知した場合、`hidekingerz/catch-all-favorite` リポジトリに GitHub issue を**自動で起票**する。このステップは新着の有無やpushの実行有無に関係なく、不具合を検知していれば必ず実行する。
+ステップ1〜12のキャッチアップ実行中に**スキル/取得処理の不具合**を検知した場合、`hidekingerz/catch-all-favorite` リポジトリに GitHub issue を**自動で起票**する。このステップは新着の有無やpushの実行有無に関係なく、不具合を検知していれば必ず実行する。
 
 **issue 化する「不具合」の例（スキル自体の保守が必要なもの）:**
 
@@ -300,7 +313,7 @@ GitHub MCP ツール（`mcp__github__create_pull_request`）が利用可能な�
 
 **重複チェック（必須）:** issue を作る前に、同じ不具合の既存オープン issue がないか確認する。`mcp__github__search_issues`（または `mcp__github__list_issues`、owner: `hidekingerz`, repo: `catch-all-favorite`, state: `open`）で `catchup-maintenance` ラベルと対象ソース名を手がかりに検索し、**既に同じソース・同じ症状の issue があれば新規作成しない**（必要なら既存issueにコメントで追記する）。
 
-**issue 作成:** GitHub MCP ツール（`mcp__github__issue_write`）を使う。利用不可な場合はこのステップをスキップし、結果報告（ステップ18）で「未起票の不具合」として報告する。
+**issue 作成:** GitHub MCP ツール（`mcp__github__issue_write`）を使う。利用不可な場合はこのステップをスキップし、結果報告（ステップ19）で「未起票の不具合」として報告する。
 
 - owner: `hidekingerz` / repo: `catch-all-favorite`
 - タイトル: `[catchup] <ソース名>: <症状の要約>`（例: `[catchup] Apple Developer News: RSSフィードが404を返す`）
@@ -313,7 +326,7 @@ GitHub MCP ツール（`mcp__github__create_pull_request`）が利用可能な�
 
 複数ソースで不具合を検知した場合は、ソースごとに（重複チェックを通過したものだけ）issueを作成する。
 
-### ステップ18: 結果報告
+### ステップ19: 結果報告
 
 実行結果を簡潔に報告する:
 
@@ -329,7 +342,7 @@ GitHub MCP ツール（`mcp__github__create_pull_request`）が利用可能な�
 
 - **いずれかのキャッチアップが失敗しても、他のソースは実行を続ける**。1つのソースが取得できなくても（ネットワーク許可リスト外・サイト障害など）、残りのソースは実行し、取得できたファイルだけを push する
 - **GitHub MCP ツールの認証**: `mcp__github__push_files` でエラーが出た場合は、ユーザーにGitHub連携の再認証を案内する。Bash で `git` コマンドにフォールバックする選択肢もある
-- **同じ記事を二重にpushしない**。事前チェック（ステップ0）と重複チェック（ステップ12）を必ず行う
+- **同じ記事を二重にpushしない**。事前チェック（ステップ0）と重複チェック（ステップ13）を必ず行う
 - **このスキル実行中に作成・更新するのは、`content/catchup/` ディレクトリ配下のMarkdownファイルと `index.md` のみ**。`.skill` ファイルやその他の設定ファイル、ビルド成果物には触らない
 - 各キャッチアップスキルの共通ルール（`.claude/skills/_shared/catchup-common.md`）と各 SKILL.md の「絶対に守るべきルール」（正確性、URL転記等）はそのまま遵守する
 
@@ -339,5 +352,5 @@ GitHub MCP ツール（`mcp__github__create_pull_request`）が利用可能な�
 
 routine に設定するプロンプト:
 ```
-frontend-catchup-and-push スキルを実行して、jser.info・This Week in React・Chrome for Developers ブログ・Google 検索セントラル ブログ・Apple Developer News・iOS & iPadOS リリースノート・Android Security Bulletin・Android リリースノート・Apple セキュリティリリース・Google Play 最新情報・Claude Code をキャッチアップし、GitHubリポジトリにpushして PR を作成し、auto-merge を有効化して（CI 通過後に GitHub が自動マージ）。
+frontend-catchup-and-push スキルを実行して、jser.info・This Week in React・Chrome for Developers ブログ・Google 検索セントラル ブログ・Apple Developer News・iOS & iPadOS リリースノート・Android Security Bulletin・Android リリースノート・Apple セキュリティリリース・Google Play 最新情報・Claude Code・Firefox をキャッチアップし、GitHubリポジトリにpushして PR を作成し、auto-merge を有効化して（CI 通過後に GitHub が自動マージ）。
 ```

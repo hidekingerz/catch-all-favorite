@@ -67,6 +67,10 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 - [Google 検索セントラル ブログ キャッチアップ: 2026-06-21](/content/catchup/google-search-blog/20260621)
 - [Google 検索セントラル ブログ キャッチアップ: 2026-06-08](/content/catchup/google-search-blog/20260608)
 
+#### Firefox
+
+- [Firefox リリースノート キャッチアップ: 2026-08-25](/content/catchup/firefox/20260825)
+
 ### AI / 開発ツール
 
 #### Claude Code
