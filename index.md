@@ -9,6 +9,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### JSer.info
 
+- [JSer.info #778 キャッチアップ: 2026-08-27のJS](/content/catchup/jser-info/20260827)
 - [JSer.info #777 キャッチアップ: 2026-08-05のJS](/content/catchup/jser-info/20260805)
 - [JSer.info #776 キャッチアップ: 2026-07-17のJS](/content/catchup/jser-info/20260717)
 - [JSer.info #775 キャッチアップ: 2026-07-05のJS](/content/catchup/jser-info/20260705)
@@ -76,6 +77,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Claude Code
 
+- [Claude Code キャッチアップ: 2026-08-27](/content/catchup/claude-code/20260827)
 - [Claude Code キャッチアップ: 2026-08-26](/content/catchup/claude-code/20260826)
 - [Claude Code キャッチアップ: 2026-08-25](/content/catchup/claude-code/20260825)
 - [Claude Code キャッチアップ: 2026-08-23](/content/catchup/claude-code/20260823)
@@ -140,6 +142,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Apple Developer News
 
+- [Apple Developer News キャッチアップ: 2026-08-27](/content/catchup/apple-news/20260827)
 - [Apple Developer News キャッチアップ: 2026-08-26](/content/catchup/apple-news/20260826)
 - [Apple Developer News キャッチアップ: 2026-08-24](/content/catchup/apple-news/20260824)
 - [Apple Developer News キャッチアップ: 2026-08-18](/content/catchup/apple-news/20260818)
@@ -159,6 +162,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Android リリースノート
 
+- [Android リリースノート キャッチアップ: 2026-08-27](/content/catchup/android-release-notes/20260827)
 - [Android リリースノート キャッチアップ: 2026-07-28](/content/catchup/android-release-notes/20260728)
 - [Android リリースノート キャッチアップ: 2026-07-23](/content/catchup/android-release-notes/20260723)
 - [Android リリースノート キャッチアップ: 2026-06-21](/content/catchup/android-release-notes/20260621)
