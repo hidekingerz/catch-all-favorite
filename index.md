@@ -164,6 +164,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Android リリースノート
 
+- [Android リリースノート キャッチアップ: 2026-08-29](/content/catchup/android-release-notes/20260829)
 - [Android リリースノート キャッチアップ: 2026-08-27](/content/catchup/android-release-notes/20260827)
 - [Android リリースノート キャッチアップ: 2026-07-28](/content/catchup/android-release-notes/20260728)
 - [Android リリースノート キャッチアップ: 2026-07-23](/content/catchup/android-release-notes/20260723)
