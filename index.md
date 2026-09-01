@@ -78,6 +78,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Claude Code
 
+- [Claude Code キャッチアップ: 2026-09-01](/content/catchup/claude-code/20260901)
 - [Claude Code キャッチアップ: 2026-08-31](/content/catchup/claude-code/20260831)
 - [Claude Code キャッチアップ: 2026-08-28](/content/catchup/claude-code/20260828)
 - [Claude Code キャッチアップ: 2026-08-27](/content/catchup/claude-code/20260827)
@@ -146,6 +147,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Apple Developer News
 
+- [Apple Developer News キャッチアップ: 2026-09-01](/content/catchup/apple-news/20260901)
 - [Apple Developer News キャッチアップ: 2026-08-27](/content/catchup/apple-news/20260827)
 - [Apple Developer News キャッチアップ: 2026-08-26](/content/catchup/apple-news/20260826)
 - [Apple Developer News キャッチアップ: 2026-08-24](/content/catchup/apple-news/20260824)
