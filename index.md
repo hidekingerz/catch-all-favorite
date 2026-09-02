@@ -23,6 +23,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### This Week in React
 
+- [This Week in React 2026-09-02](/content/catchup/twir/20260902)
 - [This Week in React 2026-08-19](/content/catchup/twir/20260819)
 - [This Week in React 2026-08-05](/content/catchup/twir/20260805)
 - [This Week in React 2026-07-29](/content/catchup/twir/20260729)
@@ -45,6 +46,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Chrome for Developers
 
+- [Chrome for Developers キャッチアップ: 2026-09-02](/content/catchup/chrome-blog/20260902)
 - [Chrome for Developers キャッチアップ: 2026-08-25](/content/catchup/chrome-blog/20260825)
 - [Chrome for Developers キャッチアップ: 2026-08-22](/content/catchup/chrome-blog/20260822)
 - [Chrome for Developers キャッチアップ: 2026-08-21](/content/catchup/chrome-blog/20260821)
@@ -78,6 +80,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Claude Code
 
+- [Claude Code キャッチアップ: 2026-09-02](/content/catchup/claude-code/20260902)
 - [Claude Code キャッチアップ: 2026-09-01](/content/catchup/claude-code/20260901)
 - [Claude Code キャッチアップ: 2026-08-31](/content/catchup/claude-code/20260831)
 - [Claude Code キャッチアップ: 2026-08-28](/content/catchup/claude-code/20260828)
@@ -147,6 +150,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Apple Developer News
 
+- [Apple Developer News キャッチアップ: 2026-09-02](/content/catchup/apple-news/20260902)
 - [Apple Developer News キャッチアップ: 2026-09-01](/content/catchup/apple-news/20260901)
 - [Apple Developer News キャッチアップ: 2026-08-27](/content/catchup/apple-news/20260827)
 - [Apple Developer News キャッチアップ: 2026-08-26](/content/catchup/apple-news/20260826)
