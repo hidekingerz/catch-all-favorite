@@ -2,7 +2,7 @@
 title: "同一ホスト内の Claude Code / Codex CLI 間でレビュー依頼・結果受け取りを行う方法 調査レポート"
 ---
 
-> 発行日: 2026-08-31
+> 発行日: 2026-08-31（追記 2026-09-01: `codex mcp-server` の非推奨化を反映）
 > テーマ: 同じマシン上で動く Claude Code 同士、Codex CLI 同士、およびその相互間で、コードレビューを依頼して結果を受け取る方法の整理（公式機能・実験的機能・コミュニティパターンの区別つき）
 > 調査時点のバージョン: Claude Code v2.1.236 / Codex CLI v0.151.0 stable（2026-08-29）
 > 出典: [Claude Code Docs](https://code.claude.com/docs) / [anthropics/claude-code Releases](https://github.com/anthropics/claude-code/releases) / [openai/codex](https://github.com/openai/codex) / [developers.openai.com/codex](https://developers.openai.com/codex/noninteractive) ほか（本文中に個別に明記）
@@ -11,7 +11,7 @@ title: "同一ホスト内の Claude Code / Codex CLI 間でレビュー依頼�
 
 - **Claude Code 同士**は、v2.1.224（2026-08-07）で入った**クロスセッションメッセージング（`ListAgents` / `SendMessage`）**が本命。同一マシン上のセッションを自動発見し、Unix ドメインソケット経由でテキストを送受信できる（Anthropic サーバを経由しないローカル通信）。設定不要で、「セッション B に最新コミットのレビューを頼んで」と言うだけで依頼→返信の往復ができる。
 - **Codex CLI 同士**は、`codex exec review`（ヘッドレスレビュー）＋ `codex exec resume` によるセッション往復が基本。加えて v0.149.0+（実験的）の **`codex queue`** で、稼働中の別セッションにメッセージを直接投入できる（ただし返信チャネルは結果ファイル等を自前で決める必要がある）。
-- **相互（Claude ⇄ Codex）**で最も堅牢なのは**シェル経由の一発呼び出し**（Claude が `codex exec review` を叩く／Codex が `claude -p` を叩く）。よりリッチな往復会話が欲しければ **MCP 接続**（`claude mcp add codex -- codex mcp-server`）で `codex` / `codex-reply` ツールを直接呼べる。
+- **相互（Claude ⇄ Codex）**で最も堅牢なのは**シェル経由の一発呼び出し**（Claude が `codex exec review` を叩く／Codex が `claude -p` を叩く）。よりリッチな統合は、**`codex mcp-server` が 2026-08-24 付けで非推奨化**されたため、後継の **Codex app server**（`codex app-server`）か、Claude Code からは公式の **Codex plugin for Claude Code**（内部で app server を使用）を使う。
 - 共通の注意点: どちらの CLI も **exit code はレビューの合否を表さない**ため判定は必ず出力のパースで行う。レビュー用途では書き込み権限は不要なので、Codex は `--sandbox read-only`、Claude は `--allowedTools Read,Bash,Grep` 程度に絞るのが安全。
 
 ## 使い分け早見表
@@ -20,7 +20,7 @@ title: "同一ホスト内の Claude Code / Codex CLI 間でレビュー依頼�
 | --- | --- | --- |
 | 対話中の Claude Code 2 セッション間 | クロスセッションメッセージング（`ListAgents` / `SendMessage`） | v2.1.224+・設定不要。依頼も返信も自然文で往復できる |
 | スクリプト / CI・構造化出力が欲しい | `claude -p --output-format json` ／ `codex exec review --output-schema` | stdout をパースする前提。毎回新規セッション |
-| Claude から Codex にセカンドオピニオン | Bash で `codex exec review`。常用なら `codex mcp-server` を MCP 登録 | レビューは `--sandbox read-only` で安全に実行できる |
+| Claude から Codex にセカンドオピニオン | Bash で `codex exec review`。常用なら Codex plugin for Claude Code | レビューは `--sandbox read-only` で安全に実行できる |
 | Codex から Claude にレビュー依頼 | シェルで `claude -p` | Codex サンドボックスのネットワーク遮断に注意（後述） |
 | 稼働中の Codex セッションへ割り込み依頼 | `codex queue`（実験的）＋結果ファイル受け渡し | v0.149.0+。返信チャネルは自前で決める必要あり |
 
@@ -132,30 +132,34 @@ claude -p "このdiffをレビューして: $(git diff main...HEAD)" --output-fo
 
 **注意**: Codex のサンドボックスは既定でネットワーク遮断のため、Codex 側から `claude -p` を呼ぶには承認エスカレーションか `[sandbox_workspace_write] network_access = true` の設定が必要。Codex が「外部サービスへのコード送信」として難色を示す既知の挙動（[issue #23211](https://github.com/openai/codex/issues/23211)）もある。
 
-### MCP 接続（Codex 側は公式）
+### MCP / app server 接続
 
-Codex はネイティブに MCP サーバになれる（`codex mcp-server`、stdio）。Claude Code から登録すると、ツール呼び出しとしてレビュー会話を往復できる。
+Codex を MCP サーバとして常駐させる従来の `codex mcp-server`（stdio、`codex` / `codex-reply` の 2 ツールを公開）は、**2026-08-24 付けで非推奨化された**。起動時に「deprecated / 将来のリリースで削除予定」の警告が stderr に出る（警告追加は 2026-08-20 マージ）。当面は動作するが、新規の構成には使わない。
 
-```bash
-claude mcp add codex -- codex mcp-server
-```
+公式の移行先は用途別に 3 つ:
 
-- 公開ツールは 2 つ: **`codex`**（セッション開始。`prompt` / `model` / `cwd` / `sandbox` / `approval-policy` / `config` 等を指定可）と **`codex-reply`**（`threadId` で会話継続。`conversationId` は非推奨化）
-- 無人運用は `approval-policy: never` ＋ `sandbox: read-only` を指定（承認要求は MCP elicitation として上がってくるため）
-- 逆方向（`codex mcp add claude-code -- claude mcp serve`）も設定自体は可能だが、Claude 側はツールしか公開されないため、Codex → Claude のレビューは `claude -p` シェルアウトのほうが実用的
+- **Claude Code から Codex を呼ぶ** → 公式の **Codex plugin for Claude Code**（内部で app server を使用）。従来の `claude mcp add codex -- codex mcp-server` の置き換え
+- **深い統合**（認証・会話履歴・承認・ストリームイベントの管理が必要な独自クライアント）→ **Codex app server**（`codex app-server`）
+- **自動化・CI のワンショット実行** → **Codex SDK**（および従来どおりの `codex exec` 系）
 
-出典: [openai/codex `codex_tool_config.rs`](https://github.com/openai/codex/blob/main/codex-rs/mcp-server/src/codex_tool_config.rs)、[Claude ⇄ Codex 双方向 MCP ガイド](https://codex.danielvaughan.com/2026/03/26/claude-code-codex-bidirectional-mcp/)
+補足:
+
+- 逆方向（`codex mcp add claude-code -- claude mcp serve`）は引き続き設定可能だが、Claude 側はツールしか公開されないため、Codex → Claude のレビューは `claude -p` シェルアウトのほうが実用的
+- 既存の `codex mcp-server` ベースの構成（ラッパー MCP サーバ含む）は削除前に app server / plugin へ移行しておく
+
+出典: [OpenAI Codex changelog（2026-08-24 の非推奨化告知）](https://developers.openai.com/codex/changelog)、[openai/codex PR #39657（起動時警告の追加）](https://github.com/openai/codex/pull/39657)、[Claude ⇄ Codex 双方向 MCP ガイド](https://codex.danielvaughan.com/2026/03/26/claude-code-codex-bidirectional-mcp/)
 
 ### ラッパー・スキル類（コミュニティ）
 
 - レビュー専用ツールを持つラッパー MCP サーバ: [tuannvm/codex-mcp-server](https://github.com/tuannvm/codex-mcp-server)（uncommitted / branch / commit 対応の `review` ツール、`sessionId` によるセッション継続付き）ほか
 - CLI 間ブリッジ: zen-mcp-server の `clink`（codereview ロール付き）
-- Claude Code 用スキル / プラグインとしてパッケージ化された「Codex にレビューさせる」もの（codex-code-review 等）も複数存在。ネイティブの `codex mcp-server` 登場でラッパーの必要性は下がりつつあるが、レビュー特化のツール面を足す用途では今も有効
+- Claude Code 用スキル / プラグインとしてパッケージ化された「Codex にレビューさせる」もの（codex-code-review 等）も複数存在。公式の Codex plugin for Claude Code の登場でラッパーの必要性は下がりつつあり、`codex mcp-server` ベースのラッパーは非推奨化の影響も受けるため、新規採用は避ける
 
 ## バージョン・制約まとめ
 
 - Claude Code のクロスセッションメッセージングは **v2.1.224+（2026-08-07）かつ macOS / Linux 限定**。ネイティブ Windows は不可
-- Codex CLI の `--json`・`queue`・collab / Agents v2・`app-server` / `exec-server` は**実験的**扱い。`exec review` のフラグ構文も比較的最近変わったため、**CI では CLI バージョンを固定**するのが安全
+- Codex CLI の `--json`・`queue`・collab / Agents v2・`exec-server` は**実験的**扱い。`exec review` のフラグ構文も比較的最近変わったため、**CI では CLI バージョンを固定**するのが安全
+- **`codex mcp-server` は 2026-08-24 付けで非推奨**（将来のリリースで削除予定）。新規構成は Codex plugin for Claude Code / `codex app-server` / Codex SDK を使う
 - どちらの CLI も **exit code はレビューの合否を表さない**。判定は必ず出力（JSON / Markdown）のパースで行う
 - レビュー用途では書き込み権限は不要。Codex は `--sandbox read-only`、Claude は `--allowedTools Read,Bash,Grep` 程度に絞ると安全
 - `SendMessage` / `codex queue` とも送れるのはテキストのみ。diff 本体は git 参照（ブランチ名・SHA）かファイルパスで渡すのが確実
@@ -164,8 +168,8 @@ claude mcp add codex -- codex mcp-server
 
 - [Claude Code Docs — Cross-Session Messaging](https://code.claude.com/docs/en/cross-session-messaging) / [Agent Teams](https://code.claude.com/docs/en/agent-teams) / [MCP](https://code.claude.com/docs/en/mcp)
 - [anthropics/claude-code Releases](https://github.com/anthropics/claude-code/releases)（v2.1.224 クロスセッションメッセージング、v2.1.236 `notify_when_idle`）
-- [openai/codex](https://github.com/openai/codex)（`exec/cli.rs`・`exec_events.rs`・`queue_cmd.rs`・`codex_tool_config.rs`・Releases）
-- [developers.openai.com — Codex noninteractive](https://developers.openai.com/codex/noninteractive) / [Codex MCP](https://developers.openai.com/codex/mcp) / [CLI reference](https://developers.openai.com/codex/cli/reference)
+- [openai/codex](https://github.com/openai/codex)（`exec/cli.rs`・`exec_events.rs`・`queue_cmd.rs`・Releases）/ [PR #39657: `codex mcp-server` 非推奨警告の追加](https://github.com/openai/codex/pull/39657)
+- [developers.openai.com — Codex noninteractive](https://developers.openai.com/codex/noninteractive) / [Codex MCP](https://developers.openai.com/codex/mcp) / [CLI reference](https://developers.openai.com/codex/cli/reference) / [changelog](https://developers.openai.com/codex/changelog)
 - [OpenAI Cookbook — Build Code Review with the Codex SDK](https://developers.openai.com/cookbook/examples/codex/build_code_review_with_codex_sdk)
 - [codex queue 解説](https://codex.danielvaughan.com/2026/08/21/codex-queue-inter-session-messaging-codex-cli-v0149-orchestration-automation-agent-to-agent/) / [Codex CLI as an MCP Server](https://codex.danielvaughan.com/2026/03/30/codex-cli-as-mcp-server/) / [Claude ⇄ Codex 双方向 MCP ガイド](https://codex.danielvaughan.com/2026/03/26/claude-code-codex-bidirectional-mcp/)
 - [tuannvm/codex-mcp-server](https://github.com/tuannvm/codex-mcp-server) / [zen-mcp-server clink](https://glama.ai/mcp/servers/@BeehiveInnovations/zen-mcp-server/blob/b205d7159b674ce47ebc11af7255d1e3556fff93/docs/tools/clink.md)
