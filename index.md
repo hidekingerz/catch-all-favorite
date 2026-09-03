@@ -195,6 +195,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 ## 技術調査レポート
 
+- [WebAuthn Level 3 調査レポート — W3C 勧告化と Level 2 からの変更点](/content/research/webauthn-level3)
 - [同一ホスト内の Claude Code / Codex CLI 間でレビュー依頼・結果受け取りを行う方法 調査レポート](/content/research/local-agent-cross-review)
 - [WebMCP 調査レポート — ブラウザページを MCP ツール化する提案と Cloudflare の developer preview](/content/research/webmcp)
 - [CISA BOD 26-04 調査レポート — Prioritizing Security Updates Based on Risk](/content/research/cisa-bod-26-04)
