@@ -25,7 +25,7 @@ jser.info・This Week in React・Chrome for Developers ブログ・Google 検索
 
 このスキルは以下を順番に実行する（番号は「実行手順」のステップ番号に対応する）:
 
-0. **事前チェック**: 前回のキャッチアップPRが未マージのまま残っていないか確認
+0. **事前チェック**: 前回のキャッチアップPRが未マージのまま残っていないか確認し、マージ済みPRの残存ブランチを削除
 1. **jser-catchup スキル**を実行して JSer.info の最新記事を取得・Markdown化
 2. **twir-catchup スキル**を実行して This Week in React の最新号を取得・Markdown化
 3. **chrome-blog-catchup スキル**を実行して Chrome for Developers ブログの新着記事を取得・Markdown化
@@ -56,6 +56,23 @@ jser.info・This Week in React・Chrome for Developers ブログ・Google 検索
 - **該当PRが残っている場合**: そのPRに含まれる `content/catchup/**/*.md` はまだ `main`（＝ローカルクローン）に存在しないため、各スキルの重複チェックをすり抜けて**同じ記事を別日付のファイルとして重複作成してしまう**。これを防ぐため、そのPRのブランチの差分ファイルを取得し（`git fetch origin <headブランチ>` して `git diff --name-only main...FETCH_HEAD`、または `mcp__github__get_file_contents` でPRブランチ側の `content/catchup/` を確認）、そこに含まれる記事・バージョン・URLも各ステップの重複チェックで「既存」として扱う
 - 前回PRが未マージのまま残っている場合は、その理由（`content-guard` 失敗・auto-merge 前提未整備・コンフリクト等）をステップ19の結果報告に含める。特に `index.md` のコンフリクトで auto-merge が止まっている場合、今回のPRも同様に止まる可能性が高いため必ず報告する
 - 該当PRが無ければそのままステップ1へ進む
+
+**あわせて、マージ済みPRの残存ブランチを削除する（ブランチ掃除）:**
+
+リポジトリの「Automatically delete head branches」設定は有効だが、**クラウドセッション（routine 実行環境）が push したブランチにはマージ時の自動削除が効かない**（2026-09-03 実測: 手動マージやローカル push のブランチは自動削除されるが、routine の `claude/*` ブランチは `head_ref_deleted` イベント自体が発生せず残り続ける）。そのため実行のたびに前回までの残骸を掃除する。
+
+```bash
+# マージ済みPRのheadブランチのうち、リモートに残っているものを削除
+for b in $(gh pr list --state merged --limit 30 --json headRefName --jq '.[].headRefName' | sort -u); do
+  [ "$b" = "main" ] && continue
+  git ls-remote --exit-code --heads origin "$b" >/dev/null 2>&1 || continue
+  [ -n "$(gh pr list --state open --head "$b" --json number --jq '.[].number')" ] && continue
+  git push origin --delete "$b"
+done
+```
+
+- **削除してよいのは「マージ済みPRの head ブランチ」だけ。** `main`、オープンPRが紐づくブランチ、今回のセッションに指定された作業ブランチ（自分が今 push しようとしているブランチ）は削除しない（上記スクリプトの条件がそれを担保する。自セッションのブランチはまだPRが無いため `--state merged` の一覧に載らない）
+- `gh` が使えない環境や権限エラーで削除に失敗した場合は**スキップして先へ進む**（全体を止めない）。環境起因のため issue 化もしない。未掃除だった旨をステップ19の結果報告に含める
 
 ### ステップ1: JSer.info キャッチアップ
 
@@ -335,6 +352,7 @@ GitHub MCP ツール（`mcp__github__create_pull_request`）が利用可能な�
 - 作成したPRのURL（該当する場合）
 - **auto-merge の状態**（有効化済み→CI通過後に自動マージ予定 / content-guard 失敗で発火せず / Allow auto-merge・必須チェック未整備で有効化不可 のいずれか。該当する場合）
 - アクセスできずスキップしたソース（該当する場合）
+- ステップ0で削除した残存ブランチ（該当する場合。削除に失敗した場合はその旨）
 - **起票した改善 issue のURLと、重複のためスキップした不具合**（該当する場合）
 - pushに失敗した場合はエラー内容
 
