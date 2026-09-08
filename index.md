@@ -199,6 +199,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 ## 技術調査レポート
 
+- [WezTerm で SSH 切断後にマウスを動かすと数字の羅列が入力される問題 調査レポート](/content/research/wezterm-ssh-disconnect-mouse-reporting)
 - [WebAuthn Level 3 調査レポート — W3C 勧告化と Level 2 からの変更点](/content/research/webauthn-level3)
 - [同一ホスト内の Claude Code / Codex CLI 間でレビュー依頼・結果受け取りを行う方法 調査レポート](/content/research/local-agent-cross-review)
 - [WebMCP 調査レポート — ブラウザページを MCP ツール化する提案と Cloudflare の developer preview](/content/research/webmcp)
