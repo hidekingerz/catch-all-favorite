@@ -65,6 +65,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Google Search Central
 
+- [Google 検索セントラル ブログ キャッチアップ: 2026-09-08](/content/catchup/google-search-blog/20260908)
 - [Google 検索セントラル ブログ キャッチアップ: 2026-08-28](/content/catchup/google-search-blog/20260828)
 - [Google 検索セントラル ブログ キャッチアップ: 2026-08-13](/content/catchup/google-search-blog/20260813)
 - [Google 検索セントラル ブログ キャッチアップ: 2026-07-29](/content/catchup/google-search-blog/20260729)
@@ -81,6 +82,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Claude Code
 
+- [Claude Code キャッチアップ: 2026-09-08](/content/catchup/claude-code/20260908)
 - [Claude Code キャッチアップ: 2026-09-06](/content/catchup/claude-code/20260906)
 - [Claude Code キャッチアップ: 2026-09-04](/content/catchup/claude-code/20260904)
 - [Claude Code キャッチアップ: 2026-09-02](/content/catchup/claude-code/20260902)
@@ -185,6 +187,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Android Security Bulletin
 
+- [Android Security Bulletin キャッチアップ: 2026-09-08](/content/catchup/android-security-bulletin/20260908)
 - [Android Security Bulletin キャッチアップ: 2026-08-05](/content/catchup/android-security-bulletin/20260805)
 - [Android Security Bulletin キャッチアップ: 2026-07-06](/content/catchup/android-security-bulletin/20260706)
 - [Android Security Bulletin キャッチアップ: 2026-06-10](/content/catchup/android-security-bulletin/20260610)
