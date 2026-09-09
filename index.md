@@ -23,6 +23,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### This Week in React
 
+- [This Week in React 2026-09-09](/content/catchup/twir/20260909)
 - [This Week in React 2026-09-02](/content/catchup/twir/20260902)
 - [This Week in React 2026-08-19](/content/catchup/twir/20260819)
 - [This Week in React 2026-08-05](/content/catchup/twir/20260805)
@@ -46,6 +47,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Chrome for Developers
 
+- [Chrome for Developers キャッチアップ: 2026-09-09](/content/catchup/chrome-blog/20260909)
 - [Chrome for Developers キャッチアップ: 2026-09-05](/content/catchup/chrome-blog/20260905)
 - [Chrome for Developers キャッチアップ: 2026-09-02](/content/catchup/chrome-blog/20260902)
 - [Chrome for Developers キャッチアップ: 2026-08-25](/content/catchup/chrome-blog/20260825)
@@ -82,6 +84,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Claude Code
 
+- [Claude Code キャッチアップ: 2026-09-09](/content/catchup/claude-code/20260909)
 - [Claude Code キャッチアップ: 2026-09-08](/content/catchup/claude-code/20260908)
 - [Claude Code キャッチアップ: 2026-09-06](/content/catchup/claude-code/20260906)
 - [Claude Code キャッチアップ: 2026-09-04](/content/catchup/claude-code/20260904)
@@ -132,6 +135,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### iOS & iPadOS リリースノート
 
+- [iOS & iPadOS リリースノート キャッチアップ: 2026-09-09](/content/catchup/ios-release-notes/20260909)
 - [iOS & iPadOS リリースノート キャッチアップ: 2026-08-31](/content/catchup/ios-release-notes/20260831)
 - [iOS & iPadOS リリースノート キャッチアップ: 2026-08-24](/content/catchup/ios-release-notes/20260824)
 - [iOS & iPadOS リリースノート キャッチアップ: 2026-08-17](/content/catchup/ios-release-notes/20260817)
@@ -146,6 +150,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Apple セキュリティリリース
 
+- [Apple セキュリティリリース キャッチアップ: 2026-09-09](/content/catchup/apple-security-releases/20260909)
 - [Apple セキュリティリリース キャッチアップ: 2026-08-18](/content/catchup/apple-security-releases/20260818)
 - [Apple セキュリティリリース キャッチアップ: 2026-08-07](/content/catchup/apple-security-releases/20260807)
 - [Apple セキュリティリリース キャッチアップ: 2026-07-28](/content/catchup/apple-security-releases/20260728)
@@ -155,6 +160,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Apple Developer News
 
+- [Apple Developer News キャッチアップ: 2026-09-09](/content/catchup/apple-news/20260909)
 - [Apple Developer News キャッチアップ: 2026-09-02](/content/catchup/apple-news/20260902)
 - [Apple Developer News キャッチアップ: 2026-09-01](/content/catchup/apple-news/20260901)
 - [Apple Developer News キャッチアップ: 2026-08-27](/content/catchup/apple-news/20260827)
