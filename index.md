@@ -86,6 +86,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Claude Code
 
+- [Claude Code キャッチアップ: 2026-09-12](/content/catchup/claude-code/20260912)
 - [Claude Code キャッチアップ: 2026-09-11](/content/catchup/claude-code/20260911)
 - [Claude Code キャッチアップ: 2026-09-10](/content/catchup/claude-code/20260910)
 - [Claude Code キャッチアップ: 2026-09-09](/content/catchup/claude-code/20260909)
@@ -188,6 +189,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Android リリースノート
 
+- [Android リリースノート キャッチアップ: 2026-09-12](/content/catchup/android-release-notes/20260912)
 - [Android リリースノート キャッチアップ: 2026-09-06](/content/catchup/android-release-notes/20260906)
 - [Android リリースノート キャッチアップ: 2026-08-29](/content/catchup/android-release-notes/20260829)
 - [Android リリースノート キャッチアップ: 2026-08-27](/content/catchup/android-release-notes/20260827)
