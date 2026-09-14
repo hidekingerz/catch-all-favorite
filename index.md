@@ -69,6 +69,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Google Search Central
 
+- [Google 検索セントラル ブログ キャッチアップ: 2026-09-14](/content/catchup/google-search-blog/20260914)
 - [Google 検索セントラル ブログ キャッチアップ: 2026-09-08](/content/catchup/google-search-blog/20260908)
 - [Google 検索セントラル ブログ キャッチアップ: 2026-08-28](/content/catchup/google-search-blog/20260828)
 - [Google 検索セントラル ブログ キャッチアップ: 2026-08-13](/content/catchup/google-search-blog/20260813)
@@ -80,6 +81,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Firefox
 
+- [Firefox リリースノート キャッチアップ: 2026-09-14](/content/catchup/firefox/20260914)
 - [Firefox リリースノート キャッチアップ: 2026-08-25](/content/catchup/firefox/20260825)
 
 ### AI / 開発ツール
@@ -140,6 +142,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### iOS & iPadOS リリースノート
 
+- [iOS & iPadOS リリースノート キャッチアップ: 2026-09-14](/content/catchup/ios-release-notes/20260914)
 - [iOS & iPadOS リリースノート キャッチアップ: 2026-09-13](/content/catchup/ios-release-notes/20260913)
 - [iOS & iPadOS リリースノート キャッチアップ: 2026-09-09](/content/catchup/ios-release-notes/20260909)
 - [iOS & iPadOS リリースノート キャッチアップ: 2026-08-31](/content/catchup/ios-release-notes/20260831)
