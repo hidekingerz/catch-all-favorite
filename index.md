@@ -24,6 +24,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### This Week in React
 
+- [This Week in React 2026-09-16](/content/catchup/twir/20260916)
 - [This Week in React 2026-09-09](/content/catchup/twir/20260909)
 - [This Week in React 2026-09-02](/content/catchup/twir/20260902)
 - [This Week in React 2026-08-19](/content/catchup/twir/20260819)
@@ -48,6 +49,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Chrome for Developers
 
+- [Chrome for Developers キャッチアップ: 2026-09-16](/content/catchup/chrome-blog/20260916)
 - [Chrome for Developers キャッチアップ: 2026-09-15](/content/catchup/chrome-blog/20260915)
 - [Chrome for Developers キャッチアップ: 2026-09-11](/content/catchup/chrome-blog/20260911)
 - [Chrome for Developers キャッチアップ: 2026-09-09](/content/catchup/chrome-blog/20260909)
@@ -70,6 +72,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Google Search Central
 
+- [Google 検索セントラル ブログ キャッチアップ: 2026-09-16](/content/catchup/google-search-blog/20260916)
 - [Google 検索セントラル ブログ キャッチアップ: 2026-09-14](/content/catchup/google-search-blog/20260914)
 - [Google 検索セントラル ブログ キャッチアップ: 2026-09-08](/content/catchup/google-search-blog/20260908)
 - [Google 検索セントラル ブログ キャッチアップ: 2026-08-28](/content/catchup/google-search-blog/20260828)
@@ -144,6 +147,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### iOS & iPadOS リリースノート
 
+- [iOS & iPadOS リリースノート キャッチアップ: 2026-09-16](/content/catchup/ios-release-notes/20260916)
 - [iOS & iPadOS リリースノート キャッチアップ: 2026-09-14](/content/catchup/ios-release-notes/20260914)
 - [iOS & iPadOS リリースノート キャッチアップ: 2026-09-13](/content/catchup/ios-release-notes/20260913)
 - [iOS & iPadOS リリースノート キャッチアップ: 2026-09-09](/content/catchup/ios-release-notes/20260909)
@@ -172,6 +176,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Apple Developer News
 
+- [Apple Developer News キャッチアップ: 2026-09-16](/content/catchup/apple-news/20260916)
 - [Apple Developer News キャッチアップ: 2026-09-10](/content/catchup/apple-news/20260910)
 - [Apple Developer News キャッチアップ: 2026-09-09](/content/catchup/apple-news/20260909)
 - [Apple Developer News キャッチアップ: 2026-09-02](/content/catchup/apple-news/20260902)
