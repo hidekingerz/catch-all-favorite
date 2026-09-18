@@ -43,10 +43,10 @@ RSSフィード（`https://developer.chrome.com/static/blog/feed.xml`）はス�
 
 **(b) WebSearch での探索（先に実施）**: WebSearch が利用可能なら「site:developer.chrome.com/blog 直近1か月」または「developer.chrome.com/blog <直近月名> 2026」を検索し、見つかった記事URL（`developer.chrome.com/blog/` 配下のもののみ採用。他ドメインは使わない）を候補に加える。バージョン別記事だけでなくポリシー更新・機能紹介など非定型の記事もカバーできる。
 
-**(a) 定番シリーズ記事のバージョン探索（WebSearch の補完として実施）**: Chrome はリリースサイクルに沿って定番記事が出る。既存のキャッチアップファイルから最後に把握した Chrome バージョン N を起点に、N〜N+3 について以下のURLを curl で確認する（HTTP 200 かつ canonical URL がそのスラッグを含むタイトルが取れれば記事が存在する）。Chrome のリリースサイクルは約 4 週間なので、30 日分の範囲を探索する。**現在の起点: Chrome 154（`chrome-154-beta` が 2026-09-02 収録済み）。次回以降は 154 を含む範囲（154〜157）で探索すること（2026-09-05 更新）**:
+**(a) 定番シリーズ記事のバージョン探索（WebSearch の補完として実施）**: Chrome はリリースサイクルに沿って定番記事が出る。既存のキャッチアップファイルから最後に把握した Chrome バージョン N を起点に、N〜N+3 について以下のURLを curl で確認する（HTTP 200 かつ canonical URL がそのスラッグを含むタイトルが取れれば記事が存在する）。Chrome のリリースサイクルは約 4 週間なので、30 日分の範囲を探索する。**現在の起点: Chrome 155（`chrome-155-beta` が 2026-09-16 収録済み）。次回以降は 155 を含む範囲（155〜158）で探索すること（2026-09-18 更新）**:
 
 ```bash
-for v in 154 155 156 157; do  # 例: chrome-154-beta が記録済みの場合
+for v in 155 156 157 158; do  # 例: chrome-155-beta が記録済みの場合
   for slug in "new-in-chrome-$v" "chrome-$v-beta" "new-in-devtools-$v"; do
     code=$(curl -sL -o /tmp/cb-probe.html -w '%{http_code}' "https://developer.chrome.com/blog/$slug")
     # ソフト404チェック: canonical URL がこのスラッグを含まない場合はリダイレクト扱いで除外
