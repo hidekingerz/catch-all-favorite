@@ -49,6 +49,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Chrome for Developers
 
+- [Chrome for Developers キャッチアップ: 2026-09-18](/content/catchup/chrome-blog/20260918)
 - [Chrome for Developers キャッチアップ: 2026-09-16](/content/catchup/chrome-blog/20260916)
 - [Chrome for Developers キャッチアップ: 2026-09-15](/content/catchup/chrome-blog/20260915)
 - [Chrome for Developers キャッチアップ: 2026-09-11](/content/catchup/chrome-blog/20260911)
@@ -85,6 +86,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Firefox
 
+- [Firefox リリースノート キャッチアップ: 2026-09-18](/content/catchup/firefox/20260918)
 - [Firefox リリースノート キャッチアップ: 2026-09-14](/content/catchup/firefox/20260914)
 - [Firefox リリースノート キャッチアップ: 2026-08-25](/content/catchup/firefox/20260825)
 
@@ -92,6 +94,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Claude Code
 
+- [Claude Code キャッチアップ: 2026-09-18](/content/catchup/claude-code/20260918)
 - [Claude Code キャッチアップ: 2026-09-17](/content/catchup/claude-code/20260917)
 - [Claude Code キャッチアップ: 2026-09-15](/content/catchup/claude-code/20260915)
 - [Claude Code キャッチアップ: 2026-09-12](/content/catchup/claude-code/20260912)
@@ -177,6 +180,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Apple Developer News
 
+- [Apple Developer News キャッチアップ: 2026-09-18](/content/catchup/apple-news/20260918)
 - [Apple Developer News キャッチアップ: 2026-09-16](/content/catchup/apple-news/20260916)
 - [Apple Developer News キャッチアップ: 2026-09-10](/content/catchup/apple-news/20260910)
 - [Apple Developer News キャッチアップ: 2026-09-09](/content/catchup/apple-news/20260909)
