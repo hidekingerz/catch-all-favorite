@@ -91,6 +91,9 @@ ls content/catchup/apple-news/*.md 2>/dev/null
 新着記事それぞれについて、`/jp/news/` 付きの日本語版記事URLを取得し、本文に基づいて日本語で2〜3行の要約を作成する。
 
 - フィードの説明文だけでは要約として不十分な場合があるため、記事本文を取得して要約する
+- **`/jp/news/?id=XXXX` が単一記事本文ではなくニュース一覧（複数記事タイトルの羅列）を返した場合は、英語版 `https://developer.apple.com/news/?id=XXXX` にフォールバックして記事本文を取得する。** これはApple Developerサイトのサーバーサイド日本語ページがWebFetchに対してJSレンダリング結果の代わりに英語indexを返す既知の問題への対処。
+  - 判定方法: レスポンスに当該記事固有の本文や日付が含まれず、代わりに複数の記事タイトル群が含まれている場合はindexページと判断する
+  - 英語版でも本文が取れない場合は、RSSの `title` / `description` を一次ソースとして要約を作成する
 - 記事本文が取得できなかった場合は、フィードの説明文をもとに要約する（推測で内容を作らない）
 - 読んだ人が「自分のアプリ・開発に影響があるか」を判断できるように、背景や影響度（App Review ガイドライン更新・規約変更・SDK / OS 提供・提出期限など）を簡潔に添える
 
@@ -142,5 +145,6 @@ Apple Developer News は不定期更新（概ね週数本、WWDC 前後は集中
 | 記事URLが英語版（`/news/?id=`）のまま | パスに `/jp/` を挿入して `/jp/news/?id=` に統一する |
 | RSSフィードが HTTP 500 を返す | Apple 側 CDN 障害の可能性。英語版一覧ページ（Step 1b: `https://developer.apple.com/news/`）に切り替える。英語版一覧ページも失敗した場合のみ WebSearch（Step 1c）を使う |
 | WebSearch が存在しない記事URLを返す | Step 1c では取得した URL を必ず `/jp/news/?id=XXXX` でフェッチして実在確認する。本文が取れなかった URL は採用しない |
+| `/jp/news/?id=XXXX` が単一記事ではなくニュース一覧（index）を返す | Apple側がWebFetchに対して英語indexをフォールバック返却する既知問題。英語版 `https://developer.apple.com/news/?id=XXXX` に切り替えて記事本文を取得する。英語版も失敗した場合はRSSの `title`/`description` を一次ソースとして要約を作成する |
 
 共通の失敗（記憶での補完・重複・空ファイル等）は `../_shared/catchup-common.md` を参照。
