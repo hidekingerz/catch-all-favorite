@@ -45,9 +45,11 @@ RSSフィード（`https://developer.chrome.com/static/blog/feed.xml`）はス�
 
 **(a) 定番シリーズ記事のバージョン探索（WebSearch の補完として実施）**: Chrome はリリースサイクルに沿って定番記事が出る。既存のキャッチアップファイルから最後に把握した Chrome バージョン N を起点に、N〜N+3 について以下のURLを curl で確認する（HTTP 200 かつ canonical URL がそのスラッグを含むタイトルが取れれば記事が存在する）。Chrome のリリースサイクルは約 4 週間なので、30 日分の範囲を探索する。**現在の起点: Chrome 155（`chrome-155-beta` が 2026-09-16 収録済み）。次回以降は 155 を含む範囲（155〜158）で探索すること（2026-09-18 更新）**:
 
+> **WebGPU 記事について**: WebGPU の "What's New" 記事は `new-in-webgpu-N`（単一バージョン）ではなく、**2バージョンを統合した `new-in-webgpu-N-(N+1)` 形式**（例: `new-in-webgpu-153-154`）で公開される。このため下記ループに `new-in-webgpu-$v-$((v+1))` を含めており、v=N のときに `new-in-webgpu-N-(N+1)` が自動的にプローブ対象になる（2026-09-18 追加）。
+
 ```bash
 for v in 155 156 157 158; do  # 例: chrome-155-beta が記録済みの場合
-  for slug in "new-in-chrome-$v" "chrome-$v-beta" "new-in-devtools-$v"; do
+  for slug in "new-in-chrome-$v" "chrome-$v-beta" "new-in-devtools-$v" "new-in-webgpu-$v-$((v+1))"; do
     code=$(curl -sL -o /tmp/cb-probe.html -w '%{http_code}' "https://developer.chrome.com/blog/$slug")
     # ソフト404チェック: canonical URL がこのスラッグを含まない場合はリダイレクト扱いで除外
     # 例: new-in-devtools-153/154 は /docs/devtools/release-notes にリダイレクト (HTTP 200 だが別ページ)
@@ -145,5 +147,6 @@ Chrome for Developers ブログは不定期更新（概ね週数本）なので�
 | **`chrome-N-beta` 記録済みでもそのバージョンの安定版記事（`new-in-chrome-N`・`new-in-devtools-N`）を見逃す** | beta 記事と安定版記事は別スラッグ。beta が記録済みであっても安定版のプローブ範囲に N を含めること |
 | **`new-in-devtools-N` が HTTP 200 でも記事なし** | `/docs/devtools/release-notes` へのソフト404リダイレクト（実績: 152/153/154）。canonical URL がスラッグを含まなければ除外する（プローブの canonical チェック参照） |
 | sitemap から記事を探そうとして失敗 | `sitemap_*_of_*.xml` は 500 を返すことがある。ステップ1bの方法を使う |
+| **WebGPU 記事が `new-in-webgpu-N` では 404 になる** | WebGPU 記事は2バージョン統合slug（`new-in-webgpu-N-(N+1)`）で公開される（例: `new-in-webgpu-153-154`）。プローブループに `new-in-webgpu-$v-$((v+1))` を含めること（2026-09-18 追加） |
 
 共通の失敗（記憶での補完・重複・空ファイル等）は `../_shared/catchup-common.md` を参照。
