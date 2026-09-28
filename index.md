@@ -9,6 +9,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### JSer.info
 
+- [JSer.info #780 キャッチアップ: 2026-09-29のJS](/content/catchup/jser-info/20260928)
 - [JSer.info #779 キャッチアップ: 2026-09-10のJS](/content/catchup/jser-info/20260910)
 - [JSer.info #778 キャッチアップ: 2026-08-27のJS](/content/catchup/jser-info/20260827)
 - [JSer.info #777 キャッチアップ: 2026-08-05のJS](/content/catchup/jser-info/20260805)
@@ -91,6 +92,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Firefox
 
+- [Firefox リリースノート キャッチアップ: 2026-09-28](/content/catchup/firefox/20260928)
 - [Firefox リリースノート キャッチアップ: 2026-09-23](/content/catchup/firefox/20260923)
 - [Firefox リリースノート キャッチアップ: 2026-09-18](/content/catchup/firefox/20260918)
 - [Firefox リリースノート キャッチアップ: 2026-09-14](/content/catchup/firefox/20260914)
@@ -100,6 +102,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Claude Code
 
+- [Claude Code キャッチアップ: 2026-09-28](/content/catchup/claude-code/20260928)
 - [Claude Code キャッチアップ: 2026-09-25](/content/catchup/claude-code/20260925)
 - [Claude Code キャッチアップ: 2026-09-24](/content/catchup/claude-code/20260924)
 - [Claude Code キャッチアップ: 2026-09-23](/content/catchup/claude-code/20260923)
