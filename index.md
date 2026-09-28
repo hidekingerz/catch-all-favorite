@@ -24,6 +24,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### This Week in React
 
+- [This Week in React 2026-09-23](/content/catchup/twir/20260923)
 - [This Week in React 2026-09-16](/content/catchup/twir/20260916)
 - [This Week in React 2026-09-09](/content/catchup/twir/20260909)
 - [This Week in React 2026-09-02](/content/catchup/twir/20260902)
@@ -49,6 +50,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Chrome for Developers
 
+- [Chrome for Developers キャッチアップ: 2026-09-23](/content/catchup/chrome-blog/20260923)
 - [Chrome for Developers キャッチアップ: 2026-09-20](/content/catchup/chrome-blog/20260920)
 - [Chrome for Developers キャッチアップ: 2026-09-18](/content/catchup/chrome-blog/20260918)
 - [Chrome for Developers キャッチアップ: 2026-09-16](/content/catchup/chrome-blog/20260916)
@@ -87,6 +89,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Firefox
 
+- [Firefox リリースノート キャッチアップ: 2026-09-23](/content/catchup/firefox/20260923)
 - [Firefox リリースノート キャッチアップ: 2026-09-18](/content/catchup/firefox/20260918)
 - [Firefox リリースノート キャッチアップ: 2026-09-14](/content/catchup/firefox/20260914)
 - [Firefox リリースノート キャッチアップ: 2026-08-25](/content/catchup/firefox/20260825)
@@ -95,6 +98,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Claude Code
 
+- [Claude Code キャッチアップ: 2026-09-23](/content/catchup/claude-code/20260923)
 - [Claude Code キャッチアップ: 2026-09-22](/content/catchup/claude-code/20260922)
 - [Claude Code キャッチアップ: 2026-09-19](/content/catchup/claude-code/20260919)
 - [Claude Code キャッチアップ: 2026-09-18](/content/catchup/claude-code/20260918)
@@ -154,6 +158,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### iOS & iPadOS リリースノート
 
+- [iOS & iPadOS リリースノート キャッチアップ: 2026-09-23](/content/catchup/ios-release-notes/20260923)
 - [iOS & iPadOS リリースノート キャッチアップ: 2026-09-16](/content/catchup/ios-release-notes/20260916)
 - [iOS & iPadOS リリースノート キャッチアップ: 2026-09-14](/content/catchup/ios-release-notes/20260914)
 - [iOS & iPadOS リリースノート キャッチアップ: 2026-09-13](/content/catchup/ios-release-notes/20260913)
