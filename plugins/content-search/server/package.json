@@ -6,7 +6,8 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "test": "vitest run"
+    "test": "vitest run",
+    "index": "tsc && node dist/indexer/cli.js"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.0",
