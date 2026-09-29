@@ -4,3 +4,7 @@ dist/
 .blume/
 .blume-verify/
 .astro/
+
+# Claude Code worktrees / SDD scratch
+.claude/worktrees/
+.superpowers/
