@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/jser-info/20260910.md",
+  "sourceHash": "sha256:fixture",
+  "profileHash": "sha256:fixture",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-29T00:00:00.000Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Release v4.0.0 · plotly/plotly.js",
+      "url": "https://github.com/plotly/plotly.js/releases/tag/v4.0.0",
+      "secondaryUrls": [],
+      "summary": "Node.js 22 未満のサポートを終了し、`scattermapbox` を削除。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": ["JavaScript", "chart", "library"],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": { "choice": "release", "probabilities": { "release": 0.9, "security": 0.01, "policy": 0.01, "feature": 0.03, "guide": 0.02, "event": 0.01, "business": 0.01, "other": 0.01 }, "confidence": 0.9 },
+        "ecosystem": { "choice": "web_frontend", "probabilities": { "web_frontend": 0.85, "node_runtime": 0.08, "browser": 0.02, "web_search": 0.01, "ios": 0.01, "android": 0.01, "ai_tools": 0.01, "other": 0.01 }, "confidence": 0.85 },
+        "breaking": { "noul": 0.88 },
+        "relevance": { "score": 1.4, "probabilities": [0.2, 0.3, 0.4, 0.1], "confidence": 0.4 }
+      }
+    },
+    {
+      "id": 1,
+      "title": "Zod 4.5",
+      "url": "https://zod.dev/blog/zod-4-5",
+      "secondaryUrls": [],
+      "summary": "`z.compile()` によるスキーマの事前コンパイルを追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": ["JavaScript", "TypeScript", "library"],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": { "choice": "release", "probabilities": { "release": 0.95, "security": 0.01, "policy": 0.0, "feature": 0.02, "guide": 0.01, "event": 0.0, "business": 0.0, "other": 0.01 }, "confidence": 0.95 },
+        "ecosystem": { "choice": "web_frontend", "probabilities": { "web_frontend": 0.9, "node_runtime": 0.05, "browser": 0.01, "web_search": 0.01, "ios": 0.01, "android": 0.01, "ai_tools": 0.0, "other": 0.01 }, "confidence": 0.9 },
+        "breaking": { "noul": 0.2 },
+        "relevance": { "score": 2.6, "probabilities": [0.0, 0.1, 0.2, 0.7], "confidence": 0.7 }
+      }
+    }
+  ]
+}

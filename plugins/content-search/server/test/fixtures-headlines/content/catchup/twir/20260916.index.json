@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/twir/20260916.md",
+  "sourceHash": "sha256:fixture",
+  "profileHash": "sha256:fixture",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-29T00:00:00.000Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "React DevTools 8.0",
+      "url": "https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi",
+      "secondaryUrls": [],
+      "summary": "新しい Elements パネルと Suspense タブを追加した。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": { "choice": "release", "probabilities": { "release": 0.7, "security": 0.0, "policy": 0.0, "feature": 0.2, "guide": 0.05, "event": 0.0, "business": 0.0, "other": 0.05 }, "confidence": 0.6 },
+        "ecosystem": { "choice": "browser", "probabilities": { "web_frontend": 0.45, "node_runtime": 0.0, "browser": 0.5, "web_search": 0.0, "ios": 0.0, "android": 0.0, "ai_tools": 0.0, "other": 0.05 }, "confidence": 0.3 },
+        "breaking": { "noul": 0.1 },
+        "relevance": { "score": 2.0, "probabilities": [0.0, 0.2, 0.6, 0.2], "confidence": 0.6 }
+      }
+    },
+    {
+      "id": 1,
+      "title": "React Summit 2026 recap",
+      "url": "https://example.com/react-summit-2026",
+      "secondaryUrls": [],
+      "summary": "カンファレンスの振り返り。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": { "choice": "event", "probabilities": { "release": 0.0, "security": 0.0, "policy": 0.0, "feature": 0.0, "guide": 0.05, "event": 0.9, "business": 0.0, "other": 0.05 }, "confidence": 0.9 },
+        "ecosystem": { "choice": "web_frontend", "probabilities": { "web_frontend": 0.9, "node_runtime": 0.0, "browser": 0.0, "web_search": 0.0, "ios": 0.0, "android": 0.0, "ai_tools": 0.0, "other": 0.1 }, "confidence": 0.9 },
+        "breaking": { "noul": 0.02 },
+        "relevance": { "score": 1.0, "probabilities": [0.2, 0.6, 0.2, 0.0], "confidence": 0.6 }
+      }
+    }
+  ]
+}

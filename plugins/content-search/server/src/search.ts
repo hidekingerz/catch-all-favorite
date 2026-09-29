@@ -34,6 +34,18 @@ export function filterDocuments(docs: Document[], f: Filters): Document[] {
   });
 }
 
+/** text 内での lowerQuery（小文字化・非重複）の出現回数を数える */
+export function countOccurrences(text: string, lowerQuery: string): number {
+  const lower = text.toLowerCase();
+  let count = 0;
+  let idx = lower.indexOf(lowerQuery);
+  while (idx !== -1) {
+    count++;
+    idx = lower.indexOf(lowerQuery, idx + lowerQuery.length);
+  }
+  return count;
+}
+
 export function searchDocuments(
   docs: Document[],
   query: string,
@@ -44,13 +56,7 @@ export function searchDocuments(
   if (q.trim() === "") return [];
   const results: SearchResult[] = [];
   for (const doc of filterDocuments(docs, filters)) {
-    const lower = doc.content.toLowerCase();
-    let score = 0;
-    let idx = lower.indexOf(q);
-    while (idx !== -1) {
-      score++;
-      idx = lower.indexOf(q, idx + q.length);
-    }
+    const score = countOccurrences(doc.content, q);
     if (score === 0) continue;
     results.push({ ...doc.meta, score, excerpts: buildExcerpts(doc.content, q) });
   }
