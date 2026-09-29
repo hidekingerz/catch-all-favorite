@@ -11,7 +11,7 @@ import {
   type Sidecar,
 } from "../headlines/sidecar.js";
 import { loadDocuments, type Document } from "../store.js";
-import { FatalIndexerError, USD_PER_INPUT_TOKEN, type Judge } from "./judge.js";
+import { FatalIndexerError, MODEL_ID, USD_PER_INPUT_TOKEN, type Judge } from "./judge.js";
 import type { ReaderProfile } from "./profile.js";
 import { buildState } from "./questions.js";
 
@@ -88,7 +88,7 @@ export async function runIndexer(opts: RunOptions, deps: RunDeps): Promise<RunSu
         document: doc.meta.path,
         sourceHash,
         profileHash: opts.profileHash,
-        model: indexed[0]?.model ?? "jev-1.13.0",
+        model: indexed[0]?.model ?? MODEL_ID,
         indexedAt: opts.now().toISOString(),
         headlines: indexed.map((x) => x.headline),
       };
