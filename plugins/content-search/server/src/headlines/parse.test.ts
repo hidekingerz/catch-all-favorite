@@ -49,6 +49,16 @@ describe("parseHeadlines", () => {
     );
   });
 
+  it("claude-code: 使い方の複数リンクは secondaryUrls に入る", () => {
+    const [h] = parseHeadlines(load("claude-code-usage-links"));
+    expect(h.url).toBeNull();
+    expect(h.secondaryUrls).toEqual([
+      "https://code.claude.com/docs/en/hooks.md",
+      "https://code.claude.com/docs/en/plugins.md",
+    ]);
+    expect(h.rawFields).toEqual({});
+  });
+
   it("firefox: 要約なしは summary null、MDN は secondaryUrls", () => {
     const [h] = parseHeadlines(load("firefox"));
     expect(h.summary).toBeNull();

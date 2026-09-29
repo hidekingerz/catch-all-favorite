@@ -21,7 +21,7 @@ const URL_RE = /https?:\/\/[^\s)>\]]+/g;
 const ISO_DATE_PREFIX = /^(\d{4}-\d{2}-\d{2})/;
 
 const URL_KEYS = new Set(["URL", "詳細", "詳細リンク", "リリースノート"]);
-const SECONDARY_URL_KEYS = new Set(["開発者向け (MDN)"]);
+const SECONDARY_URL_KEYS = new Set(["開発者向け (MDN)", "使い方"]);
 const SUMMARY_KEYS = new Set(["要約", "内容"]);
 const PUBLISHED_KEYS = new Set(["公開日", "投稿日", "リリース日"]);
 
