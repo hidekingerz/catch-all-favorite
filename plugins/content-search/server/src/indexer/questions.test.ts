@@ -100,4 +100,15 @@ describe("buildQuestions", () => {
     expect(String(q.kind.instructions)).toContain("`headline`");
     expect(String(q.relevance.instructions)).toContain("`reader_profile`");
   });
+
+  it("セキュリティ修正が主目的のリリースは security を選ぶよう release / security の基準で案内する", () => {
+    const q = buildQuestions();
+    const criteria = q.kind.criteria as Record<string, string>;
+    expect(criteria.release).toMatch(
+      / If the release's main purpose is fixing security vulnerabilities, choose security instead\.$/,
+    );
+    expect(criteria.security).toMatch(
+      / Includes a versioned release whose changes are entirely or mainly security fixes\.$/,
+    );
+  });
 });

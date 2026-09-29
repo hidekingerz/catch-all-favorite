@@ -23,7 +23,7 @@ catch-all-favorite に蓄積されたキャッチアップ情報（`content/catc
 
 3. プラグインをインストールする（marketplace hidekingerz/claude-plugins からのパス参照、またはローカルインストール）
 
-4. Claude Code で `/mcp` を実行し、`content-search` サーバーと 4 ツールが表示されることを確認する
+4. Claude Code で `/mcp` を実行し、`content-search` サーバーと 5 ツールが表示されることを確認する
 
 ## ツール
 
@@ -45,6 +45,8 @@ MCP サーバーはサイドカーを読むだけで Jev を呼ばない。コ�
 
 前提: `TYPESAFE_API_KEY` を export しておく（`--dry-run` のみなら不要）。
 
+**オプションは必ず `--` の後ろに書く**（`npm run index -- --dry-run`）。`npm run index --dry-run` と書くと npm がフラグを取り込んで捨てるため、dry-run にならず本番の判定（課金）が始まる。
+
 ```bash
 git switch -c chore/headline-index
 cd plugins/content-search/server
@@ -64,9 +66,11 @@ git add content && git commit -m "chore: 見出しインデックスを更新" &
 | `--dry-run` | Jev を呼ばず、見出しと送信予定の state を表示 |
 | `--force` | ハッシュが一致していても再判定 |
 
-終了コード: 0 正常、1 一部の文書で判定失敗（再実行で埋まる）、2 設定ミス（キー未設定・ディレクトリ無し・プロファイル不正・認証エラー）。
+終了コード: 0 正常、1 一部の文書で判定失敗（再実行で埋まる）、2 設定ミス（キー未設定・ディレクトリ無し・プロファイル不正・認証エラー・`--only` 不一致）。
 
-サイドカーは元 Markdown のハッシュと `reader-profile.json` のハッシュが一致する限り書き換えない。`reader-profile.json` を変えると全件が再判定対象になる。
+サイドカーは元 Markdown のハッシュと `reader-profile.json` のハッシュ、インデクサのハッシュ（`indexerHash`）が一致する限り書き換えない。`reader-profile.json` を変えると全件が再判定対象になる。パーサ（`PARSER_VERSION`）・`taxonomy.ts` / `questions.ts` の基準や質問・モデルを変えた場合も `indexerHash` が変わるので、既存サイドカーは次回実行で自動的に再判定される。`--force` は入力がまったく同じまま判定し直したいときだけ使う。
+
+`--only` に一致するソースが無い場合は終了コード 2。壊れたサイドカーは警告を出して再判定する。MCP サーバー側では不正なサイドカーを読み飛ばし、`list_sources` の `headline_index.invalid_documents` に件数を出す。
 
 ### 閾値の目安
 

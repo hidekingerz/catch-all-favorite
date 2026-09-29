@@ -12,9 +12,9 @@ export type Kind = (typeof KINDS)[number];
 
 export const KIND_CRITERIA: Record<Kind, string> = {
   release:
-    "A new version, release candidate, beta, or changelog entry of a software product, library, framework, runtime, browser, operating system, or developer tool. Choose this even if the item introduces new features, as long as a specific versioned release is the main subject.",
+    "A new version, release candidate, beta, or changelog entry of a software product, library, framework, runtime, browser, operating system, or developer tool. Choose this even if the item introduces new features, as long as a specific versioned release is the main subject. If the release's main purpose is fixing security vulnerabilities, choose security instead.",
   security:
-    "A security advisory, vulnerability fix, security bulletin, or an update whose main purpose is security.",
+    "A security advisory, vulnerability fix, security bulletin, or an update whose main purpose is security. Includes a versioned release whose changes are entirely or mainly security fixes.",
   policy:
     "A change to store policies, developer program rules, guidelines, or requirements that developers must comply with, including deadlines and enforcement dates.",
   feature:
