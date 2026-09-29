@@ -1,5 +1,5 @@
 {
   "description": "Web frontend engineer who builds Next.js apps deployed on Vercel, uses Claude Code daily, and follows iOS and Android platform security news to stay informed.",
   "uses_daily": ["TypeScript", "React", "Next.js", "Node.js", "Vercel", "Chrome", "Claude Code"],
-  "monitors_only": ["iOS security updates", "Android security bulletins", "Firefox"]
+  "monitors_only": ["iOS security updates", "macOS and watchOS security updates", "Android security bulletins", "Firefox"]
 }

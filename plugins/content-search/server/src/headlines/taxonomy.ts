@@ -42,11 +42,11 @@ export type Ecosystem = (typeof ECOSYSTEMS)[number];
 
 export const ECOSYSTEM_CRITERIA: Record<Ecosystem, string> = {
   web_frontend:
-    "JavaScript or TypeScript, UI frameworks such as React, CSS, bundlers, test tools, and web platform APIs that web page developers call from their own code.",
+    "JavaScript or TypeScript, UI frameworks such as React, CSS, bundlers, test tools, and web platform APIs that web page developers call from their own code. An article on a browser vendor's blog (Chrome, WebKit, Firefox) still belongs here when its subject is an API or feature that web pages use, such as built-in AI APIs, passkeys, view transitions, or new CSS features.",
   node_runtime:
     "Node.js, Deno, Bun, package managers such as npm or pnpm, and server-side JavaScript.",
   browser:
-    "A browser product itself (Chrome, Firefox, Safari release), DevTools, or browser extension APIs. Not web platform APIs used by web pages.",
+    "A browser product itself (a Chrome, Firefox, or Safari release or beta), DevTools, or browser extension APIs. Not web platform APIs used by web pages: a browser vendor's blog post explaining an API that page authors call is web_frontend, not browser.",
   web_search: "SEO, Google Search, crawling, indexing, and ranking.",
   ios: "iOS, iPadOS, macOS, Xcode, Swift, and the App Store.",
   android: "The Android platform, AOSP, Google Play, and Play Console.",

@@ -178,14 +178,14 @@ Markdown と同じディレクトリに同名で置く。`content/catchup/jser-i
 | `ai_tools` | Claude Code、LLM ベースの開発ツール、エージェント、MCP |
 | `other` | 上記のどれにも当たらない |
 
-`web_frontend` と `browser` の境界は「Web ページ側の開発者が使う API なら前者、ブラウザ本体・DevTools・拡張機能なら後者」と定義に書く。
+`web_frontend` と `browser` の境界は「Web ページ側の開発者が使う API なら前者、ブラウザ本体・DevTools・拡張機能なら後者」と定義に書く。加えて両方の定義に具体例を置く：ブラウザベンダーのブログ（Chrome / WebKit / Firefox）であっても、主題が Web ページから使う API や機能（built-in AI API、パスキー、View Transitions、新しい CSS 機能など）なら `web_frontend`。`browser` はブラウザ本体のリリースやベータ、DevTools、拡張機能 API に限る（サンプル判定でエコシステムの誤り 5 件中 4 件がこの境界だったため）。
 
 ### 質問 3：破壊的変更 `breaking`（Noul）
 
 「`headline` は、開発者が既存のコード・設定・運用を変更しないと動かなくなる変更を含むか」
 
 - Yes の例（criteria に明記）：API の削除や改名、プラットフォームやバージョンのサポート終了、デフォルト値の変更、期限つきの必須ポリシー要件、削除予定の非推奨化
-- No の例（criteria に明記）：追加のみの新機能、バグ修正、更新するだけで済むセキュリティパッチ、イベント、解説記事
+- No の例（criteria に明記）：追加のみの新機能、バグ修正、更新するだけで済むセキュリティパッチ、イベント、解説記事。加えて、他社の移行事例・ケーススタディ・意見記事（「○○から移行した」の類）は、読者に変更を要求しない限り No と明記する（サンプル判定で 0.83 の誤検知があったため）
 
 Jev は書いてある通りに読むので、両側の具体例を criteria に置く。
 
@@ -197,8 +197,10 @@ Jev は書いてある通りに読むので、両側の具体例を criteria に
 |---|---|
 | 0 | プロファイルのどの技術とも無関係 |
 | 1 | 読者が「動向を追うだけ」の技術に関する話。背景知識として有用 |
-| 2 | 読者が実際に使っている技術に関する話。今週読む価値がある |
-| 3 | 読者の日常業務や既存プロジェクトに直接影響する。対応または精読が必要 |
+| 2 | 読者が実際に使っている技術（`uses_daily`）の新機能・リリース・解説。今週読む価値はあるが、読者のコードを変える必要はない |
+| 3 | 読者が使っている技術（`uses_daily`）の破壊的変更・セキュリティ修正・非推奨化で、読者自身のプロジェクトのコード・設定・運用を更新する必要があるもの |
+
+レベル 3 を「対応が必要なもの」に限定しているのは、初回のサンプル判定でレベル 3 に届く見出しが 1 件もなく、`uses_daily` の話題がすべて 2.5〜2.9 に寄ったため。レベル 2 と 3 の境界を「コードを変える必要があるか」で切ることで、Score を「今週読む（2 以上）」と「対応する（3 付近）」の 2 段に使い分けられるようにする。
 
 ### 読者プロファイル
 
@@ -208,9 +210,11 @@ Jev は書いてある通りに読むので、両側の具体例を criteria に
 {
   "description": "Web frontend engineer who builds Next.js apps deployed on Vercel, uses Claude Code daily, and follows iOS and Android platform security news to stay informed.",
   "uses_daily": ["TypeScript", "React", "Next.js", "Node.js", "Vercel", "Chrome", "Claude Code"],
-  "monitors_only": ["iOS security updates", "Android security bulletins", "Firefox"]
+  "monitors_only": ["iOS security updates", "macOS and watchOS security updates", "Android security bulletins", "Firefox"]
 }
 ```
+
+macOS / watchOS を `monitors_only` に明記しているのは、初回のサンプル判定でこれらがレベル 0 と 1 の間で揺れたため。「動向を追うだけ」（レベル 1）が正と定義する。
 
 ### Jev に聞かないこと
 

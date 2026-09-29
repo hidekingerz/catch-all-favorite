@@ -68,7 +68,7 @@ export function buildQuestions() {
       "Does `headline` describe a change that forces developers to modify existing code, configuration, or operational processes in order to keep things working?",
       {
         true: "Yes: removal or renaming of APIs, dropped support for a platform or version, changed default behavior, a mandatory policy requirement with a deadline, or a deprecation announced for future removal.",
-        false: "No: purely additive features, bug fixes, security patches that only require updating, events, tutorials, or business news.",
+        false: "No: purely additive features, bug fixes, security patches that only require updating, events, tutorials, or business news. Also No: a third party's migration story, case study, or opinion piece about moving away from a technology, unless it tells the reader that they must change something.",
       },
     ),
     relevance: score(
@@ -76,8 +76,8 @@ export function buildQuestions() {
       [
         "Unrelated to any technology listed in `reader_profile`.",
         "Concerns a technology the reader only monitors (`reader_profile.monitors_only`); useful as background knowledge only.",
-        "Concerns a technology the reader uses (`reader_profile.uses_daily`); worth reading this week.",
-        "Directly affects the reader's daily work or existing projects built with `reader_profile.uses_daily` technologies; requires action or careful reading.",
+        "Concerns a technology the reader uses (`reader_profile.uses_daily`): a new feature, release, tutorial, or explanation the reader would want to read this week, but that does not require changing the reader's code.",
+        "A breaking change, security fix, or deprecation in a technology the reader uses (`reader_profile.uses_daily`) that requires the reader to update or change code, configuration, or processes in their own projects.",
       ] as const,
     ),
   };
