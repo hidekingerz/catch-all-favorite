@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
-import { parseHeadlines } from "./parse.js";
+import { PARSER_VERSION, parseHeadlines } from "./parse.js";
 
 const DIR = path.join(
   path.dirname(fileURLToPath(import.meta.url)),
@@ -89,5 +89,46 @@ describe("parseHeadlines", () => {
 
   it("### 見出しが無い文書は空配列", () => {
     expect(parseHeadlines("# タイトル\n\n本文だけ\n")).toEqual([]);
+  });
+
+  it("google-play-news: 日付 は effectiveAt（期限・適用日）に入る", () => {
+    const [h] = parseHeadlines(load("google-play-news-date"), { source: "google-play-news" });
+    expect(h.effectiveAt).toBe("2026-08-26");
+    expect(h.publishedAt).toBeNull();
+    expect(h.summary).toMatch(/^連絡先権限に関する新ポリシー/);
+    expect(h.rawFields).toEqual({});
+  });
+
+  it("google-play-news 以外（source 指定なしを含む）の 日付 は publishedAt に入る", () => {
+    for (const options of [{ source: "android-release-notes" }, undefined]) {
+      const [h] = parseHeadlines(load("google-play-news-date"), options);
+      expect(h.publishedAt).toBe("2026-08-26");
+      expect(h.effectiveAt).toBeNull();
+    }
+  });
+
+  it("日付 が日付でなければ rawFields に残す", () => {
+    const [h] = parseHeadlines("### x\n- **日付**: 未定\n- **要約**: s\n", { source: "google-play-news" });
+    expect(h.effectiveAt).toBeNull();
+    expect(h.rawFields).toEqual({ 日付: "未定" });
+  });
+
+  it("要約・内容が無ければ、残りの未知フィールドを キー: 値 で連結して summary にする", () => {
+    const [h] = parseHeadlines(load("claude-code-freeform"), { source: "claude-code" });
+    expect(h.summary).toBe(
+      "新機能 / 改善: オートモードに、セッショントランスクリプトファイルの改ざんをブロックするルールを追加。 / 自動アップデートのバイナリをディスクへストリーミングし、ピークメモリを約 400 MB 削減。 / 修正: `/resume` で長いセッションが開けない問題を修正。",
+    );
+    expect(Object.keys(h.rawFields)).toEqual(["新機能 / 改善", "修正"]);
+    expect(h.rawFields["修正"]).toBe("`/resume` で長いセッションが開けない問題を修正。");
+  });
+
+  it("要約があれば未知フィールドは summary に混ぜない", () => {
+    const [h] = parseHeadlines("### x\n- **要約**: s\n- **備考**: n\n");
+    expect(h.summary).toBe("s");
+    expect(h.rawFields).toEqual({ 備考: "n" });
+  });
+
+  it("PARSER_VERSION は 2（日付・summary 補完の追加）", () => {
+    expect(PARSER_VERSION).toBe(2);
   });
 });

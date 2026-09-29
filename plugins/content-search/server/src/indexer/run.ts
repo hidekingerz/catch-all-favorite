@@ -74,7 +74,7 @@ export async function runIndexer(opts: RunOptions, deps: RunDeps): Promise<RunSu
   const limited = opts.limit === undefined ? targets : targets.slice(0, opts.limit);
 
   for (const { doc, sourceHash } of limited) {
-    const headlines = parseHeadlines(doc.content);
+    const headlines = parseHeadlines(doc.content, { source: doc.meta.source });
 
     if (opts.dryRun) {
       summary.headlines += headlines.length;

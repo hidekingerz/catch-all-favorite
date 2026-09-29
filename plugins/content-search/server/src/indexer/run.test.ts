@@ -285,4 +285,15 @@ describe("runIndexer", () => {
     await new Promise((r) => setTimeout(r, 30));
     expect(calls).toEqual(["A", "B"]);
   });
+
+  it("パーサに文書のソースを渡す（google-play-news の 日付 は effectiveAt）", async () => {
+    const dir = makeContentDir();
+    const md = path.join(dir, "catchup", "google-play-news", "20260826.md");
+    mkdirSync(path.dirname(md), { recursive: true });
+    cpSync(path.join(PARSE_FIXTURES, "google-play-news-date.md"), md);
+    await runIndexer({ ...baseOpts(dir), only: "google-play-news" }, { judge: fakeJudge(), log: () => {} });
+    const [h] = readSidecar(path.join(dir, "catchup/google-play-news/20260826.index.json"))!.headlines;
+    expect(h.effectiveAt).toBe("2026-08-26");
+    expect(h.publishedAt).toBeNull();
+  });
 });

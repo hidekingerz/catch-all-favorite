@@ -14,7 +14,7 @@ export interface Headline {
 }
 
 /** 正規化の結果が変わる変更をしたら上げる（indexerHash に入り、既存サイドカーが再判定される） */
-export const PARSER_VERSION = 1;
+export const PARSER_VERSION = 2;
 
 const H3 = /^### (.+)$/;
 const ANY_HEADING_OR_RULE = /^(#{1,6} |---\s*$)/;
@@ -34,10 +34,34 @@ interface RawField {
   nested: string[];
 }
 
-/** Markdown 全文から `### 見出し` ブロックを切り出し、正規化した Headline の配列を返す */
-export function parseHeadlines(markdown: string): Headline[] {
+/** 日付 を適用日（effectiveAt）として扱うソース。それ以外では公開日（publishedAt） */
+const EFFECTIVE_DATE_SOURCES = new Set(["google-play-news"]);
+
+export interface ParseOptions {
+  /** 文書のソース名（例: google-play-news）。ソースで意味が変わるキーの解釈に使う */
+  source?: string;
+}
+
+/**
+ * Markdown 全文から `### 見出し` ブロックを切り出し、正規化した Headline の配列を返す。
+ *
+ * - URL 系キー（URL / 詳細 / 詳細リンク / リリースノート）→ 最初の URL を url、残りを secondaryUrls
+ * - 開発者向け (MDN) / 使い方 → secondaryUrls
+ * - 要約 / 内容 → summary（ネストした箇条書きは ` / ` で連結）
+ * - 公開日 / 投稿日 / リリース日 → publishedAt、日付（適用）→ effectiveAt
+ * - 日付 → google-play-news では effectiveAt、それ以外では publishedAt
+ *   （日付系は先頭が YYYY-MM-DD のときだけ。そうでなければ rawFields に残す）
+ * - タグ / バージョン / セキュリティパッチレベル / 対象 → tags / version / patchLevel / targets
+ * - それ以外のキーは rawFields。要約・内容が無い見出しでは、これらを `キー: 値` の
+ *   ` / ` 連結で summary にも入れる（rawFields にも残る）
+ */
+export function parseHeadlines(markdown: string, options: ParseOptions = {}): Headline[] {
+  const dateField: "publishedAt" | "effectiveAt" =
+    options.source !== undefined && EFFECTIVE_DATE_SOURCES.has(options.source)
+      ? "effectiveAt"
+      : "publishedAt";
   const blocks = splitBlocks(markdown.split("\n"));
-  return blocks.map((b, id) => normalize(id, b.title, b.fields));
+  return blocks.map((b, id) => normalize(id, b.title, b.fields, dateField));
 }
 
 function splitBlocks(lines: string[]): { title: string; fields: RawField[] }[] {
@@ -68,7 +92,16 @@ function splitBlocks(lines: string[]): { title: string; fields: RawField[] }[] {
   return blocks;
 }
 
-function normalize(id: number, title: string, fields: RawField[]): Headline {
+function joinValue(f: RawField): string {
+  return [f.value, ...f.nested].filter((s) => s !== "").join(" / ");
+}
+
+function normalize(
+  id: number,
+  title: string,
+  fields: RawField[],
+  dateField: "publishedAt" | "effectiveAt",
+): Headline {
   const h: Headline = {
     id,
     title,
@@ -83,6 +116,8 @@ function normalize(id: number, title: string, fields: RawField[]): Headline {
     targets: null,
     rawFields: {},
   };
+  const unknown: RawField[] = [];
+  let hasSummaryKey = false;
   for (const f of fields) {
     if (URL_KEYS.has(f.key) || SECONDARY_URL_KEYS.has(f.key)) {
       const urls = f.value.match(URL_RE) ?? [];
@@ -95,6 +130,7 @@ function normalize(id: number, title: string, fields: RawField[]): Headline {
         else h.secondaryUrls.push(u);
       }
     } else if (SUMMARY_KEYS.has(f.key)) {
+      hasSummaryKey = true;
       const parts = [f.value, ...f.nested].filter((s) => s !== "");
       if (parts.length > 0 && h.summary === null) h.summary = parts.join(" / ");
     } else if (f.key === "タグ") {
@@ -102,6 +138,10 @@ function normalize(id: number, title: string, fields: RawField[]): Headline {
     } else if (PUBLISHED_KEYS.has(f.key)) {
       const d = f.value.match(ISO_DATE_PREFIX);
       if (d) h.publishedAt = d[1];
+      else h.rawFields[f.key] = f.value;
+    } else if (f.key === "日付") {
+      const d = f.value.match(ISO_DATE_PREFIX);
+      if (d) h[dateField] = d[1];
       else h.rawFields[f.key] = f.value;
     } else if (f.key === "日付（適用）") {
       const d = f.value.match(ISO_DATE_PREFIX);
@@ -114,8 +154,12 @@ function normalize(id: number, title: string, fields: RawField[]): Headline {
     } else if (f.key === "対象") {
       h.targets = f.value;
     } else {
-      h.rawFields[f.key] = f.nested.length > 0 ? [f.value, ...f.nested].join(" / ") : f.value;
+      h.rawFields[f.key] = joinValue(f);
+      unknown.push(f);
     }
+  }
+  if (!hasSummaryKey && unknown.length > 0) {
+    h.summary = unknown.map((f) => `${f.key}: ${joinValue(f)}`).join(" / ");
   }
   return h;
 }
