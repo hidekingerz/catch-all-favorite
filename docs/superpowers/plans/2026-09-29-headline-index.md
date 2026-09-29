@@ -2753,14 +2753,14 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 
 Run:
 ```bash
-cd plugins/content-search/server && npm run index -- --dry-run 2>/tmp/dryrun.log; \
+cd plugins/content-search/server && npm run index -- --dry-run >/tmp/dryrun.log; \
 grep -c '^\[dry-run\]' /tmp/dryrun.log; \
 grep -o '"summary":null' /tmp/dryrun.log | wc -l; \
 grep -o '"rawFields":{[^}]*}' /tmp/dryrun.log | grep -v '{}' | sort | uniq -c | sort -rn | head -20
 ```
 Expected: 全 catchup 文書が列挙され、`summary` が `null` の件数と `rawFields` に残ったキーの一覧が見える。`rawFields` に頻出するキーがあれば `src/headlines/parse.ts` の対応表に追加し、Task 1 のテストに 1 ケース足して commit する（`fix(content-search): 見出しパーサの対応表に <キー> を追加`）。
 
-注: dry-run のログは `deps.stderr` に出るので `2>` で取る。集計は stdout。
+注: dry-run の表示・進行ログ・集計はすべて stdout に出る（設定エラーのみ stderr）。
 
 - [ ] **Step 5: サンプル判定（API を使う。費用 1 円未満）**
 
