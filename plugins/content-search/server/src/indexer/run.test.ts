@@ -6,7 +6,7 @@ import { describe, expect, it } from "vitest";
 import type { Headline } from "../headlines/parse.js";
 import { readSidecar } from "../headlines/sidecar.js";
 import { FatalIndexerError, type Judge, type JudgeResult } from "./judge.js";
-import { runIndexer, type RunOptions } from "./run.js";
+import { UnknownSourceError, runIndexer, type RunOptions } from "./run.js";
 
 const PARSE_FIXTURES = path.join(
   path.dirname(fileURLToPath(import.meta.url)),
@@ -66,6 +66,7 @@ const baseOpts = (contentDir: string): RunOptions => ({
   contentDir,
   profile: { description: "d", uses_daily: [], monitors_only: [] },
   profileHash: "sha256:profile",
+  indexerHash: "sha256:indexer",
   dryRun: false,
   force: false,
   concurrency: 2,
@@ -85,6 +86,7 @@ describe("runIndexer", () => {
     const sc = readSidecar(path.join(dir, "catchup/jser-info/20260910.index.json"));
     expect(sc?.document).toBe("catchup/jser-info/20260910.md");
     expect(sc?.profileHash).toBe("sha256:profile");
+    expect(sc?.indexerHash).toBe("sha256:indexer");
     expect(sc?.model).toBe("jev-1.13.0");
     expect(sc?.indexedAt).toBe("2026-09-29T00:00:00.000Z");
     expect(sc?.headlines).toHaveLength(2);
@@ -120,6 +122,21 @@ describe("runIndexer", () => {
       { judge: fakeJudge(), log: () => {} },
     );
     expect(s).toMatchObject({ skipped: 0, indexed: 3 });
+  });
+
+  it("indexerHash が変われば（内容・プロファイルが同じでも）すべて再判定する", async () => {
+    const dir = makeContentDir();
+    await runIndexer(baseOpts(dir), { judge: fakeJudge(), log: () => {} });
+    const judge = fakeJudge();
+    const s = await runIndexer(
+      { ...baseOpts(dir), indexerHash: "sha256:indexer-v2" },
+      { judge, log: () => {} },
+    );
+    expect(s).toMatchObject({ skipped: 0, indexed: 3 });
+    expect(judge.calls).toHaveLength(4);
+    expect(readSidecar(path.join(dir, "catchup/firefox/20260915.index.json"))?.indexerHash).toBe(
+      "sha256:indexer-v2",
+    );
   });
 
   it("--force はハッシュ一致でも再判定する", async () => {
@@ -165,6 +182,8 @@ describe("runIndexer", () => {
     };
     const s = await runIndexer(baseOpts(dir), { judge, log: () => {} });
     expect(s.indexed).toBe(2);
+    // 見出し数は実際に判定を書けた文書（firefox 1 + claude-code 1）だけを数える
+    expect(s.headlines).toBe(2);
     expect(s.failed).toEqual([{ document: "catchup/jser-info/20260910.md", error: "boom" }]);
     expect(existsSync(path.join(dir, "catchup/jser-info/20260910.index.json"))).toBe(false);
     expect(existsSync(path.join(dir, "catchup/firefox/20260915.index.json"))).toBe(true);
@@ -189,5 +208,81 @@ describe("runIndexer", () => {
     const s = await runIndexer({ ...baseOpts(dir), only: "twir" }, { judge: fakeJudge(), log: () => {} });
     expect(s).toMatchObject({ indexed: 1, headlines: 0 });
     expect(readSidecar(path.join(dir, "catchup/twir/20260916.index.json"))?.headlines).toEqual([]);
+  });
+  it("壊れたサイドカーは警告して再判定し、正しい JSON で置き換える", async () => {
+    const dir = makeContentDir();
+    const sc = path.join(dir, "catchup/jser-info/20260910.index.json");
+    writeFileSync(sc, "{ broken");
+    const lines: string[] = [];
+    const s = await runIndexer(baseOpts(dir), { judge: fakeJudge(), log: (l) => lines.push(l) });
+    expect(s).toMatchObject({ scanned: 3, skipped: 0, indexed: 3, failed: [] });
+    expect(readSidecar(sc)?.headlines).toHaveLength(2);
+    expect(lines.join("\n")).toMatch(
+      /warn {2}catchup\/jser-info\/20260910\.index\.json: サイドカーを読めないため再判定します（/,
+    );
+  });
+
+  it("壊れたサイドカーがあっても --force で回復できる", async () => {
+    const dir = makeContentDir();
+    await runIndexer(baseOpts(dir), { judge: fakeJudge(), log: () => {} });
+    const sc = path.join(dir, "catchup/firefox/20260915.index.json");
+    writeFileSync(sc, "{ broken");
+    const s = await runIndexer({ ...baseOpts(dir), force: true }, { judge: fakeJudge(), log: () => {} });
+    expect(s).toMatchObject({ indexed: 3, failed: [] });
+    expect(readSidecar(sc)?.headlines).toHaveLength(1);
+  });
+
+  it("--only に一致するソースが無ければ UnknownSourceError", async () => {
+    const dir = makeContentDir();
+    const judge = fakeJudge();
+    await expect(
+      runIndexer({ ...baseOpts(dir), only: "no-such-source" }, { judge, log: () => {} }),
+    ).rejects.toThrow(UnknownSourceError);
+    await expect(
+      runIndexer({ ...baseOpts(dir), only: "no-such-source" }, { judge, log: () => {} }),
+    ).rejects.toThrow("--only に一致するソースがありません: no-such-source");
+    expect(judge.calls).toEqual([]);
+  });
+
+  it("文書内で見出しの判定が失敗したら、その文書の残りの見出しは判定しない（concurrency 1）", async () => {
+    const dir = makeContentDir();
+    const calls: string[] = [];
+    const judge: Judge = {
+      async judge(h) {
+        calls.push(h.title);
+        if (calls.length === 1) throw new Error("boom");
+        return fakeResult(h);
+      },
+    };
+    const s = await runIndexer(
+      { ...baseOpts(dir), only: "jser-info", concurrency: 1 },
+      { judge, log: () => {} },
+    );
+    expect(s.failed).toHaveLength(1);
+    expect(calls).toEqual(["Release v4.0.0 · plotly/plotly.js"]);
+  });
+
+  it("並列実行中に 1 件失敗したら、他のワーカーも新しい見出しを取りに行かない", async () => {
+    const dir = makeContentDir();
+    const md = path.join(dir, "catchup", "twir", "20260916.md");
+    mkdirSync(path.dirname(md), { recursive: true });
+    writeFileSync(md, "# t\n\n### A\n- **要約**: a\n\n### B\n- **要約**: b\n\n### C\n- **要約**: c\n");
+    const calls: string[] = [];
+    const judge: Judge = {
+      async judge(h) {
+        calls.push(h.title);
+        if (h.title === "A") throw new Error("boom");
+        await new Promise((r) => setTimeout(r, 5));
+        return fakeResult(h);
+      },
+    };
+    const s = await runIndexer(
+      { ...baseOpts(dir), only: "twir", concurrency: 2 },
+      { judge, log: () => {} },
+    );
+    expect(s.failed).toEqual([{ document: "catchup/twir/20260916.md", error: "boom" }]);
+    // 取り残されたワーカーが後から C を取りに行かないことを、少し待ってから確かめる
+    await new Promise((r) => setTimeout(r, 30));
+    expect(calls).toEqual(["A", "B"]);
   });
 });

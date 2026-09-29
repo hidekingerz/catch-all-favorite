@@ -13,6 +13,9 @@ export interface Headline {
   rawFields: Record<string, string>;
 }
 
+/** 正規化の結果が変わる変更をしたら上げる（indexerHash に入り、既存サイドカーが再判定される） */
+export const PARSER_VERSION = 1;
+
 const H3 = /^### (.+)$/;
 const ANY_HEADING_OR_RULE = /^(#{1,6} |---\s*$)/;
 const FIELD = /^- \*\*(.+?)\*\*\s*[:：]\s*(.*)$/;

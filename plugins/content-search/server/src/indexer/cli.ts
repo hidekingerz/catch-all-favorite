@@ -5,7 +5,8 @@ import { parseArgs } from "node:util";
 import { ContentDirError } from "../store.js";
 import { FatalIndexerError, createDefaultClient, createTypeSafeJudge, type Judge } from "./judge.js";
 import { ProfileError, loadReaderProfile, type ReaderProfile } from "./profile.js";
-import { formatSummary, runIndexer } from "./run.js";
+import { UnknownSourceError, formatSummary, runIndexer } from "./run.js";
+import { computeIndexerHash } from "./version.js";
 
 export const EXIT_OK = 0;
 export const EXIT_PARTIAL = 1;
@@ -98,6 +99,7 @@ export async function main(argv: string[], env: NodeJS.ProcessEnv, deps: CliDeps
     const summary = await runIndexer(
       {
         contentDir, profile, profileHash,
+        indexerHash: computeIndexerHash(),
         only: values.only, limit, dryRun,
         force: values.force === true,
         concurrency: CONCURRENCY,
@@ -108,7 +110,11 @@ export async function main(argv: string[], env: NodeJS.ProcessEnv, deps: CliDeps
     deps.stdout(formatSummary(summary));
     return summary.failed.length > 0 ? EXIT_PARTIAL : EXIT_OK;
   } catch (e) {
-    if (e instanceof FatalIndexerError || e instanceof ContentDirError) {
+    if (
+      e instanceof FatalIndexerError ||
+      e instanceof ContentDirError ||
+      e instanceof UnknownSourceError
+    ) {
       deps.stderr(e.message);
       return EXIT_CONFIG;
     }

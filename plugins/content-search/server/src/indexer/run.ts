@@ -19,6 +19,8 @@ export interface RunOptions {
   contentDir: string;
   profile: ReaderProfile;
   profileHash: string;
+  /** computeIndexerHash() の値。全サイドカーに書き、差分検出に使う */
+  indexerHash: string;
   only?: string;
   limit?: number;
   dryRun: boolean;
@@ -26,6 +28,9 @@ export interface RunOptions {
   concurrency: number;
   now: () => Date;
 }
+
+/** --only の値がどの catch-up ソースにも一致しない（CLI は終了コード 2 にする） */
+export class UnknownSourceError extends Error {}
 
 export interface RunDeps {
   judge: Judge;
@@ -47,8 +52,11 @@ export async function runIndexer(opts: RunOptions, deps: RunDeps): Promise<RunSu
     scanned: 0, skipped: 0, indexed: 0, failed: [], headlines: 0, inputTokens: 0, estimatedUsd: 0,
   };
 
-  const docs = loadDocuments(opts.contentDir)
-    .filter((d) => d.meta.category === "catchup")
+  const catchup = loadDocuments(opts.contentDir).filter((d) => d.meta.category === "catchup");
+  if (opts.only !== undefined && !catchup.some((d) => d.meta.source === opts.only)) {
+    throw new UnknownSourceError(`--only に一致するソースがありません: ${opts.only}`);
+  }
+  const docs = catchup
     .filter((d) => !opts.only || d.meta.source === opts.only)
     .sort((a, b) => (a.meta.path < b.meta.path ? -1 : 1));
   summary.scanned = docs.length;
@@ -56,8 +64,8 @@ export async function runIndexer(opts: RunOptions, deps: RunDeps): Promise<RunSu
   const targets: { doc: Document; sourceHash: string }[] = [];
   for (const doc of docs) {
     const sourceHash = sha256(doc.content);
-    const existing = readSidecar(path.join(opts.contentDir, sidecarPathFor(doc.meta.path)));
-    if (!opts.force && !needsIndexing(existing, sourceHash, opts.profileHash)) {
+    const existing = readExisting(doc.meta.path);
+    if (!opts.force && !needsIndexing(existing, sourceHash, opts.profileHash, opts.indexerHash)) {
       summary.skipped++;
       continue;
     }
@@ -67,9 +75,9 @@ export async function runIndexer(opts: RunOptions, deps: RunDeps): Promise<RunSu
 
   for (const { doc, sourceHash } of limited) {
     const headlines = parseHeadlines(doc.content);
-    summary.headlines += headlines.length;
 
     if (opts.dryRun) {
+      summary.headlines += headlines.length;
       deps.log(`[dry-run] ${doc.meta.path}: ${headlines.length} 見出し`);
       for (const h of headlines) {
         deps.log(`  - ${h.title}`);
@@ -88,12 +96,14 @@ export async function runIndexer(opts: RunOptions, deps: RunDeps): Promise<RunSu
         document: doc.meta.path,
         sourceHash,
         profileHash: opts.profileHash,
+        indexerHash: opts.indexerHash,
         model: indexed[0]?.model ?? MODEL_ID,
         indexedAt: opts.now().toISOString(),
         headlines: indexed.map((x) => x.headline),
       };
       writeSidecarAtomic(path.join(opts.contentDir, sidecarPathFor(doc.meta.path)), sidecar);
       summary.indexed++;
+      summary.headlines += headlines.length;
       summary.inputTokens += indexed.reduce((n, x) => n + x.tokens, 0);
       deps.log(`indexed ${doc.meta.path} (${headlines.length} 見出し)`);
     } catch (e) {
@@ -106,9 +116,25 @@ export async function runIndexer(opts: RunOptions, deps: RunDeps): Promise<RunSu
 
   summary.estimatedUsd = summary.inputTokens * USD_PER_INPUT_TOKEN;
   return summary;
+
+  /** 壊れたサイドカーで実行全体を止めない。警告して「未判定」とみなす */
+  function readExisting(mdPath: string): Sidecar | null {
+    const rel = sidecarPathFor(mdPath);
+    try {
+      return readSidecar(path.join(opts.contentDir, rel));
+    } catch (e) {
+      const cause = e instanceof Error && e.cause !== undefined ? e.cause : e;
+      const reason = cause instanceof Error ? cause.message : String(cause);
+      deps.log(`warn  ${rel}: サイドカーを読めないため再判定します（${reason}）`);
+      return null;
+    }
+  }
 }
 
-/** 配列を最大 limit 並列で処理し、入力順の結果を返す。1 件でも失敗すれば reject */
+/**
+ * 配列を最大 limit 並列で処理し、入力順の結果を返す。
+ * 1 件でも失敗したら他のワーカーも新しい要素を取らずに止まり、最初のエラーで reject する
+ */
 async function mapWithConcurrency<T, R>(
   items: T[],
   limit: number,
@@ -116,13 +142,23 @@ async function mapWithConcurrency<T, R>(
 ): Promise<R[]> {
   const results: R[] = new Array(items.length);
   let next = 0;
+  let failed = false;
+  let firstError: unknown;
   const workers = Array.from({ length: Math.max(1, Math.min(limit, items.length)) }, async () => {
-    while (next < items.length) {
+    while (!failed && next < items.length) {
       const i = next++;
-      results[i] = await fn(items[i]);
+      try {
+        results[i] = await fn(items[i]);
+      } catch (e) {
+        if (!failed) {
+          failed = true;
+          firstError = e;
+        }
+      }
     }
   });
   await Promise.all(workers);
+  if (failed) throw firstError;
   return results;
 }
 

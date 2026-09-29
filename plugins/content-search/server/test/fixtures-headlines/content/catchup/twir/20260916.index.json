@@ -3,6 +3,7 @@
   "document": "catchup/twir/20260916.md",
   "sourceHash": "sha256:fixture",
   "profileHash": "sha256:fixture",
+  "indexerHash": "sha256:fixture",
   "model": "jev-1.13.0",
   "indexedAt": "2026-09-29T00:00:00.000Z",
   "headlines": [

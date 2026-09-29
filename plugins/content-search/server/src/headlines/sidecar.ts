@@ -27,6 +27,8 @@ export interface Sidecar {
   document: string;
   sourceHash: string;
   profileHash: string;
+  /** モデル ID・パーサ版・質問定義のハッシュ（src/indexer/version.ts の computeIndexerHash） */
+  indexerHash: string;
   model: string;
   indexedAt: string;
   headlines: IndexedHeadline[];
@@ -60,6 +62,7 @@ export function serializeSidecar(s: Sidecar): string {
     document: s.document,
     sourceHash: s.sourceHash,
     profileHash: s.profileHash,
+    indexerHash: s.indexerHash,
     model: s.model,
     indexedAt: s.indexedAt,
     headlines: s.headlines.map((h) => ({
@@ -104,18 +107,24 @@ export function readSidecar(absPath: string): Sidecar | null {
     return JSON.parse(readFileSync(absPath, "utf-8")) as Sidecar;
   } catch (e) {
     const reason = e instanceof Error ? e.message : String(e);
-    throw new Error(`サイドカーを読めません: ${absPath}（${reason}）`);
+    throw new Error(`サイドカーを読めません: ${absPath}（${reason}）`, { cause: e });
   }
 }
 
+/** 3 つのハッシュのどれかが違えば（indexerHash の無い古いサイドカーも）再判定が必要 */
 export function needsIndexing(
   existing: Sidecar | null,
   sourceHash: string,
   profileHash: string,
+  indexerHash: string,
 ): boolean {
   if (!existing) return true;
   if (existing.schemaVersion !== SCHEMA_VERSION) return true;
-  return existing.sourceHash !== sourceHash || existing.profileHash !== profileHash;
+  return (
+    existing.sourceHash !== sourceHash ||
+    existing.profileHash !== profileHash ||
+    existing.indexerHash !== indexerHash
+  );
 }
 
 /** 一時ファイルに書いてリネームする。途中失敗で部分ファイルを残さない */

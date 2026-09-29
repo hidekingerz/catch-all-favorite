@@ -123,4 +123,16 @@ describe("main", () => {
     expect(code).toBe(EXIT_CONFIG);
     expect(err.join("\n")).toContain("--limit");
   });
+
+  it("--only に一致するソースが無ければ 2", async () => {
+    const { content, profile } = setup();
+    const { d, err } = deps();
+    const code = await main(
+      ["--content", content, "--profile", profile, "--only", "jser"],
+      { TYPESAFE_API_KEY: "k" },
+      d,
+    );
+    expect(code).toBe(EXIT_CONFIG);
+    expect(err.join("\n")).toContain("--only に一致するソースがありません: jser");
+  });
 });

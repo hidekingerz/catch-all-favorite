@@ -19,6 +19,7 @@ const sample = (): Sidecar => ({
   document: "catchup/jser-info/20260910.md",
   sourceHash: "sha256:aaa",
   profileHash: "sha256:bbb",
+  indexerHash: "sha256:ccc",
   model: "jev-1.13.0",
   indexedAt: "2026-09-29T00:00:00.000Z",
   headlines: [
@@ -92,7 +93,7 @@ describe("serializeSidecar", () => {
   it("トップレベルのキー順が固定", () => {
     const keys = Object.keys(JSON.parse(serializeSidecar(sample())));
     expect(keys).toEqual([
-      "schemaVersion", "document", "sourceHash", "profileHash", "model", "indexedAt", "headlines",
+      "schemaVersion", "document", "sourceHash", "profileHash", "indexerHash", "model", "indexedAt", "headlines",
     ]);
   });
 
@@ -127,19 +128,26 @@ describe("readSidecar / writeSidecarAtomic", () => {
 
 describe("needsIndexing", () => {
   it("サイドカー無しは対象", () => {
-    expect(needsIndexing(null, "sha256:aaa", "sha256:bbb")).toBe(true);
+    expect(needsIndexing(null, "sha256:aaa", "sha256:bbb", "sha256:ccc")).toBe(true);
   });
-  it("両ハッシュ一致かつ現行スキーマはスキップ", () => {
-    expect(needsIndexing(sample(), "sha256:aaa", "sha256:bbb")).toBe(false);
+  it("3 ハッシュ一致かつ現行スキーマはスキップ", () => {
+    expect(needsIndexing(sample(), "sha256:aaa", "sha256:bbb", "sha256:ccc")).toBe(false);
   });
   it("sourceHash 不一致は対象", () => {
-    expect(needsIndexing(sample(), "sha256:zzz", "sha256:bbb")).toBe(true);
+    expect(needsIndexing(sample(), "sha256:zzz", "sha256:bbb", "sha256:ccc")).toBe(true);
   });
   it("profileHash 不一致は対象", () => {
-    expect(needsIndexing(sample(), "sha256:aaa", "sha256:zzz")).toBe(true);
+    expect(needsIndexing(sample(), "sha256:aaa", "sha256:zzz", "sha256:ccc")).toBe(true);
+  });
+  it("indexerHash 不一致は対象", () => {
+    expect(needsIndexing(sample(), "sha256:aaa", "sha256:bbb", "sha256:zzz")).toBe(true);
+  });
+  it("indexerHash の無い古いサイドカーは対象", () => {
+    const { indexerHash: _drop, ...old } = sample();
+    expect(needsIndexing(old as unknown as Sidecar, "sha256:aaa", "sha256:bbb", "sha256:ccc")).toBe(true);
   });
   it("schemaVersion が違えば対象", () => {
     const old = { ...sample(), schemaVersion: 0 as unknown as 1 };
-    expect(needsIndexing(old, "sha256:aaa", "sha256:bbb")).toBe(true);
+    expect(needsIndexing(old, "sha256:aaa", "sha256:bbb", "sha256:ccc")).toBe(true);
   });
 });
