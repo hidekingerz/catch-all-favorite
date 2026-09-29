@@ -3,7 +3,7 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { z } from "zod";
 import { listSources, searchDocuments, filterDocuments } from "./search.js";
 import { loadDocuments, readDocument } from "./store.js";
-import { loadHeadlineIndex } from "./headlines/load.js";
+import { headlineIndexSummary, loadHeadlineIndex } from "./headlines/load.js";
 import { searchHeadlines } from "./headlines/search.js";
 import { ECOSYSTEMS, KINDS } from "./headlines/taxonomy.js";
 
@@ -110,15 +110,12 @@ server.registerTool(
     try {
       const docs = loadDocuments(CONTENT_DIR);
       const catchupDocuments = docs.filter((d) => d.meta.category === "catchup").length;
-      const { indexedDocuments } = loadHeadlineIndex(CONTENT_DIR);
       return ok(
         JSON.stringify(
           {
             ...listSources(docs),
-            headline_index: {
-              indexed_documents: indexedDocuments,
-              catchup_documents: catchupDocuments,
-            },
+            // サイドカーの読み込み失敗は error に入れて返し、ソース一覧自体は必ず返す
+            headline_index: headlineIndexSummary(CONTENT_DIR, catchupDocuments),
           },
           null,
           2,

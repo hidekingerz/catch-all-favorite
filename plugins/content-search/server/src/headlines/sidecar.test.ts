@@ -4,6 +4,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 import {
   SCHEMA_VERSION,
+  isSidecar,
   needsIndexing,
   readSidecar,
   round3,
@@ -149,5 +150,37 @@ describe("needsIndexing", () => {
   it("schemaVersion が違えば対象", () => {
     const old = { ...sample(), schemaVersion: 0 as unknown as 1 };
     expect(needsIndexing(old, "sha256:aaa", "sha256:bbb", "sha256:ccc")).toBe(true);
+  });
+});
+
+describe("isSidecar", () => {
+  const valid = () => JSON.parse(serializeSidecar(sample())) as Record<string, unknown>;
+  it("serializeSidecar の出力は妥当", () => {
+    expect(isSidecar(valid())).toBe(true);
+  });
+  it("オブジェクトでなければ不正", () => {
+    expect(isSidecar(null)).toBe(false);
+    expect(isSidecar("x")).toBe(false);
+    expect(isSidecar([])).toBe(false);
+  });
+  it("schemaVersion 違い・document 無し・headlines が配列でない・indexerHash 無しは不正", () => {
+    expect(isSidecar({ ...valid(), schemaVersion: 2 })).toBe(false);
+    expect(isSidecar({ ...valid(), document: 1 })).toBe(false);
+    expect(isSidecar({ ...valid(), headlines: {} })).toBe(false);
+    const { indexerHash: _drop, ...rest } = valid();
+    expect(isSidecar(rest)).toBe(false);
+  });
+  it("見出しの判定が欠けていれば不正", () => {
+    const broken = (mutate: (j: Record<string, any>) => void) => {
+      const v = valid() as { headlines: { judgments: Record<string, any> }[] };
+      mutate(v.headlines[0].judgments);
+      return isSidecar(v);
+    };
+    expect(broken((j) => delete j.kind)).toBe(false);
+    expect(broken((j) => (j.kind.choice = 1))).toBe(false);
+    expect(broken((j) => (j.ecosystem = {}))).toBe(false);
+    expect(broken((j) => (j.breaking.noul = "0.5"))).toBe(false);
+    expect(broken((j) => delete j.relevance.score)).toBe(false);
+    expect(broken(() => {})).toBe(true);
   });
 });

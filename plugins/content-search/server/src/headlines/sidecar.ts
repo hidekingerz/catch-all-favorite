@@ -101,6 +101,37 @@ export function serializeSidecar(s: Sidecar): string {
   return `${JSON.stringify(canonical, null, 2)}\n`;
 }
 
+function isRecord(v: unknown): v is Record<string, unknown> {
+  return typeof v === "object" && v !== null && !Array.isArray(v);
+}
+
+function hasJudgments(h: unknown): boolean {
+  if (!isRecord(h) || !isRecord(h.judgments)) return false;
+  const { kind, ecosystem, breaking, relevance } = h.judgments;
+  return (
+    isRecord(kind) && typeof kind.choice === "string" &&
+    isRecord(ecosystem) && typeof ecosystem.choice === "string" &&
+    isRecord(breaking) && typeof breaking.noul === "number" &&
+    isRecord(relevance) && typeof relevance.score === "number"
+  );
+}
+
+/**
+ * 検索に使える現行スキーマのサイドカーか。indexerHash の無い古いものも不正とみなす
+ * （ローダーは飛ばし、インデクサは needsIndexing で再判定する）
+ */
+export function isSidecar(value: unknown): value is Sidecar {
+  return (
+    isRecord(value) &&
+    value.schemaVersion === SCHEMA_VERSION &&
+    typeof value.document === "string" &&
+    typeof value.indexerHash === "string" &&
+    Array.isArray(value.headlines) &&
+    value.headlines.every(hasJudgments)
+  );
+}
+
+/** 無ければ null。読めない・JSON として壊れていれば例外（呼び出し側が扱いを決める） */
 export function readSidecar(absPath: string): Sidecar | null {
   if (!existsSync(absPath)) return null;
   try {

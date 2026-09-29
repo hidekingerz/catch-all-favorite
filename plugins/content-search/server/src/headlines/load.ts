@@ -1,7 +1,7 @@
 import { existsSync, readdirSync } from "node:fs";
 import path from "node:path";
 import { extractMetadata } from "../metadata.js";
-import { SCHEMA_VERSION, readSidecar, type IndexedHeadline } from "./sidecar.js";
+import { isSidecar, readSidecar, type IndexedHeadline } from "./sidecar.js";
 
 export interface HeadlineRecord {
   document: string;
@@ -10,17 +10,21 @@ export interface HeadlineRecord {
   headline: IndexedHeadline;
 }
 
-/** content/catchup 配下の *.index.json を集めて見出し単位に展開する */
+/**
+ * content/catchup 配下の *.index.json を集めて見出し単位に展開する。
+ * 壊れた・スキーマの違う・形の不正なサイドカーは飛ばし、invalidDocuments に数える
+ */
 export function loadHeadlineIndex(contentDir: string): {
   records: HeadlineRecord[];
   indexedDocuments: number;
+  invalidDocuments: number;
 } {
   const records: HeadlineRecord[] = [];
   let indexedDocuments = 0;
+  let invalidDocuments = 0;
   const catchup = path.join(contentDir, "catchup");
-  if (!existsSync(catchup)) return { records, indexedDocuments };
-  walk(catchup, "catchup");
-  return { records, indexedDocuments };
+  if (existsSync(catchup)) walk(catchup, "catchup");
+  return { records, indexedDocuments, invalidDocuments };
 
   function walk(absDir: string, relDir: string): void {
     for (const entry of readdirSync(absDir, { withFileTypes: true })) {
@@ -29,8 +33,17 @@ export function loadHeadlineIndex(contentDir: string): {
       if (entry.isDirectory()) {
         walk(abs, rel);
       } else if (entry.isFile() && entry.name.endsWith(".index.json")) {
-        const sidecar = readSidecar(abs);
-        if (!sidecar || sidecar.schemaVersion !== SCHEMA_VERSION) continue;
+        let sidecar: unknown;
+        try {
+          sidecar = readSidecar(abs);
+        } catch {
+          invalidDocuments++;
+          continue;
+        }
+        if (!isSidecar(sidecar)) {
+          invalidDocuments++;
+          continue;
+        }
         const meta = extractMetadata(sidecar.document, "");
         if (!meta) continue;
         indexedDocuments++;
@@ -39,5 +52,30 @@ export function loadHeadlineIndex(contentDir: string): {
         }
       }
     }
+  }
+}
+
+export interface HeadlineIndexSummary {
+  indexed_documents: number;
+  catchup_documents: number;
+  invalid_documents?: number;
+  error?: string;
+}
+
+/** list_sources に添える件数。サイドカー側の失敗で list_sources 全体を失敗させない */
+export function headlineIndexSummary(contentDir: string, catchupDocuments: number): HeadlineIndexSummary {
+  try {
+    const { indexedDocuments, invalidDocuments } = loadHeadlineIndex(contentDir);
+    return {
+      indexed_documents: indexedDocuments,
+      catchup_documents: catchupDocuments,
+      ...(invalidDocuments > 0 ? { invalid_documents: invalidDocuments } : {}),
+    };
+  } catch (e) {
+    return {
+      indexed_documents: 0,
+      catchup_documents: catchupDocuments,
+      error: e instanceof Error ? e.message : String(e),
+    };
   }
 }
