@@ -250,6 +250,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 ## 技術調査レポート
 
+- [TypeSafe Jev でキャッチアップ記事の見出しを分類する検証レポート — System One モデルの使い方・精度・費用・運用要件](/content/research/typesafe-jev-headline-classification)
 - [Chrome UX Report（CrUX）技術調査レポート — データの仕組み・開発者の利用方法・自プロダクトの計測方法](/content/research/chrome-ux-report-crux)
 - [Trusted Types API 技術調査レポート — DOM XSS を型で封じる仕組みと 2026 年の対応状況](/content/research/trusted-types-api)
 - [Chrome DevTools Protocol（CDP）技術調査レポート — 仕様の全体像と Playwright との関係](/content/research/chrome-devtools-protocol)
