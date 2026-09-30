@@ -25,6 +25,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### This Week in React
 
+- [This Week in React 2026-09-30](/content/catchup/twir/20260930)
 - [This Week in React 2026-09-23](/content/catchup/twir/20260923)
 - [This Week in React 2026-09-16](/content/catchup/twir/20260916)
 - [This Week in React 2026-09-09](/content/catchup/twir/20260909)
@@ -102,6 +103,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Claude Code
 
+- [Claude Code キャッチアップ: 2026-09-30](/content/catchup/claude-code/20260930)
 - [Claude Code キャッチアップ: 2026-09-29](/content/catchup/claude-code/20260929)
 - [Claude Code キャッチアップ: 2026-09-28](/content/catchup/claude-code/20260928)
 - [Claude Code キャッチアップ: 2026-09-25](/content/catchup/claude-code/20260925)
