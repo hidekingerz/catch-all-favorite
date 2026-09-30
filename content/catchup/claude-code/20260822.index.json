@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260822.md",
+  "sourceHash": "sha256:af4dfe24b71b0acc522c6b88cd2e42f4498a822a1d9cc58456a237c0ddf2beb4",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:04.309Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "メンテナンスリリース（v2.1.240）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "バグ修正と信頼性の改善（Bug fixes and reliability improvements）。Atom フィード上のリリースノートはこの 1 行のみで、個別の変更点は記載されていない。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.240（2026-08-22）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "other",
+          "probabilities": {
+            "web_frontend": 0.01,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.27,
+            "other": 0.72
+          },
+          "confidence": 0.67
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.07,
+          "probabilities": [
+            0.01,
+            0,
+            0.89,
+            0.1
+          ],
+          "confidence": 0.88
+        }
+      }
+    }
+  ]
+}

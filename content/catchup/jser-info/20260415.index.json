@@ -1,0 +1,749 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/jser-info/20260415.md",
+  "sourceHash": "sha256:54973a90a81b5f7a5da916491507901087a15855e72675ba4544937ccc39a7f5",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:18.882Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Pagefind v1.5.0",
+      "url": "https://github.com/Pagefind/pagefind/releases/tag/v1.5.0",
+      "secondaryUrls": [],
+      "summary": "静的サイト向け検索ライブラリ Pagefind v1.5.0 リリース。Web Components ベースの新 UI システム、ダイアクリティカルマークへの対応、CJK クエリの自動セグメンテーション、Web Worker での検索実行、Windows ARM64 サポートなどを追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "Rust",
+        "JavaScript",
+        "search",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.95,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0.05,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.95
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 1.98,
+          "probabilities": [
+            0.03,
+            0.01,
+            0.91,
+            0.05
+          ],
+          "confidence": 0.88
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "webpack 5.106",
+      "url": "https://webpack.js.org/blog/2026-04-08-webpack-5-106/",
+      "secondaryUrls": [],
+      "summary": "webpack 5.106 リリース。Plugin Validation Hook の追加、CSS Modules のランタイムスタイル注入サポート、CommonJS の Tree Shaking 改善、oxc-parser サポート、webpack-cli 7.0.0 でのネイティブ TypeScript サポートなどが含まれる。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "webpack",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.13
+        },
+        "relevance": {
+          "score": 2.21,
+          "probabilities": [
+            0.02,
+            0,
+            0.73,
+            0.25
+          ],
+          "confidence": 0.72
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Release v11.0.0-rc.0 · pnpm/pnpm",
+      "url": "https://github.com/pnpm/pnpm/releases/tag/v11.0.0-rc.0",
+      "secondaryUrls": [],
+      "summary": "pnpm v11.0.0 RC 0 リリース。Pure ESM への移行、Node.js 18〜21 のサポート終了、`.npmrc` の設定制限、`pnpm ci` コマンドの追加、SBOM 生成への対応、サプライチェーンセキュリティ強化、SQLite インデックスの採用などを含む。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "pnpm",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.93
+        },
+        "relevance": {
+          "score": 2.96,
+          "probabilities": [
+            0,
+            0,
+            0.03,
+            0.97
+          ],
+          "confidence": 0.96
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "Bun v1.3.12",
+      "url": "https://bun.com/blog/bun-v1.3.12",
+      "secondaryUrls": [],
+      "summary": "Bun v1.3.12 リリース。`Bun.WebView` の追加、Markdown ファイルの直接実行、cron スケジューラの追加、ES Proposal Stage 3 の Explicit Resource Management への対応などを行っている。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "Bun",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 1.66,
+          "probabilities": [
+            0.18,
+            0.02,
+            0.76,
+            0.04
+          ],
+          "confidence": 0.57
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Servo 0.1.0: Embedding and LTS | Servo, the parallel browser engine",
+      "url": "https://servo.org/blog/2026/04/13/servo-0.1.0-release/",
+      "secondaryUrls": [],
+      "summary": "Rust 製の組み込み可能な Web レンダリングエンジン Servo v0.1.0 が crates.io 上で公開。Embedding API を提供し、LTS バージョンが導入された。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "Servo",
+        "Rust",
+        "browser",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "browser",
+          "probabilities": {
+            "web_frontend": 0.01,
+            "node_runtime": 0,
+            "browser": 0.77,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.22
+          },
+          "confidence": 0.74
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 0.34,
+          "probabilities": [
+            0.7,
+            0.27,
+            0.03,
+            0
+          ],
+          "confidence": 0.66
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "Summary of CVE-2026-23869 - Vercel",
+      "url": "https://vercel.com/changelog/summary-of-cve-2026-23869",
+      "secondaryUrls": [],
+      "summary": "React Server Components (RSC) における DoS 脆弱性 CVE-2026-23869 の概要。App Router の Server Function に細工されたリクエストが送られると過剰な CPU を消費し、Next.js 13.x〜16.x に影響があるとしている。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "Next.js",
+        "React",
+        "security",
+        "vercel"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.99,
+            "node_runtime": 0.01,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.14
+        },
+        "relevance": {
+          "score": 2.99,
+          "probabilities": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "confidence": 0.99
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "The uphill climb of making diff lines performant - The GitHub Blog",
+      "url": "https://github.blog/engineering/architecture-optimization/the-uphill-climb-of-making-diff-lines-performant/",
+      "secondaryUrls": [],
+      "summary": "GitHub の diff 行描画パフォーマンス改善の取り組みを紹介。1 行あたり 10〜15 個の DOM 要素という負荷の高い構造を最適化し、TanStack Virtual の導入や単一イベントハンドラへの集約などを通じて高速化を実現している。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "GitHub",
+        "React",
+        "performance",
+        "article"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.05,
+            "guide": 0.95,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.94
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1.99,
+          "probabilities": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "confidence": 0.99
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "React Server Components Your Way | TanStack Blog",
+      "url": "https://tanstack.com/blog/react-server-components",
+      "secondaryUrls": [],
+      "summary": "TanStack による React Server Components の実装アプローチの紹介。RSC をデータストリームとして扱い、Composite Components の実装や `createServerFn` による明示的なサーバー関数定義によって柔軟な RSC 活用を可能にしている。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "React",
+        "RSC",
+        "TanStack",
+        "article"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.56,
+            "guide": 0.44,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.49
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2,
+          "probabilities": [
+            0,
+            0,
+            0.99,
+            0.01
+          ],
+          "confidence": 0.98
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "The Intl API: The best browser API you're not using | Polypane",
+      "url": "https://polypane.app/blog/the-intl-api-the-best-browser-api-youre-not-using/",
+      "secondaryUrls": [],
+      "summary": "ブラウザ組み込みの `Intl` API の解説。`DateTimeFormat` / `NumberFormat` / `ListFormat` / `Segmenter` など、i18n 対応に有用な機能群をまとめて紹介している。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "JavaScript",
+        "i18n",
+        "article"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.18,
+            "guide": 0.82,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.79
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 1.98,
+          "probabilities": [
+            0.01,
+            0.01,
+            0.98,
+            0
+          ],
+          "confidence": 0.98
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "Under the hood of MDN's new frontend",
+      "url": "https://developer.mozilla.org/en-US/blog/mdn-front-end-deep-dive/",
+      "secondaryUrls": [],
+      "summary": "MDN のフロントエンドアーキテクチャ刷新の解説記事。Yari (Create React App) から Lit ベースの Web Components へ移行し、ビルドツールを Rspack に変更。独自の Server Components 実装を取り入れている。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "mdn",
+        "WebComponents",
+        "architecture",
+        "article"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0.02,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.18,
+            "guide": 0.8,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.76
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 1.73,
+          "probabilities": [
+            0.12,
+            0.05,
+            0.8,
+            0.03
+          ],
+          "confidence": 0.68
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "yuku-toolchain/yuku: High-performance JavaScript/TypeScript compiler and toolchain in pure Zig",
+      "url": "https://github.com/yuku-toolchain/yuku",
+      "secondaryUrls": [],
+      "summary": "Zig で実装された JavaScript / TypeScript コンパイラおよびツールチェーン。Test262 テストを通過しており、クロスコンパイルにも対応する高性能な実装を謳う。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "Zig",
+        "JavaScript",
+        "TypeScript",
+        "compiler",
+        "Tools"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.3,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.67,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.03
+          },
+          "confidence": 0.63
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.96,
+          "probabilities": [
+            0.02,
+            0,
+            0.97,
+            0.01
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 11,
+      "title": "Diffs, from Pierre",
+      "url": "https://diffs.com/",
+      "secondaryUrls": [],
+      "summary": "CSS Grid と Shadow DOM を活用した diff レンダリングライブラリ。Stack / Split 型のレイアウトをサポートし、構文ハイライトには Shiki を採用している。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "JavaScript",
+        "CSS",
+        "library",
+        "diff"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.2,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.79,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.76
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.8,
+          "probabilities": [
+            0.08,
+            0.05,
+            0.86,
+            0.01
+          ],
+          "confidence": 0.78
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/google-search-blog/20260908.md",
+  "sourceHash": "sha256:22dbfbd20a7671d0299fdad0e24d9f006fc2ec802c6304b11c21e7de19543aca",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:14.026Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Search Central Live is coming to Bogota and Ciudad de México",
+      "url": "https://developers.google.com/search/blog/2026/09/search-central-live-mexico-and-colombia?hl=ja",
+      "secondaryUrls": [],
+      "summary": "Search Central Live がボゴタ（コロンビア）で史上初開催（10月19日 14:30〜18:30）、シウダー・デ・メヒコ（メキシコシティ）で再開催（10月15日 8:30〜13:30）される。SEO・パブリッシャー・クリエイター・デジタルマーケター・サイト運営者を対象に、Google 検索・Google Discover・ニュースなどのプレゼンテーションを実施（一部英語、スペイン語翻訳あり）。無料・座席数限定のため事前登録制で、登録期限は両会場とも2026年9月16日、当選確認は9月21日に会場住所とともに通知される。",
+      "publishedAt": "2026-09-08",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 1,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_search",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 1,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.02
+        },
+        "relevance": {
+          "score": 0.25,
+          "probabilities": [
+            0.85,
+            0.04,
+            0.11,
+            0
+          ],
+          "confidence": 0.75
+        }
+      }
+    }
+  ]
+}

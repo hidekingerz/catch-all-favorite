@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/ios-release-notes/20260713.md",
+  "sourceHash": "sha256:cdb5a6bb479480ed3f6186da7819828d1546d2568f8be2d14ea4b66a7e64e88a",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:15.560Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "iOS & iPadOS 26.6 Beta 5 Release Notes",
+      "url": "https://developer.apple.com/documentation/ios-ipados-release-notes/ios-ipados-26_6-release-notes",
+      "secondaryUrls": [],
+      "summary": "Xcode 26.6 にバンドルされるベータ SDK の Beta 5。記載は **解決済みの問題（Resolved Issues）** と **既知の問題（Known Issues）** のみ（新機能・廃止の記載はなし）。**解決済みの問題**は Beta 4 と同一 —— **HealthKit**: 血圧（`HKQuantityTypeIdentifierBloodPressureDiastolic`/`Systolic`）要求時に認可画面が表示されない問題（177652061）、サンプルが時間的に重複する際に離散量タイプ（安静時心拍数など）の時間加重平均統計が異常に高い値を返す問題（178157672）を修正。**Object Capture**: キャプチャ/再構築が失敗しうる問題（175324303）を修正。**Stickers**: ステッカーデータ破損時に新規ステッカー作成や既存ステッカー表示ができなくなり、iCloud 同期で他デバイスにも波及しうる問題（163377768）を修正。**StoreKit**: Simulator 使用時に `SKTestSessions` がテスト環境に正しく接続できずテストアクションが失敗する問題（174738526／FB22500243）を修正。**既知の問題（新規）** —— **Messages**: HDR スクリーンショットを Messages で送信すると表示が乱れる（garbled）可能性がある（180859837）。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.02,
+          "probabilities": [
+            0.01,
+            0.97,
+            0.01,
+            0.01
+          ],
+          "confidence": 0.95
+        }
+      }
+    }
+  ]
+}

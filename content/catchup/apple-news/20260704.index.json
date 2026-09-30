@@ -1,0 +1,866 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/apple-news/20260704.md",
+  "sourceHash": "sha256:1b5837f775433bde424156d043c07a1716561978dbc7f45aaf7ac8c606d2710c",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:46.967Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "新登場：12か月契約の月払いサブスクリプション",
+      "url": "https://developer.apple.com/jp/news/?id=agq42lxe",
+      "secondaryUrls": [],
+      "summary": "自動更新サブスクリプションの新しい決済方法として、12か月契約の月払いサブスクリプションが利用可能になった。ユーザーはいつでも解約でき、Apple Account で支払い状況を確認でき、更新前に E メール・プッシュ通知で案内される。米国とシンガポールを除く全世界で、対象 OS 以降を搭載するデバイスで利用可能。",
+      "publishedAt": "2026-04-27",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0.18,
+            "feature": 0.81,
+            "guide": 0,
+            "event": 0,
+            "business": 0.01,
+            "other": 0
+          },
+          "confidence": 0.78
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0.96,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.04
+          },
+          "confidence": 0.96
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 0.89,
+          "probabilities": [
+            0.21,
+            0.71,
+            0.06,
+            0.02
+          ],
+          "confidence": 0.69
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "Lykke Studios：理想のぷっくりステッカーを求めて",
+      "url": "https://developer.apple.com/jp/news/?id=5t9gew40",
+      "secondaryUrls": [],
+      "summary": "2025年 Apple Design Awards のインクルージョン部門ファイナリスト「puffies.」を開発した Lykke Studios のデベロッパストーリー。ジグソーパズルとステッカーブック作りを組み合わせたゲームで、多数の 3D ステッカーを物理エンジンで自然に動かし、質感・操作感・アクセシビリティを数か月かけて作り込んだ経緯を紹介している。",
+      "publishedAt": "2026-04-24",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.01,
+            "guide": 0.89,
+            "event": 0.01,
+            "business": 0.01,
+            "other": 0.08
+          },
+          "confidence": 0.88
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0.99,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.01
+          },
+          "confidence": 0.98
+        },
+        "breaking": {
+          "noul": 0.03
+        },
+        "relevance": {
+          "score": 0.41,
+          "probabilities": [
+            0.61,
+            0.38,
+            0.01,
+            0
+          ],
+          "confidence": 0.59
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Hello Developer 2026年4月",
+      "url": "https://developer.apple.com/jp/news/?id=e1ssia6m",
+      "secondaryUrls": [],
+      "summary": "月刊ニュースレターの4月号。bilibili / LinkedIn での Apple Developer フォロー、WWDC26 に向けた重要セッションの振り返り、旅行アプリ作成用サンプルコード、デザインギャラリー、App Store Connect アナリティクスの過去最大のアップデートなどを取り上げている。",
+      "publishedAt": "2026-04-07",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "other",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.01,
+            "guide": 0.03,
+            "event": 0.26,
+            "business": 0,
+            "other": 0.7
+          },
+          "confidence": 0.66
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 0.92,
+          "probabilities": [
+            0.1,
+            0.88,
+            0.02,
+            0
+          ],
+          "confidence": 0.88
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "「インフィニティニキ」のオープンワールドを創り上げたInfold Gamesのアプローチ",
+      "url": "https://developer.apple.com/jp/news/?id=9mgkwjnm",
+      "secondaryUrls": [],
+      "summary": "2025年 Apple Design Awards（ビジュアルとグラフィック部門）受賞作「インフィニティニキ」のビジュアル制作を紹介するデベロッパストーリー。約800人のチームがグローバルイルミネーションなどの高度なシェーディング、独自のファブリック／ジュエリーマテリアルシステム、衣装の物理シミュレーションを用いて幻想的なオープンワールドを実現した手法を解説している。",
+      "publishedAt": "2026-04-03",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.01,
+            "guide": 0.97,
+            "event": 0.01,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.97
+        },
+        "ecosystem": {
+          "choice": "other",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0.45,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.55
+          },
+          "confidence": 0.49
+        },
+        "breaking": {
+          "noul": 0.02
+        },
+        "relevance": {
+          "score": 0.07,
+          "probabilities": [
+            0.93,
+            0.06,
+            0.01,
+            0
+          ],
+          "confidence": 0.93
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Q&A：長期的な成功を遂げたPlane Finderの戦略",
+      "url": "https://developer.apple.com/jp/news/?id=cmd9p4g7",
+      "secondaryUrls": [],
+      "summary": "2009年開始のフライト追跡アプリ「Plane Finder」創業者へのインタビュー。MapKit、StoreKit 2、ARKit、Liquid Glass など Apple のネイティブテクノロジーを積極的に採用し、わずか8人のチームで世界中に追跡デバイスを備えたエンドツーエンドのビジネスへ進化させた戦略を語っている。",
+      "publishedAt": "2026-04-03",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0.99,
+            "event": 0,
+            "business": 0.01,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 0.63,
+          "probabilities": [
+            0.38,
+            0.61,
+            0.01,
+            0
+          ],
+          "confidence": 0.62
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "App Storeで新たに11言語をサポート",
+      "url": "https://developer.apple.com/jp/news/?id=97t4mt64",
+      "secondaryUrls": [],
+      "summary": "App Store Connect がベンガル語、グジャラート語、カンナダ語、マラヤーラム語、マラーティー語、オディア語、パンジャーブ語、タミル語、テルグ語、ウルドゥー語、スロベニア語の11言語に新たに対応し、ローカライズ対応が合計50言語となった。アプリ名・説明・スクリーンショットなどのメタデータをこれらの言語でローカライズでき、新しいローカライズ版 App Store バッジも利用可能。",
+      "publishedAt": "2026-03-31",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 1,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 0.79,
+          "probabilities": [
+            0.27,
+            0.67,
+            0.05,
+            0
+          ],
+          "confidence": 0.67
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "最新のApple Developer Program使用許諾契約が利用可能に",
+      "url": "https://developer.apple.com/jp/news/?id=fwswmjcn",
+      "secondaryUrls": [],
+      "summary": "Apple Developer Program 使用許諾契約が改訂され、Foveated Streaming、Family Controls、Accessory Notifications、Accessory Live Activities の各フレームワーク使用に関する要件が明確化された。デベロッパはアカウントにサインインして更新後の契約に同意する必要がある。",
+      "publishedAt": "2026-03-30",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "policy",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 1,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.4
+        },
+        "relevance": {
+          "score": 1.04,
+          "probabilities": [
+            0.02,
+            0.94,
+            0.01,
+            0.03
+          ],
+          "confidence": 0.92
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "最新のベータ版リリースへの対応準備",
+      "url": "https://developer.apple.com/jp/news/?id=z8vzrgzx",
+      "secondaryUrls": [],
+      "summary": "iOS 26.5、iPadOS 26.5、macOS 26.5、tvOS 26.5、visionOS 26.5、watchOS 26.5 のベータ版が利用可能になった。デベロッパはこれらでアプリの動作を確認し、最新 SDK の機能を活用するため Xcode 26.5 ベータ版でビルドとテストを行うことが推奨される。",
+      "publishedAt": "2026-03-30",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.11
+        },
+        "relevance": {
+          "score": 0.97,
+          "probabilities": [
+            0.03,
+            0.97,
+            0,
+            0
+          ],
+          "confidence": 0.96
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "欧州経済領域、英国、米国における、規制対象の医療機器アプリに関するアップデート",
+      "url": "https://developer.apple.com/jp/news/?id=nyqbfz1y",
+      "secondaryUrls": [],
+      "summary": "2026年3月26日より、EEA・英国・米国で配信されるアプリのプロダクトページに、規制対象の医療機器に該当するかどうかが表示される。ヘルスケア/フィットネス・メディカルカテゴリや医療・治療情報を扱うアプリは App Store Connect でステータスの申告が必要で、新規アプリは即日、既存アプリは2027年初頭までに対応が必須。",
+      "publishedAt": "2026-03-26",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "policy",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 1,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.86
+        },
+        "relevance": {
+          "score": 1.01,
+          "probabilities": [
+            0.03,
+            0.94,
+            0.01,
+            0.02
+          ],
+          "confidence": 0.92
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "アナリティクスでアプリ内購入とサブスクリプションの新しいデータが利用可能に",
+      "url": "https://developer.apple.com/jp/news/?id=hh6v4b55",
+      "secondaryUrls": [],
+      "summary": "App Store Connect のアナリティクスがリリース以来最大のアップデートを実施し、100を超える新しいメトリックを追加。アプリ内購入・サブスクリプションのパフォーマンス分析、新しいコホート機能、ピアグループのベンチマーク、追加のフィルタや新しいサブスクリプションレポートなどが利用可能になった。",
+      "publishedAt": "2026-03-25",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.13,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.87,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.85
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 0.51,
+          "probabilities": [
+            0.54,
+            0.42,
+            0.04,
+            0
+          ],
+          "confidence": 0.49
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "WWDC26：2026年6月8日〜12日（太平洋時間）",
+      "url": "https://developer.apple.com/jp/news/?id=yi8qj25k",
+      "secondaryUrls": [],
+      "summary": "WWDC26 が2026年6月8日〜12日（太平洋時間）に開催されることを告知。最新のツール・フレームワーク・機能の発表、Apple のエンジニア／デザイナーによるビデオセッション、エキスパートと交流できるラボが提供され、すべて無料でオンライン参加が可能。",
+      "publishedAt": "2026-03-23",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 1,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0.99,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.01
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.03
+        },
+        "relevance": {
+          "score": 0.91,
+          "probabilities": [
+            0.15,
+            0.8,
+            0.05,
+            0
+          ],
+          "confidence": 0.79
+        }
+      }
+    },
+    {
+      "id": 11,
+      "title": "Apple Developerの情報をbilibiliとLinkedInで確認できます",
+      "url": "https://developer.apple.com/jp/news/?id=yts4l6mh",
+      "secondaryUrls": [],
+      "summary": "Apple Developer が bilibili と LinkedIn でのフォローに対応した。これらをフォローすることで、最新ニュース、発表、ビデオ、WWDC などのイベント情報、「Apple に相談」などのデベロッパコミュニティ向けアクティビティの最新情報を確認できる。",
+      "publishedAt": "2026-03-17",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.83,
+            "guide": 0,
+            "event": 0,
+            "business": 0.13,
+            "other": 0.04
+          },
+          "confidence": 0.79
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0.95,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.05
+          },
+          "confidence": 0.94
+        },
+        "breaking": {
+          "noul": 0.03
+        },
+        "relevance": {
+          "score": 0.75,
+          "probabilities": [
+            0.29,
+            0.68,
+            0.03,
+            0
+          ],
+          "confidence": 0.68
+        }
+      }
+    },
+    {
+      "id": 12,
+      "title": "iOS／iPadOSにおけるApp Storeの中国のストアフロントに関する変更",
+      "url": "https://developer.apple.com/jp/news/?id=dadukodv",
+      "secondaryUrls": [],
+      "summary": "2026年3月15日より、中国の App Store の手数料率が変更される。標準のアプリ内購入・有料トランザクションの手数料は30%から25%に、App Store Small Business Program と Mini Apps Partner Program の対象トランザクションは15%から12%に引き下げられる。",
+      "publishedAt": "2026-03-12",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "policy",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0.97,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0.03,
+            "other": 0
+          },
+          "confidence": 0.97
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.11
+        },
+        "relevance": {
+          "score": 0.93,
+          "probabilities": [
+            0.09,
+            0.9,
+            0.01,
+            0
+          ],
+          "confidence": 0.89
+        }
+      }
+    },
+    {
+      "id": 13,
+      "title": "Hello Developer 2026年3月",
+      "url": "https://developer.apple.com/jp/news/?id=zmqipz05",
+      "secondaryUrls": [],
+      "summary": "月刊ニュースレターの3月号。GDC での Apple の最新情報、プライバシーとセキュリティに関する新しいデベロッパ向けアクティビティ、Xcode 26 のコーディングインテリジェンス、AI を活用する「Speechify」の制作の舞台裏、最新のニュースとアップデートを紹介している。",
+      "publishedAt": "2026-03-03",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "other",
+          "probabilities": {
+            "release": 0.01,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.03,
+            "guide": 0.01,
+            "event": 0.06,
+            "business": 0,
+            "other": 0.89
+          },
+          "confidence": 0.87
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 1.04,
+          "probabilities": [
+            0.01,
+            0.93,
+            0.05,
+            0.01
+          ],
+          "confidence": 0.93
+        }
+      }
+    },
+    {
+      "id": 14,
+      "title": "ブラジル、オーストラリア、シンガポール、ユタ州、ルイジアナ州で配信されるアプリの年齢要件",
+      "url": "https://developer.apple.com/jp/news/?id=f5zj08ey",
+      "secondaryUrls": [],
+      "summary": "米国および複数地域で施行される法令に対応し、Apple は Declared Age Range API のアップデートなど年齢確認義務を果たすためのツールを拡充した。ブラジル・豪州・シンガポールでは18+指定アプリのダウンロードに成人確認が必須となり、ユタ州・ルイジアナ州では新規 Apple Account ユーザーの年齢カテゴリが API を通じてデベロッパに共有される。",
+      "publishedAt": "2026-02-24",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "policy",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0.86,
+            "feature": 0.14,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.84
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.72
+        },
+        "relevance": {
+          "score": 1.08,
+          "probabilities": [
+            0.01,
+            0.94,
+            0.02,
+            0.03
+          ],
+          "confidence": 0.91
+        }
+      }
+    }
+  ]
+}

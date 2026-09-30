@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260929.md",
+  "sourceHash": "sha256:7c3e778884509e05d846016fc6f5907f7c0ac959b1c7bcb0879488056613a6bd",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:10.403Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "v2.1.285（2026-09-29）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "設定 / 環境変数: `CLAUDE_CODE_DISABLE_WEB_FETCH` 環境変数を追加し、WebFetch ツールを無効化できるように。 / `allowedProviders` 管理設定を追加し、マシンが利用できる API プロバイダーを制限。 / カスタム `ANTHROPIC_BASE_URL` を使うセッションを 1M コンテキストウィンドウで動作させるよう変更。 / クラウドセッションで MCP サーバー名 `widgets` を予約語に。 / CLI / コマンド: `claude --desktop` を追加。現在のディレクトリを Claude デスクトップアプリで開く。 / `claude plugin configure <plugin>` を追加。プラグインのオプションを表示・設定。 / サブエージェント / auto モード: `claude -p` を `CLAUDE_CODE_FORK_SUBAGENT=1` で使ったとき、サブエージェント自身の Agent 呼び出しがフォアグラウンドで動くよう修正。 / fork サブエージェントがセッションの plan モード / `dontAsk` モードを引き継がない問題を修正。 / auto モードのバックグラウンドサブエージェントが各レポート後に冗長な返信を求める問題を修正。 / ワークフロー / レビュー: Code Review と `/ultrareview` を `disableWorkflows` が有効でも実行するよう変更（管理者設定で明示的に無効化されている場合を除く）。 / `/ultrareview` のアップロードに未コミットの認証情報ファイルが含まれる問題を修正。 / バックグラウンド実行: バックグラウンドの Bash / PowerShell コマンドを時間制限（デフォルト 30 分・最大 2 時間）で停止するよう変更。 / プロバイダー: Bedrock / Vertex で失敗する代わりに旧モデルティアへ切り替えるよう改善。 / 主な修正: SSH 経由のプラグイン／マーケットプレイスのインストール・更新が `GIT_SSH` や `core.sshCommand` を無視する問題を修正。ワークツリーや `/teleport` の取得での SSH パスフレーズ入力がターミナルを占有する問題を修正。 / 会話のコンパクション後にクラウドセッションが Artifact 更新を拒否する問題、コンパクション後に読み取りタイミングが早すぎる Remote Control の問題を修正。 / セッション中にモデルを切り替えると新モデルが組み込みの出力トークン上限のままになる問題、フォールバック時に `/cost` や SDK の `modelUsage` が誤ったモデルに計上される問題を修正。 / リダクトされたログに `@` を含む URL のパスワードが表示される問題を修正。 / セッション中に追加した MCP サーバーが切り替え後も残る問題、`.` / `-` / `@` や大文字違いだけの ID でのプラグインインストール競合を修正。 / サンドボックスの自動許可がインラインスクリプト実行ごとに承認を求める問題、クラウドセッション作成が最新 20 環境しか読まない問題を修正。 / WebFetch がレート制限されたドメインをポリシーブロックとして報告する問題、`/artifacts` の dismiss がファイルのリンクを解除する問題を修正。 / Artifact ツールの結果に publish の提案を表示するよう改善。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {
+        "設定 / 環境変数": "`CLAUDE_CODE_DISABLE_WEB_FETCH` 環境変数を追加し、WebFetch ツールを無効化できるように。 / `allowedProviders` 管理設定を追加し、マシンが利用できる API プロバイダーを制限。 / カスタム `ANTHROPIC_BASE_URL` を使うセッションを 1M コンテキストウィンドウで動作させるよう変更。 / クラウドセッションで MCP サーバー名 `widgets` を予約語に。",
+        "CLI / コマンド": "`claude --desktop` を追加。現在のディレクトリを Claude デスクトップアプリで開く。 / `claude plugin configure <plugin>` を追加。プラグインのオプションを表示・設定。",
+        "サブエージェント / auto モード": "`claude -p` を `CLAUDE_CODE_FORK_SUBAGENT=1` で使ったとき、サブエージェント自身の Agent 呼び出しがフォアグラウンドで動くよう修正。 / fork サブエージェントがセッションの plan モード / `dontAsk` モードを引き継がない問題を修正。 / auto モードのバックグラウンドサブエージェントが各レポート後に冗長な返信を求める問題を修正。",
+        "ワークフロー / レビュー": "Code Review と `/ultrareview` を `disableWorkflows` が有効でも実行するよう変更（管理者設定で明示的に無効化されている場合を除く）。 / `/ultrareview` のアップロードに未コミットの認証情報ファイルが含まれる問題を修正。",
+        "バックグラウンド実行": "バックグラウンドの Bash / PowerShell コマンドを時間制限（デフォルト 30 分・最大 2 時間）で停止するよう変更。",
+        "プロバイダー": "Bedrock / Vertex で失敗する代わりに旧モデルティアへ切り替えるよう改善。",
+        "主な修正": "SSH 経由のプラグイン／マーケットプレイスのインストール・更新が `GIT_SSH` や `core.sshCommand` を無視する問題を修正。ワークツリーや `/teleport` の取得での SSH パスフレーズ入力がターミナルを占有する問題を修正。 / 会話のコンパクション後にクラウドセッションが Artifact 更新を拒否する問題、コンパクション後に読み取りタイミングが早すぎる Remote Control の問題を修正。 / セッション中にモデルを切り替えると新モデルが組み込みの出力トークン上限のままになる問題、フォールバック時に `/cost` や SDK の `modelUsage` が誤ったモデルに計上される問題を修正。 / リダクトされたログに `@` を含む URL のパスワードが表示される問題を修正。 / セッション中に追加した MCP サーバーが切り替え後も残る問題、`.` / `-` / `@` や大文字違いだけの ID でのプラグインインストール競合を修正。 / サンドボックスの自動許可がインラインスクリプト実行ごとに承認を求める問題、クラウドセッション作成が最新 20 環境しか読まない問題を修正。 / WebFetch がレート制限されたドメインをポリシーブロックとして報告する問題、`/artifacts` の dismiss がファイルのリンクを解除する問題を修正。 / Artifact ツールの結果に publish の提案を表示するよう改善。"
+      },
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.32
+        },
+        "relevance": {
+          "score": 2.5,
+          "probabilities": [
+            0,
+            0,
+            0.49,
+            0.51
+          ],
+          "confidence": 0.5
+        }
+      }
+    }
+  ]
+}

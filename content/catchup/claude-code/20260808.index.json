@@ -1,0 +1,467 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260808.md",
+  "sourceHash": "sha256:2ee1d5bcc2778ae9931e092735b62b2481ca08d3b8ea9f6f4cb18057b0742ff6",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:01.742Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "クロスセッション通信（SendMessage / ListAgents）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "`SendMessage` が、別マシン上の **Remote Control セッションと名前で会話を開始**できるようになった（`ListAgents` が `name [ref]` 形式で一覧表示）。従来は相手が先にメッセージを送ってきた後でしか返信できなかった。 / 既に確認済みの Remote Control 宛先が、相手側の一覧を確認できなかった場合でも、このマシン上の同名セッションに差し替えられないように修正。 / ヘッドレスセッションや起動時に、クロスセッションメッセージが通知も期限もないまま滞留する問題を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.225（2026-08-08）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.99,
+            "other": 0.01
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.12
+        },
+        "relevance": {
+          "score": 2.2,
+          "probabilities": [
+            0.01,
+            0,
+            0.77,
+            0.22
+          ],
+          "confidence": 0.76
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "使用量・課金（gateway スペンドリミット）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "Claude Code の使用量警告に **gateway のスペンドリミット対応**を追加。上限到達メッセージが、上限額・そのリセット時刻・オペレーターのメッセージを明示するようになった（gateway 側 2.1.225 が必要）。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.225（2026-08-08）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.98,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.02,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.15
+        },
+        "relevance": {
+          "score": 2.14,
+          "probabilities": [
+            0,
+            0,
+            0.86,
+            0.14
+          ],
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "権限・信頼・auto モード",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "`claude agents` に、信頼していないディレクトリ向けの**ワークスペース信頼プロンプト**を追加。`claude` 本体と同じ挙動に揃えた。 / auto モードが、自身の権限チェックに対するセーフティフィルタの拒否を連続ブロック上限にカウントしてしまう問題を修正。当該アクションは引き続き拒否されるが、モデルにはリトライではなく次に進むよう指示されるようになった。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.225（2026-08-08）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.12
+        },
+        "relevance": {
+          "score": 2.36,
+          "probabilities": [
+            0,
+            0,
+            0.63,
+            0.37
+          ],
+          "confidence": 0.63
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "認証・トークン・MCP",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "一時的な 401 が、長命の `CLAUDE_CODE_OAUTH_TOKEN` を保存済みログインの短命トークンで置き換えてしまい、再起動までヘッドレスセッションが壊れる問題を修正。 / macOS で MCP OAuth サーバが、keychain 読み取りのタイムアウト後に、認証済みでないかのように 401 のバーストで断続的に失敗する問題を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.225（2026-08-08）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.99,
+            "security": 0.01,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 2.49,
+          "probabilities": [
+            0,
+            0.01,
+            0.49,
+            0.5
+          ],
+          "confidence": 0.49
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "セルフホスト実行環境",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "`claude self-hosted-runner` が、`--base-dir` を作成/書き込みできないときに登録後に毎セッション失敗していた問題を修正。起動時に明確なエラーで終了するようになった。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.225（2026-08-08）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.13
+        },
+        "relevance": {
+          "score": 2.42,
+          "probabilities": [
+            0.02,
+            0,
+            0.52,
+            0.46
+          ],
+          "confidence": 0.49
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "Remote Control・Web / モバイル",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "非常に大きな会話がコンパクションされた後、Remote Control セッション再開で会話履歴が壊れる問題を修正。 / Claude Code on the web のセッションが「スタック」と誤報告され、再接続のたびに増え続けるイベントのバックログを再送していた問題を修正。 / 改善: Claude アプリから添付された写真を、別のツール呼び出しでディスクから読むのではなく、直接 Claude に見せるように。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.225（2026-08-08）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.19,
+          "probabilities": [
+            0,
+            0,
+            0.81,
+            0.19
+          ],
+          "confidence": 0.8
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "エージェント一覧・表示",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "エージェント一覧で別プロジェクトのセッションにホバーすると、次のエージェントの開始ディレクトリが変わってしまう問題を修正。 / [VSCode] Focus ビューが最新の to-do リスト・保留中の質問のコンテキスト・確定済みの回答を畳んでしまう問題を修正。thinking のみの折りたたみは「Thought for Ns」と表示し、そのターン完了時に再度折りたたむように。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.225（2026-08-08）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.08,
+          "probabilities": [
+            0.01,
+            0,
+            0.89,
+            0.1
+          ],
+          "confidence": 0.89
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "その他",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "バグ修正と信頼性改善（changelog に個別項目の記載なし）。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.226（2026-08-08）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.96,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.04
+          },
+          "confidence": 0.95
+        },
+        "ecosystem": {
+          "choice": "other",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.11,
+            "other": 0.89
+          },
+          "confidence": 0.87
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1.98,
+          "probabilities": [
+            0.06,
+            0,
+            0.83,
+            0.11
+          ],
+          "confidence": 0.76
+        }
+      }
+    }
+  ]
+}

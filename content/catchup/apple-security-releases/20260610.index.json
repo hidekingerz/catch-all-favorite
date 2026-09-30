@@ -1,0 +1,809 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/apple-security-releases/20260610.md",
+  "sourceHash": "sha256:154c08270221e8b6454fb06afa211e54a395022c3746fe0432cd84ea4dc16b6b",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:49.999Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "iOS 26.5.1",
+      "url": "https://support.apple.com/ja-jp/100100",
+      "secondaryUrls": [],
+      "summary": "iPhone 17 系および iPhone Air 向けのアップデート。一覧ページ上では「このアップデートには CVE の公開エントリがありません」と記載されており、公開時点でセキュリティ修正の CVE 情報は掲載されていない。",
+      "publishedAt": "2026-06-01",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "iPhone 17（全モデル）および iPhone Air",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.73,
+            "security": 0.27,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.68
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 1,
+          "probabilities": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "confidence": 1
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "macOS Tahoe 26.5.1",
+      "url": "https://support.apple.com/ja-jp/100100",
+      "secondaryUrls": [],
+      "summary": "macOS Tahoe 向けのアップデート。一覧ページ上では CVE の公開エントリがないと記載されており、公開時点でセキュリティ修正の CVE 情報は掲載されていない。",
+      "publishedAt": "2026-06-01",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "macOS Tahoe",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.71,
+            "security": 0.29,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.66
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 1.04,
+          "probabilities": [
+            0,
+            0.98,
+            0.01,
+            0.01
+          ],
+          "confidence": 0.96
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Safari 26.5",
+      "url": "https://support.apple.com/ja-jp/127121",
+      "secondaryUrls": [],
+      "summary": "計22件の脆弱性を修正。大半（約20件）が WebKit に関するもので、メモリ破損やコンテンツセキュリティポリシーのバイパス、悪意あるWebコンテンツによるプロセスクラッシュやユーザーデータ露出などに対処。WebRTC 関連の修正も含まれる。実環境での悪用は明記されていない。",
+      "publishedAt": "2026-05-13",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "macOS Sonoma および macOS Sequoia",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "browser",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 1,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.19,
+          "probabilities": [
+            0.01,
+            0.84,
+            0.1,
+            0.05
+          ],
+          "confidence": 0.8
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "iOS 26.5 and iPadOS 26.5",
+      "url": "https://support.apple.com/ja-jp/127110",
+      "secondaryUrls": [],
+      "summary": "約90件の脆弱性を修正する大規模アップデート。WebKit（20件超）を中心に、Kernel、mDNSResponder、ImageIO/AppleJPEG などのメモリ安全性・アクセス制御・入力検証の問題に対処。実環境での悪用は明記されていない。",
+      "publishedAt": "2026-05-11",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "iPhone 11 以降、iPad Pro 12.9インチ（第3世代以降）、iPad Pro 11インチ（第1世代以降）、iPad Air（第3世代以降）、iPad（第8世代以降）、iPad mini（第5世代以降）",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 1.03,
+          "probabilities": [
+            0,
+            0.98,
+            0.01,
+            0.01
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "iOS 18.7.9 and iPadOS 18.7.9",
+      "url": "https://support.apple.com/ja-jp/127111",
+      "secondaryUrls": [],
+      "summary": "旧世代デバイス向けのセキュリティアップデート。最新 OS と同日に公開され、対象端末のセキュリティ修正を提供する。詳細は詳細ページの CVE 一覧を参照。",
+      "publishedAt": "2026-05-11",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "iPhone XS / XS Max / XR、iPad（第7世代）",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.01,
+          "probabilities": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "confidence": 0.99
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "iPadOS 17.7.11",
+      "url": "https://support.apple.com/ja-jp/127112",
+      "secondaryUrls": [],
+      "summary": "iPadOS 17 系のレガシー iPad 向けセキュリティアップデート。最新 OS と同日に公開。詳細は詳細ページの CVE 一覧を参照。",
+      "publishedAt": "2026-05-11",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "iPad Pro 12.9インチ（第2世代）、iPad Pro 10.5インチ、iPad（第6世代）",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 1,
+          "probabilities": [
+            0.01,
+            0.98,
+            0.01,
+            0
+          ],
+          "confidence": 0.98
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "iOS 16.7.16 and iPadOS 16.7.16",
+      "url": "https://support.apple.com/ja-jp/127113",
+      "secondaryUrls": [],
+      "summary": "iOS/iPadOS 16 系の旧世代デバイス向けセキュリティアップデート。最新 OS と同日に公開。詳細は詳細ページの CVE 一覧を参照。",
+      "publishedAt": "2026-05-11",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "iPhone 8 / 8 Plus / X、iPad（第5世代）、iPad Pro 9.7インチ、iPad Pro 12.9インチ（第1世代）",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.01,
+          "probabilities": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "confidence": 0.99
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "iOS 15.8.8 and iPadOS 15.8.8",
+      "url": "https://support.apple.com/ja-jp/127114",
+      "secondaryUrls": [],
+      "summary": "iOS/iPadOS 15 系の最も古い対応デバイス向けセキュリティアップデート。最新 OS と同日に公開。詳細は詳細ページの CVE 一覧を参照。",
+      "publishedAt": "2026-05-11",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "iPhone 6s（全モデル）、iPhone 7（全モデル）、iPhone SE（第1世代）、iPad Air 2、iPad mini（第4世代）、iPod touch（第7世代）",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.01,
+          "probabilities": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "confidence": 0.99
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "macOS Tahoe 26.5",
+      "url": "https://support.apple.com/ja-jp/127115",
+      "secondaryUrls": [],
+      "summary": "計98件の脆弱性を修正する大規模アップデート。WebKit（20件超）、Kernel（10件超）、mDNSResponder、ImageIO/Model I/O、Sandbox/Storage などにわたるメモリ破損・バッファオーバーフロー・アクセス制御の問題に対処。実環境での悪用は明記されていない。",
+      "publishedAt": "2026-05-11",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "macOS Tahoe",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 1.09,
+          "probabilities": [
+            0,
+            0.94,
+            0.03,
+            0.03
+          ],
+          "confidence": 0.91
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "macOS Sequoia 15.7.7",
+      "url": "https://support.apple.com/ja-jp/127116",
+      "secondaryUrls": [],
+      "summary": "macOS Sequoia 向けのセキュリティアップデート。最新 macOS と同日に公開。詳細は詳細ページの CVE 一覧を参照。",
+      "publishedAt": "2026-05-11",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "macOS Sequoia",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.05,
+          "probabilities": [
+            0,
+            0.96,
+            0.02,
+            0.02
+          ],
+          "confidence": 0.94
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "macOS Sonoma 14.8.7",
+      "url": "https://support.apple.com/ja-jp/127117",
+      "secondaryUrls": [],
+      "summary": "macOS Sonoma 向けのセキュリティアップデート。最新 macOS と同日に公開。詳細は詳細ページの CVE 一覧を参照。",
+      "publishedAt": "2026-05-11",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "macOS Sonoma",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.05,
+          "probabilities": [
+            0,
+            0.96,
+            0.02,
+            0.02
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 11,
+      "title": "tvOS 26.5",
+      "url": "https://support.apple.com/ja-jp/127118",
+      "secondaryUrls": [],
+      "summary": "Apple TV 向けの tvOS セキュリティアップデート。最新 OS と同日に公開。詳細は詳細ページの CVE 一覧を参照。",
+      "publishedAt": "2026-05-11",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "Apple TV HD および Apple TV 4K（全モデル）",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0.71,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.29
+          },
+          "confidence": 0.67
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 0.19,
+          "probabilities": [
+            0.82,
+            0.18,
+            0,
+            0
+          ],
+          "confidence": 0.81
+        }
+      }
+    },
+    {
+      "id": 12,
+      "title": "watchOS 26.5",
+      "url": "https://support.apple.com/ja-jp/127119",
+      "secondaryUrls": [],
+      "summary": "Apple Watch 向けの watchOS セキュリティアップデート。最新 OS と同日に公開。詳細は詳細ページの CVE 一覧を参照。",
+      "publishedAt": "2026-05-11",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "Apple Watch Series 6 以降",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0.98,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.02
+          },
+          "confidence": 0.98
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 1,
+          "probabilities": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "confidence": 1
+        }
+      }
+    },
+    {
+      "id": 13,
+      "title": "visionOS 26.5",
+      "url": "https://support.apple.com/ja-jp/127120",
+      "secondaryUrls": [],
+      "summary": "Apple Vision Pro 向けの visionOS セキュリティアップデート。最新 OS と同日に公開。詳細は詳細ページの CVE 一覧を参照。",
+      "publishedAt": "2026-05-11",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "Apple Vision Pro（全モデル）",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0.52,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.48
+          },
+          "confidence": 0.45
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 0.22,
+          "probabilities": [
+            0.79,
+            0.2,
+            0.01,
+            0
+          ],
+          "confidence": 0.78
+        }
+      }
+    }
+  ]
+}

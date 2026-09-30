@@ -1,0 +1,1322 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/twir/20260610.md",
+  "sourceHash": "sha256:1a80694698bdb780c5fda44ff25ad7280635f1c94e53400630db65c827f7678e",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:31.323Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "The React.Foundation website",
+      "url": "https://react.foundation/",
+      "secondaryUrls": [],
+      "summary": "React Foundationのサイトが公開。メンテナ資金提供システム、利益をメンテナに還元するマーチャンダイズストア、四半期ごとの透明性レポート、ゲーミフィケーションされた「Contributor Status」ページを計画。多くのReactリポジトリが`facebook`から`react` GitHub組織へ移行",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "business",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 1,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 1.97,
+          "probabilities": [
+            0.04,
+            0,
+            0.91,
+            0.05
+          ],
+          "confidence": 0.87
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "React Core PR - Port React Compiler to Rust",
+      "url": "https://github.com/react/react/pull/36173",
+      "secondaryUrls": [],
+      "summary": "React CompilerがRustへ移植されマージされた。公式npmパッケージはまだ未公開だが、Oxc(v0.135)、Rolldown、Oxlint、SWC、Bunとの統合が進行中",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.18,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.81,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.78
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.03,
+          "probabilities": [
+            0.01,
+            0,
+            0.94,
+            0.05
+          ],
+          "confidence": 0.93
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "React RFC - Support using disposable as useEffect cleanup",
+      "url": "https://github.com/reactjs/rfcs/pull/278",
+      "secondaryUrls": [],
+      "summary": "`useEffect`がES Explicit Resource Managementと統合できるようにする提案。`{[Symbol.dispose]: myEffectCleanupFunction}`を返すdisposableリソースでクリーンアップを表現可能に",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.99,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.03,
+          "probabilities": [
+            0,
+            0,
+            0.96,
+            0.04
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "React Advanced London",
+      "url": "https://reactadvanced.com/",
+      "secondaryUrls": [],
+      "summary": "10月23日・26日にロンドンで開催されるカンファレンス。Call for Papersは6月22日まで。コード「TWIR」で10%割引",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 1,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.03
+        },
+        "relevance": {
+          "score": 1.88,
+          "probabilities": [
+            0.06,
+            0,
+            0.94,
+            0
+          ],
+          "confidence": 0.88
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Flow for TypeScript Users in 2026",
+      "url": "https://medium.com/flow-type/flow-for-typescript-users-in-2026-ad07ac0a2d92",
+      "secondaryUrls": [],
+      "summary": "Flowの構文はTypeScriptに近づき、より厳密な型付けやパターンマッチング、component/hook/renders構文などの機能を提供。FlowのコンパイラもRustへ移植中",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.03,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.94,
+            "guide": 0.03,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.93
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 1.73,
+          "probabilities": [
+            0.15,
+            0.01,
+            0.81,
+            0.03
+          ],
+          "confidence": 0.66
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "Building an Active NavLink Component in Next.js",
+      "url": "https://aurorascharff.no/posts/building-an-active-navlink-component-in-nextjs/",
+      "secondaryUrls": [],
+      "summary": "App Router向けの本番品質な再利用可能`NavLink`コンポーネントを構築するガイド。React Routerに着想を得た`isActive/className`レンダープロップを採用し、初回描画のちらつきやSuspense Cache Componentsに対応",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 2.04,
+          "probabilities": [
+            0,
+            0,
+            0.96,
+            0.04
+          ],
+          "confidence": 0.96
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "The Best Loading States Are No Loading States",
+      "url": "https://jjenzz.com/best-loading-states-are-no-loading-states/",
+      "secondaryUrls": [],
+      "summary": "ルート遷移、ルートローダー、プリロード、グローバルフォールバックを活用して、目に見えるローディング状態の大半を排除する方法を解説",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2,
+          "probabilities": [
+            0,
+            0,
+            0.99,
+            0.01
+          ],
+          "confidence": 0.98
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "How React Server Components Integrate with Bundler",
+      "url": "https://reactjs-maxxing.vercel.app/blog/how-react-server-component-integrate-with-bundler",
+      "secondaryUrls": [],
+      "summary": "React Server Componentsがバンドラとどう統合されるかの技術的な解説",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.04,
+            "guide": 0.96,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.96
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.03,
+          "probabilities": [
+            0,
+            0,
+            0.97,
+            0.03
+          ],
+          "confidence": 0.96
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "When React parent components need to know their children",
+      "url": "https://www.jayfreestone.com/writing/updating-react-parents-in-response-to-changes-in-children/",
+      "secondaryUrls": [],
+      "summary": "子コンポーネントの変更に親コンポーネントが反応するためのパターンを扱う記事",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 2,
+          "probabilities": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "confidence": 0.99
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "The problem with useEffect – React Doctor can help",
+      "url": "https://www.react.doctor/blog/the-problem-with-useeffect",
+      "secondaryUrls": [],
+      "summary": "よくある`useEffect`の問題を特定・解決するためのツールベースのガイダンス",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.04,
+            "guide": 0.95,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.94
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 2.01,
+          "probabilities": [
+            0,
+            0,
+            0.98,
+            0.02
+          ],
+          "confidence": 0.98
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "Sätteri - Flexible Rust-based Markdown / MDX engine",
+      "url": "https://satteri.bruits.org/",
+      "secondaryUrls": [],
+      "summary": "Unifiedエコシステムの高速なRust製代替。Astroのデフォルトパーサになる可能性があり、既にStarlightと統合済み",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.2,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.78,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.02
+          },
+          "confidence": 0.75
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.96,
+            "node_runtime": 0.02,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.02
+          },
+          "confidence": 0.95
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 1.21,
+          "probabilities": [
+            0.41,
+            0.02,
+            0.51,
+            0.06
+          ],
+          "confidence": 0.1
+        }
+      }
+    },
+    {
+      "id": 11,
+      "title": "Motion 12.40 - Support for arc() motions",
+      "url": "https://motion.dev/docs/arc",
+      "secondaryUrls": [],
+      "summary": "要素を曲線パスに沿ってアニメーションさせることが可能に",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.15,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.85,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.83
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.98,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.01,
+            "other": 0.01
+          },
+          "confidence": 0.97
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.88,
+          "probabilities": [
+            0.08,
+            0,
+            0.88,
+            0.04
+          ],
+          "confidence": 0.79
+        }
+      }
+    },
+    {
+      "id": 12,
+      "title": "TanStack Table 9.0 beta",
+      "url": "https://tanstack.com/blog/tanstack-table-v9-taking-form",
+      "secondaryUrls": [],
+      "summary": "TanStack Storeとatomを使って状態管理を再構築。不要な再レンダリングを防ぎ、React Compilerに対応",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.34
+        },
+        "relevance": {
+          "score": 2.36,
+          "probabilities": [
+            0.01,
+            0,
+            0.62,
+            0.37
+          ],
+          "confidence": 0.61
+        }
+      }
+    },
+    {
+      "id": 13,
+      "title": "React Router 8.0 prerelease",
+      "url": "https://github.com/remix-run/react-router/blob/v8/CHANGELOG.md#v800-pre0",
+      "secondaryUrls": [],
+      "summary": "早期採用向けのメジャーバージョン。V8 future flagsがデフォルト有効化、ランタイム要件の引き上げ、CJSと`react-router-dom`パッケージの廃止",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.92
+        },
+        "relevance": {
+          "score": 2.95,
+          "probabilities": [
+            0,
+            0,
+            0.05,
+            0.95
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 14,
+      "title": "React Router 7.17",
+      "url": "https://github.com/remix-run/react-router/blob/main/CHANGELOG.md#v7170",
+      "secondaryUrls": [],
+      "summary": "AIエージェント向けのMarkdownドキュメントサポートを追加",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.89,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.11,
+            "other": 0
+          },
+          "confidence": 0.87
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1.97,
+          "probabilities": [
+            0.06,
+            0,
+            0.84,
+            0.1
+          ],
+          "confidence": 0.77
+        }
+      }
+    },
+    {
+      "id": 15,
+      "title": "React 19.2.7, 19.1.8, 19.0.7",
+      "url": "https://github.com/facebook/react/releases/tag/v19.2.7",
+      "secondaryUrls": [],
+      "summary": "Server ActionsのFormDataリグレッションを修正",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2.91,
+          "probabilities": [
+            0,
+            0,
+            0.09,
+            0.91
+          ],
+          "confidence": 0.91
+        }
+      }
+    },
+    {
+      "id": 16,
+      "title": "This Month in React podcast",
+      "url": "https://share.transistor.fm/s/dd8e79de",
+      "secondaryUrls": [],
+      "summary": "Reactコアチームの構成やTanStackのセキュリティインシデントについて議論するポッドキャスト",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "other",
+          "probabilities": {
+            "release": 0,
+            "security": 0.01,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0.43,
+            "business": 0.1,
+            "other": 0.46
+          },
+          "confidence": 0.38
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 2.1,
+          "probabilities": [
+            0.01,
+            0,
+            0.88,
+            0.11
+          ],
+          "confidence": 0.87
+        }
+      }
+    },
+    {
+      "id": 17,
+      "title": "Señors at Scale podcast - Routing at Scale with TanStack Router",
+      "url": "https://creators.spotify.com/pod/profile/dan-neciu/episodes/Routing-at-Scale-with-TanStack-Routers-Nicolas-Beaussart--React-Router-Migration--Monorepos--PayFit-e3keqv9",
+      "secondaryUrls": [],
+      "summary": "Nicolas Beaussart氏を迎え、TanStack Router、React Routerからの移行、モノレポについて語るインタビュー",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.01,
+            "guide": 0.04,
+            "event": 0.85,
+            "business": 0,
+            "other": 0.1
+          },
+          "confidence": 0.83
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.01,
+          "probabilities": [
+            0.02,
+            0,
+            0.93,
+            0.05
+          ],
+          "confidence": 0.91
+        }
+      }
+    },
+    {
+      "id": 18,
+      "title": "VoidZero is Joining Cloudflare",
+      "url": "https://voidzero.dev/posts/voidzero-cloudflare",
+      "secondaryUrls": [],
+      "summary": "CloudflareがVoidZero(Vite、Vitest、Rolldown、Oxc、Oxfmt、Oxlint、Vite+の開発元)を買収。ツールはオープンソース・MITライセンス・コミュニティ主導を維持し、ロックインなし。Cloudflareは新しい`cf` CLIをVite中心に構築予定",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "business",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.75,
+          "probabilities": [
+            0.15,
+            0.01,
+            0.78,
+            0.06
+          ],
+          "confidence": 0.62
+        }
+      }
+    },
+    {
+      "id": 19,
+      "title": "GitHub - Upcoming breaking changes for npm v12",
+      "url": "https://github.blog/changelog/2026-06-09-upcoming-breaking-changes-for-npm-v12/",
+      "secondaryUrls": [],
+      "summary": "7月リリースのnpm v12でinstallライフサイクルスクリプトをデフォルトでブロック。サプライチェーンセキュリティを改善",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.73,
+            "security": 0.25,
+            "policy": 0.02,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.69
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.88
+        },
+        "relevance": {
+          "score": 2.96,
+          "probabilities": [
+            0,
+            0,
+            0.02,
+            0.98
+          ],
+          "confidence": 0.96
+        }
+      }
+    },
+    {
+      "id": 20,
+      "title": "Why does tsgo use so much memory?",
+      "url": "https://zackoverflow.dev/writing/why-does-tsgo-use-so-much-memory",
+      "secondaryUrls": [],
+      "summary": "tsgoがスレッドごとに1つの型チェッカーを動かすため、メモリ使用量が大きくなることを解説",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.98,
+            "node_runtime": 0.01,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.01
+          },
+          "confidence": 0.98
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 1.97,
+          "probabilities": [
+            0.03,
+            0,
+            0.95,
+            0.02
+          ],
+          "confidence": 0.93
+        }
+      }
+    },
+    {
+      "id": 21,
+      "title": "Rolldown 1.1",
+      "url": "https://github.com/rolldown/rolldown/releases/tag/v1.1.0",
+      "secondaryUrls": [],
+      "summary": "lazy barrel最適化を有効化し、TypeScriptの`references`解決をtscと整合",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.19
+        },
+        "relevance": {
+          "score": 2.08,
+          "probabilities": [
+            0.08,
+            0.01,
+            0.65,
+            0.26
+          ],
+          "confidence": 0.57
+        }
+      }
+    },
+    {
+      "id": 22,
+      "title": "Angular 22.0",
+      "url": "https://blog.angular.dev/announcing-angular-v22-c52bb83a4664",
+      "secondaryUrls": [],
+      "summary": "Signal Forms、Angular Aria、OnPushデフォルト、async DI、IA機能を導入",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.67
+        },
+        "relevance": {
+          "score": 0.08,
+          "probabilities": [
+            0.96,
+            0.01,
+            0.03,
+            0
+          ],
+          "confidence": 0.92
+        }
+      }
+    }
+  ]
+}

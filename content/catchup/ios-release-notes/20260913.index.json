@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/ios-release-notes/20260913.md",
+  "sourceHash": "sha256:03397703c8f454dc600e0c34d4b77f7795ae45f59f49e1973cba0f20ac7686f7",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:17.053Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "iOS & iPadOS 27 RC Release Notes",
+      "url": "https://developer.apple.com/documentation/ios-ipados-release-notes/ios-ipados-27-release-notes",
+      "secondaryUrls": [],
+      "summary": "iOS & iPadOS 27 の Release Candidate（Xcode 27 バンドル、Mac App Store 入手可）。概要は「新機能に対応し、API 変更に対してアプリをテストせよ」で、リリースノートは 27.0 の累積形式。**破壊的変更・必須対応**は Beta 期から継続（シーンベースライフサイクル未対応アプリの起動失敗、Launch screen キー必須化、On Demand Resources 廃止→Background Assets、旧 MetricKit API 非推奨→`MetricManager`、`FileDocument`/`ReferenceFileDocument` 非推奨→`Document`、`calendar.deleteEvents`→`calendar.deleteEvent`、AirPort Utility 新規ダウンロード終了、27.0 システムプロセスの TLS 要件厳格化）。**新機能**（継続記載）: App Intents の Notes スキーマ拡張（`notes.createNote`/`notes.updateNote` の `name` パラメータに `AttributedString` を渡せる）、Background Assets のローカライズ済みアセットパック、Core AI の Neural Engine 改善（バックグラウンドアクセス制限・新エンタイトルメント `com.apple.developer.background-tasks.continued-processing.inference`・1GB 超モデル読込高速化・メモリ計上をアプリプロセスへ）、AudioAccessoryKit の固定空間オーディオ（開発者テスト向け）など。**RC で目立つ解決済み（Resolved Issues）**: AirPlay to Home Theaters の PIN/パスワード時の失敗、App Intents の各種不具合（Siri でのカスタム画像未表示・\"Set\" 型パラメータの既定値未適用・`reminders.updateReminder` 呼び出し失敗・AppEntity の 10MB 上限クラッシュ・`notes.appendText` スキーマ消失）、Apple Wallet の Digital ID 期限切れ、Camera のポートレートぼかし描画不具合、CarPlay の複数不具合（`CPNavigationSession`/`CPMapPanel`/ステアリング操作/Spatial Audio 後の無音）、CloudKit の `CKShare` 自己降格無効、深放電バッテリでの起動不能、Core AI の各種推論不具合（`AIModelCache` ポリシー・`InferenceFunction` のブロッキング・FP8/パレット化重み・動的形状/制御フロー）など。**既知の問題（Known Issues）**: 27 SDK で `@AppEntity(schema: .photos.asset)` 準拠エンティティがコンパイル不可になる可能性（新プロパティ追加のため、可用性チェックで対応）、CarPlay での Siri 応答遅延、Control Center の Performance Trace（`PowerProfiler`/`Lookback`）トレース取得失敗など。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.98
+        },
+        "relevance": {
+          "score": 1.01,
+          "probabilities": [
+            0.01,
+            0.97,
+            0.01,
+            0.01
+          ],
+          "confidence": 0.97
+        }
+      }
+    }
+  ]
+}

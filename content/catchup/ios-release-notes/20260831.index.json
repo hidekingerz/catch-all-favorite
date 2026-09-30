@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/ios-release-notes/20260831.md",
+  "sourceHash": "sha256:046b657bc8bef147f33a82d1c919a5652d1b7bd5c6e294e494bef430585229e5",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:16.649Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "iOS & iPadOS 27 Beta 8 Release Notes",
+      "url": "https://developer.apple.com/documentation/ios-ipados-release-notes/ios-ipados-27-release-notes",
+      "secondaryUrls": [],
+      "summary": "iOS & iPadOS 27 SDK の 8 番目のベータ（Xcode 27 バンドル、Mac App Store 入手可）。概要は「新機能に対応し、API 変更に対してアプリをテストせよ」で、リリースノートは 27.0 の累積形式。 / **主な新機能（27.0 累積、Beta 8 時点）**: SwiftUI に `AsyncImage` の HTTP キャッシュ自動対応、`.textSelection(.enabled)` の `Text` のインタラクティブ選択と `TextRenderer` 対応、`@State` のマクロ実装化（初期化式の再評価回避）、`ReadableDocument`/`WritableDocument`/`Document` プロトコルと `DocumentGroup`/`fileExporter` 拡張、`TabsPickerStyle`・`TextInputBorderShape`・`concentricCornerRadii`・`toolbarMinimizationBehavior`（`toolbarMinimizeBehavior` を置換）・外部ディスプレイ向け `.sceneAccessory`。UIKit は 27.0 SDK で Launch screen 必須化、`UINavigationItem.navigationBarMinimization`（旧 `barMinimizeBehavior` を置換）、`UISearchController` のスコープバー挙動変更、`UIScene.extendStateRestoration`/`completeStateRestoration`。App Intents は `notes.createNote`/`notes.updateNote` が `AttributedString` の name を受け取り可能。StoreKit はオファーコード引き換えが `VerificationResult` を返す・ボリューム購入（`Transaction.OwnershipType.assigned` 等）・サブスクリプション Bundles/Suites・Advanced Commerce の `partnerName`/`partnerId`。MetricKit は Swift 版 `MetricManager`・`MemoryExceptionDiagnostic`・`MetalFrameRateMetric`・`CrashDiagnostic.terminationCategory`・`HitchTimeRatio` 型。HealthKit は心拍/サイクリングパワーゾーン・限定/全履歴を選べる権限フロー・更年期状態/閉経後出血のトラッキング。Core AI は Neural Engine 改善とバックグラウンドアクセス制限＋新エンタイトルメント。Game Controller が PlayStation Access コントローラを macOS/iPadOS/iOS でサポート。AudioAccessoryKit（固定空間オーディオ、当面は開発者テスト用）、Media Sharing Extensions、Background Assets のローカライズ済みアセットパック、HomeKit Secure Video 録画への Apple Intelligence 処理（iCloud+ 2TB 以上）、Dictation のオンデバイスモデル精度向上プレビュー。Beta 8 累積で目立つのは **Trust Insights フレームワーク**、**TextKit `NSTextTable` の UIKit 対応**、**System の stat 系 Swift API**、**VideoToolbox の超解像 1.5x／フレーム補間 1080p 対応**、**RealityKit Gaussian Splat Component（今後提供予定）** など。 / **廃止・変更**: On Demand Resources / `NSBundleResourceRequest` 廃止（→Background Assets）、旧 MetricKit API 非推奨（→`MetricManager`）、`FileDocument`/`ReferenceFileDocument` 非推奨（→`Document`）、`calendar.deleteEvents`→`calendar.deleteEvent` リネーム、AirPort Utility の新規ダウンロード終了、27.0 での一部システムプロセスの TLS 要件厳格化（破壊的変更として要注意）。 / **解決済みの問題（主なもの）**: AirPlay（ホームシアターでの PIN/パスワード必須失敗）、AirPods Max 2 のファームウェアベータ更新、App Intents（Siri でのカスタム画像非表示・`reminders.updateReminder` 失敗・`AppEntity` 10MB 累積上限クラッシュ・`notes.appendText` スキーマ消失）、Apple Wallet の Digital ID が 27.0 Beta 3/4 更新中に期限切れ扱いになる問題、Battery/Power（深放電デバイスの起動不能）、Apple Intelligence Report、Core AI 各種。 / **既知の問題（主なもの）**: 既存の `@AppEntity(schema: .photos.asset)` 準拠コードが新プロパティ追加により 27 SDK でコンパイルできない場合あり（回避策: 可用性チェック付きで新プロパティを採用）。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.95
+        },
+        "relevance": {
+          "score": 1.02,
+          "probabilities": [
+            0.02,
+            0.96,
+            0.01,
+            0.01
+          ],
+          "confidence": 0.94
+        }
+      }
+    }
+  ]
+}

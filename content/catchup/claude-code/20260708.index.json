@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260708.md",
+  "sourceHash": "sha256:946e5b55fb75be51a10e3dc11dc78b86a5191118a6334fe1f41c465d3986c106",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:59.694Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "v2.1.205（2026-07-08）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "新機能 / 改善: オートモードに、セッショントランスクリプトファイルの改ざんをブロックするルールを追加。 / オートモードを改善し、コンテキストから解決できない変数に対して `rm -rf` を実行する前に確認するようにした。 / 自動アップデートのバイナリダウンロードをメモリにバッファせずディスクへストリーミングするようにし、アップデータのピークメモリ使用量を約 400 MB 削減。 / 背景タスク通知が「人間の入力は発生していない」ことを明示するようになり、トランスクリプトに捏造された承認が実行されるのを防止。 / エージェントビュー改善: 既存 PR を編集/マージ/コメント/push したセッションも `claude agents` で PR をリンク。 / エージェントビュー改善: 行に色付きの状態語と分類器が書いた見出し（生のツールコールテキストではなく）を表示し、ブロック中セッションでは正確な要求を含むフルステータスを peek で開くように。 / `/doctor` をセットアップ全体を点検・修復できるフルチェックアップコマンドにした。`/checkup` はそのエイリアス。 / Claude Desktop のペイン名変更に先立ち、MCP サーバ名「Claude Browser」を（「Claude Preview」と並んで）予約。ユーザ設定の MCP サーバはこれらの名前で登録できなくなった。 / 修正: `--json-schema` が無効なスキーマ時に黙って非構造化出力を生成する問題、および `format` キーワードを使うスキーマが拒否される問題を修正。 / Claude の作業中に送ったメッセージが、ターンが `--max-turns` 上限で終了したときに黙って失われる問題を修正。 / Windows の worktree 削除で、内部に NTFS ジャンクションやディレクトリシンボリックリンクがある場合に worktree 外のファイルを削除してしまう問題を修正。 / `SendMessage` で再開した背景エージェントが、エージェント一覧で「failed」「completed」のまま表示され続ける問題を修正。 / エージェントのターンに読めるテキストが無いとき、背景ジョブが一覧で「needs input」から「working」に戻ってしまう問題を修正。 / 背景エージェントがアップグレード再起動中に `claude attach` がエラーになる問題を修正（復帰を待つように）。 / 出力が 30K のインライン上限を超える Bash 呼び出しで作成した PR が、セッションと PR のリンクから漏れる問題を修正。 / `claude mcp add-from-claude-desktop` がサーバ名に非対応文字を含むと止まる問題を修正（無効名は報告し、残りのサーバはインポート継続）。 / 初期化に失敗したプラグイン LSP サーバが、同じ拡張子を扱う別プラグインの正常な LSP サーバの処理を妨げる問題を修正。 / コマンド実行中に起動元ディレクトリが削除/ロック/アンマウントされたときの Windows クラッシュを修正。 / ディレクトリスキャン実行中にファイルウォッチャーが閉じられたときのクラッシュを修正。 / プロジェクトの verify スキルが、ドキュメント化されたコマンドが変わったときだけでなく毎セッション書き換えられる問題を修正。 / ジョブ一覧が画面をわずかに超えたときにエージェントビューが 1 行高くレンダリングされてヘッダーが切れる問題を修正。 / Web/モバイルの Remote Control パネルで背景タスクが古い「Running」ステータスのままになる問題を、メンバーシップ変更ごとに完全なタスク状態を転送することで修正。 / Cowork の VM モードのローカルエージェントセッションが CLI 2.1.203+ で「Not logged in · Please run /login」で起動失敗する問題を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {
+        "新機能 / 改善": "オートモードに、セッショントランスクリプトファイルの改ざんをブロックするルールを追加。 / オートモードを改善し、コンテキストから解決できない変数に対して `rm -rf` を実行する前に確認するようにした。 / 自動アップデートのバイナリダウンロードをメモリにバッファせずディスクへストリーミングするようにし、アップデータのピークメモリ使用量を約 400 MB 削減。 / 背景タスク通知が「人間の入力は発生していない」ことを明示するようになり、トランスクリプトに捏造された承認が実行されるのを防止。 / エージェントビュー改善: 既存 PR を編集/マージ/コメント/push したセッションも `claude agents` で PR をリンク。 / エージェントビュー改善: 行に色付きの状態語と分類器が書いた見出し（生のツールコールテキストではなく）を表示し、ブロック中セッションでは正確な要求を含むフルステータスを peek で開くように。 / `/doctor` をセットアップ全体を点検・修復できるフルチェックアップコマンドにした。`/checkup` はそのエイリアス。 / Claude Desktop のペイン名変更に先立ち、MCP サーバ名「Claude Browser」を（「Claude Preview」と並んで）予約。ユーザ設定の MCP サーバはこれらの名前で登録できなくなった。",
+        "修正": "`--json-schema` が無効なスキーマ時に黙って非構造化出力を生成する問題、および `format` キーワードを使うスキーマが拒否される問題を修正。 / Claude の作業中に送ったメッセージが、ターンが `--max-turns` 上限で終了したときに黙って失われる問題を修正。 / Windows の worktree 削除で、内部に NTFS ジャンクションやディレクトリシンボリックリンクがある場合に worktree 外のファイルを削除してしまう問題を修正。 / `SendMessage` で再開した背景エージェントが、エージェント一覧で「failed」「completed」のまま表示され続ける問題を修正。 / エージェントのターンに読めるテキストが無いとき、背景ジョブが一覧で「needs input」から「working」に戻ってしまう問題を修正。 / 背景エージェントがアップグレード再起動中に `claude attach` がエラーになる問題を修正（復帰を待つように）。 / 出力が 30K のインライン上限を超える Bash 呼び出しで作成した PR が、セッションと PR のリンクから漏れる問題を修正。 / `claude mcp add-from-claude-desktop` がサーバ名に非対応文字を含むと止まる問題を修正（無効名は報告し、残りのサーバはインポート継続）。 / 初期化に失敗したプラグイン LSP サーバが、同じ拡張子を扱う別プラグインの正常な LSP サーバの処理を妨げる問題を修正。 / コマンド実行中に起動元ディレクトリが削除/ロック/アンマウントされたときの Windows クラッシュを修正。 / ディレクトリスキャン実行中にファイルウォッチャーが閉じられたときのクラッシュを修正。 / プロジェクトの verify スキルが、ドキュメント化されたコマンドが変わったときだけでなく毎セッション書き換えられる問題を修正。 / ジョブ一覧が画面をわずかに超えたときにエージェントビューが 1 行高くレンダリングされてヘッダーが切れる問題を修正。 / Web/モバイルの Remote Control パネルで背景タスクが古い「Running」ステータスのままになる問題を、メンバーシップ変更ごとに完全なタスク状態を転送することで修正。 / Cowork の VM モードのローカルエージェントセッションが CLI 2.1.203+ で「Not logged in · Please run /login」で起動失敗する問題を修正。"
+      },
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.63
+        },
+        "relevance": {
+          "score": 2.78,
+          "probabilities": [
+            0,
+            0,
+            0.21,
+            0.79
+          ],
+          "confidence": 0.78
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "v2.1.204（2026-07-08）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "修正: ヘッドレスセッションで SessionStart フック中にフックイベントがストリーミングされず、リモートワーカーがフック実行中にアイドル回収されることがある問題を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {
+        "修正": "ヘッドレスセッションで SessionStart フック中にフックイベントがストリーミングされず、リモートワーカーがフック実行中にアイドル回収されることがある問題を修正。"
+      },
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.99,
+            "other": 0.01
+          },
+          "confidence": 0.98
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.32,
+          "probabilities": [
+            0.01,
+            0,
+            0.64,
+            0.35
+          ],
+          "confidence": 0.62
+        }
+      }
+    }
+  ]
+}

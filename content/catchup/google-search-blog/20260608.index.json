@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/google-search-blog/20260608.md",
+  "sourceHash": "sha256:3e3adf1bf70c03c6aa19abdbaedda7f3bdef9908630fb995b5655b689922dcb8",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:12.670Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Introducing Search Generative AI performance reports in Search Console",
+      "url": "https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports",
+      "secondaryUrls": [],
+      "summary": "Google Search Consoleに、生成AI検索機能におけるサイトのパフォーマンスを追跡するための新しいレポートが導入された。検索（Search）とDiscover向けにそれぞれ専用のレポートが提供され、生成AI機能内でのサイトの表示状況を把握できるようになる。これにより、サイト運営者はAI概要（AI Overviews）などの生成AI検索結果における自サイトの露出度やトラフィックへの影響を定量的に分析可能となる",
+      "publishedAt": "2026-06-03",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 1,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_search",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 1,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 0.82,
+          "probabilities": [
+            0.56,
+            0.05,
+            0.38,
+            0.01
+          ],
+          "confidence": 0.18
+        }
+      }
+    }
+  ]
+}

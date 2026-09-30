@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/chrome-blog/20260722.md",
+  "sourceHash": "sha256:f11a67390cb76b309e5c0659c70a4bfc64e2abaa1f5289805368b57da3f4b244",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:53.137Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Chrome 151 beta",
+      "url": "https://developer.chrome.com/blog/chrome-151-beta?hl=ja",
+      "secondaryUrls": [],
+      "summary": "Chrome 151 ベータ版の変更点まとめ。`AnimationEvent` / `TransitionEvent` に発火元の `Animation` オブジェクトを返す読み取り専用の `animation` 属性が追加されるほか、CSS と UI・Web API・DOM/HTML・パフォーマンス・アクセシビリティ・セキュリティ/プライバシーの各分野の更新、新しいオリジントライアルと非推奨/削除項目が一覧されている。",
+      "publishedAt": "2026-07-03",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.74,
+            "node_runtime": 0,
+            "browser": 0.26,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.7
+        },
+        "breaking": {
+          "noul": 0.26
+        },
+        "relevance": {
+          "score": 2.34,
+          "probabilities": [
+            0,
+            0,
+            0.66,
+            0.34
+          ],
+          "confidence": 0.66
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "What's new in web UI",
+      "url": "https://developer.chrome.com/blog/new-in-web-ui-io26?hl=ja",
+      "secondaryUrls": [],
+      "summary": "Google I/O 2026 の「What's new in web UI」セッションの総まとめ。「ユーザー設定の尊重」「自然なインタラクション」「ガイド付きナビゲーション」「コンテンツ最大化とノイズ削減」「フォームファクタへの適応」という UX 原則ごとに、Web UI プラットフォームに追加された機能を整理して紹介している。",
+      "publishedAt": "2026-07-01",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.02,
+            "guide": 0,
+            "event": 0.98,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.95,
+            "node_runtime": 0,
+            "browser": 0.05,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.94
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.03,
+          "probabilities": [
+            0,
+            0.01,
+            0.95,
+            0.04
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "New in Chrome 150",
+      "url": "https://developer.chrome.com/blog/new-in-chrome-150?hl=ja",
+      "secondaryUrls": [],
+      "summary": "Chrome 150 安定版の主要機能の紹介。テキストをコンテナ幅にぴったり合わせてフォントサイズを自動調整する CSS `text-fit` プロパティ、キーボードフォーカスの移動をグループ単位で制御する Focusgroup、ボーダー領域に背景を描画する `background-clip: border-area` などが解説されている。",
+      "publishedAt": "2026-06-30",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.98,
+            "node_runtime": 0,
+            "browser": 0.02,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.01,
+          "probabilities": [
+            0,
+            0,
+            0.99,
+            0.01
+          ],
+          "confidence": 0.98
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "What's new in DevTools (Chrome 150)",
+      "url": "https://developer.chrome.com/blog/new-in-devtools-150?hl=ja",
+      "secondaryUrls": [],
+      "summary": "Chrome 150 の DevTools 更新まとめ。「DevTools for agents」のメモリデバッグ改善（v1.4.0 までにエージェント向けブラウザ自動化・デバッグ機能が大幅拡充）、AI アシスタンスのウィジェット追加、CSS `@container` / `@function` ルールの完全編集対応、Sources パネルのブレークポイント重複排除と再帰的ソースマップ対応、DevTools 全体のセキュリティ/クロスオリジン強化などが含まれる。",
+      "publishedAt": "2026-06-30",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "browser",
+          "probabilities": {
+            "web_frontend": 0.01,
+            "node_runtime": 0,
+            "browser": 0.99,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.05,
+          "probabilities": [
+            0,
+            0,
+            0.95,
+            0.05
+          ],
+          "confidence": 0.94
+        }
+      }
+    }
+  ]
+}

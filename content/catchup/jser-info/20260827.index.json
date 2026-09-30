@@ -1,0 +1,863 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/jser-info/20260827.md",
+  "sourceHash": "sha256:be4e6cc4a2f57cf2a42a3693466053292af286c78dcf1f6214cc2cf8a6112070",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:23.027Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "SolidStart v2 is now Stable",
+      "url": "https://github.com/solidjs/solid-start/discussions/2281",
+      "secondaryUrls": [],
+      "summary": "Vite Environment API を使った client/server ビルドへ移行。Nitro v3 と Cloudflare Vite プラグインをサポートし、Node.js 24 以上を要求する。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "Solid",
+        "JavaScript",
+        "vite",
+        "ReleaseNote",
+        "nodejs"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.87
+        },
+        "relevance": {
+          "score": 1.24,
+          "probabilities": [
+            0.41,
+            0.03,
+            0.48,
+            0.08
+          ],
+          "confidence": 0.08
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "Release v1.7.0 · video-dev/hls.js",
+      "url": "https://github.com/video-dev/hls.js/releases/tag/v1.7.0",
+      "secondaryUrls": [],
+      "summary": "TypeScript 型定義を厳格化。`hls.createIFramePlayer()` による iframe プレイリスト再生、CMCD v2 に対応。`hls.nextAudioTrack`、`abrSwitchInterval`、`appendTimeout` を追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "HLS",
+        "JavaScript",
+        "library",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.32
+        },
+        "relevance": {
+          "score": 2.05,
+          "probabilities": [
+            0.06,
+            0.01,
+            0.76,
+            0.17
+          ],
+          "confidence": 0.71
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Release 3.50.0 - 2026.08.05 · zloirock/core-js",
+      "url": "https://github.com/zloirock/core-js/releases/tag/v3.50.0",
+      "secondaryUrls": [],
+      "summary": "`Iterator.zip` と `Iterator.zipKeyed` を Stable ES として追加。`Iterator.prototype.chunks`/`windows` が Stage 3 へ。新たな Stage 3 提案として `Iterator.prototype.includes`/`join` や `Promise.allKeyed`/`Promise.allSettledKeyed` を含む。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "JavaScript",
+        "library",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 2.01,
+          "probabilities": [
+            0.01,
+            0.01,
+            0.94,
+            0.04
+          ],
+          "confidence": 0.93
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "Release v2.0.0 RC - The Big <Reveal> · solidjs/solid",
+      "url": "https://github.com/solidjs/solid/releases/tag/v2.0.0-rc.0",
+      "secondaryUrls": [],
+      "summary": "async 値をリアクティブに扱うように変更。`createResource`・`batch`・`startTransition`・`useTransition` を削除。OXC ベースの Rust コンパイラを導入し、`start: true` で SPA/SSR/Server Functions の Vite サポートを提供。SolidStart の終了を発表。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "Solid",
+        "JavaScript",
+        "ReleaseNote",
+        "vite"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.95
+        },
+        "relevance": {
+          "score": 0.75,
+          "probabilities": [
+            0.64,
+            0.04,
+            0.26,
+            0.06
+          ],
+          "confidence": 0.25
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Release Notes for Safari Technology Preview 250 | WebKit",
+      "url": "https://webkit.org/blog/18191/release-notes-for-safari-technology-preview-250/",
+      "secondaryUrls": [],
+      "summary": "CSS `ruby-overhang: spaces`、`using`/`await using`、`Iterator.zip()`/`Iterator.zipKeyed()` に対応。`fetch()` での ReadableStream アップロード、WebAssembly relaxed SIMD と複数メモリをサポート。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "safari",
+        "browser",
+        "css",
+        "JavaScript",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.9,
+            "node_runtime": 0,
+            "browser": 0.1,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.88
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1.68,
+          "probabilities": [
+            0.05,
+            0.25,
+            0.68,
+            0.02
+          ],
+          "confidence": 0.64
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "Release v5.6.0 - npm staged publishing · lerna-lite/lerna-lite",
+      "url": "https://github.com/lerna-lite/lerna-lite/releases/tag/v5.6.0",
+      "secondaryUrls": [],
+      "summary": "`lerna publish --stage` による npm staged publishing をサポート。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "npm",
+        "ReleaseNote",
+        "monorepo"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.94,
+          "probabilities": [
+            0.08,
+            0,
+            0.81,
+            0.11
+          ],
+          "confidence": 0.73
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "Better Auth 1.7",
+      "url": "https://better-auth.com/blog/1-7",
+      "secondaryUrls": [],
+      "summary": "Breaking changes として `oidcProvider` プラグインを削除し `@better-auth/oauth-provider` へ移動、MCP auth を `@better-auth/mcp` へ移動。SCIM Groups と Device Authorization のサポートを追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "TypeScript",
+        "library",
+        "ReleaseNote",
+        "OAuth",
+        "MCP"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.56,
+            "node_runtime": 0.42,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.02,
+            "other": 0
+          },
+          "confidence": 0.5
+        },
+        "breaking": {
+          "noul": 0.96
+        },
+        "relevance": {
+          "score": 2.81,
+          "probabilities": [
+            0.02,
+            0,
+            0.12,
+            0.86
+          ],
+          "confidence": 0.81
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "Firefox 154.0, See All New Features, Updates and Fixes",
+      "url": "https://www.firefox.com/en-US/firefox/154.0/releasenotes/",
+      "secondaryUrls": [],
+      "summary": "CSS `text-box-trim`/`text-box-edge`、`sibling-index()`/`sibling-count()` 関数、time 入力の選択 UI、No-Vary-Search、Iterator メソッドに対応。実験的に line-clamp、`progress()`、CSS Typed Object Model API を提供。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "Firefox",
+        "browser",
+        "css",
+        "JavaScript",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.88,
+            "node_runtime": 0,
+            "browser": 0.12,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.86
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.07,
+          "probabilities": [
+            0,
+            0.93,
+            0.07,
+            0
+          ],
+          "confidence": 0.92
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "Bun 1.4 | Bun Blog",
+      "url": "https://bun.com/blog/bun-v1.4",
+      "secondaryUrls": [],
+      "summary": "Zig から Rust へ書き直し、Node.js 互換性・メモリ/CPU 使用量・起動速度を改善。`bun dedupe`/`prune`/`audit fix`、タイミングベースの sharding、React Compiler サポートを追加。HTTP/3 と静的ファイル配信に対応。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "Bun",
+        "JavaScript",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.14
+        },
+        "relevance": {
+          "score": 2.11,
+          "probabilities": [
+            0.01,
+            0,
+            0.86,
+            0.13
+          ],
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "pnpm 12.0 | pnpm",
+      "url": "https://pnpm.io/blog/releases/12.0",
+      "secondaryUrls": [],
+      "summary": "後方互換を保ったまま Rust で書き直した安定版。Git 依存の HTTPS URL 正規化、未知設定の報告、`globalShims`、パッケージマネージャーのインストール、Registry revisions、`pnpm update --patches` を追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "pnpm",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2.2,
+          "probabilities": [
+            0.01,
+            0,
+            0.77,
+            0.22
+          ],
+          "confidence": 0.76
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "React Compiler Support | The JavaScript Oxidation Compiler",
+      "url": "https://oxc.rs/blog/2026-08-18-react-compiler-support",
+      "secondaryUrls": [],
+      "summary": "OXC が React Compiler を統合。React チームの Rust 移植を OXC AST 上で動くように適応し、React Compiler ベースの 22 ルールを Oxlint に追加。`oxc-transform-react` で自動メモ化を有効化。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "JavaScript",
+        "React",
+        "article",
+        "Rust"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.02,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.98,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.97
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.11
+        },
+        "relevance": {
+          "score": 2.18,
+          "probabilities": [
+            0,
+            0,
+            0.82,
+            0.18
+          ],
+          "confidence": 0.81
+        }
+      }
+    },
+    {
+      "id": 11,
+      "title": "celld: self-hosted, distributed Durable Objects",
+      "url": "https://celld.dev/",
+      "secondaryUrls": [],
+      "summary": "LTX と S3 互換ストレージを使い、Cloudflare Workers と Durable Objects 互換の API を実装した分散 Durable Objects。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.18,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.81,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.77
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0.28,
+            "node_runtime": 0.66,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.05
+          },
+          "confidence": 0.62
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 0.89,
+          "probabilities": [
+            0.55,
+            0.03,
+            0.42,
+            0
+          ],
+          "confidence": 0.11
+        }
+      }
+    },
+    {
+      "id": 12,
+      "title": "firecrawl/anydoc",
+      "url": "https://github.com/firecrawl/anydoc",
+      "secondaryUrls": [],
+      "summary": "Word・PowerPoint・Excel・OpenDocument・RTF・EPUB・CSV・PDF を GitHub Flavored Markdown に変換する Rust ライブラリ。Node.js/Python/WebAssembly バインディングと自動フォーマット検出、CLI をサポート。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.19,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.8,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.77
+        },
+        "ecosystem": {
+          "choice": "other",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0.24,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.76
+          },
+          "confidence": 0.72
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.68,
+          "probabilities": [
+            0.15,
+            0.01,
+            0.83,
+            0.01
+          ],
+          "confidence": 0.67
+        }
+      }
+    },
+    {
+      "id": 13,
+      "title": "Plumeria - Zero-cost abstraction layer",
+      "url": "https://plumeria.dev/",
+      "secondaryUrls": [],
+      "summary": "React 向けの Zero Runtime CSS-in-JS。TypeScript のオブジェクトベースでスタイルを定義し、ビルド時に `classStyle` を `className` へ変換。依存解決でランタイム JavaScript を最小化する。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.16,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.84,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.82
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2,
+          "probabilities": [
+            0.01,
+            0,
+            0.97,
+            0.02
+          ],
+          "confidence": 0.97
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,866 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/apple-news/20260610.md",
+  "sourceHash": "sha256:09e8f0f72124c09e668e692b1fb72f058a666c1ce7da850becbb0ca85fff414c",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:45.514Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Appleデベロッパ向けの最新情報",
+      "url": "https://developer.apple.com/jp/news/?id=8rgqj83s",
+      "secondaryUrls": [],
+      "summary": "WWDC26で発表された最新情報の案内。すべてのAppleプラットフォームにおける大幅な機能強化、洗練されたプラットフォームデザイン、強力なApple Intelligence機能、新しいAI開発フレームワークなどが紹介されている。最新のベータソフトウェアのインストールやドキュメント・サンプルコードの参照が可能。",
+      "publishedAt": "2026-06-08",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0.09,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.04,
+            "guide": 0,
+            "event": 0.87,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.85
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 0.91,
+          "probabilities": [
+            0.13,
+            0.83,
+            0.03,
+            0.01
+          ],
+          "confidence": 0.83
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "「許容時間」の導入",
+      "url": "https://developer.apple.com/jp/news/?id=0d2gpmml",
+      "secondaryUrls": [],
+      "summary": "iOS 27・iPadOS 27・macOS 27以降で保護者向けの「Time Allowances」機能を導入。エンターテインメント、ゲーム、ソーシャルメディアのカテゴリ別に子どものアプリ利用時間を管理できる。2026年7月にソーシャルメディア機能の有無を申告する質問項目が更新され、2026年9月からは新バージョン提出時に申告が義務化される。ソーシャルメディア機能ありのアプリは最低年齢制限13歳以上が必須。",
+      "publishedAt": "2026-06-08",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "policy",
+          "probabilities": {
+            "release": 0.16,
+            "security": 0,
+            "policy": 0.79,
+            "feature": 0.05,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.75
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.83
+        },
+        "relevance": {
+          "score": 1.08,
+          "probabilities": [
+            0.01,
+            0.94,
+            0.02,
+            0.03
+          ],
+          "confidence": 0.91
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Apple Developer Program使用許諾契約およびApp Reviewガイドラインが更新",
+      "url": "https://developer.apple.com/jp/news/?id=a233fmpw",
+      "secondaryUrls": [],
+      "summary": "新機能・ポリシー対応のため使用許諾契約とApp Reviewガイドラインが改訂。使用許諾契約ではAI/機械学習テクノロジーを新サブセクション（3.3.11）に統合、Foundation Modelフレームワーク使用要件を更新、Suggested Actions APIやTrust Insightsフレームワーク等の新規要件を追加。App Reviewガイドラインでは子ども・ティーンエイジャー保護ガイダンスの改訂、ライブアクティビティのスパム・フィッシング利用禁止の明確化などが行われた。日本語翻訳は1か月以内に提供予定。",
+      "publishedAt": "2026-06-08",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "policy",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 1,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.61
+        },
+        "relevance": {
+          "score": 1.04,
+          "probabilities": [
+            0.01,
+            0.96,
+            0.01,
+            0.02
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "テキサス州でのアプリ配信に関する更新",
+      "url": "https://developer.apple.com/jp/news/?id=sg176nne",
+      "secondaryUrls": [],
+      "summary": "テキサス州法SB 2420への対応として、2026年6月4日よりテキサス州で新規作成されたApple Accountは年齢確認の対象に。18歳未満のユーザーは家族共有グループ参加と保護者同意が必須。開発者はDeclared Age Range API、Significant Change API（PermissionKit）、StoreKit年齢レーティングプロパティ、App Store Server Notificationの実装が必要。",
+      "publishedAt": "2026-06-03",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "policy",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 1,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.9
+        },
+        "relevance": {
+          "score": 1.09,
+          "probabilities": [
+            0,
+            0.95,
+            0.01,
+            0.04
+          ],
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Apple Developer Centerがベルリンに拡大",
+      "url": "https://developer.apple.com/jp/news/?id=f0jfy9py",
+      "secondaryUrls": [],
+      "summary": "Cupertino、Shanghai、Bengaluru、Singaporeに続き、2026年後半にベルリンに5番目のApple Developer Centerがオープン予定。開発者向けの対面サポートやラボが利用可能になる。",
+      "publishedAt": "2026-06-03",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "business",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.02,
+            "guide": 0,
+            "event": 0.08,
+            "business": 0.85,
+            "other": 0.05
+          },
+          "confidence": 0.82
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0.99,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.01
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.03
+        },
+        "relevance": {
+          "score": 0.7,
+          "probabilities": [
+            0.39,
+            0.53,
+            0.08,
+            0
+          ],
+          "confidence": 0.53
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "2026 Apple Design Award受賞者の発表",
+      "url": "https://developer.apple.com/jp/news/?id=vbvsocwh",
+      "secondaryUrls": [],
+      "summary": "2026年のApple Design Award受賞者を発表。革新的で優れたデザインのアプリとゲームが表彰された。",
+      "publishedAt": "2026-06-02",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "other",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.01,
+            "guide": 0,
+            "event": 0.38,
+            "business": 0.08,
+            "other": 0.53
+          },
+          "confidence": 0.47
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.03
+        },
+        "relevance": {
+          "score": 0.71,
+          "probabilities": [
+            0.36,
+            0.57,
+            0.07,
+            0
+          ],
+          "confidence": 0.57
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "All systems glow",
+      "url": "https://developer.apple.com/jp/news/?id=q7tgn1rr",
+      "secondaryUrls": [],
+      "summary": "WWDC26の開催直前案内。5日間のテクノロジー、クリエイティビティ、コミュニティのイベントがすべてオンライン・無料で開催される。",
+      "publishedAt": "2026-06-01",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 1,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0.81,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.19
+          },
+          "confidence": 0.77
+        },
+        "breaking": {
+          "noul": 0.03
+        },
+        "relevance": {
+          "score": 1.02,
+          "probabilities": [
+            0.3,
+            0.38,
+            0.31,
+            0.01
+          ],
+          "confidence": 0.38
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "最新のベータリリースで準備を",
+      "url": "https://developer.apple.com/jp/news/?id=tu7pk9oy",
+      "secondaryUrls": [],
+      "summary": "iOS 26.6、iPadOS 26.6、macOS 26.6などのベータ版が利用可能。Xcode 26.5で最新SDKを使ってアプリのテストを行うよう案内。",
+      "publishedAt": "2026-05-26",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.11
+        },
+        "relevance": {
+          "score": 0.98,
+          "probabilities": [
+            0.02,
+            0.98,
+            0,
+            0
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "オーストラリアとベトナムの年齢レーティング変更",
+      "url": "https://developer.apple.com/jp/news/?id=yrrb45pw",
+      "secondaryUrls": [],
+      "summary": "2026年6月18日よりオーストラリアで「15+」の年齢制限指定が廃止され「16+」に自動更新。ベトナムでは政令147号第38条に基づき、00+/12+/16+/18+の4段階の地域固有年齢制限が必須に。App Store Connectでの年齢制限指定の回答がアプリのコンテンツを正確に反映しているか確認が必要。",
+      "publishedAt": "2026-05-21",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "policy",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 1,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.82
+        },
+        "relevance": {
+          "score": 1.19,
+          "probabilities": [
+            0.04,
+            0.82,
+            0.04,
+            0.1
+          ],
+          "confidence": 0.73
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "2026 Apple Design Awardファイナリスト紹介",
+      "url": "https://developer.apple.com/jp/news/?id=8t3j66i7",
+      "secondaryUrls": [],
+      "summary": "2026年Apple Design Awardのファイナリスト36名を紹介。革新性、工夫、技術的成果を表彰するもので、受賞者はWWDC26期間中に発表された。",
+      "publishedAt": "2026-05-18",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0.86,
+            "business": 0.02,
+            "other": 0.12
+          },
+          "confidence": 0.84
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0.99,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.01
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.03
+        },
+        "relevance": {
+          "score": 0.75,
+          "probabilities": [
+            0.33,
+            0.59,
+            0.08,
+            0
+          ],
+          "confidence": 0.59
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "Coming bright up",
+      "url": "https://developer.apple.com/jp/news/?id=7lcnqgxp",
+      "secondaryUrls": [],
+      "summary": "WWDC26の準備案内。テクノロジー、クリエイティビティ、コミュニティを兼ね備えた1週間のイベントへの参加を促す内容。",
+      "publishedAt": "2026-05-18",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 1,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0.79,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.21
+          },
+          "confidence": 0.75
+        },
+        "breaking": {
+          "noul": 0.03
+        },
+        "relevance": {
+          "score": 0.79,
+          "probabilities": [
+            0.36,
+            0.49,
+            0.15,
+            0
+          ],
+          "confidence": 0.49
+        }
+      }
+    },
+    {
+      "id": 11,
+      "title": "Hello Developer: May 2026",
+      "url": "https://developer.apple.com/jp/news/?id=qtzr82f0",
+      "secondaryUrls": [],
+      "summary": "インスピレーション溢れるデベロッパー紹介、Accessibility Nutrition Labelsの準備ガイド、「Infinity Nikki」チームへのインタビューなどを掲載した月刊デベロッパー向けニュースレター。",
+      "publishedAt": "2026-05-12",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "other",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.01,
+            "guide": 0.1,
+            "event": 0,
+            "business": 0,
+            "other": 0.89
+          },
+          "confidence": 0.88
+        },
+        "ecosystem": {
+          "choice": "other",
+          "probabilities": {
+            "web_frontend": 0.03,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0.34,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.63
+          },
+          "confidence": 0.57
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 0.78,
+          "probabilities": [
+            0.39,
+            0.45,
+            0.16,
+            0
+          ],
+          "confidence": 0.44
+        }
+      }
+    },
+    {
+      "id": 12,
+      "title": "Apple Developerアカウントを最大限に活用する",
+      "url": "https://developer.apple.com/jp/news/?id=sw8ldfjk",
+      "secondaryUrls": [],
+      "summary": "無料のApple Developerアカウントで利用可能な機能と、有料のApple Developer Programメンバーシップで得られる追加メリットについて解説。",
+      "publishedAt": "2026-05-12",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 0.98,
+          "probabilities": [
+            0.05,
+            0.93,
+            0.02,
+            0
+          ],
+          "confidence": 0.93
+        }
+      }
+    },
+    {
+      "id": 13,
+      "title": "ブラジルのベッティングライセンス要件",
+      "url": "https://developer.apple.com/jp/news/?id=x4eyetnp",
+      "secondaryUrls": [],
+      "summary": "ブラジルの法改正により、固定オッズベッティング機能を持つアプリはSPA（賞金と賭けの事務局）から発行された有効なライセンスが必要に。該当アプリの開発者はライセンスの取得・表示が義務付けられる。",
+      "publishedAt": "2026-05-08",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "policy",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0.88,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0.08,
+            "other": 0.04
+          },
+          "confidence": 0.86
+        },
+        "ecosystem": {
+          "choice": "other",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0.01,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.99
+          },
+          "confidence": 0.98
+        },
+        "breaking": {
+          "noul": 0.8
+        },
+        "relevance": {
+          "score": 0.24,
+          "probabilities": [
+            0.82,
+            0.15,
+            0.01,
+            0.02
+          ],
+          "confidence": 0.76
+        }
+      }
+    },
+    {
+      "id": 14,
+      "title": "To those who build community",
+      "url": "https://developer.apple.com/jp/news/?id=9lhp8vcj",
+      "secondaryUrls": [],
+      "summary": "Apple開発者コミュニティで意味のある貢献をしている、インスピレーション溢れる人々を紹介するコミュニティスポットライト記事。",
+      "publishedAt": "2026-05-04",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "other",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0.01,
+            "event": 0,
+            "business": 0.02,
+            "other": 0.97
+          },
+          "confidence": 0.97
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0.82,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.18
+          },
+          "confidence": 0.8
+        },
+        "breaking": {
+          "noul": 0.02
+        },
+        "relevance": {
+          "score": 0.61,
+          "probabilities": [
+            0.39,
+            0.6,
+            0.01,
+            0
+          ],
+          "confidence": 0.6
+        }
+      }
+    }
+  ]
+}

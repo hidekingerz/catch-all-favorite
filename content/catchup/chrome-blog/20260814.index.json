@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/chrome-blog/20260814.md",
+  "sourceHash": "sha256:b82ad25c8896c79494c85863701cba5251892ed5ba0e373e828346de3f9a6b43",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:54.213Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "What's New in WebGPU (Chrome 151-152)",
+      "url": "https://developer.chrome.com/blog/new-in-webgpu-151-152?hl=ja",
+      "secondaryUrls": [],
+      "summary": "Chrome 151-152 における WebGPU の更新まとめ。WGSL の `@subgroup_size` 属性でコンピュートシェーダーのサブグループサイズを明示指定できる Subgroup Size Control が追加され、AI ワークロード等の最適化に有用。また `setImmediates` の `dataOffset` / `size` のバリデーション失敗が仕様に合わせて `RangeError` ではなく `OperationError` を投げるよう変更された。Dawn には snorm10-10-10-2 頂点フォーマットの実験的サポートや、深度/ステンシルテクスチャに対する OpenGL transient attachments などが含まれる。",
+      "publishedAt": "2026-08-12",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.99,
+            "node_runtime": 0,
+            "browser": 0.01,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "breaking": {
+          "noul": 0.4
+        },
+        "relevance": {
+          "score": 2.16,
+          "probabilities": [
+            0.02,
+            0.05,
+            0.68,
+            0.25
+          ],
+          "confidence": 0.66
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/firefox/20260825.md",
+  "sourceHash": "sha256:4a016229983cfac5da7565bdd80728f233daeb68acea041e6fc86a7a3a695afe",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:10.586Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Firefox 154.0.1（安定版）",
+      "url": "https://www.firefox.com/en-US/firefox/154.0.1/releasenotes/",
+      "secondaryUrls": [
+        "https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/154"
+      ],
+      "summary": "バグ修正の dot release。パスワードストレージの変更に起因する保存パスワードへのアクセス遅延と想定外のプライマリパスワード要求、一部サイトでの住所オートフィル失敗、Windows で起動のたびにスタートメニューのショートカットが追加される問題、HTTP ページからローカルネットワーク機器への接続が許可プロンプトなしで失敗する問題などを修正。メジャー版 Firefox 154（2026-08-18）の開発者向け変更としては、CSS の `sibling-count()` / `sibling-index()` 関数と `text-box-edge` / `text-box-trim` / `text-box`、JavaScript の `Iterator.prototype.includes()` / `join()` / `chunks()` / `windows()`、WebRTC の `RTCIceTransport.getSelectedCandidatePair()` などが追加され、拡張機能では `sandbox` manifest キーがサポートされた。",
+      "publishedAt": "2026-08-25",
+      "effectiveAt": null,
+      "tags": [],
+      "version": "154.0.1",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "browser",
+          "probabilities": {
+            "web_frontend": 0.05,
+            "node_runtime": 0,
+            "browser": 0.95,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.94
+        },
+        "breaking": {
+          "noul": 0.13
+        },
+        "relevance": {
+          "score": 1.06,
+          "probabilities": [
+            0,
+            0.96,
+            0.02,
+            0.02
+          ],
+          "confidence": 0.94
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "Firefox 140.14.0esr（ESR）",
+      "url": "https://www.firefox.com/en-US/firefox/140.14.0/releasenotes/",
+      "secondaryUrls": [],
+      "summary": "ESR 140 系のセキュリティアップデート。各種セキュリティ修正を含む（[MFSA 2026-76](https://www.mozilla.org/security/advisories/mfsa2026-76/)）。機能追加はなし。なお次期 ESR として 153 系（153.1.0esr）への移行が進行中。",
+      "publishedAt": "2026-08-18",
+      "effectiveAt": null,
+      "tags": [],
+      "version": "140.14.0esr",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "browser",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 1,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 1.01,
+          "probabilities": [
+            0,
+            0.99,
+            0,
+            0.01
+          ],
+          "confidence": 0.98
+        }
+      }
+    }
+  ]
+}

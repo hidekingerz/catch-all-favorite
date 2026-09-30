@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/apple-news/20260812.md",
+  "sourceHash": "sha256:97b3b0d10db30db97916209eec7fa8805edbe867c8d6cdda0f30147d300f3f32",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:47.724Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "大韓民国（韓国）の年齢制限指定に関する変更",
+      "url": "https://developer.apple.com/jp/news/?id=oj3r9pvw",
+      "secondaryUrls": [],
+      "summary": "韓国（大韓民国）App Store の年齢制限指定に2つの変更が入る。1つ目は本日から適用で、ゲーム物等級委員会（GRAC）から公式レーティングを取得済みのアプリは、GRAC のレーティング分類番号（RCN）を次回バージョン提出時に指定することで、韓国向けの年齢制限を地域固有の値（全年齢・12+・15+・19+）に上書きできる。2つ目は2026年10月から、「まれな冒とく表現・下品なユーモア」と「まれな成熟・示唆的テーマ」の2つのコンテンツ記述子が、韓国 App Store において「全年齢」から「12+」に引き上げられる。ゲーム・エンターテインメントカテゴリのアプリに影響するため、韓国配信アプリの開発者はレーティングへの影響を確認しておく必要がある。 / 参考: [韓国の年齢制限の上書き方法](https://developer.apple.com/help/app-store-connect/manage-app-information/set-an-app-age-rating#override-region-specific-ratings) / [Game Rating and Administration Committee (GRAC)](https://www.grac.or.kr/english/)",
+      "publishedAt": "2026-08-12",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "policy",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 1,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.52
+        },
+        "relevance": {
+          "score": 1.01,
+          "probabilities": [
+            0.12,
+            0.79,
+            0.06,
+            0.03
+          ],
+          "confidence": 0.74
+        }
+      }
+    }
+  ]
+}

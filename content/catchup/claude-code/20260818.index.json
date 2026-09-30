@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260818.md",
+  "sourceHash": "sha256:cfb3607e1e3e4fb40b0232c78aa1c8a3b3cf5dc14bfc10f5cf71d802e99834af",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:03.523Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "新機能・改善（v2.1.235）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "オプションの `spellcheck` 設定を追加。インストール済みの `aspell` / `hunspell` / `ispell` を用いて、入力中にプロンプト内のスペルミス単語へ下線を表示する。 / バックグラウンドで走るクラウドセッション（`/ultrareview` や `/autofix-pr` など）のメモリ・CPU 使用量を改善。イベントストリームを更新のたびに再スキャン・再描画しなくなった。 / 権限ダイアログを改善。表示テキストと「don't ask again」オプションが、実際に付与される範囲と常に一致するようになり、内容を完全に表示できない場合は「don't ask again」を提示しないようにした。 / ネイティブ macOS/Linux ビルドの組み込み `grep` を改善。病的なパターンはメモリを使い果たす前に早期失敗するようになり、`-m N` と `-A/-C` の併用で正しいコンテキストを表示するようになった。 / コンテキスト上限エラーを改善し、auto-compact が無効な場合はその旨を伝え、`/config` から再有効化できることを案内するようにした。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.235（2026-08-18）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.04,
+          "probabilities": [
+            0,
+            0,
+            0.96,
+            0.04
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "修正（v2.1.235）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "言語サーバーがセッション途中で切断・再接続した際に、プロンプトキャッシュ全体が無効化される問題を修正。 / ターミナル UI で、深さ 3 以上のネストした Markdown リスト項目がずれる問題を修正し、折り返したリスト項目にぶら下げインデントを追加。 / 一部の複数行プロンプトで、プロンプト入力のハイライト（スラッシュコマンド・キーワード・メンション）が 1 文字以上ずれて表示される問題を修正。 / 権限プロンプトのコメント欄で Shift+Tab を押すと、欄を閉じる代わりに編集を承認しセッション全体の編集権限を付与してしまう問題を修正。 / general-purpose エージェントが利用できないセッションで、Agent ツールがそれをデフォルトとして提示していた問題を修正。`subagent_type` を省略した場合は、利用可能なエージェントを列挙した明確なエラーを返すようにした。 / ノートブックのセル削除／置換の承認ダイアログが、ノートブックまたはセルを読み取れないときに既存セルの内容を黙って省略していた問題を修正。ダイアログにその理由を表示するようにした。 / Claude の応答中に実行したスラッシュコマンドが、実際の文字ではなく HTML エンティティを表示する問題を修正。 / バックグラウンドの自動更新後に、プロンプトフッターへ「Update installed」の再起動通知が表示されない問題を修正。 / 展開したタスクリスト（`ctrl+t`）が、未完了タスクを含むセッションを再開・再起動した際に常に折りたたまれた状態で開始する問題を修正。 / Vim モード: 詳細トランスクリプト（ctrl+o）の切り替えやパネルを閉じる際に、NORMAL モードとカーソル位置が保持されるようにした。 / ダイアログで、矢印キーと Enter を素早く連続で押すと、直前にハイライトされていた選択肢ではなく、実際にナビゲートした選択肢を選ぶようにした。 / `SendMessage` が、クロスセッション配信に大きすぎるメッセージを黙って破棄せず、事前に拒否するようにした。 / Remote Control: `claude rc` が、対話起動時と同じ enterprise-gateway 可用性チェックを適用するようにした。 / \\[VSCode\\] 複数の Claude パネルを持つウィンドウを復元・再読み込みした際に、開いている Claude タブ間でフォーカスが勝手に移動する問題を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.235（2026-08-18）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.11
+        },
+        "relevance": {
+          "score": 2.19,
+          "probabilities": [
+            0,
+            0,
+            0.81,
+            0.19
+          ],
+          "confidence": 0.8
+        }
+      }
+    }
+  ]
+}

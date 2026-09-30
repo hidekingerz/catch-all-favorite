@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/ios-release-notes/20260801.md",
+  "sourceHash": "sha256:8e676a014969ab0faccf0b5a88e0ed8557071322d5907430a104a647c061a8ca",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:15.912Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "iOS & iPadOS 26.6 Release Notes",
+      "url": "https://developer.apple.com/documentation/ios-ipados-release-notes/ios-ipados-26_6-release-notes",
+      "secondaryUrls": [],
+      "summary": "iOS & iPadOS 26.6 SDK（Xcode 26.6 同梱、Mac App Store で入手可）向けの正式版リリースノート。新機能・廃止 API の記載はなく、解決済みの不具合のみ。HealthKit: 認可画面が表示されない問題、及び時間加重平均の統計クエリで安静時心拍数などが異常に高く返る問題を修正。Messages: HDR スクリーンショット送信時に画像が乱れる問題を修正。Object Capture: キャプチャと再構築が失敗する問題を修正。Stickers: データ破損によりステッカーの作成・表示ができなくなり iCloud 同期で他デバイスにも波及する問題を修正。StoreKit: Simulator 使用時にテスト環境へ正しく接続できずテストアクションが失敗する問題を修正（FB22500243）。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1,
+          "probabilities": [
+            0.01,
+            0.97,
+            0.01,
+            0.01
+          ],
+          "confidence": 0.97
+        }
+      }
+    }
+  ]
+}

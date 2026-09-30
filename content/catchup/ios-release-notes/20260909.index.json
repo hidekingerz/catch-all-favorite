@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/ios-release-notes/20260909.md",
+  "sourceHash": "sha256:34c94a9cc0ba97155c5a0eb4a719709f3806dd74a09741266a482a9e769b6c13",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:16.850Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "iOS & iPadOS 27 RC Release Notes",
+      "url": "https://developer.apple.com/documentation/ios-ipados-release-notes/ios-ipados-27-release-notes",
+      "secondaryUrls": [],
+      "summary": "iOS & iPadOS 27 SDK の Release Candidate（Xcode 27 バンドル、Mac App Store 入手可）。概要は「新機能に対応し、API 変更に対してアプリをテストせよ」で、リリースノートは 27.0 の累積形式。正式版直前の最終ビルドとして、これまでのベータで積み上がった新機能・非推奨・既知の問題が集約されている。 / **主な新機能（27.0 累積、RC 時点）**: SwiftUI に `AsyncImage` の HTTP キャッシュ自動対応（`URLRequest` の `cachePolicy`・`View.asyncImageURLSession(_:)`）、`.textSelection(.enabled)` の `Text` のインタラクティブ選択と `TextRenderer` 対応、`@State` のマクロ実装化（初期化式の再評価回避、iOS 17 系までバックデプロイ）、`ReadableDocument`/`WritableDocument`/`Document` プロトコルと `DocumentGroup`/`fileExporter`/`\\.newDocument` 拡張、`TabsPickerStyle`・`TextInputBorderShape`（`.bordered` テキストフィールドスタイル）・`concentricCornerRadii`・`toolbarMinimizationBehavior`（`toolbarMinimizeBehavior` を置換）・`.toolbarColorScheme(_, for: .statusBar)`・外部ディスプレイ向け `.sceneAccessory`・メニュー項目画像の既定非表示化（`labelStyle(.titleAndIcon)` で明示表示）。UIKit は 27.0 SDK で Launch screen 必須化、シーンベースライフサイクル必須、`UINavigationItem.navigationBarMinimization`（旧 `barMinimizeBehavior` を置換）、`UISearchController` のスコープバー挙動変更、`UIScene.extendStateRestoration`/`completeStateRestoration`、`UIMenuElement.preferredImageVisibility`。App Intents は `notes.createNote`/`notes.updateNote` が `AttributedString` の name を受け取り可能。StoreKit はオファーコード引き換えが `VerificationResult` を返す・ボリューム購入（`Transaction.OwnershipType.assigned` 等）・サブスクリプション Bundles/Suites・Advanced Commerce の `partnerName`/`partnerId`。MetricKit は Swift 版 `MetricManager`（`AsyncStream` で `MetricReport`/`DiagnosticReport`）・`MemoryExceptionDiagnostic`・`MetalFrameRateMetric`・`CrashDiagnostic.terminationCategory`・`HitchTimeRatio` 型。HealthKit は心拍/サイクリングパワーゾーン・限定/全履歴を選べる権限フロー・更年期状態/閉経後出血のトラッキング（新カテゴリタイプ）。Core AI は Neural Engine 改善とバックグラウンドアクセス制限＋新エンタイトルメント。Game Controller が PlayStation Access コントローラを macOS/iPadOS/iOS でサポート。AudioAccessoryKit（固定空間オーディオ、当面は開発者テスト用）、Media Sharing Extensions、Background Assets のローカライズ済みアセットパック、HomeKit Secure Video 録画への Apple Intelligence 処理（iCloud+ 2TB 以上）、Dictation のオンデバイスモデル精度向上プレビュー（「Advanced Dictation Preview」）。**Network Security**: 27.0 で一部システムプロセスの TLS 要件厳格化（MDM/DDM/ADE・構成プロファイル・アプリ配信・ソフトウェア更新。最低 TLS 1.2＋ATS 準拠）。 / **廃止・変更**: シーンベースライフサイクル必須（未対応で起動失敗）、Launch screen 必須化、On Demand Resources / `NSBundleResourceRequest` 廃止（→Background Assets）、旧 MetricKit API（`MXMetricManager` 等）非推奨（→`MetricManager`）＋`ScrollHitchTimeMetric`/`scrollHitchTime(_:)` 廃止（→`HitchTimeMetric`、再コンパイル必須で欠落シンボルクラッシュ回避）、`FileDocument`/`ReferenceFileDocument` 非推奨（→`Document`）、`calendar.deleteEvents`→`calendar.deleteEvent` リネーム、`canOpenURL:` 非推奨、PencilKit `__PKStrokeRenderState`→`PKStrokeRenderStateReference`、PhotoKit `originalFilename`（非 null 誤記）→nullable な `filename`、AirPort Utility の新規ダウンロード終了、27.0 での TLS 要件厳格化（破壊的変更として要注意）。 / **解決済みの問題（主なもの）**: StoreKit（TestFlight での払い戻し/オファーコード/サブスク管理シート非表示、`Storefront` の不正メタデータ、`SKTestSession.buyProduct()` の失敗、トランザクション完了不能）、UIKit（iPhone Mirroring・iPad のリサイズ/インターフェース向き挙動を多数修正、非推奨ステータスバーアクセサの NaN/null 返却）、SwiftUI（`containerRelativeFrame` の safe-area 計算、`controlSize` 等がシート/ポップオーバーに波及、`fileExporter`＋`fileMover` の同時提示、`@State` の raw identifier コンパイル失敗）、Core AI（`.aimodel`/`.aimodelc` のオンデバイス特殊化失敗・Metal API Validation・カスタム Metal カーネルモデルのロード失敗など多数）、Siri/Dictation（連絡先解決・Maps・リマインダー・CarPlay・メッセージ送信など多数）、Battery（深放電デバイスの起動不能）、Apple Wallet の Digital ID 期限切れ、Files/Photos/Messages/Metal 等。 / **既知の問題（主なもの）**: 既存の `@AppEntity(schema: .photos.asset)` 準拠コードが新プロパティ追加により 27 SDK でコンパイルできない場合あり（回避策: 可用性チェック付きで新プロパティを採用）。Core Spotlight の `SpotlightSearchTool` をオンデバイス言語モデルで使うとトークン上限超過（回避策: `.focused(...)` の focused guide を使用）。Now Playing の `RemoteMediaSession` が `development` 設定でも常に `production` APNs のプッシュトークンを発行（テストは `production` で実施）。Control Center の Performance Trace ウィジェットでのトレース取得失敗、CarPlay での Siri 応答遅延、Shortcuts の `UnionValue`/`Duration` 関連など。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.97
+        },
+        "relevance": {
+          "score": 1.03,
+          "probabilities": [
+            0.01,
+            0.97,
+            0.01,
+            0.01
+          ],
+          "confidence": 0.95
+        }
+      }
+    }
+  ]
+}

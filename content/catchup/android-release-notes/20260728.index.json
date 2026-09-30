@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/android-release-notes/20260728.md",
+  "sourceHash": "sha256:4499e83b4a7210ff0d6ad3e54333263c66d6c8c36116dd824c6ad8a16650e2ad",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:43.287Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Android 16 — Compatibility（互換性テスト）",
+      "url": "https://source.android.com/docs/whatsnew/android-16-release#compatibility",
+      "secondaryUrls": [],
+      "summary": "Camera Image Test Suite（ITS）の更新、および QPR2 更新を含む Android 16 版 Compatibility Definition Document（CDD）の公開。 / CTS Verifier の Bluetooth MIDI テストは USB MIDI 周辺機器なしで Bluetooth MIDI ループバックテストを実行可能に。Android の位置情報機能を支える気圧計（barometer）計測テストを追加。 / 接続性向けのマルチデバイステストを追加し、Better Together 連携機能向けの Wi-Fi AP 接続テストにも対応。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.94,
+            "security": 0,
+            "policy": 0.06,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.93
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.14
+        },
+        "relevance": {
+          "score": 0.98,
+          "probabilities": [
+            0.04,
+            0.95,
+            0.01,
+            0
+          ],
+          "confidence": 0.94
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "Android 16 — Interaction（操作・インタラクション）",
+      "url": "https://source.android.com/docs/whatsnew/android-16-release#interaction",
+      "secondaryUrls": [],
+      "summary": "編集モードでタイルを見つけやすくするため、クイック設定（Quick Settings）タイルにカテゴリ分類機能を追加。 / 心拍数ベースセンサーが Android 16 での互換性のため `SENSOR_PERMISSION_READ_HEART_RATE` 権限を使用するように変更。 / （ハプティクス・自動回転などの操作系項目は 2026-06-10 の初回記録で既出。上記は今回追加分）",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.72
+        },
+        "relevance": {
+          "score": 1.09,
+          "probabilities": [
+            0.01,
+            0.93,
+            0.03,
+            0.03
+          ],
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Android 16 — Permissions（権限）",
+      "url": "https://source.android.com/docs/whatsnew/android-16-release#permissions",
+      "secondaryUrls": [],
+      "summary": "デバイス移行時に連絡先を失わないための「既定の連絡先アカウント（default contacts account）」の概念を導入。 / 連絡先アプリはクラウド同期オプションを促し、ローカルおよび SIM の連絡先をクラウドアカウントへ移すようユーザーに確認することが推奨される。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.91,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.09,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.89
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.15
+        },
+        "relevance": {
+          "score": 1.02,
+          "probabilities": [
+            0,
+            0.98,
+            0.01,
+            0.01
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "Android 16 — Storage（ストレージ）",
+      "url": "https://source.android.com/docs/whatsnew/android-16-release#storage",
+      "secondaryUrls": [],
+      "summary": "Android 16 QPR2 で、メインプロファイルからプライベートスペースへ「ファイル追加（Add files）」ショートカット経由でファイルや写真を直接取り込めるようになった。 / プライベートスペースの Downloads フォルダへの移動またはコピーが可能。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.99,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.01,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1.03,
+          "probabilities": [
+            0.01,
+            0.96,
+            0.03,
+            0
+          ],
+          "confidence": 0.96
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Android 16 — Updates（アップデート）",
+      "url": "https://source.android.com/docs/whatsnew/android-16-release#updates",
+      "secondaryUrls": [],
+      "summary": "シームレスなアプリ更新（Seamless app updates）で、`dexopt`／`dex2oat` をインストールのより早い段階に移すことで凍結状態の継続時間を短縮。 / アプリの利用不可時間を、従来の最大数秒から数十ミリ秒程度まで削減する。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.99,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.01,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 0.99,
+          "probabilities": [
+            0.02,
+            0.97,
+            0.01,
+            0
+          ],
+          "confidence": 0.97
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,581 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260904.md",
+  "sourceHash": "sha256:4900faa05cbafbfaa249fc0f3ffb8c6ddba6e5ed800c7c4f6d85073431534a22",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:06.719Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "出力・スキル・サブエージェント",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "`bashOutputMaxChars` と `taskOutputMaxChars` 設定を追加（最大128K文字）。Bash 出力・タスク出力の切り詰め上限を制御できる。 / `--append-subagent-system-prompt-file` を追加。大きなサブエージェント用システムプロンプトをファイルで渡せる。 / `/skill-doctor` を追加。未使用スキルとそのコンテキストコストを表示する。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.261（2026-09-04）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.05,
+          "probabilities": [
+            0,
+            0,
+            0.95,
+            0.05
+          ],
+          "confidence": 0.94
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "権限・組織ポリシー",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "`/status` と `claude doctor` に「Organization policy」行を追加し、組織ポリシーを読み込めなかった理由を説明するように。 / 管理設定の読み込みが 403 になった際のメッセージを、組織側の有効化について案内する内容に変更。 / `forceLoginMethod: \"gateway\"` のマシンで残存 API キーを無視するように変更。 / 危険な `rm` の安全プロンプトが、位置パラメータに対する `rm -rf` も捕捉するよう改善。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.261（2026-09-04）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.99,
+            "security": 0.01,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.32
+        },
+        "relevance": {
+          "score": 2.53,
+          "probabilities": [
+            0,
+            0,
+            0.46,
+            0.54
+          ],
+          "confidence": 0.53
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "プロンプト入力・レンダリング",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "高速入力時にタイプ／ペーストした文字がまれに順序入れ替わる問題を修正。インライン `[Image #N]` チップ直前の文字を削除できない問題も修正。 / プロンプトの単語編集キーを Bash に合わせて変更（Ctrl+W, Alt+F, Alt+D）。 / `/model` ピッカーが Bedrock/Vertex/ゲートウェイの生 ID ではなくモデル名を表示するように改善。 / `/context` のトークン計算が API 不通時にローカル推定を使うように変更。 / 既にレンダリング済みのブロックを再チェックしないことでストリーミング性能を改善。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.261（2026-09-04）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0.01,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.99,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.14
+        },
+        "relevance": {
+          "score": 2.07,
+          "probabilities": [
+            0,
+            0,
+            0.92,
+            0.08
+          ],
+          "confidence": 0.92
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "Remote Control（リモートコントロール）・クラウド/SDK セッション",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "Remote Control が古い権限モードを表示する、タスク停止後にスピナーが固まる、ターン開始前に送った Stop を SDK/クラウドセッションが無視する、TLS 検査プロキシ越しでイベントストリームが失敗する、オフラインセッションへの `SendMessage` が配信済みと表示される、などの問題を修正。 / 再開したバックグラウンドエージェントで CPU 使用率が高止まりする問題、`/usage` がレート制限時にモデル別の週次上限行を落とす問題を修正。 / フィーチャーフラグが古い Claude Code バージョンに適用されることがある問題を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.261（2026-09-04）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.98,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0.02,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 2.42,
+          "probabilities": [
+            0,
+            0,
+            0.57,
+            0.43
+          ],
+          "confidence": 0.57
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "フルスクリーン・diff・プロンプトキャッシュ",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "フルスクリーンモードに未コミット変更を表示する diff パネルを追加（`/diff` でトグル）。 / プロンプトキャッシュミスの推定原因を `/cost` とステータスラインに表示。 / ヘッドレスセッションに `/reload-plugins` を追加。デスクトップ・Remote Control・ヘッドレス向けに `/advisor` のテキスト版を追加。 / `ctrl+l`/`cmd+k` をフルスクリーンでもターミナル同様にトランスクリプトをクリアするよう変更。Ctrl+Z がフルスクリーンで代替画面に残す問題を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.260（2026-09-03）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.04,
+          "probabilities": [
+            0,
+            0,
+            0.95,
+            0.05
+          ],
+          "confidence": 0.94
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "権限ルール・deny ルール（重要な巻き戻し）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "**v2.1.259 で入った「Bash 引数へ `Read()` deny ルールを適用する」変更をリバート**。 / 括弧を含む Edit/Write/Read の権限ルールが落とされる、1つのコンパイル不能な権限パターンが全編集を壊す、といった問題を修正。 / Bash 権限が zsh の `REPORTTIME`/`REPORTMEMORY`/`DIRSTACKSIZE` を自動承認する問題、`permissions.blockReadsOutsideWorkingDirectories` が macOS で git config を隠す問題、Glob/Grep が権限チェック前にパスを探索する問題を修正。 / 括弧の後にテキストが続く権限ルールを「無効」として報告するよう変更。管理下の CLAUDE.md がセキュリティ承認を発生させないよう変更。`!` の bash モードコマンドを strict モードでもサンドボックス外で実行するよう変更。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.260（2026-09-03）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.83,
+            "security": 0.17,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.8
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.99,
+            "other": 0.01
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.37
+        },
+        "relevance": {
+          "score": 2.71,
+          "probabilities": [
+            0,
+            0,
+            0.28,
+            0.72
+          ],
+          "confidence": 0.71
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "モデル・Fable 5.1・コンテキスト",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "`model: fable` エージェントがコンテキストウィンドウ pin の `[1m]` タグを無視する、`/model` ピッカーが対象組織に Fable 5.1 を表示しない、Fable 5.1 でツール結果後のコンテキストがプロンプトキャッシュされない、といった問題を修正。 / プラグインフック失敗後・組織管理マーケットプレイス失敗後にモデル切替がブロックされたままになる問題を修正。 / 1M コンテキストモデル向けの auto-compact を改善。`/ultrareview` の待機を最大45分（従来30分）に延長。`/effort` が Fable 5.1 でセッション途中のプロンプトキャッシュを無効化しないよう改善。`claude-api` スキルを最新モデル ID で更新。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.260（2026-09-03）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2.23,
+          "probabilities": [
+            0,
+            0,
+            0.76,
+            0.24
+          ],
+          "confidence": 0.75
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "サブエージェント・エージェントチーム・ワークフロー",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "別エージェントを再開したサブエージェントが完了で起こされない、エージェントチームでリトライ待機中にメッセージが失われる、バックグラウンドセッションが ListAgents に二重表示される、Workflow サブエージェントがコンテキスト圧縮中に再起動される、といった問題を修正。 / `/rewind` が backup ファイル欠落時に成功を報告する／古いファイル読み取り追跡を残す問題、URL マーケットプレイスプラグインがパストラバーサルエラーで失敗する問題を修正。 / Workflow の `agent({schema})` が充足不能な JSON Schema を拒否するよう改善。サブエージェントが開始するバックグラウンドコマンドの1時間上限を撤廃。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.260（2026-09-03）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.26
+        },
+        "relevance": {
+          "score": 2.64,
+          "probabilities": [
+            0,
+            0,
+            0.35,
+            0.65
+          ],
+          "confidence": 0.64
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "管理設定・アカウント・GitLab",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "レガシー API キーを持つ claude.ai Enterprise ユーザーで管理設定が読み込まれない、`/status` が claude.ai アカウントと API キーの両方をアクティブのように列挙する、管理下の `skillOverrides` がバンドルスキルのエイリアス指定で適用されない、といった問題を修正。 / GitLab のネストしたサブグループのリポジトリ検出、GitLab リポジトリでの `owner/repo#123` 参照が github.com にリンクする問題を修正。 / Claude apps ゲートウェイのミススペルフィールドで起動を拒否するよう変更。管理設定の CLAUDE.md がセキュリティ承認を発生させないよう変更。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.260（2026-09-03）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.41
+        },
+        "relevance": {
+          "score": 2.79,
+          "probabilities": [
+            0,
+            0,
+            0.2,
+            0.8
+          ],
+          "confidence": 0.79
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "VSCode 拡張",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "「Build a custom style」ウォークスルー、MCP サーバダイアログの Add/Remove アクション、ターミナル/別ウィンドウ/Desktop で開いているセッションを示す中空リング、権限/質問プロンプトの折りたたみボタン、セッション一覧右クリックの「Archive session」を追加。モデルピッカーを1つのフラットリスト（古い表記を末尾）に変更。多数の表示・フォーカス・Remote Control 関連バグを修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.260（2026-09-03）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.99,
+            "other": 0.01
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.11
+        },
+        "relevance": {
+          "score": 2.1,
+          "probabilities": [
+            0.01,
+            0,
+            0.87,
+            0.12
+          ],
+          "confidence": 0.87
+        }
+      }
+    }
+  ]
+}

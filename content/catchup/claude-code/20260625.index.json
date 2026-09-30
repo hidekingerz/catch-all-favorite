@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260625.md",
+  "sourceHash": "sha256:aaf7ab985cfb1619091c67d8a9998234fbbab384835f5092608e932a9b8c8212",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:58.121Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "v2.1.193（2026-06-25）",
+      "url": null,
+      "secondaryUrls": [
+        "https://code.claude.com/docs/en/settings.md",
+        "https://code.claude.com/docs/en/mcp.md",
+        "https://code.claude.com/docs/en/monitoring-usage.md"
+      ],
+      "summary": "**`autoMode.classifyAllShell` 設定を追加**し、任意コード実行パターンに該当するものだけでなく全 Bash/PowerShell コマンドをオートモード分類器に通せるように。 / **オートモードの拒否理由をトランスクリプト・拒否トースト・`/permissions` の最近の拒否に追加**。 / **`claude_code.assistant_response` OpenTelemetry ログイベントを追加**（モデルの応答テキストを含む）。デフォルトでは秘匿。`OTEL_LOG_ASSISTANT_RESPONSES=1` で有効化。同変数が未設定の場合は `OTEL_LOG_USER_PROMPTS` に従うため、すでにプロンプト内容をログしているデプロイはアップグレード後に応答内容も記録され始める。プロンプトのみに留めたい場合は `OTEL_LOG_ASSISTANT_RESPONSES=0` を設定。 / **bash モード（`!`）にライブのファイルパス自動補完を追加**。 / **MCP サーバが認証を必要とする際の起動時通知を追加**（`/mcp` を案内）。 / **アイドルなバックグラウンドシェルコマンドのメモリ圧迫時自動回収を追加**（`CLAUDE_CODE_DISABLE_BG_SHELL_PRESSURE_REAP=1` で無効化）。 / `/login` 直後に `/model` 等のクライアントデータに依存する UI が古い/空の状態を表示する問題を修正。 / すべての実行中タスクが新セッションへ引き継がれるのに、バックグラウンド化（←←）が「N background tasks would be abandoned」で誤ってキャンセルされる問題を修正。 / ピン留めしたバックグラウンドエージェントが自動更新のたびに「Continue from where you left off」を再プロンプトされる問題を修正。 / メインターンのバックグラウンド化が、メイン会話を再実行する幽霊の「general-purpose (resumed)」サブエージェントを生成する問題を修正。 / サブエージェント表示時にエージェントパネルが兄弟エージェントを隠す問題を修正。 / **バックグラウンドエージェントの改善**: 起動結果が Claude に「end your response」と指示しなくなり、エージェント実行中も他タスクの作業を継続するように。 / **MCP `headersHelper` 認証の改善**: ツール呼び出しが 401/403 を返した際にヘルパーを自動で再実行・再接続するように。 / **プラグイン自動リネームの改善**: マーケットプレイスの `renames` マップを自動で追従し、設定を新しい名前に更新するように。 / `/add-dir` で対象ディレクトリが既に作業ディレクトリの場合のメッセージを改善。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.51
+        },
+        "relevance": {
+          "score": 2.76,
+          "probabilities": [
+            0,
+            0,
+            0.24,
+            0.76
+          ],
+          "confidence": 0.76
+        }
+      }
+    }
+  ]
+}

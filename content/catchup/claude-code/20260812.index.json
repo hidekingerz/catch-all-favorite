@@ -1,0 +1,524 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260812.md",
+  "sourceHash": "sha256:e90038902e199e3f59d754c046e5e2e69938a1d28b9c60a1347d7f15a3fb860f",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:02.687Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Remote Control（リモートコントロール）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "`claude remote-control --continue` をドキュメント化。直近の Remote Control セッションを再開できる。 / `ListAgents` が、切断された Remote Control セッションを `offline` としてマークし、クラウドセッションを `cloud` としてラベル表示するようになった。 / スラッシュコマンド実行後に Remote Control クライアントで作業中スピナーが固まったままになる問題を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.229（2026-08-12）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.05,
+          "probabilities": [
+            0,
+            0,
+            0.95,
+            0.05
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "self-hosted runner（セルフホストランナー）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "self-hosted runner セッションで、サーバー供給の Claude Code フックをサポートするようになった。 / `managed-mcp.json` が MCP サーバーをデプロイする際に self-hosted runner が起動時に終了してしまう問題を修正。 / self-hosted runner が Git Credential Manager のプロンプトでハングする問題を修正。 / Windows での self-hosted runner の起動に、`--base-dir` の明示的な指定を必須とするよう変更。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.229（2026-08-12）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.86
+        },
+        "relevance": {
+          "score": 2.83,
+          "probabilities": [
+            0.02,
+            0,
+            0.09,
+            0.89
+          ],
+          "confidence": 0.83
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "プラグイン・ワークフロー",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "プラグイン marketplace の `command` ソースを追加。ローカルコマンドはプラグインディレクトリを出力し、毎セッション再解決される。 / ワークフローの fan-out（並列展開）を改善し、同一プレフィックスの兄弟エージェントの起動をずらす（stagger）ようになった。 / 動的ワークフローがコンテナの CPU 制限ではなくホストマシンのコア数を使ってしまう問題を修正。 / 単発（one-shot）の `claude plugin` コマンドが liveness ファイルを残してしまう問題を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.229（2026-08-12）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.11
+        },
+        "relevance": {
+          "score": 2.25,
+          "probabilities": [
+            0,
+            0,
+            0.74,
+            0.26
+          ],
+          "confidence": 0.74
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "ストリーミング・TUI 表示",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "長い応答がストリーミング中に一部消え、かつ二重に出力される問題を修正。 / 非常に幅の狭いターミナルでプログレスバーや Markdown テーブルを描画すると RangeError でクラッシュする問題を修正。 / 大量（数千件）の IDE 診断（diagnostics）による数秒単位の UI 停止を修正。 / 「prompt is too long」エラーが、なぜコンパクション（会話圧縮）で回復できなかったかを説明するよう改善。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.229（2026-08-12）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.07,
+          "probabilities": [
+            0,
+            0,
+            0.92,
+            0.08
+          ],
+          "confidence": 0.91
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "API・ゲートウェイ・セッション",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "長い思考の間の中断中に、ゲートウェイのストリーミング応答へ SSE keepalive ping を送るようにした。 / SDK や `--input-format stream-json` のセッションが、空白のみのメッセージで 400 API エラーになる問題を修正。 / 32MB のリクエスト上限を超える会話が、リトライを繰り返すのではなく明確なメッセージで失敗するよう修正。 / Desktop 管理のゲートウェイがテレメトリのエンドポイントである場合に、OpenTelemetry のエクスポートが拒否される問題を修正。 / ツール呼び出しで `glob` / `file_path` / `command` の値が文字列でない場合にクラッシュする問題を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.229（2026-08-12）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.42,
+          "probabilities": [
+            0.01,
+            0,
+            0.55,
+            0.44
+          ],
+          "confidence": 0.54
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "認証・モデル選択・MCP",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "`CLAUDE_CODE_ATTRIBUTION_HEADER` で attribution ヘッダーを無効化しているユーザーで、auto モードがツール呼び出しに失敗する問題を修正。 / カスタム `ANTHROPIC_BASE_URL` を使う claude.ai サブスクライバーに対し、`/model` が Sonnet/Opus の 1M コンテキストを拒否してしまう問題を修正。 / 厳格な認可サーバーを使う MCP OAuth が `localhost` ではなく `127.0.0.1` を使う問題を修正。 / ログイン成功後に、`/login` が `CLAUDE_CODE_OAUTH_TOKEN` オーバーライドの警告を繰り返し表示するよう変更。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.229（2026-08-12）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.16
+        },
+        "relevance": {
+          "score": 2.59,
+          "probabilities": [
+            0,
+            0,
+            0.4,
+            0.6
+          ],
+          "confidence": 0.59
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "セキュリティ・サンドボックス",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "`/commit-push-pr` を変更し、危険なフラグを含む `git` / `gh` コマンドを自動承認しないようにした。 / サンドボックスを改善。IPv6 リテラルをブラケットで囲む（`[::1]:443`）ようにし、曖昧な表記は fail-closed（安全側に倒す）で拒否するようになった。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.229（2026-08-12）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0.22,
+            "security": 0.78,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.75
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.88,
+            "other": 0.12
+          },
+          "confidence": 0.85
+        },
+        "breaking": {
+          "noul": 0.53
+        },
+        "relevance": {
+          "score": 2.84,
+          "probabilities": [
+            0,
+            0,
+            0.14,
+            0.86
+          ],
+          "confidence": 0.84
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "Windows・その他修正",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "拡張長パス（`\\\\?\\`）や UNC パスを使う Windows でのクラッシュを修正。 / アトミックなファイル置換後にファイルウォッチャーのハンドルがリークする問題を修正。 / Claude Code Review ワークフローがプルリクエストにレビューを投稿しない問題を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.229（2026-08-12）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0.01,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.66,
+            "other": 0.33
+          },
+          "confidence": 0.61
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.39,
+          "probabilities": [
+            0.01,
+            0,
+            0.58,
+            0.41
+          ],
+          "confidence": 0.58
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "VSCode 拡張",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "「Report a problem」および `/bug` が、組み込みのフィードバックダイアログを開くようになった。 / `/btw` のサイド質問パネルを、ドラッグでリサイズできるようにした。 / サイドバーにセッショングループを追加。名前変更・削除・移動が可能になった。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.229（2026-08-12）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0.01,
+            "node_runtime": 0,
+            "browser": 0.01,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.72,
+            "other": 0.26
+          },
+          "confidence": 0.68
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.9,
+          "probabilities": [
+            0.06,
+            0,
+            0.92,
+            0.02
+          ],
+          "confidence": 0.85
+        }
+      }
+    }
+  ]
+}

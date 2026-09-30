@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/chrome-blog/20260730.md",
+  "sourceHash": "sha256:75815a31d891b9ae7c496ce77477b7037b173bfe97fd689707df5e80066ace84",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:54.041Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Chrome 152 beta",
+      "url": "https://developer.chrome.com/blog/chrome-152-beta?hl=ja",
+      "secondaryUrls": [],
+      "summary": "Chrome 152 ベータ版の変更点まとめ。Web アプリがデバイスの CPU 性能ティアを判別して体験を最適化できる CPU Performance API、`::backdrop` / `::scroll-marker` / `::view-transition` に対する `CSSPseudoElement` 対応の拡張、`:playing` / `:paused` / `:seeking` / `:buffering` / `:muted` などメディア要素の状態を表す擬似クラス群、CSS Color 5 の相対 `alpha()` 関数、editable 要素の自動修正を制御する `autocorrect` グローバル属性が追加された。加えて HTTP レスポンスヘッダで外部接続を制御する Connection Allowlists、textarea/input のテキスト操作用 OpaqueRange、`getDisplayMedia()` の `audioPreference` オプション、WebGPU のサブグループ制御などが含まれ、Private Aggregation API の削除が非推奨として告知されている。",
+      "publishedAt": "2026-07-30",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.92,
+            "node_runtime": 0,
+            "browser": 0.08,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.91
+        },
+        "breaking": {
+          "noul": 0.58
+        },
+        "relevance": {
+          "score": 2.55,
+          "probabilities": [
+            0,
+            0,
+            0.44,
+            0.56
+          ],
+          "confidence": 0.55
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/firefox/20260914.md",
+  "sourceHash": "sha256:43036d457d9d222b834eb2b9e360f52179e1bef67fd2a2b01c0665a2d11a090e",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:10.792Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Firefox 155.0（安定版）",
+      "url": "https://www.firefox.com/en-US/firefox/155.0/releasenotes/",
+      "secondaryUrls": [],
+      "summary": "**リリースサイクル変更**: Firefox 155 を起点に、リリースサイクルが 4 週間から 2 週間に短縮された。 / **開発者ツール**: Rules ビューのメディア特性エミュレーションボタンが専用のエミュレーションパネル（`@` ボタンで開く）にまとめられ、`prefers-reduced-motion` のエミュレーションが追加された。JSON Viewer が JSON Lines（NDJSON）ドキュメントを開けるようになり、各行が行番号ラベル付きの独立した折りたたみエントリとして解析される。 / **プロダクト機能**: Smart Window が米国・カナダ・フランスの全ユーザーで試用可能に（作業中トピックへ素早く戻るためのパーソナライズされた会話再開の起点を追加）。Assistant が Exa の Web 検索ソース引用付きでより高速に応答。Organize Tabs が関連タブのグルーピング精度を改善し、各グループにより分かりやすい名前を付けるように。",
+      "publishedAt": "2026-09-01",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "browser",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 1,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 1.06,
+          "probabilities": [
+            0,
+            0.95,
+            0.05,
+            0
+          ],
+          "confidence": 0.94
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "Firefox 155.0.1（安定版・修正リリース）",
+      "url": "https://www.firefox.com/en-US/firefox/155.0.1/releasenotes/",
+      "secondaryUrls": [],
+      "summary": "155.0 の不具合修正リリース。CSS の blur と backdrop filter を併用するページで Firefox が反応しなくなる問題を修正。「タブとサイドバーを隠す」オプションを有効にした状態で Firefox を再起動するとサイドバーが再表示されない問題を修正。",
+      "publishedAt": "2026-09-04",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "browser",
+          "probabilities": {
+            "web_frontend": 0.06,
+            "node_runtime": 0,
+            "browser": 0.94,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.93
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.06,
+          "probabilities": [
+            0,
+            0.96,
+            0.02,
+            0.02
+          ],
+          "confidence": 0.94
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Firefox ESR 153.2.0 / ESR 140.15.0（法人向け ESR）",
+      "url": "https://www.firefox.com/en-US/firefox/153.2.0/releasenotes/",
+      "secondaryUrls": [],
+      "summary": "ESR 系の定例更新。現行の主要 ESR は 153.2.0（前回記録の 153.1.0esr から更新）。並行して ESR 140.15.0（前回記録の 140.14.0esr から更新）、ESR 115.40.0 も 2026-09-01 に提供開始。主にセキュリティ・安定性の修正を含む定例リリース。",
+      "publishedAt": "2026-09-01",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.7,
+            "security": 0.3,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.65
+        },
+        "ecosystem": {
+          "choice": "browser",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 1,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 1.01,
+          "probabilities": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "confidence": 0.99
+        }
+      }
+    }
+  ]
+}

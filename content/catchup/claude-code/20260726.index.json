@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260726.md",
+  "sourceHash": "sha256:917172e12619b84a8851b22a8b0fcee1544d2831cc4cd68979dac994249adc7a",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:00.894Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "v2.1.220（2026-07-25）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "バグ修正と信頼性の改善（\"Bug fixes and reliability improvements\"）。changelog に個別項目の記載はなし。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.220（2026-07-25）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "other",
+          "probabilities": {
+            "web_frontend": 0.01,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.34,
+            "other": 0.65
+          },
+          "confidence": 0.6
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.07,
+          "probabilities": [
+            0.01,
+            0,
+            0.89,
+            0.1
+          ],
+          "confidence": 0.87
+        }
+      }
+    }
+  ]
+}

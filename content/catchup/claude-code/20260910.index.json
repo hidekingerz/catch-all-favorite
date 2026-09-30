@@ -1,0 +1,581 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260910.md",
+  "sourceHash": "sha256:318d84941016f5acb1da6c52dc5114bfb46d947f5b0b9a36536fbda8bb66915f",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:07.861Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "ゲートウェイ・セルフホスト・認証",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "Claude apps ゲートウェイに料金同期を追加。`gateway.yaml` に `pricing:` を設定すると、サインイン済みの Claude Code クライアントが managed settings 経由で同じレートを受け取り、`/cost` とテレメトリが実際の課金メーターと一致するようになった。`access_control.allow_cidrs` が空のゲートウェイに起動時警告と、初めてパブリックアドレスからリクエストが来たときの一度きりの警告を追加。管理者が組織自身のパブリック IPv4 ブロックへの `/login` を許可できる **`gatewayInternalNetworks`** managed 設定を追加。`claude self-hosted-runner --remove-session-state`（既定オフ）を追加し、セッション終了時に `<base-dir>/_sessions/` 配下のセッション別ディレクトリを削除できる。`claude auth status --json` の出力に `configDirectory` を追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.268（2026-09-10）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.14
+        },
+        "relevance": {
+          "score": 2.36,
+          "probabilities": [
+            0.01,
+            0,
+            0.61,
+            0.38
+          ],
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "プラグイン CLI / artifact",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "`claude plugin install` / `uninstall` / `update` / `enable` / `disable` に `--json` を追加し、`claude plugin list --json` の各行に `errorDetails` / `noteDetails` を追加。公開された artifact にブラウザタブ用アイコンを追加（各ページに合わせて Claude が選定）。`/plugin` でのインストール・有効化・無効化はメニューを閉じた時点で反映され、`/reload-plugins` は不要になった。`claude plugin validate` がプラグインローダーは受け入れる二重ドット始まりのディレクトリ名を拒否していた問題、既定のモニターファイルやルート SKILL.md をチェックできず黙ってスキップしていた問題を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.268（2026-09-10）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.2
+        },
+        "relevance": {
+          "score": 2.28,
+          "probabilities": [
+            0,
+            0,
+            0.71,
+            0.29
+          ],
+          "confidence": 0.71
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "プロバイダー統一（Bedrock / Vertex / Foundry）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "Bedrock / Vertex / Foundry のシステムプロンプトを変更し、環境・モデル・設定の詳細を（ファーストパーティセッションと同様に）アタッチメントとして届けるように。同じくツール一覧を会話全体でバイト単位で安定させ、後から接続するツールはツール一覧を書き換えずに deferred でロードするように変更（ファーストパーティと一致）。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.268（2026-09-10）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.99,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.01,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.48
+        },
+        "relevance": {
+          "score": 2.52,
+          "probabilities": [
+            0.02,
+            0,
+            0.4,
+            0.58
+          ],
+          "confidence": 0.52
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "タスク追跡ツールのモデル限定（挙動変更）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "タスク追跡ツール（TaskCreate / Get / Update / List、TodoWrite）を Claude 3.x・Opus 4.0〜4.7・Sonnet 4.0〜4.6・Haiku 4.5 でのみ提供するよう変更。それ以外のモデルで使うには `CLAUDE_CODE_ENABLE_TODO_TOOLS=1` を設定する。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.268（2026-09-10）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.95,
+            "security": 0,
+            "policy": 0.04,
+            "feature": 0.01,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.94
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.88
+        },
+        "relevance": {
+          "score": 2.97,
+          "probabilities": [
+            0,
+            0,
+            0.03,
+            0.97
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "WebFetch のデッドライン",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "レスポンスを開いたまま終了しないサーバーに対して WebFetch が無限にハングする問題を修正し、300 秒でフェッチが失敗するように。`CLAUDE_CODE_WEBFETCH_DEADLINE_MS` でデッドラインを上書き可能（0 で無効化）。localhost 等ドット無しホスト名を拒否する際のエラーメッセージも、理由を説明し curl を提案するように改善。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.268（2026-09-10）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0.01,
+            "node_runtime": 0.02,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.97,
+            "other": 0
+          },
+          "confidence": 0.96
+        },
+        "breaking": {
+          "noul": 0.47
+        },
+        "relevance": {
+          "score": 2.57,
+          "probabilities": [
+            0,
+            0,
+            0.42,
+            0.58
+          ],
+          "confidence": 0.57
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "セキュリティ・権限",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "プラグイン／マーケットプレイスのエラーが git ソース URL 内のトークンやパスワードを表示していた問題、`/mcp`・`/plugin` のサーバー詳細や `claude mcp list`/`get`・MCP ログインエラーが `${VAR}` プレースホルダーから解決したシークレットを表示していた問題を修正。シンボリックリンクされたディレクトリ（macOS の `/etc`・`/tmp`・`/var`、Linux の `/bin`）に対する deny/ask 権限ルールが実体パス指定時に効かず、Bash コマンドがシンボリックリンク綴りの deny ルールを無視していた問題を修正。同一行に `env -C`・`eval` 等（権限チェッカーが解析できないコマンド）があると Read/Edit の deny ルールが効かないケースも修正。`--print` モードで PermissionRequest フックが発火しない問題、policy-helper 警告がヘッドレス（`-p`）実行で表示されない問題も修正。auto モードの拒否メッセージが、ブロックしたルール名を示し、より安全な方法を試して無関係な作業を終えてから確認を求めるよう改善。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.268（2026-09-10）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0.04,
+            "security": 0.96,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.95
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.11
+        },
+        "relevance": {
+          "score": 2.64,
+          "probabilities": [
+            0,
+            0,
+            0.35,
+            0.65
+          ],
+          "confidence": 0.64
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "Artifact ツール・権限プロンプト",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "プレーンな `WebFetch` の deny/ask ルールが Artifact ツールの読み取り・更新には適用されなくなった（`Artifact` ルールまたは `WebFetch(domain:claude.ai)` を使う）。全承認スキップに設定したローカル Cowork セッションで、Artifact ツールがセッションフォルダ外やシンボリックリンク越しのローカルファイルを問い合わせなしに読まず拒否するように変更。artifact のデータ編集権限プロンプトを、ドキュメント数と誰が artifact を開けるかを示すカード表示に変更。ターミナルの artifact 権限プロンプトは質問文を先頭に出すよう改善。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.268（2026-09-10）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.98,
+            "security": 0.02,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.97
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.63
+        },
+        "relevance": {
+          "score": 2.67,
+          "probabilities": [
+            0,
+            0,
+            0.32,
+            0.68
+          ],
+          "confidence": 0.67
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "プロンプトキャッシュ・モデルアクセス・compact",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "`excludeDynamicSections` を使う SDK セッションで最初のメッセージが毎リクエスト再レンダリングされ、プロンプトキャッシュと拡張思考がセッション途中で壊れる問題を修正。再起動後や Desktop の Code タブで、キャッシュされたモデルアクセス拒否が古いまま「モデルが制限されている」と表示される問題、別の Claude Code プロセスが古いモデルアクセス項目を更新すると実行中セッションが黙って組織の既定モデルに切り替わる問題を修正。`/compact`・auto-compact が生成する会話サマリーが `$` シーケンスを含むテキストを壊す問題、`/compact` で終わった会話の resume で復元ファイルノートの読み込み順が resume ごとに変わる問題を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.268（2026-09-10）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 2.41,
+          "probabilities": [
+            0,
+            0,
+            0.59,
+            0.41
+          ],
+          "confidence": 0.58
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "その他の修正・改善（抜粋）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "MCP ツール呼び出し後に「your message came through empty」と返す問題、信頼していないフォルダの同名エージェントファイルからツール／システムプロンプトを拾う respawn 済みチームメイトの問題を修正。長時間アイドルセッションのビジーループやセッションリキャップ中の高頻度フォーカス通知による CPU 高負荷を解消。MCP OAuth サインインの「No available ports for OAuth redirect」、workload identity federation プロファイル共有時の `401 jti reused`、Fable モデルの long-context 429 が誤ってクレジット同意プロンプトを出す問題なども修正。`--continue`/`--resume` で会話が SessionStart フックを待たず即表示され、最初のメッセージがトランスクリプト全体を再読しないよう改善。`.claude/workflows/` を持つプロジェクトの起動を、各スクリプトをパースしないことで高速化。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.268（2026-09-10）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.45,
+          "probabilities": [
+            0,
+            0,
+            0.55,
+            0.45
+          ],
+          "confidence": 0.54
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "エディタ連携・クライアント（VSCode / web / Claude Tag / Code Review）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "[VSCode] `CLAUDE_CONFIG_DIR` を設定ファイルや `environmentVariables` で指定した際のセッション一覧・設定トグル・チャットタブ、ログイン／ログアウト／アカウント切替後にモデルピル・モデルピッカー・コマンドメニューが数秒空白になる問題、SessionStart フック設定時のセッション名リバートなどを修正。プラグイン管理ダイアログの操作を再起動なしで開いているセッションに適用、キーボード／スクリーンリーダー向けに「Focus last message」コマンドと always-allow 保存先を左右キーで変える操作を追加。[Claude Code on the web] 約 6 時間超のクラウドセッションで永続フォルダ保存ファイルが黙って失われる問題（最大 1 日永続化に）、管理者がモデルの努力レベルを制限した組織での「Invalid effort level」を修正。[Claude Tag] 管理設定ページのローディングスケルトンハング、Slack Enterprise Grid チャンネル移動時の設定喪失、公開チャンネルごとにメモを分離しチャンネル間でメモを想起しないよう変更、読み取り専用検索の並列実行による応答高速化など多数。[Code Review] 検証エージェントが途中失敗しても別エージェントに置き換えて判定に到達、フォローアップレビューで「スレッドの解決（返信だけでは不十分）」を促すノートを追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.268（2026-09-10）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.29,
+          "probabilities": [
+            0,
+            0,
+            0.71,
+            0.29
+          ],
+          "confidence": 0.7
+        }
+      }
+    }
+  ]
+}

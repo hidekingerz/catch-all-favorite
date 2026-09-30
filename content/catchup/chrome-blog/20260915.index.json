@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/chrome-blog/20260915.md",
+  "sourceHash": "sha256:984917128043769967064f4243fc98293567e866c06b45b87a0de07e66124eeb",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:55.975Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Stricter enterprise policy enforcement for chrome.debugger in Chrome 155",
+      "url": "https://developer.chrome.com/blog/debugger-enterprise-policy-restrictions?hl=ja",
+      "secondaryUrls": [],
+      "summary": "Chrome 155 から、管理対象（マネージド）ブラウザで `runtime_blocked_hosts`・`DisableScreenshots`・DLP ルールが設定されている場合、`chrome.debugger` API の挙動が変更される。ブロックホストが設定されていると `chrome.debugger.attach()` は「Host access is restricted by policy.」で拒否され、スクリーンショット無効化・DLP 設定時は「Screenshot capture is restricted by policy.」で失敗する。個人プロファイルや非管理環境、該当ポリシーのない企業環境では従来どおり動作する。Chrome 155 Beta は 9/16、Stable ロールアウトは 10/6 の予定。",
+      "publishedAt": "2026-09-08",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.75,
+            "security": 0.15,
+            "policy": 0.1,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.71
+        },
+        "ecosystem": {
+          "choice": "browser",
+          "probabilities": {
+            "web_frontend": 0.06,
+            "node_runtime": 0,
+            "browser": 0.94,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.93
+        },
+        "breaking": {
+          "noul": 0.64
+        },
+        "relevance": {
+          "score": 2.4,
+          "probabilities": [
+            0,
+            0,
+            0.58,
+            0.42
+          ],
+          "confidence": 0.57
+        }
+      }
+    }
+  ]
+}

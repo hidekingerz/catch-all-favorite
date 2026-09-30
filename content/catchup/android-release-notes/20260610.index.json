@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/android-release-notes/20260610.md",
+  "sourceHash": "sha256:3dc07fddb869d331243757f6262bbab5c7f3491db545c7c11377acc4381193bf",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:42.502Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Android 16（Android 16 / QPR1 / QPR2）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "**開発モデル**: 2026 年から AOSP は trunk stable バージョンモデルに移行し、ソースコードのリリースは Q2 と Q4 に実施される。 / **アーキテクチャ**: Generic Bootloader (GBL) という標準化・更新可能なブートローダを導入し、Android のブートプロセスを簡素化。16KB ページサイズ環境では Thread Local Storage のメモリ改善により初期スレッドメモリを約 8KB 削減。 / **接続性**: Bluetooth デバイスが Android API レベルを読み取れる GATT サービス「Android Identification Service (AIS)」、複数の距離測定技術を統合する Ranging モジュール、IMS 向けの緊急コールバックモードリスナー System API、Wi-Fi Soft AP の切断クライアント追跡の強化。 / **表示・操作**: デスクトップウィンドウでのウィンドウ重ね配置サポート、デバイス固有のキャリブレーションを削減する正規化 PWLE ハプティクス API、デバイス状態に基づく自動回転のリファクタリング。 / **メディア**: HDR のフォールバック機能とスクリーンショット対応、Android TV 向け画質・音質調整を標準化する Media Quality Framework、Advanced Professional Video (APV) コーデックのプラットフォームサポート。 / **オーディオ**: AIDL HAL 向けに Configurable audio policy (CAP) サポートを復活（Android 14〜15 の実装上の制約を解消）。 / **パフォーマンス・セキュリティ**: 初期化後のシステム健全性評価を行う Trade-in mode、モジュールハッシュ検証を伴う KeyMint 4.0 アテステーション、SELinux マクロによる GPU syscall フィルタリング強化。 / **仮想化**: AVF の LL-NDK サポート、early-boot VM、Microdroid 更新、Ferrochrome による Linux ターミナルサポート、Trusty OS 統合を含む Protected VM の改善。",
+      "publishedAt": "2026-03-13",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {
+        "関連リンク": "[Android 16 release notes](https://source.android.com/docs/whatsnew/android-16-release?hl=ja)"
+      },
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.35
+        },
+        "relevance": {
+          "score": 1.02,
+          "probabilities": [
+            0.01,
+            0.97,
+            0.02,
+            0
+          ],
+          "confidence": 0.97
+        }
+      }
+    }
+  ]
+}

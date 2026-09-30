@@ -1,0 +1,467 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/android-release-notes/20260906.md",
+  "sourceHash": "sha256:6f6979479d2137b0233b8e33a6afbf23ae19540fefd94bf988e89b459f179c87",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:44.178Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Android 16 — Architecture（アーキテクチャ）",
+      "url": "https://source.android.com/docs/whatsnew/android-16-release#architecture",
+      "secondaryUrls": [],
+      "summary": "Android のブート処理を効率化する標準化された Generic Bootloader（GBL）を導入。16KB ページサイズ向けのメモリ最適化ではスレッドローカルストレージバッファを分離し、初期スレッドメモリページ内で約 8KB を解放。メモリ消費とページフォルトを削減する。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.98,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.02,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.13
+        },
+        "relevance": {
+          "score": 0.95,
+          "probabilities": [
+            0.05,
+            0.95,
+            0,
+            0
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "Android 16 — Audio（オーディオ）",
+      "url": "https://source.android.com/docs/whatsnew/android-16-release#audio",
+      "secondaryUrls": [],
+      "summary": "AIDL HAL における Configurable Audio Policy（CAP）サポートを実装し、Android 14〜15 で欠けていた AIDL 定義とフレームワークによる CAP 設定の読み込み機構を修正。Cuttlefish Auto ターゲットをこの CAP AIDL 実装を利用する形に移行した。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.98,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.02,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.97
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.25
+        },
+        "relevance": {
+          "score": 0.86,
+          "probabilities": [
+            0.15,
+            0.85,
+            0,
+            0
+          ],
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Android 16 — Connectivity（接続）",
+      "url": "https://source.android.com/docs/whatsnew/android-16-release#connectivity",
+      "secondaryUrls": [],
+      "summary": "Bluetooth デバイスが Android API レベルを GATT キャラクタリスティックとして読み取れる Android Information Service（AIS）GATT サービスを追加。IMS 実装向けにトラフィックセッション管理や EPS フォールバックトリガーの新システム API を提供。Ranging モジュールが UWB・Bluetooth channel sounding・Wi-Fi RTT の API を集約する。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.98,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.02,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 0.99,
+          "probabilities": [
+            0.04,
+            0.93,
+            0.03,
+            0
+          ],
+          "confidence": 0.93
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "Android 16 — Display（ディスプレイ）",
+      "url": "https://source.android.com/docs/whatsnew/android-16-release#display",
+      "secondaryUrls": [],
+      "summary": "デスクトップウィンドウイングで重なり合うウィンドウの配置・リサイズによる生産性向上を実現。デバイス状態ベースの自動回転設定をリファクタリングし従来版の既知問題に対応。クイック設定タイルは編集モードでタイルを見つけやすくするカテゴリ分けに対応した。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.12
+        },
+        "relevance": {
+          "score": 0.94,
+          "probabilities": [
+            0.07,
+            0.91,
+            0.02,
+            0
+          ],
+          "confidence": 0.91
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Android 16 — Media（メディア）",
+      "url": "https://source.android.com/docs/whatsnew/android-16-release#media",
+      "secondaryUrls": [],
+      "summary": "アプリ側フォールバック機能・スクリーンショット処理改善・一貫性向上により HDR サポートを強化。ストリームおよびユーザーごとに細かく設定できる標準化された画質・音質フレームワークを新設。Advanced Professional Video（APV）コーデックのプラットフォーム対応を開始し、AV1 への移行計画も進める。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.99,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.01,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.14
+        },
+        "relevance": {
+          "score": 0.98,
+          "probabilities": [
+            0.09,
+            0.84,
+            0.07,
+            0
+          ],
+          "confidence": 0.83
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "Android 16 — Performance（パフォーマンス）",
+      "url": "https://source.android.com/docs/whatsnew/android-16-release#performance",
+      "secondaryUrls": [],
+      "summary": "開発者や再販業者が工場出荷時リセット後のシステム健全性を評価できる Trade-in モードを追加。ファクトリーリセット後のデバイス評価のための診断機能を提供する。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.98,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.02,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1,
+          "probabilities": [
+            0.02,
+            0.96,
+            0.02,
+            0
+          ],
+          "confidence": 0.96
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "Android 16 — Security（セキュリティ）",
+      "url": "https://source.android.com/docs/whatsnew/android-16-release#security",
+      "secondaryUrls": [],
+      "summary": "セルラー機能向けに Safety Center へ専用の Mobile Network Security セクションを追加。KeyMint 4.0 のアテステーションに APEX モジュールの整合性を検証する `moduleHash` フィールドを追加。プライベートスペースは新しいシステムアプリを使い、メインプロファイルから直接ファイルをインポートできるようになった。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0.47,
+            "security": 0.53,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.46
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.14
+        },
+        "relevance": {
+          "score": 1.02,
+          "probabilities": [
+            0,
+            0.99,
+            0.01,
+            0
+          ],
+          "confidence": 0.98
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "Android 16 — Virtualization（仮想化）",
+      "url": "https://source.android.com/docs/whatsnew/android-16-release#virtualization",
+      "secondaryUrls": [],
+      "summary": "AVF がベンダー起動 VM 向けの LL-NDK サポート、早期ブート VM 機能、リサイズ可能ストレージを備えた改良版 Microdroid を獲得。pKVM は保護 VM 向けに TrustZone との FF-A 標準セキュア通信をサポート。デバイス割り当てにより保護 VM 内でプラットフォームデバイスへの直接ハードウェアアクセスが可能になる。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.98,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.02,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 0.99,
+          "probabilities": [
+            0.02,
+            0.97,
+            0.01,
+            0
+          ],
+          "confidence": 0.97
+        }
+      }
+    }
+  ]
+}

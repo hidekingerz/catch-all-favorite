@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260912.md",
+  "sourceHash": "sha256:fc84e237768adec61416556d3d83f2ba5bbf436c3c6ead5051451fe1bca79efb",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:08.246Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "v2.1.270（2026-09-12）— 不具合修正",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "Bash の読み取り専用 git コマンドの権限確認リグレッション修正: セッションを長時間動かした後、Bash 内の読み取り専用 git コマンドが予期せず権限確認を求める問題を修正（v2.1.269 で発生したリグレッション）。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {
+        "Bash の読み取り専用 git コマンドの権限確認リグレッション修正": "セッションを長時間動かした後、Bash 内の読み取り専用 git コマンドが予期せず権限確認を求める問題を修正（v2.1.269 で発生したリグレッション）。"
+      },
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.79,
+            "other": 0.21
+          },
+          "confidence": 0.75
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.26,
+          "probabilities": [
+            0.01,
+            0,
+            0.71,
+            0.28
+          ],
+          "confidence": 0.7
+        }
+      }
+    }
+  ]
+}

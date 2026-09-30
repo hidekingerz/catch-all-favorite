@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/apple-news/20260624.md",
+  "sourceHash": "sha256:f41b51a958fe18ddb386dbbdbe70fbd3a9297c57b1fc4c75b972d8a5e655ad5e",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:46.575Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Design kits for iOS, iPadOS, and macOS 27 are here",
+      "url": "https://developer.apple.com/jp/news/?id=e2lxw9l1",
+      "secondaryUrls": [],
+      "summary": "iOS / iPadOS / macOS 27 向けの Apple デザインキット（Figma・Sketch 用）が Apple Design Resources で提供開始された。Liquid Glass の更新、対応コンポーネント・ステートの拡充、コードとの整合を高めるための命名変更、リサイズの改善、macOS へのダークモード追加が含まれる。最新の OS デザインに沿った UI 設計を始める際の基礎リソースとなる。",
+      "publishedAt": "2026-06-23",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.97,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.03,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.96
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.2
+        },
+        "relevance": {
+          "score": 0.68,
+          "probabilities": [
+            0.35,
+            0.63,
+            0.02,
+            0
+          ],
+          "confidence": 0.62
+        }
+      }
+    }
+  ]
+}

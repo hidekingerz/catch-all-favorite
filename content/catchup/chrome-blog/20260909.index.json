@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/chrome-blog/20260909.md",
+  "sourceHash": "sha256:5a63eb27a6ec30cac4b8b6b0599ca3386b2a7b65e5af1850a6c481802f2b997f",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:55.594Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "New in Chrome 153",
+      "url": "https://developer.chrome.com/blog/new-in-chrome-153?hl=ja",
+      "secondaryUrls": [],
+      "summary": "Chrome 153 の新機能まとめ。**Single-axis scroll containers** では `overflow` プロパティがスクロール値（`auto` / `scroll` / `hidden`）と `clip` の組み合わせ（例: `overflow: scroll clip`）をサポートし、軸ごとに独立したスクロール挙動を制御できる。**Capability elements** として `<camera>`（映像キャプチャ）と `<microphone>`（音声キャプチャ）の専用要素が導入され、ブラウザ制御の宣言的な UI でメディアキャプチャを扱える。**Joint Iteration** では `Iterator.zip()` と `Iterator.zipKeyed()` が追加され、複数のイテレータを \"shortest\" / \"longest\" / \"strict\" のモードを指定して同期処理できる。CSS レイアウト・メディアキャプチャ・JavaScript の反復処理に関わるプロジェクトは確認しておきたい。",
+      "publishedAt": "2026-09-08",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.93,
+            "node_runtime": 0,
+            "browser": 0.07,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.92
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.02,
+          "probabilities": [
+            0,
+            0,
+            0.98,
+            0.02
+          ],
+          "confidence": 0.97
+        }
+      }
+    }
+  ]
+}

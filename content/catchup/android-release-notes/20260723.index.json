@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/android-release-notes/20260723.md",
+  "sourceHash": "sha256:686e2ee972e0f1caec65f9d50966087a15d42aa4a8ad0e9ef72d4f5d452a879b",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:42.992Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Android 17 — Compatibility（互換性テスト）",
+      "url": "https://source.android.com/docs/whatsnew/android-17-release#compatibility",
+      "secondaryUrls": [],
+      "summary": "CTS Verifier にオーディオのマルチチャンネル入出力テストを追加。CTS-V 実行には既定ブラウザロールを付与する追加セットアップ手順が必要になった。 / ランジング精度・Telecom テストをマルチデバイステスト化（Wi-Fi 接続テストが必須）し、USB ホスト側テストは adb over Wi-Fi を要求。メディア再生テスト・オーディオワークロードテスト等の CTS-V テストも追加。 / オーディオテスト更新（USB-C to 3.5mm アダプタを推奨リストに追加、Pro Audio テストから HDMI 要件を削除）、Camera Image Test Suite（ITS）の更新、Android 17 版 Compatibility Definition Document（CDD）の公開を含む。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.91,
+            "security": 0,
+            "policy": 0.09,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.89
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.49
+        },
+        "relevance": {
+          "score": 0.98,
+          "probabilities": [
+            0.05,
+            0.92,
+            0.02,
+            0.01
+          ],
+          "confidence": 0.93
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "Android 17 — Setup（ビルドセットアップ／ビルドエラーのトラブルシューティング）",
+      "url": "https://source.android.com/docs/whatsnew/android-17-release#setup",
+      "secondaryUrls": [],
+      "summary": "Android 17 以降、AOSP ソースツリーは読み取り専用（read-only）となる。プロダクト設定時やビルドの他工程でソースツリーを変更しようとすると、read-only ファイルシステムのエラーが発生してビルドが失敗する。 / 解決するにはソースツリーを read-write に設定する（詳細は「Troubleshoot build errors」を参照）。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0.3,
+            "security": 0,
+            "policy": 0.02,
+            "feature": 0,
+            "guide": 0.68,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.63
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.82
+        },
+        "relevance": {
+          "score": 0.96,
+          "probabilities": [
+            0.04,
+            0.96,
+            0,
+            0
+          ],
+          "confidence": 0.95
+        }
+      }
+    }
+  ]
+}

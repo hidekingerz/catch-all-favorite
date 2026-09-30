@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260924.md",
+  "sourceHash": "sha256:4058eab3c8e53cd5f80e52e6eb3ef0f4faafe72e407d2fe070046e67f51e94d3",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:09.608Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "v2.1.282（2026-09-24）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": null,
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.282（2026-09-24）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "other",
+          "probabilities": {
+            "web_frontend": 0.01,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.46,
+            "other": 0.53
+          },
+          "confidence": 0.46
+        },
+        "breaking": {
+          "noul": 0.14
+        },
+        "relevance": {
+          "score": 2.14,
+          "probabilities": [
+            0.02,
+            0,
+            0.8,
+            0.18
+          ],
+          "confidence": 0.78
+        }
+      }
+    }
+  ]
+}

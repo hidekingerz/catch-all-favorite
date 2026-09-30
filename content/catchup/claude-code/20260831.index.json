@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260831.md",
+  "sourceHash": "sha256:0c37a1660a99e8fb85472afe57a45ec5a0bd98e04024701568814a8fd71398d9",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:05.680Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "主なバグ修正（v2.1.252）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": null,
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.252（2026-08-31）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0.01,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.58,
+            "other": 0.41
+          },
+          "confidence": 0.51
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.25,
+          "probabilities": [
+            0.02,
+            0,
+            0.7,
+            0.28
+          ],
+          "confidence": 0.68
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/apple-security-releases/20260807.md",
+  "sourceHash": "sha256:1073a29462d810cf2726d111b6d230408dc8de50ce8342902d3f52bd8716f796",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:50.807Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "macOS Tahoe 26.6.1",
+      "url": "https://support.apple.com/ja-jp/148170",
+      "secondaryUrls": [],
+      "summary": "Screen Sharing の認証バイパス脆弱性 CVE-2026-65400 を修正する単一 CVE の臨時アップデート。ネットワーク上の攻撃者が有効な認証情報なしに Screen Sharing に認証できる可能性があった問題を、状態管理の改善で対処。報告: Alfredo Pesoli 氏（@__rev）via Bynario Atlas。実環境での悪用は明記されていない。",
+      "publishedAt": "2026-08-06",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "macOS Tahoe",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1,
+          "probabilities": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "confidence": 0.99
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "macOS Sequoia 15.7.9",
+      "url": "https://support.apple.com/ja-jp/148171",
+      "secondaryUrls": [],
+      "summary": "旧 OS（Sequoia）向けに、macOS Tahoe 26.6.1 と同じ Screen Sharing の認証バイパス脆弱性 CVE-2026-65400 を修正。ネットワーク上の攻撃者による認証情報なしの Screen Sharing 認証を防ぐ。状態管理の改善で対処。報告: Alfredo Pesoli 氏（@__rev）via Bynario Atlas。実環境での悪用は明記されていない。",
+      "publishedAt": "2026-08-06",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "macOS Sequoia",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 1.01,
+          "probabilities": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "confidence": 0.99
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "macOS Sonoma 14.8.9",
+      "url": "https://support.apple.com/ja-jp/148172",
+      "secondaryUrls": [],
+      "summary": "旧 OS（Sonoma）向けに、Screen Sharing の認証バイパス脆弱性 CVE-2026-65400 を修正。ネットワーク上の攻撃者が有効な認証情報なしに Screen Sharing に認証できる可能性があった問題を状態管理の改善で対処。報告: Alfredo Pesoli 氏（@__rev）via Bynario Atlas。実環境での悪用は明記されていない。",
+      "publishedAt": "2026-08-06",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "macOS Sonoma",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1,
+          "probabilities": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "confidence": 0.99
+        }
+      }
+    }
+  ]
+}

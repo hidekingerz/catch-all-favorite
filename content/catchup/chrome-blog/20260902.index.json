@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/chrome-blog/20260902.md",
+  "sourceHash": "sha256:48a10151421b02b14850fe6156f572b443a9fef193f77c1f258bb751d099055d",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:55.245Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Chrome 154 beta",
+      "url": "https://developer.chrome.com/blog/chrome-154-beta?hl=ja",
+      "secondaryUrls": [],
+      "summary": "Chrome 154 のベータ。CSS に `scroll-marker-group` の links/tabs モード、下線などの位置を制御する `text-decoration-inset`、空白部分の装飾を抑える `text-decoration-skip-spaces`、`FontFace` の width 別名、ポップオーバー/ダイアログの light dismiss 改善（クリック外しは `click` イベントベースに、スクロール/右クリックでは閉じない）、子ドキュメントに合わせてサイズ変更できる `<iframe>` などが追加。JavaScript では Iterator に `includes()` が入り、Web API では WebCrypto のポスト量子暗号（ML-KEM 768/1024、ML-DSA 44/65/87、ChaCha20-Poly1305、X-Wing）、WebSocket コンストラクタのオプション辞書（`{ protocols: \"...\" }`）対応、DOM への HTML 挿入メソッド（`before()`/`after()`/`append()` 等の HTML 対応、`streamAppendHTML()`）、WebGPU の `@builtin(frag_depth)` に early-Z 最適化用の less/greater 指定などが加わる。Private Verification Tokens（PVT）などの新しいオリジントライアルも開始。**Background Fetch へ通常の fetch と同じセキュリティポリシー（CORS）が適用され、ローカル/ループバック宛リクエストには Local Network Access 権限が必要になる**ため、該当機能を使うサービスワーカーは影響を確認すること。",
+      "publishedAt": "2026-09-02",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.84,
+            "node_runtime": 0,
+            "browser": 0.16,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.81
+        },
+        "breaking": {
+          "noul": 0.73
+        },
+        "relevance": {
+          "score": 2.7,
+          "probabilities": [
+            0,
+            0,
+            0.3,
+            0.7
+          ],
+          "confidence": 0.7
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260626.md",
+  "sourceHash": "sha256:d49b2b9929294be73d07b86bcd905fc1767da2acd043449cc37ede59ef412c85",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:58.344Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "v2.1.195（2026-06-26）",
+      "url": null,
+      "secondaryUrls": [
+        "https://code.claude.com/docs/en/hooks.md",
+        "https://code.claude.com/docs/en/plugins.md"
+      ],
+      "summary": "フルスクリーンモードのマウスクリック/ドラッグ/ホバーを無効化しつつホイールスクロールは残す `CLAUDE_CODE_DISABLE_MOUSE_CLICKS` を追加。**フックマッチャのハイフン入り識別子（`code-reviewer`、`mcp__brave-search` 等）が部分一致していた問題を修正し完全一致に変更**（ハイフン入り MCP サーバの全ツールを対象にするには `mcp__brave-search__.*`）。macOS の長時間セッションで既定入力デバイス変更後に音声入力が無音をキャプチャする問題、空白なし言語（日本語・中国語・タイ語）で音声入力の自動送信が発火しない問題を修正。プロジェクト `.claude/settings.json` のみで有効化された外部プラグインが全ロード経路で明示的なインストール同意を要求しない問題、`plugin.json` の `name` がマーケットプレイス名と異なる場合に `/plugin` の有効/無効化が機能しない問題を修正。**新しいバージョンの Claude Code で書かれたバックグラウンドジョブが `claude agents` から消える/データ消失する問題**、クラッシュしたバックグラウンドタスク再オープン時に再起動ではなく最大 5 秒間ブランク画面になる問題、コントロールソケット起動失敗でバックグラウンドエージェントデーモンが到達不能になり再起動がブロックされる問題を修正。Linux の音声モードで SoX 導入済みでもキャプチャデバイスが無い場合に「マイクなし」と「SoX 未導入」を区別するよう改善。`claude agents` の完了一覧が利用可能な縦幅を埋めるよう、短いターミナルではヘッダを圧縮してライブセッションを残すよう改善。リモートセッション起動時にコンテナ起動中のプロビジョニングチェックリストを表示するよう改善。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.43
+        },
+        "relevance": {
+          "score": 2.6,
+          "probabilities": [
+            0,
+            0,
+            0.39,
+            0.61
+          ],
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "v2.1.193（2026-06-25）",
+      "url": null,
+      "secondaryUrls": [
+        "https://code.claude.com/docs/en/monitoring-usage.md",
+        "https://code.claude.com/docs/en/iam.md"
+      ],
+      "summary": "**全 Bash/PowerShell コマンドを（任意コード実行パターンだけでなく）auto-mode 分類器に通す `autoMode.classifyAllShell` 設定を追加**。auto-mode の拒否理由をトランスクリプト・拒否トースト・`/permissions` の最近の拒否一覧に表示するよう追加。**モデルの応答テキストを含む `claude_code.assistant_response` OpenTelemetry ログイベントを追加**（既定で編集。`OTEL_LOG_ASSISTANT_RESPONSES` 未設定時は `OTEL_LOG_USER_PROMPTS` に従うため、既にプロンプトをログしている環境はアップグレードで応答も記録され始める。プロンプトのみに留めるには `OTEL_LOG_ASSISTANT_RESPONSES=0`）。**bash モード（`!`）にライブのファイルパス補完を追加**。MCP サーバが認証を要する場合に起動時通知を表示し `/mcp` を案内。アイドルなバックグラウンドシェルコマンドのメモリ圧迫時の自動回収を追加（`CLAUDE_CODE_DISABLE_BG_SHELL_PRESSURE_REAP=1` で無効化）。`/login` 直後に `/model` 等が古い/空状態を表示する問題、全実行タスクが新セッションに引き継がれる際にバックグラウンド化（←←）が「N background tasks would be abandoned」で誤キャンセルされる問題、自動更新のたびにピン留めバックグラウンドエージェントが「Continue from where you left off」を再プロンプトされる問題、メインターンのバックグラウンド化が会話を再実行するファントム「general-purpose (resumed)」サブエージェントを生む問題、サブエージェント表示時にエージェントパネルが兄弟エージェントを隠す問題を修正。**バックグラウンドエージェントの起動結果が「end your response」を指示しないよう改善**（エージェント実行中も他タスクを継続）。MCP `headersHelper` 認証が 401/403 で自動再実行・再接続するよう改善。プラグインの自動リネーム（マーケットプレイスの `renames` マップを自動追従し設定を新名へ更新）を改善。ディレクトリが既にワーキングディレクトリの場合の `/add-dir` メッセージを改善。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.49
+        },
+        "relevance": {
+          "score": 2.7,
+          "probabilities": [
+            0,
+            0,
+            0.3,
+            0.7
+          ],
+          "confidence": 0.7
+        }
+      }
+    }
+  ]
+}

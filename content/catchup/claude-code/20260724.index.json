@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260724.md",
+  "sourceHash": "sha256:23ae6ffdd9cd1a04d610e76292434d391d6ee9ac2e1e9662388808f9ffb2e5c4",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:00.681Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "モデル: Claude Opus 5 を追加・デフォルト化",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "`claude-opus-5` を追加し、デフォルトの Opus モデルに変更。1M コンテキスト、fast モードは $10/$50 per Mtok。`/fast` は Opus 5 と Opus 4.8 に適用され、Opus 4.7 は fast モードから削除。`claude-api` スキルもデフォルトを Opus 5 に更新（Opus 4.8 からの移行パス付き）。`/model` ピッカーは統合された Opus 行を「Opus (1M context)」と表示し、最新モデル名のみをハイライトするよう変更。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.219（2026-07-24）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.99,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.01,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.68
+        },
+        "relevance": {
+          "score": 2.41,
+          "probabilities": [
+            0,
+            0,
+            0.59,
+            0.41
+          ],
+          "confidence": 0.58
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "サブエージェント / ワークフローの既定値変更",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "サブエージェントがデフォルトで深さ 3 までネスト可能に（従来は 1）。無効化は `CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH=1`。動的ワークフローは既定で medium サイズガイドライン（15 エージェント未満を推奨）となり、`/config` の「Dynamic workflow size」で別サイズや無制限を選択可能。実行中ワークフローのステータス行に現在の既定サイズを表示。`workflowSizeGuideline` 設定キーを追加し、任意の設定ファイルからガイドラインを指定できる（設定済みのときは `/config` 行を非表示）。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.219（2026-07-24）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.99,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.01,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.48
+        },
+        "relevance": {
+          "score": 2.5,
+          "probabilities": [
+            0,
+            0,
+            0.49,
+            0.51
+          ],
+          "confidence": 0.5
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "stream-json / ヘッドレスの拡張",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "深さ 2 以上で spawn されたネストサブエージェントを stream-json でフォワード（`--forward-subagent-text` 指定時、spawn 元 Agent の `tool_use` id をキーに出現）。ヘッドレスの stream-json init イベントに `mcp_server_errors` を追加し、`--mcp-config` の検証で除外されたエントリを列挙（ターミナル実行では起動時警告を表示）。`claude -p` がミッドストリームの API エラーで応答を落とす不具合を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.219（2026-07-24）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2.26,
+          "probabilities": [
+            0,
+            0,
+            0.74,
+            0.26
+          ],
+          "confidence": 0.73
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "設定・フック・サンドボックス",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "`sandbox.network.strictAllowlist` 設定を追加し、サンドボックス実行コマンドで許可リスト外ホストへのアクセスをプロンプトなしで拒否できる。`/add-dir` や SDK の `register_repo_root` でセッション途中に作業ディレクトリが登録された後に発火する `DirectoryAdded` フックを追加。マネージド MCP の allowlist/denylist の `${VAR}` を、設定ファイルの env ではなく起動時 env・マネージド設定 env から解決するよう変更。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.219（2026-07-24）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.47
+        },
+        "relevance": {
+          "score": 2.79,
+          "probabilities": [
+            0,
+            0,
+            0.2,
+            0.8
+          ],
+          "confidence": 0.79
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "主なバグ修正",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "承認済み権限がセルフホストランナー再起動中にセッション再開で失われる不具合、`/model` ピッカーが統合 Opus 行を単に「Opus」と表示する不具合、Remote Control クライアントがモデル切替・再接続後に古い fast モード状態を保持する不具合、Windows で `CLAUDE_CODE_GIT_BASH_PATH` が bash/sh バイナリでないパスを bash として使う不具合、Vim モードで空プロンプトの ← が NORMAL モードからエージェントビューへ戻らない不具合、スクリーンリーダーモードが打鍵ごとに入力行全体を書き換える不具合などを修正。セルフホストランナーの spawn/セッション失敗に構造化された失敗カテゴリを追加し、フックエラー・ランナークラッシュ・設定エラーを区別できるようにした。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.219（2026-07-24）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 2.26,
+          "probabilities": [
+            0,
+            0,
+            0.73,
+            0.27
+          ],
+          "confidence": 0.72
+        }
+      }
+    }
+  ]
+}

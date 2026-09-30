@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/chrome-blog/20260918.md",
+  "sourceHash": "sha256:4c1e59698b0552ab25a62bae3efd3982a4354962005aa55d37c0e682b941e02f",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:56.336Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "What's New in WebGPU (Chrome 153-154)",
+      "url": "https://developer.chrome.com/blog/new-in-webgpu-153-154?hl=ja",
+      "secondaryUrls": [],
+      "summary": "Chrome 153・154 の WebGPU 新機能まとめ。WGSL の `buffer_view` 拡張で `bufferView<T>()` / `bufferArrayView<T>()` / `bufferLength()` によりバッファデータを複数の型として再解釈でき、`swizzle_assignment` 拡張では `position.xy = vec2f(10.0, 20.0)` のようにベクトルのスウィズルへ直接書き込める。加えて `texture_formats_tier1` の JavaScript マッピング修正、`subgroup_size_control` 有効時に `subgroups` を自動有効化する更新、Dawn 側では GPU アクセス可能なマップドバッファを扱う `BufferMapWriteExtendedUsages` の追加や macOS 13.0+ 要件などが入った。WebGPU でグラフィックス/GPU 計算を扱う開発者は確認しておきたい。",
+      "publishedAt": "2026-09-15",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.99,
+            "node_runtime": 0,
+            "browser": 0.01,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.41
+        },
+        "relevance": {
+          "score": 1.93,
+          "probabilities": [
+            0.03,
+            0.05,
+            0.88,
+            0.04
+          ],
+          "confidence": 0.85
+        }
+      }
+    }
+  ]
+}

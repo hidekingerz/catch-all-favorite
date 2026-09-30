@@ -1,0 +1,1231 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/jser-info/20260805.md",
+  "sourceHash": "sha256:e29a6c57691d4309bfa79d9f88d46b51516ebd616d645369e886bb5d1bf26ad8",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:22.614Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "pnpm 11.11-11.14",
+      "url": "https://pnpm.io/blog/releases/11.11-11.14",
+      "secondaryUrls": [],
+      "summary": "`pnpm change` / `pnpm lane` / `pnpm version -r` によるワークスペースのリリース管理、新コマンド（`pnpm doctor`、`pnpm access`、`pnpm team`）、`overrides` フォーマット対応を追加。パストラバーサル脆弱性や peer dependency のデッドロックも修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "pnpm",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.13
+        },
+        "relevance": {
+          "score": 2.81,
+          "probabilities": [
+            0,
+            0,
+            0.18,
+            0.82
+          ],
+          "confidence": 0.81
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "Nuxt 4.5 · Nuxt Blog",
+      "url": "https://nuxt.com/blog/v4-5",
+      "secondaryUrls": [],
+      "summary": "Vite 8 / Rspack 2 / Rsbuild への更新、実験的な SSR Streaming と Stable Error Codes を追加。`useLayout`、Named Views、`enabled` オプションに対応。同時にリリースされた Nuxt 3.21.9 が v3 サポートの最終フェーズを示す（2026年7月31日終了）。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "Vue",
+        "vite",
+        "rspack",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.52
+        },
+        "relevance": {
+          "score": 0.2,
+          "probabilities": [
+            0.89,
+            0.04,
+            0.06,
+            0.01
+          ],
+          "confidence": 0.8
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Type-Aware Linting Stable | The JavaScript Oxidation Compiler",
+      "url": "https://oxc.rs/blog/2026-07-22-type-aware-linting-stable",
+      "secondaryUrls": [],
+      "summary": "Oxlint の Type-Aware Linting が stable に到達。tsgolint v7.0.2000 は TypeScript v7.0.2 とバージョンを揃え、type-aware / type-check オプションをサポート。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "TypeScript",
+        "ESLint",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2.15,
+          "probabilities": [
+            0.01,
+            0,
+            0.82,
+            0.17
+          ],
+          "confidence": 0.82
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "Webpack 5.109",
+      "url": "https://webpack.js.org/blog/2026-07-24-webpack-5-109/",
+      "secondaryUrls": [],
+      "summary": "CSS・HTML・TypeScript・async WebAssembly で \"Auto\" モードがデフォルトに。実験的な `output.html`（`title`/`meta`/`base`）、`import.meta.glob` / `import.meta.resolve`、CommonJS の Module Concatenation、CSS `@custom-media` を追加。webpack-dev-server 6.0.0 は Node.js 22.15.0+ が必要。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "webpack",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.73
+        },
+        "relevance": {
+          "score": 2.56,
+          "probabilities": [
+            0.02,
+            0,
+            0.37,
+            0.61
+          ],
+          "confidence": 0.56
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Nuxt Security Patch Releases",
+      "url": "https://nuxt.com/blog/v4-5-security",
+      "secondaryUrls": [],
+      "summary": "v4.5.1 / v3.21.10 で Server Islands の RCE、`routeRules` の認可バイパス、Server Components の DoS、Nuxt 4 の `_payload.json` キャッシュ経由のデータ漏洩を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "Vue",
+        "security",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 0.24,
+          "probabilities": [
+            0.87,
+            0.04,
+            0.05,
+            0.04
+          ],
+          "confidence": 0.76
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "Release v1.62.0 · microsoft/playwright",
+      "url": "https://github.com/microsoft/playwright/releases/tag/v1.62.0",
+      "secondaryUrls": [],
+      "summary": "Component Testing が Story / Gallery モデルへ移行。`AbortSignal` による操作キャンセル、`.webp` スクリーンショット、`Reporter.preprocess()`、CLI 統合の Playwright MCP を追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "playwright",
+        "testing",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.99,
+            "node_runtime": 0.01,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "breaking": {
+          "noul": 0.33
+        },
+        "relevance": {
+          "score": 1.97,
+          "probabilities": [
+            0.11,
+            0.03,
+            0.65,
+            0.21
+          ],
+          "confidence": 0.54
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "Ember 7.1 Released",
+      "url": "https://blog.emberjs.com/ember-released-7-1/",
+      "secondaryUrls": [],
+      "summary": "組み込みヘルパーと strict テンプレートの自動 import サポートを追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "Ember",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 0.11,
+          "probabilities": [
+            0.95,
+            0.01,
+            0.03,
+            0.01
+          ],
+          "confidence": 0.89
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "pnpm 11.15-11.19",
+      "url": "https://pnpm.io/blog/releases/11.15-11.19",
+      "secondaryUrls": [],
+      "summary": "GitHub Actions の更新サポート、`pnpm update --changeset`、設定の調整、`self-update` の挙動変更、TTY なしログインのサポート。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "pnpm",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.35
+        },
+        "relevance": {
+          "score": 2.53,
+          "probabilities": [
+            0,
+            0,
+            0.46,
+            0.54
+          ],
+          "confidence": 0.53
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "v1.20.0 | React Aria",
+      "url": "https://react-aria.adobe.com/releases/v1-20-0",
+      "secondaryUrls": [],
+      "summary": "hover / focus / long-press に対応した Popover 向けの `PreviewTrigger`、テキスト入力補完の alpha 版 `TokenField` を追加。`MenuTrigger` のコンテキストメニュー対応とキーボードショートカットも強化。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "React",
+        "JavaScript",
+        "library",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.03,
+          "probabilities": [
+            0,
+            0,
+            0.97,
+            0.03
+          ],
+          "confidence": 0.96
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "Next.js 16.3",
+      "url": "https://nextjs.org/blog/next-16-3",
+      "secondaryUrls": [],
+      "summary": "`cacheComponents` / `partialPrefetching` によるオプトインの Instant Navigations。`import.meta.glob` をサポートし、SSR を Node.js Streams 化して性能を改善。実験的機能として Turbopack のファイルシステムキャッシュ、Rust 製 React Compiler、`useOffline` を追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "Next.js",
+        "React",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.16,
+          "probabilities": [
+            0,
+            0,
+            0.84,
+            0.16
+          ],
+          "confidence": 0.84
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "Node.js 26.6.0 (Current)",
+      "url": "https://nodejs.org/en/blog/release/v26.6.0",
+      "secondaryUrls": [],
+      "summary": "`ffi.getCurrentEventLoop()`、`node:test` のコンテキストログ、npm 11.18.0 への更新を追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "nodejs",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.08,
+          "probabilities": [
+            0,
+            0,
+            0.92,
+            0.08
+          ],
+          "confidence": 0.92
+        }
+      }
+    },
+    {
+      "id": 11,
+      "title": "Node.js 24.19.0 (LTS)",
+      "url": "https://nodejs.org/en/blog/release/v24.19.0",
+      "secondaryUrls": [],
+      "summary": "`stream.compose` を安定化し、`Blob.prototype.textStream()`、`--experimental-import-text`、TLS の `certificateCompression` オプションを追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "nodejs",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.07,
+          "probabilities": [
+            0,
+            0,
+            0.93,
+            0.07
+          ],
+          "confidence": 0.93
+        }
+      }
+    },
+    {
+      "id": 12,
+      "title": "vlt 1.0 & Hosted Package Registries",
+      "url": "https://www.vlt.io/blog/1-0",
+      "secondaryUrls": [],
+      "summary": "Graph Modifiers、Catalogs、Phased Installations、OIDC Trusted Publishing をサポート。Hosted Package Registries は複数パッケージマネージャ横断で npm Registry API 互換を提供し、マルウェアブロックを備える。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "vlt",
+        "npm",
+        "package",
+        "security",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2.15,
+          "probabilities": [
+            0.05,
+            0,
+            0.69,
+            0.26
+          ],
+          "confidence": 0.64
+        }
+      }
+    },
+    {
+      "id": 13,
+      "title": "Errors worth reading - nostics",
+      "url": "https://nostics.dev/",
+      "secondaryUrls": [],
+      "summary": "ライブラリのエラーコードを管理する TypeScript ライブラリ。エラー理由・修正方法・ソース位置・ドキュメント URL を持つ `Diagnostic` オブジェクトを定義できる。Nuxt で採用されている。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "TypeScript",
+        "library"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.05,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.91,
+            "guide": 0.02,
+            "event": 0,
+            "business": 0,
+            "other": 0.02
+          },
+          "confidence": 0.89
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1.93,
+          "probabilities": [
+            0.04,
+            0,
+            0.94,
+            0.02
+          ],
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "id": 14,
+      "title": "npm publish-time malware scanning and dual-use metadata",
+      "url": "https://github.blog/changelog/2026-07-28-npm-publish-time-malware-scanning-and-dual-use-metadata/",
+      "secondaryUrls": [],
+      "summary": "npm の publish 時スキャンの仕組みと dual-use コンテンツ宣言について解説。`contentPolicy` と `DISCLOSURE` で dual-use を宣言するパッケージは 2FA を強制した trusted publishing が必要になる。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "npm",
+        "security",
+        "article"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "policy",
+          "probabilities": {
+            "release": 0,
+            "security": 0.09,
+            "policy": 0.56,
+            "feature": 0.02,
+            "guide": 0.32,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.5
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.58
+        },
+        "relevance": {
+          "score": 2.55,
+          "probabilities": [
+            0.01,
+            0,
+            0.4,
+            0.59
+          ],
+          "confidence": 0.55
+        }
+      }
+    },
+    {
+      "id": 15,
+      "title": "Cloudflare Workers and Containers now support inbound TCP connections and gRPC",
+      "url": "https://blog.cloudflare.com/grpc-workers/",
+      "secondaryUrls": [],
+      "summary": "Workers Runtime が TCP 接続向けの `connect(socket)` ハンドラと gRPC をサポート。Durable Objects から Container への TCP 転送と gRPC-web 変換により双方向ストリーミングを実現。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "cloudflare",
+        "JavaScript",
+        "server",
+        "article"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.01,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.99,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0.08,
+            "node_runtime": 0.83,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.09
+          },
+          "confidence": 0.81
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1.04,
+          "probabilities": [
+            0.47,
+            0.03,
+            0.49,
+            0.01
+          ],
+          "confidence": 0.03
+        }
+      }
+    },
+    {
+      "id": 16,
+      "title": "Web Streams API 入門 ― 基本概念から実践まで",
+      "url": "https://zenn.dev/cybozu_frontend/articles/web-streams-api-guide",
+      "secondaryUrls": [],
+      "summary": "`ReadableStream` / `TransformStream` / `WritableStream` の役割、tee、バックプレッシャー、Node.js Stream との違いを解説。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "JavaScript",
+        "article",
+        "nodejs",
+        "stream"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.01,
+            "guide": 0.99,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.99,
+            "node_runtime": 0.01,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.03
+        },
+        "relevance": {
+          "score": 1.99,
+          "probabilities": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "confidence": 0.99
+        }
+      }
+    },
+    {
+      "id": 17,
+      "title": "octanejs/octane: Octane is an incredibly efficient React replacement UI library",
+      "url": "https://github.com/octanejs/octane",
+      "secondaryUrls": [],
+      "summary": "Inferno の後継で、React の Hooks / Suspense に似たコンパイル型モデルを採用。Virtual DOM を持たず TSX / TSRX に対応し、Vite / Rspack / Rsbuild プラグインを提供。条件付き Hooks、依存配列不要の `useEffect`、SSR / Streaming SSR を扱える。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "React",
+        "JavaScript",
+        "library"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.11,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.87,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.02
+          },
+          "confidence": 0.85
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 1.97,
+          "probabilities": [
+            0.02,
+            0,
+            0.97,
+            0.01
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 18,
+      "title": "vercel-labs/scriptc: TypeScript-to-Native Compiler",
+      "url": "https://github.com/vercel-labs/scriptc",
+      "secondaryUrls": [],
+      "summary": "TypeScript Compiler API による型チェックと LLVM / C バックエンドで TypeScript をネイティブ実行ファイルにコンパイル。quickjs-ng 経由で動的な JS ライブラリもサポート。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "TypeScript",
+        "compiler",
+        "Tools"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.17,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.83,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.8
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.95,
+            "node_runtime": 0.02,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.03
+          },
+          "confidence": 0.95
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.98,
+          "probabilities": [
+            0.01,
+            0,
+            0.99,
+            0
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 19,
+      "title": "TanStack/charts: A tiny TypeScript visualization grammar",
+      "url": "https://github.com/TanStack/charts",
+      "secondaryUrls": [],
+      "summary": "D3 ベースのチャートで、`defineChart` によりフレームワーク非依存の定義を行い React / Vue / Solid / Svelte アダプタを提供。SVG SSR、Canvas レンダラ、アクセシビリティ、レスポンシブレイアウトのランタイムを備える。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "JavaScript",
+        "SVG",
+        "graphic",
+        "library"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.12,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.88,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.86
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.98,
+          "probabilities": [
+            0.01,
+            0,
+            0.99,
+            0
+          ],
+          "confidence": 0.97
+        }
+      }
+    }
+  ]
+}

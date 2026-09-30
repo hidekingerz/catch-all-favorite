@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/apple-security-releases/20260924.md",
+  "sourceHash": "sha256:e8e37d4cb37564381fc8fcfe40624695a47980d729fc1911886f503754c6e56d",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:51.952Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "watchOS 27.0.1",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "watchOS 27 系統のマイナーアップデート。一覧ページ上では「このアップデートにはCVEの公開エントリがありません」と明記されており、公開されているセキュリティ脆弱性の修正情報は含まれていない。",
+      "publishedAt": "2026-09-23",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "Apple Watch Series 12およびApple Watch Ultra 4",
+      "rawFields": {
+        "詳細": "（一覧ページに詳細ページへのリンクなし）"
+      },
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.98,
+            "security": 0.02,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0.96,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.04
+          },
+          "confidence": 0.96
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1,
+          "probabilities": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "confidence": 1
+        }
+      }
+    }
+  ]
+}

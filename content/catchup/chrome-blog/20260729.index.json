@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/chrome-blog/20260729.md",
+  "sourceHash": "sha256:fb4280e6f1c47b03ba730034d67cb0dee2e52d7f855355a7811c879479273ed7",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:53.865Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "What's new in DevTools (Chrome 151)",
+      "url": "https://developer.chrome.com/blog/new-in-devtools-151?hl=ja",
+      "secondaryUrls": [],
+      "summary": "コーディングエージェント（Claude・Antigravity・Codex）向けの DevTools が強化され、重複文字列検出を含むメモリデバッグ改善と複数エージェントの同時ページルーティングに対応。AI Assistance パネルにネットワーク性能可視化のウィジェットや GitHub Flavored Markdown テーブル描画を追加。Styles タブでセレクタにホバーすると、クラス・ID・要素・擬似クラスが詳細度計算にどう寄与するかを示す詳細ツールチップを表示。ネイティブ V8 コンテキスト属性と新しい「Held by Context」フィルタで、クロージャコンテキスト経由でのみ保持されるオブジェクトを特定しやすくなった。",
+      "publishedAt": "2026-07-28",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "browser",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 1,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 2,
+          "probabilities": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "confidence": 1
+        }
+      }
+    }
+  ]
+}

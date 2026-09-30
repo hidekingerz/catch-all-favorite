@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/firefox/20260928.md",
+  "sourceHash": "sha256:a411c77a967602df74b37af2eaeb766f50f38b4242885ca574b136ff364dc544",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:11.459Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Firefox 157.0（安定版）",
+      "url": "https://www.firefox.com/en-US/firefox/157.0/releasenotes/",
+      "secondaryUrls": [
+        "https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/157"
+      ],
+      "summary": "数年ぶりの大規模ビジュアル刷新「Project Nova」を搭載した最初の安定版。タブ・パネル・メニュー・設定ダイアログの見た目を刷新し、Compact / Standard / Touch の表示モードを提供する。WebRTC ビデオ通話での AV1 ハードウェアデコードに対応、HDR 動画の修正、再生速度変更時の音声・映像同期の改善、内蔵検索エンジンからの Amazon 削除を含む。Web 開発者向けには `@supports` の `at-rule()` 関数（`@supports at-rule(@scope)` など at-rule サポートの検出）と、CSS `overscroll-behavior` プロパティの `chain` 値のサポートが追加された。",
+      "publishedAt": "2026-09-28",
+      "effectiveAt": null,
+      "tags": [],
+      "version": "157.0",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {
+        "備考": "セキュリティ修正（MFSA）情報は、Mozilla ホストがブロックされておりリリースノート本文を直接取得できなかったため未確認。ESR は本実行で新バージョンを確認できなかったため掲載しない（ベースラインの ESR 153.3.0 から更新の確認取れず）。"
+      },
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "browser",
+          "probabilities": {
+            "web_frontend": 0.1,
+            "node_runtime": 0,
+            "browser": 0.9,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.89
+        },
+        "breaking": {
+          "noul": 0.2
+        },
+        "relevance": {
+          "score": 1.15,
+          "probabilities": [
+            0,
+            0.86,
+            0.12,
+            0.02
+          ],
+          "confidence": 0.84
+        }
+      }
+    }
+  ]
+}

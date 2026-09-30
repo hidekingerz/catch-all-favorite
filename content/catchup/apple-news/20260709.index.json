@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/apple-news/20260709.md",
+  "sourceHash": "sha256:ba040f8d406fd6ba6e7fe6a450abbabb9acca98a1672d45724eaa9ca1d6a4e33",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:47.351Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "年齢制限アンケートにソーシャルメディアに関する質問が追加",
+      "url": "https://developer.apple.com/jp/news/?id=tlur8uvi",
+      "secondaryUrls": [],
+      "summary": "App Store Connect の年齢制限（Age Rating）アンケートに、アプリのソーシャルメディア機能に関する新しい質問が追加された。ここでの「ソーシャルメディア機能」とは、ソーシャルフィードや類似の発見手段を通じてユーザー生成コンテンツを再配信・増幅・操作できる機能を指す。該当する機能を持つアプリは App Store のプロダクトページに新しい「ソーシャルメディア」コンテンツ記述子が表示され、App Store Connect で選択したカテゴリに関わらず、この機能の有無に基づいて Time Allowance の「ソーシャルメディア」カテゴリが判定される。13歳未満のユーザーに対してソーシャルメディア機能を無効化している場合、その年齢層ではソーシャルメディアの Time Allowance カテゴリに含まれない。開発者は今すぐ質問を確認・回答できるが、回答は2026年9月以降、App Store への新規アプリ・アップデート提出時、または代替配信向けの公証提出時に必須となる。 / 参考: [Set an app age rating](https://developer.apple.com/help/app-store-connect/manage-app-information/set-an-app-age-rating/) / [Age rating values and definitions](https://developer.apple.com/help/app-store-connect/reference/app-information/age-ratings-values-and-definitions/) / [Introducing Time Allowances](https://developer.apple.com/news/?id=0d2gpmml)",
+      "publishedAt": "2026-07-09",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "policy",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 1,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.61
+        },
+        "relevance": {
+          "score": 1.05,
+          "probabilities": [
+            0.02,
+            0.93,
+            0.02,
+            0.02
+          ],
+          "confidence": 0.91
+        }
+      }
+    }
+  ]
+}

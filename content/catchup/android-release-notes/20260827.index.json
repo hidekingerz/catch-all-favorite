@@ -1,0 +1,524 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/android-release-notes/20260827.md",
+  "sourceHash": "sha256:3deea9caf9fed05b69b2920741954a361bdf92bad8922ab59c326979671c7aa6",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:43.655Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Android 17 — Architecture（アーキテクチャ）",
+      "url": "https://source.android.com/docs/whatsnew/android-17-release#architecture",
+      "secondaryUrls": [],
+      "summary": "**ION deprecation**: ION メモリアロケータがすべての Android バージョンでサポート終了。ION をサポートするカーネルは 2025 年 12 月にすべて EOL に達したため、ION を使用するベンダーコードは失敗するようになる。ION を使うベンダーコードはすべて削除する必要がある。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.65,
+            "security": 0,
+            "policy": 0.32,
+            "feature": 0.01,
+            "guide": 0.01,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.61
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.94
+        },
+        "relevance": {
+          "score": 0.95,
+          "probabilities": [
+            0.05,
+            0.95,
+            0,
+            0
+          ],
+          "confidence": 0.94
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "Android 17 — Audio（オーディオ）",
+      "url": "https://source.android.com/docs/whatsnew/android-17-release#audio",
+      "secondaryUrls": [],
+      "summary": "**Audio Managed SCO rearchitecture**: Android 17 以降で Audio Managed SCO（同期接続指向）の再アーキテクチャを採用したデバイスでは、SCO ルーティングを従来の Bluetooth フレームワークではなく Android オーディオフレームワークが SCO 管理機能で管理する。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.85,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.15,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.83
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.43
+        },
+        "relevance": {
+          "score": 0.91,
+          "probabilities": [
+            0.1,
+            0.89,
+            0.01,
+            0
+          ],
+          "confidence": 0.89
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Android 17 — Automotive（車載）",
+      "url": "https://source.android.com/docs/whatsnew/android-17-release#automotive",
+      "secondaryUrls": [],
+      "summary": "**Advanced windowing with Scalable UI**: Android 17 以降、Scalable UI により車内で高度・動的なマルチパネル UX を構築できる。WindowManager invariants の追加、セットアップウィザードの構成、システム/ナビゲーションバーのカスタマイズに対応。 / **Software defined vehicle (SDV)**: Android 17 以降で SDV を利用可能。ソフトウェアで車両の構築・制御・管理・機能拡張を担い、ソフトウェア更新で進化するコネクテッドで適応可能なプラットフォームへ車両を変える。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.9,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.1,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.88
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 0.73,
+          "probabilities": [
+            0.28,
+            0.71,
+            0.01,
+            0
+          ],
+          "confidence": 0.71
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "Android 17 — Connectivity（接続）",
+      "url": "https://source.android.com/docs/whatsnew/android-17-release#connectivity",
+      "secondaryUrls": [],
+      "summary": "**Autorouting OTT calls to premium network connections**: OTT の音声・ビデオ通話をプレミアムネットワーク接続（プレミアム 5G スライスや 4G PDN 接続など）へ自動ルーティングする機能。アプリのネットワークスタックを変更せずにシステムがトラフィックを誘導する。 / **Ranging: Out-of-band 仕様更新**: OOB 仕様の v2・v3 を導入。v2 はアクティブセッション中に測距技術を動的に切り替える Technology transitioning などを追加。v3 は周辺デバイスの動き変化を通知する Motion Notification / Motion support を追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.7,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.3,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.65
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 0.94,
+          "probabilities": [
+            0.09,
+            0.88,
+            0.03,
+            0
+          ],
+          "confidence": 0.87
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Android 17 — Display（ディスプレイ）",
+      "url": "https://source.android.com/docs/whatsnew/android-17-release#display",
+      "secondaryUrls": [],
+      "summary": "**Desktop windowing**: Android 17 以降でディスプレイ単位のデスクトップウィンドウイングを有効化できる（System decorations support 等を含む）。 / **Large screen app compatibility**: 大画面アプリ互換オーバーレイ向けに `config_isCameraCompatSimulateRequestedOrientationTreatmentEnabled` など複数の設定を追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.97,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.03,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.97
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 0.97,
+          "probabilities": [
+            0.06,
+            0.92,
+            0.02,
+            0
+          ],
+          "confidence": 0.91
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "Android 17 — Media（メディア）",
+      "url": "https://source.android.com/docs/whatsnew/android-17-release#media",
+      "secondaryUrls": [],
+      "summary": "**VVC support**: Android 17 は動画符号化規格 VVC（Versatile Video Coding）のデコードをサポート。プラットフォームはフレームワークとパーサーを提供するが、実際の VVC デコードには SoC ベンダーまたは OEM がデコーダ（ソフト/ハード）を用意し、Android メディアサブシステムに登録・有効化する必要がある。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.8,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.2,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.77
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 0.89,
+          "probabilities": [
+            0.14,
+            0.83,
+            0.03,
+            0
+          ],
+          "confidence": 0.83
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "Android 17 — Performance（パフォーマンス）",
+      "url": "https://source.android.com/docs/whatsnew/android-17-release#performance",
+      "secondaryUrls": [],
+      "summary": "**Gather general health information**: トレードインモードのシステムヘルス診断向けに、カメラジオメトリと UICC スロット情報を追加。 / **Memory Limiter**: Linux cgroup v2 を使ってアプリプロセスのメモリ使用量を監視・制限するシステムサービス。個々のアプリの過剰なメモリ消費を防ぎ、システム全体のメモリ圧迫と重要プロセスの OOM kill を軽減する。 / **Memory management daemon (mmd)**: ZRAM 関連の保守タスクの構成・管理を担うシステムデーモン。 / **Process memory guardian daemon (PMGD)**: プロセス単位でメモリ使用を先回りして管理し、対象プロセスにメモリ上限を穏やかに適用することで、孤立したメモリリークやスパイクによるシステム全体の性能劣化を防ぐ。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.93,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.07,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.92
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.11
+        },
+        "relevance": {
+          "score": 0.95,
+          "probabilities": [
+            0.07,
+            0.92,
+            0.01,
+            0
+          ],
+          "confidence": 0.91
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "Android 17 — Permissions（権限）",
+      "url": "https://source.android.com/docs/whatsnew/android-17-release#permissions",
+      "secondaryUrls": [],
+      "summary": "**Contact Picker**: 連絡先の全権限を要求せずに、ユーザーが選択した連絡先情報のみをアプリが取得できる仕組み。選択したデータのみへの読み取り許可、検索・プロフィール切替・複数選択を備えた標準 UI、Android 17 以降を対象とするアプリでは従来の `Intent.ACTION_PICK` を自動的に引き継ぐ後方互換性を提供。 / **Location indicators**: カメラ/マイクに続き、リアルタイムのロケーションインジケータをステータスバーに追加。非システムアプリがフォアグラウンドで位置情報にアクセスするとアイコンが表示され、常時ドット表示に遷移。タップでどのアプリが追跡しているか確認できる。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.85,
+            "security": 0.01,
+            "policy": 0,
+            "feature": 0.14,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.82
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.18
+        },
+        "relevance": {
+          "score": 1.13,
+          "probabilities": [
+            0,
+            0.91,
+            0.06,
+            0.03
+          ],
+          "confidence": 0.87
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "Android 17 — Security（セキュリティ）",
+      "url": "https://source.android.com/docs/whatsnew/android-17-release#security",
+      "secondaryUrls": [],
+      "summary": "**Hardware-wrapped key improvements**: ハードウェアラップ鍵によるストレージ暗号化の実装を簡素化。KeyMint ではなく Linux カーネル ioctl を使って鍵を生成・インポート・準備する。fstab で `wrappedkey_v0` から `wrappedkey` へ切り替えるとオンディスクフォーマットが変わるため、新規発売デバイス限定。既存の `wrappedkey_v0` デバイスは継続利用する。 / **Lock screen rate-limiting UX**: 既定のロック画面レート制限を強化しつつ、UX を改善（「1800 秒」ではなく「30 分」といった大きな時間単位表示、`g.co/android/unlock` への復旧ショートリンク、重複した誤入力へのフィードバック、PIN 入力パッドの一貫した無効化）。`LockPatternUtils#getLockoutAttemptDeadline(int)` は `getLockoutEndTime(int)` に改名。 / **Policy compatibility**: 対象プロパティで発売するデバイスは `memfd_class` ポリシー機能を有効化し、`memfd_file` クラスオブジェクトをサポートするよう共有メモリ関連ポリシーを更新する必要がある。 / **Secure element prewarming**: Weaver HAL にセキュアエレメントをプリウォームするメソッドを追加。ロック画面の PIN/パターン/パスワード入力開始時に呼び出され、検証レイテンシを最大 200 ミリ秒短縮できる。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0.44,
+            "security": 0.56,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.49
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.76
+        },
+        "relevance": {
+          "score": 1.01,
+          "probabilities": [
+            0,
+            0.99,
+            0.01,
+            0
+          ],
+          "confidence": 0.98
+        }
+      }
+    }
+  ]
+}

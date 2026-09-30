@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260917.md",
+  "sourceHash": "sha256:7da15223454c05e60364f963a00299854146d5a75350423ffaf347acd61cade9",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:08.640Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "v2.1.275（2026-09-17）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "新機能として、(1) claude.ai アカウントのスキル/プラグインをターミナルのセッションへ同期、(2) Send-now キー（Ctrl+Enter、または Ctrl+X Ctrl+S）で現在のターンを中断してキュー済みメッセージをまとめて送信、(3) `/plugin install <plugin> --marketplace <source>` でマーケットプレイスを指定してプラグインを導入、(4) Claude apps ゲートウェイへのサインイン済みアカウント確認、(5) システムプロンプトのプロンプトキャッシュ改善（`__SYSTEM_PROMPT_DYNAMIC_BOUNDARY__`）を追加。主な修正: メモリファイルの経年注記によるプロンプトキャッシュミス、`--forward-subagent-text` がサブエージェントのメッセージを取りこぼす問題、**プラグイン/マーケットプレイスのメッセージがパスワードやトークンを露出していた問題**、プラグイン マーケットプレイス更新が取得失敗時にローカルコピーを削除していた問題、Linux のサンドボックス Bash が zsh で失敗コマンドを終了コード 0 と報告する問題、Grep/Glob が 20MB 超の出力でハングする問題、`/rewind` がゼロ埋め/切り詰めファイルを復元する問題、フルスクリーンセッションが「unrecoverable interface error」で終了する問題など。VS Code 拡張ではメモリダイアログでの保存済みメモリの閲覧/編集/削除、テキストなしでの添付画像送信、変更差分タブでの変更ごとの承認/却下ボタンなどを追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.275（2026-09-17）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2.66,
+          "probabilities": [
+            0,
+            0,
+            0.34,
+            0.66
+          ],
+          "confidence": 0.66
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "v2.1.274（2026-09-17）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "新機能として、(1) メモリ使用量が危険水準のときに表示される警告、(2) MCP 起動待ち時間を制御する環境変数 `CLAUDE_CODE_MCP_STARTUP_WAIT_MS`、(3) OpenTelemetry の `claude_code.llm_request` スパンへの `effort` 属性、(4) Postgres 接続タイムアウト用のゲートウェイ設定 `store.connect_timeout_seconds` を追加。主な修正: セッションが「unexpected tool_use_id」400 エラーのリトライで停止する問題、レガシー HTTP+SSE の MCP サーバーが 422 で接続失敗する問題、Streamable HTTP の MCP ツール呼び出しが 5 分でタイムアウトする問題、MCP の prompts/resources が list-changed 通知で更新されない問題、圧縮済みセッション再開時に有効な `/goal` が失われる問題、`claude agents` が自動更新後にモデル/effort/権限モードを失う問題、言語サーバーのプロジェクト全体診断によるターンごとの速度低下、セルフホストランナーがトークン更新後に 401 で失敗する問題、VS Code でクリック可能なローカルファイルパスが機能しない問題など。VS Code/クラウドではウィンドウ再読み込み後の中断ステップの継続、Customize メニューへの Memory/Instructions 追加、`claudeCode.lockEditorGroups` 設定、クラウドセッション差分ビューの「Compare against」ブランチ選択などを追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.274（2026-09-17）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.12
+        },
+        "relevance": {
+          "score": 2.47,
+          "probabilities": [
+            0,
+            0,
+            0.53,
+            0.47
+          ],
+          "confidence": 0.53
+        }
+      }
+    }
+  ]
+}

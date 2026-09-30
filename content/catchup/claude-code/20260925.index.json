@@ -1,0 +1,524 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260925.md",
+  "sourceHash": "sha256:b3766a17e693aff2b8b4c51210f8267c476013370fa74cfe2d2070a423e342b9",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:09.993Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "モデル管理・ゲートウェイ",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "`availableModelsMatch` 管理設定を追加。`\"exact\"` にすると `availableModels` の各エントリはそのバージョンのモデルだけを許可し、新リリースは列挙されるまでブロックされる。 / `deniedModels` 管理設定を追加。`availableModels` で許可されていても特定モデルをブロックできる。 / LLM ゲートウェイが1つのユーザープロンプトに紐づくリクエストをグルーピングできるよう、ゲートウェイヒントヘッダに `x-claude-code-prompt-id` を追加（`CLAUDE_CODE_GATEWAY_HINT_HEADERS=1` でオプトイン）。 / Claude apps ゲートウェイに、リクエストを構築・署名するが上流に送らずクライアントへ定型応答を返す `load_test_mode` ブロック（負荷試験用・オプトイン）と、Amazon Bedrock の Mantle エンドポイント向け `mantle` 上流プロバイダを追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.283（2026-09-25）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2.4,
+          "probabilities": [
+            0.01,
+            0,
+            0.58,
+            0.41
+          ],
+          "confidence": 0.58
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "名前空間（`claude-ai` 予約の取り消し）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "v2.1.282 で行った `claude-ai` 名の予約を Revert。`claude-ai` 名のスキル/コマンド/ワークフロー、および MCP サーバのスキル/プロンプトが再び読み込めるようになり、`Skill(claude-ai:*)` ルールは通常の prefix ルールとして扱われる。あわせて `Skill(anthropic-skills:<name>)` の deny ルールは Claude Desktop がプラグインとして配信した同スキルにも効くようになり、`Skill(skill:<name>)` の deny はスキルのエイリアス/表示名にもマッチするよう変更。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.283（2026-09-25）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.37
+        },
+        "relevance": {
+          "score": 2.74,
+          "probabilities": [
+            0,
+            0,
+            0.24,
+            0.76
+          ],
+          "confidence": 0.74
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "診断・可観測性",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "`/doctor prompt-audit`（`/checkup prompt-audit`）を追加。CLAUDE.md・スキル・エージェント・コマンドを、古いモデル向けに書かれたプロンプト記法がないか監査する。`prompt-audit` は設定監査で stale なパス/コマンドや矛盾する指示ファイルを先頭に出し、Claude Code が公式に文書化している thinking キーワードは保持するよう改善。 / `OTEL_LOG_TOOL_CONTENT=1` のとき、MCP ツール・WebFetch・WebSearch の出力を OpenTelemetry の `tool.output` span イベントに含めるよう追加。 / `/context` が MCP サーバの instructions を独立行として計上し、合計にカウントするよう修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.283（2026-09-25）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2.15,
+          "probabilities": [
+            0,
+            0,
+            0.84,
+            0.16
+          ],
+          "confidence": 0.84
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "プラグイン",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "`claude plugin validate` の検証強化（インストール不能な marketplace/plugin 名の弾き、`outputStyles`/`themes`/`monitors`/`lspServers` のパス欠落・ディレクトリ外参照を fail に）、`claude plugin details` が `plugin.json` 宣言の MCP サーバ数を 0 と表示する不具合、`marketplace remove` / `uninstall`（大文字小文字違いの id 誤削除）・バージョン未宣言プラグインの復元・`installed_plugins.json` の破損時リカバリなど多数の修正。`--plugin-dir` の読み込み失敗エントリに該当ディレクトリを示す `path` を追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.283（2026-09-25）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.41
+        },
+        "relevance": {
+          "score": 2.36,
+          "probabilities": [
+            0,
+            0,
+            0.63,
+            0.37
+          ],
+          "confidence": 0.62
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "入力・エディタ（vim / キーバインド）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "vim モードの `.`（Shift+Enter 改行の欠落、アクセント文字内でのカーソル、`3J`/Visual `J` 後の誤リピート）、超長プロンプトの normal モード復元時のカーソル位置、`V`→`p` の着地、`J` の行結合スペーシングを Vim 準拠に修正。`keybindings.json` はミススペル修飾子（例 `ctl+k`）を debug ログで警告し修正案を提示。組み込みキーバインドガイドのチョードのタイムアウト表記（1秒→3秒）や `cmd`/`meta` の説明も修正。高速連打（type-ahead・キーリピート・ssh/tmux 越しのバースト）が古い状態に対して処理される不具合も修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.283（2026-09-25）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.82,
+            "other": 0.18
+          },
+          "confidence": 0.79
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2.11,
+          "probabilities": [
+            0.01,
+            0,
+            0.86,
+            0.13
+          ],
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "UI・リスト",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "`/mcp` ツール一覧の表示件数増・ページキー/マウススクロール対応・組織ブロック済みツールへの警告アイコン、`/tasks` のステータスアイコン/ページング、`/help`・`/hooks`・`/copy`・`/chrome`・`/memory`・`/ide`・`/release-notes`・`/rewind`・`/diff`・`/remote-env`・`/plugin` などのピッカーのページキー/マウス対応、`/skills`・`/artifacts` など検索ボックス併設リストのポインタ表示改善。compaction スピナーのタイマー/トークン計数表示、MCP ツールが返す画像のファイル保存（Bash/Read で開ける）なども。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.283（2026-09-25）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 2.01,
+          "probabilities": [
+            0,
+            0,
+            0.99,
+            0.01
+          ],
+          "confidence": 0.98
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "起動・レイテンシ・その他",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "初回応答時のパターンコンパイルをストリーミング中に前倒し、preconnect した API 接続の再利用、`claude -p`/Claude Code Remote が対話 UI を読み込まないよう変更、auto-mode 分類器や Artifact ツールを初回利用時ロードに変更するなど起動高速化。サードパーティプロバイダやテレメトリ無効の対話セッションは permission mode 未設定時に auto mode で開始（`permissions.defaultMode` が優先）。`/model` ピッカーの Opus 行と Default 名から「(1M context)」表記を削除（ウィンドウ自体は不変）。Windows: PowerShell ツールが `cmd /c rd`/`rmdir`/`del`/`erase` でドライブ直下やホームフォルダ等を削除できた不具合を修正。sandbox 設定・git（worktree の証明書検証、CA を `GIT_CONFIG_COUNT` で渡すケース、資格情報ヘルパー）関連の修正も。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.283（2026-09-25）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.26
+        },
+        "relevance": {
+          "score": 2.72,
+          "probabilities": [
+            0,
+            0,
+            0.28,
+            0.72
+          ],
+          "confidence": 0.72
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "VS Code",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "自動切替失敗後も permission mode 表示が Default のままになる不具合（切替を成功までリトライ）、Web からテレポートしたセッションの取りこぼしメッセージ、Web セッションが一覧から隠れて空チャットが開く問題、再オープン/リロード時のターン分割・rewind 済みターン表示、狭いパネルでのフッタ表示崩れ、貼り付け後のカーソル/選択のズレを修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.283（2026-09-25）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0.06,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.9,
+            "other": 0.04
+          },
+          "confidence": 0.87
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 2.07,
+          "probabilities": [
+            0.06,
+            0,
+            0.74,
+            0.2
+          ],
+          "confidence": 0.68
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "Cloud sessions / Claude Tag / Code Review",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "**Cloud sessions**: 実行中のクラウドセッションへ、GitHub アカウントが読み取り可（push 不可）なプライベートリポジトリを読み取り用に追加できるよう改善。サーバ側再起動からの復帰時に完了済みステップ（コメント/push の重複）を再実行する不具合を修正。新規 routine スケジュールの既定を毎正時から数分ずらすよう変更（正時ちょうどは数分遅れて開始しうる旨の注記付き）。 / **Claude Tag**: Claude の Slack 検索を「追加された公開チャンネル」に限定する管理設定（組織/ワークスペース/チャンネル単位）、接続後ページの Back to Slack ボタンを追加。attach rule 経由のバンドルでコネクタ/プラグインが表示されない問題、重複返信、旧プライベートチャンネル ID 変更で routine が止まる問題などを修正。 / **Code Review**: `@claude review` が GitHub の PR 取得失敗で無反応になる問題（1回リトライ＋失敗時コメント）、時間切れで未検証終了したレビューの課金扱い（incomplete 表示・非課金・1回リトライ）を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.283（2026-09-25）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.24
+        },
+        "relevance": {
+          "score": 2.37,
+          "probabilities": [
+            0,
+            0,
+            0.63,
+            0.37
+          ],
+          "confidence": 0.63
+        }
+      }
+    }
+  ]
+}

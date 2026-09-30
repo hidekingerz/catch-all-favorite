@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/google-play-news/20260805.md",
+  "sourceHash": "sha256:5053505ed9761376f4887c9a40176be0045868826bc6df9d63f778270aa0a677",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:12.118Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Google Play ファミリー ポリシー",
+      "url": "https://support.google.com/googleplay/android-developer/answer/9893335",
+      "secondaryUrls": [
+        "https://support.google.com/googleplay/android-developer/answer/17122218#families-policy",
+        "https://goo.gle/policybytes326"
+      ],
+      "summary": "Google Play ファミリー ポリシーの適用範囲が拡大され、**匿名チャットアプリのデベロッパーが児童をターゲットにすることが禁止される**。匿名／ランダムチャット機能を提供するアプリは、児童向けの提供や児童のターゲティングに該当しないか確認し、ファミリー ポリシー要件への準拠が必要。適用日は 2026-08-26。",
+      "publishedAt": null,
+      "effectiveAt": "2026-08-26",
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "policy",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 1,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.91
+        },
+        "relevance": {
+          "score": 1.01,
+          "probabilities": [
+            0.04,
+            0.92,
+            0.02,
+            0.02
+          ],
+          "confidence": 0.91
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "児童を危険にさらす行為（Child Endangerment）",
+      "url": "https://support.google.com/googleplay/android-developer/answer/9878809",
+      "secondaryUrls": [
+        "https://support.google.com/googleplay/android-developer/answer/17122524#child_safety",
+        "https://goo.gle/policybytes326"
+      ],
+      "summary": "「児童を危険にさらす行為」ポリシーの適用範囲が、**匿名・ランダムチャットアプリを含むよう拡大される**。該当カテゴリのアプリは、児童の安全に関する要件・禁止事項への準拠状況を再確認する必要がある。適用日は 2026-08-26。",
+      "publishedAt": null,
+      "effectiveAt": "2026-08-26",
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "policy",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 1,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0.96,
+            "ai_tools": 0,
+            "other": 0.04
+          },
+          "confidence": 0.95
+        },
+        "breaking": {
+          "noul": 0.86
+        },
+        "relevance": {
+          "score": 1.1,
+          "probabilities": [
+            0.05,
+            0.86,
+            0.02,
+            0.07
+          ],
+          "confidence": 0.8
+        }
+      }
+    }
+  ]
+}

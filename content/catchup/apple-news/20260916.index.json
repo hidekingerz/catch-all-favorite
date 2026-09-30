@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/apple-news/20260916.md",
+  "sourceHash": "sha256:316eae7ad802e80b5bcfcf45bb53a12b38135a905f7ae86714b71f5b82d28b7b",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:49.395Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "最新のベータリリースで準備を",
+      "url": "https://developer.apple.com/jp/news/?id=rfb1rooi",
+      "secondaryUrls": [],
+      "summary": "iOS 27.2、iPadOS 27.2、macOS 27.2、tvOS 27.2、visionOS 27.2、watchOS 27.2 のベータ版が公開。アプリが正しく動作するか確認し、Xcode 27.2 でビルド・テストを。10月23日発売の iPhone Duo は iOS 27.1 を搭載し、Xcode 27.1（今月後半にベータ提供予定）が更新版SDKと新しいポーズ・向きに対応したシミュレータで iPhone Duo 開発をサポートする。",
+      "publishedAt": "2026-09-16",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.13
+        },
+        "relevance": {
+          "score": 0.99,
+          "probabilities": [
+            0.05,
+            0.92,
+            0.02,
+            0.01
+          ],
+          "confidence": 0.92
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "iOS 27に向けたサブスクリプションの準備",
+      "url": "https://developer.apple.com/jp/news/?id=likeohx4",
+      "secondaryUrls": [],
+      "summary": "iOS 27 の新機能でサブスクリプションのリーチを拡大。「バンドル」「スイート」により、複数アプリや複数デベロッパにまたがるサブスクリプションを1つのApple アプリ内購入として提供できる。組織・グループ向けのマルチシート購入も導入され、一括購入は2026年10月22日、グループ購入は今冬に開始予定。App Store Connect では本日よりマルチシート購入がデフォルトで有効になる。StoreKit 2 での対応を推奨。",
+      "publishedAt": "2026-09-16",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.32,
+            "security": 0,
+            "policy": 0.2,
+            "feature": 0.48,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.4
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.44
+        },
+        "relevance": {
+          "score": 0.99,
+          "probabilities": [
+            0.04,
+            0.94,
+            0.01,
+            0.01
+          ],
+          "confidence": 0.93
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Updates to App Tracking Transparency in the European Union",
+      "url": "https://developer.apple.com/jp/news/?id=idsft9ai",
+      "secondaryUrls": [],
+      "summary": "欧州の競争当局との合意に基づき、EUで App Tracking Transparency の枠組みを変更。iOS 27.2 / iPadOS 27.2 から、EUでは ATT システムプロンプトの代替バージョンを選択できるようになる。トラッキングの許可を求める必要がある条件自体は変わらない。法的要件により、ドイツ・フランス・イタリア・ポーランド・ルーマニアで配信するアプリでは代替版のプロンプトのみ利用可能となる。",
+      "publishedAt": "2026-09-16",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "policy",
+          "probabilities": {
+            "release": 0.29,
+            "security": 0,
+            "policy": 0.67,
+            "feature": 0.04,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.62
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.62
+        },
+        "relevance": {
+          "score": 1.08,
+          "probabilities": [
+            0,
+            0.95,
+            0.01,
+            0.04
+          ],
+          "confidence": 0.92
+        }
+      }
+    }
+  ]
+}

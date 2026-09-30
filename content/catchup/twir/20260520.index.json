@@ -1,0 +1,1607 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/twir/20260520.md",
+  "sourceHash": "sha256:49406bd1a8c3e231fbde0bb93fd0412eea906e6eab1404a87bd89ca776236092",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:28.838Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Mini Shai-Hulud worm keeps digging",
+      "url": "https://www.wiz.io/blog/mini-shai-hulud-teampcp-hits-antv-supply-chain",
+      "secondaryUrls": [],
+      "summary": "npm サプライチェーン攻撃が継続中。TanStack Router、echarts-for-react、@antv パッケージ、GitHub Actions が影響を受け、OpenAI 従業員のアカウント侵害や Grafana のランサムウェア事件も発生している。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0.09,
+            "node_runtime": 0.91,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.9
+        },
+        "breaking": {
+          "noul": 0.17
+        },
+        "relevance": {
+          "score": 2.74,
+          "probabilities": [
+            0.05,
+            0.01,
+            0.09,
+            0.85
+          ],
+          "confidence": 0.74
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "React Server Components in TanStack",
+      "url": "https://frontendmasters.com/blog/react-server-components-in-tanstack/",
+      "secondaryUrls": [],
+      "summary": "TanStack の柔軟な RSC モデルについての実践的な入門記事。CompositeComponent アーキテクチャとクライアントバンドルサイズの最適化について解説している。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.01,
+            "guide": 0.99,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 2,
+          "probabilities": [
+            0.01,
+            0,
+            0.97,
+            0.02
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Structural sharing, selectAtom, and why your jotai atoms re-render too much",
+      "url": "https://www.peterp.me/articles/jotai-structural-sharing-vs-selectatom/",
+      "secondaryUrls": [],
+      "summary": "Jotai での不要な再レンダリングを防ぐテクニックを解説。atom の派生、プリミティブへの分解、structural sharing 戦略について紹介している。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 2.01,
+          "probabilities": [
+            0,
+            0,
+            0.98,
+            0.02
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "The React2Shell Story",
+      "url": "https://lachlan.nz/blog/the-react2shell-story",
+      "secondaryUrls": [],
+      "summary": "セキュリティ研究者による RSC のリモートコード実行脆弱性の発見と報告の経緯を詳述した二部構成の記事。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 0.94,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0.06,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.93
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.95,
+            "node_runtime": 0.05,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.93
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.9,
+          "probabilities": [
+            0,
+            0,
+            0.08,
+            0.92
+          ],
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "The Flight Protocol Made Your DoS My Problem",
+      "url": "https://saschb2b.com/blog/flight-protocol-dos",
+      "secondaryUrls": [],
+      "summary": "React/Next.js の最近パッチされた CVE の分析。単一の HTTP リクエストで Node プロセスをブロックできる脆弱性が含まれていた。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.79,
+            "node_runtime": 0.21,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.75
+        },
+        "breaking": {
+          "noul": 0.23
+        },
+        "relevance": {
+          "score": 2.99,
+          "probabilities": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "confidence": 0.99
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "Fate 1.0 - The first full Async React Metaframework",
+      "url": "https://fate.technology/posts/fate-1.0",
+      "secondaryUrls": [],
+      "summary": "Relay にインスパイアされた新フレームワーク。ビューコンポジション、正規化キャッシュ、データマスキング、Async React、Server-Sent Events、Drizzle 統合をサポートする。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.93,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.07,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.91
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.99,
+          "probabilities": [
+            0.01,
+            0,
+            0.98,
+            0.01
+          ],
+          "confidence": 0.98
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "TanStack Router releases - Deferred hydration capabilities, route matching priority",
+      "url": "https://github.com/TanStack/router/releases/tag/release-2026-05-20-1004",
+      "secondaryUrls": [],
+      "summary": "実験的な deferred hydration によるインタラクティビティの高速化、CSS インライン化、セキュリティ向けの CSRF ミドルウェアが追加された。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.97,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.03,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.97
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2.08,
+          "probabilities": [
+            0.02,
+            0,
+            0.86,
+            0.12
+          ],
+          "confidence": 0.83
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "TanStack AI releases - `useChat()` supports streaming structured output",
+      "url": "https://tanstack.com/blog/streaming-structured-output",
+      "secondaryUrls": [],
+      "summary": "useChat フックが強化され、AI チャット実装で構造化データのストリーミング出力が可能になった。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.7,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.3,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.66
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.99,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.01,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.02,
+          "probabilities": [
+            0.01,
+            0,
+            0.96,
+            0.03
+          ],
+          "confidence": 0.96
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "React Redux 9.3 - `connect` API deprecated, Trusted Publishing fixed",
+      "url": "https://github.com/reduxjs/react-redux/releases/tag/v9.3.0",
+      "secondaryUrls": [],
+      "summary": "レガシー HOC の connect API が非推奨となり、useSelector/useDispatch の使用が推奨される。Trusted Publishing のセキュリティ修正も含まれる。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.99,
+            "security": 0.01,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.62
+        },
+        "relevance": {
+          "score": 2.97,
+          "probabilities": [
+            0,
+            0,
+            0.02,
+            0.98
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "Redux Toolkit 2.12 - TypeScript Improvements, Skills",
+      "url": "https://github.com/reduxjs/redux-toolkit/releases/tag/v2.12.0",
+      "secondaryUrls": [],
+      "summary": "TypeScript サポートの強化と Skills 統合が行われた Redux 状態管理ツールキットのアップデート。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.13
+        },
+        "relevance": {
+          "score": 2.12,
+          "probabilities": [
+            0.02,
+            0,
+            0.83,
+            0.15
+          ],
+          "confidence": 0.81
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "Base UI 1.5 - Major mount perf improvements for popovers/dialogs/tooltips/menus",
+      "url": "https://base-ui.com/react/overview/releases/v1-5-0",
+      "secondaryUrls": [],
+      "summary": "popover、dialog、tooltip、menu コンポーネントのマウントパフォーマンスが大幅に改善された。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.2,
+          "probabilities": [
+            0,
+            0,
+            0.79,
+            0.21
+          ],
+          "confidence": 0.78
+        }
+      }
+    },
+    {
+      "id": 11,
+      "title": "React Hook Form 7.76 - Improved `isDirty` and `useFieldArray`",
+      "url": "https://github.com/react-hook-form/react-hook-form/releases/tag/v7.76.0",
+      "secondaryUrls": [],
+      "summary": "dirty 状態のトラッキングとフィールド配列の管理が改善され、フォーム処理がより良くなった。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.12
+        },
+        "relevance": {
+          "score": 2.07,
+          "probabilities": [
+            0,
+            0,
+            0.92,
+            0.08
+          ],
+          "confidence": 0.92
+        }
+      }
+    },
+    {
+      "id": 12,
+      "title": "Relay 21.0 - First-party TypeScript support, experimental RSC support, improved error handling",
+      "url": "https://github.com/facebook/relay/releases/tag/v21.0.0",
+      "secondaryUrls": [],
+      "summary": "ネイティブ TypeScript サポート、実験的な React Server Components 統合、改善されたエラーフィードバック機構が追加された。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2.09,
+          "probabilities": [
+            0.04,
+            0,
+            0.79,
+            0.17
+          ],
+          "confidence": 0.74
+        }
+      }
+    },
+    {
+      "id": 13,
+      "title": "Storybook 10.4 - TanStack React, React Native isolation, agentic setup, review filters",
+      "url": "https://storybook.js.org/blog/storybook-10-4/",
+      "secondaryUrls": [],
+      "summary": "TanStack 統合、React Native テストの分離改善、AI 駆動のセットアップ、強化されたレビューワークフローが含まれる。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.93,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.06,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.91
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.16
+        },
+        "relevance": {
+          "score": 2.06,
+          "probabilities": [
+            0,
+            0.02,
+            0.9,
+            0.08
+          ],
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "id": 14,
+      "title": "React Doctor 0.2 - Your agent writes bad React. This catches it.",
+      "url": "https://github.com/millionco/react-doctor",
+      "secondaryUrls": [],
+      "summary": "AI 生成の React コードのアンチパターンを検出してフラグを立てるツール。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.99,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.01,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.99,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.01,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.05,
+          "probabilities": [
+            0,
+            0,
+            0.95,
+            0.05
+          ],
+          "confidence": 0.94
+        }
+      }
+    },
+    {
+      "id": 15,
+      "title": "React Router 7.15.1 - New `unstable_useRouterState` consolidation API",
+      "url": "https://github.com/remix-run/react-router/blob/main/CHANGELOG.md#v7151",
+      "secondaryUrls": [],
+      "summary": "ルーティング情報と状態への統合的なアクセスを提供する新しいルーター状態フックが追加された。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.99,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.01,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 2.16,
+          "probabilities": [
+            0,
+            0,
+            0.84,
+            0.16
+          ],
+          "confidence": 0.83
+        }
+      }
+    },
+    {
+      "id": 16,
+      "title": "Nuno Maduro - Why React Developers Are Leaving Next.js for TanStack, with Tanner Linsley (Video)",
+      "url": "https://www.youtube.com/watch?v=6moPS3AAbe4",
+      "secondaryUrls": [],
+      "summary": "開発者が Next.js から TanStack エコシステムに移行している理由とその背景についてのディスカッション。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0.34,
+            "event": 0.59,
+            "business": 0,
+            "other": 0.07
+          },
+          "confidence": 0.53
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.12,
+          "probabilities": [
+            0.01,
+            0,
+            0.86,
+            0.13
+          ],
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "id": 17,
+      "title": "Fireship - A single PR just hijacked the NPM registry... (Video)",
+      "url": "https://www.youtube.com/watch?v=gwTQLZSIlsU",
+      "secondaryUrls": [],
+      "summary": "悪意のあるプルリクエストを通じた npm レジストリの侵害攻撃についての解説。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 0.95,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0.04,
+            "event": 0.01,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.95
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2.58,
+          "probabilities": [
+            0.01,
+            0,
+            0.38,
+            0.61
+          ],
+          "confidence": 0.58
+        }
+      }
+    },
+    {
+      "id": 18,
+      "title": "Syntax.fm 1005 - Programatic and Skill based Video Creation with Remotion (Podcast)",
+      "url": "https://syntax.fm/show/1005/programatic-and-skill-based-video-creation-with-remotion",
+      "secondaryUrls": [],
+      "summary": "Remotion フレームワークを使ったプログラマティックなビデオ生成とスキルベースのアプローチについてのポッドキャスト。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.01,
+            "guide": 0.07,
+            "event": 0.73,
+            "business": 0,
+            "other": 0.19
+          },
+          "confidence": 0.7
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 1.89,
+          "probabilities": [
+            0.05,
+            0,
+            0.95,
+            0
+          ],
+          "confidence": 0.89
+        }
+      }
+    },
+    {
+      "id": 19,
+      "title": "Explicit Resource Management reached TC39 stage 4",
+      "url": "https://github.com/tc39/proposal-explicit-resource-management",
+      "secondaryUrls": [],
+      "summary": "リソースクリーンアップのための `using` 文が標準化に到達。簡素化されたリソース管理パターンが可能になった。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.08,
+            "security": 0,
+            "policy": 0.01,
+            "feature": 0.83,
+            "guide": 0,
+            "event": 0.01,
+            "business": 0.06,
+            "other": 0.01
+          },
+          "confidence": 0.82
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.05,
+          "probabilities": [
+            0.01,
+            0,
+            0.91,
+            0.08
+          ],
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "id": 20,
+      "title": "npm RFC - Make install scripts opt-in",
+      "url": "https://github.com/npm/rfcs/pull/868",
+      "secondaryUrls": [],
+      "summary": "package.json に allowScripts 設定を導入し、サプライチェーン攻撃の脆弱性を緩和する提案。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0,
+            "security": 0.3,
+            "policy": 0.26,
+            "feature": 0.44,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.35
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.52
+        },
+        "relevance": {
+          "score": 2.81,
+          "probabilities": [
+            0,
+            0,
+            0.18,
+            0.82
+          ],
+          "confidence": 0.81
+        }
+      }
+    },
+    {
+      "id": 21,
+      "title": "Bun PR - Rewrite Bun in Rust",
+      "url": "https://github.com/oven-sh/bun/pull/30412",
+      "secondaryUrls": [],
+      "summary": "Bun ランタイムを Zig から Rust へ移行する大規模なアーキテクチャ変更。1週間で完了した。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.4,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.48,
+            "guide": 0,
+            "event": 0,
+            "business": 0.03,
+            "other": 0.09
+          },
+          "confidence": 0.4
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.16
+        },
+        "relevance": {
+          "score": 1.57,
+          "probabilities": [
+            0.26,
+            0.02,
+            0.61,
+            0.11
+          ],
+          "confidence": 0.35
+        }
+      }
+    },
+    {
+      "id": 22,
+      "title": "Declarative partial updates",
+      "url": "https://developer.chrome.com/blog/declarative-partial-updates",
+      "secondaryUrls": [],
+      "summary": "順不同ストリーミングとストリームコンテンツをサポートする HTML 挿入メソッドのための新しい Web プラットフォーム API。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 1,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.77,
+          "probabilities": [
+            0.11,
+            0.03,
+            0.84,
+            0.02
+          ],
+          "confidence": 0.73
+        }
+      }
+    },
+    {
+      "id": 23,
+      "title": "QUIC and HTTP/3 Come To Node.js (finally)",
+      "url": "https://www.jasnell.me/posts/quic-comes-to-node",
+      "secondaryUrls": [],
+      "summary": "実験的な node:quic API による QUIC プロトコルと HTTP/3 サポートについての5部構成の詳細解説。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.01,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.99,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.01,
+          "probabilities": [
+            0,
+            0,
+            0.99,
+            0.01
+          ],
+          "confidence": 0.98
+        }
+      }
+    },
+    {
+      "id": 24,
+      "title": "pnpm 11.12 - Experimental Rust install engine",
+      "url": "https://github.com/pnpm/pnpm/releases/tag/v11.2.0",
+      "secondaryUrls": [],
+      "summary": "パフォーマンス向上のためのオプトイン Rust ベースインストールエンジンを導入。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.12,
+          "probabilities": [
+            0.01,
+            0,
+            0.84,
+            0.15
+          ],
+          "confidence": 0.82
+        }
+      }
+    },
+    {
+      "id": 25,
+      "title": "Yarn 4.15 - Add `npmMinimalAgeGate: 1d` release cooldown by default",
+      "url": "https://github.com/yarnpkg/berry/releases/tag/%40yarnpkg%2Fcli%2F4.15.0",
+      "secondaryUrls": [],
+      "summary": "攻撃ベクトルを緩和するため、即時パッケージインストールを防ぐデフォルトのセキュリティクールダウンを追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0.47,
+            "security": 0.53,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.46
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.67
+        },
+        "relevance": {
+          "score": 2.78,
+          "probabilities": [
+            0.01,
+            0,
+            0.19,
+            0.8
+          ],
+          "confidence": 0.78
+        }
+      }
+    },
+    {
+      "id": 26,
+      "title": "Node 26.2 - `stream.compose` stable, `fs.stat()` returns `Temporal.Instant`",
+      "url": "https://nodejs.org/en/blog/release/v26.2.0",
+      "secondaryUrls": [],
+      "summary": "ストリームコンポジションの安定化と、ファイル stat 操作への Temporal API 統合が行われた。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.25
+        },
+        "relevance": {
+          "score": 2.51,
+          "probabilities": [
+            0.01,
+            0,
+            0.46,
+            0.53
+          ],
+          "confidence": 0.51
+        }
+      }
+    },
+    {
+      "id": 27,
+      "title": "Webpack 5.107 - Experimental HTML modules, experimental native TS support",
+      "url": "https://webpack.js.org/blog/2026-05-19-webpack-5-107/",
+      "secondaryUrls": [],
+      "summary": "実験的な HTML モジュールサポートとネイティブ TypeScript 処理機能が追加された。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 2.08,
+          "probabilities": [
+            0.02,
+            0,
+            0.86,
+            0.12
+          ],
+          "confidence": 0.85
+        }
+      }
+    }
+  ]
+}

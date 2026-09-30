@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/google-search-blog/20260707.md",
+  "sourceHash": "sha256:71123eb90f02713768afd5ed5b8890e08393906199b5bee0f80bcbc018df71fb",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:13.301Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "See how content from social and video platforms performs on Google Search",
+      "url": "https://developers.google.com/search/blog/2026/07/search-console-social-video-platforms?hl=ja",
+      "secondaryUrls": [],
+      "summary": "Search Console に、ソーシャルメディアや動画プラットフォーム発のコンテンツが Google 検索上でどのように表示・パフォーマンスしているかを可視化するレポート機能が追加された。複数のチャネルにまたがってコンテンツを配信するパブリッシャー／クリエイターが、自分のコンテンツが検索結果でどう見えているか、クロスプラットフォームでの露出状況を把握して最適化できるようにするもの。検索ランキングやガイドラインの仕様変更ではなく、Search Console の分析機能の拡張。",
+      "publishedAt": "2026-07-07",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 1,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_search",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 1,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 0.49,
+          "probabilities": [
+            0.73,
+            0.05,
+            0.22,
+            0
+          ],
+          "confidence": 0.51
+        }
+      }
+    }
+  ]
+}

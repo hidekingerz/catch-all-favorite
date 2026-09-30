@@ -1,0 +1,1061 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/jser-info/20260406.md",
+  "sourceHash": "sha256:0e74ced921b70515d82d2ff9b7ab5dca5b905b31dfbeb9be0d02a8d52994ef98",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:18.446Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Announcing TypeScript 6.0 - TypeScript",
+      "url": "https://devblogs.microsoft.com/typescript/announcing-typescript-6.0/",
+      "secondaryUrls": [],
+      "summary": "TypeScript 6.0リリース。現在のJavaScriptコードベースによる最後のリリースで、Go版TypeScript 7.0への移行を準備するリリース。strictがデフォルトでtrue、targetのデフォルトがes2025、moduleのデフォルトがesnextに変更。target: es5、--moduleResolution node(node10)、--outFile、--esModuleInterop falseなどが非推奨となりエラーに変更。es2025ターゲットの追加、Temporal APIの型定義、Map/WeakMapのgetOrInsert()/getOrInsertComputed()の追加、Node.jsのSubpath Imports #/のサポート、--stableTypeOrderingフラグの追加など。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "TypeScript",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.95
+        },
+        "relevance": {
+          "score": 2.99,
+          "probabilities": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "confidence": 0.99
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "WebKit Features for Safari 26.4 | WebKit",
+      "url": "https://webkit.org/blog/17862/webkit-features-for-safari-26-4/",
+      "secondaryUrls": [],
+      "summary": "Safari 26.4リリース。CSS Grid Lanesによるmasonry/ウォーターフォールレイアウトのサポート、名前のみの@containerクエリのサポート。font-size: mathとmath-depthプロパティのサポート。WebTransport、Keyboard Lock API、ReadableByteStreamのサポート。Scoped Custom Element Registriesの改善、Iterator.concat()のサポート。WebAuthnのPRF拡張のサポートなど。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "safari",
+        "browser",
+        "CSS",
+        "WebTransport",
+        "WebAuthentication",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.88,
+            "node_runtime": 0,
+            "browser": 0.12,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.86
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.41,
+          "probabilities": [
+            0.04,
+            0.52,
+            0.42,
+            0.02
+          ],
+          "confidence": 0.51
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Release v20.0.0 · raineorshine/npm-check-updates",
+      "url": "https://github.com/raineorshine/npm-check-updates/releases/tag/v20.0.0",
+      "secondaryUrls": [],
+      "summary": "npm-check-updates v20.0.0リリース。npm/yarn/pnpmの設定にあるminimum release ageの設定を自動的に読み取り、cooldownオプションとして適用するようになった。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "npm",
+        "Tools",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.19
+        },
+        "relevance": {
+          "score": 2.33,
+          "probabilities": [
+            0.01,
+            0,
+            0.64,
+            0.35
+          ],
+          "confidence": 0.64
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "Release ES2026 Candidate March 31st 2026 · tc39/ecma262",
+      "url": "https://github.com/tc39/ecma262/releases/tag/es2026-candidate-2026-03-31",
+      "secondaryUrls": [],
+      "summary": "ECMAScript 2026のRelease Candidateが公開。TC39によって2026年3月に承認され、2026年6月のEcma GAでの承認を経て正式リリース予定。Array.fromAsync、JSON.parse source text access、Iterator Sequencing、Uint8ArrayのBase64変換、Math.sumPrecise、Error.isError、Upsert(Map.prototype.getOrInsert)などが含まれる。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "ECMAScript",
+        "spec",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.07,
+          "probabilities": [
+            0,
+            0,
+            0.92,
+            0.08
+          ],
+          "confidence": 0.91
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Release v15.0.0 · sindresorhus/got",
+      "url": "https://github.com/sindresorhus/got/releases/tag/v15.0.0",
+      "secondaryUrls": [],
+      "summary": "Got v15.0.0リリース。Node.js 22未満のサポートを削除。promise.cancel()を削除しAbortControllerのsignalオプションに移行、isStreamオプションの削除。responseType: 'buffer'がBufferの代わりにUint8Arrayを返すように変更。ネイティブのFormData APIを利用するように変更、strictContentLengthのデフォルトをtrueに変更。RFC 9110に準拠し300/304レスポンスの自動リダイレクトを廃止など。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "nodejs",
+        "HTTP",
+        "library",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.98
+        },
+        "relevance": {
+          "score": 2.96,
+          "probabilities": [
+            0.01,
+            0,
+            0.03,
+            0.96
+          ],
+          "confidence": 0.96
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "Release 4.18.0 · lodash/lodash",
+      "url": "https://github.com/lodash/lodash/releases/tag/4.18.0",
+      "secondaryUrls": [],
+      "summary": "lodash 4.18.0リリース。_.unsetと_.omitのPrototype Pollutionの脆弱性を修正、_.templateのコードインジェクションの修正。lodash.unsetやlodash.templateなどの個別パッケージが古いままだったのを修正して再公開。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "lodash",
+        "JavaScript",
+        "library",
+        "security",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0.04,
+            "security": 0.96,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.95
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.88,
+            "node_runtime": 0.12,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.86
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2.65,
+          "probabilities": [
+            0.06,
+            0,
+            0.17,
+            0.77
+          ],
+          "confidence": 0.65
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "Node.js — Node.js 25.9.0 (Current)",
+      "url": "https://nodejs.org/en/blog/release/v25.9.0",
+      "secondaryUrls": [],
+      "summary": "Node.js v25.9.0リリース。テストランナーのモックモジュールAPIでexportsオプションに統合。--max-heap-sizeフラグの追加、Web CryptoでTurboSHAKEとKangarooTwelveアルゴリズムのサポート。SEAでESMエントリポイントのコードキャッシュをサポート、実験的なstream/iterモジュールの追加。AsyncLocalStorageにusingスコープの追加、REPLでのカスタムエラーハンドリングのサポートなど。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "nodejs",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 2.08,
+          "probabilities": [
+            0,
+            0,
+            0.92,
+            0.08
+          ],
+          "confidence": 0.91
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "Release v5.0.0 · lerna-lite/lerna-lite",
+      "url": "https://github.com/lerna-lite/lerna-lite/releases/tag/v5.0.0",
+      "secondaryUrls": [],
+      "summary": "lerna-lite v5.0.0リリース。Node.js 20のサポート終了、Conventional Changelogのレガシー設定ファイル読み込みの削除、--remove-package-fieldsオプションの削除。内部依存を自前の実装に置き換えることでインストールサイズを削減。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "monorepo",
+        "Tools",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0.02,
+            "node_runtime": 0.98,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.97
+        },
+        "breaking": {
+          "noul": 0.93
+        },
+        "relevance": {
+          "score": 2.64,
+          "probabilities": [
+            0.06,
+            0,
+            0.19,
+            0.75
+          ],
+          "confidence": 0.64
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "Storybook MCP for React",
+      "url": "https://storybook.js.org/blog/storybook-mcp-for-react/",
+      "secondaryUrls": [],
+      "summary": "Storybook MCPサーバについて。AIエージェントに既存のUIコンポーネントのメタデータ（ストーリー、API、ドキュメント）を提供するMCPサーバ。複数のStorybookを組み合わせて使うCompositionにも対応。MCP Appsに対応して、チャットのレスポンスに直接Storyを埋め込めるようになっている。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "storybook",
+        "MCP",
+        "React",
+        "article"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.04,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.93,
+            "guide": 0.02,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.92
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0.49,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.51,
+            "other": 0
+          },
+          "confidence": 0.43
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.99,
+          "probabilities": [
+            0.01,
+            0,
+            0.99,
+            0
+          ],
+          "confidence": 0.98
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "Node.js — Security Bug Bounty Program Paused Due to Loss of Funding",
+      "url": "https://nodejs.org/en/blog/announcements/discontinuing-security-bug-bounties",
+      "secondaryUrls": [],
+      "summary": "Node.jsのセキュリティバグバウンティプログラムの一時停止について。2016年からHackerOneのIBBプログラムを通じて運用されていたが、IBBプログラムの終了により資金が枯渇し一時停止。AIなどによる発見の拡大で資金バランスが変化した。脆弱性の報告自体はHackerOneを通じて引き続き受け付けるが、報告者への金銭的な報酬はなくなる。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "nodejs",
+        "security",
+        "article"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "business",
+          "probabilities": {
+            "release": 0,
+            "security": 0.12,
+            "policy": 0.25,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0.63,
+            "other": 0
+          },
+          "confidence": 0.58
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1.99,
+          "probabilities": [
+            0.04,
+            0,
+            0.89,
+            0.07
+          ],
+          "confidence": 0.86
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "Signals, the push-pull based algorithm — Willy Brauner",
+      "url": "https://willybrauner.com/journal/signal-the-push-pull-based-algorithm",
+      "secondaryUrls": [],
+      "summary": "Signalにおけるpush-pullベースのリアクティブアルゴリズムについての解説記事。値の変更時にサブスクライバーへ通知するPush型と、計算値を実際にアクセスされるまで遅延評価するPull型の組み合わせについて解説。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "JavaScript",
+        "article"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.01,
+            "guide": 0.99,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 1.85,
+          "probabilities": [
+            0.07,
+            0.01,
+            0.92,
+            0
+          ],
+          "confidence": 0.84
+        }
+      }
+    },
+    {
+      "id": 11,
+      "title": "Core JavaScript and TypeScript Features Become Free in IntelliJ IDEA | The IntelliJ IDEA Blog",
+      "url": "https://blog.jetbrains.com/idea/2026/03/js-ts-free-support/",
+      "secondaryUrls": [],
+      "summary": "IntelliJ IDEA v2026.1で、JavaScript/TypeScript/HTML/CSSのコア機能が無料で利用可能に。これまでUltimate版のみだったWeb開発向け機能がCommunity Editionでも利用可能になった。JS/TSのコード補完やリファクタリング、ESLint/Prettierの統合、Viteでのプロジェクト作成、npmスクリプトの実行、依存関係の脆弱性検出などが含まれる。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "JetBrains",
+        "IDE",
+        "JavaScript",
+        "TypeScript"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.93,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.02,
+            "guide": 0,
+            "event": 0,
+            "business": 0.05,
+            "other": 0
+          },
+          "confidence": 0.92
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.99,
+          "probabilities": [
+            0.02,
+            0,
+            0.95,
+            0.03
+          ],
+          "confidence": 0.93
+        }
+      }
+    },
+    {
+      "id": 12,
+      "title": "axios Compromised on npm - Malicious Versions Drop Remote Access Trojan - StepSecurity",
+      "url": "https://www.stepsecurity.io/blog/axios-compromised-on-npm-malicious-versions-drop-remote-access-trojan",
+      "secondaryUrls": [],
+      "summary": "axiosのnpmパッケージに対するサプライチェーン攻撃について。ソーシャルエンジニアリングによりメンテナーアカウントが乗っ取られ、悪意のあるaxios@1.14.1とaxios@0.30.4が公開された。plain-crypto-jsというマルウェアが依存関係として追加され、postinstallフックを通じてmacOS/Windows/Linux向けのRAT（Remote Access Trojan）をインストールする仕組みになっていた。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "npm",
+        "security",
+        "article"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0.01,
+            "node_runtime": 0.99,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "breaking": {
+          "noul": 0.2
+        },
+        "relevance": {
+          "score": 2.91,
+          "probabilities": [
+            0.01,
+            0,
+            0.06,
+            0.93
+          ],
+          "confidence": 0.91
+        }
+      }
+    },
+    {
+      "id": 13,
+      "title": "Introducing EmDash — the spiritual successor to WordPress that solves plugin security",
+      "url": "https://blog.cloudflare.com/emdash-wordpress/",
+      "secondaryUrls": [],
+      "summary": "CloudflareによるサーバーレスCMS。TypeScriptで書かれ、Astro 6.0をベースにしたオープンソース（MITライセンス）のCMS。プラグインを独立したサンドボックス環境（Dynamic Workers）で実行し、プラグイン起因のセキュリティ問題を解決するアーキテクチャを採用。MCPやCLIによるAIエージェント連携、x402プロトコルによる決済統合なども備えている。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "cloudflare",
+        "CMS",
+        "TypeScript",
+        "astro",
+        "security",
+        "OpenSource",
+        "wordpress"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.51,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.47,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.02
+          },
+          "confidence": 0.44
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.83,
+            "node_runtime": 0.15,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.02
+          },
+          "confidence": 0.8
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 1.69,
+          "probabilities": [
+            0.17,
+            0.01,
+            0.78,
+            0.04
+          ],
+          "confidence": 0.61
+        }
+      }
+    },
+    {
+      "id": 14,
+      "title": "vercel-labs/emulate: Local API emulation for CI and no-network sandboxes",
+      "url": "https://github.com/vercel-labs/emulate",
+      "secondaryUrls": [],
+      "summary": "Vercel/GitHub/Google/Slack/AWS（S3/SQS）などのAPIをローカルでエミュレートするツール。外部APIのモックサーバとして利用可能。各サービスはステートフルにデータを保持し、OAuth 2.0フローやWebhookにも対応。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "vercel",
+        "API",
+        "testing",
+        "CI",
+        "Tools",
+        "nodejs",
+        "server"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.17,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.83,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.79
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0.14,
+            "node_runtime": 0.85,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.01
+          },
+          "confidence": 0.84
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 2,
+          "probabilities": [
+            0.01,
+            0,
+            0.97,
+            0.02
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 15,
+      "title": "ArrowJS — The first UI framework for the agentic era",
+      "url": "https://arrow-js.com/",
+      "secondaryUrls": [],
+      "summary": "ビルドステップなしで動作する軽量なUIフレームワーク。reactive、html、componentの3つの関数で構成。AI向けにWebAssemblyサンドボックス内でコンポーネントロジックを分離して実行する機能を持つ。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "JavaScript",
+        "TypeScript",
+        "WebAssembly",
+        "library"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.3,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.69,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.64
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.83,
+          "probabilities": [
+            0.08,
+            0.01,
+            0.91,
+            0
+          ],
+          "confidence": 0.82
+        }
+      }
+    },
+    {
+      "id": 16,
+      "title": "React本格入門 | 技術評論社",
+      "url": "https://gihyo.jp/book/2026/978-4-297-15523-0",
+      "secondaryUrls": [],
+      "summary": "2026年4月15日発売。React 19をベースにした入門書。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "React",
+        "book"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0.24,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0.53,
+            "event": 0,
+            "business": 0.01,
+            "other": 0.22
+          },
+          "confidence": 0.47
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 2.01,
+          "probabilities": [
+            0,
+            0,
+            0.98,
+            0.02
+          ],
+          "confidence": 0.97
+        }
+      }
+    }
+  ]
+}

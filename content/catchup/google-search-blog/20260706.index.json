@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/google-search-blog/20260706.md",
+  "sourceHash": "sha256:38e0084a018da379fb557fc943b9b0de0b4a2fe5ca1a914e1f72c3f2747e4948",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:13.091Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Search Central Deep Dive Europe 2026: Apparently we're going to Barcelona",
+      "url": "https://developers.google.com/search/blog/2026/07/search-central-live-deep-dive-europe-2026?hl=ja",
+      "secondaryUrls": [],
+      "summary": "コミュニティからのフィードバックを受けて選定された「Search Central Live Deep Dive Europe 2026」の開催地が、スペイン・バルセロナに正式決定したことを発表する告知記事。開催日は 2026 年 9 月 30 日〜10 月 2 日。Google 検索の担当チームと直接交流し、深く学べる対面イベントで、ヨーロッパ（EMEA）圏のサイト運営者・SEO 担当者・開発者が対象。SEO 仕様やランキングの変更ではなく、イベント・コミュニティ向けの内容。",
+      "publishedAt": "2026-07-06",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 1,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_search",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 1,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.03
+        },
+        "relevance": {
+          "score": 0.33,
+          "probabilities": [
+            0.81,
+            0.05,
+            0.13,
+            0
+          ],
+          "confidence": 0.67
+        }
+      }
+    }
+  ]
+}

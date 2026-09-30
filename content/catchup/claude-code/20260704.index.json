@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260704.md",
+  "sourceHash": "sha256:b935925f7c1f0bdf7819bd26b03f162d802d066c04e0d1d6e74014349efae590",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:59.141Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "v2.1.201（2026-07-03）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "内容（主要変更）: **モデル**: / Claude Sonnet 5 のセッションで、ハーネスリマインダー（harness reminders）に会話途中のシステムロールを使用しないように変更。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {
+        "内容（主要変更）": "**モデル**: / Claude Sonnet 5 のセッションで、ハーネスリマインダー（harness reminders）に会話途中のシステムロールを使用しないように変更。"
+      },
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.22
+        },
+        "relevance": {
+          "score": 2.33,
+          "probabilities": [
+            0.01,
+            0,
+            0.64,
+            0.35
+          ],
+          "confidence": 0.63
+        }
+      }
+    }
+  ]
+}

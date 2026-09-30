@@ -1,0 +1,1607 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/twir/20260722.md",
+  "sourceHash": "sha256:cc06eb984cbceefa3279e4502e66bc9bcd870d4ca59d8d99b11d941a26aa1168",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:36.035Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Pete Hunt joins Vercel to lead Next.js and run Frameworks",
+      "url": "https://x.com/rauchg/status/2077870043833229692",
+      "secondaryUrls": [],
+      "summary": "Instagram Web で React に早期に賭け、多くの開発者を React へ導いた立役者が Vercel に参加し、Next.js と Frameworks を統括する。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "business",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 1.98,
+          "probabilities": [
+            0.02,
+            0,
+            0.96,
+            0.02
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "TypeScript 7 support in Next.js 16.3",
+      "url": "https://x.com/timneutkens/status/2076771696745345363",
+      "secondaryUrls": [],
+      "summary": "`next build` は TS API を使うが、これは TypeScript 7.1 でのみ利用可能になる。リリースまでは `experimental.useTypeScriptCli` で `tsc` CLI 経由の型チェックが可能。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.69,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.31,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.64
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.41
+        },
+        "relevance": {
+          "score": 2.77,
+          "probabilities": [
+            0,
+            0,
+            0.22,
+            0.78
+          ],
+          "confidence": 0.77
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "React - Denial of Service in Server Functions",
+      "url": "https://github.com/react/react/security/advisories/GHSA-wx67-qw84-cm4g",
+      "secondaryUrls": [],
+      "summary": "Server Functions における高深刻度の DoS 脆弱性。19.0.8 / 19.1.9 / 19.2.8 でパッチ済み。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.13
+        },
+        "relevance": {
+          "score": 2.99,
+          "probabilities": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "confidence": 0.99
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "Next.js - July 2026 Security Release",
+      "url": "https://nextjs.org/blog/july-2026-security-release",
+      "secondaryUrls": [],
+      "summary": "事前告知型・月次セキュリティリリースの初回。高深刻度4件・中深刻度5件を v16.2.11 と v15.5.21 で修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.12
+        },
+        "relevance": {
+          "score": 3,
+          "probabilities": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "confidence": 1
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "React.dev PR - Dynamic OG images for docs pages",
+      "url": "https://github.com/reactjs/react.dev/pull/8527",
+      "secondaryUrls": [],
+      "summary": "React 公式サイトのドキュメントページで、Satori を使った動的なソーシャルカード（OG画像）を生成するように。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.99,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.98
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.01,
+          "probabilities": [
+            0.01,
+            0,
+            0.96,
+            0.03
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "ReactBench - Evaluates frontier coding agents on production React work",
+      "url": "https://www.reactbench.com/blog",
+      "secondaryUrls": [],
+      "summary": "Million.js チームが実際の React タスクでコーディングエージェントを採点するベンチマークを公開。挙動・性能・アクセシビリティ・コード品質を評価し、GPT 5.6 が首位で Fable 5 より約6倍コスト効率が高い。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.33,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.54,
+            "guide": 0,
+            "event": 0,
+            "business": 0.01,
+            "other": 0.12
+          },
+          "confidence": 0.47
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.59,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.41,
+            "other": 0
+          },
+          "confidence": 0.53
+        },
+        "breaking": {
+          "noul": 0.03
+        },
+        "relevance": {
+          "score": 1.97,
+          "probabilities": [
+            0.01,
+            0,
+            0.99,
+            0
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "TSRX in TanStack Start: what we like, and three bugs we filed",
+      "url": "https://www.jxd.dev/blog/tsrx-tanstack-start",
+      "secondaryUrls": [],
+      "summary": "TypeScript ベースの JSX 拡張 TSRX を TanStack Start と React で試した実践的フィードバック。作者の Dominic Gannaway（元 React/Svelte コアチーム）は TSRX ベースで全てを事前コンパイルするフレームワーク Octane.js を開発中。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.05,
+            "guide": 0.94,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.93
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1.98,
+          "probabilities": [
+            0.01,
+            0,
+            0.98,
+            0.01
+          ],
+          "confidence": 0.96
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "Inside TanStack Table V9 Reactivity",
+      "url": "https://tanstack.com/blog/tanstack-table-v9-reactivity",
+      "secondaryUrls": [],
+      "summary": "TanStack Table の新しいリアクティブかつフレームワーク非依存のコアを深掘り。共有 atom インターフェース上に構築し、React はシグナルベースでないため adapter は TanStack Store を利用。セレクタによる粒度の細かい更新と React Compiler 互換を実現。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.35,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.33,
+            "guide": 0.32,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.25
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.16
+        },
+        "relevance": {
+          "score": 2.13,
+          "probabilities": [
+            0,
+            0,
+            0.86,
+            0.14
+          ],
+          "confidence": 0.86
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "React Hook Form Avoids State. TanStack Form Scopes It",
+      "url": "https://www.adarsha.dev/blog/react-hook-form-and-tanstack-form-state-models",
+      "secondaryUrls": [],
+      "summary": "2つのフォームモデルを比較。ネイティブな register 型入力 vs 粒度の細かい更新を持つ controlled 入力。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.06,
+            "guide": 0.94,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.92
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.01,
+          "probabilities": [
+            0,
+            0,
+            0.99,
+            0.01
+          ],
+          "confidence": 0.98
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "Do we need state management libraries anymore?",
+      "url": "https://neciudan.dev/do-we-need-state-management-libraries",
+      "secondaryUrls": [],
+      "summary": "ほぼ全ての状態管理ライブラリが `useSyncExternalStore` に収束しており、理解できる約50行のコードで自作できると指摘。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.01,
+            "guide": 0.98,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.97
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.05,
+          "probabilities": [
+            0,
+            0,
+            0.95,
+            0.05
+          ],
+          "confidence": 0.94
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "Props, Composers, and Providers: the composition pattern we're converging on",
+      "url": "https://backstage.orus.eu/react-composition-patterns-at-orus",
+      "secondaryUrls": [],
+      "summary": "意図を明示的にする命名規約を伴う、意見の入った React コンポジションの階層モデル。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1.99,
+          "probabilities": [
+            0.01,
+            0,
+            0.99,
+            0
+          ],
+          "confidence": 0.99
+        }
+      }
+    },
+    {
+      "id": 11,
+      "title": "Advanced React State Boundaries in a Real Next.js App",
+      "url": "https://www.nirtamir.com/articles/advanced-react-questions",
+      "secondaryUrls": [],
+      "summary": "実際の Next.js アプリにおける高度な React の状態境界の扱いを解説。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 2,
+          "probabilities": [
+            0,
+            0,
+            0.99,
+            0.01
+          ],
+          "confidence": 0.99
+        }
+      }
+    },
+    {
+      "id": 12,
+      "title": "shadcn CLI 4.13.1 - Add React Aria support",
+      "url": "https://ui.shadcn.com/docs/changelog/2026-07-react-aria",
+      "secondaryUrls": [],
+      "summary": "shadcn CLI・UIライブラリ・ドキュメントが、Base UI・Radix UI に加えてヘッドレスプリミティブ React Aria を一級サポート。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.1,
+          "probabilities": [
+            0,
+            0,
+            0.89,
+            0.11
+          ],
+          "confidence": 0.88
+        }
+      }
+    },
+    {
+      "id": 13,
+      "title": "dx-styles - zero-runtime CSS-in-TS library",
+      "url": "https://dx-styles.dev/blog/why-dx-styles/",
+      "secondaryUrls": [],
+      "summary": "Linaria と Pigment CSS のメンテナが `styled(Component)` は設計上の誤りだと説明し、長年の経験に基づく新しいゼロランタイム CSS-in-TS ライブラリを紹介。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.3,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.7,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.64
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2.03,
+          "probabilities": [
+            0.01,
+            0,
+            0.95,
+            0.04
+          ],
+          "confidence": 0.94
+        }
+      }
+    },
+    {
+      "id": 14,
+      "title": "Vite Plugin React 0.5.28 - RSC runtime optimizations",
+      "url": "https://github.com/vitejs/vite-plugin-react/blob/plugin-rsc@0.5.28/packages/plugin-rsc/CHANGELOG.md#0528-2026-07-17",
+      "secondaryUrls": [],
+      "summary": "RSC ランタイムの最適化を含む Vite Plugin React 0.5.28 のリリース。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2.2,
+          "probabilities": [
+            0.01,
+            0,
+            0.78,
+            0.21
+          ],
+          "confidence": 0.78
+        }
+      }
+    },
+    {
+      "id": 15,
+      "title": "GTKX 1.0 RC - The React framework for Linux",
+      "url": "https://gtkx.dev/blog/gtkx-1-0-rc-1",
+      "secondaryUrls": [],
+      "summary": "TypeScript から GLib と GObject を駆動する汎用プラットフォームとしての、Linux 向け React フレームワーク。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.75,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.25
+          },
+          "confidence": 0.71
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.66,
+          "probabilities": [
+            0.16,
+            0.02,
+            0.81,
+            0
+          ],
+          "confidence": 0.65
+        }
+      }
+    },
+    {
+      "id": 16,
+      "title": "React Hook Form 7.82",
+      "url": "https://github.com/react-hook-form/react-hook-form/releases/tag/v7.82.0",
+      "secondaryUrls": [],
+      "summary": "`setValue({delayError})` を追加し、`getDirtyFields` の性能を改善。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.09,
+          "probabilities": [
+            0,
+            0,
+            0.9,
+            0.1
+          ],
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "id": 17,
+      "title": "Jotai 3.0 alpha",
+      "url": "https://github.com/pmndrs/jotai/releases/tag/v3.0.0-alpha.0",
+      "secondaryUrls": [],
+      "summary": "パッケージのモダン化、ESM 化、React 18+ 対応。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.57
+        },
+        "relevance": {
+          "score": 2.56,
+          "probabilities": [
+            0,
+            0,
+            0.43,
+            0.57
+          ],
+          "confidence": 0.56
+        }
+      }
+    },
+    {
+      "id": 18,
+      "title": "TanStack Devtools Rspack 0.1",
+      "url": "https://github.com/TanStack/devtools/releases/tag/%40tanstack%2Fdevtools-rspack%400.1.0",
+      "secondaryUrls": [],
+      "summary": "Devtools が Rspack をサポート。Vite と同等の機能を提供。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.71,
+          "probabilities": [
+            0.17,
+            0.01,
+            0.76,
+            0.06
+          ],
+          "confidence": 0.59
+        }
+      }
+    },
+    {
+      "id": 19,
+      "title": "Astryx 0.1.5",
+      "url": "https://github.com/facebook/astryx/releases/tag/v0.1.5",
+      "secondaryUrls": [],
+      "summary": "AspectRatio の fit、useHotkeys、CollapsibleGroup の divider/density、ブロック単位の CodeBlock などを追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1.99,
+          "probabilities": [
+            0.02,
+            0,
+            0.94,
+            0.04
+          ],
+          "confidence": 0.91
+        }
+      }
+    },
+    {
+      "id": 20,
+      "title": "Engineering Yuku's High-Performance Parsers with Data-Oriented Design",
+      "url": "https://www.arshad.fyi/writings/engineering-high-performance-parsers",
+      "secondaryUrls": [],
+      "summary": "Yuku はデータ指向設計により Oxc パーサーを上回る。教科書的な AST ノードは可読性を優先するが機械効率が悪いため、Yuku は AST ノードのデータ構造をメモリレイアウトとアクセスパターン最適化のために設計している。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0.01,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.23,
+            "guide": 0.75,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.71
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.53,
+            "node_runtime": 0.32,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.15
+          },
+          "confidence": 0.46
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 0.69,
+          "probabilities": [
+            0.65,
+            0.02,
+            0.33,
+            0
+          ],
+          "confidence": 0.31
+        }
+      }
+    },
+    {
+      "id": 21,
+      "title": "Fetch Is Not Enough",
+      "url": "https://www.jasnell.me/posts/fetch-is-not-enough",
+      "secondaryUrls": [],
+      "summary": "サーバー用途で `Request/Response` が不十分な理由を論じ、Node/Deno/Bun/Workers で共通に動く統一的な `serve()` API を提案。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.84,
+            "guide": 0.15,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.81
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 1.97,
+          "probabilities": [
+            0.05,
+            0,
+            0.87,
+            0.08
+          ],
+          "confidence": 0.82
+        }
+      }
+    },
+    {
+      "id": 22,
+      "title": "Oxlint 1.75 - Type-Aware Linting Stable",
+      "url": "https://oxc.rs/blog/2026-07-22-type-aware-linting-stable",
+      "secondaryUrls": [],
+      "summary": "Oxc チームが TypeScript v7 ベースの tsgolint 7.0 安定版をリリース。Oxlint で `--type-aware`/`--type-check` フラグと43個の型認識ルールが利用可能に。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.07,
+          "probabilities": [
+            0,
+            0,
+            0.92,
+            0.08
+          ],
+          "confidence": 0.92
+        }
+      }
+    },
+    {
+      "id": 23,
+      "title": "pnpm 11.11-11.14 - Workspace release management",
+      "url": "https://pnpm.io/blog/releases/11.11-11.14",
+      "secondaryUrls": [],
+      "summary": "pnpm がモノレポワークスペースのバージョニングとリリースに対応。`.changesets` をサポート。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.97,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.03,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.97
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.12,
+          "probabilities": [
+            0.03,
+            0,
+            0.79,
+            0.18
+          ],
+          "confidence": 0.76
+        }
+      }
+    },
+    {
+      "id": 24,
+      "title": "Rolldown 1.2 - HMR, watcher, tree-shaking, sourcemaps improvements",
+      "url": "https://github.com/rolldown/rolldown/releases/tag/v1.2.0",
+      "secondaryUrls": [],
+      "summary": "HMR、watcher、tree-shaking、sourcemap の改善を含む Rolldown 1.2 のリリース。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 1.7,
+          "probabilities": [
+            0.19,
+            0.01,
+            0.71,
+            0.09
+          ],
+          "confidence": 0.52
+        }
+      }
+    },
+    {
+      "id": 25,
+      "title": "Astro 7.1 - Pagination URLs control, CSP control",
+      "url": "https://astro.build/blog/astro-710/",
+      "secondaryUrls": [],
+      "summary": "ページネーションURLの制御、インラインスクリプト/スタイル向けの CSP 制御、複数の dev サーバー実行に対応。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.99,
+            "node_runtime": 0.01,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "breaking": {
+          "noul": 0.16
+        },
+        "relevance": {
+          "score": 0.69,
+          "probabilities": [
+            0.68,
+            0.03,
+            0.22,
+            0.07
+          ],
+          "confidence": 0.31
+        }
+      }
+    },
+    {
+      "id": 26,
+      "title": "Lightning CSS 1.33",
+      "url": "https://github.com/parcel-bundler/lightningcss/releases/tag/v1.33.0",
+      "secondaryUrls": [],
+      "summary": "`alpha()`、`@position-try`、`::search-text`、`::highlight` をサポート。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1.81,
+          "probabilities": [
+            0.12,
+            0.04,
+            0.74,
+            0.1
+          ],
+          "confidence": 0.62
+        }
+      }
+    },
+    {
+      "id": 27,
+      "title": "magic-string 1.0",
+      "url": "https://github.com/Rich-Harris/magic-string/releases/tag/v1.0.0",
+      "secondaryUrls": [],
+      "summary": "ソースコード文字列の操作と sourcemap 生成を行う、小さく高速なユーティリティ。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.87,
+            "node_runtime": 0.13,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.84
+        },
+        "breaking": {
+          "noul": 0.2
+        },
+        "relevance": {
+          "score": 1.51,
+          "probabilities": [
+            0.31,
+            0,
+            0.56,
+            0.13
+          ],
+          "confidence": 0.25
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,353 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260804.md",
+  "sourceHash": "sha256:5d2c6f722981043a2e1a94f4fb18f64c334f57cc74691519da27df929024a5bc",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:01.131Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "セキュリティ・権限・サンドボックス",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "worktree 分離セッションとそのサブエージェントが、メインのチェックアウトに対して破壊的な git コマンドを実行できてしまう問題を修正。分離はすべてのセッション種別でファイル編集・Bash に適用されるようになった。 / バックグラウンドエージェントのタスク（要約・コンパクション・リネーム）で PreToolUse の自動許可フックがツール制限をバイパスしていた問題を修正。 / auto モードの安全性向上: `SendMessage` で他のエージェントセッションに送るメッセージが、送信前に権限クラシファイアで評価されるようになった。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.221（2026-08-04）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0.23,
+            "security": 0.77,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.73
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.14
+        },
+        "relevance": {
+          "score": 2.6,
+          "probabilities": [
+            0,
+            0,
+            0.39,
+            0.61
+          ],
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "モデル・サブエージェント・MCP",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "組織で制限された `model: opus` 形式のサブエージェント／チームメイトのファミリーエイリアスが、親モデルに落ちるのではなく、同ファミリー内で最新の組織許可モデルへ段階的に下がるよう修正。 / `/usage` が MCP サーバーに使用量を過剰に按分していた問題を修正。サーバーの取り分は、実際にそのツール結果を消費したリクエストのみを反映するようになった（呼び出し後の全ターンではなく）。 / ローカルで利用できなくなったツール（例: MCP サーバー削除後）のツールエラーが表示されない問題を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.221（2026-08-04）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.14
+        },
+        "relevance": {
+          "score": 2.42,
+          "probabilities": [
+            0.01,
+            0,
+            0.56,
+            0.43
+          ],
+          "confidence": 0.56
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "VSCode / エディタ・表示・入力",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "**Focus view** を追加（VSCode）: チャットメニューのトグルで、ツール実行をターンごとの展開可能なサマリ（実行中ツールのライブ表示付き）に隠す。`Ctrl+Alt+F` または「Claude Code: Toggle Focus view」で切り替え。 / thinking トグルが「thinking off で開始したセッションで以降効かない」問題、接続中の MCP サーバー無効化が黙って元に戻る問題を修正。 / Esc でプロンプトを取り消して再送信すると @-mention したファイルが黙って落ちる問題を修正。 / Vim モード: yank レジスタがダイアログ・履歴検索・トランスクリプト表示をまたいで保持されるように（従来は黙って空になっていた）。空プロンプトまで undo すると「もう一度 ← で確定」が働くように。 / 絵文字オートコンプリートが `:thumbsup:` `:thumbsdown:` `:love:` などの別名ショートコードも受け付けるように。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.221（2026-08-04）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.06,
+          "probabilities": [
+            0,
+            0,
+            0.93,
+            0.07
+          ],
+          "confidence": 0.93
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "バックグラウンドセッション・ワークフロー",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "バックグラウンドセッションの既定挙動を変更: 作業を保全するため commit & push し、タスクが求める場合のみ draft PR を作成、CLAUDE.md の git 指示に従い、最後に必ず作業の所在を報告する。 / `/fork` でフォークしたセッションは、元セッションのチェックアウトで作業するのではなく、自分専用の worktree を新規作成するように変更。 / `/status` がセッション種別（`interactive`、または `attached`／`unattended` のバックグラウンドジョブ）を表示するように。 / `claude-api` スキルに `prompt-audit` サブコマンドを追加（古いモデル向けに書かれたパターンがないかプロンプト・ツール説明を監査）。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.222（2026-08-04）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.67
+        },
+        "relevance": {
+          "score": 2.48,
+          "probabilities": [
+            0,
+            0,
+            0.51,
+            0.49
+          ],
+          "confidence": 0.5
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "プラグイン・接続・プロキシ",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "HTTPS プロキシ配下で起動時の接続チェックがハングして失敗する問題を修正。API リクエストと同じプロキシ対応トランスポートを使い、明確なメッセージでタイムアウトするように。 / 実際には完了していたレスポンスに「Connection closed mid-response」エラーが報告される問題を修正。 / ブランチを push した後（GitHub REST API 経由を含む）に作成された PR にセッションがリンクされない問題を修正。 / Remote Control の自動起動を、リポジトリローカル設定（`.claude/settings.json` / `.claude/settings.local.json`）では有効化できない（無効化は可能）よう変更。有効化は `/config` からユーザースコープで行う。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.221（2026-08-04）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.6
+        },
+        "relevance": {
+          "score": 2.84,
+          "probabilities": [
+            0,
+            0,
+            0.15,
+            0.85
+          ],
+          "confidence": 0.84
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "その他の修正・削除",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "**ultraplan 機能を削除**。 / `/diff` ビュー・Remote Control のワークスペース diff・Claude Code on the web のファイル編集 diff が、raw な git blob の内容を使うように（ワークスペース設定の diff ドライバ・textconv を無視）。 / stream idle タイムアウトがカスタム `ANTHROPIC_BASE_URL` ゲートウェイでサーバーの keep-alive ping 到達にもかかわらず発火する問題を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.221（2026-08-04）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.74
+        },
+        "relevance": {
+          "score": 2.84,
+          "probabilities": [
+            0,
+            0,
+            0.15,
+            0.85
+          ],
+          "confidence": 0.84
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,581 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/apple-security-releases/20260915.md",
+  "sourceHash": "sha256:99de630ddd55e3f12dbdcead8c5d9dc7cf17ba8f10cc5f6b75fe4ad61bb6de84",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:51.756Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "iOS 27およびiPadOS 27",
+      "url": "https://support.apple.com/ja-jp/149034",
+      "secondaryUrls": [],
+      "summary": "iPhone / iPad 向け年次メジャーアップデート。約126件の CVE を修正する大規模なセキュリティ更新で、カーネル・WebKit をはじめ広範なコンポーネントが対象。実環境で悪用された脆弱性の記載は確認できなかった。",
+      "publishedAt": "2026-09-14",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "iPhone 11以降、iPad Pro 12.9インチ（第4世代）以降、iPad Pro 11インチ（第2世代）以降、iPad Air（第4世代）以降、iPad（第9世代）以降、iPad mini（第6世代）以降",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0.05,
+            "security": 0.95,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.94
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 1.03,
+          "probabilities": [
+            0,
+            0.98,
+            0.01,
+            0.01
+          ],
+          "confidence": 0.96
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "iOS 26.7およびiPadOS 26.7",
+      "url": "https://support.apple.com/ja-jp/149041",
+      "secondaryUrls": [],
+      "summary": "26系統を継続利用するデバイス向けの更新。約82件の CVE を修正。iOS 27 へ移行しないユーザー向けに主要な脆弱性を提供する位置づけ。",
+      "publishedAt": "2026-09-14",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "iPhone 11以降、iPad Pro 12.9インチ（第3世代）以降、iPad Pro 11インチ（第1世代）以降、iPad Air（第3世代）以降、iPad（第8世代）以降、iPad mini（第5世代）以降",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 1,
+          "probabilities": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "confidence": 0.99
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "macOS Golden Gate 27",
+      "url": "https://support.apple.com/ja-jp/149035",
+      "secondaryUrls": [],
+      "summary": "macOS の年次メジャーアップデート（27, コードネーム Golden Gate）。約210件の CVE を修正する今回最大規模のセキュリティ更新。Appleシリコン Mac が対象。",
+      "publishedAt": "2026-09-14",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "MacBook Neo（2026）、Appleシリコン搭載MacBook Air（2020年以降）、Appleシリコン搭載MacBook Pro（2020年以降）、Appleシリコン搭載iMac（2021年以降）、Appleシリコン搭載Mac mini（2020年以降）、Mac Studio（2022年以降）、Appleシリコン搭載Mac Pro（2023）",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0.02,
+            "security": 0.98,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.12
+        },
+        "relevance": {
+          "score": 1.11,
+          "probabilities": [
+            0,
+            0.93,
+            0.03,
+            0.04
+          ],
+          "confidence": 0.88
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "macOS Tahoe 26.7",
+      "url": "https://support.apple.com/ja-jp/149042",
+      "secondaryUrls": [],
+      "summary": "前メジャー系統 macOS Tahoe（26）向けの更新。約153件の CVE を修正。macOS 27 へ移行しない環境向けの継続的セキュリティ提供。",
+      "publishedAt": "2026-09-14",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "macOS Tahoe",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 1.06,
+          "probabilities": [
+            0,
+            0.95,
+            0.03,
+            0.02
+          ],
+          "confidence": 0.93
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "macOS Sequoia 15.8",
+      "url": "https://support.apple.com/ja-jp/149043",
+      "secondaryUrls": [],
+      "summary": "旧系統 macOS Sequoia（15）向けの更新。約154件の CVE を修正。長期利用環境向けにバックポートされたセキュリティ修正。",
+      "publishedAt": "2026-09-14",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "macOS Sequoia",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.09,
+          "probabilities": [
+            0,
+            0.94,
+            0.03,
+            0.03
+          ],
+          "confidence": 0.91
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "tvOS 27",
+      "url": "https://support.apple.com/ja-jp/149036",
+      "secondaryUrls": [],
+      "summary": "Apple TV 向け年次メジャーアップデート。約89件の CVE を修正。共通基盤コンポーネントを中心に脆弱性を解消。",
+      "publishedAt": "2026-09-14",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "Apple TV 4K（第2世代）以降",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0.02,
+            "security": 0.98,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0.76,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.24
+          },
+          "confidence": 0.73
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 0.23,
+          "probabilities": [
+            0.78,
+            0.22,
+            0,
+            0
+          ],
+          "confidence": 0.77
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "watchOS 27",
+      "url": "https://support.apple.com/ja-jp/149037",
+      "secondaryUrls": [],
+      "summary": "Apple Watch 向け年次メジャーアップデート。約93件の CVE を修正。Series 9 以降が対象。",
+      "publishedAt": "2026-09-14",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "Apple Watch Series 9以降",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0.03,
+            "security": 0.97,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.96
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0.97,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.03
+          },
+          "confidence": 0.97
+        },
+        "breaking": {
+          "noul": 0.14
+        },
+        "relevance": {
+          "score": 1,
+          "probabilities": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "confidence": 1
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "visionOS 27",
+      "url": "https://support.apple.com/ja-jp/149038",
+      "secondaryUrls": [],
+      "summary": "Apple Vision Pro 向け年次メジャーアップデート。約124件の CVE を修正。全モデルが対象。",
+      "publishedAt": "2026-09-14",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "Apple Vision Pro（すべてのモデル）",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0.01,
+            "security": 0.99,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0.55,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.45
+          },
+          "confidence": 0.49
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 0.27,
+          "probabilities": [
+            0.74,
+            0.25,
+            0.01,
+            0
+          ],
+          "confidence": 0.73
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "Safari 27",
+      "url": "https://support.apple.com/ja-jp/149039",
+      "secondaryUrls": [],
+      "summary": "Safari の年次メジャーアップデート。約6件の CVE を修正。旧 macOS 系統（Sequoia / Tahoe）向けに単体配信され、WebKit 関連の脆弱性が中心。",
+      "publishedAt": "2026-09-14",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "macOS SequoiaおよびmacOS Tahoe",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0.01,
+            "security": 0.99,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "browser",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0.99,
+            "web_search": 0,
+            "ios": 0.01,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 1.12,
+          "probabilities": [
+            0,
+            0.91,
+            0.06,
+            0.03
+          ],
+          "confidence": 0.88
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "Xcode 27",
+      "url": "https://support.apple.com/ja-jp/149040",
+      "secondaryUrls": [],
+      "summary": "開発ツール Xcode の年次メジャーアップデート。1件の CVE を修正。macOS Tahoe 26.6 以降が対象。",
+      "publishedAt": "2026-09-14",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "macOS Tahoe 26.6以降",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0.31,
+            "security": 0.69,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.65
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.13
+        },
+        "relevance": {
+          "score": 1,
+          "probabilities": [
+            0.07,
+            0.88,
+            0.02,
+            0.03
+          ],
+          "confidence": 0.86
+        }
+      }
+    }
+  ]
+}

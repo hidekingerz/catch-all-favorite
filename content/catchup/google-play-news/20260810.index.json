@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/google-play-news/20260810.md",
+  "sourceHash": "sha256:0f40c99446c3bc1fc1758ccfc22a81c3604b18ff9789fbcaf5e0584aca94d82a",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:12.313Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "機密情報にアクセスする権限または API（連絡先）",
+      "url": "https://android-developers.googleblog.com/2026/04/giving-users-clearer-choice-and-everyone-a-safer-more-trusted-app-ecosystem.html",
+      "secondaryUrls": [
+        "https://goo.gle/policybytes226",
+        "https://support.google.com/googleplay/android-developer/answer/16935362",
+        "https://playacademy.exceedlms.com/student/activity/1112965-comply-with-google-play-s-restricted-permissions-with-minimum-scope-alternatives-policy"
+      ],
+      "summary": "ユーザーの連絡先への広範なアクセスを管理するポリシー。広範なアクセスの正当な必要性がないアプリは、より安全でデータ収集を最小化する「Android 連絡先選択ツール（Contact Picker）」の採用が求められる。**適用日はテーブル上で 2027-01-27 に更新**（前回記録時は 2026-10-28）。",
+      "publishedAt": null,
+      "effectiveAt": "2027-01-27",
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "policy",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 1,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.82
+        },
+        "relevance": {
+          "score": 1.16,
+          "probabilities": [
+            0,
+            0.91,
+            0.02,
+            0.07
+          ],
+          "confidence": 0.84
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "機密情報にアクセスする権限または API（位置情報）",
+      "url": "https://android-developers.googleblog.com/2026/04/giving-users-clearer-choice-and-everyone-a-safer-more-trusted-app-ecosystem.html",
+      "secondaryUrls": [
+        "https://goo.gle/policybytes226"
+      ],
+      "summary": "ユーザーのプライバシー保護を強化するため、位置情報権限ポリシーが更新される。精度の高い位置情報アクセスについては、最小スコープの推奨代替手段として「位置情報ボタン（Location Button）」の利用が求められる。**適用日はテーブル上で 2027-01-27 に更新**（前回記録時は 2026-10-28）。",
+      "publishedAt": null,
+      "effectiveAt": "2027-01-27",
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "policy",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 1,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.82
+        },
+        "relevance": {
+          "score": 1.32,
+          "probabilities": [
+            0,
+            0.83,
+            0.02,
+            0.15
+          ],
+          "confidence": 0.67
+        }
+      }
+    }
+  ]
+}

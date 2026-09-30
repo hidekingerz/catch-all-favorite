@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/apple-news/20260826.md",
+  "sourceHash": "sha256:1144291fbb24c3f32d77a13488131d25ba1c37511bd1ee87ad91681c37f29875",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:48.280Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "おはよう世界。",
+      "url": "https://developer.apple.com/jp/news/?id=s6spdug0",
+      "secondaryUrls": [],
+      "summary": "特別な Apple イベントの開催告知。現地時間 2026 年 9 月 9 日午前 10 時（日本時間 9 月 10 日午前 2 時）に開催され、apple.com/jp・Apple TV・YouTube ライブで視聴できる。イベントで発表される新製品や新 OS・提供時期は、アプリの新 SDK / OS 対応や App Store 提出要件に影響する可能性があるため、開発者は内容を確認しておくとよい。",
+      "publishedAt": "2026-08-26",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 1,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1.17,
+          "probabilities": [
+            0.03,
+            0.83,
+            0.08,
+            0.06
+          ],
+          "confidence": 0.77
+        }
+      }
+    }
+  ]
+}

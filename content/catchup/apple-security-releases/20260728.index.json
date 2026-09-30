@@ -1,0 +1,467 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/apple-security-releases/20260728.md",
+  "sourceHash": "sha256:9db6ad78d512f3d1d52c324694baf1c97c891cde2022fa3a8f0fb9ecd3f32140",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:50.604Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "iOS 26.6およびiPadOS 26.6",
+      "url": "https://support.apple.com/ja-jp/128066",
+      "secondaryUrls": [],
+      "summary": "約87件の CVE を修正。Kernel、IOKit、WebKit（WebKit Canvas）、WebRTC、ImageIO、CoreAudio、CoreMedia、Apple Neural Engine、Siri、Wi-Fi など約40コンポーネントに及ぶ大型更新。実環境での悪用が明記されたゼロデイは確認されなかった。",
+      "publishedAt": "2026-07-27",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "iPhone 11以降、iPad Pro 12.9インチ（第3世代）以降、iPad Pro 11インチ（第1世代）以降、iPad Air（第3世代）以降、iPad（第8世代）以降、iPad mini（第5世代）以降",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 1.04,
+          "probabilities": [
+            0,
+            0.97,
+            0.02,
+            0.01
+          ],
+          "confidence": 0.96
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "macOS Tahoe 26.6",
+      "url": "https://support.apple.com/ja-jp/128067",
+      "secondaryUrls": [],
+      "summary": "約155件の CVE を修正する最大規模の更新。Kernel、APFS、GPU Drivers、Metal、WebKit（WebKit Canvas）、CUPS、apache、curl、Net-SNMP、SMB など約74コンポーネントが対象。実環境での悪用が明記された脆弱性は確認されなかった。",
+      "publishedAt": "2026-07-27",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "macOS Tahoe",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 1.13,
+          "probabilities": [
+            0,
+            0.91,
+            0.05,
+            0.04
+          ],
+          "confidence": 0.86
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "macOS Sequoia 15.7.8",
+      "url": "https://support.apple.com/ja-jp/128071",
+      "secondaryUrls": [],
+      "summary": "旧 OS 向けの更新として約138件の CVE を修正。Kernel、APFS、ImageIO、libxslt、CUPS、apache、curl、Net-SNMP など約72コンポーネントが対象。実環境での悪用が明記された脆弱性は確認されなかった。",
+      "publishedAt": "2026-07-27",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "macOS Sequoia",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.04,
+          "probabilities": [
+            0,
+            0.97,
+            0.02,
+            0.01
+          ],
+          "confidence": 0.96
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "macOS Sonoma 14.8.8",
+      "url": "https://support.apple.com/ja-jp/128072",
+      "secondaryUrls": [],
+      "summary": "旧 OS 向けの更新として約127件の CVE を修正。Kernel、APFS、Metal、ImageIO、libxslt、CUPS、apache、curl など約69コンポーネントが対象。実環境での悪用が明記された脆弱性は確認されなかった。",
+      "publishedAt": "2026-07-27",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "macOS Sonoma",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.07,
+          "probabilities": [
+            0,
+            0.95,
+            0.03,
+            0.02
+          ],
+          "confidence": 0.93
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "tvOS 26.6",
+      "url": "https://support.apple.com/ja-jp/128069",
+      "secondaryUrls": [],
+      "summary": "約100件の CVE を修正。Kernel、IOGPUFamily、WebKit（WebKit Canvas / WebKit Storage）、Web Extensions、WebRTC、ImageIO、libxslt など約34コンポーネントが対象。実環境での悪用が明記された脆弱性は確認されなかった。",
+      "publishedAt": "2026-07-27",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "Apple TV HDおよびApple TV 4K（すべてのモデル）",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0.87,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.13
+          },
+          "confidence": 0.84
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 0.61,
+          "probabilities": [
+            0.5,
+            0.41,
+            0.07,
+            0.02
+          ],
+          "confidence": 0.39
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "watchOS 26.6",
+      "url": "https://support.apple.com/ja-jp/128068",
+      "secondaryUrls": [],
+      "summary": "約100件の CVE を修正。Kernel、IOGPUFamily、IOKit、WebKit（WebKit Canvas / WebKit Storage）、Web Extensions、WebRTC、libxslt など約36コンポーネントが対象。実環境での悪用が明記された脆弱性は確認されなかった。",
+      "publishedAt": "2026-07-27",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "Apple Watch Series 6以降",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0.97,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.03
+          },
+          "confidence": 0.97
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.04,
+          "probabilities": [
+            0,
+            0.98,
+            0.01,
+            0.01
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "visionOS 26.6",
+      "url": "https://support.apple.com/ja-jp/128070",
+      "secondaryUrls": [],
+      "summary": "約99件の CVE を修正。Kernel、WebKit（WebKit Canvas / WebKit Storage）、Web Extensions、WebRTC、ImageIO、libarchive、libxslt など約33コンポーネントが対象。実環境での悪用が明記された脆弱性は確認されなかった。",
+      "publishedAt": "2026-07-27",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "Apple Vision Pro（すべてのモデル）",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0.04,
+            "web_search": 0,
+            "ios": 0.74,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.22
+          },
+          "confidence": 0.7
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 0.75,
+          "probabilities": [
+            0.38,
+            0.53,
+            0.06,
+            0.03
+          ],
+          "confidence": 0.5
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "Safari 26.6",
+      "url": "https://support.apple.com/ja-jp/128073",
+      "secondaryUrls": [],
+      "summary": "約11件の CVE を修正。WebKit（WebKit Canvas）と WebRTC を中心とした修正で、旧 OS（Sonoma / Sequoia）向けに Safari 単体で提供される。実環境での悪用が明記された脆弱性は確認されなかった。",
+      "publishedAt": "2026-07-27",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "macOS SonomaおよびmacOS Sequoia",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "browser",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 1,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.12,
+          "probabilities": [
+            0,
+            0.91,
+            0.06,
+            0.03
+          ],
+          "confidence": 0.87
+        }
+      }
+    }
+  ]
+}

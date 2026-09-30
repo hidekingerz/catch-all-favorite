@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/chrome-blog/20260920.md",
+  "sourceHash": "sha256:0e78927abcc20df67c8fbed704069837c395855d1d48689022b5dd56841043b4",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:56.557Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Enhance multitasking extensions with the new Tabs Split View API",
+      "url": "https://developer.chrome.com/blog/split-view-api-extensions?hl=ja",
+      "secondaryUrls": [],
+      "summary": "Chrome 155 で、拡張機能から Chrome ネイティブの分割ビュー（Split View）を制御できる新しい Split View API が追加された。従来は複数ウィンドウのリサイズ・iframe への埋め込み・サイドパネルといった不安定な回避策に頼っていた並べて表示する体験を、既存の Tabs API と統合された API で分割ビューの検出・作成・管理として直接扱えるようになる。Mozilla など他ブラウザベンダーと WebExtensions Community Group で協調して策定されており、マルチタスク系拡張機能の開発者は確認しておきたい。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {
+        "公開日": "不明（記事ページに Published 表記なし。最終更新: 2026-09-16 UTC）"
+      },
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.51,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.49,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.44
+        },
+        "ecosystem": {
+          "choice": "browser",
+          "probabilities": {
+            "web_frontend": 0.05,
+            "node_runtime": 0,
+            "browser": 0.95,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.94
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1.94,
+          "probabilities": [
+            0.01,
+            0.05,
+            0.93,
+            0.01
+          ],
+          "confidence": 0.93
+        }
+      }
+    }
+  ]
+}

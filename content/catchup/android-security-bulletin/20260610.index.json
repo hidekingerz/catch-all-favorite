@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/android-security-bulletin/20260610.md",
+  "sourceHash": "sha256:0ea2a75e0f446086787f32f42df2f337770db27d872ac617c1215f8e45b06a90",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:44.554Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Android のセキュリティに関する公開情報 - 2026 年 6 月",
+      "url": "https://source.android.com/docs/security/bulletin/2026/2026-06-01?hl=ja",
+      "secondaryUrls": [],
+      "summary": "System コンポーネントに、追加の実行権限やユーザー操作なしにリモートで権限昇格を許す可能性のある Critical な脆弱性が含まれる。対象は Framework・System・Kernel に加え、Imagination Technologies（PowerVR-GPU）・MediaTek（Modem, GenieZone, Preloader）・Unisoc（Modem）・Qualcomm（Display, クローズドソースコンポーネント）等のベンダーコンポーネント、および Google Play システムアップデート。Critical 例として CVE-2026-0043・CVE-2026-0097・CVE-2026-21352・CVE-2026-21353（System）、Qualcomm クローズドソースの CVE-2025-47392・CVE-2026-25276・CVE-2026-25277 などが挙げられている。",
+      "publishedAt": "2026-06-01",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": "2026-06-01 / 2026-06-05",
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 1.02,
+          "probabilities": [
+            0,
+            0.98,
+            0.01,
+            0.01
+          ],
+          "confidence": 0.98
+        }
+      }
+    }
+  ]
+}

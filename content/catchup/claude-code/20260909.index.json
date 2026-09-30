@@ -1,0 +1,467 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260909.md",
+  "sourceHash": "sha256:86007024279338ffda12482e7dc769cc5a0a9c80c1dbd88fba4c102a325c65a7",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:07.472Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "設定・モデル（努力レベル）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "`maxEffortLevel` 設定を追加（トップレベル、またはモデルごとに `modelSettings` 配下で指定）。Bedrock / Vertex / Foundry を含む全プロバイダーで努力レベルの上限を設定でき、ユーザーはそれより低いレベルは選択できる。カスタムコマンド・スキル・サブエージェントの `effort:` frontmatter が、既定努力レベルが固定されているモデル（Opus 4.7 / Opus 4.8 / Fable 5）で無視されていた問題も修正。usage-limit 警告がモデル／モードごとに異なる制限ウィンドウを報告した際にちらつく問題も修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.267（2026-09-09）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.18,
+          "probabilities": [
+            0,
+            0,
+            0.81,
+            0.19
+          ],
+          "confidence": 0.81
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "システムプロンプト・プロンプトキャッシュ安定化",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "`--system-prompt-snapshot off` を追加。会話に記録済みのプロンプトを再利用せず毎リクエストでシステムプロンプトを新規レンダリングする（プロンプト文言のイテレーション用）。今回の大テーマがプロンプトキャッシュの安定化で、以下を一括修正: モデル切替（`/model`）で全ツール定義が再送されキャッシュミスになる問題（コミット／PR の attribution テキストは会話ノートとして届きモデル変更時に更新される方式に）、MCP コネクタ再接続で resume 時にインラインツールセットが書き換わる問題、resume 時にツール説明を再レンダリングして拡張思考が落ちる問題、会話から fork したバックグラウンドワーカーが `EnterWorktree` をツールブロックに追加してキャッシュ再利用を壊す問題、ToolSearch 非対応セッションで MCP／プラグインツールがツール一覧に追加される問題（対応モデルには deferred definition として渡す）、`-p`（print モード）会話を対話的に resume した際のキャッシュ破壊など。また `--system-prompt`／`--append-system-prompt` で開始したサブエージェント／セッションはシステムプロンプトとツール定義を一度だけ記録するよう改善。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.267（2026-09-09）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.23
+        },
+        "relevance": {
+          "score": 2.4,
+          "probabilities": [
+            0,
+            0,
+            0.6,
+            0.4
+          ],
+          "confidence": 0.59
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "resume・セッション信頼性",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "`-p --resume` で `/compact` 等のスラッシュコマンド後に resume すると余分な「Continue from where you left off.」ターンが挿入される問題を修正。5 MB 超の大規模セッション resume で並列ツール呼び出しとそのフック出力が落ちる問題、多数の Bash 呼び出しを含むセッションの `--resume` 初期描画高速化も。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.267（2026-09-09）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.05,
+          "probabilities": [
+            0,
+            0,
+            0.94,
+            0.06
+          ],
+          "confidence": 0.94
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "サンドボックス・セキュリティ",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "マーケットプレイス エントリのパスにバックスラッシュが含まれると macOS / Linux で fetched マーケットプレイスの封じ込めチェックを回避できた問題を修正。managed の `allowedHttpHookUrls` / `httpHookAllowedEnvVars` / `allowedChannelPlugins` が読み取り不能なとき「全許可」ではなく「全拒否」になるよう修正。Bash ツールの説明ガイダンスを改善し、コマンドをそのまま echo せず平易な言葉で説明するように。サンドボックス内で `pbcopy` 等のクリップボードコマンドが失敗したら `/copy` を提案するガイダンスも追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.267（2026-09-09）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0.07,
+            "security": 0.93,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.92
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.36
+        },
+        "relevance": {
+          "score": 2.63,
+          "probabilities": [
+            0,
+            0.01,
+            0.35,
+            0.64
+          ],
+          "confidence": 0.63
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Cowork・ワークフロー・その他",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "managed settings がサンドボックスを要求する組織で、クラウドの Cowork スケジュールタスクが起動時に失敗する問題を修正。Workflow の `agent()` 呼び出しが大きな出力スキーマを持つと auto モードで安全性分類器に掛けられず拒否される問題を修正。artifact のパブリッシュがアップロード途中で接続断により切れた場合、未完了と判定できるときは一度リトライするように。artifact ページファイルが不正な UTF-8／U+FFFD を含む場合のエラーに行・列を表示。`/context` 等のローカルコマンド出力がモバイルで空白になる問題、`/diff` パネルのちらつきや空状態のセンタリングも改善。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.267（2026-09-09）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.35,
+          "probabilities": [
+            0,
+            0,
+            0.65,
+            0.35
+          ],
+          "confidence": 0.64
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "認証・ゲートウェイ・リモート制御",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "Claude Desktop 等のホストアプリ下で AWS / Google Cloud の資格情報が期限切れの際、汎用「request failed」で 10 回リトライしてから再認証エラーが出ていた問題を修正。managed で Claude apps ゲートウェイ サインインを要求するマシンで `/login` の Esc がダイアログを閉じるように。`claude remote-control` がサーバー資格情報の期限切れ（起動後約 30 日）で終了し全接続セッションを落とす問題を修正（ホストが再登録して継続）。ゲートウェイの `forward_user_identity` upstream は 429 をそのまま返し次の upstream にフェイルオーバーしないよう変更（per-user 制限を維持）。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.267（2026-09-09）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.14
+        },
+        "relevance": {
+          "score": 2.37,
+          "probabilities": [
+            0.02,
+            0,
+            0.57,
+            0.41
+          ],
+          "confidence": 0.55
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "v2.1.266（リグレッション修正のみ）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "2.1.265 で発生した LLM ゲートウェイ／プロキシ構成のリグレッションを修正。未文書の環境変数 `CLAUDE_CODE_USE_GATEWAY` が、以前は `ANTHROPIC_BASE_URL` と `ANTHROPIC_AUTH_TOKEN` の両方が設定されていない限り無視されていたのに、2.1.265 では単独で Cloud ゲートウェイ サインインを強制するようになり、API キー／`apiKeyHelper`／カスタム認証ヘッダーと併用した構成が全リクエストで「Not signed in to the Cloud gateway」で失敗していた。この変数は単独では再び無視されるようになり、構成変更は不要。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.266（2026-09-08）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 2.29,
+          "probabilities": [
+            0.01,
+            0,
+            0.68,
+            0.31
+          ],
+          "confidence": 0.67
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "エディタ連携・クライアント（VSCode / web / Claude Tag）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "[VSCode] cyclic parent link を含む保存済み transcript の会話で fork・過去メッセージ編集・rewind すると拡張ホストが 100% CPU でハングする問題、WSL2/WSLg でのスクショ貼り付け、diff ブロックが常にダークテーマで描画される問題、CRLF ファイルでの編集受け入れ失敗、パスに空白を含む @-mention 落ち、Remote-SSH でのセッション一覧読み込み失敗、大規模／シンボリックリンク多用ワークスペースでの ripgrep 暴走などを修正。[Claude Code on the web] GitHub Enterprise Server セッションでトークン期限切れ後に GitHub 未接続表示になる問題、Claude GitHub App のない組織で `gh`／GitHub API 呼び出しが失敗する問題を修正（接続済み GitHub アカウントを使用）。[Claude Tag] カスタムコネクタへの切替リンク追加、使用クレジット枯渇時のメッセージ改善、トップレベル投稿の編集／削除がセッションに届かない問題、Tool access リクエストの Connect 失敗などを修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.267（2026-09-09）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.27,
+          "probabilities": [
+            0,
+            0,
+            0.72,
+            0.28
+          ],
+          "confidence": 0.71
+        }
+      }
+    }
+  ]
+}

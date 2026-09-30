@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/apple-security-releases/20260909.md",
+  "sourceHash": "sha256:c0ed40df25fbc9702b3ff097158b9b57d2256cfd2d63c62f04d057689d54637d",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:51.358Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "iOS 26.6.2およびiPadOS 26.6.2",
+      "url": "https://support.apple.com/ja-jp/100100",
+      "secondaryUrls": [],
+      "summary": "iPhone・iPad 向けのアップデート。一覧ページには「このアップデートにはCVEの公開エントリがありません」と注記されており、公開時点で修正 CVE の内訳は掲載されていない。個別のセキュリティコンテンツ詳細ページも用意されていないため、セキュリティ上の修正内容は確認できない。",
+      "publishedAt": "2026-09-08",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "iPhone 11以降、iPad Pro 12.9インチ（第3世代）以降、iPad Pro 11インチ（第1世代）以降、iPad Air（第3世代）以降、iPad（第8世代）以降、iPad mini（第5世代）以降",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.63,
+            "security": 0.37,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.58
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1,
+          "probabilities": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "confidence": 0.99
+        }
+      }
+    }
+  ]
+}

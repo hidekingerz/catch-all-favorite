@@ -1,0 +1,581 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/chrome-blog/20260607.md",
+  "sourceHash": "sha256:7760dd6da011bcd143ff6a3c6a822e6aa0af2b249db1d9e0505ab5f91bf672f2",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:52.560Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Seamless PWA origin migration: Change domains without losing users",
+      "url": "https://developer.chrome.com/blog/seamless-pwa-origin-migration?hl=ja",
+      "secondaryUrls": [],
+      "summary": "Chrome 150でPWAのドメイン移行を支援する機能が導入。マニフェストに`migrate_from`フィールドを追加し、旧オリジンの`.well-known`ファイルで`allow_migration`を有効化することで、ユーザーへの通知とともに旧アプリの自動アンインストールと新アプリのインストールがシームレスに行われる",
+      "publishedAt": "2026-06-03",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.64,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.36,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.59
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.88,
+            "node_runtime": 0,
+            "browser": 0.12,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.86
+        },
+        "breaking": {
+          "noul": 0.14
+        },
+        "relevance": {
+          "score": 2.32,
+          "probabilities": [
+            0,
+            0.01,
+            0.66,
+            0.33
+          ],
+          "confidence": 0.66
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "Chrome 150 beta",
+      "url": "https://developer.chrome.com/blog/chrome-150-beta?hl=ja",
+      "secondaryUrls": [],
+      "summary": "CSS関連では`AccentColor`/`AccentColorText`システムカラー、アニメーション可能な`zoom`、`polygon()`角丸め、`text-fit`による動的テキスト調整、`background-clip: border-area`が追加。Web API側ではIndexedDBがSQLiteバックエンドに移行し信頼性とパフォーマンスが向上、PWAオリジン移行機能、プログラムによるスクロール操作のPromise通知にも対応",
+      "publishedAt": "2026-06-03",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.97,
+            "node_runtime": 0,
+            "browser": 0.03,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.96
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2.2,
+          "probabilities": [
+            0,
+            0,
+            0.8,
+            0.2
+          ],
+          "confidence": 0.79
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "What's new in DevTools (Chrome 149)",
+      "url": "https://developer.chrome.com/blog/new-in-devtools-149?hl=ja",
+      "secondaryUrls": [],
+      "summary": "Gemini 3ベースのAIアシスタンスUIが大幅刷新され、会話機能やコーディングエージェントへの出力コピー機能が追加。エージェント向けDevTools MCPサーバーが安定版化し、試験運用版のWebMCPデバッグツールが導入。コントラスト計算でAPCA（高度な知覚コントラストアルゴリズム）が標準機能に昇格",
+      "publishedAt": "2026-06-02",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "browser",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0.99,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.01,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.01,
+          "probabilities": [
+            0,
+            0,
+            0.98,
+            0.02
+          ],
+          "confidence": 0.98
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "New in Chrome 149",
+      "url": "https://developer.chrome.com/blog/new-in-chrome-149?hl=ja",
+      "secondaryUrls": [],
+      "summary": "CSSギャップ装飾でグリッドやflexboxのギャップをスタイル設定可能に。アクティブなWebSocket接続があるページがbfcacheに保存されるようになりページの高速復元が可能に。`Intl.Locale.prototype.variants`でロケールバリアントを取得するAPIが追加",
+      "publishedAt": "2026-06-02",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.98,
+            "node_runtime": 0,
+            "browser": 0.02,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.03,
+          "probabilities": [
+            0,
+            0,
+            0.97,
+            0.03
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Build new features using built-in AI in Chrome",
+      "url": "https://developer.chrome.com/blog/build-new-features-using-built-in-ai-in-chrome-io2026?hl=ja",
+      "secondaryUrls": [],
+      "summary": "Google I/O 2026の講演の書き起こし。Chromeに組み込まれたAI機能により、Summarizer API・Prompt API・Writer APIなどを使ってデバイス上でモデルを実行可能。クラウド費用不要でプライバシーを保護しつつオフラインでも動作する",
+      "publishedAt": "2026-05-26",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.57,
+            "guide": 0,
+            "event": 0.43,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.49
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.96,
+            "node_runtime": 0,
+            "browser": 0.03,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.01,
+            "other": 0
+          },
+          "confidence": 0.96
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 2.01,
+          "probabilities": [
+            0,
+            0,
+            0.99,
+            0.01
+          ],
+          "confidence": 0.98
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "What's new in web extensions: I/O 2026 recap",
+      "url": "https://developer.chrome.com/blog/extensions-io-2026?hl=ja",
+      "secondaryUrls": [],
+      "summary": "AI技術により拡張機能開発が身近になり、開発者の月間登録数が2倍以上に増加。開発者登録対象国を120ヶ国以上に拡大予定。ダッシュボードでのロール管理、企業向け限定公開オプション、`browser`グローバル名前空間によるクロスブラウザ対応強化など",
+      "publishedAt": "2026-05-22",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0.01,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.09,
+            "guide": 0,
+            "event": 0.9,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.88
+        },
+        "ecosystem": {
+          "choice": "browser",
+          "probabilities": {
+            "web_frontend": 0.02,
+            "node_runtime": 0,
+            "browser": 0.98,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 1.96,
+          "probabilities": [
+            0,
+            0.06,
+            0.92,
+            0.02
+          ],
+          "confidence": 0.91
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "New in Chrome at Google I/O 2026",
+      "url": "https://developer.chrome.com/blog/new-in-chrome-io26?hl=ja",
+      "secondaryUrls": [],
+      "summary": "Google I/O 2026で発表されたChrome関連の講演が全てオンデマンド視聴可能に。WebMCP、Modern Web Guidance、エージェント向けChrome DevTools、HTML-in-Canvas、Prompt APIなど多数の新機能が紹介",
+      "publishedAt": "2026-05-21",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.02,
+            "guide": 0,
+            "event": 0.98,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.97
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.67,
+            "node_runtime": 0,
+            "browser": 0.28,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.04,
+            "other": 0
+          },
+          "confidence": 0.62
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 2.01,
+          "probabilities": [
+            0,
+            0,
+            0.99,
+            0.01
+          ],
+          "confidence": 0.98
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "Modernize authentication with passkeys, digital credentials, and more",
+      "url": "https://developer.chrome.com/blog/io26-web-identity?hl=ja",
+      "secondaryUrls": [],
+      "summary": "パスキーによるフィッシング耐性の高いログイン体験の実現方法を解説。条件付き作成によるパスキーの自動アップグレード、ID連携やメール確認プロトコル（EVP）の活用、デバイスバインドセッション認証情報（DBSC）による包括的なセキュリティ対策",
+      "publishedAt": "2026-05-21",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0.01,
+            "policy": 0,
+            "feature": 0.24,
+            "guide": 0.75,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.71
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.11
+        },
+        "relevance": {
+          "score": 2.34,
+          "probabilities": [
+            0,
+            0.02,
+            0.62,
+            0.36
+          ],
+          "confidence": 0.61
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "15 updates from Google I/O 2026: Powering the agentic web with new capabilities, tools, and features in Chrome",
+      "url": "https://developer.chrome.com/blog/chrome-at-io26?hl=ja",
+      "secondaryUrls": [],
+      "summary": "「エージェントウェブの時代」に対応する15のアップデートを発表。WebMCPなどのAIエージェント向け機能、HTML-in-CanvasやDeclarative Partial UpdatesなどUI/パフォーマンス新API、Gemini in Chromeによるプロアクティブなアシスタント機能が含まれる",
+      "publishedAt": "2026-05-19",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0.02,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.32,
+            "guide": 0,
+            "event": 0.66,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.61
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.96,
+            "node_runtime": 0,
+            "browser": 0.03,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.01,
+            "other": 0
+          },
+          "confidence": 0.96
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.05,
+          "probabilities": [
+            0,
+            0,
+            0.95,
+            0.05
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "Declarative partial updates",
+      "url": "https://developer.chrome.com/blog/declarative-partial-updates?hl=ja",
+      "secondaryUrls": [],
+      "summary": "`<template>`要素と処理命令プレースホルダを用いた順不同ストリーミングAPIと、`setHTML`・`streamHTML`などの動的HTML挿入メソッドが導入。コンテンツの準備ができた時点でストリーミング配信でき、ページ全体の準備を待たずにレンダリングが可能に",
+      "publishedAt": "2026-05-19",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.01,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.99,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.02,
+          "probabilities": [
+            0.01,
+            0.03,
+            0.88,
+            0.08
+          ],
+          "confidence": 0.86
+        }
+      }
+    }
+  ]
+}

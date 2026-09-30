@@ -1,0 +1,869 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/jser-info/20260609.md",
+  "sourceHash": "sha256:6eef76bb3926e353c9752b6b575231c838f6002a60f4e1c3214c9d627e0024b4",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:20.735Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Release pnpm 11.5 · pnpm/pnpm",
+      "url": "https://github.com/pnpm/pnpm/releases/tag/v11.5.0",
+      "secondaryUrls": [],
+      "summary": "`nodeLinker: hoisted`向けにhoistの範囲を制限する`hoistingLimits`設定を追加。対話的なプロンプトの改善、Staged publishingの対応改善。エイリアスインストール時のpeer解決のハング、`pnpm dist-tag`での2FA対応を修正。`minimumReleaseAgeExclude`の扱い、リモートのHTTPS tarball依存の`integrity`フィールドの保持などを修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "pnpm",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.11
+        },
+        "relevance": {
+          "score": 2.44,
+          "probabilities": [
+            0,
+            0,
+            0.55,
+            0.45
+          ],
+          "confidence": 0.54
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "Node.js 26.3.0 (Current)",
+      "url": "https://nodejs.org/en/blog/release/v26.3.0",
+      "secondaryUrls": [],
+      "summary": "`Buffer.poolSize`のデフォルトを64 KiBに変更。HTTPヘッダの値の検証をカスタマイズする`httpValidation`オプション、パーミッションを破棄する`permission.drop`を追加。Staged Publishingをサポートしたnpm 11.16.0へアップデートなど。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "nodejs",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.61
+        },
+        "relevance": {
+          "score": 2.53,
+          "probabilities": [
+            0,
+            0,
+            0.47,
+            0.53
+          ],
+          "confidence": 0.53
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Node.js 24.16.0 (LTS)",
+      "url": "https://nodejs.org/en/blog/release/v24.16.0",
+      "secondaryUrls": [],
+      "summary": "`crypto.randomUUIDv7()`によるUUID v7の生成、`fs.stat()`への`signal`オプション、`util.styleText()`の16進数カラー対応を追加。Test Runnerにテスト実行順序のランダム化や`AbortSignal.timeout`向けのモックタイマーを追加、`IncomingMessage`に`req.signal`を追加など。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "nodejs",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.04,
+          "probabilities": [
+            0,
+            0,
+            0.95,
+            0.05
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "Chrome 150 beta",
+      "url": "https://developer.chrome.com/blog/chrome-150-beta?hl=en",
+      "secondaryUrls": [],
+      "summary": "CSSの`text-fit`プロパティ、`background-clip: border-area`によるグラデーションボーダー、`polygon()`の角丸サポート、`focusgroup`属性のサポート。IndexedDBの実装がLevelDBからSQLiteへと変更、`data:` URLのWorkerに一意のopaque originを割り当てるよう変更。`SpeechRecognition`に`quality`オプションを追加など。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "Chrome",
+        "browser",
+        "ReleaseNote",
+        "css"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.73,
+            "node_runtime": 0,
+            "browser": 0.27,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.69
+        },
+        "breaking": {
+          "noul": 0.24
+        },
+        "relevance": {
+          "score": 2.33,
+          "probabilities": [
+            0,
+            0,
+            0.67,
+            0.33
+          ],
+          "confidence": 0.66
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "VoidZero is joining Cloudflare",
+      "url": "https://blog.cloudflare.com/voidzero-joins-cloudflare/",
+      "secondaryUrls": [],
+      "summary": "CloudflareがViteやOxcなどを開発するVoidZeroを買収。Vite、Vitest、Rolldown、Oxc、Vite+プロジェクトはMITオープンソースで継続開発され、Voidプラットフォームはオープンソース化予定。 / 関連: https://voidzero.dev/posts/voidzero-cloudflare",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "cloudflare",
+        "vite",
+        "news"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "business",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.82,
+          "probabilities": [
+            0.09,
+            0.02,
+            0.87,
+            0.02
+          ],
+          "confidence": 0.78
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "Declarative partial updates",
+      "url": "https://developer.chrome.com/blog/declarative-partial-updates",
+      "secondaryUrls": [],
+      "summary": "HTMLを宣言的に部分更新するためのAPIとして提案中の`<template for>`について。`<template>`要素と`<?marker>`などの処理命令プレースホルダーを使い、ドキュメント内の順序に依存せずコンテンツを配信するOut-of-order streamingについて解説。合わせて利用する`setHTML()`/`replaceWithHTML()`/`streamHTML()`などのJavaScript APIについても扱っている。Chrome 148以降のフラグで利用でき、polyfillも実装されている。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "Chrome",
+        "HTML",
+        "WebAPI",
+        "DOM",
+        "stream",
+        "article"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.03,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.97,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.97
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.01,
+          "probabilities": [
+            0,
+            0.01,
+            0.97,
+            0.02
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "On Rendering Diffs",
+      "url": "https://pierre.computer/writing/on-rendering-diffs",
+      "secondaryUrls": [],
+      "summary": "Pierreが開発したdiffレンダリングライブラリ`@pierre/diffs`の実装解説。巨大なコード差分をブラウザで効率的に描画するための仮想化やメモリ最適化の手法について。sticky positioningの反転によるスクロール中の空白防止、行範囲レンダリングでのバイナリサーチ、DOM要素再利用によるGC回避、Shikiによる構文ハイライトのWorkerスレッド化とLRUキャッシュについて扱っている。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "JavaScript",
+        "performance",
+        "diff",
+        "library",
+        "article"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.03,
+            "guide": 0.97,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.96
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 1.92,
+          "probabilities": [
+            0.04,
+            0.01,
+            0.95,
+            0
+          ],
+          "confidence": 0.91
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "TSKaigi 2026 発表資料まとめ",
+      "url": "https://zenn.dev/yasse/articles/a7240304af804c",
+      "secondaryUrls": [],
+      "summary": "TSKaigi 2026のスライド資料のまとめ。 / 関連: https://2026.tskaigi.org/",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "TypeScript",
+        "Conference",
+        "slide"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 1,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.03
+        },
+        "relevance": {
+          "score": 1.96,
+          "probabilities": [
+            0.02,
+            0,
+            0.98,
+            0
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "Oxlintのカスタムルールの現況",
+      "url": "https://speakerdeck.com/syumai/oxlint-custom-rule",
+      "secondaryUrls": [],
+      "summary": "Oxlintのカスタムルールについてのスライド。Rust製のLinterであるOxlintで、ESLint互換のカスタムルールを追加できるJS Plugin（アルファ版）の機能やパフォーマンスについて紹介。既存のESLintプラグインの動作やtsgolint、corsa-bindについても解説している。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "ESLint",
+        "Rust",
+        "slide",
+        "JavaScript"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.04,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.76,
+            "guide": 0.02,
+            "event": 0.18,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.72
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.98,
+            "node_runtime": 0.02,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.99,
+          "probabilities": [
+            0.02,
+            0,
+            0.93,
+            0.04
+          ],
+          "confidence": 0.91
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "SoraKumo001/satoru",
+      "url": "https://github.com/SoraKumo001/satoru",
+      "secondaryUrls": [],
+      "summary": "WebAssemblyで動作するHTMLをSVG/PNG/WebP/PDFへ変換するレンダリングエンジン。描画にSkia、レイアウトにlitehtmlを利用し、CSSを含んだHTMLを画像へと変換する。TTF/OTF/WOFF2のフォントやGoogle Fontsの解決、PNG/JPEG/WebP/AVIFの画像をサポート。Node.js/ブラウザ/Cloudflare Workersで実行できる。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.24,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.75,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.71
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.9,
+            "node_runtime": 0.02,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.08
+          },
+          "confidence": 0.89
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 1.82,
+          "probabilities": [
+            0.08,
+            0.02,
+            0.89,
+            0.01
+          ],
+          "confidence": 0.81
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "microsoft/Webwright",
+      "url": "https://github.com/microsoft/Webwright",
+      "secondaryUrls": [],
+      "summary": "Microsoftによるブラウザエージェントフレームワーク。エージェントが個別のブラウザ操作を予測するのではなくPlaywrightを使ったPythonコードを生成して実行する。反復的なエージェントループとディレクトリをworkspaceとして扱い、毎回使い捨てのセッションで進める方式。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "AI",
+        "browser",
+        "automation",
+        "playwright",
+        "library"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.18,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.82,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.79
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0.03,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.96,
+            "other": 0.01
+          },
+          "confidence": 0.96
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1.13,
+          "probabilities": [
+            0.37,
+            0.13,
+            0.49,
+            0.01
+          ],
+          "confidence": 0.11
+        }
+      }
+    },
+    {
+      "id": 11,
+      "title": "pionxzh/wakaru",
+      "url": "https://github.com/pionxzh/wakaru",
+      "secondaryUrls": [],
+      "summary": "minifyやbundleされたJavaScriptを読みやすいコードへと復元するデコンパイラ。webpack/esbuild/Bun/Browserifyなどのbundleをモジュール単位に分割するunpackerを提供。Terser/Babel/SWCなどでトランスパイル/圧縮されたコードを復元するunminifyや、ソースマップをサポートしている。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "JavaScript",
+        "Tools",
+        "webpack",
+        "bundler",
+        "esbuild"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.18,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.79,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.03
+          },
+          "confidence": 0.75
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.77,
+          "probabilities": [
+            0.12,
+            0.01,
+            0.86,
+            0.01
+          ],
+          "confidence": 0.75
+        }
+      }
+    },
+    {
+      "id": 12,
+      "title": "Shakya47/pip-it-up",
+      "url": "https://github.com/Shakya47/pip-it-up",
+      "secondaryUrls": [],
+      "summary": "Document Picture-in-Picture APIを扱うReactコンポーネントライブラリ。リサイズやスタイルの同期などに対応している。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "JavaScript",
+        "React",
+        "library"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.27,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.71,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.02
+          },
+          "confidence": 0.66
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.99,
+          "probabilities": [
+            0.01,
+            0,
+            0.97,
+            0.02
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 13,
+      "title": "基本からしっかり学ぶフロントエンドテスト入門",
+      "url": "https://gihyo.jp/book/2026/978-4-297-15704-3",
+      "secondaryUrls": [],
+      "summary": "2026年6月26日発売。フロントエンドのテストについての書籍。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "JavaScript",
+        "test",
+        "book"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0.21,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0.49,
+            "event": 0,
+            "business": 0,
+            "other": 0.3
+          },
+          "confidence": 0.4
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.03
+        },
+        "relevance": {
+          "score": 1.9,
+          "probabilities": [
+            0.05,
+            0.01,
+            0.93,
+            0.01
+          ],
+          "confidence": 0.89
+        }
+      }
+    }
+  ]
+}

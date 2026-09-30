@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/android-security-bulletin/20260805.md",
+  "sourceHash": "sha256:40137dd2dd650f57991c31df22f218e5471a828152c2e6aed16c34dcd098e736",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:44.914Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Android のセキュリティに関する公開情報 - 2026 年 8 月",
+      "url": "https://source.android.com/docs/security/bulletin/2026/2026-08-01?hl=ja",
+      "secondaryUrls": [],
+      "summary": "Android デバイスに影響を及ぼすセキュリティ脆弱性を扱う月次速報（バージョン 1.0）。記載された問題はすべてセキュリティパッチレベル 2026-08-05 以降で対処される。対応するソースコードのパッチは、速報の初回公開から 48 時間以内に AOSP へリリースされる予定。なお取得時点では詳細ページの脆弱性テーブル（対象コンポーネントの内訳・重大度・個別 CVE）が展開されず取得できなかったため、上記は確認できた範囲の情報にとどめる。",
+      "publishedAt": "2026-08-03",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": "2026-08-01 / 2026-08-05",
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 1.02,
+          "probabilities": [
+            0,
+            0.99,
+            0,
+            0.01
+          ],
+          "confidence": 0.98
+        }
+      }
+    }
+  ]
+}

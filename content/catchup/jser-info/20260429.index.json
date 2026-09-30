@@ -1,0 +1,868 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/jser-info/20260429.md",
+  "sourceHash": "sha256:dfbf8c9d0eeaa1861df955fad53c204836d645c1798e4ee107c6467785073a1d",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:19.350Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "React Aria v1.17.0",
+      "url": "https://react-aria.adobe.com/releases/v1-17-0",
+      "secondaryUrls": [],
+      "summary": "Tableの展開可能な行対応、Virtualizerのウィンドウスクロール対応、水平Virtualize対応。個別hookパッケージを統合して依存数削減。sub-path imports対応、codemod提供。ComboBoxのジェネリック型、NumberFieldの`commitBehavior` prop、Selectの`shouldCloseOnSelect`オプション追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "React",
+        "library",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.22
+        },
+        "relevance": {
+          "score": 2.25,
+          "probabilities": [
+            0,
+            0,
+            0.75,
+            0.25
+          ],
+          "confidence": 0.74
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "Node.js 24.15.0 (LTS)",
+      "url": "https://nodejs.org/en/blog/release/v24.15.0",
+      "secondaryUrls": [],
+      "summary": "`require(esm)`とモジュールコンパイルキャッシュが安定版に昇格、SQLiteがリリース候補段階へ進行。`--max-heap-size`オプション、Socket `setTOS`/`getTOS`メソッド、`fs.stat`の`throwIfNoEntry`オプション追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "nodejs",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2.18,
+          "probabilities": [
+            0,
+            0,
+            0.82,
+            0.18
+          ],
+          "confidence": 0.81
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Bun v1.3.13",
+      "url": "https://bun.com/blog/bun-v1.3.13",
+      "secondaryUrls": [],
+      "summary": "`bun test`に`--isolate`/`--parallel`/`--shard`/`--changed`フラグ追加。`bun install`のメモリ改善、monorepo速度改善。SHA3対応、X25519鍵導出対応。WebSocketクライアントがUnixドメインソケット対応。Range対応、gzip圧縮パフォーマンス改善。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "Bun",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1.73,
+          "probabilities": [
+            0.17,
+            0.01,
+            0.74,
+            0.08
+          ],
+          "confidence": 0.57
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "Rspack 2.0",
+      "url": "https://rspack.rs/blog/announcing-2-0",
+      "secondaryUrls": [],
+      "summary": "`@rspack/core`などをPure ESMに移行、CommonJSビルド削除。ビルドパフォーマンス改善、CommonJS require分割代入のTree Shaking改善。`/*#__NO_SIDE_EFFECTS__*/`アノテーション対応、Module Federationの共有依存のExportレベルTree Shaking、`library.type`に`modern-module`追加。React Server Components実験的対応、`#/`サブパスエイリアス、swc-loader `detectSyntax`オプション追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "rspack",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.83
+        },
+        "relevance": {
+          "score": 2,
+          "probabilities": [
+            0.15,
+            0,
+            0.55,
+            0.3
+          ],
+          "confidence": 0.39
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Fresh 2.3",
+      "url": "https://deno.com/blog/fresh-2.3",
+      "secondaryUrls": [],
+      "summary": "静的ページでデフォルト非JavaScriptに変更、View Transitions APIサポート、`app.ws()`によるWebSocket対応、Vite統合改善。CSP nonce自動生成、CIDR形式IPフィルタリング、OpenTelemetry Server to Client伝播、Temporal APIサポート。複数静的ディレクトリ対応、フォーム送信ローディング表示、リバースプロキシ対応。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "deno",
+        "vite",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0.24,
+            "node_runtime": 0.76,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.72
+        },
+        "breaking": {
+          "noul": 0.69
+        },
+        "relevance": {
+          "score": 0.9,
+          "probabilities": [
+            0.56,
+            0.06,
+            0.28,
+            0.1
+          ],
+          "confidence": 0.1
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "pnpm 11",
+      "url": "https://github.com/pnpm/pnpm/releases/tag/v11.0.0",
+      "secondaryUrls": [],
+      "summary": "Pure ESMに移行、Node.js 18-21サポート終了。`.npmrc`は認証/レジストリ限定、他の設定は`pnpm-workspace.yaml`へ移行。`minimumReleaseAge`デフォルト1日に変更、SQLiteストア使用。npm CLI依存排除して`pnpm publish`/`pnpm login`/`pnpm audit`をネイティブ実装。`pnpm ci`/`pnpm sbom`/`pnpm clean`/`pnpm pack-app`コマンド追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "pnpm",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.95
+        },
+        "relevance": {
+          "score": 2.96,
+          "probabilities": [
+            0,
+            0,
+            0.03,
+            0.97
+          ],
+          "confidence": 0.96
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "GitHub CLI Agent Skills",
+      "url": "https://github.blog/changelog/2026-04-16-manage-agent-skills-with-github-cli/",
+      "secondaryUrls": [],
+      "summary": "GitHub CLIに`gh skill`コマンド追加、Agent Skillsの検索/インストール/管理/公開が可能に。GitHub CLI v2.90.0以降対応。タグやcommit SHAでバージョン固定、git tree SHAで内容変更検知、provenance埋め込み対応。immutable releasesでスキルの上書き防止可能。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "GitHub",
+        "CLI",
+        "AI",
+        "Tools"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.75,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.25,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.72
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0.01,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.74,
+            "other": 0.25
+          },
+          "confidence": 0.71
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1.06,
+          "probabilities": [
+            0.47,
+            0.02,
+            0.5,
+            0.01
+          ],
+          "confidence": 0.04
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "vercel-labs/wterm",
+      "url": "https://github.com/vercel-labs/wterm",
+      "secondaryUrls": [],
+      "summary": "Webブラウザ向けターミナルエミュレータライブラリ。コアはZig実装、WebAssembly（約12KB）にコンパイル。DOM要素レンダリングでネイティブなテキスト選択/コピー&ペースト/検索/アクセシビリティをサポート。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "WebAssembly",
+        "library",
+        "terminal",
+        "browser"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.15,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.84,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.82
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.96,
+            "node_runtime": 0,
+            "browser": 0.01,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.03
+          },
+          "confidence": 0.95
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.65,
+          "probabilities": [
+            0.15,
+            0.06,
+            0.78,
+            0.01
+          ],
+          "confidence": 0.64
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "Claude Design by Anthropic Labs",
+      "url": "https://www.anthropic.com/news/claude-design-anthropic-labs",
+      "secondaryUrls": [],
+      "summary": "テキストプロンプト、画像、ドキュメント（DOCX/PPTX/XLSX）、コードベース、Webキャプチャからサイトデザイン/プロトタイプ/スライド作成可能。デザインシステム対応。Canva/PDF/PPTX/HTML形式のExport、Claude Codeへの読ませてコード変換対応。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "AI",
+        "Design",
+        "Tools"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.01,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.99,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.99,
+            "other": 0.01
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 1.97,
+          "probabilities": [
+            0.01,
+            0,
+            0.99,
+            0
+          ],
+          "confidence": 0.96
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "Trees, from Pierre",
+      "url": "https://trees.software/",
+      "secondaryUrls": [],
+      "summary": "ファイルツリーをレンダリングするReactライブラリ。git status表示、ドラッグ&ドロップ移動、検索フィルター、コンテキストメニュー対応。Virtualizeで数千ファイル規模対応。キーボードナビゲーション、WCAG 2.1準拠、CSS変数カスタマイズ対応。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "React",
+        "library",
+        "UI",
+        "accessibility"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.18,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.8,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.02
+          },
+          "confidence": 0.77
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 1.98,
+          "probabilities": [
+            0.01,
+            0,
+            0.98,
+            0.01
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "PerryTS/perry",
+      "url": "https://github.com/PerryTS/perry",
+      "secondaryUrls": [],
+      "summary": "Rust製TypeScriptネイティブコンパイラ。SWCでパース、LLVMで実行ファイルへコンパイル。macOS/Windows/Linux/iOS/Android対応。著名npmパッケージをRust実装に差し替え、他はV8 Runtimeでfallback。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "TypeScript",
+        "Rust",
+        "compiler",
+        "Tools"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.27,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.71,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.02
+          },
+          "confidence": 0.66
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.93,
+            "node_runtime": 0.03,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.04
+          },
+          "confidence": 0.92
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 1.98,
+          "probabilities": [
+            0.01,
+            0.01,
+            0.96,
+            0.02
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 11,
+      "title": "endevco/aube",
+      "url": "https://github.com/endevco/aube",
+      "secondaryUrls": [],
+      "summary": "Rust製Node.js向けパッケージマネージャー。既存のロックファイル形式（pnpm-lock.yaml/package-lock.json等）対応。グローバルcontent-addressable store、最小リリース期間制御、セキュリティ機能保有。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "nodejs",
+        "package",
+        "Rust",
+        "Tools"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.29,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.69,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.02
+          },
+          "confidence": 0.64
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 2.1,
+          "probabilities": [
+            0.01,
+            0,
+            0.87,
+            0.12
+          ],
+          "confidence": 0.86
+        }
+      }
+    },
+    {
+      "id": 12,
+      "title": "TSRX",
+      "url": "https://tsrx.dev/",
+      "secondaryUrls": [],
+      "summary": "宣言的UI向けTSX拡張言語。構造/制御フロー/スタイルを同一ファイルに共存、TypeScript互換。React/Ripple/Solidへコンパイル。VS Code/Zed/Neovim/IntelliJ/Sublime対応、LSP/Prettier/ESLintプラグイン提供。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "TypeScript",
+        "UI",
+        "compiler",
+        "React",
+        "Solid"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.13,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.86,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.84
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1.96,
+          "probabilities": [
+            0.02,
+            0,
+            0.97,
+            0.01
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 13,
+      "title": "rstackjs/connect-next",
+      "url": "https://github.com/rstackjs/connect-next",
+      "secondaryUrls": [],
+      "summary": "Node.jsの`connect` HTTPミドルウェアフレームワークのメンテナンスfork。TypeScript書き直し、ESモジュールで名前付きexport提供。依存関係の更新/削除を実施。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "nodejs",
+        "library",
+        "TypeScript"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.58,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.36,
+            "guide": 0,
+            "event": 0,
+            "business": 0.01,
+            "other": 0.05
+          },
+          "confidence": 0.53
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.67
+        },
+        "relevance": {
+          "score": 2.24,
+          "probabilities": [
+            0.03,
+            0,
+            0.68,
+            0.29
+          ],
+          "confidence": 0.65
+        }
+      }
+    }
+  ]
+}

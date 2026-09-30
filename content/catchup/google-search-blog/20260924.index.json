@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/google-search-blog/20260924.md",
+  "sourceHash": "sha256:ff2ba3520b339bd276cff41a44aaeb0dadf3b9b5b2d965e963ab51388c894d87",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:14.574Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Announcing web multimodal Search performance reporting in Search Console",
+      "url": "https://developers.google.com/search/blog/2026/09/web-multimodal-in-sc?hl=ja",
+      "secondaryUrls": [],
+      "summary": "Search Console の「検索結果のパフォーマンス」レポートと「生成 AI 機能」レポートに、ウェブのマルチモーダル検索のデータが追加された。Lens、Android の Circle to Search、Google 検索への画像アップロード、Chrome の右クリック「この画像で検索」などの画像経由の検索が対象で、新しい「マルチモーダル」検索タイプフィルタで確認・エクスポートできる。本日よりグローバルで順次展開され、該当クエリからの流入があるサイトで指標が表示され始める。",
+      "publishedAt": "2026-09-24",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 1,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_search",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 1,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 1.66,
+          "probabilities": [
+            0.12,
+            0.11,
+            0.76,
+            0.01
+          ],
+          "confidence": 0.64
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/chrome-blog/20260905.md",
+  "sourceHash": "sha256:b7c32d374398cf05ad23cb7d13bb6bdbb0e2c67d125c4562289eec747cecc7f9",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:55.424Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Test the Email Verification Protocol with an origin trial",
+      "url": "https://developer.chrome.com/blog/email-verification-protocol-origin-trial?hl=ja",
+      "secondaryUrls": [],
+      "summary": "登録・ログイン・購入手続き・アカウント復元などで収集したメールアドレスの所有確認を、OTP やマジックリンクのようにユーザーをサイトから離脱させずに行える **Email Verification API** のオリジントライアル開始の案内。ブラウザがメールドメインの DNS レコードから発行者（ID プロバイダ）を特定し、有効なセッションの有無を確認する仕組みで、検証者サイトには追加のユーザー情報が渡らないプライバシー配慮設計。ユーザーは自動入力/オートコンプリートからメールアドレスを選択して送信するとフローを中断せず確認が完了する（メールアドレスごとに初回のみ権限プロンプト）。Gmail がプロバイダとして参加済みで、任意の @gmail.com アドレスでテスト可能。コンバージョンポイントであるメール確認を改善したいサイトは、オリジントライアルに登録して試せる。",
+      "publishedAt": "2026-07-08",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.01,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.99,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.99,
+            "node_runtime": 0,
+            "browser": 0.01,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.09,
+          "probabilities": [
+            0,
+            0.01,
+            0.89,
+            0.1
+          ],
+          "confidence": 0.89
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "Get features faster with Chrome's two-week release cycle",
+      "url": "https://developer.chrome.com/blog/chrome-two-week-release?hl=ja",
+      "secondaryUrls": [],
+      "summary": "2026 年 9 月より、Chrome のリリースサイクルが現在の 4 週間から **2 週間**へ短縮される。9 月 8 日の **Chrome 153 安定版**を皮切りに、以降は Beta 版・Stable 版が隔週でリリースされ、デスクトップ/Android/iOS の全プラットフォームが対象（Dev・Canary チャンネルは変更なし）。1 リリースあたりの変更範囲が小さくなることで中断を最小化しリリース後のデバッグを簡素化する狙い。移行に伴い各マイルストーンのブランチ/ベータ昇格/Stable Cut の日程が前倒しされる（Beta は Stable の 3 週間前）。**Extended Stable は従来どおり 8 週間サイクルを継続**。リリース頻度が上がるため、開発者はベータ版での事前テストで自サイト・アプリへの影響確認を早めに行うことが推奨される。",
+      "publishedAt": "2026-03-03",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.8,
+            "security": 0,
+            "policy": 0.15,
+            "feature": 0.02,
+            "guide": 0,
+            "event": 0,
+            "business": 0.02,
+            "other": 0.01
+          },
+          "confidence": 0.76
+        },
+        "ecosystem": {
+          "choice": "browser",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 1,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.11
+        },
+        "relevance": {
+          "score": 2.27,
+          "probabilities": [
+            0,
+            0,
+            0.72,
+            0.28
+          ],
+          "confidence": 0.72
+        }
+      }
+    }
+  ]
+}

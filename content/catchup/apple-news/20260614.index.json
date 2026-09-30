@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/apple-news/20260614.md",
+  "sourceHash": "sha256:b99f8d014b0d849ac0e71a072fdaa783db5a3e741b0e7a821b030cf30f3757f7",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:45.724Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "ImageCreatorクラスの廃止",
+      "url": "https://developer.apple.com/jp/news/?id=dz9wvq0r",
+      "secondaryUrls": [],
+      "summary": "オンデバイス画像生成モデルを使ってプログラムで画像を生成できるImage Playgroundフレームワークの`ImageCreator`クラスが廃止される。ベータOSではコンパイルは通るがXcodeで警告が表示され、TestFlightビルドではランタイムエラーで動作しない。iOS 27・iPadOS 27・macOS 27・visionOS 27以降の公開リリースではコンパイルできず機能も動作しなくなる。開発者はシステム管理の統一された画像生成体験を提供するImage Playgroundシートへの移行、または他の画像生成サービスの統合を、公開リリース前に行う必要がある。",
+      "publishedAt": "2026-06-11",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.83,
+            "security": 0,
+            "policy": 0.14,
+            "feature": 0.01,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.02
+          },
+          "confidence": 0.8
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.98
+        },
+        "relevance": {
+          "score": 0.97,
+          "probabilities": [
+            0.05,
+            0.94,
+            0,
+            0.01
+          ],
+          "confidence": 0.93
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "WWDC26に関するアンケート",
+      "url": "https://developer.apple.com/jp/news/?id=15wishue",
+      "secondaryUrls": [],
+      "summary": "WWDC26に参加した開発者向けのフィードバックアンケートが公開された。今年のWWDCに関する感想・意見を公式フォームから共有することが求められている。早期の回答が推奨されている。",
+      "publishedAt": "2026-06-11",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0.97,
+            "business": 0,
+            "other": 0.03
+          },
+          "confidence": 0.96
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0.96,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.04
+          },
+          "confidence": 0.96
+        },
+        "breaking": {
+          "noul": 0.03
+        },
+        "relevance": {
+          "score": 0.83,
+          "probabilities": [
+            0.21,
+            0.75,
+            0.04,
+            0
+          ],
+          "confidence": 0.75
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,467 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260807.md",
+  "sourceHash": "sha256:28b0c46835f7af062ef40117254352f01d7dff90f0d181118ec1e0d781a2d82d",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:01.545Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "セルフホスト実行環境・実行先",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "**セルフホスト実行環境を追加**。`claude self-hosted-runner` で、自前のマシンやコンテナを Claude Code の Web・モバイル・デスクトップセッションの実行先にできるようになった（Team / Enterprise プラン）。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.224（2026-08-07）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.64,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.36,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.58
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.02,
+          "probabilities": [
+            0,
+            0,
+            0.97,
+            0.03
+          ],
+          "confidence": 0.96
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "クロスセッション通信（SendMessage / ListAgents）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "**クロスセッション `SendMessage` を追加**（macOS / Linux）。任意の自マシン上の Claude Code セッション同士がメッセージを送り合えるようになり、`ListAgents` で相手セッションを探索できる。 / `crossSessionInbound` と `dialogExpiry` 設定を追加。bypassed permissions で動くセッションに送られたクロスセッションメッセージは承認保留となり、それ以外のセッション宛メッセージは自動配信される。 / `SendMessage` がチームメイトの inbox への書き込みに失敗しているのに「Message sent」と報告していた問題を修正。配信失敗はエラーとして報告されるようになった。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.224（2026-08-07）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.15
+        },
+        "relevance": {
+          "score": 2.21,
+          "probabilities": [
+            0,
+            0,
+            0.78,
+            0.22
+          ],
+          "confidence": 0.77
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "セキュリティ・権限・サンドボックス",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "長いプロジェクトパス（>200 文字）が、共有のサニタイズ済みプレフィックス配下で別プロジェクトのセッションディレクトリに解決されてしまう問題を修正。セッション一覧・リネーム・フォーク・削除・`/resume` がプロジェクトをまたがなくなった。 / 末尾スラッシュ付きで書かれたサンドボックスの filesystem deny エントリ（例: `denyRead: \"~/.aws/\"`）が、Linux / macOS で黙ってバイパス可能だった問題を修正。 / サンドボックスの認証情報マスキングオプションを追加: 構造化された env 値向けの `extract` と `onExtractNoMatch`、JWT 対応マスキングの `decode: \"jwt\"`（`maskClaims` 付き）、AWS SigV4 再署名の `awsPairs` / `sigv4`。これらは `network.tlsTerminate` が必要で、user / managed / `--settings` の設定からのみ有効。 / サンドボックス違反の詳細が Bash ツールの結果に現れない問題を修正。どのファイル/ネットワークアクセスがなぜ拒否されたかを Claude が把握できるようになった。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.224（2026-08-07）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0.5,
+            "security": 0.5,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.43
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.15
+        },
+        "relevance": {
+          "score": 2.75,
+          "probabilities": [
+            0,
+            0,
+            0.25,
+            0.75
+          ],
+          "confidence": 0.75
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "サブエージェント・MCP・モデル",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "**200 サブエージェント/セッションの生成上限を撤廃**。長時間セッションが新規エージェントを拒否しなくなった（並行数・深さの上限は引き続き有効）。 / ターン途中で接続する MCP ツールが、名前をモデルに通知されないままツール検索用に遅延されていた問題を修正。 / Bedrock 向けに `ANTHROPIC_BEDROCK_REGION_PREFIX` env var を追加。`AWS_REGION` 由来のものより優先して特定のクロスリージョン推論プロファイルを選択できる。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.224（2026-08-07）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.12
+        },
+        "relevance": {
+          "score": 2.4,
+          "probabilities": [
+            0,
+            0,
+            0.6,
+            0.4
+          ],
+          "confidence": 0.59
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "プラグイン",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "**`archive` プラグインソースを追加**。git や npm なしで HTTPS 越しの zip からプラグインを導入できる（任意で SHA-256 ピン留め）。 / 同じプラグインを複数プロジェクトにインストールした際に、プラグインのインストール記録が黙って破損する問題を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.224（2026-08-07）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0.01,
+            "node_runtime": 0.04,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.94,
+            "other": 0.01
+          },
+          "confidence": 0.93
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 2.42,
+          "probabilities": [
+            0.01,
+            0,
+            0.56,
+            0.43
+          ],
+          "confidence": 0.55
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "Remote Control",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "Remote Control の自動起動が、期限切れログイントークンでのコールドスタート時に「Remote credentials fetch failed」で断続的に失敗する問題を修正。 / Remote Control / SDK クライアントが `/clear` などの出力なしコマンド後に空の「(no content)」メッセージを表示する問題を修正。 / サーバーセッション期限切れ後に再作成された Remote Control セッションが、以前のローカル会話履歴を新セッションにアップロードしてしまう問題を修正。 / 改善: アタッチ済みの Web / モバイルクライアントが、無言の停止ではなくコンパクションの進捗とコンパクション後の境界を確認できるように。`/clear` のリセットもアタッチ済みクライアントへ伝播するように。 / 改善: 接続失敗時に、8 秒のトーストではなく詳細と再接続ショートカット付きの永続的な失敗インジケータを表示するように。 / 新セッションがコンパクションや `/resume` 後に発行された際、古いサーバーセッションを死んだまま一覧に残さずアーカイブするように変更。 / セッション再開（`--resume`、SDK ホスト、VS Code 拡張）が、ユーザーがオフにした Remote Control を黙って再接続する問題を修正。 / [VSCode] 接続失敗後も拡張機能が Remote Control を接続済みと表示する問題を修正。 / [VSCode] 明示的に有効化しても `remoteControlAtStartup` を尊重しないセッションがあった問題を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.224（2026-08-07）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.11
+        },
+        "relevance": {
+          "score": 2.44,
+          "probabilities": [
+            0,
+            0,
+            0.55,
+            0.45
+          ],
+          "confidence": 0.55
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "表示・入力・クリップボード・ペースト",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "コマンドのテキストを変える利用不可なペーストを削除する際に、キャンセル＆確認ステップを追加。 / リコール／復元したペースト内容が、ペーストが期限切れになっていたりプレースホルダ番号が衝突したりした場合に、まれに誤ったデータを添付したり黙ってテキストを失ったりする問題を修正。 / リコールしたペーストのプレースホルダ番号を、入力に確定される際に振り直すように変更。 / Wayland での select 時コピーがクリップボードに届かないことがある問題を修正（2 つの選択書き込みが競合しなくなった）。 / フルスクリーンモードを改善し、繰り返しコンパクションをまたいでもコンパクション前の全履歴をスクロールバックに保持するように（従来は直近の 1 区間のみ）。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.224（2026-08-07）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.99,
+            "other": 0.01
+          },
+          "confidence": 0.98
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2.08,
+          "probabilities": [
+            0,
+            0,
+            0.91,
+            0.09
+          ],
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "フィードバック・その他の変更",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "フィードバックアンケートのトランスクリプト共有が長いセッションで黙って失敗する問題を修正。失敗時は成功メッセージではなくエラーを表示するように。 / フィードバックアンケートのトランスクリプト共有を変更: 同意があれば、最後のリクエストのモデル設定（システムプロンプト＝`CLAUDE.md` の指示を含む・ツール定義・モデルパラメータ）も併せてアップロードするように。シークレットは従来通り秘匿され、共有が大きすぎる場合はこれらのフィールドが最初に落とされる。 / Bash ツールの説明を変更し、コマンド出力はモデルに表示されるがユーザーには確実には表示されないことを常に明記するように。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.224（2026-08-07）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.14
+        },
+        "relevance": {
+          "score": 2.16,
+          "probabilities": [
+            0,
+            0,
+            0.83,
+            0.17
+          ],
+          "confidence": 0.82
+        }
+      }
+    }
+  ]
+}

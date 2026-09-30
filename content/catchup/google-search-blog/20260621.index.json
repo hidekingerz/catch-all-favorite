@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/google-search-blog/20260621.md",
+  "sourceHash": "sha256:4634245aee64bd517db0b0fab8c0a9d38c7f3ebf2f4e0ce6587ceb5da0878813",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:12.881Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Help Us Pick the Next Stop in Europe for Search Central Live Deep Dive 2026!",
+      "url": "https://developers.google.com/search/blog/2026/06/scl-deep-dive-europe-2026?hl=ja",
+      "secondaryUrls": [],
+      "summary": "Google が Search Central Live Deep Dive 形式のイベントを初めてヨーロッパ（EMEA）で開催するにあたり、開催都市の選定についてコミュニティから意見・希望を募集している。参加者が「つながり、学び、楽しめる」場所を選びたいという意図で、希望する開催地のフィードバックを呼びかけている。SEO 仕様やランキングの変更ではなく、イベント告知・コミュニティ向けの内容。",
+      "publishedAt": "2026-06-18",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 1,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_search",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0.85,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.15
+          },
+          "confidence": 0.83
+        },
+        "breaking": {
+          "noul": 0.03
+        },
+        "relevance": {
+          "score": 0.13,
+          "probabilities": [
+            0.92,
+            0.03,
+            0.05,
+            0
+          ],
+          "confidence": 0.87
+        }
+      }
+    }
+  ]
+}

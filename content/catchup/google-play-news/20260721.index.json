@@ -1,0 +1,241 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/google-play-news/20260721.md",
+  "sourceHash": "sha256:31af4a28eb8540bfcf0ab7158e90372e3423ae39852980c0fe4267adaebb02aa",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:11.891Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "SMS と通話履歴の権限（電話によるアカウント確認の扱い変更）",
+      "url": "https://support.google.com/googleplay/android-developer/answer/10208820",
+      "secondaryUrls": [
+        "https://goo.gle/policybytes326"
+      ],
+      "summary": "SMS と通話履歴の権限に関するポリシーが更新され、**電話（電話番号）によるアカウント確認は `READ_CALL_LOG` 権限のユースケースとして認められなくなる**。該当機能を持つアプリは、通話履歴権限に依存しないアカウント確認手段への移行が必要。",
+      "publishedAt": null,
+      "effectiveAt": "2027-01-27",
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "policy",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 1,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.96
+        },
+        "relevance": {
+          "score": 1.07,
+          "probabilities": [
+            0,
+            0.96,
+            0.01,
+            0.03
+          ],
+          "confidence": 0.92
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "Play Console 要件（アプリ パッケージ名の登録）",
+      "url": "https://support.google.com/googleplay/android-developer/table/12921780?hl=ja",
+      "secondaryUrls": [],
+      "summary": "検証（verification）コンプライアンスのため、デベロッパーはアプリの**パッケージ名を登録**する必要がある。多くのアプリは自動登録済みだが、未登録のまま残っているアプリは、インストールエラーを避けるため手動での登録が求められる。",
+      "publishedAt": null,
+      "effectiveAt": "2026-09-30",
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "policy",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 1,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.8
+        },
+        "relevance": {
+          "score": 1.04,
+          "probabilities": [
+            0.02,
+            0.95,
+            0.01,
+            0.02
+          ],
+          "confidence": 0.93
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "年齢制限コンテンツと児童の安全（匿名・ランダムチャットアプリ）",
+      "url": "https://support.google.com/googleplay/android-developer/table/12921780?hl=ja",
+      "secondaryUrls": [],
+      "summary": "年齢制限コンテンツおよび児童の安全に関するポリシーが、**匿名チャット・ランダムチャットアプリ**を含むよう拡大される。児童をターゲットにすることの禁止や、児童安全に関する要件が追加される。",
+      "publishedAt": null,
+      "effectiveAt": "2026-08-26",
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "policy",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 1,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0.86,
+            "ai_tools": 0,
+            "other": 0.14
+          },
+          "confidence": 0.84
+        },
+        "breaking": {
+          "noul": 0.86
+        },
+        "relevance": {
+          "score": 1.21,
+          "probabilities": [
+            0.04,
+            0.82,
+            0.04,
+            0.1
+          ],
+          "confidence": 0.71
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "フォアグラウンド サービス（ジオフェンスの除外）",
+      "url": "https://support.google.com/googleplay/android-developer/table/12921780?hl=ja",
+      "secondaryUrls": [],
+      "summary": "**ジオフェンスを、承認済みのフォアグラウンド サービス（FGS）のユースケースから削除する**。ジオフェンス目的で FGS を利用しているアプリは、ポリシー準拠のための代替対応が必要。",
+      "publishedAt": null,
+      "effectiveAt": "2026-08-26",
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "policy",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 1,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.95
+        },
+        "relevance": {
+          "score": 1.06,
+          "probabilities": [
+            0.01,
+            0.95,
+            0.01,
+            0.03
+          ],
+          "confidence": 0.92
+        }
+      }
+    }
+  ]
+}

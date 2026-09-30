@@ -1,0 +1,1493 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/twir/20260729.md",
+  "sourceHash": "sha256:057d0cc6907d1663ea25a7ef61f3fe706b364f80097334bee44b635e0adf186a",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:36.755Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Octane – React's programming model, compiled",
+      "url": "https://octanejs.dev/",
+      "secondaryUrls": [],
+      "summary": "元 React/Svelte・Inferno 作者の Dominic Gannaway による新しい「Reactの後継」。React のメンタルモデルを維持しつつ Hooks・Suspense・Actions を事前コンパイル。Virtual DOM を排除しネイティブのブラウザイベントを利用、Hook のルールや依存配列の管理を不要にする。JSX/TSX と TSRX に対応し、TanStack・React Three Fiber・Lynx・StyleX・NativeScript との統合を持つ。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.32,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.67,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.62
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.28
+        },
+        "relevance": {
+          "score": 2.06,
+          "probabilities": [
+            0.01,
+            0,
+            0.92,
+            0.07
+          ],
+          "confidence": 0.91
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "Next.js docs preview - Offline support",
+      "url": "https://preview.nextjs.org/docs/app/guides/offline-support",
+      "secondaryUrls": [],
+      "summary": "`experimental.useOffline` を有効化すると、ネットワーク断時に Next.js がエラーを投げず、リクエストを保留にして自動リトライできるようになる。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 1,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 2.04,
+          "probabilities": [
+            0,
+            0,
+            0.96,
+            0.04
+          ],
+          "confidence": 0.96
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "React Advanced London Conference",
+      "url": "https://reactadvanced.com/?utm_source=thisweekinreact",
+      "secondaryUrls": [],
+      "summary": "10月23日・26日にロンドンで開催。TanStack・Vercel・Apollo から初期スピーカーが発表。コード「TWIR」で10%割引。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 1,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.02
+        },
+        "relevance": {
+          "score": 1.95,
+          "probabilities": [
+            0.03,
+            0,
+            0.97,
+            0
+          ],
+          "confidence": 0.94
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "TanStack - We Stopped Using RSC on TanStack.com",
+      "url": "https://tanstack.com/blog/we-stopped-using-rsc-on-tanstack-com",
+      "secondaryUrls": [],
+      "summary": "重い依存のために RSC を採用していたが、ライブラリが軽量化したため SSR に切り替え、より良い性能を達成。TanStack Markdown と TanStack Highlight（alpha）を導入。TanStack Start では SSR / RSC を文脈ごとに選択できる。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0.02,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.3,
+            "guide": 0.62,
+            "event": 0,
+            "business": 0.03,
+            "other": 0.03
+          },
+          "confidence": 0.56
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.14,
+          "probabilities": [
+            0,
+            0,
+            0.86,
+            0.14
+          ],
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Making Referential Stability a Type",
+      "url": "https://www.jovidecroock.com/blog/referential-stability-types/",
+      "secondaryUrls": [],
+      "summary": "`stableref/react` を使い、メモ化済みの値を `Stable<T>` 型でタグ付けする提案。メモ化されていない props や依存にはコンパイルエラーを出し、API がメモ化済みの値のみを受け取ることを強制する。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.98,
+            "guide": 0.02,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.97
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.44
+        },
+        "relevance": {
+          "score": 2.04,
+          "probabilities": [
+            0.01,
+            0,
+            0.93,
+            0.06
+          ],
+          "confidence": 0.93
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "Experimenting with RSCs for Performance and UX in Next.js",
+      "url": "https://aurorascharff.no/posts/experimenting-with-rsc-for-performance-and-ux-in-nextjs/",
+      "secondaryUrls": [],
+      "summary": "Next.js 16.3 でサーバー側処理を維持する3つの実験。クエリパラメータによるページネーション、ストリーミング結果でフォーカスを保つ検索フィールド、アクションからの JSX 生成。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0.01,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.01,
+            "guide": 0.98,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.03,
+          "probabilities": [
+            0,
+            0,
+            0.97,
+            0.03
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "How to find a Next.js memory leak in production",
+      "url": "https://xabierlameiro.com/blog/nextjs/nextjs-memory-leak-in-production",
+      "secondaryUrls": [],
+      "summary": "Next.js の3つのメモリリークをヒープスナップショットで検出する方法を解説。v16.3 での Dan Abramov による最近の修正も含む。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.99,
+            "node_runtime": 0.01,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.32,
+          "probabilities": [
+            0,
+            0,
+            0.68,
+            0.32
+          ],
+          "confidence": 0.68
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "The state of zero-runtime CSS-in-JS, mid-2026",
+      "url": "https://dx-styles.dev/blog/state-of-zero-runtime-css-in-js/",
+      "secondaryUrls": [],
+      "summary": "Vanilla-Extract・Panda CSS・StyleX・next-yak・Linaria・dx-styles などコンパイル時 CSS-in-JS ソリューションの包括的な現状分析。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0.98,
+            "event": 0,
+            "business": 0,
+            "other": 0.02
+          },
+          "confidence": 0.98
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.02,
+          "probabilities": [
+            0.01,
+            0,
+            0.94,
+            0.05
+          ],
+          "confidence": 0.93
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "How to Think in Remix UI Instead of React",
+      "url": "https://sergiodxa.com/tutorials/think-in-remix-ui-instead-of-react",
+      "secondaryUrls": [],
+      "summary": "React の視点から Remix v3 を実践的に紹介。コンポーネントは一度だけ実行され render クロージャを返し、`this.update()` で再レンダリングする。Hooks より制御しやすいがボイラープレートは増える。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0.02,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0.98,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2,
+          "probabilities": [
+            0.02,
+            0,
+            0.93,
+            0.04
+          ],
+          "confidence": 0.91
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "The Absolute State of Management",
+      "url": "https://infrequently.org/2026/07/state-management/",
+      "secondaryUrls": [],
+      "summary": "Alex Russell が、React の状態管理ライブラリは pub/sub で状態を伝播するだけで真の「管理」をしていないと主張。本当の管理には CRDT・sync engine・vector clock など時間/順序の概念が必要とする。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.03,
+            "guide": 0.62,
+            "event": 0.01,
+            "business": 0,
+            "other": 0.34
+          },
+          "confidence": 0.56
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 1.98,
+          "probabilities": [
+            0.01,
+            0,
+            0.99,
+            0
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "Canvas UI",
+      "url": "https://canvasui.dev/",
+      "secondaryUrls": [],
+      "summary": "WebGPU と HTML-in-canvas を活用したフレームワーク非依存のクリエイティブコンポーネント群。React との一級統合を持つ。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.11,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.89,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.87
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.97,
+          "probabilities": [
+            0.02,
+            0,
+            0.98,
+            0
+          ],
+          "confidence": 0.96
+        }
+      }
+    },
+    {
+      "id": 11,
+      "title": "TanStack Table v9 beta.58",
+      "url": "https://tanstack.com/table/beta/docs/framework/react/guide/cell-selection",
+      "secondaryUrls": [],
+      "summary": "セル選択とキーボードナビゲーションのサポートを追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 2.16,
+          "probabilities": [
+            0.01,
+            0,
+            0.81,
+            0.18
+          ],
+          "confidence": 0.81
+        }
+      }
+    },
+    {
+      "id": 12,
+      "title": "React Router 8.3",
+      "url": "https://github.com/remix-run/react-router/blob/main/CHANGELOG.md#v830",
+      "secondaryUrls": [],
+      "summary": "RSC エントリの更新。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.2
+        },
+        "relevance": {
+          "score": 2.21,
+          "probabilities": [
+            0.01,
+            0,
+            0.76,
+            0.23
+          ],
+          "confidence": 0.74
+        }
+      }
+    },
+    {
+      "id": 13,
+      "title": "Reassure 1.6",
+      "url": "https://github.com/callstack/reassure/releases/tag/reassure%401.6.0",
+      "secondaryUrls": [],
+      "summary": "React / React Native 向けパフォーマンステスト。安定性測定の改善。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.89,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.09,
+            "guide": 0.01,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.88
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 1.99,
+          "probabilities": [
+            0.01,
+            0,
+            0.97,
+            0.02
+          ],
+          "confidence": 0.94
+        }
+      }
+    },
+    {
+      "id": 14,
+      "title": "Astryx 0.1.8 & 0.1.9",
+      "url": "https://github.com/facebook/astryx/releases#release-v0.1.9",
+      "secondaryUrls": [],
+      "summary": "Astryx の 0.1.8 / 0.1.9 リリース。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.66,
+            "node_runtime": 0.03,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.02,
+            "other": 0.29
+          },
+          "confidence": 0.61
+        },
+        "breaking": {
+          "noul": 0.16
+        },
+        "relevance": {
+          "score": 0.95,
+          "probabilities": [
+            0.56,
+            0.01,
+            0.36,
+            0.07
+          ],
+          "confidence": 0.05
+        }
+      }
+    },
+    {
+      "id": 15,
+      "title": "Jack Herrington - TanStack is Doing What?",
+      "url": "https://www.youtube.com/watch?v=2aKGR4RECj0",
+      "secondaryUrls": [],
+      "summary": "TanStack の変更を告知するストリーム。TanStack は新ブランディング・デザインシステム・専任リードデザイナーとともに刷新された。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "business",
+          "probabilities": {
+            "release": 0.01,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.03,
+            "guide": 0,
+            "event": 0.25,
+            "business": 0.7,
+            "other": 0.01
+          },
+          "confidence": 0.64
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 1.78,
+          "probabilities": [
+            0.13,
+            0,
+            0.83,
+            0.04
+          ],
+          "confidence": 0.7
+        }
+      }
+    },
+    {
+      "id": 16,
+      "title": "Shruti Kapoor - React Debugging with Performance Tracks",
+      "url": "https://www.youtube.com/watch?v=B_w1xFbRvCg",
+      "secondaryUrls": [],
+      "summary": "Performance Tracks を使った React のデバッグ解説動画。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0.96,
+            "event": 0.04,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.95
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.03
+        },
+        "relevance": {
+          "score": 2,
+          "probabilities": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "confidence": 1
+        }
+      }
+    },
+    {
+      "id": 17,
+      "title": "TC39 Meeting Advancement",
+      "url": "https://bsky.app/profile/tc39.es/post/3mrdjr6uq2t2i",
+      "secondaryUrls": [],
+      "summary": "`Promise.allKeyed`・`Error.code`・`Map.take`・RegExp Linear Matching などの提案が前進。Composites は interning ベースのアプローチへ。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0.01,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.2,
+            "guide": 0,
+            "event": 0.74,
+            "business": 0.03,
+            "other": 0.02
+          },
+          "confidence": 0.7
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1.91,
+          "probabilities": [
+            0.04,
+            0.02,
+            0.93,
+            0.01
+          ],
+          "confidence": 0.88
+        }
+      }
+    },
+    {
+      "id": 18,
+      "title": "Core Web Vitals - Measuring soft navigations",
+      "url": "https://developer.chrome.com/docs/web-platform/soft-navigations",
+      "secondaryUrls": [],
+      "summary": "Chrome 151 が SPA のソフトナビゲーション（`history.pushState` 遷移）を既定で計測。DevTools・web-vitals パッケージ・Lighthouse・PageSpeed Insights・RUM ツールに統合される。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.89,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.11,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.88
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.73,
+            "node_runtime": 0,
+            "browser": 0.27,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.69
+        },
+        "breaking": {
+          "noul": 0.18
+        },
+        "relevance": {
+          "score": 2.15,
+          "probabilities": [
+            0,
+            0.01,
+            0.82,
+            0.17
+          ],
+          "confidence": 0.82
+        }
+      }
+    },
+    {
+      "id": 19,
+      "title": "GitHub - npm publish-time malware scanning",
+      "url": "https://github.blog/changelog/2026-07-28-npm-publish-time-malware-scanning-and-dual-use-metadata/",
+      "secondaryUrls": [],
+      "summary": "新規公開パッケージは公開前に自動スキャンされる。公開から一般公開まで5〜15分の遅延が入るようになる。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 0.52,
+            "policy": 0.16,
+            "feature": 0.32,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.45
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.32
+        },
+        "relevance": {
+          "score": 2.31,
+          "probabilities": [
+            0.04,
+            0.01,
+            0.54,
+            0.4
+          ],
+          "confidence": 0.5
+        }
+      }
+    },
+    {
+      "id": 20,
+      "title": "State of CSS - Survey results",
+      "url": "https://2026.stateofcss.com/en-US",
+      "secondaryUrls": [],
+      "summary": "State of CSS 2026 の調査結果。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "other",
+          "probabilities": {
+            "release": 0.01,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0.05,
+            "event": 0.03,
+            "business": 0,
+            "other": 0.91
+          },
+          "confidence": 0.89
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 1.41,
+          "probabilities": [
+            0.28,
+            0.04,
+            0.67,
+            0.01
+          ],
+          "confidence": 0.39
+        }
+      }
+    },
+    {
+      "id": 21,
+      "title": "ECMAScript Deferred Module Evaluation with `import defer`",
+      "url": "https://nitayneeman.com/blog/introducing-import-defer-in-ecmascript/",
+      "secondaryUrls": [],
+      "summary": "Stage 3 の遅延モジュール評価機能。すでに多くのツールで実装済みで、標準採用に近づいている。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 1,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.01,
+          "probabilities": [
+            0.01,
+            0.01,
+            0.93,
+            0.05
+          ],
+          "confidence": 0.92
+        }
+      }
+    },
+    {
+      "id": 22,
+      "title": "Your SPA Is Leaking Memory. Soak Test It",
+      "url": "https://denodell.com/blog/your-spa-is-leaking-memory-soak-test-it",
+      "secondaryUrls": [],
+      "summary": "ループさせたユーザーフロー内で Chrome の node/listener 数をアサートし、SPA のメモリリークを検出する Playwright の実践レシピ。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.99,
+            "node_runtime": 0,
+            "browser": 0.01,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.97,
+          "probabilities": [
+            0.02,
+            0.02,
+            0.92,
+            0.04
+          ],
+          "confidence": 0.89
+        }
+      }
+    },
+    {
+      "id": 23,
+      "title": "Playwright 1.62",
+      "url": "https://github.com/microsoft/playwright/releases/tag/v1.62.0",
+      "secondaryUrls": [],
+      "summary": "新しいコンポーネントテストモデル、AbortSignal サポート、WebP スクリーンショット、分離されたリトライを追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 1.2,
+          "probabilities": [
+            0.43,
+            0.03,
+            0.44,
+            0.1
+          ],
+          "confidence": 0.01
+        }
+      }
+    },
+    {
+      "id": 24,
+      "title": "Webpack 5.109",
+      "url": "https://webpack.js.org/blog/2026-07-24-webpack-5-109/",
+      "secondaryUrls": [],
+      "summary": "CSS・HTML・TypeScript の組み込みサポートを既定で有効化。Vite 互換の `import.meta` API とアセットクエリサフィックスを追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.44
+        },
+        "relevance": {
+          "score": 2.12,
+          "probabilities": [
+            0.07,
+            0.01,
+            0.65,
+            0.27
+          ],
+          "confidence": 0.58
+        }
+      }
+    },
+    {
+      "id": 25,
+      "title": "Firefox 153",
+      "url": "https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/153",
+      "secondaryUrls": [],
+      "summary": "Picture-in-Picture、import-as-text、`popover=\"hint\"` のサポートを追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.51,
+            "node_runtime": 0,
+            "browser": 0.49,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.43
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.02,
+          "probabilities": [
+            0,
+            0.99,
+            0.01,
+            0
+          ],
+          "confidence": 0.98
+        }
+      }
+    }
+  ]
+}

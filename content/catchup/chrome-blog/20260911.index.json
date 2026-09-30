@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/chrome-blog/20260911.md",
+  "sourceHash": "sha256:4f4476ddc64506494a8b84413d9cac15d42c85de2702352a72c7b428596cd0bd",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:55.791Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Fresher features, faster fixes: The two-week release cycle is here",
+      "url": "https://developer.chrome.com/blog/chrome-two-week-start?hl=ja",
+      "secondaryUrls": [],
+      "summary": "Chrome のリリースサイクルが 4 週間から 2 週間へ移行し、Chrome 153 を皮切りに正式開始された。新機能・パフォーマンス改善・セキュリティ修正をより速くデスクトップ／Android／iOS のユーザーへ届けることが狙いで、Microsoft Edge・Firefox・Brave など他ブラウザの隔週リリースに足並みを揃える。脆弱性の露出期間が短くなる一方、より長い検証期間が必要な企業ユーザー向けには 8 週ごとにメジャー更新（＋随時のセキュリティバックポート）を提供する Extended Stable チャネルが利用できる。",
+      "publishedAt": "2026-09-08",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.82,
+            "security": 0,
+            "policy": 0.12,
+            "feature": 0.02,
+            "guide": 0,
+            "event": 0,
+            "business": 0.03,
+            "other": 0.01
+          },
+          "confidence": 0.8
+        },
+        "ecosystem": {
+          "choice": "browser",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 1,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2.04,
+          "probabilities": [
+            0,
+            0.03,
+            0.9,
+            0.07
+          ],
+          "confidence": 0.89
+        }
+      }
+    }
+  ]
+}

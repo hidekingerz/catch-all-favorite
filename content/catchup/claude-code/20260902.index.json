@@ -1,0 +1,410 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260902.md",
+  "sourceHash": "sha256:c3738d4b28144ed6691489dabf92f2ebef99b62cb8c9cc8be9ec487fafb465f8",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:06.352Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "MCP・管理設定",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "`managedMcpServers` 管理設定を追加。組織が HTTP/SSE の MCP サーバを全ユーザーに提供できる（`.mcp.json` と同じエントリ形式）。コマンド実行を指定するエントリはスキップされる。 / `allowedMcpServers` の適用範囲を「ユーザーが追加したサーバのみ」に変更。これまで許可リストで除外されていた `managed-mcp.json` のサーバがアップグレード後は読み込まれるようになる。無効化したい場合は `deniedMcpServers` を使う。 / 起動時のツール一覧取得中に切断した MCP サーバが「接続済み・ツールなし」と表示されず、エラーを報告するように修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.259（2026-09-02）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.34
+        },
+        "relevance": {
+          "score": 2.57,
+          "probabilities": [
+            0,
+            0,
+            0.42,
+            0.58
+          ],
+          "confidence": 0.57
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "権限・セキュリティ",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "`--permission-prompts none` を追加。無人ヘッドレスホスト向けに、プロンプトが出る操作を自動拒否しつつ、現在の権限モード（auto モード含む）は引き続き判断を行う。 / Bash の `Read()` deny ルールが、オプション値として渡されたファイル（`--ignore-revs-file=.env`、`-f.env`、`@file`）、`git diff`/`git grep` のファイルオペランド、`cd DIR && cat FILE` の複合コマンドをカバーするように修正。denied ファイルを含むディレクトリへの `grep -r`/`cp -r` は確認するように。 / 管理設定ファイル・ドロップイン・MDM plist・HKLM 値のいずれかがパースできない場合、Claude Code が起動を拒否して原因のソースを明示するように（従来は黙って未適用だった）。 / MDM や管理設定ファイルのポリシーヘルパーが先に実行されていると、管理設定の `forceRemoteSettingsRefresh` が起動時に無視される問題を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.259（2026-09-02）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.7,
+            "security": 0.3,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.66
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.27
+        },
+        "relevance": {
+          "score": 2.67,
+          "probabilities": [
+            0,
+            0,
+            0.32,
+            0.68
+          ],
+          "confidence": 0.67
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "GitLab / GitHub 連携",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "`glab mr create/merge/close/reopen/note/update` を認識し、折りたたみツールサマリに `MR !N` として表示・フッターの MR バッジを更新するように。 / `/install-github-app` を GitLab リポジトリ内で実行すると、GitHub 専用である旨を説明し GitLab CI/CD のドキュメントを案内するように改善。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.259（2026-09-02）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.99,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.01,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0.01,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.7,
+            "other": 0.29
+          },
+          "confidence": 0.66
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 2.06,
+          "probabilities": [
+            0.01,
+            0,
+            0.9,
+            0.09
+          ],
+          "confidence": 0.89
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "プラグイン・マーケットプレイス",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "`claude plugin validate` に `--json` を追加（機械可読な検証レポート）。 / github.com のマーケットプレイス repo URL に末尾スラッシュや余分な `?`/`#` が付くと使用不能な `.git` クローン URL が生成される問題を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.259（2026-09-02）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.3,
+          "probabilities": [
+            0,
+            0,
+            0.7,
+            0.3
+          ],
+          "confidence": 0.69
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "サブエージェント・ワークフロー・バックグラウンド",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "リモートコントロールセッションで Stop がバックグラウンドエージェント/ワークフローを実際には止めない問題を修正。停止したタスクはプロセス終了まで表示され、再度停止できるように。 / 前回の停止済み実行がまだ終了処理中のワークフロー実行を再開すると、エージェントの二重実行が起きる問題を修正。 / ネストしたバックグラウンドサブエージェントの結果を親サブエージェントのトランスクリプトに保存するように。再開したサブエージェントが結果を保持し、共有トランスクリプトに配信が表示される。 / `/workflows` のエージェント詳細を改善。JSON 結果を構文色付き・実際の改行で整形表示し、長い結果は展開トグルで折りたためるように。 / Stop フックがブロックすると、そのターン後にモデルの reasoning が失われ一部モデルでプロンプトキャッシュを外す問題を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.259（2026-09-02）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.15,
+          "probabilities": [
+            0.01,
+            0,
+            0.83,
+            0.16
+          ],
+          "confidence": 0.83
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "設定同期・セッション・その他修正",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "複数同時セッションが互いの `~/.claude.json` の変更を黙って巻き戻す問題を修正。多数セッション同時実行でもワークスペース信頼がリセットされず、MCP/プロジェクト状態が失われなくなった。 / 一度 thinking が拒否された会話が、以降のターンで毎回拒否される問題を修正。 / テレメトリ無効セッションで OAuth トークンが更新されるとプロンプトキャッシュが無効化される問題を修正。 / 数百のツール呼び出しを含む長いターン後にフルスクリーンモードが空の会話を表示する問題を修正。 / コマンド/スキルの frontmatter `model:` が非対応モデルを指定した際、auto モードがそのモデルでターンを走らせる問題を修正（セッションのモデルを維持）。対話セッションでカスタムコマンド/スキルの frontmatter `model:` が無視される問題も修正。 / `--resume` の失敗（および `--continue` が空の会話を開く）が、ペイロードのない添付エントリを含むセッションで起きる問題を修正。 / `CLAUDE_CODE_MAX_CONTEXT_TOKENS` が Vertex 形式モデル ID（`@YYYYMMDD` サフィックス）の未知バージョンで無視される問題を修正。 / 実行中シェルコマンドのライブ出力プレビューが、先行行が折り返した際に最新行を隠す問題を修正。 / claude.ai ユーザー向けに毎起動で走っていた GitHub 接続チェックを、結果を起動間で記憶するように。 / 古いバージョンから継続した会話で Artifact 公開が一度 \"unexpected parameter `note`\" で失敗する問題を修正。 / フック生成の worktree を `git rev-parse` が別メッセージで失敗するマシンで worktree 隔離が拒否する問題、および worktree 隔離セッションが Bash ループ・xargs パイプライン・ランチャーラップコマンドを拒否する問題を修正。 / クラウドセッションの OpenTelemetry メトリクス/イベントに `user.email`・`organization.id`・`user.account_uuid` 属性が欠ける問題、リポジトリ検出が git プローブの一時失敗後に既知の repo 同一性を落とす問題などを修正。 / リモート（claude.ai）セッションで、ブラウザホストの MCP サーバのページが消えた後にターン開始が 60 秒かかる問題を修正。 / 長い応答に対するターミナルリサイズ・初回描画性能をテキスト測定の再利用で改善。ヘッドレス/SDK のセッション開始も MCP サーバ接続完了時に最大 50ms 早く開始。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.259（2026-09-02）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.13,
+          "probabilities": [
+            0,
+            0,
+            0.87,
+            0.13
+          ],
+          "confidence": 0.86
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "VSCode 拡張",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "セッション一覧サイドバーに Active クイックフィルタとステータスフィルタメニュー（Needs input / Working / Completed）を追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.259（2026-09-02）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.96,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.04,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.95
+        },
+        "ecosystem": {
+          "choice": "other",
+          "probabilities": {
+            "web_frontend": 0.05,
+            "node_runtime": 0.03,
+            "browser": 0.01,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.38,
+            "other": 0.53
+          },
+          "confidence": 0.46
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.8,
+          "probabilities": [
+            0.11,
+            0.01,
+            0.85,
+            0.03
+          ],
+          "confidence": 0.73
+        }
+      }
+    }
+  ]
+}

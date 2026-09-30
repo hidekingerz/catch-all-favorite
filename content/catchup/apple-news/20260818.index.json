@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/apple-news/20260818.md",
+  "sourceHash": "sha256:04e2a1783e164cc2b0fcdbb5f6880d1806da2740b600c2294eda53402ce9d06e",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:47.899Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "欧州連合（EU）向けアプリの変更（Changes for apps in the European Union）",
+      "url": "https://developer.apple.com/jp/news/?id=gmws0jgp",
+      "secondaryUrls": [],
+      "summary": "欧州委員会との協議を踏まえ、EU 向けアプリの新しいビジネス条件が 2026 年 10 月 1 日から適用される。Core Technology Fee（CTF）が Core Technology Commission（CTC）に置き換えられ、App Store 外で配信されるアプリのデジタル取引に 5% の手数料が課される。Initial Acquisition Fee と Store Services Fee は廃止。あわせて代替決済オプションの許可、代替アプリマーケットプレイスの要件拡大、児童保護の強化が盛り込まれる。",
+      "publishedAt": "2026-08-18",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "policy",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 1,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0.99,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.01
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.76
+        },
+        "relevance": {
+          "score": 1.09,
+          "probabilities": [
+            0.03,
+            0.9,
+            0.02,
+            0.05
+          ],
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "Apple Developer Program 使用許諾契約の更新版が公開",
+      "url": "https://developer.apple.com/jp/news/?id=0cgo95n6",
+      "secondaryUrls": [],
+      "summary": "Apple Developer Program 使用許諾契約（PLA）の Attachment 14 が更新され、EU 向けアプリの代替配信・代替決済・ビジネス条件に関する新しい取り決めが規定された（2026 年 10 月 1 日発効）。更新された契約の翻訳版は 1 か月以内に Apple Developer サイトで提供される。開発者は自身のアカウントにサインインし、更新後の条件に同意する必要がある。",
+      "publishedAt": "2026-08-18",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "policy",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 1,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.51
+        },
+        "relevance": {
+          "score": 1.08,
+          "probabilities": [
+            0.05,
+            0.87,
+            0.03,
+            0.05
+          ],
+          "confidence": 0.81
+        }
+      }
+    }
+  ]
+}

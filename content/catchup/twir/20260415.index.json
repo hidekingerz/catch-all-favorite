@@ -1,0 +1,1664 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/twir/20260415.md",
+  "sourceHash": "sha256:fef7c9615f212425c2da8357e6fe47962b2662181924c0b6059fa69e529e7ca9",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:25.628Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "TanStack - React Server Components Your Way",
+      "url": "https://tanstack.com/blog/react-server-components",
+      "secondaryUrls": [],
+      "summary": "TanStack が実験的に RSC をサポート。RSC をデータストリームとして扱い、React Query、TanStack Router、localStorage、CDN、HTTP キャッシュと連携可能。サーバー/クライアントスロットを持つコンポジットコンポーネントを提供し、セキュリティ上の理由から Server Actions は明示的に拒否。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.01,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.99,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2.04,
+          "probabilities": [
+            0,
+            0,
+            0.95,
+            0.05
+          ],
+          "confidence": 0.94
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "React2DoS (CVE-2026-23869): When the Flight Protocol Crashes at Takeoff",
+      "url": "https://www.imperva.com/blog/react2dos-cve-2026-23869-when-the-flight-protocol-crashes-at-takeoff/",
+      "secondaryUrls": [],
+      "summary": "React Flight Protocol の Server Functions ペイロードデシリアライズ時に発生する DoS 脆弱性。React 19.2.5 または Next.js 16.2.3 へのアップグレードが必要。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.35
+        },
+        "relevance": {
+          "score": 3,
+          "probabilities": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "confidence": 1
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Next.js PR - Node.js streams: Fork points",
+      "url": "https://github.com/vercel/next.js/pull/92252",
+      "secondaryUrls": [],
+      "summary": "`experimental.useNodeStreams` フラグにより、標準 Web Streams の制限を超える高速な Node.js ストリームで SSR/RSC スループットを改善する進行中の作業。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 1,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0.2,
+            "node_runtime": 0.8,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.77
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.06,
+          "probabilities": [
+            0,
+            0,
+            0.94,
+            0.06
+          ],
+          "confidence": 0.94
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "dotJS 2026",
+      "url": "https://www.dotjs.io/speak?utm_source=twir&utm_medium=newsletter&utm_campaign=CFP",
+      "secondaryUrls": [],
+      "summary": "パリで9月18日に開催されるカンファレンス。Call For Papers は4月28日まで受付中。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 1,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.93,
+            "node_runtime": 0.06,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.01
+          },
+          "confidence": 0.92
+        },
+        "breaking": {
+          "noul": 0.03
+        },
+        "relevance": {
+          "score": 1.65,
+          "probabilities": [
+            0.18,
+            0.01,
+            0.8,
+            0.01
+          ],
+          "confidence": 0.63
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "GitHub - The uphill climb of making diff lines performant",
+      "url": "https://github.blog/engineering/architecture-optimization/the-uphill-climb-of-making-diff-lines-performant/",
+      "secondaryUrls": [],
+      "summary": "GitHub が React ベースの PR diff ビューのパフォーマンスを最適化。DOM ノードの削減、CSS セレクタの簡素化、TanStack Virtual の導入、散在していた useEffect フックの除去を実施。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0.01,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.11,
+            "guide": 0.87,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.84
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.99,
+          "probabilities": [
+            0.01,
+            0,
+            0.99,
+            0
+          ],
+          "confidence": 0.98
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "If You Can't See the Boundary, You Can't Reason About the System",
+      "url": "https://valentinprugnaud.dev/posts/2026/04/if-you-cant-see-the-boundary-you-cant-reason-about-the-system",
+      "secondaryUrls": [],
+      "summary": "Next.js App Router ページにおけるクライアント/サーバーコンポーネントの境界をハイライトするツール。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.07,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.85,
+            "guide": 0.07,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.82
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.02,
+          "probabilities": [
+            0,
+            0,
+            0.98,
+            0.02
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "Contributing Callsite Revalidation Opt-out to React Router",
+      "url": "https://programmingarehard.com/2026/04/11/contributing-to-react-router.html/",
+      "secondaryUrls": [],
+      "summary": "React Router と React Query のリバリデーション動作の違いを解説し、`unstable_defaultShouldRevalidate` API のコントリビューションを紹介。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.99,
+            "guide": 0.01,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2.21,
+          "probabilities": [
+            0,
+            0,
+            0.79,
+            0.21
+          ],
+          "confidence": 0.78
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "The Vertical Codebase",
+      "url": "https://tkdodo.eu/blog/the-vertical-codebase",
+      "secondaryUrls": [],
+      "summary": "垂直方向の機能単位でファイルを配置することで React コードベースをスケールさせるアプローチ。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.02,
+          "probabilities": [
+            0.01,
+            0,
+            0.95,
+            0.04
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "Logging in Next.js with LogLayer: Instrumentation, Console Override, and Structured Logs",
+      "url": "https://yurimutti.com/posts/logging-nextjs-loglayer-instrumentation-console-override-structured-logs",
+      "secondaryUrls": [],
+      "summary": "Next.js アプリケーションの全ランタイムにわたる統一的なロギングモデルの構築方法。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.92,
+            "node_runtime": 0.08,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.9
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.04,
+          "probabilities": [
+            0,
+            0,
+            0.95,
+            0.05
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "Now more then ever, you need to master custom ESLint rules",
+      "url": "https://neciudan.dev/master-eslint-rules",
+      "secondaryUrls": [],
+      "summary": "カスタム ESLint ルールの作成方法を深掘り。useEffect のアンチパターン防止など React に焦点を当てた例を紹介。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.09,
+          "probabilities": [
+            0.01,
+            0,
+            0.89,
+            0.1
+          ],
+          "confidence": 0.89
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "Next.js use cache: remote: A Distributed Cache in One Line",
+      "url": "https://tigerabrodi.blog/next-js-use-cache-remote-a-distributed-cache-in-one-line",
+      "secondaryUrls": [],
+      "summary": "デフォルトのインメモリ Cache Component 機能をサーバーレスインスタンス間のキャッシュに拡張する方法。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0.01,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.41,
+            "guide": 0.58,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.51
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.98,
+            "node_runtime": 0.02,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.08,
+          "probabilities": [
+            0,
+            0,
+            0.91,
+            0.09
+          ],
+          "confidence": 0.91
+        }
+      }
+    },
+    {
+      "id": 11,
+      "title": "Material UI and MUI X 9.0",
+      "url": "https://mui.com/blog/introducing-mui-v9/",
+      "secondaryUrls": [],
+      "summary": "コアデザインシステムと高度なコンポーネントのバージョンを統一するメジャーリリース。Base UI ベースのプリミティブ（NumberField、Menubar など）を導入し、Chat と Scheduler をアルファ提供。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.32
+        },
+        "relevance": {
+          "score": 2.37,
+          "probabilities": [
+            0,
+            0,
+            0.62,
+            0.38
+          ],
+          "confidence": 0.61
+        }
+      }
+    },
+    {
+      "id": 12,
+      "title": "Base UI 1.4",
+      "url": "https://base-ui.com/react/overview/releases/v1-4-0",
+      "secondaryUrls": [],
+      "summary": "OTP フィールドのプレビュー、Toast の更新機能、多数のバグ修正を含むリリース。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.16,
+          "probabilities": [
+            0.01,
+            0,
+            0.81,
+            0.18
+          ],
+          "confidence": 0.8
+        }
+      }
+    },
+    {
+      "id": 13,
+      "title": "Unhead 3.0 - Streaming `<head>` component for any framework",
+      "url": "https://github.com/unjs/unhead/releases/tag/v3.0.0",
+      "secondaryUrls": [],
+      "summary": "フレームワーク横断でストリーミングをサポートする head 管理コンポーネント。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.95,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.05,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.95
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2,
+          "probabilities": [
+            0.02,
+            0,
+            0.95,
+            0.03
+          ],
+          "confidence": 0.94
+        }
+      }
+    },
+    {
+      "id": 14,
+      "title": "Storm - Terminal UI framework based on React",
+      "url": "https://github.com/orchetron/storm",
+      "secondaryUrls": [],
+      "summary": "Ink の制限に対応する TUI フレームワーク。セルレベルの差分検出とデュアルスピードレンダリングアーキテクチャを採用。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.23,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.76,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.72
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.84,
+            "node_runtime": 0.13,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.03
+          },
+          "confidence": 0.82
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.86,
+          "probabilities": [
+            0.07,
+            0,
+            0.93,
+            0
+          ],
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "id": 15,
+      "title": "Styled Components 6.4",
+      "url": "https://github.com/styled-components/styled-components/releases/tag/styled-components%406.4.0",
+      "secondaryUrls": [],
+      "summary": "メンテナンスモードにもかかわらず大きなアップデート。RSC サポート、パフォーマンス最適化、React Native の改善を追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.17
+        },
+        "relevance": {
+          "score": 2.35,
+          "probabilities": [
+            0,
+            0,
+            0.64,
+            0.36
+          ],
+          "confidence": 0.64
+        }
+      }
+    },
+    {
+      "id": 16,
+      "title": "React Aria 1.17",
+      "url": "https://react-aria.adobe.com/releases/v1-17-0",
+      "secondaryUrls": [],
+      "summary": "Table の展開可能な行、Virtualizer のウィンドウスクロール、依存関係の統合、サブパスインポートを含むリリース。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.14
+        },
+        "relevance": {
+          "score": 2.19,
+          "probabilities": [
+            0,
+            0,
+            0.8,
+            0.2
+          ],
+          "confidence": 0.79
+        }
+      }
+    },
+    {
+      "id": 17,
+      "title": "Isolet",
+      "url": "https://github.com/millionco/isolet",
+      "secondaryUrls": [],
+      "summary": "任意のコンポーネントを自己完結型の分離されたウィジェットとしてパッケージ化するツール。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.11,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.87,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.02
+          },
+          "confidence": 0.85
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1.89,
+          "probabilities": [
+            0.06,
+            0,
+            0.93,
+            0.01
+          ],
+          "confidence": 0.86
+        }
+      }
+    },
+    {
+      "id": 18,
+      "title": "Remocn",
+      "url": "https://github.com/kapishdima/remocn",
+      "secondaryUrls": [],
+      "summary": "Remotion 向けのプロダクション対応アニメーション、トランジション、シーンを提供するライブラリ。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.17,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.8,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.03
+          },
+          "confidence": 0.76
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.3
+        },
+        "relevance": {
+          "score": 1.75,
+          "probabilities": [
+            0.13,
+            0,
+            0.86,
+            0.01
+          ],
+          "confidence": 0.72
+        }
+      }
+    },
+    {
+      "id": 19,
+      "title": "Syntax.fm 955 - Next.js Vendor Lock-in No More",
+      "url": "https://syntax.fm/show/995/next-js-vendor-lock-in-no-more",
+      "secondaryUrls": [],
+      "summary": "Next.js のベンダーロックインからの脱却を議論するポッドキャストエピソード。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.01,
+            "guide": 0.2,
+            "event": 0.46,
+            "business": 0,
+            "other": 0.33
+          },
+          "confidence": 0.38
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.11
+        },
+        "relevance": {
+          "score": 2.16,
+          "probabilities": [
+            0,
+            0,
+            0.83,
+            0.17
+          ],
+          "confidence": 0.82
+        }
+      }
+    },
+    {
+      "id": 20,
+      "title": "GitHub Stacked PRs in private preview",
+      "url": "https://github.github.com/gh-stack/",
+      "secondaryUrls": [],
+      "summary": "大きな変更を小さく焦点を絞った PR に分割し、互いに積み重ねることができる機能のプライベートプレビュー。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.09,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.91,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.9
+        },
+        "ecosystem": {
+          "choice": "other",
+          "probabilities": {
+            "web_frontend": 0.11,
+            "node_runtime": 0.01,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.88
+          },
+          "confidence": 0.87
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.52,
+          "probabilities": [
+            0.24,
+            0.01,
+            0.74,
+            0.01
+          ],
+          "confidence": 0.49
+        }
+      }
+    },
+    {
+      "id": 21,
+      "title": "You can't cancel a JavaScript promise (except sometimes you can)",
+      "url": "https://www.inngest.com/blog/hanging-promises-for-control-flow",
+      "secondaryUrls": [],
+      "summary": "決して解決しない Promise を使って非同期関数を中断するテクニックの紹介。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.01,
+            "guide": 0.99,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 2,
+          "probabilities": [
+            0.01,
+            0,
+            0.98,
+            0.01
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 22,
+      "title": "What We Learned Building a Rust Runtime for TypeScript",
+      "url": "https://encore.dev/blog/rust-runtime",
+      "secondaryUrls": [],
+      "summary": "Encore が napi-rs 経由で Node.js に組み込んだ Rust ランタイムの構築経験。インフラ関連の処理を JS イベントループの外に移動し、Express の9倍のスループットを達成。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.04,
+            "guide": 0.96,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.95
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1.97,
+          "probabilities": [
+            0.01,
+            0,
+            0.99,
+            0
+          ],
+          "confidence": 0.96
+        }
+      }
+    },
+    {
+      "id": 23,
+      "title": "Chrome 148 Beta",
+      "url": "https://developer.chrome.com/blog/chrome-148-beta",
+      "secondaryUrls": [],
+      "summary": "CSS の名前のみのコンテナクエリ、HTML-in-Canvas API のオリジントライアルなどを含むベータリリース。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.73,
+            "node_runtime": 0,
+            "browser": 0.27,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.68
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 2.02,
+          "probabilities": [
+            0,
+            0.01,
+            0.95,
+            0.04
+          ],
+          "confidence": 0.94
+        }
+      }
+    },
+    {
+      "id": 24,
+      "title": "Yuku - High-performance JS/TS toolchain in Zig",
+      "url": "https://github.com/yuku-toolchain/yuku",
+      "secondaryUrls": [],
+      "summary": "Zig で書かれた高性能 JS/TS ツールチェーン。完全な仕様準拠と Oxc に匹敵するパース速度を提供。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.4,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.58,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.02
+          },
+          "confidence": 0.52
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.99,
+            "node_runtime": 0.01,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.98,
+          "probabilities": [
+            0.02,
+            0,
+            0.97,
+            0.01
+          ],
+          "confidence": 0.96
+        }
+      }
+    },
+    {
+      "id": 25,
+      "title": "Webpack 5.106",
+      "url": "https://webpack.js.org/blog/2026-04-08-webpack-5-106/",
+      "secondaryUrls": [],
+      "summary": "プラグインバリデーションフック、CSS ランタイムインジェクション、改善されたツリーシェイキング、実験的な Oxc パーサーサポートを含むリリース。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.16
+        },
+        "relevance": {
+          "score": 2.11,
+          "probabilities": [
+            0.07,
+            0,
+            0.68,
+            0.25
+          ],
+          "confidence": 0.61
+        }
+      }
+    },
+    {
+      "id": 26,
+      "title": "Bun 1.3.12",
+      "url": "https://bun.com/blog/bun-v1.3.12",
+      "secondaryUrls": [],
+      "summary": "WebView ヘッドレスブラウザ、ターミナルでの Markdown サポート、ビルトイン Cron スケジューラを追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1.48,
+          "probabilities": [
+            0.3,
+            0.03,
+            0.57,
+            0.1
+          ],
+          "confidence": 0.27
+        }
+      }
+    },
+    {
+      "id": 27,
+      "title": "Syncpack 14.0",
+      "url": "https://github.com/JamieMason/syncpack/releases/tag/14.0.0",
+      "secondaryUrls": [],
+      "summary": "npm 依存関係のバージョン一貫性を管理する CLI が Rust で書き直されたメジャーバージョン。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0.03,
+            "node_runtime": 0.97,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.97
+        },
+        "breaking": {
+          "noul": 0.4
+        },
+        "relevance": {
+          "score": 2.59,
+          "probabilities": [
+            0.03,
+            0,
+            0.33,
+            0.64
+          ],
+          "confidence": 0.59
+        }
+      }
+    },
+    {
+      "id": 28,
+      "title": "Phantom UI",
+      "url": "https://aejkatappaja.github.io/phantom-ui/",
+      "secondaryUrls": [],
+      "summary": "Web Component ベースの構造認識型スケルトンローダー。フレームワーク横断で利用可能。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.15,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.84,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.82
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.84,
+          "probabilities": [
+            0.08,
+            0,
+            0.92,
+            0
+          ],
+          "confidence": 0.83
+        }
+      }
+    }
+  ]
+}

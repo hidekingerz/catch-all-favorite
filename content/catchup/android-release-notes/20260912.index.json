@@ -1,0 +1,410 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/android-release-notes/20260912.md",
+  "sourceHash": "sha256:68f73f8176d68700b8903aa22218db5b6c4ade74cd73f02202b7b371b3c0c957",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:44.380Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Android 17 — Compatibility（互換性）",
+      "url": "https://source.android.com/docs/whatsnew/android-17-release#compatibility",
+      "secondaryUrls": [],
+      "summary": "互換性テストが多数更新。CTS Verifier に音声マルチチャンネル入出力テスト・メディア再生テスト・オーディオワークロードテストを追加。CTS-V 実行前にデフォルトブラウザロールの付与が必要になり、測距精度/テレコム系の手動テストはマルチデバイステスト化（Wi-Fi 接続が前提）。USB ホスト側インタラクティブテストは「adb over Wi-Fi」設定を要求。USB-C→3.5mm 変換アダプタの推奨追加や Pro Audio テストからの HDMI 要件削除、Camera ITS と Android 17 CDD の更新を含む。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.92,
+            "security": 0,
+            "policy": 0.08,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.9
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.59
+        },
+        "relevance": {
+          "score": 1.01,
+          "probabilities": [
+            0.03,
+            0.94,
+            0.02,
+            0.01
+          ],
+          "confidence": 0.93
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "Android 17 — Setup（セットアップ）",
+      "url": "https://source.android.com/docs/whatsnew/android-17-release#setup",
+      "secondaryUrls": [],
+      "summary": "Android 17 以降で AOSP ソースツリーが読み取り専用（read-only）になった。構成・コンパイル段階でプロセスがファイルを変更しようとするとビルドが失敗する。開発者はソースツリーを読み書き可能（read-write）に設定してファイルシステムエラーを解消する必要がある。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.64,
+            "security": 0,
+            "policy": 0.02,
+            "feature": 0,
+            "guide": 0.34,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.58
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.88
+        },
+        "relevance": {
+          "score": 0.99,
+          "probabilities": [
+            0.02,
+            0.97,
+            0,
+            0.01
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Android 16 — Compatibility（互換性）",
+      "url": "https://source.android.com/docs/whatsnew/android-16-release#compatibility",
+      "secondaryUrls": [],
+      "summary": "複数領域でテスト機能を強化。Camera ITS の更新、Android 16 QPR2 に合わせた CDD 更新のほか、Bluetooth MIDI ループバックテストは USB MIDI 周辺機器が不要に。位置情報機能向けの気圧計測定テスト、Bluetooth 機能支援のマルチデバイス接続テスト、QPR2 で導入され Better Together 連携を支える Wi-Fi AP 接続テストを追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.99,
+            "security": 0,
+            "policy": 0.01,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 0.97,
+          "probabilities": [
+            0.05,
+            0.93,
+            0.01,
+            0
+          ],
+          "confidence": 0.93
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "Android 16 — Interaction（インタラクション）",
+      "url": "https://source.android.com/docs/whatsnew/android-16-release#interaction",
+      "secondaryUrls": [],
+      "summary": "ハプティクスに区分線形エンベロープ（PWLE）API を導入し、CLICK / TICK 等の基本プリミティブを基準化して類似デバイス間で近い触覚知覚を生む正規化 PWLE 効果を作成可能に。デバイスごとのチューニングコストを削減しエコシステムの断片化に対処する。心拍センサーは互換性維持のため従来の `SENSOR_PERMISSION_BODY_SENSORS` に代えて `SENSOR_PERMISSION_READ_HEART_RATE` 権限を適用する。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.93,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.07,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.91
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.68
+        },
+        "relevance": {
+          "score": 1.02,
+          "probabilities": [
+            0.01,
+            0.97,
+            0.01,
+            0.01
+          ],
+          "confidence": 0.96
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Android 16 — Permissions（権限）",
+      "url": "https://source.android.com/docs/whatsnew/android-16-release#permissions",
+      "secondaryUrls": [],
+      "summary": "2 つの新しいコンパニオンデバイスロールを追加。モバイル端末とコンピュータ間でのアプリのストリーミング/キャスト/ミラーリング向けの `COMPANION_DEVICE_APP_STREAMING` と、コネクテッドカーや XR デバイス向けアプリのための `COMPANION_DEVICE_NEARBY_DEVICE_STREAMING`。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.93,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.07,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.91
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 1.02,
+          "probabilities": [
+            0,
+            0.98,
+            0.01,
+            0.01
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "Android 16 — Storage（ストレージ）",
+      "url": "https://source.android.com/docs/whatsnew/android-16-release#storage",
+      "secondaryUrls": [],
+      "summary": "デバイス移行時の連絡先喪失を減らすため、デフォルトアカウント機能を導入。連絡先アプリはクラウド同期オプションを促し、ローカルや SIM の連絡先をクラウドの既定へ移すことを推奨し、新規のローカル連絡先作成を避けることで長期的な連絡先の喪失を防ぐ。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.96,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.04,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.96
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.17
+        },
+        "relevance": {
+          "score": 1.05,
+          "probabilities": [
+            0.01,
+            0.93,
+            0.05,
+            0.01
+          ],
+          "confidence": 0.92
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "Android 16 — Update（更新）",
+      "url": "https://source.android.com/docs/whatsnew/android-16-release#update",
+      "secondaryUrls": [],
+      "summary": "シームレスアプリ更新により更新中のアプリ利用不可時間を最小化。`dexopt` / `dex2oat` の処理をインストールの早い段階へ移動し、アプリが凍結される時間を最大で数秒からミリ秒（数十ミリ秒）オーダーへ短縮する。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.99,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.01,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 0.99,
+          "probabilities": [
+            0.02,
+            0.97,
+            0.01,
+            0
+          ],
+          "confidence": 0.97
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,648 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260617.md",
+  "sourceHash": "sha256:d87854011ac0fd6e3bbadba65b3dd87e880ee3269bfcf02fbf3618118c3d3331",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:57.312Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "v2.1.179（2026-06-16）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "バグ修正中心。ストリーム途中の接続断で部分応答を保持しエラー表示を回避、スピナーが \"running tool\" で固まる問題を解消。WSL2（Windows Terminal / VS Code）でのマウスホイールスクロール回帰（2.1.172 由来）を修正。Linux で大きなディレクトリツリーに対する sandbox の `denyRead`/`allowRead` glob が Bash ツール記述を肥大化させセッションを使用不能にする問題を修正。サブエージェントのトランスクリプト（Ctrl+O）表示やフォーカス復帰の不具合も修正。リモートセッションのプラグイン読み込み性能を改善。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.11,
+          "probabilities": [
+            0,
+            0,
+            0.88,
+            0.12
+          ],
+          "confidence": 0.87
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "v2.1.178（2026-06-15）",
+      "url": null,
+      "secondaryUrls": [
+        "https://code.claude.com/docs/en/permissions.md",
+        "https://code.claude.com/docs/en/skills.md"
+      ],
+      "summary": "権限ルールに `Tool(param:value)` 構文（`*` ワイルドカード対応）を追加。例: `Agent(model:opus)` で Opus サブエージェントをブロック。ネストした `.claude/skills` のスキル読み込み・名前衝突時の `<dir>:<name>` 表示に対応。ネスト `.claude/` ではエージェント/ワークフロー/output-style とも作業ディレクトリに最も近いものが優先。auto モードでサブエージェントのスポーンを起動前に分類器が評価するよう改善。`/doctor` のレイアウト改善、`/bug` は送信前に説明必須化。クラッシュ・認証・コンパクション（`--fallback-model` 尊重）・vim モードの undo・サブエージェント関連の多数の修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.34
+        },
+        "relevance": {
+          "score": 2.25,
+          "probabilities": [
+            0,
+            0,
+            0.75,
+            0.25
+          ],
+          "confidence": 0.74
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "v2.1.177（2026-06-13）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "リリースノートなし（No content）。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "other",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.16,
+            "other": 0.84
+          },
+          "confidence": 0.81
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.88,
+          "probabilities": [
+            0.1,
+            0,
+            0.83,
+            0.07
+          ],
+          "confidence": 0.73
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "v2.1.176（2026-06-12）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "セッションタイトルを会話の言語で生成（`language` 設定で固定可能）。`footerLinksRegexes` 設定でフッター行に正規表現マッチのリンクバッジを追加（ユーザー/管理設定で構成）。Bedrock の認証情報キャッシュを `Expiration` まで保持するよう改善。`availableModels` の強制を強化（`ANTHROPIC_DEFAULT_*_MODEL` でブロック済みモデルへリダイレクトできないように、`/fast` も許可外なら切替拒否）。Remote Control・バックグラウンドセッション・`/cd`・ワークツリー移動まわりの多数の修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.36
+        },
+        "relevance": {
+          "score": 2.51,
+          "probabilities": [
+            0,
+            0,
+            0.48,
+            0.52
+          ],
+          "confidence": 0.51
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "v2.1.175（2026-06-12）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "`enforceAvailableModels` 管理設定を追加。有効化すると `availableModels` 許可リストが Default モデルにも適用され（許可外に解決される Default は先頭の許可モデルへフォールバック）、ユーザー/プロジェクト設定で管理側の `availableModels` を拡張できなくなる。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.37
+        },
+        "relevance": {
+          "score": 2.68,
+          "probabilities": [
+            0,
+            0,
+            0.3,
+            0.7
+          ],
+          "confidence": 0.68
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "v2.1.174（2026-06-12）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "フルスクリーン時のマウスホイールスクロール加速を無効化する `wheelScrollAccelerationEnabled` 設定を追加。`/model` ピッカーが Default の解決先モデルファミリーを隠す問題を修正（Max/Team Premium/Enterprise で Opus、Pro/Team で Sonnet を独立行で表示）。Bedrock GovCloud リージョンの推論プロファイル接頭辞修正。スキルのホットリロードで変更分のみ再送するよう改善。[VSCode] Account & usage ダイアログ（`/usage`）に使用状況の内訳（キャッシュミス・長コンテキスト・サブエージェント・スキル/エージェント/プラグイン/MCP 別）を追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.12
+        },
+        "relevance": {
+          "score": 2.09,
+          "probabilities": [
+            0,
+            0,
+            0.91,
+            0.09
+          ],
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "v2.1.173（2026-06-11）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "Fable 5 のモデル名 `[1m]` サフィックス未正規化を修正（Fable 5 はデフォルトで 1M コンテキストのためサフィックスを自動除去）。Windows で sandbox 有効時に出る誤った「sandbox dependencies missing」起動警告を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2.24,
+          "probabilities": [
+            0.01,
+            0,
+            0.74,
+            0.25
+          ],
+          "confidence": 0.73
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "v2.1.172（2026-06-10）",
+      "url": null,
+      "secondaryUrls": [
+        "https://code.claude.com/docs/en/sub-agents.md"
+      ],
+      "summary": "**サブエージェントが自身のサブエージェントを最大5階層までスポーン可能に**。Amazon Bedrock が `AWS_REGION` 未設定時に `~/.aws` 設定からリージョンを読む（`/status` で取得元を表示）。`/plugin` のマーケットプレイス閲覧に検索バーを追加。1M コンテキストでクレジット枯渇時にセッションが固まる問題を自動コンパクションで解消。`availableModels` 制約をサブエージェントのモデル上書きやエージェント dispatch・advisor にも適用。`WebFetch(domain:*.example.com)` ワイルドカードがサブドメインにマッチしない不具合や、ファイル権限ルールの中間ワイルドカード（例: `Read(secrets-*/config.json)`）の起動時拒否を修正。長い会話やサブエージェント並列実行時の性能・アイドル CPU 使用率を改善。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.14
+        },
+        "relevance": {
+          "score": 2.33,
+          "probabilities": [
+            0,
+            0,
+            0.66,
+            0.34
+          ],
+          "confidence": 0.66
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "v2.1.170（2026-06-09）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "**Claude Fable 5（Mythos クラスのモデル）を導入**。一般提供したどのモデルをも超える能力を持つとされ、v2.1.170 以降で利用可能。VS Code 統合ターミナル等、Claude Code 環境変数を継承したシェルから起動した際にトランスクリプトが保存されず `--resume` に出ない不具合を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {
+        "参考": "https://www.anthropic.com/news/claude-fable-5-mythos-5"
+      },
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.22,
+          "probabilities": [
+            0,
+            0,
+            0.78,
+            0.22
+          ],
+          "confidence": 0.77
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "v2.1.169（2026-06-08）",
+      "url": null,
+      "secondaryUrls": [
+        "https://code.claude.com/docs/en/settings.md",
+        "https://code.claude.com/docs/en/server-managed-settings.md"
+      ],
+      "summary": "トラブルシュート用に全カスタマイズ（CLAUDE.md・プラグイン・スキル・フック・MCP）を無効化して起動する `--safe-mode` フラグ（`CLAUDE_CODE_SAFE_MODE`）を追加。プロンプトキャッシュを壊さずに作業ディレクトリを移動する `/cd` コマンドを追加。バンドルされたスキル/ワークフロー/組み込みスラッシュコマンドをモデルから隠す `disableBundledSkills` 設定（`CLAUDE_CODE_DISABLE_BUNDLED_SKILLS`）を追加。エンタープライズの管理 MCP ポリシー（`allowedMcpServers`/`deniedMcpServers`）が再接続時等に強制されない不具合を修正。`claude agents --json` の不足項目修正と `--all` フラグ・`id`/`state` フィールド追加。Remote Control・バックグラウンドエージェント・性能まわりの多数の改善。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.36,
+          "probabilities": [
+            0,
+            0,
+            0.63,
+            0.37
+          ],
+          "confidence": 0.63
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "Claude Fable 5（Mythos 5）発表",
+      "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "secondaryUrls": [],
+      "summary": "v2.1.170 のリリースノートで参照されている Anthropic の新モデル Claude Fable 5（Mythos クラス）の発表ページ。一般提供向けに安全化されたモデルで、Claude Code から v2.1.170 以降で利用可能。（記事本文は未取得のためリリースノートの記述に基づく）",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.69,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.31,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.63
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.11,
+          "probabilities": [
+            0,
+            0,
+            0.88,
+            0.12
+          ],
+          "confidence": 0.87
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260806.md",
+  "sourceHash": "sha256:c7c392801c85c72d4097d67471f0b53e2e6df6e1a2b014d3c6347439acda7fc7",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:01.331Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "セキュリティ・権限・サンドボックス",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "細工したコマンドが権限チェックから自身の一部を隠せてしまう Bash 権限バイパスを修正。 / タブや不可視 Unicode でパディングしたコマンドが、承認ダイアログでコマンドの一部を隠せてしまう問題を修正（権限プロンプトで隠せなくなった）。 / ワークフロースクリプトが動的 `import()` を使ってワークフローサンドボックス外のコードを実行できてしまう問題を修正。 / エージェント定義の `bypassPermissions` モードが、組織の bypass-permissions 無効化ポリシーを無視していた権限ギャップを修正。 / Linux で `sandbox.filesystem.denyWrite` が作業ディレクトリを含む場合に、サンドボックス化コマンドが起動に失敗する問題を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.223（2026-08-06）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0.05,
+            "security": 0.95,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.94
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.3
+        },
+        "relevance": {
+          "score": 2.87,
+          "probabilities": [
+            0,
+            0,
+            0.12,
+            0.88
+          ],
+          "confidence": 0.87
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "モデル・サブエージェント・MCP",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "ワークフローエージェント・フォークしたスキル・スラッシュコマンド・再開したバックグラウンドエージェントが要求したサブエージェントモデルが制限され、代わりに親モデルが動く場合に警告を表示するようにした。 / ゲートウェイのモデル探索が、`vertex_ai/claude-*` や `bedrock/anthropic.claude-*` のようなプロバイダ接頭辞付き ID で登録された Claude モデルを隠していた問題を修正。 / Anthropic のモデル ID でない `modelOverrides` のキーが、セッションの正規（canonical）モデル ID として扱われていた問題を修正。未知のキーはドキュメント通り無視されるようになった。 / `CLAUDE_CODE_DISABLE_1M_CONTEXT` の挙動を変更。固定リストのモデルだけでなく、ネイティブに 1M ウィンドウを持つすべての Claude モデルを自動コンパクションで 200K に抑えるようにした。自動コンパクションがセッションを 200K に抑えられていない場合は起動時に警告が出るようになった。 / 自動コンパクションが、認識されないモデル ID のセッションをコンテキストウィンドウを超えて肥大化させず、想定ウィンドウ内に収めるようにした（従来の挙動に戻すには `CLAUDE_CODE_DISABLE_UNKNOWN_MODEL_WINDOW_ENFORCEMENT=1`）。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.223（2026-08-06）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.6
+        },
+        "relevance": {
+          "score": 2.72,
+          "probabilities": [
+            0,
+            0,
+            0.27,
+            0.73
+          ],
+          "confidence": 0.72
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "バックグラウンドセッション・ワークフロー",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "クラウドセッションで `/teleport` のヒントを表示するようにした（`claude --teleport <session id>` でローカルに継続する方法を案内）。 / フォークしたバックグラウンドエージェントが、再開時にフォーク親プロンプトの再構築に失敗すると、セッションの残り全体で「already resuming」のまま停止してしまう問題を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.223（2026-08-06）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.15,
+          "probabilities": [
+            0,
+            0,
+            0.84,
+            0.16
+          ],
+          "confidence": 0.84
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "プラグイン・マーケットプレイス・管理設定",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "`strictKnownMarketplaces` および `blockedMarketplaces` 管理設定に、オーナーのワイルドカード指定（`\"owner/*\"`）を追加。GitHub 組織配下のすべてのマーケットプレイスリポジトリを一括で許可／ブロックできるようになった。 / 管理設定の修正: サーバーから配信される設定が、マシンローカルの `managed-settings.json` や MDM プロファイルの env ブロックを無効化しないようにした。管理者の env はキー単位でマージされるようになった。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.223（2026-08-06）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.99,
+            "other": 0.01
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.12
+        },
+        "relevance": {
+          "score": 2.29,
+          "probabilities": [
+            0.01,
+            0,
+            0.68,
+            0.31
+          ],
+          "confidence": 0.68
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "その他の修正・変更",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "`/review` を `/code-review`（現在の diff または PR をレビュー: `/code-review <level> <pr#>`）のエイリアスに変更。クラウド上での深いレビューには `/code-review ultra` を使う。 / `/code-review` を effort レベル指定なしで実行した場合、最後に入力したレベルを再利用するように変更（`/code-review high` のようにレベルを指定すると変更できる）。 / セッション途中で `/cd` した後に再開すると、セッションが空になって返ってくる問題を修正。 / 履歴に不正な形式の diagnostics 添付が含まれる場合に、再開したセッションが毎ターン失敗したり、インタラクティブアプリが応答しないエラー画面に留まったりする問題を修正。 / 通常とは異なる `git push` の出力を解析する際にまれにハングする問題を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.223（2026-08-06）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.29
+        },
+        "relevance": {
+          "score": 2.21,
+          "probabilities": [
+            0,
+            0,
+            0.78,
+            0.22
+          ],
+          "confidence": 0.78
+        }
+      }
+    }
+  ]
+}

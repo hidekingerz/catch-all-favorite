@@ -1,0 +1,418 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/apple-security-releases/20260929.md",
+  "sourceHash": "sha256:83b1a9947d1afde2f65fb2bed1d418a7705d1d26941a02c2f9a0202ed1b5c8ad",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:52.153Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "iOS 27.0.1およびiPadOS 27.0.1",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "最新メジャー版 iOS/iPadOS 27 のポイントアップデート。このアップデートには CVE の公開エントリがない。",
+      "publishedAt": "2026-09-28",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "iPhone 11以降、iPad Pro 12.9インチ（第4世代）以降、iPad Pro 11インチ（第2世代）以降、iPad Air（第4世代）以降、iPad（第9世代）以降、iPad mini（第6世代）以降",
+      "rawFields": {
+        "詳細": "（詳細ページへのリンクなし）"
+      },
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.94,
+            "security": 0.06,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.93
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 1,
+          "probabilities": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "confidence": 0.99
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "iOS 26.7.1およびiPadOS 26.7.1",
+      "url": "https://support.apple.com/ja-jp/149226",
+      "secondaryUrls": [],
+      "summary": "CoreGraphics の境界外書き込み脆弱性 **CVE-2026-86950** を修正。悪意のあるファイルの処理で任意コード実行につながる恐れがあり、iOS 27 より前のバージョンを標的とした極めて高度な攻撃で特定個人に対し悪用された可能性があると Apple が報告（実環境で悪用されたゼロデイ）。",
+      "publishedAt": "2026-09-28",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "iPhone 11以降、iPad Pro 12.9インチ（第3世代）以降、iPad Pro 11インチ（第1世代）以降、iPad Air（第3世代）以降、iPad（第8世代）以降、iPad mini（第5世代）以降",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1,
+          "probabilities": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "confidence": 0.99
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "macOS Golden Gate 27.0.1",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "最新メジャー版 macOS Golden Gate 27 のポイントアップデート。このアップデートには CVE の公開エントリがない。",
+      "publishedAt": "2026-09-28",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "macOS Golden Gate",
+      "rawFields": {
+        "詳細": "（詳細ページへのリンクなし）"
+      },
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.97,
+            "security": 0.03,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.96
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 1.08,
+          "probabilities": [
+            0,
+            0.94,
+            0.04,
+            0.02
+          ],
+          "confidence": 0.92
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "macOS Tahoe 26.7.1",
+      "url": "https://support.apple.com/ja-jp/149228",
+      "secondaryUrls": [],
+      "summary": "CoreGraphics の境界外書き込み脆弱性 **CVE-2026-86950** を修正。実環境で悪用が確認されたゼロデイに対応するアップデート（内容は iOS 26.7.1 と共通）。",
+      "publishedAt": "2026-09-28",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "macOS Tahoe",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.02,
+          "probabilities": [
+            0,
+            0.98,
+            0.01,
+            0.01
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "macOS Sequoia 15.8.1",
+      "url": "https://support.apple.com/ja-jp/149229",
+      "secondaryUrls": [],
+      "summary": "CoreGraphics の境界外書き込み脆弱性 **CVE-2026-86950** を修正。実環境で悪用が確認されたゼロデイに対応するアップデート（内容は iOS 26.7.1 と共通）。",
+      "publishedAt": "2026-09-28",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "macOS Sequoia",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.03,
+          "probabilities": [
+            0,
+            0.98,
+            0.01,
+            0.01
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "watchOS 27.0.1",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "Apple Watch Series 9以降向けの watchOS 27.0.1。このアップデートには CVE の公開エントリがない（9月23日公開の Series 12/Ultra 4 向け watchOS 27.0.1 とは別配信）。",
+      "publishedAt": "2026-09-28",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "Apple Watch Series 9以降",
+      "rawFields": {
+        "詳細": "（詳細ページへのリンクなし）"
+      },
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.91,
+            "security": 0.09,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.9
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0.98,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.02
+          },
+          "confidence": 0.98
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 1,
+          "probabilities": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "confidence": 1
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "visionOS 27.0.1",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "Apple Vision Pro 向け visionOS 27.0.1。このアップデートには CVE の公開エントリがない。",
+      "publishedAt": "2026-09-28",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "Apple Vision Pro（すべてのモデル）",
+      "rawFields": {
+        "詳細": "（詳細ページへのリンクなし）"
+      },
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.93,
+            "security": 0.07,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.91
+        },
+        "ecosystem": {
+          "choice": "other",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0.46,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.54
+          },
+          "confidence": 0.48
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 0.2,
+          "probabilities": [
+            0.81,
+            0.19,
+            0,
+            0
+          ],
+          "confidence": 0.8
+        }
+      }
+    }
+  ]
+}

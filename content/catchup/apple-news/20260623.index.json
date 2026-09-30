@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/apple-news/20260623.md",
+  "sourceHash": "sha256:41bdf090b907d156f148cba1afb21b816a6eeeaf3f99414d9fbf3295f4f7deff",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:46.286Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Design kits for iOS, iPadOS, and macOS 27 are here",
+      "url": "https://developer.apple.com/jp/news/?id=e2lxw9l1",
+      "secondaryUrls": [],
+      "summary": "iOS・iPadOS・macOS 27 に対応した Figma / Sketch 向けの Apple デザインキットが利用可能になった。主な内容は (1) Liquid Glass の更新、(2) コンポーネントと状態のサポート拡張、(3) コードとの整合性を高める命名変更、(4) リサイズの改善、(5) macOS でのダークモードの追加。[Apple Design Resources](https://developer.apple.com/design/resources/) からダウンロードできる。",
+      "publishedAt": "2026-06-23",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.97,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.03,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.96
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.26
+        },
+        "relevance": {
+          "score": 0.76,
+          "probabilities": [
+            0.27,
+            0.71,
+            0.02,
+            0
+          ],
+          "confidence": 0.7
+        }
+      }
+    }
+  ]
+}

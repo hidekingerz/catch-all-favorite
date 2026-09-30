@@ -1,0 +1,1151 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/twir/20260506.md",
+  "sourceHash": "sha256:6abc14d616815801486f4e684e0960d5eba2fd7410fd90f4c9517ae5aabb716e",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:27.328Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Malicious npm Package Brand-Squats TanStack to Exfiltrate Environment Variables",
+      "url": "https://socket.dev/blog/tanstack-brandsquat-compromise",
+      "secondaryUrls": [],
+      "summary": "TanStackを偽装した悪意あるnpmパッケージが発見された。公式組織が所有していない`tanstack`パッケージをインストールすると、環境変数が窃取される危険がある。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0.13,
+            "node_runtime": 0.87,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.84
+        },
+        "breaking": {
+          "noul": 0.11
+        },
+        "relevance": {
+          "score": 2.86,
+          "probabilities": [
+            0.01,
+            0,
+            0.11,
+            0.88
+          ],
+          "confidence": 0.86
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "Who Owns the Tree? RSC as a Protocol, Not an Architecture",
+      "url": "https://tanstack.com/blog/who-owns-the-tree",
+      "secondaryUrls": [],
+      "summary": "TanStack StartがRSCを「プロトコル」として再定義し、サーバー主導とクライアント主導の両方のコンポジションを可能にする。Next.jsの従来のサーバー駆動アーキテクチャとは対照的なアプローチ。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.97,
+            "guide": 0.03,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.96
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 2.03,
+          "probabilities": [
+            0,
+            0,
+            0.96,
+            0.04
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Introducing TanStack Form",
+      "url": "https://frontendmasters.com/blog/introducing-tanstack-form/",
+      "secondaryUrls": [],
+      "summary": "TanStack Formの紹介記事。強力な型付けと柔軟なアプローチによるReactアプリケーションのフォーム管理を特徴とする。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.14,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.86,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.83
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 2,
+          "probabilities": [
+            0,
+            0,
+            0.99,
+            0.01
+          ],
+          "confidence": 0.99
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "Time to Yield - An SSG benchmark across five React frameworks",
+      "url": "https://dev.to/lazarv/time-to-yield-20m8",
+      "secondaryUrls": [],
+      "summary": "5つのReactフレームワークにおける静的サイト生成のベンチマーク。ジェネレーターによるルートのyieldで、初回ページレンダリングの高速化を検証している。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.06,
+            "guide": 0.9,
+            "event": 0,
+            "business": 0,
+            "other": 0.04
+          },
+          "confidence": 0.88
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.99,
+          "probabilities": [
+            0.01,
+            0,
+            0.98,
+            0.01
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Next.js Link as a Button",
+      "url": "https://kittygiraudel.com/2026/05/02/nextjs-link-as-a-button/",
+      "secondaryUrls": [],
+      "summary": "Next.jsのLinkコンポーネントをボタンとして使用する方法を探る。現在は`legacyBehavior`が必要だが、Fragment Refsによる解決策が今後予定されている。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0.01,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.03,
+            "guide": 0.96,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.96
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.23
+        },
+        "relevance": {
+          "score": 2.56,
+          "probabilities": [
+            0,
+            0,
+            0.43,
+            0.57
+          ],
+          "confidence": 0.56
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "React Miami 2026",
+      "url": "https://brookslybrand.com/posts/react-miami-2026.html",
+      "secondaryUrls": [],
+      "summary": "カンファレンスのレポート。React機能への関心の低下や、React RouterとRemixエコシステム間の混乱について議論された。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 1,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.01,
+          "probabilities": [
+            0.01,
+            0,
+            0.96,
+            0.03
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "Remotion 4.0.455 - New `<HtmlInCanvas>` component",
+      "url": "https://github.com/remotion-dev/remotion/releases/v4.0.455",
+      "secondaryUrls": [],
+      "summary": "新しい`<HtmlInCanvas>`コンポーネントにより、HTMLとcanvasベースのシェーダーエフェクトを組み合わせたプログラマティック動画作成が可能に。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1.98,
+          "probabilities": [
+            0.03,
+            0,
+            0.93,
+            0.04
+          ],
+          "confidence": 0.89
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "Remix 3 Beta Preview",
+      "url": "https://remix.run/blog/remix-3-beta-preview",
+      "secondaryUrls": [],
+      "summary": "Remix 3はReact/React Router依存を排除し、明示的な再レンダートリガー、Frames、アンバンドルアプリなどの新概念を導入するフレームワークとして再構築された。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.82
+        },
+        "relevance": {
+          "score": 2.12,
+          "probabilities": [
+            0.02,
+            0,
+            0.82,
+            0.16
+          ],
+          "confidence": 0.81
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "React Router 7.15",
+      "url": "https://github.com/remix-run/react-router/blob/main/CHANGELOG.md#v7150",
+      "secondaryUrls": [],
+      "summary": "React Router v8に向けたAPI安定化が進行中。ルートマッチングのパフォーマンス最適化も含まれる。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.16
+        },
+        "relevance": {
+          "score": 2.2,
+          "probabilities": [
+            0,
+            0,
+            0.79,
+            0.21
+          ],
+          "confidence": 0.79
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "Trees - File tree UI library",
+      "url": "https://trees.software/",
+      "secondaryUrls": [],
+      "summary": "パフォーマンスと柔軟性を重視したファイルツリーUIコンポーネントライブラリ。ReactとバニラJavaScriptの両方をサポートしている。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.13,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.84,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.03
+          },
+          "confidence": 0.82
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 1.96,
+          "probabilities": [
+            0.02,
+            0,
+            0.98,
+            0
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "Pracht - Preact framework",
+      "url": "https://pracht.resynapse.dev/",
+      "secondaryUrls": [],
+      "summary": "Preactベースのフレームワーク。明示的なルーティング制御、ルートごとのレンダーモード設定、クラウドプロバイダーアダプターを提供する。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.11,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.87,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.02
+          },
+          "confidence": 0.84
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.05,
+          "probabilities": [
+            0.47,
+            0.02,
+            0.51,
+            0
+          ],
+          "confidence": 0.04
+        }
+      }
+    },
+    {
+      "id": 11,
+      "title": "shadcn CLI 4.7 - Package Imports and Target Aliases",
+      "url": "https://ui.shadcn.com/docs/changelog/2026-05-package-imports-target-aliases",
+      "secondaryUrls": [],
+      "summary": "shadcn CLIがアップデートされ、パッケージインポートの処理改善とターゲットエイリアスの設定機能が追加された。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.99,
+            "node_runtime": 0.01,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.13
+        },
+        "relevance": {
+          "score": 2.29,
+          "probabilities": [
+            0.01,
+            0,
+            0.68,
+            0.31
+          ],
+          "confidence": 0.68
+        }
+      }
+    },
+    {
+      "id": 12,
+      "title": "The end of responsive images",
+      "url": "https://piccalil.li/blog/the-end-of-responsive-images/",
+      "secondaryUrls": [],
+      "summary": "モダンブラウザでは`loading=\"lazy\"`と`sizes=\"auto\"`属性により、適切な画像サイズが自動的に決定されるようになった。手動でのブレークポイント定義が不要に。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 1,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.15
+        },
+        "relevance": {
+          "score": 2.36,
+          "probabilities": [
+            0.01,
+            0.01,
+            0.6,
+            0.38
+          ],
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": 13,
+      "title": "Media Queries Range Syntax",
+      "url": "https://ishadeed.com/article/range-syntax/",
+      "secondaryUrls": [],
+      "summary": "`@media (300px <= width <= 500px)`のようなCSSレンジクエリ構文がモダンブラウザで広くサポートされ、明示的なブレークポイント不要で利用可能に。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 1,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.88,
+          "probabilities": [
+            0.06,
+            0.03,
+            0.88,
+            0.03
+          ],
+          "confidence": 0.83
+        }
+      }
+    },
+    {
+      "id": 14,
+      "title": "Why \"Trusted Publishing\" Can't Save Us from Social Engineering",
+      "url": "https://adventures.nodeland.dev/archive/why-trusted-publishing-can-t-save-us/",
+      "secondaryUrls": [],
+      "summary": "npmのTrusted PublishingやProvenance機能は、メンテナー自身が侵害された場合の悪意あるパッケージ公開を防ぐことはできないという問題を指摘。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 0.64,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0.35,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.59
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.29,
+          "probabilities": [
+            0.03,
+            0.01,
+            0.6,
+            0.36
+          ],
+          "confidence": 0.57
+        }
+      }
+    },
+    {
+      "id": 15,
+      "title": "The O(n^2) Bug That Looked Like Clean Code",
+      "url": "https://dev.to/aralroca/the-on2-bug-that-looked-like-clean-code-3556",
+      "secondaryUrls": [],
+      "summary": "一見クリーンに見えるJavaScriptパターンが二次計算量の問題を抱えており、パフォーマンスが大幅に劣化するケースを検証している。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.05,
+          "probabilities": [
+            0.01,
+            0,
+            0.91,
+            0.08
+          ],
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "id": 16,
+      "title": "Node.js 26.0",
+      "url": "https://nodejs.org/en/blog/release/v26.0.0",
+      "secondaryUrls": [],
+      "summary": "メジャーリリース。Temporal APIやMap.getOrInsertなどの新APIが利用可能に。HTTPクライアントのアップグレードも含まれ、偶数/奇数のLTS区分が廃止された。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.31
+        },
+        "relevance": {
+          "score": 2.71,
+          "probabilities": [
+            0,
+            0,
+            0.29,
+            0.71
+          ],
+          "confidence": 0.71
+        }
+      }
+    },
+    {
+      "id": 17,
+      "title": "Datatype - Variable font that turns text into charts",
+      "url": "https://franktisellano.github.io/datatype/",
+      "secondaryUrls": [],
+      "summary": "リガチャを使用してテキストをインラインチャートとしてレンダリングする可変フォント。グリッドやリスト内での効率的なデータ可視化を実現する。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.06,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.93,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.93
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.98,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.02
+          },
+          "confidence": 0.97
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.11,
+          "probabilities": [
+            0.44,
+            0.01,
+            0.55,
+            0
+          ],
+          "confidence": 0.1
+        }
+      }
+    },
+    {
+      "id": 18,
+      "title": "tsz - TypeScript compiler in Rust",
+      "url": "https://tsz.dev/",
+      "secondaryUrls": [],
+      "summary": "Rust製のTypeScriptコンパイラ（開発中）。既存のソリューションのドロップイン置き換えとして、より高速なコンパイル速度を提供することを目指す。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.16,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.79,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.05
+          },
+          "confidence": 0.76
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 2,
+          "probabilities": [
+            0.01,
+            0,
+            0.97,
+            0.02
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 19,
+      "title": "Astro 6.2",
+      "url": "https://astro.build/blog/astro-620/",
+      "secondaryUrls": [],
+      "summary": "SVG最適化と実験的なLogger/フォントAPIが追加された。Vite 8と安定版Rustコンパイラを搭載したAstro v7アルファも利用可能に。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.99,
+            "node_runtime": 0.01,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 0.38,
+          "probabilities": [
+            0.8,
+            0.02,
+            0.16,
+            0.01
+          ],
+          "confidence": 0.62
+        }
+      }
+    }
+  ]
+}

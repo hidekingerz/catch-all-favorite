@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260624.md",
+  "sourceHash": "sha256:32d7f7d26184a9865b9575b8580fe10893693998ba3552ac6ab96dba244dab40",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:57.952Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "v2.1.191（2026-06-24）",
+      "url": null,
+      "secondaryUrls": [
+        "https://code.claude.com/docs/en/checkpointing.md",
+        "https://code.claude.com/docs/en/hooks.md"
+      ],
+      "summary": "`/clear` 実行前から会話を再開する `/rewind` サポートを追加。ストリーミング応答中に過去の出力を読んでいるとスクロール位置が一番下に飛ぶ問題を修正。タスクパネルから停止したバックグラウンドエージェントが復活する問題を修正（停止が恒久的になった）。組織ポリシーで無効化された `/voice` が汎用の「利用不可」ではなく制限理由を説明するように。Windows Terminal で行折り返し時に `/login` URL が切れる問題、ssh/tmux 上の Ghostty でのフルスクリーン時 Cmd+クリック、`claude agents` が `/usage` 等の組み込みスラッシュコマンドをバックグラウンドセッションにプロンプトとして送る問題、貼り付け画像のフルパス表示（`[Image #N]` プレースホルダ化）、カンマ区切りマッチャ（`\"Bash,PowerShell\"`）のフックが発火しない問題、`/permissions` の Recently-denied タブで承認が破棄される問題、などを修正。サンドボックスのネットワーク許可ダイアログで「Yes」で許可したホストをセッション中記憶するように改善。MCP の能力探索（`tools/list` 等）と OAuth が一時的なネットワークエラーをリトライ、HTTP 404 で URL と MCP 設定を案内するように改善。管理設定 `forceRemoteSettingsRefresh` が MDM/ファイルポリシー経由で有効になり、取得時に `Cache-Control: no-cache` を送るように。**ストリーミング応答中の CPU 使用率をテキスト更新の 100ms 合体により約 37% 削減**、長時間セッションのメモリ増加を抑制。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.11
+        },
+        "relevance": {
+          "score": 2.1,
+          "probabilities": [
+            0,
+            0,
+            0.9,
+            0.1
+          ],
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "v2.1.190（2026-06-24）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "バグ修正と信頼性の改善。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "other",
+          "probabilities": {
+            "web_frontend": 0.01,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.27,
+            "other": 0.72
+          },
+          "confidence": 0.69
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.14,
+          "probabilities": [
+            0.01,
+            0,
+            0.82,
+            0.17
+          ],
+          "confidence": 0.8
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "v2.1.187（2026-06-23）",
+      "url": null,
+      "secondaryUrls": [
+        "https://code.claude.com/docs/en/sandboxing.md",
+        "https://code.claude.com/docs/en/settings.md"
+      ],
+      "summary": "**サンドボックス化したコマンドが資格情報ファイルや秘密の環境変数を読むのをブロックする `sandbox.credentials` 設定を追加**。モデルピッカー・`--model`・`/model`・`ANTHROPIC_MODEL` に組織設定のモデル制限を反映（制限対象選択時に「組織の設定により制限」を表示）。フルスクリーンモードのセレクトメニュー（権限プロンプト・`/model`・`/config` 等）にマウスクリック選択を追加。元の `-p` 実行がモデルターンを生成しなかった場合に `--resume` が「No conversation found」で失敗する問題、`--json-schema`／ワークフロー `agent({schema})` の構造化出力でモデルが `StructuredOutput` を無限再呼び出しする問題、リモート MCP ツール呼び出しが 5 分間応答なしでハングする問題（エラーで中断するよう変更、`CLAUDE_CODE_MCP_TOOL_IDLE_TIMEOUT` で上書き可）、貼り付けた韓国語/CJK テキストの文字化け、などを修正。`/install-github-app` で GitHub Actions ワークフロー設定を任意化（App だけインストール可能に）。`/btw` に ←/→ の履歴ナビ、`/plugin` に最近使っていないプラグインを表示して整理しやすく改善。サブエージェントの深度トラッキング修正（再開時に元の spawn 深度を復元、fork したサブエージェントも深度上限にカウント）。[VSCode] 大きいセッション再開時に拡張が応答しなくなる問題を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.27
+        },
+        "relevance": {
+          "score": 2.73,
+          "probabilities": [
+            0,
+            0,
+            0.27,
+            0.73
+          ],
+          "confidence": 0.73
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "v2.1.186（2026-06-22）",
+      "url": null,
+      "secondaryUrls": [
+        "https://code.claude.com/docs/en/mcp.md",
+        "https://code.claude.com/docs/en/sub-agents.md",
+        "https://code.claude.com/docs/en/skills.md"
+      ],
+      "summary": "**`claude mcp login <name>` / `claude mcp logout <name>` を追加**し、インタラクティブな `/mcp` メニューを開かずに CLI から MCP サーバを認証可能に（SSH 越しに完了する `--no-browser` の stdin リダイレクト対応）。`/workflows` のエージェント詳細ビューにステータスフィルタ（`f` キー）を追加、`/plugin` の Installed タブに「Skills」セクションを追加、`teammateMode: \"iterm2\"` 設定を追加。**`!` bash コマンドが出力に対して自動応答するように変更**（従来のコンテキストのみの挙動に戻すには `\"respondToBashCommands\": false`）。スリープ復帰後にストリーミングが「Content block not found」/JSON パースエラーで失敗する問題、サブエージェントのトランスクリプトのスクロール位置が終了時にメインに漏れる問題、`Agent(type)` の deny ルールや `Agent(x,y)` の許可タイプ制限が named サブエージェント spawn に効かない問題、などを修正。`CLAUDE_CODE_MAX_RETRIES` の上限を 15 に変更（無人セッションでは `CLAUDE_CODE_RETRY_WATCHDOG` を使う）。**バックグラウンドサブエージェントが自動拒否ではなくメインセッションに権限プロンプトを表示するよう変更**（どのエージェントが要求しているか表示、Esc でそのツールのみ拒否）。`/review <pr>` を `/code-review medium` と同じレビューエンジンに変更。スキル frontmatter のキーが kebab/snake/camel ケースを受け付けるよう改善、不正な `SKILL.md` YAML を空メタデータで読み込むよう改善。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.6
+        },
+        "relevance": {
+          "score": 2.57,
+          "probabilities": [
+            0,
+            0,
+            0.42,
+            0.58
+          ],
+          "confidence": 0.57
+        }
+      }
+    }
+  ]
+}

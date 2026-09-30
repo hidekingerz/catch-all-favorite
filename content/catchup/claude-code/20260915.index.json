@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260915.md",
+  "sourceHash": "sha256:f0c689eb09e7ee929f137a4f50f78432d2aab60d897340a65e18ed3c34a585e4",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:08.462Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "v2.1.273（2026-09-15）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "LLM ゲートウェイ向けリクエストヒントヘッダー: `x-claude-code-request-class` / `x-claude-code-agent-type` / `x-claude-code-prev-tool-durations` / `x-claude-code-compaction` / `x-claude-code-context-compacted` を追加。`CLAUDE_CODE_GATEWAY_HINT_HEADERS=1` でオプトイン。 / MCP サーバ切断通知: セッション中に MCP サーバが切断され自動再接続を諦めた際に通知し、`/mcp` を案内。 / リモートコントロールセッションのフォーク: `claude --remote-control` / `/remote-control` で開始したセッションを Claude アプリからフォーク可能に（フォークは自分の PC 上のバックグラウンドセッションとして動作）。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {
+        "LLM ゲートウェイ向けリクエストヒントヘッダー": "`x-claude-code-request-class` / `x-claude-code-agent-type` / `x-claude-code-prev-tool-durations` / `x-claude-code-compaction` / `x-claude-code-context-compacted` を追加。`CLAUDE_CODE_GATEWAY_HINT_HEADERS=1` でオプトイン。",
+        "MCP サーバ切断通知": "セッション中に MCP サーバが切断され自動再接続を諦めた際に通知し、`/mcp` を案内。",
+        "リモートコントロールセッションのフォーク": "`claude --remote-control` / `/remote-control` で開始したセッションを Claude アプリからフォーク可能に（フォークは自分の PC 上のバックグラウンドセッションとして動作）。"
+      },
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.07,
+          "probabilities": [
+            0,
+            0,
+            0.92,
+            0.08
+          ],
+          "confidence": 0.92
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "v2.1.272（2026-09-15）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": null,
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "other",
+          "probabilities": {
+            "web_frontend": 0.01,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.45,
+            "other": 0.54
+          },
+          "confidence": 0.47
+        },
+        "breaking": {
+          "noul": 0.16
+        },
+        "relevance": {
+          "score": 2.08,
+          "probabilities": [
+            0.03,
+            0,
+            0.82,
+            0.15
+          ],
+          "confidence": 0.79
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "v2.1.271（2026-09-14）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "Remote セッションでの fast mode: クラウド/セルフホストランナーの Remote セッションで、ホストの fast-mode 設定またはセッション内 `/fast` が組織の許可範囲で適用。 / `claude self-hosted-runner --drain-marker-file <path>`: SIGTERM drain 時に該当ファイルがあればホスト drain として報告（テレメトリのみ）。 / auto mode サンドボックスのコマンド単位 `allowed_domains`: Bash/PowerShell/Monitor でコマンドが必要とするホストをそのコマンド専用に開放、他は拒否。 / `omitClaudeMd`: エージェント frontmatter と `--agents` JSON に追加。カスタム/プラグインのサブエージェントを user/project/local の CLAUDE.md 抜きで実行可能に（管理ポリシーファイルは引き続きロード）。 / `--accept-command <sha256>`: `claude plugin install`/`update` で、直前の `--json` 実行が表示したコマンドを `-y` の代わりに厳密に受理。 / Monitor watch のタイムアウト仕様変更: 常にデッドライン付き（最大30分、`-p` 単発実行では10分）に。タイムアウト無しの `persistent` オプションを廃止し、Claude に再アームを通知。 / 動的ワークフローの既定サイズ縮小: Pro プランで既定を small に、medium のガイドラインを15→10エージェントに。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {
+        "Remote セッションでの fast mode": "クラウド/セルフホストランナーの Remote セッションで、ホストの fast-mode 設定またはセッション内 `/fast` が組織の許可範囲で適用。",
+        "`claude self-hosted-runner --drain-marker-file <path>`": "SIGTERM drain 時に該当ファイルがあればホスト drain として報告（テレメトリのみ）。",
+        "auto mode サンドボックスのコマンド単位 `allowed_domains`": "Bash/PowerShell/Monitor でコマンドが必要とするホストをそのコマンド専用に開放、他は拒否。",
+        "`omitClaudeMd`": "エージェント frontmatter と `--agents` JSON に追加。カスタム/プラグインのサブエージェントを user/project/local の CLAUDE.md 抜きで実行可能に（管理ポリシーファイルは引き続きロード）。",
+        "`--accept-command <sha256>`": "`claude plugin install`/`update` で、直前の `--json` 実行が表示したコマンドを `-y` の代わりに厳密に受理。",
+        "Monitor watch のタイムアウト仕様変更": "常にデッドライン付き（最大30分、`-p` 単発実行では10分）に。タイムアウト無しの `persistent` オプションを廃止し、Claude に再アームを通知。",
+        "動的ワークフローの既定サイズ縮小": "Pro プランで既定を small に、medium のガイドラインを15→10エージェントに。"
+      },
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.79
+        },
+        "relevance": {
+          "score": 2.76,
+          "probabilities": [
+            0,
+            0,
+            0.23,
+            0.77
+          ],
+          "confidence": 0.76
+        }
+      }
+    }
+  ]
+}

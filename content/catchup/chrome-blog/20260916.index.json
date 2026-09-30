@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/chrome-blog/20260916.md",
+  "sourceHash": "sha256:275ea1f0ad3eb93cd4d00b44359750635df439ec8896fec7f8695b61aa00bae9",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:56.146Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Chrome 155 beta",
+      "url": "https://developer.chrome.com/blog/chrome-155-beta?hl=ja",
+      "secondaryUrls": [],
+      "summary": "Chrome 155 のベータ版が公開。CSS では counter style をインライン定義できる `symbols()` 関数、`border-radius` と `corner-shape` をまとめて指定する corner shorthand、空白部分の下線を抑制する `text-decoration-skip-spaces`、先頭/末尾要素前後のマージンを除去する `margin-trim` を追加。JavaScript では失敗したモジュール読み込みのリトライ、`import ... with { type: \"text\" }` によるテキストモジュールをサポート。Web API では `maximize()`/`minimize()`/`restore()` の追加ウィンドウ制御、ポスト量子暗号（ML-KEM・ML-DSA・X-Wing 等）、Digital Credentials API、JPEG XL 画像対応などが入った。",
+      "publishedAt": "2026-09-16",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.86,
+            "node_runtime": 0,
+            "browser": 0.14,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.83
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.06,
+          "probabilities": [
+            0,
+            0,
+            0.93,
+            0.07
+          ],
+          "confidence": 0.93
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "New ad metrics in Chrome User Experience Report",
+      "url": "https://developer.chrome.com/blog/crux-ad-metrics?hl=ja",
+      "secondaryUrls": [],
+      "summary": "Chrome User Experience Report（CrUX）に広告体験を測る 4 つの実験的メトリクス（Ad Count・Ad Density・Ad Weight (Network Usage)・Ad Weight (CPU Usage)）が追加され、サイト上の広告読み込み状況をより詳細に把握できるようになった。WPP・The Guardian・Mediavine・Google Ads など広告エコシステムの主要関係者が支持しており、広告品質の改善やパブリッシャーへのインセンティブ向上が期待される。メトリクスは「実験的」段階で、コミュニティからのフィードバックを募集している。",
+      "publishedAt": "2026-09-15",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.01,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.99,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "browser",
+          "probabilities": {
+            "web_frontend": 0.34,
+            "node_runtime": 0,
+            "browser": 0.65,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.01
+          },
+          "confidence": 0.59
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.97,
+          "probabilities": [
+            0.01,
+            0.03,
+            0.95,
+            0.01
+          ],
+          "confidence": 0.95
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,1949 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/twir/20260603.md",
+  "sourceHash": "sha256:d5b81a6a27a5ac3f5ff66c97c3b647b9582c7fd28f3aea6a35d5afdbf0939809",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:30.680Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "TanStack Start Adds First-Class Rsbuild Support",
+      "url": "https://tanstack.com/blog/start-adds-rsbuild-support",
+      "secondaryUrls": [],
+      "summary": "TanStack Startが新しいプラグインアダプタを通じてRsbuild/RspackをViteと並んで公式サポート。SSR、ストリーミング、HMR、Server Functions、RSCに対応",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.03,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.97,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.97
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1.82,
+          "probabilities": [
+            0.09,
+            0.01,
+            0.89,
+            0.01
+          ],
+          "confidence": 0.79
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "Lovable - Building apps using TanStack Start",
+      "url": "https://lovable.dev/fr/blog/building-apps-using-tanstack-start",
+      "secondaryUrls": [],
+      "summary": "AIアプリビルダーのLovableが新規プロジェクトでTanStack Start（SSR有効）をデフォルト採用",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.04,
+            "security": 0,
+            "policy": 0.01,
+            "feature": 0.75,
+            "guide": 0,
+            "event": 0,
+            "business": 0.18,
+            "other": 0.02
+          },
+          "confidence": 0.72
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.96,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.04,
+            "other": 0
+          },
+          "confidence": 0.95
+        },
+        "breaking": {
+          "noul": 0.13
+        },
+        "relevance": {
+          "score": 1.85,
+          "probabilities": [
+            0.08,
+            0.01,
+            0.89,
+            0.02
+          ],
+          "confidence": 0.8
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "The Conductor Rewrite: What They Changed to Make It Fast",
+      "url": "https://performance.dev/the-conductor-rewrite",
+      "secondaryUrls": [],
+      "summary": "TauriデスクトップアプリをReact RouterからTanStack Routerへ移行した事例。ビルトインの構造共有と安定したrefsにより再レンダリングが大幅削減",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.14
+        },
+        "relevance": {
+          "score": 2.03,
+          "probabilities": [
+            0.03,
+            0,
+            0.87,
+            0.1
+          ],
+          "confidence": 0.83
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "TanStack Start authentication: A developer's guide for 2026",
+      "url": "https://workos.com/blog/tanstack-start-authentication-guide",
+      "secondaryUrls": [],
+      "summary": "`beforeLoad`がserver functionsを保護しない点、ダブルガードパターン、セッション管理、ミドルウェアについてのガイド",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 1.89,
+          "probabilities": [
+            0.12,
+            0.01,
+            0.73,
+            0.14
+          ],
+          "confidence": 0.61
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "SVAR React Gantt",
+      "url": "https://svar.dev/react/gantt/?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=may",
+      "secondaryUrls": [],
+      "summary": "純粋なReact APIと高度なスケジューリング機能でプロジェクトタイムラインを構築するGanttチャートコンポーネント（MIT & PRO）",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.2,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.77,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.03
+          },
+          "confidence": 0.73
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 1.98,
+          "probabilities": [
+            0.01,
+            0,
+            0.99,
+            0
+          ],
+          "confidence": 0.98
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "React Compiler update - The Rust compiler PR",
+      "url": "https://github.com/facebook/react/pull/36173#issuecomment-4608356402",
+      "secondaryUrls": [],
+      "summary": "Rust版React Compilerが既存のTypeScript版と99.9%同一の出力を生成。ローカルPRチェックアウトで試用可能で、Oxcチームが統合作業中",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.26,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.73,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.69
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.99,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.01
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 2.04,
+          "probabilities": [
+            0.01,
+            0,
+            0.94,
+            0.05
+          ],
+          "confidence": 0.93
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "Next.js Nights",
+      "url": "https://nextjs.org/nights",
+      "secondaryUrls": [],
+      "summary": "Next.jsチームのツアーイベント（6/9 SF、6/11 Amsterdam、6/18 London）。v16.3のInstant Navigationsや新しいAI関連機能がティーザー公開",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 1,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 2,
+          "probabilities": [
+            0,
+            0,
+            0.99,
+            0.01
+          ],
+          "confidence": 0.99
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "React Router & Remix v2 - 7 CVEs published",
+      "url": "https://x.com/ReactRouter/status/2061839906834395649",
+      "secondaryUrls": [],
+      "summary": "RCE、CSRF、XSS、DoSを含む7件のCVEが公開。React Router v7.16.0 / v6.30.4 または Remix v2.17.5へのアップデートが必要",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.26
+        },
+        "relevance": {
+          "score": 2.95,
+          "probabilities": [
+            0.01,
+            0,
+            0.02,
+            0.97
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "Deprecating a React component using TypeScript Overload",
+      "url": "https://dev.to/mbarzeev/deprecating-a-react-component-using-typescript-overload-2ka",
+      "secondaryUrls": [],
+      "summary": "TypeScriptのオーバーロードを使い、コンポーネント名を変えずに破壊的な再設計をリリースする手法。旧APIに`@deprecated`を付け、新バージョンへのオプトインを可能にする",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0.01,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.02,
+            "guide": 0.97,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.97
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.44
+        },
+        "relevance": {
+          "score": 2.58,
+          "probabilities": [
+            0,
+            0,
+            0.41,
+            0.59
+          ],
+          "confidence": 0.58
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "PostHog",
+      "url": "https://go.posthog.com/twir-jun3",
+      "secondaryUrls": [],
+      "summary": "PostHog Codeとセルフドライビングプロダクト（スポンサー）",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.5,
+            "guide": 0.02,
+            "event": 0,
+            "business": 0.14,
+            "other": 0.34
+          },
+          "confidence": 0.42
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.47,
+            "node_runtime": 0.01,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.25,
+            "other": 0.27
+          },
+          "confidence": 0.38
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.21,
+          "probabilities": [
+            0.41,
+            0.01,
+            0.54,
+            0.04
+          ],
+          "confidence": 0.13
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "TanStack Form 1.33",
+      "url": "https://github.com/TanStack/form/releases/tag/%40tanstack/react-form%401.33.0",
+      "secondaryUrls": [],
+      "summary": "マルチステップフォームを簡素化する`FormGroup` APIを追加",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.04,
+          "probabilities": [
+            0,
+            0,
+            0.95,
+            0.05
+          ],
+          "confidence": 0.94
+        }
+      }
+    },
+    {
+      "id": 11,
+      "title": "React Hook Form 7.77",
+      "url": "https://github.com/react-hook-form/react-hook-form/releases/tag/v7.77.0",
+      "secondaryUrls": [],
+      "summary": "新しい`resetDefaultValues` APIを追加",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.07,
+          "probabilities": [
+            0,
+            0,
+            0.93,
+            0.07
+          ],
+          "confidence": 0.92
+        }
+      }
+    },
+    {
+      "id": 12,
+      "title": "React Email 6.5",
+      "url": "https://github.com/resend/react-email/releases/tag/react-email%406.5.0",
+      "secondaryUrls": [],
+      "summary": "クライアント別の互換性警告フィルタリング、アクセシビリティ改善",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.99,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.01
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.19
+        },
+        "relevance": {
+          "score": 2.21,
+          "probabilities": [
+            0.03,
+            0,
+            0.7,
+            0.27
+          ],
+          "confidence": 0.68
+        }
+      }
+    },
+    {
+      "id": 13,
+      "title": "TypeGPU React",
+      "url": "https://docs.swmansion.com/TypeGPU/ecosystem/typegpu-react/",
+      "secondaryUrls": [],
+      "summary": "TypeGPUのReactバインディング。`useFrame`、`useUniform`、`useRoot`などのhooksでTypeScriptから直接GPUシェーダーを記述可能",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.14,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.86,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.84
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.97,
+          "probabilities": [
+            0.02,
+            0,
+            0.98,
+            0
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 14,
+      "title": "Lexical 0.45",
+      "url": "https://github.com/facebook/lexical/releases/tag/v0.45.0",
+      "secondaryUrls": [],
+      "summary": "importDOMを置き換えるcomposableな`DOMImportExtension`、backspaceでブロックタイプを保持するように変更、canUndo/canRedoシグナルの追加",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.65
+        },
+        "relevance": {
+          "score": 1.99,
+          "probabilities": [
+            0.14,
+            0,
+            0.59,
+            0.27
+          ],
+          "confidence": 0.45
+        }
+      }
+    },
+    {
+      "id": 15,
+      "title": "React Aria Components 1.18",
+      "url": "https://github.com/adobe/react-spectrum/releases/tag/react-aria-components%401.18.0",
+      "secondaryUrls": [],
+      "summary": "Calendarの複数日選択、月/年ピッカー、新しいTableFooterとSliderFillコンポーネント。Checkbox、Radio、Switchがdescriptionとerror messageスロットに対応",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.05,
+          "probabilities": [
+            0,
+            0,
+            0.94,
+            0.06
+          ],
+          "confidence": 0.94
+        }
+      }
+    },
+    {
+      "id": 16,
+      "title": "React Spectrum 1.4",
+      "url": "https://react-spectrum.adobe.com/releases/v1-4-0.html",
+      "secondaryUrls": [],
+      "summary": "ListViewのドラッグ&ドロップ、TableViewのハイライト選択とTableFooter、ComboBox/TextFieldのカスタムプレフィックス、Calendarの複数日選択",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 2.04,
+          "probabilities": [
+            0.01,
+            0,
+            0.94,
+            0.05
+          ],
+          "confidence": 0.94
+        }
+      }
+    },
+    {
+      "id": 17,
+      "title": "Shadcn UI 4.9 & 4.10",
+      "url": "https://ui.shadcn.com/docs/changelog",
+      "secondaryUrls": [],
+      "summary": "GitHubレジストリ対応、`npx shadcn eject`で任意のコンポーネントをコードベースに展開可能",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.29,
+          "probabilities": [
+            0,
+            0,
+            0.7,
+            0.3
+          ],
+          "confidence": 0.69
+        }
+      }
+    },
+    {
+      "id": 18,
+      "title": "Next Intl 4.13",
+      "url": "https://github.com/amannn/next-intl/releases/tag/v4.13.0",
+      "secondaryUrls": [],
+      "summary": "`useExtracted`関数がURLセーフなbase64でメッセージキーを生成するように変更",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.99,
+            "security": 0.01,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.37
+        },
+        "relevance": {
+          "score": 2.72,
+          "probabilities": [
+            0,
+            0,
+            0.27,
+            0.73
+          ],
+          "confidence": 0.72
+        }
+      }
+    },
+    {
+      "id": 19,
+      "title": "React Flow 12.11",
+      "url": "https://github.com/xyflow/xyflow/releases/tag/%40xyflow/react%4012.11.0",
+      "secondaryUrls": [],
+      "summary": "新しい`autoPanOnSelection`プロパティを追加",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 2.01,
+          "probabilities": [
+            0.01,
+            0,
+            0.96,
+            0.03
+          ],
+          "confidence": 0.96
+        }
+      }
+    },
+    {
+      "id": 20,
+      "title": "XState Store 4.0",
+      "url": "https://github.com/statelyai/xstate/releases/tag/%40xstate%2Fstore%404.0.0",
+      "secondaryUrls": [],
+      "summary": "再利用可能なストアのための`createStoreLogic`、イベントチェーンの`enq.trigger`、Standard Schemaサポート、イベントチェック用の`store.can`を追加",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.14
+        },
+        "relevance": {
+          "score": 1.9,
+          "probabilities": [
+            0.12,
+            0,
+            0.74,
+            0.14
+          ],
+          "confidence": 0.62
+        }
+      }
+    },
+    {
+      "id": 21,
+      "title": "React Archer 5.0",
+      "url": "https://github.com/pierpo/react-archer/releases/tag/v5.0.0",
+      "secondaryUrls": [],
+      "summary": "要素間に矢印を描画するライブラリ。React 19サポートを追加",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2.02,
+          "probabilities": [
+            0.01,
+            0,
+            0.95,
+            0.04
+          ],
+          "confidence": 0.94
+        }
+      }
+    },
+    {
+      "id": 22,
+      "title": "ESLint Plugin React \"You Might Not Need An Effect\" 1.0",
+      "url": "https://github.com/nickjvandyke/eslint-plugin-react-you-might-not-need-an-effect/blob/main/CHANGELOG.md#100-2026-05-31",
+      "secondaryUrls": [],
+      "summary": "不要なuseEffectを検出するESLintプラグインのv1.0リリース",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.12,
+          "probabilities": [
+            0,
+            0,
+            0.87,
+            0.13
+          ],
+          "confidence": 0.87
+        }
+      }
+    },
+    {
+      "id": 23,
+      "title": "Jack Herrington - All 17 TanStack Projects In ONE App!",
+      "url": "https://www.youtube.com/watch?v=J4kzovOTNKw",
+      "secondaryUrls": [],
+      "summary": "17のTanStackプロジェクトすべてを1つのアプリで使うビデオチュートリアル",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0.98,
+            "event": 0.02,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.97
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.03
+        },
+        "relevance": {
+          "score": 1.97,
+          "probabilities": [
+            0.02,
+            0,
+            0.97,
+            0.01
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 24,
+      "title": "Señors at Scale - Redux at Scale with Mark Erikson",
+      "url": "https://www.youtube.com/watch?v=dbe0wC9Y8bo",
+      "secondaryUrls": [],
+      "summary": "Mark EriksonによるReduxの大規模運用についてのポッドキャストエピソード",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0.29,
+            "event": 0.56,
+            "business": 0,
+            "other": 0.15
+          },
+          "confidence": 0.49
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.91,
+          "probabilities": [
+            0.05,
+            0,
+            0.94,
+            0.01
+          ],
+          "confidence": 0.89
+        }
+      }
+    },
+    {
+      "id": 25,
+      "title": "State of CSS 2026",
+      "url": "https://survey.devographics.com/en-US/survey/state-of-css/2026?source=this_week_in_react",
+      "secondaryUrls": [],
+      "summary": "State of CSS 2026アンケートが開始",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "other",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.01,
+            "guide": 0,
+            "event": 0.35,
+            "business": 0.03,
+            "other": 0.61
+          },
+          "confidence": 0.56
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.03
+        },
+        "relevance": {
+          "score": 1.56,
+          "probabilities": [
+            0.19,
+            0.07,
+            0.73,
+            0.01
+          ],
+          "confidence": 0.54
+        }
+      }
+    },
+    {
+      "id": 26,
+      "title": "Node.js streams, backpressure, memory leaks",
+      "url": "https://frontendmasters.com/blog/your-node-js-streams-arent-backpressuring-theyre-silently-eating-your-memory/",
+      "secondaryUrls": [],
+      "summary": "Node.jsストリームのバックプレッシャーとメモリリークについての実践的な2部構成の深掘り記事。ストリームのメモリフットプリント削減に役立つ",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 2.01,
+          "probabilities": [
+            0.01,
+            0,
+            0.97,
+            0.02
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 27,
+      "title": "On Rendering Diffs – Pierre Computer Company",
+      "url": "https://pierre.computer/writing/on-rendering-diffs",
+      "secondaryUrls": [],
+      "summary": "「Inverse Sticky Technique」を用いたゼロブランキングdiffバーチャライザの構築についての深掘り記事",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.03,
+            "guide": 0.97,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.95
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.95,
+            "node_runtime": 0,
+            "browser": 0.03,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.01,
+            "other": 0.01
+          },
+          "confidence": 0.95
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.78,
+          "probabilities": [
+            0.11,
+            0.01,
+            0.87,
+            0.01
+          ],
+          "confidence": 0.77
+        }
+      }
+    },
+    {
+      "id": 28,
+      "title": "Node.js 26.3",
+      "url": "https://github.com/nodejs/node/releases/tag/v26.3.0",
+      "secondaryUrls": [],
+      "summary": "新しい`permission.drop()` API、設定可能なHTTPヘッダバリデーション、`Buffer.poolSize`を64 KiBに増加",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.27
+        },
+        "relevance": {
+          "score": 2.38,
+          "probabilities": [
+            0,
+            0,
+            0.61,
+            0.39
+          ],
+          "confidence": 0.61
+        }
+      }
+    },
+    {
+      "id": 29,
+      "title": "npm 11.16",
+      "url": "https://github.com/npm/cli/releases/tag/v11.16.0",
+      "secondaryUrls": [],
+      "summary": "package.jsonの`allowScripts`フェーズ1を実装。サプライチェーンセキュリティの改善",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.93,
+            "security": 0.07,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.91
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.38
+        },
+        "relevance": {
+          "score": 2.8,
+          "probabilities": [
+            0,
+            0,
+            0.19,
+            0.81
+          ],
+          "confidence": 0.8
+        }
+      }
+    },
+    {
+      "id": 30,
+      "title": "Aube 1.17",
+      "url": "https://github.com/endevco/aube/releases/tag/v1.17.0",
+      "secondaryUrls": [],
+      "summary": "Rustベースのパッケージマネージャ。Staged publish trust、hoisting制限、リモートtarballの整合性修正",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.95,
+            "security": 0.05,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.94
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0.06,
+            "node_runtime": 0.87,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.07
+          },
+          "confidence": 0.85
+        },
+        "breaking": {
+          "noul": 0.26
+        },
+        "relevance": {
+          "score": 1.77,
+          "probabilities": [
+            0.28,
+            0.01,
+            0.38,
+            0.33
+          ],
+          "confidence": 0.11
+        }
+      }
+    },
+    {
+      "id": 31,
+      "title": "pnpm 11.5",
+      "url": "https://pnpm.io/blog/releases/11.5",
+      "secondaryUrls": [],
+      "summary": "`hoistingLimits`設定、インタラクティブプロンプトライブラリ、staged publishingの信頼ダウングレード検出",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.25
+        },
+        "relevance": {
+          "score": 2.49,
+          "probabilities": [
+            0.02,
+            0,
+            0.45,
+            0.53
+          ],
+          "confidence": 0.49
+        }
+      }
+    },
+    {
+      "id": 32,
+      "title": "Astro 6.4",
+      "url": "https://astro.build/blog/astro-640/",
+      "secondaryUrls": [],
+      "summary": "プラガブルなMarkdownプロセッサ、高速ビルドのためのRustベースMarkdownプロセッサ、Cloudflareヘルパー",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.96,
+            "node_runtime": 0.04,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.95
+        },
+        "breaking": {
+          "noul": 0.11
+        },
+        "relevance": {
+          "score": 0.61,
+          "probabilities": [
+            0.7,
+            0.02,
+            0.26,
+            0.02
+          ],
+          "confidence": 0.39
+        }
+      }
+    },
+    {
+      "id": 33,
+      "title": "Yarn 4.16",
+      "url": "https://github.com/yarnpkg/berry/releases/tag/%40yarnpkg/cli/4.16.0",
+      "secondaryUrls": [],
+      "summary": "staged publishing用の新しいstageコマンド、oxc向けエディタSDKサポート",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0.06,
+            "node_runtime": 0.94,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.93
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.07,
+          "probabilities": [
+            0.03,
+            0,
+            0.84,
+            0.13
+          ],
+          "confidence": 0.8
+        }
+      }
+    }
+  ]
+}

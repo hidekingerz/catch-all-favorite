@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/google-search-blog/20260729.md",
+  "sourceHash": "sha256:bb2dd26a47a8b16077fd6daabefc26ff24102fc68d4443e684a1e3183d7b1f1f",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:13.475Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Platform properties roll out globally, plus a new social and video performance guide",
+      "url": "https://developers.google.com/search/blog/2026/07/platform-properties-social-video-guide?hl=ja",
+      "secondaryUrls": [],
+      "summary": "Google 検索の「platform properties」が全世界に展開され、ソーシャル・動画プラットフォーム上のコンテンツを Search Console でより適切に表現・計測できるようになった。あわせて、クリエイターや企業がこれらのプラットフォーム由来のコンテンツの検索パフォーマンスを追跡・最適化するための新しいパフォーマンスガイドが公開。サイト運営者はソーシャル/動画コンテンツの検索での見え方を把握し、データに基づいた最適化判断を下しやすくなる。",
+      "publishedAt": "2026-07-29",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.01,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.99,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "web_search",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 1,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 0.53,
+          "probabilities": [
+            0.72,
+            0.04,
+            0.22,
+            0.02
+          ],
+          "confidence": 0.47
+        }
+      }
+    }
+  ]
+}

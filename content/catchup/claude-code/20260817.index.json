@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260817.md",
+  "sourceHash": "sha256:6468dbe3a66270201a102ebc18ab1052000019446e4c4d2bda56b2b619f8411f",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:03.315Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "v2.1.234（2026-08-17）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "内容（新機能・設定）: オプションの環境変数 `CLAUDE_CODE_PROJECT_DIR_NAME` を追加。セッションごとに設定ディレクトリを分けるホストが、プロジェクト単位のトランスクリプトディレクトリに短い名前を付けられる。 / `selection:clear` キーバインドアクションを追加（アプリ内テキスト選択のクリアをキー割り当て可能、agents ビューでも動作）。 / 使用量上限リセット時にセッションを自動継続（`/config` の \"Continue automatically at usage limit\" でオフ）。 / `/permissions` を Claude 実行中に開けるように（ルール変更はそのターンの残りに適用）。`/add-dir <path>` も実行中に使用可能。`/add-dir`・`/autocompact`・`/theme`・`/help`・`/config`・`/advisor` はフルスクリーン TUI でターン中に開ける。 / `/goal` の改善: 回復不能なエラー（認証失効・クレジット枯渇・コンテキストあふれ）でターンが死んだ時に通知して自身をクリア。バックグラウンドタスクで 30 分以上待たされる場合は待ち続けず状況を確認（`CLAUDE_CODE_GOAL_CHECKIN_MINUTES=0` で opt-out）。 / トランスクリプト改善: 自分のプロンプトも返信と同様に Markdown（ハイライト付きコードブロック・インラインコード・リスト）で描画。 / 自動生成セッションタイトルを短く具体的な名前（例: \"Login button bug\"）に改善。 / 内容（挙動変更・削除）: フルスクリーンモードの Esc はマウステキスト選択をクリアしなくなった（割り込み/dismiss は従来どおり、選択はハイライト維持）。 / auto mode の Agent ツール呼び出し下に出ていた冗長な \"Allowed by auto mode classifier\" 行を削除。 / `/config` から \"Default teammate model\" 設定を削除。agent-team のメンバーは spawn 指定がなければリーダーのモデルを使う。 / バックグラウンドタスク通知（ターン間配信）を `<system-reminder>` タグで model に渡すよう変更（ターン中配信と統一）。 / `claude setup-token` は想定外の余分な引数を無視せず拒否。 / Windows: `~/.claude.json` が読み取り専用でも起動時のリネームリトライで停止しない。 / 内容（セキュリティ）: リモートファイル読み取り・セッション復元・CLAUDE.md include・ワークフロースクリプト・ファイルアップロードが Windows NT 名前空間（`\\??\\`）パスを拒否（NTLM 資格情報リークベクタの残存経路を封鎖）。 / MCP 診断が解決済みシークレットを表示しない（scope 競合警告は `${VAR}` 形式、接続失敗はサーバ origin のみ）。 / `strictKnownMarketplaces` の allowlist が、git が実際に接続するホストと異なる SCP 形式の git マーケットプレイスソースを受け入れる問題を修正。 / 権限プレビューのマスキング強化（コマンド/パス/宛先を承認者から隠せない・巨大な秘密鍵ブロックを完全冗長化・シェル区切り直後のプロバイダ API トークンもマスク）。権限プレビューは inbound trust ゲートを通過したチャネルサーバにのみ中継。 / 内容（主なバグ修正）: 長いセッションで会話が compact された後、auto mode がサンドボックスコマンドのネットワークアクセスを繰り返し再チェック・拒否する問題を修正。 / バックグラウンドサブエージェントのツール権限プロンプト回答時に、セッションスコープの権限回答（deny 含む）が破棄される問題を修正。 / 非ストリーミングのフォールバック経路（サードパーティゲートウェイ経由が典型）で、thinking フィールド欠落の thinking ブロックや text 欠落の text ブロックを含む API 応答でクラッシュする問題を修正。 / 特殊な Unicode シーケンスを含むメッセージで Markdown 描画が極端に遅くなる問題を修正。 / `SendMessage` が `ListAgents` からコピーした宛先（セッション名が 200 文字上限・絵文字が多い場合）を拒否する問題を修正。 / リポジトリ検出が変わった userinfo を持つ git リモートのホストを誤読する問題を修正。 / Remote Control 関連の複数修正（別アカウント/組織サインイン時に数秒でセッション停止・権限モード/モデル/effort のクライアント同期・Desktop/VS Code ホストのファイルアップロードが phone/web で開くように 等）。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.234（2026-08-17）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {
+        "内容（新機能・設定）": "オプションの環境変数 `CLAUDE_CODE_PROJECT_DIR_NAME` を追加。セッションごとに設定ディレクトリを分けるホストが、プロジェクト単位のトランスクリプトディレクトリに短い名前を付けられる。 / `selection:clear` キーバインドアクションを追加（アプリ内テキスト選択のクリアをキー割り当て可能、agents ビューでも動作）。 / 使用量上限リセット時にセッションを自動継続（`/config` の \"Continue automatically at usage limit\" でオフ）。 / `/permissions` を Claude 実行中に開けるように（ルール変更はそのターンの残りに適用）。`/add-dir <path>` も実行中に使用可能。`/add-dir`・`/autocompact`・`/theme`・`/help`・`/config`・`/advisor` はフルスクリーン TUI でターン中に開ける。 / `/goal` の改善: 回復不能なエラー（認証失効・クレジット枯渇・コンテキストあふれ）でターンが死んだ時に通知して自身をクリア。バックグラウンドタスクで 30 分以上待たされる場合は待ち続けず状況を確認（`CLAUDE_CODE_GOAL_CHECKIN_MINUTES=0` で opt-out）。 / トランスクリプト改善: 自分のプロンプトも返信と同様に Markdown（ハイライト付きコードブロック・インラインコード・リスト）で描画。 / 自動生成セッションタイトルを短く具体的な名前（例: \"Login button bug\"）に改善。",
+        "内容（挙動変更・削除）": "フルスクリーンモードの Esc はマウステキスト選択をクリアしなくなった（割り込み/dismiss は従来どおり、選択はハイライト維持）。 / auto mode の Agent ツール呼び出し下に出ていた冗長な \"Allowed by auto mode classifier\" 行を削除。 / `/config` から \"Default teammate model\" 設定を削除。agent-team のメンバーは spawn 指定がなければリーダーのモデルを使う。 / バックグラウンドタスク通知（ターン間配信）を `<system-reminder>` タグで model に渡すよう変更（ターン中配信と統一）。 / `claude setup-token` は想定外の余分な引数を無視せず拒否。 / Windows: `~/.claude.json` が読み取り専用でも起動時のリネームリトライで停止しない。",
+        "内容（セキュリティ）": "リモートファイル読み取り・セッション復元・CLAUDE.md include・ワークフロースクリプト・ファイルアップロードが Windows NT 名前空間（`\\??\\`）パスを拒否（NTLM 資格情報リークベクタの残存経路を封鎖）。 / MCP 診断が解決済みシークレットを表示しない（scope 競合警告は `${VAR}` 形式、接続失敗はサーバ origin のみ）。 / `strictKnownMarketplaces` の allowlist が、git が実際に接続するホストと異なる SCP 形式の git マーケットプレイスソースを受け入れる問題を修正。 / 権限プレビューのマスキング強化（コマンド/パス/宛先を承認者から隠せない・巨大な秘密鍵ブロックを完全冗長化・シェル区切り直後のプロバイダ API トークンもマスク）。権限プレビューは inbound trust ゲートを通過したチャネルサーバにのみ中継。",
+        "内容（主なバグ修正）": "長いセッションで会話が compact された後、auto mode がサンドボックスコマンドのネットワークアクセスを繰り返し再チェック・拒否する問題を修正。 / バックグラウンドサブエージェントのツール権限プロンプト回答時に、セッションスコープの権限回答（deny 含む）が破棄される問題を修正。 / 非ストリーミングのフォールバック経路（サードパーティゲートウェイ経由が典型）で、thinking フィールド欠落の thinking ブロックや text 欠落の text ブロックを含む API 応答でクラッシュする問題を修正。 / 特殊な Unicode シーケンスを含むメッセージで Markdown 描画が極端に遅くなる問題を修正。 / `SendMessage` が `ListAgents` からコピーした宛先（セッション名が 200 文字上限・絵文字が多い場合）を拒否する問題を修正。 / リポジトリ検出が変わった userinfo を持つ git リモートのホストを誤読する問題を修正。 / Remote Control 関連の複数修正（別アカウント/組織サインイン時に数秒でセッション停止・権限モード/モデル/effort のクライアント同期・Desktop/VS Code ホストのファイルアップロードが phone/web で開くように 等）。",
+        "使い方": "使用量上限の自動継続と `/goal` のチェックイン挙動は `/config`・環境変数（`CLAUDE_CODE_GOAL_CHECKIN_MINUTES`）で制御できる。`claude-api` スキルの軽量化により、Claude API 関連の作業でスキルを読み込んでもコンテキストを圧迫しにくくなった。"
+      },
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.46
+        },
+        "relevance": {
+          "score": 2.51,
+          "probabilities": [
+            0,
+            0,
+            0.48,
+            0.52
+          ],
+          "confidence": 0.51
+        }
+      }
+    }
+  ]
+}

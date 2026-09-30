@@ -1,0 +1,1151 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/twir/20260422.md",
+  "sourceHash": "sha256:d4cf8500815b712942ab703140d128bc3ab00e3a3a4c9e1e80601cd7a1a4ff9f",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:26.190Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "React Email 6.0",
+      "url": "https://resend.com/blog/react-email-6",
+      "secondaryUrls": [],
+      "summary": "パッケージの統合による断片化の解消、埋め込み可能なエディタ、メールクライアント間での信頼性の高いHTML描画、高速なHMRによるテンプレート切り替えなどを含むメジャーリリース。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.26
+        },
+        "relevance": {
+          "score": 2.09,
+          "probabilities": [
+            0.03,
+            0,
+            0.81,
+            0.16
+          ],
+          "confidence": 0.77
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "Vercel April 2026 security incident",
+      "url": "https://vercel.com/kb/bulletin/vercel-april-2026-security-incident",
+      "secondaryUrls": [],
+      "summary": "Vercelでセキュリティ侵害が発生し、環境変数が漏洩した。シークレットの手動ローテーションが推奨されている。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.7,
+            "node_runtime": 0.23,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.07
+          },
+          "confidence": 0.65
+        },
+        "breaking": {
+          "noul": 0.41
+        },
+        "relevance": {
+          "score": 3,
+          "probabilities": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "confidence": 1
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Building a Blog in TanStack",
+      "url": "https://frontendmasters.com/blog/building-a-blog-in-tanstack-part-1-of-2/",
+      "secondaryUrls": [],
+      "summary": "TanStack Startを使用してMarkdownブログを構築するガイド。プリレンダリングと静的サーバー関数を活用している。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 1.78,
+          "probabilities": [
+            0.11,
+            0.01,
+            0.87,
+            0.01
+          ],
+          "confidence": 0.77
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "Build with React, Run on Salesforce",
+      "url": "https://developer.salesforce.com/blogs/2026/04/build-with-react-run-on-salesforce-introducing-salesforce-multi-framework",
+      "secondaryUrls": [],
+      "summary": "SalesforceがReact開発プラットフォームを採用。現在ベータ版として提供されている。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.55,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.43,
+            "guide": 0,
+            "event": 0,
+            "business": 0.02,
+            "other": 0
+          },
+          "confidence": 0.49
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.99,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.01
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.93,
+          "probabilities": [
+            0.03,
+            0,
+            0.97,
+            0
+          ],
+          "confidence": 0.93
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "AI-Generated UI Is Inaccessible by Default",
+      "url": "https://frontendmasters.com/blog/ai-generated-ui-is-inaccessible-by-default/",
+      "secondaryUrls": [],
+      "summary": "AI生成コードに見られるアクセシビリティの一般的な落とし穴と、リンティング、テスト、CIによる解決策を紹介。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.9,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.1,
+            "other": 0
+          },
+          "confidence": 0.89
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.12,
+          "probabilities": [
+            0.01,
+            0,
+            0.84,
+            0.15
+          ],
+          "confidence": 0.83
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "TSRX",
+      "url": "https://tsrx.dev/",
+      "secondaryUrls": [],
+      "summary": "宣言的UIのためのTypeScript言語拡張。JSXの精神的後継で、元Reactコアチームメンバーの Dominic Gannaway が作成。React/Solid/Rippleにコンパイル可能なフレームワーク非依存のアプローチ。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.09,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.9,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.88
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1.97,
+          "probabilities": [
+            0.02,
+            0,
+            0.98,
+            0
+          ],
+          "confidence": 0.96
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "Rspack 2.0",
+      "url": "https://rspack.rs/blog/announcing-2-0",
+      "secondaryUrls": [],
+      "summary": "Rustベースのバンドラーの2.0リリース。React Server Componentsの実験的サポートと、TanStack RSC統合の計画が含まれる。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.18
+        },
+        "relevance": {
+          "score": 1.95,
+          "probabilities": [
+            0.06,
+            0,
+            0.86,
+            0.08
+          ],
+          "confidence": 0.8
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "TanStack Store 0.11",
+      "url": "https://github.com/TanStack/store/releases/tag/%40tanstack/react-store%400.11.0",
+      "secondaryUrls": [],
+      "summary": "`useAtom`、`useSelector`、`createStoreContext` などの新しいフックを追加。`useStore` は非推奨となった。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.7
+        },
+        "relevance": {
+          "score": 2.94,
+          "probabilities": [
+            0,
+            0,
+            0.05,
+            0.95
+          ],
+          "confidence": 0.94
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "ESLint Plugin React Hooks 7.1",
+      "url": "https://github.com/facebook/react/releases/tag/eslint-plugin-react-hooks%407.1.0",
+      "secondaryUrls": [],
+      "summary": "ESLint v10のサポート、パフォーマンスとリンティングの改善。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.17
+        },
+        "relevance": {
+          "score": 2.49,
+          "probabilities": [
+            0,
+            0,
+            0.5,
+            0.5
+          ],
+          "confidence": 0.49
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "Lingui 6.0",
+      "url": "https://lingui.dev/blog/2026/04/22/announcing-lingui-6.0",
+      "secondaryUrls": [],
+      "summary": "ReactおよびReact Native向けの国際化フレームワーク。技術的な改善とモダナイゼーションが施された6.0リリース。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.36
+        },
+        "relevance": {
+          "score": 2.2,
+          "probabilities": [
+            0.01,
+            0,
+            0.76,
+            0.23
+          ],
+          "confidence": 0.75
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "React Hook Form 7.73",
+      "url": "https://github.com/react-hook-form/react-hook-form/releases/tag/v7.73.1",
+      "secondaryUrls": [],
+      "summary": "メモ化されたsubmit、高速なdeepEqual、深くネストされたフィールドの型安全性の強化。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.14,
+          "probabilities": [
+            0,
+            0,
+            0.86,
+            0.14
+          ],
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "id": 11,
+      "title": "Next.js finally has Page Transitions Now",
+      "url": "https://www.youtube.com/watch?v=OlViBcLX-fA",
+      "secondaryUrls": [],
+      "summary": "Ankita Kulkaniによるページトランジション機能に関する動画プレゼンテーション。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.01,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.81,
+            "guide": 0,
+            "event": 0.18,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.78
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.01,
+          "probabilities": [
+            0,
+            0,
+            0.99,
+            0.01
+          ],
+          "confidence": 0.99
+        }
+      }
+    },
+    {
+      "id": 12,
+      "title": "Building a UI Without Breakpoints",
+      "url": "https://frontendmasters.com/blog/building-a-ui-without-breakpoints/",
+      "secondaryUrls": [],
+      "summary": "従来のメディアクエリのブレイクポイントを使わないレスポンシブデザインのアプローチを紹介。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1.96,
+          "probabilities": [
+            0.02,
+            0,
+            0.97,
+            0.01
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 13,
+      "title": "Shopify Speed Optimization",
+      "url": "https://www.debugbear.com/blog/shopify-speed-optimization",
+      "secondaryUrls": [],
+      "summary": "実際のボトルネックをターゲットにしたパフォーマンス最適化戦略。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.01,
+            "guide": 0.99,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.65,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.35
+          },
+          "confidence": 0.6
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 0.09,
+          "probabilities": [
+            0.96,
+            0.01,
+            0.03,
+            0
+          ],
+          "confidence": 0.91
+        }
+      }
+    },
+    {
+      "id": 14,
+      "title": "Most Apps Are Slower Than They Need to Be",
+      "url": "https://dev.to/sylwia-lask/most-apps-are-slower-than-they-need-to-be-heres-why-live-demo-2hh8",
+      "secondaryUrls": [],
+      "summary": "よくあるパフォーマンス問題の分析とライブデモによる解説。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0.99,
+            "event": 0.01,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.89,
+            "node_runtime": 0,
+            "browser": 0.01,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.1
+          },
+          "confidence": 0.87
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 1.98,
+          "probabilities": [
+            0.01,
+            0,
+            0.99,
+            0
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 15,
+      "title": "TypeScript 7.0 Beta",
+      "url": "https://devblogs.microsoft.com/typescript/announcing-typescript-7-0-beta/",
+      "secondaryUrls": [],
+      "summary": "Goで書き直された最初のベータ版。並列化により約10倍の高速化を実現。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.11
+        },
+        "relevance": {
+          "score": 2.17,
+          "probabilities": [
+            0.02,
+            0,
+            0.77,
+            0.21
+          ],
+          "confidence": 0.75
+        }
+      }
+    },
+    {
+      "id": 16,
+      "title": "Node.js 24.15",
+      "url": "https://nodejs.org/en/blog/release/v24.15.0",
+      "secondaryUrls": [],
+      "summary": "`require(esm)` がstableとしてマークされたリリース。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.15,
+          "probabilities": [
+            0,
+            0,
+            0.85,
+            0.15
+          ],
+          "confidence": 0.84
+        }
+      }
+    },
+    {
+      "id": 17,
+      "title": "Bun 1.3.13",
+      "url": "https://bun.com/blog/bun-v1.3.13",
+      "secondaryUrls": [],
+      "summary": "高速な並列・分離テストと、より速い `bun install` を提供。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2,
+          "probabilities": [
+            0.05,
+            0.01,
+            0.83,
+            0.11
+          ],
+          "confidence": 0.78
+        }
+      }
+    },
+    {
+      "id": 18,
+      "title": "Fast-Check 4.7",
+      "url": "https://fast-check.dev/blog/2026/04/18/whats-new-in-fast-check-4-7-0/",
+      "secondaryUrls": [],
+      "summary": "プロパティベースのテストフレームワークのアップデート。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.9,
+            "node_runtime": 0.01,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.09
+          },
+          "confidence": 0.88
+        },
+        "breaking": {
+          "noul": 0.17
+        },
+        "relevance": {
+          "score": 1.05,
+          "probabilities": [
+            0.5,
+            0.01,
+            0.44,
+            0.05
+          ],
+          "confidence": 0
+        }
+      }
+    },
+    {
+      "id": 19,
+      "title": "Hono Node.js Adapter 2.0",
+      "url": "https://github.com/honojs/node-server/releases/tag/v2.0.0",
+      "secondaryUrls": [],
+      "summary": "最大2.3倍のパフォーマンス改善を実現したアダプターの2.0リリース。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.19
+        },
+        "relevance": {
+          "score": 2.08,
+          "probabilities": [
+            0.02,
+            0,
+            0.86,
+            0.12
+          ],
+          "confidence": 0.83
+        }
+      }
+    }
+  ]
+}

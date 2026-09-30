@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/apple-news/20260901.md",
+  "sourceHash": "sha256:74f0b4cc3683dff100d3ca4e67794432c716f31fe4685b4ab6af52eb5ef2685d",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:48.683Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "IntelベースのmacOSアプリにおけるRosettaサポートに関する今後の変更",
+      "url": "https://developer.apple.com/jp/news/?id=w5ngl9k2",
+      "secondaryUrls": [],
+      "summary": "Apple が Rosetta（Intel 互換レイヤー）サポートの段階的終了を発表。macOS 26.4 以降は Rosetta 利用アプリの起動時に Apple シリコンネイティブ版へのアップデートを促すシステム通知が表示され、macOS 27 が Rosetta をサポートする最終リリースとなる。未対応アプリはユニバーサルバイナリとしてビルドして両アーキテクチャ対応版を配信し、対応済みアプリはユーザーに最新ネイティブ版への更新を促す必要がある。",
+      "publishedAt": "2026-09-01",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "policy",
+          "probabilities": {
+            "release": 0.32,
+            "security": 0,
+            "policy": 0.67,
+            "feature": 0.01,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.62
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.92
+        },
+        "relevance": {
+          "score": 1.12,
+          "probabilities": [
+            0.09,
+            0.77,
+            0.07,
+            0.07
+          ],
+          "confidence": 0.69
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "「最も驚いたのは、影響の大きさでした」：ネイティブへの移行がSwiggyにもたらした効果",
+      "url": "https://developer.apple.com/jp/news/?id=o5spbekm",
+      "secondaryUrls": [],
+      "summary": "インドの Swiggy（Instamart / Dineout）がハイブリッドアプリから Swift / SwiftUI によるネイティブアプリへ段階的に移行した事例。ページ読み込み時間短縮・スクロールの滑らかさ向上・メモリ消費削減に加え、コンバージョン増加や直帰率低下といったビジネス成果にもつながった。単一デザインシステムへの統合や OCR・Apple Intelligence など新たなネイティブ機能の活用も可能になったと紹介している。",
+      "publishedAt": "2026-09-01",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 0.61,
+          "probabilities": [
+            0.41,
+            0.58,
+            0.01,
+            0
+          ],
+          "confidence": 0.58
+        }
+      }
+    }
+  ]
+}

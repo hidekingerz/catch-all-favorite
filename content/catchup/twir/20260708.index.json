@@ -1,0 +1,1493 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/twir/20260708.md",
+  "sourceHash": "sha256:12d81114b04eba3415a2a501371b0b3ab808edecd30fa7c25be38b3a9f23edbd",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:34.512Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Formity",
+      "url": "https://formity.app/",
+      "secondaryUrls": [],
+      "summary": "マルチステップフォームをプログラム可能なフローとして構築するライブラリ。分岐・ループ・ジャンプ・変数をサポートする。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.17,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.81,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.79
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.92,
+          "probabilities": [
+            0.04,
+            0,
+            0.95,
+            0.01
+          ],
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "Next.js RFC - First-class WebSocket support in App Router Route Handlers",
+      "url": "https://github.com/vercel/next.js/discussions/95514",
+      "secondaryUrls": [],
+      "summary": "Route Handlers での WebSocket サポートとして `NextResponse.upgrade()` を提案する RFC。CrossWS ベースで、Vercel が WebSocket 対応を追加。セルフホスト構成でも動作する見込み。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 1,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.86,
+            "node_runtime": 0.14,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.83
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.08,
+          "probabilities": [
+            0,
+            0,
+            0.92,
+            0.08
+          ],
+          "confidence": 0.91
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Reverse Engineering ChatGPT Web: How OpenAI Built for a Billion Users",
+      "url": "https://performance.dev/chatgpt",
+      "secondaryUrls": [],
+      "summary": "ChatGPT のスタックを独立分析した記事。Tailwind v4・Radix・TanStack Query を利用し、Next.js から React Router v7 へ移行。チャット入力のインタラクティビティ最適化の話も含む。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 2.31,
+          "probabilities": [
+            0.01,
+            0,
+            0.67,
+            0.32
+          ],
+          "confidence": 0.66
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "I let React Compiler handle memoization: Here's what actually broke",
+      "url": "https://blog.logrocket.com/react-compiler-memoization-what-actually-broke/",
+      "secondaryUrls": [],
+      "summary": "React Compiler が React Hook Form の `watch()` や Chart.js の stale なハンドラでアプリを壊した事例。DevTools の memo バッジは最適化品質を正確に示さないことがある。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.18
+        },
+        "relevance": {
+          "score": 2.88,
+          "probabilities": [
+            0,
+            0,
+            0.12,
+            0.88
+          ],
+          "confidence": 0.88
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Hidden Cost of Hydration Mismatches",
+      "url": "https://3perf.com/blog/hydration-mismatch/",
+      "secondaryUrls": [],
+      "summary": "1つの hydration mismatch で LCP が緑から赤へ悪化しうる。Suspense を使うことで mismatch の被害範囲を限定できる。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.03,
+            "guide": 0.97,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.96
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.19
+        },
+        "relevance": {
+          "score": 2.3,
+          "probabilities": [
+            0.01,
+            0,
+            0.67,
+            0.32
+          ],
+          "confidence": 0.66
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "Using TanStack Start with Cloudflare Workers",
+      "url": "https://master.dev/blog/cloudflare-workers-and-hyperdrive-with-tanstack-start/",
+      "secondaryUrls": [],
+      "summary": "TanStack Start を Cloudflare Workers 上でホストする実践的な2部構成の入門。Hyperdrive によるDB接続プーリングも扱う。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.95,
+            "node_runtime": 0.05,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.94
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 1.58,
+          "probabilities": [
+            0.21,
+            0.01,
+            0.76,
+            0.02
+          ],
+          "confidence": 0.54
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "Vinext 1.0 Beta - Next.js on Vite",
+      "url": "https://github.com/cloudflare/vinext/releases/tag/vinext%401.0.0-beta.0",
+      "secondaryUrls": [],
+      "summary": "Cloudflare による Next.js フォークがほぼプロダクション対応に。ビルド高速化、バンドル縮小、互換性向上、クロスプラットフォーム対応の改善を含む。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.18
+        },
+        "relevance": {
+          "score": 2.2,
+          "probabilities": [
+            0,
+            0,
+            0.79,
+            0.21
+          ],
+          "confidence": 0.78
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "shadcn 4.13 - Base UI as the Default",
+      "url": "https://ui.shadcn.com/docs/changelog/2026-07-base-ui-default",
+      "secondaryUrls": [],
+      "summary": "shadcn CLI とドキュメントのデフォルト headless ライブラリが Base UI に。Radix を置き換えつつ、既存の Radix サポートは維持される。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.98,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.02,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.43
+        },
+        "relevance": {
+          "score": 2.78,
+          "probabilities": [
+            0,
+            0,
+            0.21,
+            0.79
+          ],
+          "confidence": 0.78
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "Takumi 2.0 - Renders JSX/HTML to images without browser",
+      "url": "https://github.com/kane50613/takumi/releases/tag/takumi%402.0.0",
+      "secondaryUrls": [],
+      "summary": "単一の Rust バイナリで JSX ベースのソーシャルカード画像を生成するメジャーリリース。Satori や `next/og` の対抗馬。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.94,
+            "node_runtime": 0.02,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.04
+          },
+          "confidence": 0.93
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.99,
+          "probabilities": [
+            0.02,
+            0,
+            0.95,
+            0.03
+          ],
+          "confidence": 0.94
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "Paper Shaders - Zero-dependency canvas shaders",
+      "url": "https://shaders.paper.design/",
+      "secondaryUrls": [],
+      "summary": "React とバニラ JS 向けの依存ゼロの canvas シェーダー。無料かつ完全オープンソースになった。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "business",
+          "probabilities": {
+            "release": 0.39,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.2,
+            "guide": 0,
+            "event": 0,
+            "business": 0.41,
+            "other": 0
+          },
+          "confidence": 0.32
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.96,
+          "probabilities": [
+            0.02,
+            0,
+            0.98,
+            0
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "Unlayer Elements - React components for Emails, Web pages, and PDFs",
+      "url": "https://github.com/unlayer/elements",
+      "secondaryUrls": [],
+      "summary": "同一のコンポーネントツリーからメール・Webページ・PDFの3プラットフォームを対象にできる React コンポーネント。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.06,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.93,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.92
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.97,
+          "probabilities": [
+            0.02,
+            0,
+            0.98,
+            0
+          ],
+          "confidence": 0.96
+        }
+      }
+    },
+    {
+      "id": 11,
+      "title": "React Hook Form 7.81",
+      "url": "https://github.com/react-hook-form/react-hook-form/releases#release-v7.81.0",
+      "secondaryUrls": [],
+      "summary": "新しい `<FieldArray>` コンポーネントとパフォーマンス改善を追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.1,
+          "probabilities": [
+            0,
+            0,
+            0.89,
+            0.11
+          ],
+          "confidence": 0.88
+        }
+      }
+    },
+    {
+      "id": 12,
+      "title": "React Google Maps 1.9",
+      "url": "https://github.com/visgl/react-google-maps/releases/tag/v1.9.0",
+      "secondaryUrls": [],
+      "summary": "`AdvancedMarker` でのキーボードイベント対応と3Dマップのサンプルサポートを追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.05,
+          "probabilities": [
+            0,
+            0,
+            0.94,
+            0.06
+          ],
+          "confidence": 0.93
+        }
+      }
+    },
+    {
+      "id": 13,
+      "title": "React Doctor 0.7",
+      "url": "https://github.com/millionco/react-doctor/releases/tag/react-doctor%400.7.0",
+      "secondaryUrls": [],
+      "summary": "キャッシュとウォーム再スキャンのパフォーマンス改善。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.98,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0.02,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.96
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.04,
+          "probabilities": [
+            0.05,
+            0,
+            0.81,
+            0.14
+          ],
+          "confidence": 0.77
+        }
+      }
+    },
+    {
+      "id": 14,
+      "title": "This Month in React 2026-06",
+      "url": "https://www.reactiflux.com/transcripts/tmir-2026-06",
+      "secondaryUrls": [],
+      "summary": "React Compiler の改善と、AI がエンジニアリング文化に与える影響についての議論。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "other",
+          "probabilities": {
+            "release": 0.07,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.2,
+            "guide": 0.02,
+            "event": 0.04,
+            "business": 0,
+            "other": 0.67
+          },
+          "confidence": 0.62
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2.04,
+          "probabilities": [
+            0,
+            0,
+            0.96,
+            0.04
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 15,
+      "title": "Señors At Scale - URL State at Scale with François Best",
+      "url": "https://www.youtube.com/watch?v=b3AYuuRdyf4",
+      "secondaryUrls": [],
+      "summary": "nuqs ライブラリと React・TypeScript を使った URL 状態管理についての議論。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.02,
+            "guide": 0.2,
+            "event": 0.77,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.74
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 2,
+          "probabilities": [
+            0,
+            0,
+            0.99,
+            0.01
+          ],
+          "confidence": 0.98
+        }
+      }
+    },
+    {
+      "id": 16,
+      "title": "Ecma International approved ES2026",
+      "url": "https://ecma-international.org/news/ecma-international-approves-new-standards-14/",
+      "secondaryUrls": [],
+      "summary": "ES2026 が正式承認。`Array.fromAsync()`、`Error.isError()`、`Map.getOrInsert()` などが含まれる。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 2.01,
+          "probabilities": [
+            0.01,
+            0,
+            0.96,
+            0.03
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 17,
+      "title": "The HTTP QUERY Method is now an IETF Proposed Standard",
+      "url": "https://www.rfc-editor.org/info/rfc10008/",
+      "secondaryUrls": [],
+      "summary": "HTTP に公式の QUERY メソッドが追加。GET に似ているがボディ/ペイロードを許可する。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.01,
+            "security": 0,
+            "policy": 0.03,
+            "feature": 0.94,
+            "guide": 0,
+            "event": 0,
+            "business": 0.01,
+            "other": 0.01
+          },
+          "confidence": 0.93
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.6,
+            "node_runtime": 0.04,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.36
+          },
+          "confidence": 0.54
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.83,
+          "probabilities": [
+            0.1,
+            0.01,
+            0.85,
+            0.04
+          ],
+          "confidence": 0.76
+        }
+      }
+    },
+    {
+      "id": 18,
+      "title": "Staged publishing for supply-chain security",
+      "url": "https://nuqs.dev/blog/staged-publishing-for-supply-chain-security",
+      "secondaryUrls": [],
+      "summary": "TanStack 侵害を受け、nuqs が npm の staged publishing（draft→validate→finalize のワークフロー）でリリースパイプラインを堅牢化した事例。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0.01,
+            "security": 0.35,
+            "policy": 0,
+            "feature": 0.02,
+            "guide": 0.62,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.56
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0.22,
+            "node_runtime": 0.78,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.74
+        },
+        "breaking": {
+          "noul": 0.11
+        },
+        "relevance": {
+          "score": 2.41,
+          "probabilities": [
+            0.04,
+            0,
+            0.47,
+            0.49
+          ],
+          "confidence": 0.41
+        }
+      }
+    },
+    {
+      "id": 19,
+      "title": "Getting Started with CSS Anchor Positioning",
+      "url": "https://www.joshwcomeau.com/css/anchor-positioning/",
+      "secondaryUrls": [],
+      "summary": "純粋な CSS で浮遊要素を別の要素の近くに配置する手法。オーバーフロー時のフリップも扱う。ブラウザ対応は81%。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.12,
+            "guide": 0.88,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.86
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 1.86,
+          "probabilities": [
+            0.06,
+            0.03,
+            0.9,
+            0.01
+          ],
+          "confidence": 0.84
+        }
+      }
+    },
+    {
+      "id": 20,
+      "title": "TypeScript 7.0 - 10x faster native port",
+      "url": "https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/",
+      "secondaryUrls": [],
+      "summary": "プロダクション対応の Go 版が、並列化で最大16倍の型チェック高速化を達成。デフォルトで `strict: true` になる。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.83
+        },
+        "relevance": {
+          "score": 2.78,
+          "probabilities": [
+            0,
+            0,
+            0.2,
+            0.8
+          ],
+          "confidence": 0.78
+        }
+      }
+    },
+    {
+      "id": 21,
+      "title": "Node 26.5 - Import Text and streaming features",
+      "url": "https://nodejs.org/en/blog/release/v26.5.0",
+      "secondaryUrls": [],
+      "summary": "実験的な Import Text サポート、`blob.textStream`、`ReadableStreamTee` を追加（Import Text はフラグ付き）。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.98,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.02,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.06,
+          "probabilities": [
+            0,
+            0,
+            0.94,
+            0.06
+          ],
+          "confidence": 0.93
+        }
+      }
+    },
+    {
+      "id": 22,
+      "title": "Vite+ Beta - Unified tooling",
+      "url": "https://voidzero.dev/posts/announcing-vite-plus-beta",
+      "secondaryUrls": [],
+      "summary": "ランタイム・パッケージマネージャ・フロントエンドツールを統合する Vite+。安定しているが機能面は未完成。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.14
+        },
+        "relevance": {
+          "score": 1.65,
+          "probabilities": [
+            0.2,
+            0.01,
+            0.73,
+            0.06
+          ],
+          "confidence": 0.53
+        }
+      }
+    },
+    {
+      "id": 23,
+      "title": "ESLint Plugin TailwindCSS 4.0",
+      "url": "https://github.com/francoismassart/eslint-plugin-tailwindcss/releases/tag/v4.0.3",
+      "secondaryUrls": [],
+      "summary": "Tailwind v4 に対応。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.3
+        },
+        "relevance": {
+          "score": 2.23,
+          "probabilities": [
+            0.12,
+            0,
+            0.4,
+            0.48
+          ],
+          "confidence": 0.23
+        }
+      }
+    },
+    {
+      "id": 24,
+      "title": "Webpack Dev Server 6.0",
+      "url": "https://github.com/webpack/webpack-dev-server/releases/tag/v6.0.0",
+      "secondaryUrls": [],
+      "summary": "Express v5、Node.js 22.15+、ESM 専用（破壊的変更）。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.96,
+            "node_runtime": 0.04,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.96
+        },
+        "breaking": {
+          "noul": 0.95
+        },
+        "relevance": {
+          "score": 2.58,
+          "probabilities": [
+            0.09,
+            0,
+            0.15,
+            0.76
+          ],
+          "confidence": 0.58
+        }
+      }
+    },
+    {
+      "id": 25,
+      "title": "pnpm 11.10",
+      "url": "https://pnpm.io/blog/releases/11.10",
+      "secondaryUrls": [],
+      "summary": "CI 向けの `_auth` 設定を追加。`pnpm self-update` が v12 の Rust 版へのアップグレードをサポート。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.11
+        },
+        "relevance": {
+          "score": 2.32,
+          "probabilities": [
+            0.02,
+            0,
+            0.6,
+            0.38
+          ],
+          "confidence": 0.57
+        }
+      }
+    }
+  ]
+}

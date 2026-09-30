@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/chrome-blog/20260821.md",
+  "sourceHash": "sha256:27c56590d7e4ca57fe9df0dc2b6513ee89130e266dd7e7dead86cf176b32c399",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:54.665Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Chrome 153 beta",
+      "url": "https://developer.chrome.com/blog/chrome-153-beta?hl=ja",
+      "secondaryUrls": [],
+      "summary": "新しい2週間リリースサイクルにおける最初の Chrome リリースのベータ版まとめ。単一軸スクロールコンテナと新しい `scroll-axis-lock` プロパティによるスクロール挙動の改善、JavaScript の Iterator Join / Joint Iteration、メディアキャプチャ向けの `<camera>` / `<microphone>` 機能要素、IAMF 空間オーディオ対応などが追加される。XSLT 以外の XML パースにメモリ安全な Rust 実装を導入する一方、非標準の `_current` ナビゲーションターゲット・`requestStorageAccessFor` API・Related Website Sets が削除されるため、これらに依存するサイトは影響を確認する必要がある。",
+      "publishedAt": "2026-08-20",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.66,
+            "node_runtime": 0,
+            "browser": 0.34,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.6
+        },
+        "breaking": {
+          "noul": 0.88
+        },
+        "relevance": {
+          "score": 2.93,
+          "probabilities": [
+            0,
+            0,
+            0.07,
+            0.93
+          ],
+          "confidence": 0.93
+        }
+      }
+    }
+  ]
+}

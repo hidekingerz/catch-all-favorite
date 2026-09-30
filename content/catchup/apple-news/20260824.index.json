@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/apple-news/20260824.md",
+  "sourceHash": "sha256:fb9bee116bda06e0dbaa8f42491add2920d654ba8fff68ab5afa6a2aa40ebdd0",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:48.074Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Update: New domain for Sign in with Apple",
+      "url": "https://developer.apple.com/jp/news/?id=1ptvdtcm",
+      "secondaryUrls": [],
+      "summary": "Sign in with Apple のメールアドレスが、Apple のドメイン統合の一環として新ドメインへ移行する。2026年後半以降、新規発行される Sign in with Apple アドレスは `privaterelay.appleid.com` ではなく `private.icloud.com` で発行される。既存の `privaterelay.appleid.com` 宛アドレスは引き続き機能しユーザーへメールが転送される。なお iCloud+ の Hide My Email アドレスはコミュニティのフィードバックを受けて `icloud.com` のまま変更されない。開発者は、アカウントシステムやメール検証ロジック・許可リストを更新して新ドメイン `private.icloud.com` を受け入れられるようにし、移行期間中は新旧両ドメインに対応しておく必要がある。",
+      "publishedAt": "2026-08-24",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.13,
+            "security": 0,
+            "policy": 0.34,
+            "feature": 0.49,
+            "guide": 0,
+            "event": 0,
+            "business": 0.01,
+            "other": 0.03
+          },
+          "confidence": 0.42
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0.45,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0.47,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.08
+          },
+          "confidence": 0.4
+        },
+        "breaking": {
+          "noul": 0.87
+        },
+        "relevance": {
+          "score": 2.45,
+          "probabilities": [
+            0.02,
+            0.21,
+            0.07,
+            0.7
+          ],
+          "confidence": 0.45
+        }
+      }
+    }
+  ]
+}

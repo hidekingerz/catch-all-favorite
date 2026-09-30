@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/google-search-blog/20260828.md",
+  "sourceHash": "sha256:911a0623b4f85a9f3269ce183d9ff9fd501dea367d35dbbc5537686aacc81e5b",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:13.852Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Update to the Site Reputation Policy",
+      "url": "https://developers.google.com/search/blog/2026/08/update-site-reputation-policy?hl=ja",
+      "secondaryUrls": [],
+      "summary": "2024年に導入された「サイト評判の不正使用（site reputation）ポリシー」（信頼あるサイト上に第三者コンテンツを掲載してそのサイトの評判を悪用しランキングを上げる手法を防ぐもの）について、欧州委員会との協議を受け EEA 内での運用（エンフォースメント）を調整し、適用基準を明確化する。2026年8月30日以降、このポリシーに基づく手動対策の効果は EEA 内で検索するユーザーとそれ以外とで異なる: EEA 外のユーザーには従来どおり該当部分の検索結果に直接影響するが、EEA 内のユーザーには手動対策の影響が適用されず、該当セクションはシステム上分離されサイトの他部分から独立してランク付けされ得る。手動対策の適用時は従来どおり Search Console で通知され、誤りと考える場合は再審査リクエスト（および対象サイトは調停への申し立て）が可能。DMA 対応にともなうポリシー運用の変更。",
+      "publishedAt": "2026-08-28",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "policy",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 1,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_search",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 1,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.25
+        },
+        "relevance": {
+          "score": 0.71,
+          "probabilities": [
+            0.63,
+            0.07,
+            0.26,
+            0.04
+          ],
+          "confidence": 0.29
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,1208 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/twir/20260429.md",
+  "sourceHash": "sha256:27c6a467f076a8d35612797ed2cb55815342f0fb948f235236fa4cb8dfaa1463",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:26.757Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "The React Compiler at Eighteen Months: The Arc, the Debates, and What's Next",
+      "url": "https://saschb2b.com/blog/react-compiler-year-in-review",
+      "secondaryUrls": [],
+      "summary": "React Compilerの発表以降の18ヶ月間の経過、議論、今後の展望についての総括記事。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.06,
+            "guide": 0.75,
+            "event": 0.01,
+            "business": 0,
+            "other": 0.18
+          },
+          "confidence": 0.7
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.05,
+          "probabilities": [
+            0,
+            0,
+            0.94,
+            0.06
+          ],
+          "confidence": 0.93
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "How React streams UI out of order and still manages to keep order",
+      "url": "https://inside-react.vercel.app/blog/how-react-streams-ui-out-of-order",
+      "secondaryUrls": [],
+      "summary": "Suspense境界とDOMステージングについて、Reactがどのようにして順序を保ちながらUIをストリーミング配信するかについての深掘り記事。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.01,
+            "guide": 0.99,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 2,
+          "probabilities": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "confidence": 0.99
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Accessibility in React: Common Mistakes and How to Fix Them",
+      "url": "https://certificates.dev/blog/accessibility-in-react-common-mistakes-and-how-to-fix-them",
+      "secondaryUrls": [],
+      "summary": "HTML要素、ドキュメント構造、インタラクティブ要素のラベリング、エラーとラベルの接続、フォーカス管理、動的更新、ARIAについてのアクセシビリティ解説。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 2.03,
+          "probabilities": [
+            0,
+            0,
+            0.96,
+            0.04
+          ],
+          "confidence": 0.96
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "Migrating from Radix UI to Base UI: Step-by-Step Guide",
+      "url": "https://shadcnstudio.com/blog/migrate-from-radix-ui-to-base-ui",
+      "secondaryUrls": [],
+      "summary": "Radix UIからBase UIへの移行ガイド。`asChild`が`render` propに変更、`data-[state=*]`属性がARIA属性に置き換え、Selectが`items`配列を取得するなどの変更点を記載。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.82
+        },
+        "relevance": {
+          "score": 2.74,
+          "probabilities": [
+            0.01,
+            0,
+            0.24,
+            0.75
+          ],
+          "confidence": 0.74
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Why TSRX isn't just your Favorite Templating Language",
+      "url": "https://hackmd.io/@0u1u3zEAQAO0iYWVAStEvw/Hk2Jiv8T-l",
+      "secondaryUrls": [],
+      "summary": "JSXの代替案としてのTSRXの特性（静的分析可能性、ステートフルテンプレート、条件内でのフック使用）に焦点を当てた解説。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.28,
+            "guide": 0.72,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.67
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.91,
+          "probabilities": [
+            0.05,
+            0,
+            0.94,
+            0.01
+          ],
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "React Hook Form 7.74",
+      "url": "https://github.com/react-hook-form/react-hook-form/releases/tag/v7.74.0",
+      "secondaryUrls": [],
+      "summary": "複数フィールドを一度に更新できる`setValues`機能を追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.04,
+          "probabilities": [
+            0,
+            0,
+            0.95,
+            0.05
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "React Tooltip 6.0",
+      "url": "https://github.com/ReactTooltip/react-tooltip/releases/tag/v6.0.0",
+      "secondaryUrls": [],
+      "summary": "`portalRoot`と`autoClose`プロパティ追加、React 19対応、HTML文字列APIを削除。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.9
+        },
+        "relevance": {
+          "score": 2.97,
+          "probabilities": [
+            0,
+            0,
+            0.03,
+            0.97
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "shadcn CLI 4.5",
+      "url": "https://github.com/shadcn-ui/ui/releases/tag/shadcn%404.5.0",
+      "secondaryUrls": [],
+      "summary": "`--pointer`オプションを追加し、ボタンの`cursor: pointer`を再度有効化。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.17
+        },
+        "relevance": {
+          "score": 2.38,
+          "probabilities": [
+            0.01,
+            0,
+            0.59,
+            0.4
+          ],
+          "confidence": 0.58
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "XState 5.31",
+      "url": "https://github.com/statelyai/xstate/releases/tag/xstate%405.31.0",
+      "secondaryUrls": [],
+      "summary": "`mapState(snapshot, mapper)`と`maxIterations`オプションを追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.67,
+          "probabilities": [
+            0.2,
+            0.01,
+            0.71,
+            0.08
+          ],
+          "confidence": 0.52
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "StyleX 0.18",
+      "url": "https://stylexjs.com/blog/v0.18",
+      "secondaryUrls": [],
+      "summary": "新しい`sx={}`JSX prop、`stylex.env`のコンパイル時定数、`create-stylex-app` CLI、DevTools拡張、Bunサポートを追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 2.08,
+          "probabilities": [
+            0,
+            0,
+            0.91,
+            0.09
+          ],
+          "confidence": 0.91
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "Chakra UI 3.35",
+      "url": "https://github.com/chakra-ui/chakra-ui/releases/tag/%40chakra-ui%2Freact%403.35.0",
+      "secondaryUrls": [],
+      "summary": "Splitterコンポーネント追加、React 19対応、新しいCLIコマンド（ドキュメント/プロパティ）を実装。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2.19,
+          "probabilities": [
+            0,
+            0,
+            0.8,
+            0.2
+          ],
+          "confidence": 0.78
+        }
+      }
+    },
+    {
+      "id": 11,
+      "title": "@hono/inertia",
+      "url": "https://github.com/honojs/middleware/tree/main/packages/inertia",
+      "secondaryUrls": [],
+      "summary": "Honoフレームワークでのinertia.jsサポート。RESTエンドポイント、クライアント側ルーター、データ取得レイヤーをスキップ。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.9,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.88
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.68,
+            "node_runtime": 0.32,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.63
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 0.55,
+          "probabilities": [
+            0.72,
+            0.02,
+            0.26,
+            0
+          ],
+          "confidence": 0.45
+        }
+      }
+    },
+    {
+      "id": 12,
+      "title": "Mantine 9.1",
+      "url": "https://github.com/mantinedev/mantine/releases/tag/9.1.0",
+      "secondaryUrls": [],
+      "summary": "deduplicateInlineStyles、use-mask、MaskInput、Treemap、TimePicker、Heatmap、MonthPicker、YearPicker、use-roving-index、Tree、Slider、WeekView等を追加・修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.11
+        },
+        "relevance": {
+          "score": 2.11,
+          "probabilities": [
+            0.01,
+            0,
+            0.86,
+            0.13
+          ],
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "id": 13,
+      "title": "TanStack Query 5.100",
+      "url": "https://github.com/TanStack/query/releases/tag/release-2026-04-23-1319",
+      "secondaryUrls": [],
+      "summary": "retryOnMountコールバック追加、Svelteテスト内部クリーンアップ。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 2.15,
+          "probabilities": [
+            0.02,
+            0,
+            0.79,
+            0.19
+          ],
+          "confidence": 0.76
+        }
+      }
+    },
+    {
+      "id": 14,
+      "title": "Scroll-Driven Animations",
+      "url": "https://www.joshwcomeau.com/animation/scroll-driven-animations/",
+      "secondaryUrls": [],
+      "summary": "Josh Comeauによるインタラクティブ記事。CSS keyframeを時間ではなくスクロール距離にマップする方法を解説。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.01,
+            "guide": 0.99,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 1.9,
+          "probabilities": [
+            0.05,
+            0.01,
+            0.94,
+            0
+          ],
+          "confidence": 0.89
+        }
+      }
+    },
+    {
+      "id": 15,
+      "title": "Compositing & Blending",
+      "url": "https://nik.digital/posts/compositing-blending",
+      "secondaryUrls": [],
+      "summary": "複数の要素を重ねるときにブラウザが各ピクセルの最終色をどのように決定し、実世界でどのように適用されるかについての解説。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.97,
+            "node_runtime": 0,
+            "browser": 0.03,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.97
+        },
+        "breaking": {
+          "noul": 0.03
+        },
+        "relevance": {
+          "score": 1.73,
+          "probabilities": [
+            0.12,
+            0.03,
+            0.85,
+            0
+          ],
+          "confidence": 0.72
+        }
+      }
+    },
+    {
+      "id": 16,
+      "title": "The Web Is Fun Again: First Experiments with HTML in Canvas",
+      "url": "https://frontendmasters.com/blog/the-web-is-fun-again-first-experiments-with-html-in-canvas/",
+      "secondaryUrls": [],
+      "summary": "HTMLをCanvasに埋め込める新しいAPI、その制限事項、実用的な使用方法について紹介。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 1,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.68,
+          "probabilities": [
+            0.13,
+            0.08,
+            0.78,
+            0.01
+          ],
+          "confidence": 0.66
+        }
+      }
+    },
+    {
+      "id": 17,
+      "title": "New to the web platform in April",
+      "url": "https://web.dev/blog/web-platform-04-2026?hl=en",
+      "secondaryUrls": [],
+      "summary": "4月にBaseline Newly Availableになった機能（`contrast-color()`、animation-range、`Math.sumPrecise`）とFirefox/Chromeの新API追加について説明。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.13,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.87,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.85
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.88,
+          "probabilities": [
+            0,
+            0.12,
+            0.87,
+            0.01
+          ],
+          "confidence": 0.87
+        }
+      }
+    },
+    {
+      "id": 18,
+      "title": "pnpm 11.0",
+      "url": "https://pnpm.io/blog/releases/11.0",
+      "secondaryUrls": [],
+      "summary": "SQLiteバックアップストア、サプライチェーン保護がデフォルトで有効、ネイティブパブリッシング、ESM専用化。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.8
+        },
+        "relevance": {
+          "score": 2.84,
+          "probabilities": [
+            0.01,
+            0,
+            0.13,
+            0.86
+          ],
+          "confidence": 0.84
+        }
+      }
+    },
+    {
+      "id": 19,
+      "title": "Aube",
+      "url": "https://aube.en.dev/",
+      "secondaryUrls": [],
+      "summary": "既存のロックファイルを読み込むドロップイン型Node.jsパッケージマネージャー。pnpmより9.2倍、Bunより2.7倍高速を謳う。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.37,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.6,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.03
+          },
+          "confidence": 0.54
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.07,
+          "probabilities": [
+            0.01,
+            0,
+            0.89,
+            0.1
+          ],
+          "confidence": 0.87
+        }
+      }
+    },
+    {
+      "id": 20,
+      "title": "Fresh 2.3",
+      "url": "https://deno.com/blog/fresh-2.3",
+      "secondaryUrls": [],
+      "summary": "Preactフレームワーク。デフォルトでJSなし、View Transitions対応、Temporal対応。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.31
+        },
+        "relevance": {
+          "score": 0.81,
+          "probabilities": [
+            0.56,
+            0.05,
+            0.38,
+            0.01
+          ],
+          "confidence": 0.19
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,1550 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/twir/20260408.md",
+  "sourceHash": "sha256:306933ac0f9c9607b00e9c435a302ec3facb7bcb3f8198a6723e0a2f88097d78",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:24.750Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Boneyard - Auto-generated skeleton screens",
+      "url": "https://boneyard.vercel.app/",
+      "secondaryUrls": [],
+      "summary": "ローディング状態のスケルトンスクリーンを手動で作る代わりに、実際のUIをスナップショットして各ブレークポイントでの骨格を自動キャプチャするライブラリ。React、React Native、その他のフレームワークに対応。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.19,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.8,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.77
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1.97,
+          "probabilities": [
+            0.02,
+            0,
+            0.97,
+            0.01
+          ],
+          "confidence": 0.96
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "The Precompute Pattern: Encoding Dynamic Data into URLs in Next.js",
+      "url": "https://aurorascharff.no/posts/the-precompute-pattern-encoding-dynamic-data-into-urls-in-nextjs/",
+      "secondaryUrls": [],
+      "summary": "Next.js のプリレンダリング能力を最大化するための高度なテクニック。フィーチャーフラグや認証ステータスなど、カーディナリティの低いバリアントに特に効果的。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2,
+          "probabilities": [
+            0,
+            0,
+            0.99,
+            0.01
+          ],
+          "confidence": 0.99
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Under the hood of MDN's new frontend",
+      "url": "https://developer.mozilla.org/en-US/blog/mdn-front-end-deep-dive/",
+      "secondaryUrls": [],
+      "summary": "MDN が旧 React CRA アプリを刷新し、Lit + Custom Elements 上に独自の Server Components システムを実装。Declarative Shadow DOM をプログレッシブエンハンスメントとして活用している。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.05,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.71,
+            "guide": 0.24,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.66
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 1.8,
+          "probabilities": [
+            0.09,
+            0.04,
+            0.85,
+            0.02
+          ],
+          "confidence": 0.77
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "Moving Railway's Frontend Off Next.js",
+      "url": "https://blog.railway.com/p/moving-railways-frontend-off-nextjs",
+      "secondaryUrls": [],
+      "summary": "200以上のルートを持つ Page Router アプリを TanStack Start へ2つのPRでゼロダウンタイム移行したフィードバック。ビルド高速化、より明示的なモデル、レイアウト合成の容易さが改善点。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.15
+        },
+        "relevance": {
+          "score": 2.45,
+          "probabilities": [
+            0,
+            0,
+            0.54,
+            0.46
+          ],
+          "confidence": 0.53
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "You really, really, really don't need an effect! I swear!",
+      "url": "https://neciudan.dev/you-really-really-dont-need-an-effect",
+      "secondaryUrls": [],
+      "summary": "useEffect を本当に必要とするケース（データフェッチ）でさえ、React Query のような既存ライブラリがより良い実装を提供しているという主張。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 2,
+          "probabilities": [
+            0,
+            0,
+            0.99,
+            0.01
+          ],
+          "confidence": 0.98
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "How to implement spring physics buttons with Framer Motion",
+      "url": "https://tigerabrodi.blog/how-to-implement-spring-physics-buttons-with-framer-motion",
+      "secondaryUrls": [],
+      "summary": "Framer Motion を使ったスプリング物理演算ベースのボタン実装チュートリアル。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.03
+        },
+        "relevance": {
+          "score": 1.99,
+          "probabilities": [
+            0.01,
+            0,
+            0.98,
+            0.01
+          ],
+          "confidence": 0.98
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "Ink 7.0 - React renderer for CLIs",
+      "url": "https://github.com/vadimdemedes/ink/releases/tag/v7.0.0",
+      "secondaryUrls": [],
+      "summary": "AI やターミナルアプリの台頭でますます人気が高まっている CLI 向け React レンダラー。メジャーバージョンでは Node 22、React 19.2 へのアップグレードに加え、多数の新フック・機能・プロップが追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.83,
+            "node_runtime": 0.16,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.01
+          },
+          "confidence": 0.8
+        },
+        "breaking": {
+          "noul": 0.59
+        },
+        "relevance": {
+          "score": 1.99,
+          "probabilities": [
+            0.04,
+            0,
+            0.89,
+            0.07
+          ],
+          "confidence": 0.86
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "Comark - Fast, streaming-ready Markdown parser with support for React and more",
+      "url": "https://comark.dev/",
+      "secondaryUrls": [],
+      "summary": "Nuxt チームから登場した、Streamdown や MDX の代替となるストリーミング対応の高速 Markdown パーサー。React サポートあり。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.37,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.63,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.56
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.99,
+            "node_runtime": 0.01,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.9,
+          "probabilities": [
+            0.06,
+            0,
+            0.92,
+            0.02
+          ],
+          "confidence": 0.86
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "Docusaurus 3.10",
+      "url": "https://docusaurus.io/blog/releases/3.10",
+      "secondaryUrls": [],
+      "summary": "セキュリティ改善、Docusaurus Faster の安定版化、VCS API、Strict MDX、Site Storage の安定版化など。Docusaurus v4 に向けたマイルストーンリリース。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.99,
+            "node_runtime": 0.01,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.23
+        },
+        "relevance": {
+          "score": 1.12,
+          "probabilities": [
+            0.49,
+            0.03,
+            0.33,
+            0.15
+          ],
+          "confidence": 0
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "Shaders beta - The component library for creative WebGPU effects in the browser",
+      "url": "https://shaders.com/",
+      "secondaryUrls": [],
+      "summary": "ブラウザ上のクリエイティブな WebGPU エフェクトのためのコンポーネントライブラリ。React コンポーネントがファーストクラスで提供されており、React コンポーネントの商用利用は無料。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.99,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.01,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.97,
+          "probabilities": [
+            0.02,
+            0,
+            0.98,
+            0
+          ],
+          "confidence": 0.96
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "React Hook Form 7.72 - Built-in form-level validation",
+      "url": "https://github.com/react-hook-form/react-hook-form/releases/tag/v7.72.0",
+      "secondaryUrls": [],
+      "summary": "フォームレベルのバリデーションが組み込みで追加。クロスフィールドバリデーションに便利な機能。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.06,
+          "probabilities": [
+            0,
+            0,
+            0.93,
+            0.07
+          ],
+          "confidence": 0.93
+        }
+      }
+    },
+    {
+      "id": 11,
+      "title": "Conform 1.18 - Progressively enhance HTML forms with React",
+      "url": "https://github.com/edmundhung/conform/releases/tag/v1.18.0",
+      "secondaryUrls": [],
+      "summary": "React で HTML フォームをプログレッシブに強化するライブラリの新バージョン。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.11
+        },
+        "relevance": {
+          "score": 2.06,
+          "probabilities": [
+            0,
+            0,
+            0.93,
+            0.07
+          ],
+          "confidence": 0.93
+        }
+      }
+    },
+    {
+      "id": 12,
+      "title": "React Router 7.14",
+      "url": "https://github.com/remix-run/react-router/blob/main/CHANGELOG.md#v7140",
+      "secondaryUrls": [],
+      "summary": "Vite 8 サポート、不安定版 RSC Framework Mode の改善。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.15
+        },
+        "relevance": {
+          "score": 2.24,
+          "probabilities": [
+            0.02,
+            0,
+            0.69,
+            0.29
+          ],
+          "confidence": 0.66
+        }
+      }
+    },
+    {
+      "id": 13,
+      "title": "shadcn CLI 4.2",
+      "url": "https://ui.shadcn.com/docs/changelog/2026-04-shadcn-apply",
+      "secondaryUrls": [],
+      "summary": "新しい `shadcn apply` コマンドでプリセットの切り替えが容易に。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 2.12,
+          "probabilities": [
+            0.01,
+            0,
+            0.85,
+            0.14
+          ],
+          "confidence": 0.84
+        }
+      }
+    },
+    {
+      "id": 14,
+      "title": "Material UI 9.0",
+      "url": "https://github.com/mui/material-ui/releases/tag/v9.0.0",
+      "secondaryUrls": [],
+      "summary": "アクセシビリティ改善、sx prop のパフォーマンス向上、非推奨 API のクリーンアップ。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.66
+        },
+        "relevance": {
+          "score": 2.73,
+          "probabilities": [
+            0,
+            0,
+            0.26,
+            0.74
+          ],
+          "confidence": 0.73
+        }
+      }
+    },
+    {
+      "id": 15,
+      "title": "Mantine 9.0",
+      "url": "https://mantine.dev/changelog/9-0-0/",
+      "secondaryUrls": [],
+      "summary": "Scheduling、FloatingWindow、OverflowList、Marquee など多数の新コンポーネントが追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.15,
+          "probabilities": [
+            0.01,
+            0,
+            0.83,
+            0.16
+          ],
+          "confidence": 0.83
+        }
+      }
+    },
+    {
+      "id": 16,
+      "title": "Next-Intl 4.9",
+      "url": "https://github.com/amannn/next-intl/releases/tag/v4.9.0",
+      "secondaryUrls": [],
+      "summary": "`<Link transitionTypes>` のサポートを追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.05,
+          "probabilities": [
+            0.01,
+            0,
+            0.92,
+            0.07
+          ],
+          "confidence": 0.92
+        }
+      }
+    },
+    {
+      "id": 17,
+      "title": "Web Dev Simplified - You Need To Start Using This Underrated React Hook - useSyncExternalStore",
+      "url": "https://www.youtube.com/watch?v=NBjycPpPHQQ",
+      "secondaryUrls": [],
+      "summary": "過小評価されている useSyncExternalStore フックの活用法を解説する動画。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.02,
+            "guide": 0.96,
+            "event": 0.02,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.95
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 2.01,
+          "probabilities": [
+            0,
+            0,
+            0.99,
+            0.01
+          ],
+          "confidence": 0.98
+        }
+      }
+    },
+    {
+      "id": 18,
+      "title": "React Paris 2026 - YouTube Playlist",
+      "url": "https://www.youtube.com/playlist?list=PL53Z0yyYnpWhsizNWtlnyM7XWFUSw437J",
+      "secondaryUrls": [],
+      "summary": "React Paris 2026 カンファレンスの講演動画プレイリスト。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 1,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.02
+        },
+        "relevance": {
+          "score": 1.95,
+          "probabilities": [
+            0.03,
+            0,
+            0.97,
+            0
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 19,
+      "title": "JSIR - A High-Level IR for JavaScript (RFC)",
+      "url": "https://discourse.llvm.org/t/rfc-jsir-a-high-level-ir-for-javascript/90456",
+      "secondaryUrls": [],
+      "summary": "Google が提案する JavaScript 向け高レベル中間表現（IR）。静的解析やコード分析、Hermes バイトコードの逆コンパイルなどに内部で既に使用されている。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.97,
+            "guide": 0.01,
+            "event": 0,
+            "business": 0,
+            "other": 0.02
+          },
+          "confidence": 0.96
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 1.77,
+          "probabilities": [
+            0.11,
+            0.01,
+            0.87,
+            0.01
+          ],
+          "confidence": 0.76
+        }
+      }
+    },
+    {
+      "id": 20,
+      "title": "The Hidden Blast Radius of the Axios Compromise",
+      "url": "https://socket.dev/blog/hidden-blast-radius-of-the-axios-compromise",
+      "secondaryUrls": [],
+      "summary": "先週 axios がソーシャルエンジニアリング攻撃で侵害された件の影響範囲分析。直接依存していなくても、推移的依存や CI の npx ワークフロー経由で影響を受ける可能性がある。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 0.99,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0.01,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.55,
+            "node_runtime": 0.45,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.48
+        },
+        "breaking": {
+          "noul": 0.14
+        },
+        "relevance": {
+          "score": 2.6,
+          "probabilities": [
+            0.06,
+            0.01,
+            0.2,
+            0.73
+          ],
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": 21,
+      "title": "What To Know in JavaScript (2026 Edition)",
+      "url": "https://frontendmasters.com/blog/what-to-know-in-javascript-2026-edition/",
+      "secondaryUrls": [],
+      "summary": "ES2025/2026 の新機能、フレームワークアップデート、ランタイムの動向、ビルドツールの状況を包括的にまとめた記事。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0.07,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.02,
+            "guide": 0.9,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.89
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.11
+        },
+        "relevance": {
+          "score": 2.11,
+          "probabilities": [
+            0.01,
+            0,
+            0.87,
+            0.12
+          ],
+          "confidence": 0.87
+        }
+      }
+    },
+    {
+      "id": 22,
+      "title": "The Intl API: The best browser API you're not using",
+      "url": "https://polypane.app/blog/the-intl-api-the-best-browser-api-youre-not-using/",
+      "secondaryUrls": [],
+      "summary": "あまり活用されていない Intl API の活用法を紹介。日付・数値・リストのフォーマットなど、ブラウザ標準で多くのことが可能。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.05,
+            "guide": 0.95,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.94
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 1.98,
+          "probabilities": [
+            0.01,
+            0.01,
+            0.98,
+            0
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 23,
+      "title": "View Transitions Toolkit - Utility functions for View Transitions",
+      "url": "https://www.bram.us/2026/04/02/view-transitions-toolkit/",
+      "secondaryUrls": [],
+      "summary": "View Transitions の高度なパターンを埋めるユーティリティ関数群。機能検出、アニメーション最適化、再生制御、自動ナビゲーションタイプなどを提供。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.12,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.88,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.86
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.98,
+          "probabilities": [
+            0.01,
+            0,
+            0.97,
+            0.02
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 24,
+      "title": "ESLint 10.2",
+      "url": "https://eslint.org/blog/2026/04/eslint-v10.2.0-released/",
+      "secondaryUrls": [],
+      "summary": "言語対応ルール、Temporal サポートが追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.98,
+            "node_runtime": 0.02,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.15,
+          "probabilities": [
+            0.03,
+            0,
+            0.76,
+            0.21
+          ],
+          "confidence": 0.73
+        }
+      }
+    },
+    {
+      "id": 25,
+      "title": "esbuild 0.28",
+      "url": "https://github.com/evanw/esbuild/releases/tag/v0.28.0",
+      "secondaryUrls": [],
+      "summary": "Import Text proposal のサポート、整合性チェック機能が追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.14,
+          "probabilities": [
+            0.02,
+            0,
+            0.8,
+            0.18
+          ],
+          "confidence": 0.77
+        }
+      }
+    },
+    {
+      "id": 26,
+      "title": "Ky 2.0 - JavaScript HTTP client based on the Fetch API",
+      "url": "https://github.com/sindresorhus/ky/releases/tag/v2.0.0",
+      "secondaryUrls": [],
+      "summary": "Fetch API ベースの JavaScript HTTP クライアントのメジャーアップデート。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.38
+        },
+        "relevance": {
+          "score": 2.25,
+          "probabilities": [
+            0.03,
+            0,
+            0.66,
+            0.31
+          ],
+          "confidence": 0.63
+        }
+      }
+    }
+  ]
+}

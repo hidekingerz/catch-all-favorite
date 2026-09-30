@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260919.md",
+  "sourceHash": "sha256:6a86914a903e88069b60a1f80d8146a359776349dc4fee3ff4a72ea6aa18c31a",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:09.016Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "v2.1.278（2026-09-19）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "**auto モードの分類器をサーバーサイド既定に変更**。Claude API・Enterprise ユーザー、および Bedrock・Vertex・Foundry・ゲートウェイ利用時に、既定でサーバーサイドの分類器を使うようになり、分類器のオーバーヘッド分は課金されなくなった。Bedrock・Vertex・Foundry・ゲートウェイでは `CLAUDE_CODE_AUTO_MODE_SERVER=0` でオプトアウト可能。課金対象のフォールバックが発生した場合は警告が出る。詳細は docs（`https://code.claude.com/docs/en/auto-mode-classifier-billing`）を参照。 / **`/status` に「Auto mode server」行を追加**。現在のセッションの auto モード分類器がサーバー側で実行されているかを表示する。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.278（2026-09-19）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.46
+        },
+        "relevance": {
+          "score": 2.41,
+          "probabilities": [
+            0,
+            0,
+            0.59,
+            0.41
+          ],
+          "confidence": 0.58
+        }
+      }
+    }
+  ]
+}

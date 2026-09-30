@@ -1,0 +1,933 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/jser-info/20260705.md",
+  "sourceHash": "sha256:e11f0abdcc9046d6c350ca3dde6d561eeb055690706e05d7c18f183e5cd52744",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:21.608Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Node.js — Node.js 24.18.0 (LTS)",
+      "url": "https://nodejs.org/en/blog/release/v24.18.0",
+      "secondaryUrls": [],
+      "summary": "`Buffer.poolSize` のデフォルトを64 KiBに変更。Web Crypto に TurboSHAKE と KangarooTwelve を追加し、`http.writeInformation()` や `crypto.diffieHellman()` の強化を含む。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "nodejs",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.49
+        },
+        "relevance": {
+          "score": 2.31,
+          "probabilities": [
+            0,
+            0,
+            0.69,
+            0.31
+          ],
+          "confidence": 0.68
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "pnpm 11.9",
+      "url": "https://pnpm.io/blog/releases/11.9",
+      "secondaryUrls": [],
+      "summary": "integrityフィールドを持たないtarballに対してレジストリのチェックサムを計算するようになった。`pnpm sbom --exclude-peers` や `pnpm audit --fix` の出力フォーマット改善を含む。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "pnpm",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.35,
+          "probabilities": [
+            0.01,
+            0,
+            0.62,
+            0.37
+          ],
+          "confidence": 0.62
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Announcing Rspack 2.1",
+      "url": "https://rspack.rs/blog/announcing-2-1",
+      "secondaryUrls": [],
+      "summary": "`builtin:swc-loader` での React Compiler サポート、`import.meta.glob` サポート、永続キャッシュの自動削除、TypeScript 7 の型チェック統合を追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "rspack",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.11
+        },
+        "relevance": {
+          "score": 2.08,
+          "probabilities": [
+            0.03,
+            0,
+            0.83,
+            0.14
+          ],
+          "confidence": 0.79
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "Deno 2.9",
+      "url": "https://deno.com/blog/v2.9",
+      "secondaryUrls": [],
+      "summary": "実験的な `deno desktop`、npmロックファイルの読み込み、`deno list`/`link`/`unlink` コマンド、新しいtest/compile/formatフラグ、`trust-policy=no-downgrade` を導入。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "deno",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.13
+        },
+        "relevance": {
+          "score": 1.13,
+          "probabilities": [
+            0.45,
+            0.03,
+            0.47,
+            0.05
+          ],
+          "confidence": 0.03
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Prettier 3.9",
+      "url": "https://prettier.io/blog/2026/06/27/3.9.0",
+      "secondaryUrls": [],
+      "summary": "Markdownパーサーを `micromark` v4、YAMLを `yaml` v2 にアップグレード。GraphQL.js v17対応、Rustベースの Flow パーサー、`import ... assert` サポートの削除を含む。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "JavaScript",
+        "Tools",
+        "ReleaseNote",
+        "TypeScript",
+        "css"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.91,
+            "node_runtime": 0.09,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.9
+        },
+        "breaking": {
+          "noul": 0.7
+        },
+        "relevance": {
+          "score": 2.62,
+          "probabilities": [
+            0.01,
+            0,
+            0.34,
+            0.65
+          ],
+          "confidence": 0.62
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "Vite 8.1 is out!",
+      "url": "https://vite.dev/blog/announcing-vite8-1",
+      "secondaryUrls": [],
+      "summary": "実験的な `--experimental-bundle`、Chunk Import Map、Wasm ESM 統合、`import.meta.glob` の `caseSensitive` オプション、`html.additionalAssetSources` を追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "vite",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.98,
+          "probabilities": [
+            0.05,
+            0.01,
+            0.85,
+            0.09
+          ],
+          "confidence": 0.79
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "Release 1.0.0 - Basecoat",
+      "url": "https://github.com/hunvreus/basecoat/releases/tag/1.0.0",
+      "secondaryUrls": [],
+      "summary": "React/Radix のランタイム依存なしで動く Tailwind CSS + shadcn/ui互換のコンポーネントライブラリ。CDN、npm、テンプレート経由で利用可能。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "JavaScript",
+        "css",
+        "HTML",
+        "library",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.07,
+          "probabilities": [
+            0.01,
+            0,
+            0.9,
+            0.09
+          ],
+          "confidence": 0.89
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "Next.js 16.3: Instant Navigations",
+      "url": "https://nextjs.org/blog/next-16-3-instant-navigations",
+      "secondaryUrls": [],
+      "summary": "`cacheComponents` と `partialPrefetching` による実験的な Instant Navigations を含むプレビューリリース。ルート遷移の高速化を狙う。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "Next.js",
+        "React",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 2.03,
+          "probabilities": [
+            0,
+            0,
+            0.97,
+            0.03
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "Release ES2026",
+      "url": "https://github.com/tc39/ecma262/releases/tag/es2026",
+      "secondaryUrls": [],
+      "summary": "2026年6月30日に ES2026 が正式承認。`Array.fromAsync`、`Uint8Array` の Base64 メソッド、`Iterator.concat()`、`Math.sumPrecise()`、`Error.isError()`、`Map.prototype.getOrInsert()` を含む。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "ECMAScript",
+        "JavaScript",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 2.04,
+          "probabilities": [
+            0,
+            0,
+            0.96,
+            0.04
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "Announcing Vite+ Beta",
+      "url": "https://voidzero.dev/posts/announcing-vite-plus-beta",
+      "secondaryUrls": [],
+      "summary": "`vp run` のキャッシュ改善、`vp migrate` のカバレッジ拡大、プロキシとカスタムCAのHTTP処理サポートを追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "vite",
+        "CLI",
+        "Tools",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.98,
+            "node_runtime": 0.02,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.97
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 1.28,
+          "probabilities": [
+            0.4,
+            0.01,
+            0.5,
+            0.09
+          ],
+          "confidence": 0.1
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "Flow has been ported to Rust",
+      "url": "https://medium.com/flow-type/flows-ocaml-to-rust-port-78b95bcf49e9",
+      "secondaryUrls": [],
+      "summary": "OCamlからの移行について解説。AI支援による行単位の移植、言語間の差異、コードフリーズなしでのビルド/テスト対応などを扱う。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "JavaScript",
+        "flowtype",
+        "Rust",
+        "article"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0.08,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.22,
+            "guide": 0.69,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.64
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.98,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.02
+          },
+          "confidence": 0.97
+        },
+        "breaking": {
+          "noul": 0.12
+        },
+        "relevance": {
+          "score": 1.44,
+          "probabilities": [
+            0.3,
+            0.04,
+            0.59,
+            0.07
+          ],
+          "confidence": 0.29
+        }
+      }
+    },
+    {
+      "id": 11,
+      "title": "Introducing the Safari MCP server for web developers",
+      "url": "https://webkit.org/blog/18136/introducing-the-safari-mcp-server-for-web-developers/",
+      "secondaryUrls": [],
+      "summary": "Safari Technology Preview 247 が MCP サーバーを追加。`navigate_to_url`、`evaluate_javascript`、`screenshot` などのツールで AI エージェントがタブ制御やDOM/ネットワーク/コンソール/スクリーンショットへアクセスできる。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "safari",
+        "browser",
+        "MCP",
+        "Tools",
+        "article"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.83,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.17,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.8
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0.28,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.72,
+            "other": 0
+          },
+          "confidence": 0.67
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.23,
+          "probabilities": [
+            0.2,
+            0.38,
+            0.41,
+            0.01
+          ],
+          "confidence": 0.22
+        }
+      }
+    },
+    {
+      "id": 12,
+      "title": "Introduction - pnpm",
+      "url": "https://pnpm.io/pnpr/",
+      "secondaryUrls": [],
+      "summary": "npmレジストリプロトコルに対応する Rust製のnpmレジストリサーバー。サーバー側でのロックファイル解決によりラウンドトリップを削減する。PolyForm Shield License で公開。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "pnpm",
+        "Rust",
+        "npm",
+        "server",
+        "document"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.14,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.81,
+            "guide": 0.03,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.78
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.61,
+          "probabilities": [
+            0.21,
+            0.01,
+            0.74,
+            0.04
+          ],
+          "confidence": 0.53
+        }
+      }
+    },
+    {
+      "id": 13,
+      "title": "facebook/astryx",
+      "url": "https://github.com/facebook/astryx",
+      "secondaryUrls": [],
+      "summary": "React と StyleX で実装された Meta のデザインシステム。`@astryxdesign/core` がコンポーネント/テーマを提供し、`@astryxdesign/cli` がテンプレート、スキャフォールディング、テーマ設定、codemod を扱う。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "React",
+        "Design",
+        "Tools",
+        "library"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.06,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.91,
+            "guide": 0.02,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.89
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.96,
+          "probabilities": [
+            0.02,
+            0,
+            0.97,
+            0.01
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 14,
+      "title": "jayu/rev-dep",
+      "url": "https://github.com/jayu/rev-dep",
+      "secondaryUrls": [],
+      "summary": "JavaScript/TypeScript向けの依存関係解析CLIツール。`rev-dep config run` で循環参照、デッドコード、依存グラフの衛生違反をチェックできる。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "JavaScript",
+        "TypeScript",
+        "CLI",
+        "Tools"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.25,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.72,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.03
+          },
+          "confidence": 0.68
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.71,
+            "node_runtime": 0.29,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.67
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.07,
+          "probabilities": [
+            0.02,
+            0,
+            0.88,
+            0.1
+          ],
+          "confidence": 0.86
+        }
+      }
+    }
+  ]
+}

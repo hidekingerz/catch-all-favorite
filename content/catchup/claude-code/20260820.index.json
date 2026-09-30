@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260820.md",
+  "sourceHash": "sha256:6e06cc4a5eb2a64d28382c5f7b3816699f7575ec054785ee9621cfd251528a54",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:03.901Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "v2.1.238（2026-08-20）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "キーバインド: `keybindingFlavor` 設定を追加。`\"readline\"` にするとプロンプト内の Ctrl+W が Bash のように直前の空白まで削除する（既定の `\"classic\"` は不変）。 / プラグインマーケットプレイス（headersHelper）: url マーケットプレイスやカタログエントリに `headersHelper` を指定でき、コマンドが HTTP ヘッダ（例: 短命トークン）を生成してカタログ・同一オリジンのアーカイブ取得に使う。カタログエントリの `headersHelper` はそのプラグインのインストール/更新時のみ実行され、コマンド表示後に `claude plugin install/update` が `[y/N]`（`-y` で省略可）で確認する。 / セルフホストランナー: `claude self-hosted-runner --defer-shutdown-max-min <minutes>` を追加。SIGTERM 受信後、接続中セッションを指定分だけ継続稼働させ、残りをパークしてから終了する。 / `--proxy-authorization-command` / `--proxy-authorization-file` を追加。接続ごとに新しい `Proxy-Authorization` ヘッダを要求する egress プロキシに対応。 / メモリ: 長時間の対話セッションでの無制限なメモリ増加を修正（サブエージェントのツール結果を表示ウィンドウから外れた時点で解放）。 / 出力スタイル: カスタム/プロジェクト/プラグインの output style がセッション途中で既定の口調に戻ってしまう不具合を修正。 / Remote Control 多数修正: Web/Desktop からミッドターンで送ったメッセージがターン終了後に消える問題、電話/Web でのモデル選択がターミナルに反映されない問題、一時的なネットワーク遅延で「login expired」切断する問題などを修正。`ListAgents`/`SendMessage` が server モードや Desktop/IDE ホストで「Remote Control is not connected」と誤報する問題も修正。 / その他の修正: `CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION=true` が利用上限付近でプロンプト提案を維持しない問題、MCP elicitation ダイアログが 4,096 文字超の URL で何も表示しない問題、Bash コマンドの kill/timeout/中断時に `/tmp/claude-*-cwd` が残る問題、stdio MCP サーバが `initialize` 前に `server/discover` を受け取る問題などを修正。 / 改善: macOS で `claude` 単体起動が速くなり、自動アップデートチェックが起動直後の CPU 競合を避けて約10秒後に走るように。`claude mcp list`/`get` は無効サーバへ接続せず `⊘ Disabled` と表示。auto mode の zsh 条件式など Bash 権限チェックを改善。Managed Agents 8/19 リリースに合わせ組み込み `claude-api` スキルを更新。 / 変更: フルスクリーンの Ctrl+L / Cmd+K は常に再描画のみになり、2連打の `/clear` ショートカットは廃止。プロジェクト `.mcp.json` の MCP `headersHelper` やインライン MCP サーバは、そのフォルダの信頼ダイアログ承認済みであることを要求（`claude -p` でも）。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {
+        "キーバインド": "`keybindingFlavor` 設定を追加。`\"readline\"` にするとプロンプト内の Ctrl+W が Bash のように直前の空白まで削除する（既定の `\"classic\"` は不変）。",
+        "プラグインマーケットプレイス（headersHelper）": "url マーケットプレイスやカタログエントリに `headersHelper` を指定でき、コマンドが HTTP ヘッダ（例: 短命トークン）を生成してカタログ・同一オリジンのアーカイブ取得に使う。カタログエントリの `headersHelper` はそのプラグインのインストール/更新時のみ実行され、コマンド表示後に `claude plugin install/update` が `[y/N]`（`-y` で省略可）で確認する。",
+        "セルフホストランナー": "`claude self-hosted-runner --defer-shutdown-max-min <minutes>` を追加。SIGTERM 受信後、接続中セッションを指定分だけ継続稼働させ、残りをパークしてから終了する。 / `--proxy-authorization-command` / `--proxy-authorization-file` を追加。接続ごとに新しい `Proxy-Authorization` ヘッダを要求する egress プロキシに対応。",
+        "メモリ": "長時間の対話セッションでの無制限なメモリ増加を修正（サブエージェントのツール結果を表示ウィンドウから外れた時点で解放）。",
+        "出力スタイル": "カスタム/プロジェクト/プラグインの output style がセッション途中で既定の口調に戻ってしまう不具合を修正。",
+        "Remote Control 多数修正": "Web/Desktop からミッドターンで送ったメッセージがターン終了後に消える問題、電話/Web でのモデル選択がターミナルに反映されない問題、一時的なネットワーク遅延で「login expired」切断する問題などを修正。`ListAgents`/`SendMessage` が server モードや Desktop/IDE ホストで「Remote Control is not connected」と誤報する問題も修正。",
+        "その他の修正": "`CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION=true` が利用上限付近でプロンプト提案を維持しない問題、MCP elicitation ダイアログが 4,096 文字超の URL で何も表示しない問題、Bash コマンドの kill/timeout/中断時に `/tmp/claude-*-cwd` が残る問題、stdio MCP サーバが `initialize` 前に `server/discover` を受け取る問題などを修正。",
+        "改善": "macOS で `claude` 単体起動が速くなり、自動アップデートチェックが起動直後の CPU 競合を避けて約10秒後に走るように。`claude mcp list`/`get` は無効サーバへ接続せず `⊘ Disabled` と表示。auto mode の zsh 条件式など Bash 権限チェックを改善。Managed Agents 8/19 リリースに合わせ組み込み `claude-api` スキルを更新。",
+        "変更": "フルスクリーンの Ctrl+L / Cmd+K は常に再描画のみになり、2連打の `/clear` ショートカットは廃止。プロジェクト `.mcp.json` の MCP `headersHelper` やインライン MCP サーバは、そのフォルダの信頼ダイアログ承認済みであることを要求（`claude -p` でも）。"
+      },
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.62
+        },
+        "relevance": {
+          "score": 2.62,
+          "probabilities": [
+            0,
+            0,
+            0.38,
+            0.62
+          ],
+          "confidence": 0.62
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "v2.1.237（2026-08-20）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "プロンプトキャッシュ修正: LLM ゲートウェイまたはカスタム base URL を使うセッションでのプロンプトキャッシュを修正。 / 新しい出力スタイル「Concise」: 前置きやナレーションを省き結果を先頭に出す組み込みスタイルを追加（作業の丁寧さは維持）。`/config` の Output style から選択できる。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {
+        "プロンプトキャッシュ修正": "LLM ゲートウェイまたはカスタム base URL を使うセッションでのプロンプトキャッシュを修正。",
+        "新しい出力スタイル「Concise」": "前置きやナレーションを省き結果を先頭に出す組み込みスタイルを追加（作業の丁寧さは維持）。`/config` の Output style から選択できる。"
+      },
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 2.1,
+          "probabilities": [
+            0,
+            0,
+            0.89,
+            0.11
+          ],
+          "confidence": 0.89
+        }
+      }
+    }
+  ]
+}

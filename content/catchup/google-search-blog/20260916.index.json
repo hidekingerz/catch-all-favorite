@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/google-search-blog/20260916.md",
+  "sourceHash": "sha256:b9afdf840a58b89be91d6e870d9adf6f49311a7165f1363abe54fc2b4614000c",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:14.413Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Search Central Live Deep Dive Europe 2026: Meet the community speakers",
+      "url": "https://developers.google.com/search/blog/2026/09/scl-dd-europe-2026-community-speakers?hl=ja",
+      "secondaryUrls": [],
+      "summary": "スペイン・バルセロナで 2026 年 9 月 30 日〜10 月 2 日に開催される Search Central Live Deep Dive Europe 2026 について、登壇するコミュニティスピーカーを紹介する記事。開催まで約 2 週間で、技術的な深掘り・ネットワーキング・コラボレーションの 3 日間が予定されている。Google 社員だけでなくコミュニティメンバーがスピーカーとして参加する点が特徴で、欧州の検索・SEO コミュニティ向けのイベント告知。",
+      "publishedAt": "2026-09-16",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 1,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_search",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 1,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.02
+        },
+        "relevance": {
+          "score": 0.28,
+          "probabilities": [
+            0.84,
+            0.05,
+            0.11,
+            0
+          ],
+          "confidence": 0.72
+        }
+      }
+    }
+  ]
+}

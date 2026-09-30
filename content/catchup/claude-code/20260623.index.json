@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260623.md",
+  "sourceHash": "sha256:a08f9b2142cb93020c48b20da4ea506004a6f02def17c451a58aa476590ccd8d",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:57.757Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "v2.1.187（2026-06-23）",
+      "url": null,
+      "secondaryUrls": [
+        "https://code.claude.com/docs/en/sandboxing.md",
+        "https://code.claude.com/docs/en/settings.md"
+      ],
+      "summary": "サンドボックス化したコマンドが認証情報ファイルを読み取れないようにブロックする `sandbox.credentials` 設定を追加。組織が設定したモデル制限に対応し「restricted by your organization's settings」メッセージを表示。フルスクリーンモードのセレクトメニューでマウスクリックによる選択をサポート。`--resume` が \"No conversation found\" で失敗する問題を修正。`--json-schema` の構造化出力が無限に再呼び出しされる問題を修正。リモート MCP のツール呼び出しが5分間ハングする問題を修正（エラーで中断するように変更）。一部ターミナルで韓国語/CJK テキストのペーストが文字化けする問題を修正。エージェントビューへ遷移後にチャンネル接続が切れる問題を修正。エージェントの worktree 登録リークが自動クリーンアップされるよう修正。`/btw` を ←/→ 矢印ナビゲーションで改善。[VSCode] 大きなセッション再開時に拡張機能が応答しなくなる問題を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.25
+        },
+        "relevance": {
+          "score": 2.59,
+          "probabilities": [
+            0,
+            0,
+            0.4,
+            0.6
+          ],
+          "confidence": 0.59
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "v2.1.186（2026-06-22）",
+      "url": null,
+      "secondaryUrls": [
+        "https://code.claude.com/docs/en/mcp.md",
+        "https://code.claude.com/docs/en/settings.md"
+      ],
+      "summary": "`--no-browser` をサポートする `claude mcp login <name>` / `claude mcp logout <name>` の CLI コマンドを追加。`/workflows` のエージェント詳細ビューにステータスフィルタ（`f` キー）を追加。`/plugin` の Installed タブに「Skills」セクションを追加。`teammateMode: \"iterm2\"` 設定を追加。`!` の bash コマンドが Claude の自動応答をトリガーするように変更。スリープ後に \"Content block not found\" でストリーミングが失敗する問題を修正。同時実行の CLI セッションで Chrome のタブグループ分離が適用されない問題を修正。名前付きサブエージェントの spawn で `Agent(type)` の deny ルールが適用されない問題を修正。バックグラウンドエージェント実行中に Esc/Ctrl+C が反応しない問題を修正。`~~strikethrough~~` がリテラルのチルダで描画される問題を修正。メモリ改善: `MEMORY.md` がサイズ上限に近づくとエージェントに圧縮を促すように。バックグラウンドのサブエージェントの権限プロンプトをメインセッションに表示するよう変更。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.24
+        },
+        "relevance": {
+          "score": 2.23,
+          "probabilities": [
+            0,
+            0,
+            0.76,
+            0.24
+          ],
+          "confidence": 0.76
+        }
+      }
+    }
+  ]
+}

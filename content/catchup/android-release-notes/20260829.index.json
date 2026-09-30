@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/android-release-notes/20260829.md",
+  "sourceHash": "sha256:0ae92d9cd531c90626f2af99d288981b74f034e3d5c26a910613b8316e945a0b",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:43.848Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Android 17 — Compatibility（互換性）",
+      "url": "https://source.android.com/docs/whatsnew/android-17-release#compatibility",
+      "secondaryUrls": [],
+      "summary": "**Test audio multi-channel input and output**: オーディオのマルチチャンネル入出力を検証する新しい CTS Verifier テストを追加。デバイスがマルチチャンネルオーディオを正しくサポートしているか確認できる。 / **Run CTS-V tests**: CTS-V テスト実行前に、デフォルトブラウザロールを付与するセットアップ手順が新たに必要になった。ブラウザ権限に起因するテスト失敗を防ぐ。 / **Run ranging accuracy, telecom, and host-side interactive tests**: 手動だった測距精度・テレコムテストをマルチデバイステスト化し、手動介入を伴う半自動のインタラクティブテストを導入。これらのシナリオでは Wi-Fi 接続が必須となった。 / **Run USB host-side interactive tests**: USB ホストサイドの CTS-V テストを新規追加。従来の USB 有線接続ではなく「adb over Wi-Fi」での実行を要求する。 / **Run media tests**: 互換性検証向けに CTS-V のメディア再生テストを新規追加。各種フォーマット・シナリオでメディア処理基準を満たすか確認する。 / **Run audio workload test**: 持続的なオーディオ処理負荷下での性能を評価する CTS-V オーディオワークロードテストを追加。 / **Audio test updates**: USB-C to 3.5mm オーディオアダプタの推奨に Google / Xumee モデルを追加し、CTS Verifier Pro Audio テストから HDMI 要件を削除するなど、オーディオテスト要件を更新。 / **Camera ITS updates**: Camera Image Test Suite（ITS）を更新し、新しいリリースノート・テスト仕様を提供。カメラテスト手順を改善する。 / **Compatibility Definition Document (CDD)**: Android 17 版の互換性定義ドキュメント（CDD）を Android 17 のアップデートとともに公開。メーカーが満たすべき互換性要件の基準を定める。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.94,
+            "security": 0,
+            "policy": 0.06,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.92
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.65
+        },
+        "relevance": {
+          "score": 1.02,
+          "probabilities": [
+            0.04,
+            0.92,
+            0.03,
+            0.01
+          ],
+          "confidence": 0.91
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "Android 17 — Setup（セットアップ）",
+      "url": "https://source.android.com/docs/whatsnew/android-17-release#setup",
+      "secondaryUrls": [],
+      "summary": "**Troubleshoot build errors**: Android 17 以降では **AOSP ソースツリーが読み取り専用（read-only）** になり、ソースファイルを書き換えるビルドは read-only ファイルシステムのエラーで失敗するようになった。開発者はソースツリーを読み書き可能（read-write）モードに設定してからビルドする必要がある。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0.42,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0.58,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.51
+        },
+        "ecosystem": {
+          "choice": "android",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 1,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.91
+        },
+        "relevance": {
+          "score": 0.98,
+          "probabilities": [
+            0.04,
+            0.95,
+            0,
+            0.01
+          ],
+          "confidence": 0.94
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,933 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/jser-info/20260717.md",
+  "sourceHash": "sha256:2901ef62fdb607531abec6db0e144391d2d579a79efafb7b38a7ca6df4dc0a04",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:22.066Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "pnpm 11.10",
+      "url": "https://github.com/pnpm/pnpm/releases/tag/v11.10.0",
+      "secondaryUrls": [],
+      "summary": "新コマンド `pnpm issues` と `pnpm prefix` を追加。`pnpm_config__auth` 環境変数に対応し、`pnpm self-update` が pnpm v12 と互換に。`pnpm up -r` や `pnpm pack-app` のバグ修正を含む。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "pnpm",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 2.26,
+          "probabilities": [
+            0.01,
+            0,
+            0.72,
+            0.27
+          ],
+          "confidence": 0.71
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "Chrome 150",
+      "url": "https://developer.chrome.com/release-notes/150",
+      "secondaryUrls": [],
+      "summary": "CSS では `AccentColor`/`AccentColorText`、`polygon()` の丸め、`text-fit`、`url()` 修飾子（`cross-origin()`/`integrity()`/`referrer-policy()`）を追加。DOM の `focusgroup` 属性、`popover=hint` の挙動変更、scroll メソッドの Promise 返却、WebGPU の `setImmediateData()` などが導入された。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "Chrome",
+        "browser",
+        "css",
+        "DOM",
+        "WebGPU",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.9,
+            "node_runtime": 0,
+            "browser": 0.1,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.89
+        },
+        "breaking": {
+          "noul": 0.17
+        },
+        "relevance": {
+          "score": 2.19,
+          "probabilities": [
+            0,
+            0,
+            0.8,
+            0.2
+          ],
+          "confidence": 0.8
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Electron 43",
+      "url": "https://www.electronjs.org/blog/electron-43-0",
+      "secondaryUrls": [],
+      "summary": "Chromium 150、Node.js v24.17.0、V8 15.0 に更新。ファイルダウンロードダイアログが既定でダウンロードフォルダを開くように。`WebContents.clone()`、macOS の `Notification.remove()`/`removeAll()`、`globalShortcut.setSuspended()` を追加し、起動スナップショットや V8 バイトコードキャッシュで性能改善。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "Electron",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.58,
+            "node_runtime": 0.17,
+            "browser": 0.09,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.16
+          },
+          "confidence": 0.53
+        },
+        "breaking": {
+          "noul": 0.5
+        },
+        "relevance": {
+          "score": 1.58,
+          "probabilities": [
+            0.27,
+            0.05,
+            0.51,
+            0.17
+          ],
+          "confidence": 0.24
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "TypeScript 7.0",
+      "url": "https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/",
+      "secondaryUrls": [],
+      "summary": "Go に移植したネイティブ `tsc` を npm パッケージで提供。非推奨設定がエラー化。`--checkers`/`--builders`/`--singleThreaded` で並列処理を制御でき、`--watch` は Parcel のファイルウォッチャーで再構築。LSP に対応するが、プログラマティックAPIは未公開のため Vue 等のツールは非互換の可能性がある。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "TypeScript",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.88
+        },
+        "relevance": {
+          "score": 2.93,
+          "probabilities": [
+            0,
+            0,
+            0.07,
+            0.93
+          ],
+          "confidence": 0.93
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Better Auth Joins Vercel",
+      "url": "https://better-auth.com/blog/better-auth-joins-vercel",
+      "secondaryUrls": [],
+      "summary": "Vercel が TypeScript 製認証ライブラリ Better Auth を買収。MIT ライセンスは維持。Agent Auth Protocol の開発を計画し、Vercel Connect や Eve と統合してエージェントIDの管理を行う予定。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "TypeScript",
+        "vercel",
+        "news",
+        "nodejs"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "business",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.84,
+            "node_runtime": 0.14,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.02,
+            "other": 0
+          },
+          "confidence": 0.81
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.07,
+          "probabilities": [
+            0,
+            0,
+            0.92,
+            0.08
+          ],
+          "confidence": 0.91
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "npm v12 のインストール時セキュリティと GAT bypass2fa 廃止",
+      "url": "https://github.blog/changelog/2026-07-08-npm-install-time-security-and-gat-bypass2fa-deprecation/",
+      "secondaryUrls": [],
+      "summary": "`allowScripts` を既定で無効化し、`--allow-git`/`--allow-remote` の既定を `none` に。GAT の 2FA バイパス廃止（2026年8月にアカウント/パッケージ操作、2027年1月に直接publish をブロック）を予告し、Trusted Publishing または Staged Publishing への移行を推奨。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "npm",
+        "security",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.45,
+            "security": 0.41,
+            "policy": 0.14,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.36
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.94
+        },
+        "relevance": {
+          "score": 2.93,
+          "probabilities": [
+            0,
+            0,
+            0.06,
+            0.94
+          ],
+          "confidence": 0.93
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "Node.js 26.5.0",
+      "url": "https://nodejs.org/en/blog/release/v26.5.0",
+      "secondaryUrls": [],
+      "summary": "`Blob.prototype.textStream()` を追加。`--experimental-import-text` フラグ、`ReadableStreamTee`、`perf_hooks.monitorEventLoopDelay` の `samplePerIteration` オプションを導入。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "nodejs",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.03,
+          "probabilities": [
+            0,
+            0,
+            0.97,
+            0.03
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "Cloudflare Workers に Cache レイヤーを追加",
+      "url": "https://blog.cloudflare.com/workers-cache/",
+      "secondaryUrls": [],
+      "summary": "Workers の前段にキャッシュレイヤーを追加。`wrangler.jsonc` の `cache.enabled` で有効化し、`Cache-Control`/`Vary` に対応。`ctx.cache.purge()` でタグやパス単位のパージが可能。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "cloudflare",
+        "JavaScript",
+        "article"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.01,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.97,
+            "guide": 0.02,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.96
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0.28,
+            "node_runtime": 0.66,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.05
+          },
+          "confidence": 0.61
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 0.5,
+          "probabilities": [
+            0.74,
+            0.04,
+            0.21,
+            0.01
+          ],
+          "confidence": 0.5
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "Next.js のセキュリティリリースプログラム",
+      "url": "https://nextjs.org/blog/next-security-release-program",
+      "secondaryUrls": [],
+      "summary": "毎月の事前告知付きセキュリティリリースを実施。緊急脆弱性は別途即時対応。2026年7月20日を初回目標とし、Next.js 16.2 と 15.5 向けのパッチを予定。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "Next.js",
+        "security",
+        "article"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 0.92,
+            "policy": 0.08,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.9
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.11
+        },
+        "relevance": {
+          "score": 2.84,
+          "probabilities": [
+            0,
+            0,
+            0.16,
+            0.84
+          ],
+          "confidence": 0.84
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "Blume",
+      "url": "https://useblume.dev/",
+      "secondaryUrls": [],
+      "summary": "Markdown/MDX からドキュメントサイトを生成するツール。`blume init`/`dev`/`build` の CLI を提供し、Astro と Vite 上に構築。検索、OpenAPI/AsyncAPI リファレンス生成、`llms.txt`、MCP サーバー、Ask AI 機能を含む。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "Tools",
+        "Markdown",
+        "document",
+        "AI"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.16,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.81,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.03
+          },
+          "confidence": 0.79
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.95,
+            "node_runtime": 0.03,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.02,
+            "other": 0
+          },
+          "confidence": 0.94
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 1.42,
+          "probabilities": [
+            0.29,
+            0.01,
+            0.69,
+            0.01
+          ],
+          "confidence": 0.41
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "ttsc (TypeScript-Go Toolchain)",
+      "url": "https://github.com/samchon/ttsc",
+      "secondaryUrls": [],
+      "summary": "`typescript-go` を利用した TypeScript ツールチェーン。ビルド、型チェック付き実行、lint、format を提供し、Vite/Rollup/esbuild/webpack/Rspack/Next.js 向けプラグインを備える。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "TypeScript",
+        "Tools",
+        "nodejs",
+        "lint"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.2,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.79,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.76
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.14,
+          "probabilities": [
+            0.01,
+            0,
+            0.84,
+            0.15
+          ],
+          "confidence": 0.84
+        }
+      }
+    },
+    {
+      "id": 11,
+      "title": "ant (JavaScript Runtime)",
+      "url": "https://github.com/theMackabu/ant",
+      "secondaryUrls": [],
+      "summary": "C で実装された小さな JavaScript ランタイム。WinterTC の Minimum Common API 互換を目指す。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "JavaScript",
+        "C",
+        "TypeScript",
+        "Tools"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.3,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.63,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.07
+          },
+          "confidence": 0.58
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0.22,
+            "node_runtime": 0.76,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.02
+          },
+          "confidence": 0.73
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 1.73,
+          "probabilities": [
+            0.13,
+            0.01,
+            0.86,
+            0
+          ],
+          "confidence": 0.72
+        }
+      }
+    },
+    {
+      "id": 12,
+      "title": "Wordgard",
+      "url": "https://wordgard.net/",
+      "secondaryUrls": [],
+      "summary": "ProseMirror/CodeMirror の作者によるリッチテキストエディタライブラリ。スキーマベースの文書構造と、CodeMirror 的な拡張機構を持つ。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "JavaScript",
+        "TypeScript",
+        "editor",
+        "library"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.14,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.81,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.04
+          },
+          "confidence": 0.78
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.86,
+          "probabilities": [
+            0.07,
+            0,
+            0.92,
+            0.01
+          ],
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "id": 13,
+      "title": "virtua",
+      "url": "https://github.com/inokawa/virtua/",
+      "secondaryUrls": [],
+      "summary": "約3kB の仮想スクロールコンポーネント。可変サイズ、水平スクロール、ウィンドウスクロール、グリッド表示に対応し、React/Vue/Solid/Svelte で利用できる。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "React",
+        "Vue",
+        "Solid",
+        "Svelte",
+        "library"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.23,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.75,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.02
+          },
+          "confidence": 0.71
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.97,
+          "probabilities": [
+            0.02,
+            0,
+            0.97,
+            0.01
+          ],
+          "confidence": 0.94
+        }
+      }
+    },
+    {
+      "id": 14,
+      "title": "httpxy",
+      "url": "https://github.com/unjs/httpxy",
+      "secondaryUrls": [],
+      "summary": "Node.js 向けの HTTP/WebSocket プロキシ。`proxyFetch`、`proxyUpgrade`、`createProxyServer` を提供し、Unix Socket、`changeOrigin`、`xfwd`、ヘッダー書き換えに対応。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "nodejs",
+        "HTTP",
+        "WebSocket",
+        "library"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.15,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.84,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.81
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.99,
+          "probabilities": [
+            0.02,
+            0,
+            0.96,
+            0.02
+          ],
+          "confidence": 0.94
+        }
+      }
+    }
+  ]
+}

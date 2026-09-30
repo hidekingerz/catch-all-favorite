@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260706.md",
+  "sourceHash": "sha256:0800fbbcfe9461db659fc5f0037f2dca91a634ef7aea09529b9fd545f6e097e7",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:59.320Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "v2.1.202（2026-07-06）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "設定 / `/config`: `/config` に「Dynamic workflow size」設定を追加。動的ワークフローで Claude が生成するエージェント数の規模（small / medium / large）を制御する。強制上限ではなく助言的なガイドライン。 / テレメトリ / OpenTelemetry: ワークフロー由来エージェントが発行するテレメトリに `workflow.run_id` と `workflow.name` の OpenTelemetry 属性を追加。ワークフロー実行のアクティビティを OTel データから再構成可能に。 / レビュー: `/review <pr>` を高速な単一パスレビューに戻した。エフォートレベルを選べるマルチエージェントレビューは `/code-review <level> <pr#>` を使う。 / スキル: すでに読み込み済みのスキルを再度呼び出すと、その指示のコピーがコンテキストに二重追加される不具合を修正。 / ワークフロー: 文字列内に unicode のクォートエスケープを含むワークフロースクリプトが、パース前に破損する不具合を修正。ワークフローのパースエラーは常に TypeScript のせいにするのではなく、該当行を表示するようになった。 / `/workflows` のエージェント一覧レイアウトを改善（タイトル幅の拡大、専用の時刻カラム、モデル名の短縮、行ごとのツール呼び出し数の非表示）。 / Remote Control（モバイル / Web）: Remote Control からインタラクティブセッションへ送ったコマンドが \"Unknown command\" で失敗する不具合を修正。 / Remote Control のモバイル / Web アプリからキャプションなしで送った画像やファイルが黙って破棄される不具合を修正。 / `/remote-control` セッションがモバイル / Web アプリで誤ったパーミッションモードを表示する不具合を修正。 / 背景セッション / エージェント: 背景セッションで `/rename` した名前がジョブ再起動時に元に戻り、新しい名前でセッションを指定できなくなる不具合を修正。 / `claude agents` からチャットを開くと \"currently running as a background agent\" で失敗し、ワーカーのクラッシュ / 再生成ループに陥ることがある不具合を修正。 / 多数の git worktree を持つリポジトリで、名前によるセッション再開や再開ピッカーの表示に数分かかり大量のメモリを消費する不具合を修正。 / 認証 / ネットワーク: 設定の再適用中（in-place のクライアント証明書ローテーション時）に発生する一時的な mTLS ハンドシェイク失敗を修正。 / `claude auth login` と `claude mcp login --no-browser` が表示するサインイン URL が、SSH で折り返したときに確実にクリックできない不具合を修正（単一のハイパーリンクとして出力）。 / プロキシやネットワークが途中で接続を切ったときにインストーラ / アップデータのダウンロードが即座に \"aborted\" で失敗する不具合を修正（一時的な切断はリトライ）。 / MCP: MCP のエラーメッセージを改善。サーバ設定に `url` があって `type` が無い場合、誤解を招く \"command: expected string\" ではなく `\"type\": \"http\"` を提案する明確なエラーを表示。 / その他の修正: スキャン中のインライン Ctrl+R 履歴検索を確定 / キャンセルするとクラッシュする不具合を修正。 / マイクや録音デバイスが失敗したときに音声入力が無制限にリトライを繰り返すループを修正（繰り返しキャプチャに失敗すると音声入力を一時停止）。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {
+        "設定 / `/config`": "`/config` に「Dynamic workflow size」設定を追加。動的ワークフローで Claude が生成するエージェント数の規模（small / medium / large）を制御する。強制上限ではなく助言的なガイドライン。",
+        "テレメトリ / OpenTelemetry": "ワークフロー由来エージェントが発行するテレメトリに `workflow.run_id` と `workflow.name` の OpenTelemetry 属性を追加。ワークフロー実行のアクティビティを OTel データから再構成可能に。",
+        "レビュー": "`/review <pr>` を高速な単一パスレビューに戻した。エフォートレベルを選べるマルチエージェントレビューは `/code-review <level> <pr#>` を使う。",
+        "スキル": "すでに読み込み済みのスキルを再度呼び出すと、その指示のコピーがコンテキストに二重追加される不具合を修正。",
+        "ワークフロー": "文字列内に unicode のクォートエスケープを含むワークフロースクリプトが、パース前に破損する不具合を修正。ワークフローのパースエラーは常に TypeScript のせいにするのではなく、該当行を表示するようになった。 / `/workflows` のエージェント一覧レイアウトを改善（タイトル幅の拡大、専用の時刻カラム、モデル名の短縮、行ごとのツール呼び出し数の非表示）。",
+        "Remote Control（モバイル / Web）": "Remote Control からインタラクティブセッションへ送ったコマンドが \"Unknown command\" で失敗する不具合を修正。 / Remote Control のモバイル / Web アプリからキャプションなしで送った画像やファイルが黙って破棄される不具合を修正。 / `/remote-control` セッションがモバイル / Web アプリで誤ったパーミッションモードを表示する不具合を修正。",
+        "背景セッション / エージェント": "背景セッションで `/rename` した名前がジョブ再起動時に元に戻り、新しい名前でセッションを指定できなくなる不具合を修正。 / `claude agents` からチャットを開くと \"currently running as a background agent\" で失敗し、ワーカーのクラッシュ / 再生成ループに陥ることがある不具合を修正。 / 多数の git worktree を持つリポジトリで、名前によるセッション再開や再開ピッカーの表示に数分かかり大量のメモリを消費する不具合を修正。",
+        "認証 / ネットワーク": "設定の再適用中（in-place のクライアント証明書ローテーション時）に発生する一時的な mTLS ハンドシェイク失敗を修正。 / `claude auth login` と `claude mcp login --no-browser` が表示するサインイン URL が、SSH で折り返したときに確実にクリックできない不具合を修正（単一のハイパーリンクとして出力）。 / プロキシやネットワークが途中で接続を切ったときにインストーラ / アップデータのダウンロードが即座に \"aborted\" で失敗する不具合を修正（一時的な切断はリトライ）。",
+        "MCP": "MCP のエラーメッセージを改善。サーバ設定に `url` があって `type` が無い場合、誤解を招く \"command: expected string\" ではなく `\"type\": \"http\"` を提案する明確なエラーを表示。",
+        "その他の修正": "スキャン中のインライン Ctrl+R 履歴検索を確定 / キャンセルするとクラッシュする不具合を修正。 / マイクや録音デバイスが失敗したときに音声入力が無制限にリトライを繰り返すループを修正（繰り返しキャプチャに失敗すると音声入力を一時停止）。"
+      },
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.28
+        },
+        "relevance": {
+          "score": 2.38,
+          "probabilities": [
+            0,
+            0,
+            0.62,
+            0.38
+          ],
+          "confidence": 0.61
+        }
+      }
+    }
+  ]
+}

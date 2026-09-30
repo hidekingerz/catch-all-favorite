@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/chrome-blog/20260614.md",
+  "sourceHash": "sha256:fea120f4357e367089a22f3f78bb96d65c0c7deb403eb2141593faf36fc77582",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:52.740Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Join the WebMCP origin trial",
+      "url": "https://developer.chrome.com/blog/ai-webmcp-origin-trial?hl=ja",
+      "secondaryUrls": [],
+      "summary": "WebMCPは、AIエージェントがウェブアプリケーション上でタスクを効率的かつ正確に完了するための構造化ツールを開発者が構築できる技術。Chrome 149でオリジントライアルへの登録が開始され、試験運用版のプラットフォーム機能へ早期アクセスできる。複雑なフォーム入力やアプリのデバッグなどで、人間向けインターフェースをエージェントが理解できるようになり、ウェブサイトのエージェント対応化が進む",
+      "publishedAt": "2026-06-09",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.32,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.67,
+            "guide": 0,
+            "event": 0.01,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.62
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0.25,
+            "node_runtime": 0,
+            "browser": 0.02,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.73,
+            "other": 0
+          },
+          "confidence": 0.69
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.99,
+          "probabilities": [
+            0,
+            0.01,
+            0.98,
+            0.01
+          ],
+          "confidence": 0.97
+        }
+      }
+    }
+  ]
+}

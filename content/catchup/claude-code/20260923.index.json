@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260923.md",
+  "sourceHash": "sha256:96c64a7fc0000b0de8b02d50b0a2a4f7c50719331fc97d7dbbf440b82a7192ce",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:09.422Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "v2.1.281（2026-09-23）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "**設定 / 属性表示**: / **`settings.json` に `\"attribution\": false` を追加**。コミットと PR の属性（attribution）表示をすべて非表示にできる。古い CLI はこれを保持する設定ファイルを読み飛ばすため、バージョン横断で共有するファイルではオブジェクト形式を維持すること。 / **MCP**: / **URL モードの elicitation に対応**（2026-07-28 プロトコル接続）。サーバーが Claude Code にブラウザベースのフローを開くよう要求できる。サーバー側に完了を確認する手段がない場合、待機ダイアログを画面に残さない。 / **`claude plugin validate` に MCP サーバー検査を追加**。ロード時に黙って破棄される `.mcp.json` エントリ、未宣言の `${user_config.*}` 参照、安全でない URL を報告する。 / **auto モード / insights**: / **`/insights` に auto モードの推奨を追加**。直近のセッションで auto モードが処理できたはずの権限プロンプト数を見積もって表示する。 / **Claude apps gateway（エンタープライズ / ゲートウェイ）**: / `desktop` ポリシーブロックで、新しい Claude Desktop キー（`blockReadsOutsideWorkingDirectories`・`disableBypassPermissionsMode`）に対応する Claude apps gateway サポートを追加。 / **Bedrock upstream に `assume_role` を追加**。ゲートウェイが STS 経由で引き受けた IAM ロールとして Bedrock を呼び出す（必要なら別 AWS アカウント、任意で開発者ごとに 1 セッション）。 / **Bedrock upstream に `guardrail: {id, version}` を追加**。そのゲートウェイ経由の全リクエストに Amazon Bedrock ガードレールを適用する（Bedrock upstream 全体に設定するか、一切設定しないかのどちらか）。 / `telemetry.resource_attributes` を Claude apps gateway 設定に追加。Claude Desktop と `/login` セッションのテレメトリに固定ラベルを付与できる。 / **UI/UX（ターミナル）**: / フルスクリーンモードの `/skills`・`/mcp`・`/plugin` の Installed 一覧に、`/workflows` と同様のスクロールバーを追加（マウスオーバー中に表示され、クリック/ドラッグ可能）。 / **その他**: / 上記に加え、クラッシュ修正、セッション管理、ツール呼び出し処理、MCP/プラグインの改善、UI 改善、プラットフォーム別修正（Windows・macOS）、VSCode・Claude Code on the web・Claude Tag・Code Review 向けの修正など、130 件超のバグ修正・改善を含む。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.281（2026-09-23）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.24
+        },
+        "relevance": {
+          "score": 2.36,
+          "probabilities": [
+            0,
+            0,
+            0.64,
+            0.36
+          ],
+          "confidence": 0.63
+        }
+      }
+    }
+  ]
+}

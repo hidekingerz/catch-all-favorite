@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/apple-news/20260918.md",
+  "sourceHash": "sha256:4f0583d961a423fe7f158f4d5c727269ea918446357882994d571d927940154b",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:49.588Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "iPhone Duo 向けの新しいリソースでビルドする",
+      "url": "https://developer.apple.com/jp/news/?id=nyuppv9r",
+      "secondaryUrls": [],
+      "summary": "2026年10月23日発売予定の iPhone Duo 向けアプリ開発を支援するリソースが公開。今月後半にベータ提供予定の Xcode 27.1 は更新版SDKと iPhone Duo の新しいポーズ・向きに対応したシミュレータを備える。Apple Design Resources から Figma / Sketch のデザインキットを入手でき、全画面サイズへの最適化やカスタマイズ体験の構築を学ぶワークショップが世界各地で開催される。",
+      "publishedAt": "2026-09-18",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.62,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.24,
+            "guide": 0.04,
+            "event": 0.04,
+            "business": 0,
+            "other": 0.06
+          },
+          "confidence": 0.56
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 0.84,
+          "probabilities": [
+            0.17,
+            0.82,
+            0.01,
+            0
+          ],
+          "confidence": 0.82
+        }
+      }
+    }
+  ]
+}

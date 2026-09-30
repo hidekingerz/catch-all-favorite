@@ -1,0 +1,1664 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/twir/20260624.md",
+  "sourceHash": "sha256:e7baebb545046ff4046c1e4a766fe462e67db6c764fa266df00dc528dacb3481",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:32.914Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "React Docs - `<Fragment ref>`",
+      "url": "https://react.dev/reference/react/Fragment",
+      "secondaryUrls": [],
+      "summary": "Fragment の first-level children を操作するための `FragmentInstance` 型を公開する新機能。canary で利用可能で本番テスト済み、React v19.3 に入る見込み。React Native でも同様の機能が提供され、クロスプラットフォームで利用可能になる。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.36,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.64,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.58
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2.03,
+          "probabilities": [
+            0,
+            0,
+            0.96,
+            0.04
+          ],
+          "confidence": 0.96
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "SVAR React Gantt Chart",
+      "url": "https://svar.dev/react/gantt/",
+      "secondaryUrls": [],
+      "summary": "依存関係・クリティカルパス・リソース計画に対応した、プロジェクトスケジューリング向けの React ガントチャートコンポーネント。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.15,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.84,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.82
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 1.99,
+          "probabilities": [
+            0.01,
+            0,
+            0.99,
+            0
+          ],
+          "confidence": 0.98
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Bun PR - React Compiler integration",
+      "url": "https://github.com/oven-sh/bun/pull/32504",
+      "secondaryUrls": [],
+      "summary": "Bun 1.4 で `bun build --react-compiler` フラグが追加され、Rust 版 React Compiler を実行できるようになる。Babel 版と比べて最大20倍高速。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.96,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.04,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.95
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.54,
+            "node_runtime": 0.46,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.48
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.04,
+          "probabilities": [
+            0.03,
+            0,
+            0.87,
+            0.1
+          ],
+          "confidence": 0.83
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "React Compiler in Rust removed from Rolldown/Vite",
+      "url": "https://x.com/sebastienlorber/status/2069670573555249498",
+      "secondaryUrls": [],
+      "summary": "バイナリサイズ増加を理由に、Rust 版 React Compiler が Rolldown/Vite 統合から一時的に撤回された。最適なパフォーマンスにはネイティブな Oxc 統合が必要とされている。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.72,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.14,
+            "guide": 0,
+            "event": 0,
+            "business": 0.03,
+            "other": 0.11
+          },
+          "confidence": 0.68
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.47
+        },
+        "relevance": {
+          "score": 2.59,
+          "probabilities": [
+            0,
+            0,
+            0.39,
+            0.61
+          ],
+          "confidence": 0.59
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Moving Linear from styled-components to StyleX",
+      "url": "https://www.skovhus.dev/blog/moving-linear-from-styled-components-to-stylex",
+      "secondaryUrls": [],
+      "summary": "Linear チームが styled-components から StyleX へ移行した事例。静的抽出・最小ランタイム・強いカプセル化・決定的なスタイル解決・開発者/エージェント体験の改善を狙い、インクリメンタルな戦略で進めた。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.12
+        },
+        "relevance": {
+          "score": 2.14,
+          "probabilities": [
+            0.01,
+            0,
+            0.83,
+            0.16
+          ],
+          "confidence": 0.82
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "How an Underrated Refactor Saved 90% Memory Usage",
+      "url": "https://tanstack.com/blog/tanstack-table-v9-memory-performance",
+      "secondaryUrls": [],
+      "summary": "TanStack Table v9 が大規模テーブルのメモリ使用量を大幅削減。行オブジェクトのメソッドを共有プロトタイプへ移すことで実現した。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0.15,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.02,
+            "guide": 0.83,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.8
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2.08,
+          "probabilities": [
+            0.01,
+            0,
+            0.89,
+            0.1
+          ],
+          "confidence": 0.88
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "Waku's Unique Feature: Slices",
+      "url": "https://newsletter.daishikato.com/p/waku-s-unique-feature-slices",
+      "secondaryUrls": [],
+      "summary": "Gatsby に着想を得た Waku 独自の機能 Slices の紹介。理解しやすい一方で非常に強力とされる。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 1,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.34,
+          "probabilities": [
+            0.33,
+            0.01,
+            0.65,
+            0.01
+          ],
+          "confidence": 0.33
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "How We Cut Slow Responses by 80% Migrating to Next.js App Router",
+      "url": "https://dev.to/subito/how-we-cut-slow-responses-by-80-migrating-to-nextjs-app-router-37da",
+      "secondaryUrls": [],
+      "summary": "イタリア有数のクラシファイド広告マーケットプレイスが、Pages Router から App Router へインクリメンタルな side-by-side 戦略でアップグレードした事例。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.15
+        },
+        "relevance": {
+          "score": 2.36,
+          "probabilities": [
+            0,
+            0,
+            0.63,
+            0.37
+          ],
+          "confidence": 0.63
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "Component Communication Patterns in React Applications",
+      "url": "https://neciudan.dev/component-communication-patterns-in-react",
+      "secondaryUrls": [],
+      "summary": "React アプリケーションにおけるコンポーネント間通信パターンの解説記事。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.03
+        },
+        "relevance": {
+          "score": 2,
+          "probabilities": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "confidence": 0.99
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "React Router 8.0",
+      "url": "https://remix.run/blog/react-router-v8",
+      "secondaryUrls": [],
+      "summary": "v8 の future flags をデフォルト有効化した「退屈な」リリース。ESM-only 化し、React/Vite/Node の最低バージョンを引き上げた。React Server Components は引き続き開発中で unstable。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.9
+        },
+        "relevance": {
+          "score": 2.87,
+          "probabilities": [
+            0,
+            0,
+            0.13,
+            0.87
+          ],
+          "confidence": 0.87
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "cnfast",
+      "url": "https://github.com/aidenybai/cnfast",
+      "secondaryUrls": [],
+      "summary": "`clsx` + `tailwind-merge` の高速なドロップイン代替。4倍高速だが、Tailwind ユーザーにとっては依然ボトルネックになりうる。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.28,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.7,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.02
+          },
+          "confidence": 0.66
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2.02,
+          "probabilities": [
+            0.02,
+            0,
+            0.93,
+            0.05
+          ],
+          "confidence": 0.91
+        }
+      }
+    },
+    {
+      "id": 11,
+      "title": "StyleX 0.19",
+      "url": "https://stylexjs.com/blog/v0.19.0",
+      "secondaryUrls": [],
+      "summary": "インラインのアトミックスタイル対応、ESLint 10 互換、shorthand の autofix 拡張。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.13
+        },
+        "relevance": {
+          "score": 2.17,
+          "probabilities": [
+            0.05,
+            0,
+            0.69,
+            0.26
+          ],
+          "confidence": 0.64
+        }
+      }
+    },
+    {
+      "id": 12,
+      "title": "Base UI 1.6",
+      "url": "https://base-ui.com/react/overview/releases/v1-6-0",
+      "secondaryUrls": [],
+      "summary": "OTPField が安定版に、Drawer の改善、Combobox のパフォーマンス向上、ドキュメント刷新、多数の修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.11
+        },
+        "relevance": {
+          "score": 2.19,
+          "probabilities": [
+            0,
+            0,
+            0.8,
+            0.2
+          ],
+          "confidence": 0.79
+        }
+      }
+    },
+    {
+      "id": 13,
+      "title": "Remotion 4.0.464",
+      "url": "https://www.remotion.dev/docs/effects",
+      "secondaryUrls": [],
+      "summary": "canvas ベースのコンポーネント向けに合成可能なエフェクトを追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1.96,
+          "probabilities": [
+            0.05,
+            0,
+            0.89,
+            0.06
+          ],
+          "confidence": 0.84
+        }
+      }
+    },
+    {
+      "id": 14,
+      "title": "React Aria 1.19",
+      "url": "https://react-aria.adobe.com/releases/v1-19-0",
+      "secondaryUrls": [],
+      "summary": "Autocomplete の @mentions 対応、Popover のカーソル相対位置指定対応。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.05,
+          "probabilities": [
+            0,
+            0,
+            0.95,
+            0.05
+          ],
+          "confidence": 0.94
+        }
+      }
+    },
+    {
+      "id": 15,
+      "title": "React Hook Form 7.80",
+      "url": "https://github.com/react-hook-form/react-hook-form/releases/tag/v7.80.0",
+      "secondaryUrls": [],
+      "summary": "`useFieldArray({disabled})` のサポート、パフォーマンス改善。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.07,
+          "probabilities": [
+            0,
+            0,
+            0.93,
+            0.07
+          ],
+          "confidence": 0.92
+        }
+      }
+    },
+    {
+      "id": 16,
+      "title": "ForesightJS 4.0",
+      "url": "https://foresightjs.com/",
+      "secondaryUrls": [],
+      "summary": "マウス/キーボード入力からユーザーの意図を予測するライブラリ。React との first-class な統合を備える。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.14
+        },
+        "relevance": {
+          "score": 2,
+          "probabilities": [
+            0.01,
+            0,
+            0.98,
+            0.01
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 17,
+      "title": "PolyCSS",
+      "url": "https://polycss.com/",
+      "secondaryUrls": [],
+      "summary": "DOM 向けの CSS 3D エンジン。React バインディングを備える。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.17,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.8,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.02
+          },
+          "confidence": 0.78
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 1.95,
+          "probabilities": [
+            0.03,
+            0,
+            0.97,
+            0
+          ],
+          "confidence": 0.94
+        }
+      }
+    },
+    {
+      "id": 18,
+      "title": "Lucas Barake - React Hooks Are Just a Linked List",
+      "url": "https://www.youtube.com/watch?v=FneS7tCWBMU",
+      "secondaryUrls": [],
+      "summary": "React Hooks の内部実装を連結リストの観点から探る動画。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0.73,
+            "event": 0.26,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.69
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.03
+        },
+        "relevance": {
+          "score": 1.99,
+          "probabilities": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "confidence": 0.99
+        }
+      }
+    },
+    {
+      "id": 19,
+      "title": "Simeon Griggs - Next.js 16.3 got good",
+      "url": "https://www.youtube.com/watch?v=cSDKkD_6kCo",
+      "secondaryUrls": [],
+      "summary": "Next.js 16.3 の改善点を解説する動画。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.98,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0.01,
+            "event": 0.01,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.97
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2.05,
+          "probabilities": [
+            0,
+            0,
+            0.95,
+            0.05
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 20,
+      "title": "Señors at Scale - Newsletters with Sebastian Lorber",
+      "url": "https://www.youtube.com/watch?v=YVs2KWvMjLM",
+      "secondaryUrls": [],
+      "summary": "ニュースレターの舞台裏を語る対談。RSS キュレーション、買収、RSC などをカバー。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0.02,
+            "event": 0.59,
+            "business": 0.03,
+            "other": 0.36
+          },
+          "confidence": 0.53
+        },
+        "ecosystem": {
+          "choice": "other",
+          "probabilities": {
+            "web_frontend": 0.01,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.99
+          },
+          "confidence": 0.97
+        },
+        "breaking": {
+          "noul": 0.03
+        },
+        "relevance": {
+          "score": 0.21,
+          "probabilities": [
+            0.89,
+            0.02,
+            0.09,
+            0
+          ],
+          "confidence": 0.79
+        }
+      }
+    },
+    {
+      "id": 21,
+      "title": "CSS Linked Params",
+      "url": "https://drafts.csswg.org/css-link-params-1/",
+      "secondaryUrls": [],
+      "summary": "Google/Mozilla による初期段階の W3C 仕様。CSS の値を外部のリンク先リソースに渡せるようにし、`<img src=\"icon.svg\">` のような要素を CSS でカスタマイズ可能にする。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 1,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1.86,
+          "probabilities": [
+            0.03,
+            0.08,
+            0.89,
+            0
+          ],
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "id": 22,
+      "title": "Ship the policy, not the code",
+      "url": "https://www.jayfreestone.com/writing/share-the-policy-not-the-code/",
+      "secondaryUrls": [],
+      "summary": "CASL のような isomorphic なルールエンジンを使い、バックエンドのルールをシリアライズしてフロントエンドへ渡すことで、フロント/バックエンド間のビジネスロジック重複を避ける手法を提案。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.01,
+            "guide": 0.99,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.98,
+            "node_runtime": 0.01,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.01
+          },
+          "confidence": 0.98
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 1.83,
+          "probabilities": [
+            0.1,
+            0.01,
+            0.85,
+            0.04
+          ],
+          "confidence": 0.75
+        }
+      }
+    },
+    {
+      "id": 23,
+      "title": "Vite 8.1",
+      "url": "https://vite.dev/blog/announcing-vite8-1",
+      "secondaryUrls": [],
+      "summary": "実験的な Bundled Dev Mode、Chunk Import Map、WASM の ESM 統合を追加。大規模アプリで開発時の起動/HMR を高速化する「Full Bundle Mode」を可能にする。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 1.72,
+          "probabilities": [
+            0.18,
+            0.02,
+            0.71,
+            0.09
+          ],
+          "confidence": 0.53
+        }
+      }
+    },
+    {
+      "id": 24,
+      "title": "Astro 7.0",
+      "url": "https://astro.build/blog/astro-7/",
+      "secondaryUrls": [],
+      "summary": "Vite 8・Rolldown・Rust で `.astro`/`.md`/`.mdx` を処理。Advanced Routing と Route Caching を備え、ビルドが約61%高速化。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.17
+        },
+        "relevance": {
+          "score": 0.38,
+          "probabilities": [
+            0.79,
+            0.03,
+            0.17,
+            0.01
+          ],
+          "confidence": 0.62
+        }
+      }
+    },
+    {
+      "id": 25,
+      "title": "TypeScript 7.0 RC",
+      "url": "https://devblogs.microsoft.com/typescript/announcing-typescript-7-0-rc/",
+      "secondaryUrls": [],
+      "summary": "高速な Go 移植版が本番目前。TS7 は TS6 と並行実行できるため、アップグレードは比較的容易とされる。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.99,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.01
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.16
+        },
+        "relevance": {
+          "score": 2.46,
+          "probabilities": [
+            0.01,
+            0,
+            0.51,
+            0.48
+          ],
+          "confidence": 0.49
+        }
+      }
+    },
+    {
+      "id": 26,
+      "title": "Nub",
+      "url": "https://nubjs.com/blog/introducing-nub",
+      "secondaryUrls": [],
+      "summary": "Node を置き換えるのではなく拡張する Rust 製オールインワン CLI ツールキット。Bun の優れた機能を Node に追加する。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.3,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.68,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.02
+          },
+          "confidence": 0.63
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.98,
+          "probabilities": [
+            0.02,
+            0,
+            0.94,
+            0.04
+          ],
+          "confidence": 0.91
+        }
+      }
+    },
+    {
+      "id": 27,
+      "title": "Sharp 0.35",
+      "url": "https://sharp.pixelplumbing.com/changelog/v0.35.0/",
+      "secondaryUrls": [],
+      "summary": "人気の画像処理ライブラリがビルド済みバイナリを同梱するようになった。パッケージマネージャがデフォルトで install スクリプトをブロックする流れに対応。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.87,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.13,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.85
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0.01,
+            "node_runtime": 0.99,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "breaking": {
+          "noul": 0.2
+        },
+        "relevance": {
+          "score": 1.82,
+          "probabilities": [
+            0.26,
+            0.01,
+            0.38,
+            0.35
+          ],
+          "confidence": 0.12
+        }
+      }
+    },
+    {
+      "id": 28,
+      "title": "actions/checkout 7.0",
+      "url": "https://github.blog/changelog/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout/",
+      "secondaryUrls": [],
+      "summary": "`pull_request_target` を狙った一般的な攻撃を防ぐセキュリティ強化。`allow-unsafe-pr-checkout: true` でのオプトインなしには PR コードのチェックアウトを拒否する。近年の npm 侵害インシデントを受けた対応。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0.09,
+            "security": 0.91,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.9
+        },
+        "ecosystem": {
+          "choice": "other",
+          "probabilities": {
+            "web_frontend": 0.07,
+            "node_runtime": 0.35,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.58
+          },
+          "confidence": 0.52
+        },
+        "breaking": {
+          "noul": 0.84
+        },
+        "relevance": {
+          "score": 2.1,
+          "probabilities": [
+            0.22,
+            0.02,
+            0.2,
+            0.56
+          ],
+          "confidence": 0.1
+        }
+      }
+    }
+  ]
+}

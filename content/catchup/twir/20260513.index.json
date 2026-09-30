@@ -1,0 +1,1436 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/twir/20260513.md",
+  "sourceHash": "sha256:111985147052d5e352066ed8f43669faf4a53b18336278a84178e47d991f816b",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:28.082Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Next.js May 2026 Security Release",
+      "url": "https://vercel.com/changelog/next-js-may-2026-security-release",
+      "secondaryUrls": [],
+      "summary": "DoS、ミドルウェア/プロキシバイパス、SSRF、キャッシュポイズニング、XSSを含む13件の脆弱性に対応した協調セキュリティリリース。v15.5.18またはv16.2.6へのアップデートが推奨される。React RSCパッケージ(v19.2.6)にもServer Functions DoS修正が含まれる。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.97,
+            "node_runtime": 0.03,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.96
+        },
+        "breaking": {
+          "noul": 0.11
+        },
+        "relevance": {
+          "score": 3,
+          "probabilities": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "confidence": 1
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "TanStack npm Supply-Chain Compromise",
+      "url": "https://tanstack.com/blog/npm-supply-chain-compromise-postmortem",
+      "secondaryUrls": [],
+      "summary": "攻撃者が5月11日に42の`@tanstack/*` npmパッケージに悪意あるバージョンを公開。Mini Shai-Huludワームが他のメンテナーに感染し、Mistral AI、OpenSearch、UiPath等のパッケージにも拡散。GitHub Actionの`pull_request_target`トリガーを悪用し、共有pnpmキャッシュに毒入りコンテンツを注入する攻撃手法。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0.25,
+            "node_runtime": 0.75,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.71
+        },
+        "breaking": {
+          "noul": 0.24
+        },
+        "relevance": {
+          "score": 2.76,
+          "probabilities": [
+            0.04,
+            0,
+            0.13,
+            0.83
+          ],
+          "confidence": 0.76
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Hardening TanStack After the npm Compromise",
+      "url": "https://tanstack.com/blog/incident-followup",
+      "secondaryUrls": [],
+      "summary": "サプライチェーンリスクを低減するためのメンテナー向けガイドライン。危険な`pull_request_target`トリガーの回避や、機密ワークフローからの共有キャッシュ除去などの対策を提示。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0.31,
+            "policy": 0.01,
+            "feature": 0,
+            "guide": 0.68,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.64
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.62,
+            "node_runtime": 0.38,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.56
+        },
+        "breaking": {
+          "noul": 0.21
+        },
+        "relevance": {
+          "score": 2.27,
+          "probabilities": [
+            0.06,
+            0.02,
+            0.52,
+            0.4
+          ],
+          "confidence": 0.46
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "npm Package Manager Security Best Practices",
+      "url": "https://github.com/lirantal/npm-security-best-practices",
+      "secondaryUrls": [],
+      "summary": "npmパッケージ利用者向けの実践的なセキュリティ推奨事項を提供する標準的なリソース。各パッケージマネージャー横断での対策をカバー。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0.01,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0.99,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 2.49,
+          "probabilities": [
+            0.01,
+            0,
+            0.48,
+            0.51
+          ],
+          "confidence": 0.49
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Projecting React",
+      "url": "https://tannerlinsley.com/posts/projecting-react",
+      "secondaryUrls": [],
+      "summary": "Tanner LinsleyがTanStack Start向けに最適化されたReactの「projection」を`@tanstack/redact`で実現し、大幅なサイズ削減を達成。ReactのAPIをデータベーステーブルに、実装をマテリアライズドビューに例えて解説。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.02,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.97,
+            "guide": 0.01,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.97
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2,
+          "probabilities": [
+            0.01,
+            0,
+            0.97,
+            0.02
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "RSC Server Functions Are Not An API Boundary",
+      "url": "https://longho.dev/posts/rsc-server-functions-are-not-an-api-boundary/",
+      "secondaryUrls": [],
+      "summary": "Server Functionsは安定的なAPI代替にはならない。リファクタリング時にServer Function IDが変更され、再デプロイ時にバージョンスキュー問題が発生する。クラウドプロバイダーがスキュー保護機能を提供している。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.01,
+            "guide": 0.99,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.98,
+            "node_runtime": 0.02,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.97
+        },
+        "breaking": {
+          "noul": 0.33
+        },
+        "relevance": {
+          "score": 2.64,
+          "probabilities": [
+            0,
+            0,
+            0.35,
+            0.65
+          ],
+          "confidence": 0.64
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "Untangling Dialogs in React Router",
+      "url": "https://programmingarehard.com/2026/05/06/react-router-dialogs.html/",
+      "secondaryUrls": [],
+      "summary": "親の`<Outlet>`と専用ダイアログルートを使ったコード簡素化のガイダンス。データ再検証、フラッシュセッショントースト、退出アニメーションをカバー。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 1.98,
+          "probabilities": [
+            0.03,
+            0,
+            0.94,
+            0.03
+          ],
+          "confidence": 0.92
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "Animating Container Bounds",
+      "url": "https://www.userinterface.wiki/animating-container-bounds",
+      "secondaryUrls": [],
+      "summary": "Motionを使って内部コンテンツの変更に基づいて要素のwidth/heightをスムーズにアニメーションさせる手法のデモ。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.02,
+            "guide": 0.98,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.95,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0.05,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.94
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 1.95,
+          "probabilities": [
+            0.02,
+            0.01,
+            0.97,
+            0
+          ],
+          "confidence": 0.94
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "Security in React Applications",
+      "url": "https://certificates.dev/blog/security-in-react-applications",
+      "secondaryUrls": [],
+      "summary": "ReactアプリケーションにおけるXSS攻撃防止、安全なトークン保存、入力バリデーション、CSRF保護、Content Security Policyについて解説。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0.04,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0.96,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.95
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 2.38,
+          "probabilities": [
+            0,
+            0,
+            0.62,
+            0.38
+          ],
+          "confidence": 0.62
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "From React to Native Web with Nanotags: A 100 KB Savings",
+      "url": "https://evilmartians.com/chronicles/from-react-to-native-web-with-nanotags-a-migration-that-saved-100kb",
+      "secondaryUrls": [],
+      "summary": "主に静的なAstroテンプレートサイトでは、Custom Elementsハイドレーションの方がReactハイドレーションより効率的になりうることを示した事例。100KBの削減を実現。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.01,
+            "guide": 0.99,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.97,
+          "probabilities": [
+            0.02,
+            0,
+            0.97,
+            0.01
+          ],
+          "confidence": 0.94
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "Exploring the HTML-in-Canvas Proposal",
+      "url": "https://tympanus.net/codrops/2026/05/13/exploring-the-html-in-canvas-proposal/",
+      "secondaryUrls": [],
+      "summary": "HTML-in-Canvasが3Dワールド内の2D UI統合をどのように簡素化できるかを議論。特にReact Three Fiber開発者にとって有用。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.94,
+            "guide": 0.06,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.92
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.88,
+          "probabilities": [
+            0.06,
+            0,
+            0.93,
+            0.01
+          ],
+          "confidence": 0.86
+        }
+      }
+    },
+    {
+      "id": 11,
+      "title": "SVAR React Gantt",
+      "url": "https://github.com/svar-widgets/react-gantt",
+      "secondaryUrls": [],
+      "summary": "インタラクティブなプロジェクトタイムラインを構築するためのオープンソースReact Ganttライブラリ。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.34,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.62,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.04
+          },
+          "confidence": 0.56
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 1.98,
+          "probabilities": [
+            0.01,
+            0,
+            0.98,
+            0.01
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 12,
+      "title": "Waku 1.0 Beta",
+      "url": "https://waku.gg/blog/waku-v1-beta",
+      "secondaryUrls": [],
+      "summary": "ミニマルなRSCフレームワークの初ベータ版。Vite 8、Rolldown、Node 26、Reactパフォーマンストラック、柔軟なルーティング、CSPをサポートし、プロダクション対応へ移行。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.12
+        },
+        "relevance": {
+          "score": 2.03,
+          "probabilities": [
+            0.01,
+            0,
+            0.95,
+            0.04
+          ],
+          "confidence": 0.94
+        }
+      }
+    },
+    {
+      "id": 13,
+      "title": "Jotai 2.20",
+      "url": "https://newsletter.daishikato.com/p/jotai-v2-20-0-and-the-store-building-blocks",
+      "secondaryUrls": [],
+      "summary": "高スループットシナリオのパフォーマンス改善とストアビルディングブロックのリファクタリング。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.17
+        },
+        "relevance": {
+          "score": 2.13,
+          "probabilities": [
+            0.01,
+            0,
+            0.84,
+            0.15
+          ],
+          "confidence": 0.83
+        }
+      }
+    },
+    {
+      "id": 14,
+      "title": "HTML React Parser 6.1",
+      "url": "https://github.com/remarkablemark/html-react-parser/releases/tag/v6.1.0",
+      "secondaryUrls": [],
+      "summary": "`trustedTypePolicy`によるCSPサポートを追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.99,
+            "security": 0.01,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2.43,
+          "probabilities": [
+            0.01,
+            0,
+            0.54,
+            0.45
+          ],
+          "confidence": 0.54
+        }
+      }
+    },
+    {
+      "id": 15,
+      "title": "TC39 - 114th Meeting Agenda (May 19-21)",
+      "url": "https://github.com/tc39/agendas/blob/main/2026/05.md",
+      "secondaryUrls": [],
+      "summary": "Iterators、Explicit Resource Managementなどの提案が進展する可能性のある充実したアジェンダ。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 1,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.86,
+          "probabilities": [
+            0.09,
+            0.02,
+            0.83,
+            0.06
+          ],
+          "confidence": 0.74
+        }
+      }
+    },
+    {
+      "id": 16,
+      "title": "Rolldown 1.0",
+      "url": "https://voidzero.dev/posts/announcing-rolldown-1-0",
+      "secondaryUrls": [],
+      "summary": "高性能なRustベースのバンドラーがセマンティックバージョニングの安定版に到達。Vite 8のデフォルトバンドラーとして10〜30倍高速なRollup代替を実現。devモードでのバンドリングも計画中。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.19
+        },
+        "relevance": {
+          "score": 2.22,
+          "probabilities": [
+            0.04,
+            0,
+            0.65,
+            0.31
+          ],
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": 17,
+      "title": "Node.js 26.1",
+      "url": "https://nodejs.org/en/blog/release/v26.1.0",
+      "secondaryUrls": [],
+      "summary": "Foreign Function Interface用の実験的`node:ffi`モジュールを導入。動的ライブラリの読み込みとネイティブ言語統合を可能に。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 2,
+          "probabilities": [
+            0.01,
+            0,
+            0.98,
+            0.01
+          ],
+          "confidence": 0.98
+        }
+      }
+    },
+    {
+      "id": 18,
+      "title": "Jest 30.4",
+      "url": "https://github.com/jestjs/jest/issues/9430#issuecomment-4400281169",
+      "secondaryUrls": [],
+      "summary": "`require(esm)`互換性を備えたESMサポートの完全な書き直し。`--experimental-vm-modules`フラグが必要で、Node.jsチームが安定化に取り組み中。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.58,
+            "node_runtime": 0.42,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.52
+        },
+        "breaking": {
+          "noul": 0.56
+        },
+        "relevance": {
+          "score": 2.39,
+          "probabilities": [
+            0.04,
+            0,
+            0.49,
+            0.47
+          ],
+          "confidence": 0.45
+        }
+      }
+    },
+    {
+      "id": 19,
+      "title": "Bun 1.3.14",
+      "url": "https://bun.com/blog/bun-v1.3.14",
+      "secondaryUrls": [],
+      "summary": "組み込み画像処理、グローバルインストール仮想ストア、HTTP改善。RustポートとZig-to-Rust移行の可能性についても言及。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.12
+        },
+        "relevance": {
+          "score": 1.42,
+          "probabilities": [
+            0.32,
+            0.02,
+            0.59,
+            0.07
+          ],
+          "confidence": 0.28
+        }
+      }
+    },
+    {
+      "id": 20,
+      "title": "npm 11.4",
+      "url": "https://github.com/npm/cli/releases/tag/v11.14.0",
+      "secondaryUrls": [],
+      "summary": "`allow-directory`、`allow-file`、`allow-remote`などの新しいオプトインセキュリティ機能を追加（pnpmの`blockExoticSubdeps`に類似）。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.98,
+            "security": 0.02,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.97
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.18
+        },
+        "relevance": {
+          "score": 2.56,
+          "probabilities": [
+            0,
+            0,
+            0.43,
+            0.57
+          ],
+          "confidence": 0.56
+        }
+      }
+    },
+    {
+      "id": 21,
+      "title": "Playwright 1.60",
+      "url": "https://github.com/microsoft/playwright/releases/tag/v1.60.0",
+      "secondaryUrls": [],
+      "summary": "ドラッグアンドドロップシミュレーション用のDrop API、Ariaスナップショット、HAR録画機能を追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.09,
+          "probabilities": [
+            0.44,
+            0.05,
+            0.48,
+            0.03
+          ],
+          "confidence": 0.03
+        }
+      }
+    },
+    {
+      "id": 22,
+      "title": "pnpm 11.1",
+      "url": "https://pnpm.io/blog/releases/11.1",
+      "secondaryUrls": [],
+      "summary": "名前付きレジストリと新しいユーティリティコマンドを追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.15,
+          "probabilities": [
+            0.02,
+            0,
+            0.78,
+            0.2
+          ],
+          "confidence": 0.75
+        }
+      }
+    },
+    {
+      "id": 23,
+      "title": "Tailwind CSS 4.3",
+      "url": "https://tailwindcss.com/blog/tailwindcss-v4-3",
+      "secondaryUrls": [],
+      "summary": "スクロールバーのスタイリング、新しいカラー、その他の機能を導入。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 1.66,
+          "probabilities": [
+            0.21,
+            0.01,
+            0.71,
+            0.07
+          ],
+          "confidence": 0.51
+        }
+      }
+    },
+    {
+      "id": 24,
+      "title": "Astro 6.3",
+      "url": "https://astro.build/blog/astro-630/",
+      "secondaryUrls": [],
+      "summary": "実験的な高度なルーティングとファーストクラスのHonoサポートを追加。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.96,
+            "node_runtime": 0.04,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.95
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 0.51,
+          "probabilities": [
+            0.73,
+            0.03,
+            0.22,
+            0.02
+          ],
+          "confidence": 0.49
+        }
+      }
+    }
+  ]
+}

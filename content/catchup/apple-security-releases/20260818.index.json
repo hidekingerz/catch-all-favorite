@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/apple-security-releases/20260818.md",
+  "sourceHash": "sha256:f068f591d64ad5ee092582bb1412b95f2c1251e8c28be3b7acb55b685d39cd41",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:51.184Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Safari 26.6.1",
+      "url": "https://support.apple.com/ja-jp/148286",
+      "secondaryUrls": [],
+      "summary": "約 21 件の CVE を修正。修正対象は全件が WebKit（WebKit / WebKit History / WebKit Storage）で、Web コンテンツの処理に起因する脆弱性への対処が中心。実環境での悪用は明記されていない。",
+      "publishedAt": "2026-08-18",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "macOS Sonoma / macOS Sequoia",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "browser",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 1,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1.08,
+          "probabilities": [
+            0,
+            0.93,
+            0.05,
+            0.02
+          ],
+          "confidence": 0.91
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "iOS 26.6.1 および iPadOS 26.6.1",
+      "url": "https://support.apple.com/ja-jp/148282",
+      "secondaryUrls": [],
+      "summary": "約 29 件の CVE を修正。対象コンポーネントは Kernel（複数）・WebKit（多数）・Audio・ImageIO・IOGPUFamily・Telephony・Compression・libcryptex など広範。現行 iOS/iPadOS 26 系の通常のメンテナンスセキュリティ更新。実環境での悪用は明記されていない。",
+      "publishedAt": "2026-08-17",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "iPhone 11 以降、iPad Pro 12.9 インチ（第 3 世代）以降、iPad Pro 11 インチ（第 1 世代）以降、iPad Air（第 3 世代）以降、iPad（第 8 世代）以降、iPad mini（第 5 世代）以降",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.01,
+          "probabilities": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "confidence": 0.99
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "iOS 18.7.10 および iPadOS 18.7.10",
+      "url": "https://support.apple.com/ja-jp/148287",
+      "secondaryUrls": [],
+      "summary": "旧デバイス向けの大型ロールアップで、約 122 件と非常に多くの CVE をまとめて修正。Accessibility・AirDrop・APFS・App Store・Audio・CoreAudio・CoreMedia・curl・Foundation・Game Center・Kernel・WebKit ほか多数のコンポーネントが対象。26 系を受け取れない旧ハードウェアに対し、蓄積されたセキュリティ修正が提供されている。実環境での悪用は明記されていない。",
+      "publishedAt": "2026-08-17",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "iPhone XS、iPhone XS Max、iPhone XR、iPad（第 7 世代）",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.01,
+          "probabilities": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "confidence": 0.99
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "macOS Tahoe 26.6.2",
+      "url": "https://support.apple.com/ja-jp/148281",
+      "secondaryUrls": [],
+      "summary": "約 28 件の CVE を修正。対象コンポーネントは Kernel（複数）・WebKit（多数）・Audio・ImageIO・IOGPUFamily・Compression・libcryptex など、iOS 26.6.1 とほぼ共通の広範な範囲。現行 macOS Tahoe の通常のメンテナンスセキュリティ更新。実環境での悪用は明記されていない。",
+      "publishedAt": "2026-08-17",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "macOS Tahoe",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0,
+            "security": 1,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 1.08,
+          "probabilities": [
+            0,
+            0.93,
+            0.05,
+            0.02
+          ],
+          "confidence": 0.92
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "visionOS 26.6.1",
+      "url": "https://support.apple.com/ja-jp/100100",
+      "secondaryUrls": [],
+      "summary": "同日リリースされたが、取得時点ではセキュリティコンテンツの詳細ページが未公開（Details coming soon）で、修正 CVE の内訳は掲載されていない。詳細は後日 Apple のセキュリティリリースページで公開される見込み。",
+      "publishedAt": "2026-08-17",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": "Apple Vision Pro",
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "security",
+          "probabilities": {
+            "release": 0.13,
+            "security": 0.87,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.85
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0.66,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.34
+          },
+          "confidence": 0.61
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 0.32,
+          "probabilities": [
+            0.7,
+            0.29,
+            0.01,
+            0
+          ],
+          "confidence": 0.68
+        }
+      }
+    }
+  ]
+}

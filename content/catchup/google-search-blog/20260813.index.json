@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/google-search-blog/20260813.md",
+  "sourceHash": "sha256:798b7adca9d149b3fa19a0624ac64ae2ed2226b4c5e8625d3c130fe93960c2ad",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:13.680Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "A new resource for optimizing for generative AI in Google Search",
+      "url": "https://developers.google.com/search/blog/2026/05/a-new-resource-for-optimizing?hl=ja",
+      "secondaryUrls": [],
+      "summary": "Google 検索の生成 AI 機能に向けてコンテンツを最適化するための新しいガイダンス（リソース）が公開された。サイト運営者・開発者が、AI による検索結果でのコンテンツ表示を改善するための実践的な考え方を学べる。従来の SEO に加え、生成 AI 時代に対応した最適化の指針を示すもの。",
+      "publishedAt": "2026-05-15",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.02,
+            "guide": 0.98,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.97
+        },
+        "ecosystem": {
+          "choice": "web_search",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 1,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 0.74,
+          "probabilities": [
+            0.62,
+            0.03,
+            0.35,
+            0
+          ],
+          "confidence": 0.26
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "Introducing a new spam policy for \"back button hijacking\"",
+      "url": "https://developers.google.com/search/blog/2026/04/back-button-hijacking?hl=ja",
+      "secondaryUrls": [],
+      "summary": "ユーザーがブラウザの「戻る」ボタンを押した際に、意図しないページへリダイレクトさせる「戻るボタンのハイジャック」を明示的なスパム違反（悪意ある手法）として扱う新しいスパムポリシーが導入された。該当する手法を使うサイトは、ランキング低下やインデックス削除などのスパム対策の対象になり得る。ユーザー体験を損なわないサイト運営が求められる、ガイドライン（スパムポリシー）の変更。",
+      "publishedAt": "2026-04-13",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "policy",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 1,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_search",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 1,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.67
+        },
+        "relevance": {
+          "score": 1.74,
+          "probabilities": [
+            0.2,
+            0.08,
+            0.51,
+            0.21
+          ],
+          "confidence": 0.31
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Search Central Live is Coming to Shanghai in 2026!",
+      "url": "https://developers.google.com/search/blog/2026/04/scl-shanghai-2026?hl=ja",
+      "secondaryUrls": [],
+      "summary": "Google が 2026 年 5 月 15 日に中国・上海で Search Central Live イベントを開催することを告知する記事。中国国外のユーザーをターゲットにするサイトの最適化にフォーカスした内容で、ウェブマスターや SEO 担当者が Google 検索の最新情報を学ぶ機会を提供する。SEO 仕様やランキングの変更ではなく、イベント告知。",
+      "publishedAt": "2026-04-02",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 1,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_search",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 1,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.02
+        },
+        "relevance": {
+          "score": 0.18,
+          "probabilities": [
+            0.89,
+            0.04,
+            0.07,
+            0
+          ],
+          "confidence": 0.82
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "New Location for the Google Crawlers' IP Range Files",
+      "url": "https://developers.google.com/search/blog/2026/03/crawler-ip-ranges?hl=ja",
+      "secondaryUrls": [],
+      "summary": "Googlebot などの Google クローラーを識別するための IP 範囲ファイルの配置場所が変更されたことを案内する記事。クローラーの検証やアクセス制御に IP 範囲ファイルを利用しているサイト運営者は、ファイアウォール設定などを新しい場所のファイルに基づいて確認・更新することが推奨される。運用面での対応が必要な変更。",
+      "publishedAt": "2026-03-31",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "other",
+          "probabilities": {
+            "release": 0.12,
+            "security": 0.03,
+            "policy": 0.13,
+            "feature": 0.16,
+            "guide": 0.26,
+            "event": 0,
+            "business": 0,
+            "other": 0.3
+          },
+          "confidence": 0.2
+        },
+        "ecosystem": {
+          "choice": "web_search",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 1,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.81
+        },
+        "relevance": {
+          "score": 1.27,
+          "probabilities": [
+            0.51,
+            0.04,
+            0.13,
+            0.32
+          ],
+          "confidence": 0
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Inside Googlebot: demystifying crawling, fetching, and the bytes we process",
+      "url": "https://developers.google.com/search/blog/2026/03/crawler-blog-post?hl=ja",
+      "secondaryUrls": [],
+      "summary": "Googlebot のクロール・フェッチ・処理するバイトの仕組みを解説する技術記事で、Search Off the Record ポッドキャスト（エピソード 105）と連動した内容。Googlebot が実際にどのようにサイトをクロール・取得しているかを理解するのに役立つ解説であり、仕様変更やランキングの変更ではなく技術解説の位置づけ（記事本文が取得できなかったため、フィードの概要に基づく要約）。",
+      "publishedAt": "2026-03-31",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_search",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 1,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 0.73,
+          "probabilities": [
+            0.59,
+            0.1,
+            0.31,
+            0
+          ],
+          "confidence": 0.27
+        }
+      }
+    }
+  ]
+}

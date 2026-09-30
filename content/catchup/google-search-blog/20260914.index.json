@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/google-search-blog/20260914.md",
+  "sourceHash": "sha256:4f25a8084874af0b4db61b687954a6c79682398eb8bd6166fa1ce350d2f247be",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:14.215Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Search Central Live India 2026: Bengaluru, We're Coming (For Real This Time)",
+      "url": "https://developers.google.com/search/blog/2026/09/search-central-live-india-2026?hl=ja",
+      "secondaryUrls": [],
+      "summary": "Search Central Live が 2023 年以来となるインド開催（バンガロール）で 2026 年 10 月 30 日に実施されることを告知。ライブ配信・録画なしの現地限定イベントで、双方向のネットワーキングと率直な議論を重視する。Google 社員によるクローリング・インデックス・構造化データ・検索品質などの技術トーク（マーケティング色なし）と直接質問できる Q&A で構成され、参加費は無料。座席は会場の都合で限定され、先着順ではなく申し込み・選考制。登録は 10 月 15 日まで（登録時のプロモコード `SCL2026BLR` の案内あり）、当選可否は 10 月 3 日以降〜10 月 24 日までに通知される。",
+      "publishedAt": "2026-09-14",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 1,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_search",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 1,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.03
+        },
+        "relevance": {
+          "score": 0.49,
+          "probabilities": [
+            0.71,
+            0.09,
+            0.2,
+            0
+          ],
+          "confidence": 0.51
+        }
+      }
+    }
+  ]
+}

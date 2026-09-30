@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/chrome-blog/20260722b.md",
+  "sourceHash": "sha256:fa6da5fd75f2eb7abe1dc5a296e129e117f8649e8aea5bafdbf2d704a5f39c96",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:53.320Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Chrome Web Store policy updates: Enhancing user privacy and platform integrity",
+      "url": "https://developer.chrome.com/blog/cws-policy-updates-2026?hl=ja",
+      "secondaryUrls": [],
+      "summary": "Chrome ウェブストアのデベロッパープログラムポリシーが更新され、ユーザーのプライバシーとプラットフォームの健全性を強化する4つの変更が発表された。予測市場（prediction market）系拡張機能の禁止、データ収集を開示した目的に限定する制限の厳格化、収集するすべてのデータについてのより明確な開示の義務化、AI の安全ガードレールを回避する拡張機能の禁止が含まれる。ウェブストアに拡張機能を公開しているすべての開発者が対象で、施行は 2026-08-01 から。",
+      "publishedAt": "2026-07-01",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "policy",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 1,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "browser",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 1,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.93
+        },
+        "relevance": {
+          "score": 2.42,
+          "probabilities": [
+            0.02,
+            0.03,
+            0.47,
+            0.48
+          ],
+          "confidence": 0.42
+        }
+      }
+    }
+  ]
+}

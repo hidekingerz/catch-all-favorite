@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260710.md",
+  "sourceHash": "sha256:1da554945e6156199a3da97623b7631936860ca961fae708e6e073ca68468b2d",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:59.904Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "v2.1.206（2026-07-10）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "新機能 / 改善: `/cd` に、`/add-dir` と同じ挙動のディレクトリパス候補補完を追加。 / `/doctor` に、リポジトリにチェックインされた `CLAUDE.md` ファイルの整理（トリミング）を提案するチェックを追加。 / `/commit-push-pr` が、設定済みの push リモートへの `git push` を自動許可するようにした。 / ゲートウェイ: `/login` が Anthropic 運用のパブリックゲートウェイエンドポイントに対応。 / `EnterWorktree` が、プロジェクト外の git worktree に入る前に確認するようにした。 / Claude Code の更新後、背景エージェントが背景でアップグレードするようにした。 / `/code-review` の指摘品質を claude-opus-4-8 上で改善。 / エージェントビューのステータス列がターミナル幅を最大限使うように改善。 / エージェントビューの Ctrl+X を、完了済みセッションを恒久的に削除する動作に変更。 / 修正: ログイン期限切れ時のエラーメッセージ表示と、起動時のキーボード入力の問題を修正。 / MCP サーバの `request_timeout_ms` が無視される問題を修正。 / OAuth MCP サーバがトークンリフレッシュ後に再認証を要求する問題を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {
+        "新機能 / 改善": "`/cd` に、`/add-dir` と同じ挙動のディレクトリパス候補補完を追加。 / `/doctor` に、リポジトリにチェックインされた `CLAUDE.md` ファイルの整理（トリミング）を提案するチェックを追加。 / `/commit-push-pr` が、設定済みの push リモートへの `git push` を自動許可するようにした。 / ゲートウェイ: `/login` が Anthropic 運用のパブリックゲートウェイエンドポイントに対応。 / `EnterWorktree` が、プロジェクト外の git worktree に入る前に確認するようにした。 / Claude Code の更新後、背景エージェントが背景でアップグレードするようにした。 / `/code-review` の指摘品質を claude-opus-4-8 上で改善。 / エージェントビューのステータス列がターミナル幅を最大限使うように改善。 / エージェントビューの Ctrl+X を、完了済みセッションを恒久的に削除する動作に変更。",
+        "修正": "ログイン期限切れ時のエラーメッセージ表示と、起動時のキーボード入力の問題を修正。 / MCP サーバの `request_timeout_ms` が無視される問題を修正。 / OAuth MCP サーバがトークンリフレッシュ後に再認証を要求する問題を修正。"
+      },
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.17
+        },
+        "relevance": {
+          "score": 2.25,
+          "probabilities": [
+            0,
+            0,
+            0.75,
+            0.25
+          ],
+          "confidence": 0.74
+        }
+      }
+    }
+  ]
+}

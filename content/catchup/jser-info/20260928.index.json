@@ -1,0 +1,934 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/jser-info/20260928.md",
+  "sourceHash": "sha256:b643cf52c29221141237b6837356c74f22215a0e70b3c4e23ae642eca563533f",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:23.937Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "React 19.3 – React",
+      "url": "https://react.dev/blog/2026/09/09/react-19-3",
+      "secondaryUrls": [],
+      "summary": "React 19.3 リリース。`<ViewTransition>` と Fragment Refs が Stable 化し、`browser()` と Trusted Types のサポートを追加。Server Components で `<Context>` を直接レンダリング可能になり、`onFullscreenChange` / `maskType` のサポートも加わった。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "React",
+        "JavaScript",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.08
+        },
+        "relevance": {
+          "score": 2.21,
+          "probabilities": [
+            0,
+            0,
+            0.79,
+            0.21
+          ],
+          "confidence": 0.78
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "pnpm 12.4 | pnpm",
+      "url": "https://pnpm.io/blog/releases/12.4",
+      "secondaryUrls": [],
+      "summary": "pnpm 12.4 リリース。`python.enabled` / `cargo.enabled` による Python・Cargo 依存関係の管理を追加（pnpm 自体が Rust で実装されるため）。`pnpm pipeline`、`trustPolicyExcludePrune`、`pnpm change check` も追加された。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "pnpm",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.13,
+          "probabilities": [
+            0.02,
+            0,
+            0.81,
+            0.17
+          ],
+          "confidence": 0.8
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Zod 4.6",
+      "url": "https://zod.dev/blog/zod-4-6",
+      "secondaryUrls": [],
+      "summary": "Zod 4.6 リリース。`.validate()` / `.validateAsync()` と `z.instanceof().properties()` を追加。JSON Schema キーワード対応、`z.iban()`、`z.withParser()` も追加された。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "JavaScript",
+        "TypeScript",
+        "library",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.99,
+            "node_runtime": 0.01,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.98
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.13,
+          "probabilities": [
+            0.01,
+            0,
+            0.84,
+            0.15
+          ],
+          "confidence": 0.84
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "Webpack 5.111 | webpack",
+      "url": "https://webpack.js.org/blog/2026-09-14-webpack-5-111/",
+      "secondaryUrls": [],
+      "summary": "webpack 5.111 リリース。ESM 出力が Stable となり `output.module` が利用可能に。`output.copy`、CSS 最小化設定の `lowerUnsupported` / `colorFallbacks` を追加し、`acorn` / `neo-async` への依存を削除した。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "webpack",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.15
+        },
+        "relevance": {
+          "score": 2.32,
+          "probabilities": [
+            0.02,
+            0,
+            0.61,
+            0.37
+          ],
+          "confidence": 0.58
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Release v3.0.0 · pmndrs/jotai",
+      "url": "https://github.com/pmndrs/jotai/releases/tag/v3.0.0",
+      "secondaryUrls": [],
+      "summary": "Jotai v3.0.0 リリース。React 18 / TypeScript 5.5 / Node.js 22.12.0 以上が必須に。CJS/UMD/SystemJS ビルドを削除し、`useAtomValueRaw` と `useAtomValueRawSync` を追加した。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "React",
+        "JavaScript",
+        "library",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.95
+        },
+        "relevance": {
+          "score": 2.98,
+          "probabilities": [
+            0,
+            0,
+            0.02,
+            0.98
+          ],
+          "confidence": 0.98
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "What's New in Apollo Client 4.3 - Apollo GraphQL Blog",
+      "url": "https://www.apollographql.com/blog/whats-new-in-apollo-client-4-3",
+      "secondaryUrls": [],
+      "summary": "Apollo Client 4.3 リリース。`Scalar` による Custom Scalars のシリアライズ/デシリアライズ、`TypeOverrides` による Cache 型の上書きに対応。`@defer` / `@stream` の Incremental Data 型も改善された。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "JavaScript",
+        "GraphQL",
+        "TypeScript",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.11
+        },
+        "relevance": {
+          "score": 2.11,
+          "probabilities": [
+            0.03,
+            0,
+            0.79,
+            0.18
+          ],
+          "confidence": 0.75
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "pnpm 12.6 | pnpm",
+      "url": "https://pnpm.io/blog/releases/12.6",
+      "secondaryUrls": [],
+      "summary": "pnpm 12.6 リリース。`autoDedupe` による依存関係の重複排除、`pnpm add --save-types`、Catalogs での `file:` / `link:` をサポート。`pnpm tasks status`、`pnpm cache prune --dry-run` も追加された。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "pnpm",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.15,
+          "probabilities": [
+            0,
+            0,
+            0.84,
+            0.16
+          ],
+          "confidence": 0.82
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "WebKit Features for Safari 27.0 | WebKit",
+      "url": "https://webkit.org/blog/18325/webkit-features-for-safari-27-0/",
+      "secondaryUrls": [],
+      "summary": "Safari 27.0 の WebKit の変更点。Safari MCP、`<select>` のカスタマイズ、`<modal>` 要素、`<img sizes=\"auto\">` のサポートを追加。WebAssembly JSPI と Service Worker Static Routing API にも対応した。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "safari",
+        "browser",
+        "WebAssembly",
+        "JavaScript",
+        "css",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.78,
+            "node_runtime": 0,
+            "browser": 0.22,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.74
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1.45,
+          "probabilities": [
+            0.03,
+            0.52,
+            0.42,
+            0.03
+          ],
+          "confidence": 0.5
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "Announcing Vite+ 1.0 | VoidZero",
+      "url": "https://voidzero.dev/posts/announcing-vite-plus-1-0",
+      "secondaryUrls": [],
+      "summary": "Vite+ 1.0 リリース。GitLab CI/CD 向け `setup-vp`、Homebrew/Docker イメージ、`vp hooks` / `vp staged` を追加。Vitest 5.0.1 へ移行し、`vp migrate` による Vitest 5 移行サポートも備えた。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "vite",
+        "Tools",
+        "CLI",
+        "ReleaseNote"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.21
+        },
+        "relevance": {
+          "score": 1.46,
+          "probabilities": [
+            0.36,
+            0.01,
+            0.45,
+            0.18
+          ],
+          "confidence": 0.09
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "AI coding has made CI a bottleneck, so we reworked ours to keep up",
+      "url": "https://linear.app/now/ci-bottleneck-reworked",
+      "secondaryUrls": [],
+      "summary": "Linear での CI 改善について。`tsgo` への移行や ESLint ルールを型情報に非依存へ変更したこと、サードパーティランナーとの調整、pnpm の依存インストール範囲の限定、Vitest の shard 分割などを紹介している。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "CI",
+        "testing",
+        "article",
+        "TypeScript"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "guide",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 1,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 0.74,
+            "node_runtime": 0.26,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 0.7
+        },
+        "breaking": {
+          "noul": 0.42
+        },
+        "relevance": {
+          "score": 2.4,
+          "probabilities": [
+            0.01,
+            0,
+            0.57,
+            0.42
+          ],
+          "confidence": 0.56
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "fallow-rs/fallow: Codebase intelligence for TypeScript and JavaScript",
+      "url": "https://github.com/fallow-rs/fallow",
+      "secondaryUrls": [],
+      "summary": "TypeScript/JavaScript 向けの静的解析ツール。未使用コード、循環依存、重複コード、複雑度、アーキテクチャ境界違反を検出し、JSON 出力にも対応する。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "TypeScript",
+        "JavaScript",
+        "Tools",
+        "lint"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.17,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.77,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.06
+          },
+          "confidence": 0.73
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 2.01,
+          "probabilities": [
+            0.01,
+            0,
+            0.97,
+            0.02
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 11,
+      "title": "lovablelabs/oj: An experimental Rust-native build tool for React apps",
+      "url": "https://github.com/lovablelabs/oj",
+      "secondaryUrls": [],
+      "summary": "React アプリ向けの Rust 製ビルドツール。V8 を組み込んだ単一バイナリとして動作し、Vite/Rollup 互換プラグイン、SSR、TanStack Start に対応する。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "Rust",
+        "React",
+        "Tools",
+        "vite"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.24,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.75,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.01
+          },
+          "confidence": 0.71
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.06
+        },
+        "relevance": {
+          "score": 1.99,
+          "probabilities": [
+            0.01,
+            0,
+            0.97,
+            0.02
+          ],
+          "confidence": 0.95
+        }
+      }
+    },
+    {
+      "id": 12,
+      "title": "shadcn-ui/lint: An agent-first linter for Tailwind design systems",
+      "url": "https://github.com/shadcn-ui/lint",
+      "secondaryUrls": [],
+      "summary": "Tailwind デザインシステム向けの Lint ツール。ESLint/Oxlint 向けに提供され、`no-restyle` / `no-raw-colors` / `no-arbitrary-values` などのルールで className の利用を制限する。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "css",
+        "ESLint",
+        "Tools"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.15,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.85,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.83
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.13
+        },
+        "relevance": {
+          "score": 2.12,
+          "probabilities": [
+            0.02,
+            0,
+            0.82,
+            0.16
+          ],
+          "confidence": 0.8
+        }
+      }
+    },
+    {
+      "id": 13,
+      "title": "unjs/upm: A fast, tiny package manager for the npm registry",
+      "url": "https://github.com/unjs/upm",
+      "secondaryUrls": [],
+      "summary": "TypeScript で書かれた npm レジストリ向けのパッケージマネージャ。パッケージサイズが小さく、プログラムから実行できる API を持つ。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "TypeScript",
+        "npm",
+        "Tools"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.17,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.77,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.06
+          },
+          "confidence": 0.73
+        },
+        "ecosystem": {
+          "choice": "node_runtime",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 1,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.93,
+          "probabilities": [
+            0.05,
+            0,
+            0.93,
+            0.02
+          ],
+          "confidence": 0.89
+        }
+      }
+    },
+    {
+      "id": 14,
+      "title": "フロントエンドカンファレンス福岡 2026 公開資料・Xアカウントリンクまとめ",
+      "url": "https://zenn.dev/h_yoshikawa0724/articles/2026-09-13-frontend-conf-fukuoka-2026",
+      "secondaryUrls": [],
+      "summary": "フロントエンドカンファレンス福岡 2026 の公開スライド・X アカウントリンクのまとめ。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [
+        "JavaScript",
+        "web",
+        "Conference",
+        "slide"
+      ],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "event",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 1,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "web_frontend",
+          "probabilities": {
+            "web_frontend": 1,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.02
+        },
+        "relevance": {
+          "score": 1.76,
+          "probabilities": [
+            0.12,
+            0.01,
+            0.87,
+            0
+          ],
+          "confidence": 0.76
+        }
+      }
+    }
+  ]
+}

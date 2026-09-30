@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/apple-news/20260621.md",
+  "sourceHash": "sha256:90a1469ecb6999f91b412d29e52cfd1638d7183578cf9b9bd61bf4dc372991fc",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:46.115Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Updated Apple Developer Program License Agreement now available",
+      "url": "https://developer.apple.com/jp/news/?id=umq9wxmm",
+      "secondaryUrls": [],
+      "summary": "Apple Developer Program License Agreement の Attachment 12 が改訂され、ブラジルにおける iOS アプリの代替配信・代替決済・アプリ外オファー・Core Technology Commission（コアテクノロジー手数料）に関する条項が追加された。デベロッパはアカウントにサインインして更新後の規約に同意する必要がある。更新された規約の翻訳版は1か月以内に Apple Developer サイトで提供される予定。",
+      "publishedAt": "2026-06-18",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "policy",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 1,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.4
+        },
+        "relevance": {
+          "score": 1.02,
+          "probabilities": [
+            0.04,
+            0.92,
+            0.01,
+            0.03
+          ],
+          "confidence": 0.89
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "Changes to iOS in Brazil",
+      "url": "https://developer.apple.com/jp/news/?id=dhwadr2x",
+      "secondaryUrls": [],
+      "summary": "ブラジルの競争規制当局 CADE との合意に基づき、iOS 26.5 以降、ブラジルのデベロッパは代替アプリマーケットプレイスでのアプリ配信・運営、Apple In-App Purchase 以外でのデジタル商品・サービスの決済処理などが可能になる。Apple はマルウェア・詐欺・プライバシー/セキュリティリスク、特に子どもの安全に対する保護策として、iOS アプリの Notarization、マーケットプレイスの認可プロセス、不適切コンテンツからの保護要件を導入する。**2026年7月6日までに全 Apple Developer Program メンバーがこれらのオプションを可能にする新条項を含む最新の License Agreement への同意が必要。**",
+      "publishedAt": "2026-06-18",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "policy",
+          "probabilities": {
+            "release": 0,
+            "security": 0,
+            "policy": 1,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.72
+        },
+        "relevance": {
+          "score": 1.08,
+          "probabilities": [
+            0,
+            0.96,
+            0.01,
+            0.03
+          ],
+          "confidence": 0.91
+        }
+      }
+    }
+  ]
+}

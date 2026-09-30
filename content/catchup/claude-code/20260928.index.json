@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260928.md",
+  "sourceHash": "sha256:4b0d1a8bd05c70fc0221e0f8148359d5a6f483463fa83f93bb61440551dd1a18",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:10.229Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "v2.1.284（2026-09-28）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "モデル: Claude Sonnet 5.5（`claude-sonnet-5-5`）を追加。Anthropic API 上での Sonnet 系デフォルトモデルとなり、1M コンテキスト、料金は $2/$10 per Mtok（キャッシュ読み取り $0.20/Mtok）。 / 権限 / auto モード: 作業ディレクトリ外の読み取り前に表示される auto モードの確認プロンプトに「Yes, but ask again next time」の回答を追加。 / 利用状況表示: `/usage` とステータスラインの Claude apps gateway 利用上限に金額（ドル）を表示。 / キーバインド: effort スライダー制御用のアクションを追加（`effortSlider:decreaseEffort` / `increaseEffort` / `toggleUltracode`）。 / コマンド: `/rate-limit-options` コマンドを追加。対話ターミナルで `/mcp reconnect all` を追加。 / Gateway（管理者向け）: Claude apps gateway に管理ポリシー設定の問題を知らせる起動時警告を追加。gateway の ID プロバイダー向けに証明書クライアント認証（`private_key_jwt`）を追加。 / 主な修正: 破損したレスポンスストリーム、thinking ブロック後の overloaded/server エラー、恒常化する「Prompt is too long」エラー、model-unavailable 通知を修正。 / 不正な画像による Agent SDK のセッションクラッシュ、再開セッションでの MCP ツール呼び出し、plan-usage エンドポイントの繰り返し呼び出しを修正。 / `claude mcp add` が誤って成功と報告する問題、プラグイン設定画面の問題、`ANTHROPIC_FOUNDRY_RESOURCE` の検証、Claude Desktop の 1M コンテキストオプションを修正。 / shell モード選択の問題、Windows での Bash ツール失敗、`sparsePaths` を使ったプラグインマーケットプレイスの clone、フルスクリーン描画、スクロール位置のジャンプ、タブバーの折り返し、モデルピッカーの件数表示、キーバインドの書き込み、vim モードなどを修正。 / VSCode・クラウドセッション・Claude Tag 全般でも多数の修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {
+        "モデル": "Claude Sonnet 5.5（`claude-sonnet-5-5`）を追加。Anthropic API 上での Sonnet 系デフォルトモデルとなり、1M コンテキスト、料金は $2/$10 per Mtok（キャッシュ読み取り $0.20/Mtok）。",
+        "権限 / auto モード": "作業ディレクトリ外の読み取り前に表示される auto モードの確認プロンプトに「Yes, but ask again next time」の回答を追加。",
+        "利用状況表示": "`/usage` とステータスラインの Claude apps gateway 利用上限に金額（ドル）を表示。",
+        "キーバインド": "effort スライダー制御用のアクションを追加（`effortSlider:decreaseEffort` / `increaseEffort` / `toggleUltracode`）。",
+        "コマンド": "`/rate-limit-options` コマンドを追加。対話ターミナルで `/mcp reconnect all` を追加。",
+        "Gateway（管理者向け）": "Claude apps gateway に管理ポリシー設定の問題を知らせる起動時警告を追加。gateway の ID プロバイダー向けに証明書クライアント認証（`private_key_jwt`）を追加。",
+        "主な修正": "破損したレスポンスストリーム、thinking ブロック後の overloaded/server エラー、恒常化する「Prompt is too long」エラー、model-unavailable 通知を修正。 / 不正な画像による Agent SDK のセッションクラッシュ、再開セッションでの MCP ツール呼び出し、plan-usage エンドポイントの繰り返し呼び出しを修正。 / `claude mcp add` が誤って成功と報告する問題、プラグイン設定画面の問題、`ANTHROPIC_FOUNDRY_RESOURCE` の検証、Claude Desktop の 1M コンテキストオプションを修正。 / shell モード選択の問題、Windows での Bash ツール失敗、`sparsePaths` を使ったプラグインマーケットプレイスの clone、フルスクリーン描画、スクロール位置のジャンプ、タブバーの折り返し、モデルピッカーの件数表示、キーバインドの書き込み、vim モードなどを修正。 / VSCode・クラウドセッション・Claude Tag 全般でも多数の修正。"
+      },
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.2
+        },
+        "relevance": {
+          "score": 2.27,
+          "probabilities": [
+            0,
+            0,
+            0.73,
+            0.27
+          ],
+          "confidence": 0.72
+        }
+      }
+    }
+  ]
+}

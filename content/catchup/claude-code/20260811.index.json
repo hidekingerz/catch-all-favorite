@@ -1,0 +1,524 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260811.md",
+  "sourceHash": "sha256:2b579046c01ee27a3349d50ebaffc2f57743454a666f332ec8f808442057295b",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:02.311Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "TUI・表示（レンダリング）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "まれな内部レイアウトエラーの後、プロセスは動き続けているのに対話セッションの描画が完全に止まってしまう問題を修正。 / コンパクション（会話圧縮）中の進捗表示を改善。従来はプログレスバーのみだったが、リトライのカウントダウンとストールのヒントもコンパクション中に表示されるようになった。 / ターミナルタイトルのビジースピナー用グリフを更新し、一部ターミナルでのタブバーのちらつきを軽減。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.228（2026-08-11）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0.01,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.96,
+            "other": 0.03
+          },
+          "confidence": 0.96
+        },
+        "breaking": {
+          "noul": 0.04
+        },
+        "relevance": {
+          "score": 2.01,
+          "probabilities": [
+            0.01,
+            0,
+            0.97,
+            0.02
+          ],
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "モデル・セッション",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "直近の応答以降に `/model` でモデルを変更していた場合、`/tui` がセッションを以前のモデルへ戻してしまう問題を修正。 / セッションのクリーンアップがプロジェクトの memory フォルダ内のコンテンツを削除してしまう問題を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.228（2026-08-11）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.26,
+          "probabilities": [
+            0.01,
+            0,
+            0.72,
+            0.27
+          ],
+          "confidence": 0.72
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Windows",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "Git のインストール先の親フォルダから Claude Code を起動した際に、Windows 上で `git` / Git Bash が見つからない問題を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.228（2026-08-11）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.7,
+            "other": 0.3
+          },
+          "confidence": 0.65
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.37,
+          "probabilities": [
+            0.02,
+            0,
+            0.56,
+            0.42
+          ],
+          "confidence": 0.53
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "クロスセッション・メッセージング / Remote Control",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "インストールまたはアップグレード後の最初のセッションで、クロスセッションメッセージングが受信箱（inbox）を持たずに開始してしまうことがあった問題を修正。 / 接続中の Remote Control で `/resume` を行うと、再開した会話のタイトルや履歴が接続先セッションに漏れる問題を修正。 / クロスセッションメッセージの表示を改善。送信者と本文が折りたたまれた 1 行ではなくインラインで表示されるようになり、別マシン上の Remote Control セッション宛のメッセージでは送信者として自分の Remote Control セッション名が表示されるようになった。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.228（2026-08-11）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 2.1,
+          "probabilities": [
+            0.01,
+            0,
+            0.88,
+            0.11
+          ],
+          "confidence": 0.87
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "self-hosted runner",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "セッションが push しないリポジトリで `checkout` フックが失敗した場合、`claude self-hosted-runner` セッションが新しいランナーごとに毎回失敗していた問題を修正。該当リポジトリは警告付きでスキップされるようになった。 / バックグラウンドタスクの完了と後続ターンの開始との間の隙間で、self-hosted runner がセッションを終了させてしまう問題を修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.228（2026-08-11）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.42,
+          "probabilities": [
+            0.01,
+            0,
+            0.56,
+            0.43
+          ],
+          "confidence": 0.56
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "プラグイン・設定",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "バックグラウンドのプラグインキャッシュ清掃が、唯一のバージョンがシンボリックリンクされた開発用チェックアウトであるプラグインのキャッシュを削除してしまう問題を修正。 / 優先度の高い設定ティアで再定義された marketplace エントリが、別のティアのカスタムヘッダーを引き継いでしまう設定マージの問題を修正。marketplace エントリはエントリ全体として（whole entry）マージされるようになった。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.228（2026-08-11）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0.02,
+            "node_runtime": 0.01,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.9,
+            "other": 0.07
+          },
+          "confidence": 0.88
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2.3,
+          "probabilities": [
+            0.02,
+            0,
+            0.65,
+            0.33
+          ],
+          "confidence": 0.63
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "スキル（claude.ai 同期）・ツール",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "スキル呼び出し後に、deferred-tools（遅延ツール）のリマインダーがモデルへ 2 回送られることがあった問題を修正。 / claude.ai から同期されるスキルをハードニング。ローカルのコマンドや MCP プロンプトを上書き（シャドウ）しなくなり、説明文はサニタイズ＆ラベル付けされる。手元のマシンではスキル本文が `!` コマンドを実行したり `@` でファイルを展開したりしなくなった。 / Write ツールを変更し、新しいモデルは Edit ツールと同じルールで、そのセッション中に読み取っていない既存ファイルでも上書きできるようになった（古いモデルは従来どおり事前の読み取りが必須）。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.228（2026-08-11）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.94,
+            "security": 0.06,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.93
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.36
+        },
+        "relevance": {
+          "score": 2.7,
+          "probabilities": [
+            0,
+            0,
+            0.29,
+            0.71
+          ],
+          "confidence": 0.7
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "認証（Vertex AI）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "Vertex AI の認証情報の扱いを改善。期限切れまたは欠落した Google Cloud の認証情報が、数分間リトライし続けるのではなく数秒で失敗するようになった。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.228（2026-08-11）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.99,
+            "security": 0.01,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.99
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0.01,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.67,
+            "other": 0.32
+          },
+          "confidence": 0.62
+        },
+        "breaking": {
+          "noul": 0.21
+        },
+        "relevance": {
+          "score": 2.46,
+          "probabilities": [
+            0.04,
+            0,
+            0.41,
+            0.55
+          ],
+          "confidence": 0.46
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "その他",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "Pro / Max / Team プランの初回利用時の通知から、「auto モードのセッションはわずかにコストが高くなる」という古い注記を削除。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.228（2026-08-11）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.93,
+            "security": 0,
+            "policy": 0.03,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0.04
+          },
+          "confidence": 0.9
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.96,
+            "other": 0.04
+          },
+          "confidence": 0.96
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 1.94,
+          "probabilities": [
+            0.06,
+            0,
+            0.88,
+            0.06
+          ],
+          "confidence": 0.81
+        }
+      }
+    }
+  ]
+}

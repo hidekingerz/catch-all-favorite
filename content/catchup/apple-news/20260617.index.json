@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/apple-news/20260617.md",
+  "sourceHash": "sha256:e4b31214b7f4ba3a93003523e94cd0dcfc1930bd913dafd5c87317e20f14016a",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:45.929Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "「Appleでサインイン」およびiCloud+の「メールを非公開」の新しいドメイン",
+      "url": "https://developer.apple.com/jp/news/?id=sus6t6ab",
+      "secondaryUrls": [],
+      "summary": "Appleは今年の夏、「Appleでサインイン」（従来は `privaterelay.appleid.com`）とiCloud+の「メールを非公開」（従来は `icloud.com`）で生成されるEメールアドレスを、単一の共有ドメイン `private.icloud.com` に統合する。旧ドメインの既存アドレスは引き続き機能しメール転送も中断されないが、新規アドレスは新ドメインで発行される。「Appleでサインイン」導入アプリ・Webサイトはアカウントシステム・Eメール検証ロジック・許可リストを、Eメールサービスプロバイダーはドメインベースのフィルタリング・サプレッションリスト・ルーティングルールを、新ドメイン `private.icloud.com` を受け入れるようアップデートする必要がある。",
+      "publishedAt": "2026-06-15",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "feature",
+          "probabilities": {
+            "release": 0.06,
+            "security": 0,
+            "policy": 0.12,
+            "feature": 0.82,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.79
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0.17,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0.68,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0.15
+          },
+          "confidence": 0.63
+        },
+        "breaking": {
+          "noul": 0.79
+        },
+        "relevance": {
+          "score": 2.38,
+          "probabilities": [
+            0,
+            0.2,
+            0.22,
+            0.58
+          ],
+          "confidence": 0.38
+        }
+      }
+    }
+  ]
+}

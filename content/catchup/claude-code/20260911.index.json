@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260911.md",
+  "sourceHash": "sha256:58415f53aff2640f2221203ef1fd351cf26d8d58317c5e7f9692abe9740b3d6d",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:08.073Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "v2.1.269（2026-09-11）— 主な新機能",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "`claude plugin eval`: プラグインの eval スイートを Claude Code に対して実行し、スコア付き・再現可能な結果（JSON + HTML レポート）を得られる（`claude plugin eval --help`）。 / `/output-style [name]`: 出力スタイルの一覧表示と切り替え。Remote Control 経由・クラウド・その他ヘッドラインセッションでも利用可能。 / Bash ツールの編集差分: Bash ツールがファイル編集を扱う際、変更したファイルの差分をツール結果に表示（設定 `bashEditDiffEnabled`）。 / OpenTelemetry 拡張: `OTEL_METRICS_INCLUDE_REPOSITORY` でメトリクス/イベントに `vcs.*` リポジトリ属性を付与。`OTEL_LOG_TOOL_DETAILS` でコミットイベントに `vcs.ref.head.*` が付く。 / `CLAUDE_CODE_WORKFLOW_MAX_CONCURRENT_AGENTS`（1〜256）: Workflow ツールの1実行あたり同時エージェント数上限を引き上げ、推論律速のファンアウト向け。 / `CLAUDE_CODE_GATEWAY_MODEL_DISCOVERY_TIMEOUT_MS`: LLM ゲートウェイの `/v1/models` 検出タイムアウト（既定3秒）を延長可能に。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {
+        "`claude plugin eval`": "プラグインの eval スイートを Claude Code に対して実行し、スコア付き・再現可能な結果（JSON + HTML レポート）を得られる（`claude plugin eval --help`）。",
+        "`/output-style [name]`": "出力スタイルの一覧表示と切り替え。Remote Control 経由・クラウド・その他ヘッドラインセッションでも利用可能。",
+        "Bash ツールの編集差分": "Bash ツールがファイル編集を扱う際、変更したファイルの差分をツール結果に表示（設定 `bashEditDiffEnabled`）。",
+        "OpenTelemetry 拡張": "`OTEL_METRICS_INCLUDE_REPOSITORY` でメトリクス/イベントに `vcs.*` リポジトリ属性を付与。`OTEL_LOG_TOOL_DETAILS` でコミットイベントに `vcs.ref.head.*` が付く。",
+        "`CLAUDE_CODE_WORKFLOW_MAX_CONCURRENT_AGENTS`（1〜256）": "Workflow ツールの1実行あたり同時エージェント数上限を引き上げ、推論律速のファンアウト向け。",
+        "`CLAUDE_CODE_GATEWAY_MODEL_DISCOVERY_TIMEOUT_MS`": "LLM ゲートウェイの `/v1/models` 検出タイムアウト（既定3秒）を延長可能に。"
+      },
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.07
+        },
+        "relevance": {
+          "score": 2.18,
+          "probabilities": [
+            0,
+            0,
+            0.81,
+            0.19
+          ],
+          "confidence": 0.81
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "v2.1.269（2026-09-11）— 権限・キャッシュまわりの重要修正",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": null,
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 0.93,
+            "security": 0.07,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 0.92
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0.05,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.8,
+            "other": 0.14
+          },
+          "confidence": 0.78
+        },
+        "breaking": {
+          "noul": 0.23
+        },
+        "relevance": {
+          "score": 2.6,
+          "probabilities": [
+            0.01,
+            0,
+            0.37,
+            0.62
+          ],
+          "confidence": 0.6
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "v2.1.269（2026-09-11）— クラウド / Web・VSCode・Claude Tag",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "Claude Code on the web: クラウドセッションでキュー済みメッセージを Claude が読む前に取り消し可能に。一度きりの予定ルーティンが二重実行される問題、サブエージェント利用のルーティン実行が早期終了扱いになり再試行スキップ/重複実行になる問題などを修正。 / VSCode: サブエージェントを俯瞰する「エージェントマップ」（\"N agents\" フッターピルから開き、停止・読み取り専用トランスクリプト）、Hooks 編集ダイアログ、権限ルール編集ダイアログを追加。Focus ビューに実行中サブエージェントのライブ進捗行を追加。 / Claude Tag（Slack）: GitHub インストールの Connect all / Disconnect 前に確認ダイアログを追加。予定ルーティンが新規トップレベル投稿ではなく既存スレッドに返信できるように改善。組織が未有効化のモデルへの切替を黙ってフォールバックせず拒否するよう修正。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {
+        "Claude Code on the web": "クラウドセッションでキュー済みメッセージを Claude が読む前に取り消し可能に。一度きりの予定ルーティンが二重実行される問題、サブエージェント利用のルーティン実行が早期終了扱いになり再試行スキップ/重複実行になる問題などを修正。",
+        "VSCode": "サブエージェントを俯瞰する「エージェントマップ」（\"N agents\" フッターピルから開き、停止・読み取り専用トランスクリプト）、Hooks 編集ダイアログ、権限ルール編集ダイアログを追加。Focus ビューに実行中サブエージェントのライブ進捗行を追加。",
+        "Claude Tag（Slack）": "GitHub インストールの Connect all / Disconnect 前に確認ダイアログを追加。予定ルーティンが新規トップレベル投稿ではなく既存スレッドに返信できるように改善。組織が未有効化のモデルへの切替を黙ってフォールバックせず拒否するよう修正。"
+      },
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.1
+        },
+        "relevance": {
+          "score": 2.26,
+          "probabilities": [
+            0,
+            0,
+            0.74,
+            0.26
+          ],
+          "confidence": 0.73
+        }
+      }
+    }
+  ]
+}

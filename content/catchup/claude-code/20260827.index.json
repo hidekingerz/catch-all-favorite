@@ -1,0 +1,241 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/claude-code/20260827.md",
+  "sourceHash": "sha256:054c200d766340e059f9e73786570501dea7b2625655239335c63429ddd56c22",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:05.159Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "新機能（v2.1.248）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "**`--restricted`（`CLAUDE_CODE_RESTRICTED=1`）** を追加。コマンド/コード実行系の組み込みツールと `WebFetch`（`--tools` で明示しない限り）を除去し、ファイルツールは作業ディレクトリ内に限定、`bypassPermissions` を拒否、ユーザー/プロジェクト/ローカル設定ファイルを無視する。 / **エージェント frontmatter の `experimental.cacheTtl`（`\"5m\"` または `\"1h\"`）** を追加。サブエージェント TTL 設定が無い場合に使われる、エージェント単位のプロンプトキャッシュ TTL。 / **`claude self-hosted-runner --client-label <label>`（`SELF_HOSTED_RUNNER_CLIENT_LABEL`）** を追加。ランナーが登録するラベルを上書きできる（既定はホスト名）。 / **サーバー管理設定の診断**を追加。設定読み込み失敗時の起動警告と、`/doctor`・`/status` に失敗理由（Bedrock/Vertex/サードパーティプロバイダ、カスタム `ANTHROPIC_BASE_URL` 等）を表示。 / **`/usage-credits`** を追加（AWS Marketplace 課金・セルフサーブ Enterprise・Enterprise トライアルの組織向け）。メンバーが管理者に利用上限の引き上げを申請できる。 / **クロスセッションメッセージング（`SendMessage` / `ListAgents`）** を、Bedrock・Vertex・Foundry およびテレメトリ無効時にも同一マシン上のセッション間で利用可能にした。 / `/web-setup` で GitHub CLI トークンに `workflow` スコープが無い場合に警告を追加（巨大リポジトリへの push が拒否されうるため）。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": "v2.1.248（2026-08-27）",
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.73
+        },
+        "relevance": {
+          "score": 2.7,
+          "probabilities": [
+            0,
+            0,
+            0.3,
+            0.7
+          ],
+          "confidence": 0.7
+        }
+      }
+    },
+    {
+      "id": 1,
+      "title": "重要な仕様変更（v2.1.248）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": "Workflow ツールのプロンプト削減: 説明が約 5.7k → 約 1k トークンに縮小、スクリプト作成リファレンスは同梱の `workflow-authoring` スキルへ移動。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {
+        "Workflow ツールのプロンプト削減": "説明が約 5.7k → 約 1k トークンに縮小、スクリプト作成リファレンスは同梱の `workflow-authoring` スキルへ移動。"
+      },
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ai_tools",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 1,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.54
+        },
+        "relevance": {
+          "score": 2.79,
+          "probabilities": [
+            0,
+            0,
+            0.2,
+            0.8
+          ],
+          "confidence": 0.79
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "主なバグ修正（v2.1.248）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": null,
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "other",
+          "probabilities": {
+            "web_frontend": 0.01,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.47,
+            "other": 0.52
+          },
+          "confidence": 0.45
+        },
+        "breaking": {
+          "noul": 0.09
+        },
+        "relevance": {
+          "score": 2.19,
+          "probabilities": [
+            0.02,
+            0,
+            0.75,
+            0.23
+          ],
+          "confidence": 0.73
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "改善（v2.1.248）",
+      "url": null,
+      "secondaryUrls": [],
+      "summary": null,
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "other",
+          "probabilities": {
+            "web_frontend": 0.01,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 0,
+            "android": 0,
+            "ai_tools": 0.28,
+            "other": 0.71
+          },
+          "confidence": 0.67
+        },
+        "breaking": {
+          "noul": 0.13
+        },
+        "relevance": {
+          "score": 1.94,
+          "probabilities": [
+            0.07,
+            0,
+            0.85,
+            0.08
+          ],
+          "confidence": 0.78
+        }
+      }
+    }
+  ]
+}

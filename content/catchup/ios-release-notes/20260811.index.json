@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/ios-release-notes/20260811.md",
+  "sourceHash": "sha256:7c0c22b3b8a9a287badb4a681b47d6d22b697a52c886cd3bf4e727da12352d58",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:05:16.094Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "iOS & iPadOS 27 Beta 5 Release Notes",
+      "url": "https://developer.apple.com/documentation/ios-ipados-release-notes/ios-ipados-27-release-notes",
+      "secondaryUrls": [],
+      "summary": "iOS/iPadOS 27 SDK の Beta 5（Xcode 27 バンドル）。 / **破壊的変更・必須対応（継続）**: シーンベースライフサイクル未対応アプリは起動失敗、27.0 SDK ビルドは Launch screen キー必須、On Demand Resources（`NSBundleResourceRequest`）廃止→Background Assets、旧 MetricKit API（`MXMetricManager`/`MXMetricManagerSubscriber`/`MXMetricPayload`/`MXDiagnosticPayload`）非推奨→`MetricManager`、`FileDocument`/`ReferenceFileDocument` 非推奨→`Document`、`calendar.deleteEvents`→`calendar.deleteEvent` リネーム、AirPort Utility の新規ダウンロード終了。**ネットワークセキュリティ**: MDM/DDM/登録/構成プロファイル/アプリインストール/ソフトウェア更新に関わる一部システムプロセスが TLS 1.2 以上・ATS 準拠を強制。 / **新機能・変更（主な差分）**: App Intents で `notes.createNote`/`notes.updateNote` スキーマに `AttributedString` の name パラメータを渡せるように。Foundation の `volumeAvailableCapacityKey` はブロックカウントレベルで有効数字 3 桁に切り詰め。MetricKit は `CrashDiagnostic` に `terminationCategory` を追加、`StateReporting` フレームワークのコンテキスト対応、`MemoryExceptionDiagnostic`・`MetalFrameRateMetric`（`CAMetalLayer` 用）・`AsyncStream` ベースの Swift ファースト `MetricManager` を提供。SwiftUI に `.toolbarColorScheme(_:for: .statusBar)`（ステータスバー配色）、`.toolbarVisibility(_:for: .statusBar)`（条件付きステータスバー非表示）、`.sceneAccessory` + `ExternalNonInteractiveAccessory`（外部ディスプレイ）、`toolbarMinimizeBehavior`→`toolbarMinimizationBehavior` リネーム、`GeometryProxy` の `concentricCornerRadii`、data/error ベース `alert`/`confirmationDialog` の iOS 15+ バックデプロイ、`WritableDocument` コレクション向け `fileExporter` などを追加。StoreKit はオファーコード redemption の `VerificationResult`、ボリューム購入用 `Transaction.OwnershipType.assigned`／`Transaction.RevocationType.assignmentRevoked`、Bundle/Suite 向け `Product.ProductType` API、Advanced Commerce API の `partnerName`/`partnerId` に対応。HealthKit の心拍/サイクリングパワーゾーン・履歴アクセス粒度・閉経状態/閉経後出血サンプル型、Core AI の Neural Engine 改善（新エンタイトルメント `com.apple.developer.background-tasks.continued-processing.inference`）、新オンデバイス Dictation（Advanced Dictation Preview）、PlayStation Access コントローラ対応、Media Sharing Extensions、AudioAccessoryKit、HomeKit Secure Video の on-device/Private Cloud Compute 処理も継続。 / **非推奨（新規・追加）**: PencilKit の `__PKStrokeRenderState`→`PKStrokeRenderStateReference` リネーム（`asObjCRenderState()`→`PKStrokeRenderStateReference.init(…)`）。PhotoKit の `PHAssetResource.originalFilename` が誤って非 null 指定されていたため、nullable な `filename` プロパティを新設（そちらへ移行）。SwiftUI の `.squareBorder`/`.roundedBorder` テキストフィールドスタイルをソフト非推奨（→`.bordered`）。 / **解決済みの問題（主なもの）**: Apple Wallet の Digital ID が 27.0 Beta 3/4 更新中に全サインイン済みデバイスで期限切れ扱いになる問題、AirPlay（Home Theater への PIN 必須失敗）、App Intents（Siri でのカスタム画像非表示・`reminders.updateReminder` 失敗ほか）、Camera（ポートレートモードのぼかし描画）、CarPlay（`CPNavigationSession` ETA トレイ・`panelDidHide` 未呼び出しほか）、Core AI（`AIModelCache` のキャッシュポリシー無視・推論/AOT コンパイル失敗・`.aimodelc` 特殊化ほか多数）、Core Bluetooth（Channel Sounding が測距結果を返さない）、Foundation（`+[NSURL URLWithString:]` の二重エンコード）、Siri（40 件超の修正）など。 / **既知の問題（主なもの）**: App Intents の `AppEntity` 累積 10MB サイズ上限（超過でクラッシュ、新スキーマプロパティにより既存 `@photos.asset` エンティティが 27 SDK でコンパイル不可の場合あり）、Status Bar がアプリ前面時にぼやける、Security（ACME 証明書取得・MDM Managed Device Attestation 登録の失敗）、Dictation の音声編集コマンド不安定、Image Playground のモデルダウンロード進捗未表示、Reminders の「Add to Reminders」でタイトル欄が空、Siri の各種（写真検索・CarPlay での応答遅延・ベータ間の会話履歴同期）など。",
+      "publishedAt": null,
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "release",
+          "probabilities": {
+            "release": 1,
+            "security": 0,
+            "policy": 0,
+            "feature": 0,
+            "guide": 0,
+            "event": 0,
+            "business": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.98
+        },
+        "relevance": {
+          "score": 1.02,
+          "probabilities": [
+            0,
+            0.99,
+            0,
+            0.01
+          ],
+          "confidence": 0.98
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "document": "catchup/apple-news/20260707.md",
+  "sourceHash": "sha256:932b85b0d8c4c047ee2f2a7e01da443154e3fa7fe66d5a5f732424a6d8e1f8a4",
+  "profileHash": "sha256:9c3b79f3533d2d919f0badc2f5a73c3c7c4fcbdef085a91c66ee1b5a6660545b",
+  "indexerHash": "sha256:31678bb5cbf2e440371ccdc359fd94bf8a4b6495d4eac54d9ad14d1d21ba0a6c",
+  "model": "jev-1.13.0",
+  "indexedAt": "2026-09-30T15:04:47.174Z",
+  "headlines": [
+    {
+      "id": 0,
+      "title": "Hello Developer 2026年7月",
+      "url": "https://developer.apple.com/jp/news/?id=grx7lcto",
+      "secondaryUrls": [],
+      "summary": "月刊ニュースレターの7月号。Apple Developer サイトに新しい AI 検索ツール「Ask Apple Developer」が導入され、ドキュメントやリソースの発見性が向上した。Figma / Sketch 向けのデザインキットが更新され、WWDC26 の最新情報がグローバル／オンラインのイベントやアクティビティを通じて共有されている。Apple Design Awards の受賞作（「grug」「Cyberpunk 2077」など）の紹介、iOS・iPadOS・macOS・tvOS・visionOS・watchOS にわたる 27 のプラットフォームリリースに伴う新しいドキュメント・サンプルコード・リリースノートの更新なども取り上げている。",
+      "publishedAt": "2026-07-07",
+      "effectiveAt": null,
+      "tags": [],
+      "version": null,
+      "patchLevel": null,
+      "targets": null,
+      "rawFields": {},
+      "judgments": {
+        "kind": {
+          "choice": "other",
+          "probabilities": {
+            "release": 0.02,
+            "security": 0,
+            "policy": 0,
+            "feature": 0.42,
+            "guide": 0,
+            "event": 0.05,
+            "business": 0,
+            "other": 0.51
+          },
+          "confidence": 0.43
+        },
+        "ecosystem": {
+          "choice": "ios",
+          "probabilities": {
+            "web_frontend": 0,
+            "node_runtime": 0,
+            "browser": 0,
+            "web_search": 0,
+            "ios": 1,
+            "android": 0,
+            "ai_tools": 0,
+            "other": 0
+          },
+          "confidence": 1
+        },
+        "breaking": {
+          "noul": 0.05
+        },
+        "relevance": {
+          "score": 0.88,
+          "probabilities": [
+            0.19,
+            0.75,
+            0.06,
+            0
+          ],
+          "confidence": 0.74
+        }
+      }
+    }
+  ]
+}
