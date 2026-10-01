@@ -42,7 +42,7 @@ jser.info・This Week in React・Chrome for Developers ブログ・Google 検索
 14. `index.md` に新規ファイルへのリンクを追加
 15. 作成されたファイルと更新した `index.md` を GitHub リポジトリへ **commit & push**
 16. `main` への **Pull Request を作成**
-17. 作成した PR に **GitHub auto-merge を有効化**し、必須チェック（`content-guard`）通過時に GitHub が保護を尊重したまま自動マージ（レポート系PRに限る。バイパスはしない）
+17. 作成した PR に **GitHub auto-merge を有効化**し、必須チェック（`content-guard`）通過時に GitHub が保護を尊重したまま自動マージ。**auto-merge が「already clean」で拒否された場合は、`content-guard` の成功を確認したうえで直接スカッシュマージ**する（レポート系PRに限る。バイパスはしない）
 18. キャッチアップ中に検知した**スキル/取得処理の不具合**（RSSのURL変更・取得フォーマット崩れ・恒常的な取得失敗など）を GitHub issue として **自動起票**（重複は作らない）
 19. **結果報告**
 
@@ -360,7 +360,8 @@ GitHub MCP ツール（`mcp__github__create_pull_request`）が利用可能な�
 - 取得した記事のタイトルと日付
 - pushしたファイル名
 - 作成したPRのURL（該当する場合）
-- **auto-merge の状態**（有効化済み→CI通過後に自動マージ予定 / content-guard 失敗で発火せず / Allow auto-merge・必須チェック未整備で有効化不可 のいずれか。該当する場合）
+- **マージの状態**（auto-merge 有効化済み→CI通過後に自動マージ予定 / auto-merge が already clean で予約不可のため content-guard 成功を確認して直接スカッシュマージ済み / content-guard 失敗で発火せず / Allow auto-merge・必須チェック未整備で有効化不可 のいずれか。該当する場合）
+- ステップ0で先にマージした前回PRのURL（該当する場合）
 - アクセスできずスキップしたソース（該当する場合）
 - ステップ0で削除した残存ブランチ（該当する場合。削除に失敗した場合はその旨）
 - **起票した改善 issue のURLと、重複のためスキップした不具合**（該当する場合）
@@ -380,5 +381,5 @@ GitHub MCP ツール（`mcp__github__create_pull_request`）が利用可能な�
 
 routine に設定するプロンプト:
 ```
-frontend-catchup-and-push スキルを実行して、jser.info・This Week in React・Chrome for Developers ブログ・Google 検索セントラル ブログ・Apple Developer News・iOS & iPadOS リリースノート・Android Security Bulletin・Android リリースノート・Apple セキュリティリリース・Google Play 最新情報・Claude Code・Firefox をキャッチアップし、GitHubリポジトリにpushして PR を作成し、auto-merge を有効化して（CI 通過後に GitHub が自動マージ）。
+frontend-catchup-and-push スキルを実行して、jser.info・This Week in React・Chrome for Developers ブログ・Google 検索セントラル ブログ・Apple Developer News・iOS & iPadOS リリースノート・Android Security Bulletin・Android リリースノート・Apple セキュリティリリース・Google Play 最新情報・Claude Code・Firefox をキャッチアップし、GitHubリポジトリにpushして PR を作成し、auto-merge を有効化して（CI 通過後に GitHub が自動マージ。auto-merge が already clean で予約できない場合は content-guard の成功を確認して直接スカッシュマージ）。
 ```
