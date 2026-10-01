@@ -55,6 +55,7 @@ jser.info・This Week in React・Chrome for Developers ブログ・Google 検索
 - GitHub MCP ツール（`mcp__github__list_pull_requests`、owner: `hidekingerz`, repo: `catch-all-favorite`, state: `open`）でオープンPRの一覧を取得し、タイトルが `chore: add frontend catchup` で始まるPRを探す。利用不可な場合は Bash で `gh pr list` を試みる
 - **該当PRが残っている場合**: そのPRに含まれる `content/catchup/**/*.md` はまだ `main`（＝ローカルクローン）に存在しないため、各スキルの重複チェックをすり抜けて**同じ記事を別日付のファイルとして重複作成してしまう**。これを防ぐため、そのPRのブランチの差分ファイルを取得し（`git fetch origin <headブランチ>` して `git diff --name-only main...FETCH_HEAD`、または `mcp__github__get_file_contents` でPRブランチ側の `content/catchup/` を確認）、そこに含まれる記事・バージョン・URLも各ステップの重複チェックで「既存」として扱う
 - 前回PRが未マージのまま残っている場合は、その理由（`content-guard` 失敗・auto-merge 前提未整備・コンフリクト等）をステップ19の結果報告に含める。特に `index.md` のコンフリクトで auto-merge が止まっている場合、今回のPRも同様に止まる可能性が高いため必ず報告する
+- **前回PRが `content-guard` 成功・コンフリクトなし（`mergeable_state: clean`）なのに未マージで残っている場合**は、auto-merge を予約できないまま放置された状態（ステップ17の「already clean」ケース）。そのままにすると今回の PR と `index.md` で衝突するため、**ステップ17-3 と同じ条件・手順でその前回PRを先にスカッシュマージ**してから続行する（マージ後は `git fetch origin main && git merge origin/main` 等でローカルを最新化する）。`content-guard` が失敗している・コンフリクトしている前回PRには手を付けず、報告のみ行う
 - 該当PRが無ければそのままステップ1へ進む
 
 **あわせて、マージ済みPRの残存ブランチを削除する（ブランチ掃除）:**
@@ -286,7 +287,7 @@ GitHub MCP ツール（`mcp__github__create_pull_request`）が利用可能な�
 
 唯一の例外: ステップ13で**全ソースが新着なし**となり push 自体を行わなかった場合のみ、PR は作成しない（「新しい記事はありませんでした」と報告して終了）。
 
-### ステップ17: auto-merge の有効化
+### ステップ17: auto-merge の有効化（または必須チェック通過後のマージ）
 
 ステップ16で PR を作成（または既存PRを確認）したら、その PR に **GitHub の auto-merge（自動マージ予約）を有効化**する。**スキル側で CI をポーリングしたり、保護をバイパスしてマージしたりはしない**。マージするかどうかの判定は GitHub 側に委ね、`main` のブランチ保護（ruleset）で設定された**必須チェック（`content-guard`）がグリーンになった時にのみ、GitHub が保護を尊重したまま自動でマージ**する。
 
@@ -297,6 +298,8 @@ GitHub MCP ツール（`mcp__github__create_pull_request`）が利用可能な�
 > 2. `main` の ruleset で **`content-guard`（`content-pr-automation.yml`）が required status check** に登録済み
 > これらが未整備の場合は auto-merge を有効化せず、ステップ19で「auto-merge 前提のリポジトリ設定が未整備のため手動マージが必要」と報告する。
 
+> **既知の制約（2026-09 実測）**: GitHub の auto-merge は「必須チェックが**保留中**の PR」にしか予約できない。`content-guard` は約 15 秒で完了するため、PR 作成直後に auto-merge を有効化しようとしても **PR がすでに `clean`（全チェック通過・マージ可能）になっていて「already in clean status」として拒否される**ことがほとんどである。この場合 auto-merge は付かず、PR は誰にもマージされないまま残り、翌日の PR と `index.md` で衝突する（PR #183〜#185 で発生）。そのため下記 3 のフォールバックを必ず実施する。
+
 **手順:**
 
 1. auto-merge を有効化する
@@ -305,12 +308,19 @@ GitHub MCP ツール（`mcp__github__create_pull_request`）が利用可能な�
      - merge_method: `squash`（このリポジトリは squash 運用）
    - 利用不可な場合は Bash で `gh pr merge <PR番号> --squash --auto` を試みる（`--admin` は使わない。バイパスしない）
 2. 有効化に成功したら **そのままターンを終える**（CI 完了は待たない）。GitHub が必須チェック通過後に自動でマージする
-3. auto-merge の有効化自体が失敗した場合の扱い:
+3. **auto-merge が「already in clean status」「PR is already mergeable」等、"すでにチェック通過済み" を理由に拒否された場合のフォールバック（必須）**: 保護の判定はサーバ側の必須チェックがすでに済んでいるので、以下の条件を**すべて**確認したうえで直接スカッシュマージする
+   1. `mcp__github__pull_request_read`（method: `get_check_runs`）で、**PR の現在の head SHA に対する `content-guard` チェックが `completed` かつ `success`** であること（pending / failure / 別 SHA の結果は不可）
+   2. `mcp__github__pull_request_read`（method: `get`）で `mergeable_state` が `clean` であること（`dirty` = コンフリクト、`blocked` = 必須チェック未通過。いずれも不可）
+   3. PR の変更ファイルが `content/` 配下と `index.md` のみであること（`content-guard` が検証済みだが、`get_files` で再確認する）
+   - 条件を満たしたら `mcp__github__merge_pull_request`（merge_method: `squash`、`expectedHeadSha` に確認した head SHA、`commit_title` は PR タイトルに ` (#PR番号)` を付けたもの）でマージする。利用不可なら Bash で `gh pr merge <PR番号> --squash`（`--admin` は付けない）
+   - 1 つでも条件を満たさない場合はマージせず、ステップ19で状態を報告する
+   - この直接マージも GitHub のブランチ保護（必須チェック）を**通過した後にのみ**行うもので、保護のバイパスではない。`--admin` や ruleset の一時解除は引き続き禁止
+4. auto-merge の有効化がそれ以外の理由で失敗した場合の扱い:
    - 「Allow auto-merge 無効」「required check 未登録」等の理由で有効化できない → マージせず、ステップ19で前提設定の不足として報告
    - **このPRが `content/` と `index.md` 以外を含む場合**は `content-guard` が fail し auto-merge は発火しない（これは正常な挙動）。その旨を報告する
-4. 認証/権限/設定に起因する失敗はスキルの不具合ではないため **issue 化はしない**
+5. 認証/権限/設定に起因する失敗はスキルの不具合ではないため **issue 化はしない**
 
-> **注意**: スキル自身が `merge_pull_request` で能動的にマージしたり、`--admin` でブランチ保護をバイパスしたりしてはならない。マージの実行は常に GitHub の auto-merge に任せる。
+> **注意**: `content-guard` が未完了・失敗の PR を `merge_pull_request` でマージしたり、`--admin` でブランチ保護をバイパスしたりしてはならない。直接マージが許されるのは、上記 3 の「必須チェックがその head SHA で success 済み、かつ auto-merge が already clean で予約できない」場合だけである。
 
 ### ステップ18: 改善項目の GitHub issue 化（不具合検知時・自動起票）
 
