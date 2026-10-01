@@ -33,7 +33,7 @@
 
 ## ファイルの保存とpush
 
-完成したMarkdownファイルは `content/catchup/<ソース名>/YYYYMMDD.md` に保存する。**各スキル単体ではpushを行わない。** push・`index.md` 更新・PR作成・auto-merge まで自動化する場合は `frontend-catchup-and-push` スキルを使う。
+完成したMarkdownファイルは `content/catchup/<ソース名>/YYYYMMDD.md` に保存する。**各スキル単体ではpushを行わない。** push・`index.md` 更新・PR作成・auto-merge（予約できない場合は必須チェック通過後のマージ）まで自動化する場合は `frontend-catchup-and-push` スキルを使う。
 
 ## 定期実行
 
