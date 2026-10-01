@@ -200,6 +200,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Apple Developer News
 
+- [Apple Developer News キャッチアップ: 2026-10-01](/content/catchup/apple-news/20261001)
 - [Apple Developer News キャッチアップ: 2026-09-18](/content/catchup/apple-news/20260918)
 - [Apple Developer News キャッチアップ: 2026-09-16](/content/catchup/apple-news/20260916)
 - [Apple Developer News キャッチアップ: 2026-09-10](/content/catchup/apple-news/20260910)
