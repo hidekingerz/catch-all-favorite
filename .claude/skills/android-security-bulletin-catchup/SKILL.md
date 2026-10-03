@@ -1,7 +1,7 @@
 ---
 name: android-security-bulletin-catchup
 description: >
-  Android Security Bulletin（source.android.com/docs/security/bulletin）の最新版を取得し、Android のセキュリティパッチ・脆弱性情報をMarkdownファイルにまとめるスキル。
+  Android Security Bulletin（source.android.com/docs/security/bulletin/asb-overview）の最新版を取得し、Android のセキュリティパッチ・脆弱性情報をMarkdownファイルにまとめるスキル。
   「Android セキュリティ速報をキャッチアップして」「Android Security Bulletin の最新をまとめて」
   「Android のセキュリティパッチ情報を調べて」「Android の脆弱性情報をキャッチアップして」
   などと言われたら必ずこのスキルを使う。Android Security Bulletin、Android セキュリティ速報、
@@ -11,7 +11,7 @@ description: >
 
 # Android Security Bulletin キャッチアップスキル
 
-Android Security Bulletin（https://source.android.com/docs/security/bulletin?hl=ja）の新着月次速報を取得して、要約付きのMarkdownダイジェストとして保存する。1回の実行につき1つのダイジェストファイルを作成する。
+Android Security Bulletin（https://source.android.com/docs/security/bulletin/asb-overview?hl=ja）の新着月次速報を取得して、要約付きのMarkdownダイジェストとして保存する。1回の実行につき1つのダイジェストファイルを作成する。
 
 ## 共通事項
 
@@ -22,7 +22,7 @@ Android Security Bulletin（https://source.android.com/docs/security/bulletin?hl
 **このソースにはRSSフィードが存在しない。** 情報源は以下の一覧ページ:
 
 ```
-https://source.android.com/docs/security/bulletin?hl=ja
+https://source.android.com/docs/security/bulletin/asb-overview?hl=ja
 ```
 
 このページには各月次速報の **公開日・タイトル（対象月）・セキュリティパッチレベル・詳細ページへのリンク** がテーブル形式で含まれている。
@@ -41,7 +41,7 @@ https://source.android.com/docs/security/bulletin?hl=ja
 
 ### 1. 一覧ページの取得
 
-`https://source.android.com/docs/security/bulletin?hl=ja` を取得し、掲載されている月次速報の **公開日・対象月・セキュリティパッチレベル・詳細ページへのリンク** を一覧として抽出する。一覧は公開日の新しい順に並んでいる。直近のもの（過去2〜3か月分）を対象にすれば十分。
+`https://source.android.com/docs/security/bulletin/asb-overview?hl=ja` を取得し、掲載されている月次速報の **公開日・対象月・セキュリティパッチレベル・詳細ページへのリンク** を一覧として抽出する。一覧は公開日の新しい順に並んでいる。直近のもの（過去2〜3か月分）を対象にすれば十分。
 
 ### 2. 重複チェック（新着速報の特定）
 
@@ -78,7 +78,7 @@ title: "Android Security Bulletin キャッチアップ: YYYY-MM-DD"
 ---
 
 > 取得日: YYYY-MM-DD
-> ソース: [Android Security Bulletins](https://source.android.com/docs/security/bulletin?hl=ja)
+> ソース: [Android Security Bulletins](https://source.android.com/docs/security/bulletin/asb-overview?hl=ja)
 
 ## 今回の注目ポイント
 
