@@ -171,6 +171,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### iOS & iPadOS リリースノート
 
+- [iOS & iPadOS リリースノート キャッチアップ: 2026-10-05](/content/catchup/ios-release-notes/20261005)
 - [iOS & iPadOS リリースノート キャッチアップ: 2026-09-23](/content/catchup/ios-release-notes/20260923)
 - [iOS & iPadOS リリースノート キャッチアップ: 2026-09-16](/content/catchup/ios-release-notes/20260916)
 - [iOS & iPadOS リリースノート キャッチアップ: 2026-09-14](/content/catchup/ios-release-notes/20260914)
@@ -203,6 +204,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Apple Developer News
 
+- [Apple Developer News キャッチアップ: 2026-10-05](/content/catchup/apple-news/20261005)
 - [Apple Developer News キャッチアップ: 2026-10-02](/content/catchup/apple-news/20261002)
 - [Apple Developer News キャッチアップ: 2026-10-01](/content/catchup/apple-news/20261001)
 - [Apple Developer News キャッチアップ: 2026-09-18](/content/catchup/apple-news/20260918)
@@ -242,6 +244,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Android Security Bulletin
 
+- [Android Security Bulletin キャッチアップ: 2026-10-05](/content/catchup/android-security-bulletin/20261005)
 - [Android Security Bulletin キャッチアップ: 2026-09-08](/content/catchup/android-security-bulletin/20260908)
 - [Android Security Bulletin キャッチアップ: 2026-08-05](/content/catchup/android-security-bulletin/20260805)
 - [Android Security Bulletin キャッチアップ: 2026-07-06](/content/catchup/android-security-bulletin/20260706)
