@@ -110,6 +110,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Claude Code
 
+- [Claude Code キャッチアップ: 2026-10-15](/content/catchup/claude-code/20261015)
 - [Claude Code キャッチアップ: 2026-10-14](/content/catchup/claude-code/20261014)
 - [Claude Code キャッチアップ: 2026-10-09](/content/catchup/claude-code/20261009)
 - [Claude Code キャッチアップ: 2026-10-08](/content/catchup/claude-code/20261008)
