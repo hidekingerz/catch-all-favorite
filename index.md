@@ -9,6 +9,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### JSer.info
 
+- [JSer.info #781 キャッチアップ: 2026-10-16のJS](/content/catchup/jser-info/20261016)
 - [JSer.info #780 キャッチアップ: 2026-09-29のJS](/content/catchup/jser-info/20260928)
 - [JSer.info #779 キャッチアップ: 2026-09-10のJS](/content/catchup/jser-info/20260910)
 - [JSer.info #778 キャッチアップ: 2026-08-27のJS](/content/catchup/jser-info/20260827)
@@ -110,6 +111,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Claude Code
 
+- [Claude Code キャッチアップ: 2026-10-16](/content/catchup/claude-code/20261016)
 - [Claude Code キャッチアップ: 2026-10-15](/content/catchup/claude-code/20261015)
 - [Claude Code キャッチアップ: 2026-10-14](/content/catchup/claude-code/20261014)
 - [Claude Code キャッチアップ: 2026-10-09](/content/catchup/claude-code/20261009)
@@ -216,6 +218,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Apple Developer News
 
+- [Apple Developer News キャッチアップ: 2026-10-16](/content/catchup/apple-news/20261016)
 - [Apple Developer News キャッチアップ: 2026-10-14](/content/catchup/apple-news/20261014)
 - [Apple Developer News キャッチアップ: 2026-10-06](/content/catchup/apple-news/20261006)
 - [Apple Developer News キャッチアップ: 2026-10-05](/content/catchup/apple-news/20261005)
