@@ -56,6 +56,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Chrome for Developers
 
+- [Chrome for Developers キャッチアップ: 2026-10-24](/content/catchup/chrome-blog/20261024)
 - [Chrome for Developers キャッチアップ: 2026-10-18](/content/catchup/chrome-blog/20261018)
 - [Chrome for Developers キャッチアップ: 2026-10-12](/content/catchup/chrome-blog/20261012)
 - [Chrome for Developers キャッチアップ: 2026-10-08](/content/catchup/chrome-blog/20261008)
@@ -113,6 +114,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Claude Code
 
+- [Claude Code キャッチアップ: 2026-10-24](/content/catchup/claude-code/20261024)
 - [Claude Code キャッチアップ: 2026-10-22](/content/catchup/claude-code/20261022)
 - [Claude Code キャッチアップ: 2026-10-21](/content/catchup/claude-code/20261021)
 - [Claude Code キャッチアップ: 2026-10-20](/content/catchup/claude-code/20261020)
