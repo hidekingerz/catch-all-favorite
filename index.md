@@ -57,6 +57,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Chrome for Developers
 
+- [Chrome for Developers キャッチアップ: 2026-10-29](/content/catchup/chrome-blog/20261029)
 - [Chrome for Developers キャッチアップ: 2026-10-28](/content/catchup/chrome-blog/20261028)
 - [Chrome for Developers キャッチアップ: 2026-10-26](/content/catchup/chrome-blog/20261026)
 - [Chrome for Developers キャッチアップ: 2026-10-24](/content/catchup/chrome-blog/20261024)
@@ -235,6 +236,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Apple Developer News
 
+- [Apple Developer News キャッチアップ: 2026-10-29](/content/catchup/apple-news/20261029)
 - [Apple Developer News キャッチアップ: 2026-10-28](/content/catchup/apple-news/20261028)
 - [Apple Developer News キャッチアップ: 2026-10-22](/content/catchup/apple-news/20261022)
 - [Apple Developer News キャッチアップ: 2026-10-16](/content/catchup/apple-news/20261016)
@@ -288,6 +290,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Google Play
 
+- [Google Play 最新情報 キャッチアップ: 2026-10-29](/content/catchup/google-play-news/20261029)
 - [Google Play 最新情報 キャッチアップ: 2026-08-19](/content/catchup/google-play-news/20260819)
 - [Google Play 最新情報 キャッチアップ: 2026-08-10](/content/catchup/google-play-news/20260810)
 - [Google Play 最新情報 キャッチアップ: 2026-08-05](/content/catchup/google-play-news/20260805)
