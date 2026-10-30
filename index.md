@@ -92,6 +92,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Google Search Central
 
+- [Google 検索セントラル ブログ キャッチアップ: 2026-10-30](/content/catchup/google-search-blog/20261030)
 - [Google 検索セントラル ブログ キャッチアップ: 2026-10-06](/content/catchup/google-search-blog/20261006)
 - [Google 検索セントラル ブログ キャッチアップ: 2026-09-24](/content/catchup/google-search-blog/20260924)
 - [Google 検索セントラル ブログ キャッチアップ: 2026-09-16](/content/catchup/google-search-blog/20260916)
@@ -118,6 +119,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Claude Code
 
+- [Claude Code キャッチアップ: 2026-10-30](/content/catchup/claude-code/20261030)
 - [Claude Code キャッチアップ: 2026-10-27](/content/catchup/claude-code/20261027)
 - [Claude Code キャッチアップ: 2026-10-26](/content/catchup/claude-code/20261026)
 - [Claude Code キャッチアップ: 2026-10-24](/content/catchup/claude-code/20261024)
