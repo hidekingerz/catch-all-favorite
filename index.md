@@ -26,6 +26,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### This Week in React
 
+- [This Week in React 2026-11-04](/content/catchup/twir/20261104)
 - [This Week in React 2026-10-28](/content/catchup/twir/20261028)
 - [This Week in React 2026-10-21](/content/catchup/twir/20261021)
 - [This Week in React 2026-10-14](/content/catchup/twir/20261014)
@@ -92,6 +93,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Google Search Central
 
+- [Google 検索セントラル ブログ キャッチアップ: 2026-11-04](/content/catchup/google-search-blog/20261104)
 - [Google 検索セントラル ブログ キャッチアップ: 2026-10-30](/content/catchup/google-search-blog/20261030)
 - [Google 検索セントラル ブログ キャッチアップ: 2026-10-06](/content/catchup/google-search-blog/20261006)
 - [Google 検索セントラル ブログ キャッチアップ: 2026-09-24](/content/catchup/google-search-blog/20260924)
@@ -242,6 +244,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Apple Developer News
 
+- [Apple Developer News キャッチアップ: 2026-11-04](/content/catchup/apple-news/20261104)
 - [Apple Developer News キャッチアップ: 2026-11-03](/content/catchup/apple-news/20261103)
 - [Apple Developer News キャッチアップ: 2026-11-02](/content/catchup/apple-news/20261102)
 - [Apple Developer News キャッチアップ: 2026-10-29](/content/catchup/apple-news/20261029)
