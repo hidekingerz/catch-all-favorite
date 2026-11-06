@@ -16,7 +16,8 @@ title: "DKIM2 技術調査レポート — 関連 RFC・ドラフトの全体像
 - 公開鍵は **DKIM1 と同じ `selector._domainkey.example.com` の TXT レコード**を使う。新たに `_domainkey.example.com` に **Domain Policy Record**（`v=DKIM1; f=strict`）を置くと、サブドメインに親ドメインの From を名乗らせない設定ができる。
 - 周辺: **DMARC は 2026年5月に RFC 9989（Standards Track）として改訂**され、集約レポートは RFC 9990、失敗レポートは RFC 9991 に分かれた。**ARC（RFC 8617）は Historic に移す提案**（`draft-ietf-dmarc-arc-to-historic`）が進んでおり、DKIM2 は ARC の実験から学んだ後継の位置づけ。DKIM2 を DMARC の認証メカニズムに加えるかは未決。
 - 移行期は **DKIM1 と DKIM2 の二重署名**が推奨（BCP ドラフト）。受信側は「DKIM2 署名が無い」ことだけで拒否してはならない。
-- 各社対応: 本体ドラフトの著者は **Yahoo（Clayton）・Google（Chuang）・Fastmail（Gondwana）**。主要メールボックス事業者が仕様策定を主導している。本番運用の状況は「[5. 各社・各プロジェクトの対応状況](#5-各社各プロジェクトの対応状況)」を参照。
+- 各社対応: 本体ドラフトの著者は **Yahoo（Clayton）・Google（Chuang）・Fastmail（Gondwana）**で、大手メールボックス事業者が仕様策定を主導している。ただし**本番運用を公表しているのは Fastmail だけ**（一部ドメインで送信署名、全顧客の受信で検証、spec-06 準拠）。Gmail・Yahoo は導入時期を公表しておらず、Microsoft・Apple は表立った関与が見えない。
+- 実装: OSS では **Stalwart Mail Server が DKIM2 を製品に同梱**した最初の汎用メールサーバ。WG の参照実装（Python / Go / C / Perl）、Perl の Mail::DKIM2（Fastmail が使用）、Postfix / Exim 向けの Go 製 milter などがある。OpenDKIM・rspamd などの定番はまだ対応していない。
 
 ---
 
@@ -239,7 +240,73 @@ BCP ドラフトには `?? DMARC and DKIM2 Interoperability ??` のように、�
 
 ## 5. 各社・各プロジェクトの対応状況
 
-（調査中）
+2026-11-06 時点で公開情報から確認できた状況。区分は次のとおり。
+
+| 区分 | 意味 |
+|---|---|
+| **本番** | 本番環境での運用を一次情報で確認 |
+| **計画** | 公式に計画を表明 |
+| **実装・検証** | 実装・実験・相互運用テストを確認 |
+| **策定参加** | ドラフトの著者・WG での発言のみ |
+| **情報なし** | 公開情報が見つからない（関与していないとは限らない） |
+
+### 5.1 標準化のスケジュール
+
+| 時期 | 出来事 |
+|---|---|
+| 2025-02-20 | DKIM WG が DKIM2 のために再憲章化。当初は 2025年12月の IESG 提出を目標にしていたが遅れた |
+| 2025-11 | IETF 124 ハッカソン。各自が独自に実装したが相互テストまでは至らず、「仕様がまだ曖昧」という結論 |
+| 2026-03 | IETF 125 ハッカソン。Perl と Python の実装、Mailman / Sympa のパッチ。相互運用の大きな問題 4 件、仕様のバグ 5 件などを報告 |
+| 2026-07 | IETF 126。Docker で Stalwart・Gondwana・Atkins の実装を総当たりで相互テストし、見つかったのはヘッダの折り返しの問題だけ。耐量子アルゴリズムの選定はこの時点で未決（CFRG に相談中） |
+| 2026-01〜10 | ほぼ毎月の中間会合と、Gondwana 主催の毎週の相互運用テスト会 |
+| 2026-11-18 | IETF 127 の WG 会合予定 |
+| 2027-03 | マイルストーン「全文書を IESG に提出」 |
+
+公式の議事録上、WG Last Call（WG としての最終確認）はまだ行われていない。
+
+### 5.2 メールボックス事業者
+
+| 事業者 | 区分 | 内容 |
+|---|---|---|
+| **Fastmail** | **本番（限定的）** | CEO の Bron Gondwana が 2026-09-29 に WG のメーリングリストで、「送信は少数のドメインで DKIM2 署名」「受信は全顧客について DKIM2 を検証」と説明。実装は spec-06 準拠の Perl ライブラリ。デモ・相互運用テスト用のサーバ [dkim2.com](https://dkim2.com/)（Mailman / Sympa のリスト、反射サーバ、検証ツール）も運営 |
+| **Yahoo** | 策定参加 | Richard Clayton が spec・dns・canmodify の筆頭著者。公式の導入発表は無い。Word to the Wise のブログは、Clayton が「いくつかのメールボックス事業者が数か月以内に導入する」と述べたと伝えているが、予測にとどまる |
+| **Google / Gmail** | 策定参加 | Wei Chuang が spec・dns・sender-policy の共著者。Gmail の公式発表や Postmaster のドキュメントは無い |
+| Microsoft（Outlook.com / Exchange Online） | 情報なし | ドラフトの著者に名前が無く、発表も見つからない |
+| Apple（iCloud） | 情報なし | 2026-06 の中間会合の議事録に Apple への宿題が 1 件あるのみ |
+| Proton、Comcast、GMX/Web.de、Mail.ru、Yandex | 情報なし | — |
+
+**仕様を主導しているのは Yahoo・Google・Fastmail の 3 社だが、本番運用を公表しているのは Fastmail だけ**で、それも一部ドメインに限られている。
+
+### 5.3 ESP・MTA ベンダー・認証関連サービス
+
+| 企業 | 区分 | 内容 |
+|---|---|---|
+| **SocketLabs**（ESP） | 実装・検証 | DKIM2 の検証ツール（ブラウザ版と JSON API）を公開し、dkim2.com に掲載。「独立したシステム間で初めて DKIM2 のやり取りを完了した」という記事があるが、一次情報は未確認 |
+| GreenArrow Email（MTA） | 策定参加 | Todd Herr が BCP ドラフトの著者（DMARCbis＝RFC 9989 の編集者でもある） |
+| **Halon**（MTA） | 計画 | 2026-07 のブログで「仕様が固まるにつれて初期のベータ実装を作る予定」と表明。製品対応はまだ |
+| Word to the Wise（コンサル） | 実装・検証 | 診断サービス aboutmy.email に DKIM2 の検証を追加中。Steve Atkins が Go 実装とテストベクタを作成 |
+| Red Sift | 情報なし（製品） | 解説ブログのみ |
+| Mailchimp、SendGrid、Salesforce、Validity、Mimecast、Proofpoint、Valimail、dmarcian、Postmark、Amazon SES、Splio ほか | 情報なし | 発表や実装は見つからない。認証関連ベンダーの多くは解説記事を出し、「まだ導入しないで」と勧めている |
+
+### 5.4 OSS 実装
+
+| プロジェクト | 区分 | 内容 |
+|---|---|---|
+| **Stalwart Mail Server / mail-auth（Rust）** | 実装・検証（製品に同梱） | 2026-07 の v0.16.12 で DKIM2 と DMARCbis の実装を発表（当時は draft-04 準拠。署名・検証・Chain of Custody の確認・Recipe の巻き戻し・バウンスの検証）。リリースノートによると v1.0.2（2026-11-02）は spec-08 に追従し、DSN と ML-DSA-44 にも対応。ブラウザで試せる [playground](https://mail-auth.stalw.art/) あり。**DKIM2 を同梱した汎用メールサーバとしては最初の例** |
+| **Mail::DKIM2（Perl）** | 本番（Fastmail で使用）／実装・検証 | v0.30（2026-11-03）が spec-09 に対応。署名・検証・DSN と、authentication_milter 用のハンドラを含む |
+| **[dkim2wg/interop](https://github.com/dkim2wg/interop)** | 実装・検証 | WG の参照実装集。Python・Go・C・Perl の署名器、ブラウザ JS の検証器、Perl の milter、適合性テスト一式。IETF 124 ハッカソンで始まり、draft-05〜09 に追従 |
+| [croessner/dkim2](https://github.com/croessner/dkim2)（Go） | 実装・検証（実験的） | ライブラリ、デーモン、**Postfix 用 milter**、**Exim 用アダプタ**。spec-09 / dns-02 準拠 |
+| [turscar/dkim2](https://github.com/turscar/dkim2)（Go） | 実装・検証 | Steve Atkins によるライブラリ・CLI・テストベクタ |
+| Mailman / Sympa のパッチ | 実装・検証 | Gondwana による、メーリングリストの転送時に DKIM2 署名するパッチ。dkim2.com で稼働 |
+| DarkChain（C の milter） | 実装・検証 | draft-moccia の独自プロファイル（`DKIM2-Chain-*` ヘッダ）を実装。**WG の仕様とはヘッダ形式が異なる** |
+| OpenDKIM、rspamd、Exim / Postfix 本体、Haraka、dkimpy | 情報なし | ネイティブ対応は見つからない。Exim / Postfix は croessner の milter・アダプタ経由で試せる |
+
+### 5.5 対応状況のまとめ
+
+- **仕様の策定と実装は並行して進んでいる**。WG 自身が参照実装と適合性テストを持ち、IETF 126 の時点で独立した 3 実装の相互運用はほぼ取れている。
+- ただし、**実装ごとに準拠している版がばらばら**（Fastmail は spec-06、Stalwart は spec-08、Mail::DKIM2 と croessner は spec-09）。-07〜-09 で From の扱いや ML-DSA などに大きな変更があったため、今の時点で相互に通じるとは限らない。
+- **大手で本番運用を公表しているのは Fastmail のみ**。Gmail・Yahoo は仕様を主導しているが、導入時期は公式には示していない。Microsoft・Apple は表立った関与が見えない。
+- 2026年末までに大手が動く、という予測（Word to the Wise）はあるが、確定した計画ではない。
 
 ## 6. 実務への影響と考察
 
@@ -265,3 +332,20 @@ BCP ドラフトには `?? DMARC and DKIM2 Interoperability ??` のように、�
 - [RFC 8617: Authenticated Received Chain (ARC)](https://www.rfc-editor.org/rfc/rfc8617.html)
 - [RFC 9989: Domain-Based Message Authentication, Reporting, and Conformance (DMARC)](https://www.rfc-editor.org/rfc/rfc9989.html)
 - [draft-ietf-dmarc-arc-to-historic: Reclassifying ARC as Historic](https://datatracker.ietf.org/doc/draft-ietf-dmarc-arc-to-historic/)
+
+### 各社の対応状況の出典
+
+- [Bron Gondwana: Fastmail の DKIM2 署名・検証について（ietf-dkim メーリングリスト, 2026-09-29）](http://www.mail-archive.com/ietf-dkim@ietf.org/msg03537.html)
+- [dkim2.com（DKIM2 のデモ・相互運用テストサーバ）](https://dkim2.com/)
+- [Stalwart: DKIM2 and DMARCbis（2026-07-06）](https://stalw.art/blog/dkim2-dmarcbis/)
+- [Stalwart v1.0.2 リリースノート](https://github.com/stalwartlabs/stalwart/releases/tag/v1.0.2)
+- [Mail::DKIM2（metacpan）](https://metacpan.org/pod/Mail::DKIM2)
+- [dkim2wg/interop（WG の参照実装と適合性テスト）](https://github.com/dkim2wg/interop)
+- [croessner/dkim2（Go、Postfix milter / Exim アダプタ）](https://github.com/croessner/dkim2)
+- [turscar/dkim2（Go）](https://github.com/turscar/dkim2)
+- [Halon: DKIM2 for senders（2026-07-30）](https://halon.io/blog/dkim2-for-senders)
+- [Word to the Wise: DKIM2 — what it means for the future of email（2026-04-23）](https://www.wordtothewise.com/2026/04/dkim2-what-it-means-for-the-future-of-email/)
+- [IETF 124 ハッカソン DKIM2 発表資料](https://datatracker.ietf.org/meeting/124/materials/slides-124-hackathon-sessd-dkim2-00)
+- [IETF 125 ハッカソン DKIM2 発表資料](https://datatracker.ietf.org/meeting/125/materials/slides-125-hackathon-sessd-dkim2-hackathon-presentation-00)
+- [IETF 126 DKIM WG 議事録](https://datatracker.ietf.org/doc/minutes-126-dkim/)
+- [DKIM WG 会合一覧](https://datatracker.ietf.org/group/dkim/meetings/)
