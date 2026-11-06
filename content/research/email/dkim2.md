@@ -15,9 +15,9 @@ title: "DKIM2 技術調査レポート — 関連 RFC・ドラフトの全体像
 - DKIM1 から変わった点: 正規化は 1 種類に固定、**全ヘッダを署名**（例外リスト方式）、**Ed25519 と ML-DSA-44（耐量子署名）を検証側の必須**に、複数アルゴリズムの AND/OR 指定、From ヘッダは署名ドメインと一致（**Authentic**）が必須、バージョン番号は持たない（非互換の変更は DKIM3 にする方針）。
 - 公開鍵は **DKIM1 と同じ `selector._domainkey.example.com` の TXT レコード**を使う。新たに `_domainkey.example.com` に **Domain Policy Record**（`v=DKIM1; f=strict`）を置くと、サブドメインに親ドメインの From を名乗らせない設定ができる。
 - 周辺: **DMARC は 2026年5月に RFC 9989（Standards Track）として改訂**され、集約レポートは RFC 9990、失敗レポートは RFC 9991 に分かれた。**ARC（RFC 8617）は Historic に移す提案**（`draft-ietf-dmarc-arc-to-historic`）が進んでおり、DKIM2 は ARC の実験から学んだ後継の位置づけ。DKIM2 を DMARC の認証メカニズムに加えるかは未決。
-- 移行期は **DKIM1 と DKIM2 の二重署名**が推奨（BCP ドラフト）。受信側は「DKIM2 署名が無い」ことだけで拒否してはならない。
+- 移行期は **DKIM1 と DKIM2 の二重署名**が推奨（BCP ドラフト）。受信側は「DKIM2 署名が無い」ことだけを理由に拒否すべきでない（SHOULD NOT）。
 - 各社対応: 本体ドラフトの著者は **Yahoo（Clayton）・Google（Chuang）・Fastmail（Gondwana）**で、大手メールボックス事業者が仕様策定を主導している。ただし**本番運用を公表しているのは Fastmail だけ**（一部ドメインで送信署名、全顧客の受信で検証、spec-06 準拠）。Gmail・Yahoo は導入時期を公表しておらず、Microsoft・Apple は表立った関与が見えない。
-- 実装: OSS では **Stalwart Mail Server が DKIM2 を製品に同梱**した最初の汎用メールサーバ。WG の参照実装（Python / Go / C / Perl）、Perl の Mail::DKIM2（Fastmail が使用）、Postfix / Exim 向けの Go 製 milter などがある。OpenDKIM・rspamd などの定番はまだ対応していない。
+- 実装: OSS では **Stalwart Mail Server が DKIM2 を製品に同梱**している（本調査で確認できた範囲では汎用メールサーバとして唯一）。WG の参照実装（Python / Go / C / Perl）、Perl の Mail::DKIM2（Fastmail が使用）、Postfix / Exim 向けの Go 製 milter などがある。OpenDKIM・rspamd などの定番はまだ対応していない。
 
 ---
 
@@ -25,7 +25,7 @@ title: "DKIM2 技術調査レポート — 関連 RFC・ドラフトの全体像
 
 ### 1.1 DKIM1 の仕組みと限界
 
-DKIM1（RFC 6376、STD 76）は、送信ドメインが本文と一部ヘッダに電子署名を付け、受信側が DNS の公開鍵で検証する仕組み。2011年に Internet Standard となり、DMARC と組み合わせて送信ドメイン認証の柱になった。ただし、運用の中で次の問題がはっきりした。
+DKIM1（RFC 6376、STD 76）は、送信ドメインが本文と一部ヘッダに電子署名を付け、受信側が DNS の公開鍵で検証する仕組み。2011年に発行され、現在は Internet Standard（STD 76）。DMARC と組み合わせて送信ドメイン認証の柱になった。ただし、運用の中で次の問題がはっきりした。
 
 | 問題 | 内容 |
 |---|---|
@@ -38,7 +38,7 @@ DKIM WG の憲章は、これらを解決するために「封筒の送信元の
 
 ### 1.2 ARC の教訓
 
-転送で壊れる問題への既存の対策は ARC（RFC 8617、Experimental）だった。中継者が「受け取った時点では認証が通っていた」と署名付きで書き残す仕組みだが、受信側が中継者をどこまで信用するかの判断が難しく、普及は限定的だった。2026年10月時点では `draft-ietf-dmarc-arc-to-historic`（ARC を Historic に再分類する提案）が出ている。DKIM2 本体ドラフトもこの文書を参照し、「ARC の実験とその教訓に影響を受けた」と書いている。
+転送で壊れる問題への既存の対策は ARC（RFC 8617、Experimental）だった。中継者が「受け取った時点では認証が通っていた」と署名付きで書き残す仕組みで、Gmail や Microsoft など大手は実装した。しかし、受信側が中継者をどこまで信用するかを判断する手段が無く、期待した効果は得られなかった。DMARC WG では `draft-ietf-dmarc-arc-to-historic`（-01、2026-10-21、Informational、著者は Proofpoint の J. T. Adams と J. Levine）が「ARC の実験を終了し、新規の広域展開は勧めず、RFC 8617 を Historic に再分類する」ことを提案している。DKIM2 本体ドラフトもこの文書を参照し、「ARC の実験とその教訓に影響を受けた」と書いている。
 
 DKIM2 の違いは、中継者が「通っていた」と主張するだけでなく、**何を変えたかを Recipe で具体的に記録し、受信側が変更を巻き戻して元の署名を自分で検証できる**こと。
 
@@ -61,7 +61,7 @@ DKIM2 の違いは、中継者が「通っていた」と主張するだけで�
 | draft-gondwana-dkim2-debug-header | -03（2026-11-02） | 実装の相互運用テスト用の診断ヘッダ |
 | draft-clayton-dkim-canmodify | -00（2026-11-02） | DKIM2 メッセージに許される変更の範囲 |
 | draft-chuang-dkim2-sender-policy | -04（2026-10-18） | 送信者ポリシー |
-| draft-chuang-dkim2-localized-header-fields | -00（2026-06-09） | ローカルなヘッダフィールドの扱い |
+| draft-chuang-dkim2-localized-header-fields | -00（2026-06-09、Experimental） | 送信者が定義する `DKIM2-` 接頭辞のヘッダや `Authentication-Results` を、`Message-Instance` のハッシュで保護する拡張 |
 | draft-moccia-dkim2-deployment-profile | -08（2026-10-30） | Milter インターフェースでの DKIM2 導入プロファイル |
 | draft-buck-dkim-pq-dkim1 | -00（2026-11-02） | DKIM1 への耐量子暗号の導入 |
 | draft-xie-dkim-sm2-sm3 | -00（2026-10-30） | 中国の SM2/SM3 暗号を DKIM で使う提案 |
@@ -78,7 +78,7 @@ DKIM2 の違いは、中継者が「通っていた」と主張するだけで�
 | **RFC 9989** | DMARC（2026年5月） | RFC 7489 を置き換えて Standards Track に。PSL をやめ DNS Tree Walk、`pct` 廃止、`np` / `psd` タグ追加。DKIM2 はまだ DMARC の認証メカニズムに含まれていない |
 | RFC 9990 / RFC 9991 | DMARC 集約レポート / 失敗レポート | DMARCbis で分離された報告仕様 |
 | RFC 8601 | Authentication-Results | DKIM2 の検証結果 5 状態はこれに合わせて設計 |
-| RFC 6522 / RFC 3464 | DSN（配送状態通知） | DKIM2 はエラー通知の返送経路と内容を規定する |
+| RFC 6522（multipart/report）、RFC 3464（DSN 形式） | DSN（配送状態通知） | DKIM2 はエラー通知の返送経路と内容を規定する。spec ドラフトが直接参照するのは RFC 6522 |
 | RFC 5321 / RFC 5322 | SMTP / メッセージ形式 | `MAIL FROM` / `RCPT TO` を署名に含めるのが DKIM2 の特徴 |
 
 ## 3. 仕様の仕組み（draft-ietf-dkim-dkim2-spec-09）
@@ -113,11 +113,11 @@ DKIM2 の違いは、中継者が「通っていた」と主張するだけで�
 | `s=` | ○ | `selector:アルゴリズム:署名値`。複数署名を AND/OR で組み合わせ可能 |
 | `mf=` | △ | このホップの SMTP `MAIL FROM`（base64） |
 | `rt=` | △ | このホップの SMTP `RCPT TO`（base64、複数可）。BCC の宛先を他の受信者のコピーに含めてはならない |
-| `nd=` | △ | 次の署名のドメイン（組織内で別ドメインに引き継ぐ「仮想ホップ」用）。`nd=` か `mf=`+`rt=` のどちらかが必須 |
+| `nd=` | △ | 次の署名のドメイン。受信に使ったドメインと転送に使うドメインが異なるとき、架空の `mf=`/`rt=` を作らずに連鎖をつなぐ。`nd=` か `mf=`+`rt=` のどちらかが必須 |
 | `n=` | | 署名者が自由に使う 64 文字までの値（DSN 処理用の DB キーなど） |
 | `f=` | | フラグ。`exploded`（複数宛先に展開した）、`feedback`（受信後の扱いについてフィードバックを求める）、`feedhere`（フィードバックは自分経由で返してほしい） |
 
-署名値は「その時点までのすべての `Message-Instance` と、自分より前のすべての `DKIM2-Signature`」に対して計算する。つまり、**署名がホップごとに鎖のようにつながる**。
+署名値は「その時点までのすべての `Message-Instance`、自分より前のすべての `DKIM2-Signature`、そして署名値だけを空にした自分自身の `DKIM2-Signature`」を連結したものに対して計算する（本文と他のヘッダは `Message-Instance` のハッシュ経由で間接的に守られる）。つまり、**署名がホップごとに鎖のようにつながる**。
 
 なお、ヘッダにバージョン番号は無い。ドラフトは「メール形式の歴史を見る限り、バージョン番号を変えるのは事実上不可能。非互換の変更が必要になったら DKIM3 として別ヘッダにする」と説明している。
 
@@ -236,7 +236,7 @@ _domainkey.example.com.  IN TXT  "v=DKIM1; f=strict"
 | 受信者 | 経路を 3 種類に分けて判断（全ホップが DKIM2 / 途中だけ DKIM2 / DKIM2 なし）。全ホップ DKIM2 で FAIL なら SMTP 中に拒否してよい。**DKIM2 署名が無いことだけを拒否理由にしない** |
 | 共存 | 受信側は DKIM1 と DKIM2 の両方を検証し、DKIM2 の PASS を強いシグナルとして扱う。DMARC に DKIM2 を加えるかは未決。DMARC 集約レポートの価値は DKIM2 普及後も残る |
 
-BCP ドラフトには `?? DMARC and DKIM2 Interoperability ??` のように、まだ議論中であることを示す見出しが残っている。
+BCP ドラフトには `?? DMARC and DKIM2 Interoperability ??` のように、まだ議論中であることを示す見出しが残っている。また、BCP-01（2026-09）は `donotmodify` / `donotexplode` フラグを尊重するよう求めているが、これらのフラグは spec-07 で削除済み。BCP は spec の改訂に追いついておらず、読むときは spec を優先する必要がある。
 
 ## 5. 各社・各プロジェクトの対応状況
 
@@ -269,7 +269,7 @@ BCP ドラフトには `?? DMARC and DKIM2 Interoperability ??` のように、�
 | 事業者 | 区分 | 内容 |
 |---|---|---|
 | **Fastmail** | **本番（限定的）** | CEO の Bron Gondwana が 2026-09-29 に WG のメーリングリストで、「送信は少数のドメインで DKIM2 署名」「受信は全顧客について DKIM2 を検証」と説明。実装は spec-06 準拠の Perl ライブラリ。デモ・相互運用テスト用のサーバ [dkim2.com](https://dkim2.com/)（Mailman / Sympa のリスト、反射サーバ、検証ツール）も運営 |
-| **Yahoo** | 策定参加 | Richard Clayton が spec・dns・canmodify の筆頭著者。公式の導入発表は無い。Word to the Wise のブログは、Clayton が「いくつかのメールボックス事業者が数か月以内に導入する」と述べたと伝えているが、予測にとどまる |
+| **Yahoo** | 策定参加 | Richard Clayton が spec と canmodify の筆頭著者、dns の共著者。公式の導入発表は無い。Word to the Wise のブログは、Clayton が「いくつかのメールボックス事業者が数か月以内に導入する」と述べたと伝えているが、予測にとどまる |
 | **Google / Gmail** | 策定参加 | Wei Chuang が spec・dns・sender-policy の共著者。Gmail の公式発表や Postmaster のドキュメントは無い |
 | Microsoft（Outlook.com / Exchange Online） | 情報なし | ドラフトの著者に名前が無く、発表も見つからない |
 | Apple（iCloud） | 情報なし | 2026-06 の中間会合の議事録に Apple への宿題が 1 件あるのみ |
@@ -282,7 +282,7 @@ BCP ドラフトには `?? DMARC and DKIM2 Interoperability ??` のように、�
 | 企業 | 区分 | 内容 |
 |---|---|---|
 | **SocketLabs**（ESP） | 実装・検証 | DKIM2 の検証ツール（ブラウザ版と JSON API）を公開し、dkim2.com に掲載。「独立したシステム間で初めて DKIM2 のやり取りを完了した」という記事があるが、一次情報は未確認 |
-| GreenArrow Email（MTA） | 策定参加 | Todd Herr が BCP ドラフトの著者（DMARCbis＝RFC 9989 の編集者でもある） |
+| GreenArrow Email（MTA） | 策定参加 | Todd Herr が BCP ドラフトの著者（RFC 9989＝DMARCbis の編集者でもある。RFC 9989 の時点の所属は Valimail） |
 | **Halon**（MTA） | 計画 | 2026-07 のブログで「仕様が固まるにつれて初期のベータ実装を作る予定」と表明。製品対応はまだ |
 | Word to the Wise（コンサル） | 実装・検証 | 診断サービス aboutmy.email に DKIM2 の検証を追加中。Steve Atkins が Go 実装とテストベクタを作成 |
 | Red Sift | 情報なし（製品） | 解説ブログのみ |
@@ -292,7 +292,7 @@ BCP ドラフトには `?? DMARC and DKIM2 Interoperability ??` のように、�
 
 | プロジェクト | 区分 | 内容 |
 |---|---|---|
-| **Stalwart Mail Server / mail-auth（Rust）** | 実装・検証（製品に同梱） | 2026-07 の v0.16.12 で DKIM2 と DMARCbis の実装を発表（当時は draft-04 準拠。署名・検証・Chain of Custody の確認・Recipe の巻き戻し・バウンスの検証）。リリースノートによると v1.0.2（2026-11-02）は spec-08 に追従し、DSN と ML-DSA-44 にも対応。ブラウザで試せる [playground](https://mail-auth.stalw.art/) あり。**DKIM2 を同梱した汎用メールサーバとしては最初の例** |
+| **Stalwart Mail Server / mail-auth（Rust）** | 実装・検証（製品に同梱） | 2026-07 の v0.16.12 で DKIM2 と DMARCbis の実装を発表（当時は draft-04 準拠。署名・検証・Chain of Custody の確認・Recipe の巻き戻し・バウンスの検証）。リリースノートによると v1.0.2（2026-11-02）は spec-08 に追従し、DSN と ML-DSA-44 にも対応。ブラウザで試せる [playground](https://mail-auth.stalw.art/) あり。**本調査で確認できた範囲では、DKIM2 を同梱した唯一の汎用メールサーバ** |
 | **Mail::DKIM2（Perl）** | 本番（Fastmail で使用）／実装・検証 | v0.30（2026-11-03）が spec-09 に対応。署名・検証・DSN と、authentication_milter 用のハンドラを含む |
 | **[dkim2wg/interop](https://github.com/dkim2wg/interop)** | 実装・検証 | WG の参照実装集。Python・Go・C・Perl の署名器、ブラウザ JS の検証器、Perl の milter、適合性テスト一式。IETF 124 ハッカソンで始まり、draft-05〜09 に追従 |
 | [croessner/dkim2](https://github.com/croessner/dkim2)（Go） | 実装・検証（実験的） | ライブラリ、デーモン、**Postfix 用 milter**、**Exim 用アダプタ**。spec-09 / dns-02 準拠 |
@@ -316,7 +316,7 @@ BCP ドラフトには `?? DMARC and DKIM2 Interoperability ??` のように、�
 - **DKIM1 の鍵運用はそのまま生きる**。鍵は同じ場所・同じ形式なので、送信側は DKIM1 の鍵管理（2048 ビット RSA、ローテーション、selector の再利用禁止）を整えておくことが、そのまま DKIM2 への準備になる。Ed25519 鍵の併用を試しておくのもよい。
 - **影響が大きいのは中継者**。メーリングリスト、転送サービス、セキュリティゲートウェイ（URL 書き換え・バナー挿入）は、変更のたびに Recipe を書いて署名する必要がある。DKIM2 で最も実装負荷がかかるのはこの層。
 - **送信代行（ESP）にはメリットが大きい**。DSN が経路を逆にたどって戻るので、顧客ドメインのバウンスを ESP が直接受け取れる。リプレイ対策で、自社の評判を悪用されるリスクも下がる。
-- **ヘッダの肥大化に注意**。ML-DSA-44 の署名は 1 つで 3 KB を超え、ホップごとに増える。複数アルゴリズムで署名すればさらに増える。メールゲートウェイのヘッダサイズ上限や、TXT レコードのサイズ（1312 バイトの公開鍵）を確認しておくべき。
+- **ヘッダの肥大化に注意**。ML-DSA-44 の署名は 1 つで 3 KB を超え、ホップごとに増える。複数アルゴリズムで署名すればさらに増える。メールゲートウェイのヘッダサイズ上限や、TXT レコードのサイズ（公開鍵 1312 バイトは base64 で約 1,750 文字。255 文字ごとの分割と、DNS 応答が 512 バイトを超えるときの EDNS / TCP フォールバック）を確認しておくべき。
 - **DMARC との関係は未決**。DMARC は RFC 9989 として改訂されたばかりで、DKIM2 を認証メカニズムに加えるかはこれからの議論。当面は DKIM1 + SPF + DMARC の運用を続けることになる。
 
 ## 参考文献
