@@ -95,6 +95,12 @@ const buildResearchGroup = () => ({
         .sort()
         .map((s) => `/content/research/loop/${s}`),
     },
+    {
+      label: "メール技術",
+      items: slugsIn("content/research/email")
+        .sort()
+        .map((s) => `/content/research/email/${s}`),
+    },
   ],
 });
 
