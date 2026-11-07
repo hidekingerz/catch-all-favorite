@@ -101,6 +101,12 @@ const buildResearchGroup = () => ({
         .sort()
         .map((s) => `/content/research/email/${s}`),
     },
+    {
+      label: "HTTP",
+      items: slugsIn("content/research/http")
+        .sort()
+        .map((s) => `/content/research/http/${s}`),
+    },
   ],
 });
 
