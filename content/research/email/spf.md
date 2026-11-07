@@ -14,7 +14,7 @@ title: "SPF 技術調査レポート — RFC 7208 の仕組み・限界・DMARC 
 - **DNS を引く term（`include` / `a` / `mx` / `ptr` / `exists` / `redirect`）は合計 10 個まで**（MUST）。超えると permerror。さらに空応答・NXDOMAIN の「void lookup」は 2 回まで（SHOULD）。SaaS の include を重ねるとすぐ上限に達し、「SPF flattening」という回避策と業者が生まれた。
 - 受信側がどう扱うかは仕様上「ローカルポリシー」で、規範的な要求は無い。拒否するなら `550 5.7.1`（RFC 7372 では `5.7.23`）。結果は `Received-SPF` または `Authentication-Results: ...; spf=pass smtp.mailfrom=...` に記録する。
 - 限界は 4 つ。(1) **転送で壊れる**（転送元 IP は宛先ドメインの SPF に無い。SRS で `MAIL FROM` を書き換える回避策がある）、(2) **include 連鎖による 10 回制限超過**、(3) **`+all` / `?all` は何も守らない**、(4) **共有インフラの IP を許可すると、同じインフラの他の利用者も「pass」を取れる**。NDSS 2024 の BreakSPF 論文は Tranco 上位 100 万ドメインのうち 23,916 ドメインがこの経路で詐称可能と報告し、TU Berlin の 2025 年の調査では `include:spf.protection.outlook.com` を 245 万ドメインが使い、約 49 万 IP を許可していた。
-- このため **SPF 単独では From を守れず、DMARC（RFC 9989）と組み合わせる**。DMARC は SPF の `MAIL FROM` ドメインと `From:` ドメインの一致（alignment、`aspf=r|s`）を要求し、`p=reject` のドメインは **SPF だけに頼ってはならず DKIM 署名が必須**（MUST）。
+- このため **SPF 単独では From を守れず、DMARC（RFC 9989）と組み合わせる**。DMARC は SPF の `MAIL FROM` ドメインと `From:` ドメインの一致（ã¢ã©ã¤ã³ã¡ã³ã、`aspf=r|s`）を要求し、`p=reject` のドメインは **SPF だけに頼ってはならず DKIM 署名が必須**（MUST）。
 - 2024年2月以降、**Gmail と Yahoo は全送信者に SPF または DKIM を、1 日 5,000 通以上の送信者に SPF と DKIM の両方と DMARC（最低 `p=none`）を要求**。Microsoft（Outlook.com）も 2025年5月から同等の要件を適用。Apple iCloud も SPF・DKIM・DMARC を求める。
 - 日本では、迷惑メール対策推進協議会が 2024年7月に「送信ドメイン認証技術 DMARC 導入ガイドライン」を公表。JPAAWG の報告では jp ドメイン（MX あり）の SPF 設定率は 88.5%、DMARC は 33.4%。
 - OSS 実装は pyspf / spf-engine（Scott Kitterman、RFC 7208 著者が保守）、libspf2（Exim が利用）、Mail::SPF、rspamd の SPF モジュールなど。古参の libspf2 は RFC 7208 対応を明記していない。
@@ -245,9 +245,9 @@ DMARC は SPF と DKIM の結果を `From:` ドメインに結びつける。SPF
 
 - DMARC が使うのは **`MAIL FROM` に対する SPF 検証だけ**（HELO の結果は使わない）。`MAIL FROM` が空のときは RFC 7208 第 2.4 節どおり `postmaster@<HELO>` を使う（第 3.2.4 節）。
 - SPF pass したドメイン（SPF-Authenticated Identifier）が `From:` ドメインと **Identifier Alignment** していなければ DMARC には寄与しない。「どんなドメイン所有者でも、悪意ある者でも、自分のドメインに SPF レコードを公開して pass を取れる」ため（第 4.4.2 節）。
-- alignment は **`aspf=r`（relaxed、組織ドメインが一致すればよい、既定）** か **`aspf=s`（strict、完全一致）**。
-- ドメイン所有者は **alignment する SPF-Authenticated Identifier を生むようにメールを送らなければならない（MUST）**。ただし **`p=reject` のドメインは SPF だけに頼ってはならず（MUST NOT）、DKIM 署名を付けなければならない（MUST）**（第 7.4 節・第 8 節）。転送で SPF が壊れるため。
-- 第 7.1 節は **`-all` の副作用**を指摘する。SPF は SMTP の早い段階で評価されるため、`-all` だと DKIM が alignment して DMARC を通るはずのメールが SPF fail だけで拒否されうる。しかも DATA 前に拒否されたメールは **DMARC 集約レポートに現れない**。
+- ã¢ã©ã¤ã³ã¡ã³ã は **`aspf=r`（relaxed、組織ドメインが一致すればよい、既定）** か **`aspf=s`（strict、完全一致）**。
+- ドメイン所有者は **ã¢ã©ã¤ã³ã¡ã³ã する SPF-Authenticated Identifier を生むようにメールを送らなければならない（MUST）**。ただし **`p=reject` のドメインは SPF だけに頼ってはならず（MUST NOT）、DKIM 署名を付けなければならない（MUST）**（第 7.4 節・第 8 節）。転送で SPF が壊れるため。
+- 第 7.1 節は **`-all` の副作用**を指摘する。SPF は SMTP の早い段階で評価されるため、`-all` だと DKIM が ã¢ã©ã¤ã³ã¡ã³ã して DMARC を通るはずのメールが SPF fail だけで拒否されうる。しかも DATA 前に拒否されたメールは **DMARC 集約レポートに現れない**。
 - 第 11.1 節: 共有インフラのような「寛容な送信元」を SPF に含める場合は **`?` qualifier** を付ければ DMARC の判定から外せる。DMARC WG では **SPF を DMARC の認証メカニズムから完全に外す案が活発に議論されたが合意に至らなかった**。
 - 第 11.4 節: 組織ドメイン配下のサブドメインの DNS を他人が制御できると、そのサブドメインの SPF で `From: foo@example.com` の DMARC pass を取られる。`aspf=s` の検討を促している。
 
@@ -263,7 +263,7 @@ www.example.com.       IN TXT "v=spf1 -all"
 _dmarc.example.com.    IN TXT "v=DMARC1; p=quarantine; rua=mailto:dmarc@example.com; aspf=r"
 ```
 
-`bounce.example.com` は SES のカスタム MAIL FROM ドメイン。`aspf=r` なので `MAIL FROM` が `bounce.example.com`、`From:` が `example.com` でも alignment する。
+`bounce.example.com` は SES のカスタム MAIL FROM ドメイン。`aspf=r` なので `MAIL FROM` が `bounce.example.com`、`From:` が `example.com` でも ã¢ã©ã¤ã³ã¡ã³ã する。
 
 ## 5. SPF の限界
 
@@ -279,7 +279,7 @@ SPF は「最後に送ってきた SMTP サーバ」の IP で判定する。`al
 
 転送者側の書き換えを定式化したのが **SRS（Sender Rewriting Scheme）**。`MAIL FROM` を `SRS0=<hash>=<timestamp>=<元ドメイン>=<元ローカルパート>@<転送者ドメイン>` の形にし、バウンスが転送者に届いたらハッシュとタイムスタンプを検証して元の送信者へ戻す。2003〜2004 年に SPF コミュニティ（Meng Weng Wong、Shevek）で設計され、IETF の RFC にはなっていない。実装は libsrs2、PostSRSd（Postfix 用）、Exim の `srs_encode` / `inbound_srs`（SRS0 のみ）など。Microsoft 365（Exchange Online）はメールボックス転送やトランスポートルールのリダイレクトで `bounces+SRS=<Hash>=<Timestamp>@<既定の受け入れドメイン>` に書き換える（[Microsoft Learn](https://learn.microsoft.com/en-us/exchange/reference/sender-rewriting-scheme)）。
 
-SRS で SPF は通るが、**`MAIL FROM` が転送者のドメインになるので DMARC の SPF alignment は満たせない**。Microsoft のドキュメントも「SRS は転送メールが DMARC を通らない問題を解決しない」と明記している。DMARC pass は DKIM に頼ることになり、ここが DKIM2 が解こうとしている領域（[DKIM2 レポート](/content/research/email/dkim2)参照）。
+SRS で SPF は通るが、**`MAIL FROM` が転送者のドメインになるので DMARC の SPF ã¢ã©ã¤ã³ã¡ã³ã は満たせない**。Microsoft のドキュメントも「SRS は転送メールが DMARC を通らない問題を解決しない」と明記している。DMARC pass は DKIM に頼ることになり、ここが DKIM2 が解こうとしている領域（[DKIM2 レポート](/content/research/email/dkim2)参照）。
 
 ### 5.2 include の連鎖と 10 回制限 — SPF flattening
 
@@ -297,7 +297,7 @@ TU Berlin の Czybik らによる 1,200 万ドメインの調査（"Lazy Gatekee
 
 ### 5.4 From を守れない
 
-第 1.1 節のとおり、SPF が検証するのは `MAIL FROM` と HELO。攻撃者は自分のドメインで SPF pass を取りつつ `From:` に被害者のドメインを書ける。ユーザが見るのは `From:` なので、**フィッシング対策としては DMARC による alignment 検査が無いと意味をなさない**。RFC 9989 第 4.4.2 節が「第三者が使ってよい `MAIL FROM` ドメインの一覧を所有者が表明する一般に受け入れられた仕組みは無い」と述べているとおり、SPF の仕組み内に From との結びつきは無い。
+第 1.1 節のとおり、SPF が検証するのは `MAIL FROM` と HELO。攻撃者は自分のドメインで SPF pass を取りつつ `From:` に被害者のドメインを書ける。ユーザが見るのは `From:` なので、**フィッシング対策としては DMARC による ã¢ã©ã¤ã³ã¡ã³ã 検査が無いと意味をなさない**。RFC 9989 第 4.4.2 節が「第三者が使ってよい `MAIL FROM` ドメインの一覧を所有者が表明する一般に受け入れられた仕組みは無い」と述べているとおり、SPF の仕組み内に From との結びつきは無い。
 
 ### 5.5 共有インフラの問題 — BreakSPF と「Lazy Gatekeepers」
 
@@ -324,9 +324,9 @@ SPF は「IP を支配している者＝ドメインの正当な送信者」と�
 
 | 事業者 | 区分 | 内容 |
 |---|---|---|
-| **Google / Gmail** | **本番** | [Email sender guidelines](https://support.google.com/a/answer/81126)。2024-02-01 から適用。**全送信者**: 「送信ドメインに SPF または DKIM を設定する」、PTR の整合、TLS、迷惑メール率 0.3% 未満。**1 日 5,000 通以上**: **SPF と DKIM の両方**、送信ドメインの **DMARC（最低 `p=none`）**、直接送信では `From:` ドメインが SPF ドメインか DKIM ドメインと alignment、ワンクリック配信停止（`List-Unsubscribe-Post` / `List-Unsubscribe`）。Google Workspace 向けの SPF は `v=spf1 include:_spf.google.com ~all` で、**Google は `~all` を推奨**（Workspace の SPF 設定ページ。同ページは「SPF レコードには include タグを 10 個まで」とも説明している） |
-| **Yahoo**（Yahoo Mail、AOL ほか） | **本番** | [Sender Best Practices](https://senders.yahooinc.com/best-practices/)。2024年2月から段階的に適用。全送信者: 「最低限 SPF または DKIM を実装」。bulk 送信者: 「SPF と DKIM の両方」、`p=none` 以上の DMARC と DMARC pass、`rua` の設定を強く推奨、relaxed alignment 可、ワンクリック配信停止（RFC 8058）、転送するなら ARC |
-| **Microsoft**（Outlook.com: outlook.com / hotmail.com / live.com） | **本番** | [Tech Community 2025-04-02](https://techcommunity.microsoft.com/blog/microsoftdefenderforoffice365blog/strengthening-email-ecosystem-outlook%E2%80%99s-new-requirements-for-high%E2%80%90volume-senders/4399730)。1 日 5,000 通以上の送信ドメインに「**SPF は送信ドメインで pass しなければならない**」「DKIM pass」「DMARC は最低 `p=none` で SPF か DKIM（できれば両方）と alignment」。2025-05-05 から非準拠メールを迷惑メールフォルダへ、拒否（`550 5.7.515`）は後日と告知。記事内で拒否開始日の記述が一貫していない。Microsoft 365 顧客向けの SPF は `v=spf1 include:spf.protection.outlook.com -all` で、**Microsoft は `-all` を推奨**（DMARC が SPF の `~all` と `-all` を同じ fail として扱い、DKIM 署名が無いメールでは `~all` だと DMARC が事実上効かないため） |
+| **Google / Gmail** | **本番** | [Email sender guidelines](https://support.google.com/a/answer/81126)。2024-02-01 から適用。**全送信者**: 「送信ドメインに SPF または DKIM を設定する」、PTR の整合、TLS、迷惑メール率 0.3% 未満。**1 日 5,000 通以上**: **SPF と DKIM の両方**、送信ドメインの **DMARC（最低 `p=none`）**、直接送信では `From:` ドメインが SPF ドメインか DKIM ドメインと ã¢ã©ã¤ã³ã¡ã³ã、ワンクリック配信停止（`List-Unsubscribe-Post` / `List-Unsubscribe`）。Google Workspace 向けの SPF は `v=spf1 include:_spf.google.com ~all` で、**Google は `~all` を推奨**（Workspace の SPF 設定ページ。同ページは「SPF レコードには include タグを 10 個まで」とも説明している） |
+| **Yahoo**（Yahoo Mail、AOL ほか） | **本番** | [Sender Best Practices](https://senders.yahooinc.com/best-practices/)。2024年2月から段階的に適用。全送信者: 「最低限 SPF または DKIM を実装」。bulk 送信者: 「SPF と DKIM の両方」、`p=none` 以上の DMARC と DMARC pass、`rua` の設定を強く推奨、relaxed ã¢ã©ã¤ã³ã¡ã³ã 可、ワンクリック配信停止（RFC 8058）、転送するなら ARC |
+| **Microsoft**（Outlook.com: outlook.com / hotmail.com / live.com） | **本番** | [Tech Community 2025-04-02](https://techcommunity.microsoft.com/blog/microsoftdefenderforoffice365blog/strengthening-email-ecosystem-outlook%E2%80%99s-new-requirements-for-high%E2%80%90volume-senders/4399730)。1 日 5,000 通以上の送信ドメインに「**SPF は送信ドメインで pass しなければならない**」「DKIM pass」「DMARC は最低 `p=none` で SPF か DKIM（できれば両方）と ã¢ã©ã¤ã³ã¡ã³ã」。2025-05-05 から非準拠メールを迷惑メールフォルダへ、拒否（`550 5.7.515`）は後日と告知。記事内で拒否開始日の記述が一貫していない。Microsoft 365 顧客向けの SPF は `v=spf1 include:spf.protection.outlook.com -all` で、**Microsoft は `-all` を推奨**（DMARC が SPF の `~all` と `-all` を同じ fail として扱い、DKIM 署名が無いメールでは `~all` だと DMARC が事実上効かないため） |
 | **Apple**（iCloud Mail） | **本番** | [Postmaster information](https://support.apple.com/102322)（2025-02-25 更新）。「iCloud Mail はすべての受信メールを SPF と DKIM で認証する」「送信ドメインが DMARC ポリシーを公開していればそれに従う」。bulk 送信者の要件として「SPF と DKIM を利用して認証する」「送信ドメインは DMARC ポリシーを公開しなければならない」「転送メールには ARC ヘッダを付ける」を挙げ、「すべての要件を満たさないと拒否される」。自社ドメイン icloud.com の DMARC は `p=quarantine; sp=quarantine`（2026-11-06 に DNS で確認。公開開始時期は二次情報で 2018-07 とされる） |
 | Fastmail、Proton、GMX / Web.de、Comcast ほか | 情報なし | SPF 検証自体は一般的だが、送信者要件の一次情報は本調査では確認していない |
 
@@ -334,9 +334,9 @@ SPF は「IP を支配している者＝ドメインの正当な送信者」と�
 
 | サービス | 区分 | 設定方法（include 名は公式ドキュメントから） |
 |---|---|---|
-| **Amazon SES** | 本番 | 既定の `MAIL FROM` は `amazonses.com` のサブドメインで、SES の SPF で pass する。自社ドメインで alignment したい場合は **カスタム MAIL FROM ドメイン**（自社ドメインのサブドメイン）を設定し、`MX 10 feedback-smtp.<region>.amazonses.com` と **`"v=spf1 include:amazonses.com ~all"`** を公開する。MX は 1 つだけ（複数あると失敗）。[docs.aws.amazon.com](https://docs.aws.amazon.com/ses/latest/dg/mail-from.html) |
+| **Amazon SES** | 本番 | 既定の `MAIL FROM` は `amazonses.com` のサブドメインで、SES の SPF で pass する。自社ドメインで ã¢ã©ã¤ã³ã¡ã³ã したい場合は **カスタム MAIL FROM ドメイン**（自社ドメインのサブドメイン）を設定し、`MX 10 feedback-smtp.<region>.amazonses.com` と **`"v=spf1 include:amazonses.com ~all"`** を公開する。MX は 1 つだけ（複数あると失敗）。[docs.aws.amazon.com](https://docs.aws.amazon.com/ses/latest/dg/mail-from.html) |
 | **Twilio SendGrid** | 本番 | Domain Authentication の既定は「Automated security」オン。`em<nnnn>.example.com` → `u<id>.wl<id>.sendgrid.net`、`s1._domainkey` / `s2._domainkey` の CNAME を置き、SPF / DKIM / DMARC レコードを SendGrid が保守する（SPF の TXT は顧客側に不要）。オフにした場合は `em<nnnn>.example.com` に `MX mx.sendgrid.net` と **`v=spf1 include:sendgrid.net ~all`** の TXT を置く。Return-Path はこのサブドメイン。[Twilio docs](https://www.twilio.com/docs/sendgrid/ui/account-and-settings/how-to-set-up-domain-authentication) |
-| **Mailchimp**（Marketing） | 本番（DKIM のみ） | ドメイン認証は **DKIM の CNAME 2 本と DMARC の TXT 1 本**で、公式ヘルプに SPF の include は無い。Return-Path は Mailchimp のドメイン（`mcsv.net` など）なので、SPF は Mailchimp 側で pass し、DMARC は DKIM で alignment する。`include:servers.mcsv.net` を自社ドメインに足しても alignment には寄与しない、という説明は解説サイト（二次情報）のもの。[Mailchimp help](https://mailchimp.com/help/set-up-email-domain-authentication/) |
+| **Mailchimp**（Marketing） | 本番（DKIM のみ） | ドメイン認証は **DKIM の CNAME 2 本と DMARC の TXT 1 本**で、公式ヘルプに SPF の include は無い。Return-Path は Mailchimp のドメイン（`mcsv.net` など）なので、SPF は Mailchimp 側で pass し、DMARC は DKIM で ã¢ã©ã¤ã³ã¡ã³ã する。`include:servers.mcsv.net` を自社ドメインに足しても ã¢ã©ã¤ã³ã¡ã³ã には寄与しない、という説明は解説サイト（二次情報）のもの。[Mailchimp help](https://mailchimp.com/help/set-up-email-domain-authentication/) |
 | **Google Workspace** | 本番 | `v=spf1 include:_spf.google.com ~all`。サブドメインごとに SPF が必要 |
 | **Microsoft 365** | 本番 | `v=spf1 include:spf.protection.outlook.com -all`（GCC High / DoD は `spf.protection.office365.us`、21Vianet は `spf.protection.partner.outlook.cn`）。サブドメインごとに SPF が必要。lookup 数の節約に「サードパーティサービスはサブドメインに分ける」ことを推奨。SRS を実装 |
 | Mailgun、Postmark、Brevo、Salesforce Marketing Cloud ほか | 情報なし（本調査では未確認） | BreakSPF の集計で `mailgun.org`、`salesforce.com` が include 上位に入っているが、設定方法の一次情報は本レポートでは確認していない |
@@ -368,7 +368,7 @@ SPF は「IP を支配している者＝ドメインの正当な送信者」と�
 ### 6.5 対応状況のまとめ
 
 - **受信側の 4 大事業者（Google、Yahoo、Microsoft、Apple）は全員が SPF を検証し、大量送信者には SPF と DKIM の両方と DMARC を要求**している。SPF 単独で足りるのは少量送信者に対する Gmail / Yahoo の最低要件だけ。
-- ESP の設定方法は 2 系統。**Return-Path を ESP のドメインにする**（Mailchimp、SendGrid 既定、SES 既定）か、**顧客ドメインのサブドメインを Return-Path にして include を置く**（SES カスタム MAIL FROM、SendGrid の手動設定）か。前者では SPF は ESP 側で pass するが DMARC alignment は DKIM 頼み、後者では SPF でも alignment できる。
+- ESP の設定方法は 2 系統。**Return-Path を ESP のドメインにする**（Mailchimp、SendGrid 既定、SES 既定）か、**顧客ドメインのサブドメインを Return-Path にして include を置く**（SES カスタム MAIL FROM、SendGrid の手動設定）か。前者では SPF は ESP 側で pass するが DMARC ã¢ã©ã¤ã³ã¡ã³ã は DKIM 頼み、後者では SPF でも ã¢ã©ã¤ã³ã¡ã³ã できる。
 - OSS では **RFC 7208 の著者自身が保守する pyspf / spf-engine** が仕様に最も近い。libspf2 は広く使われているが RFC 7208 への準拠を明記していない。
 - 日本では **2024 年の Google / Yahoo の要件を機に DMARC が急増**したが、SPF はそれ以前から 9 割近くに普及しており、課題は SPF の有無よりも DMARC とレコードの質（`+all`、lookup 超過）に移っている。
 
@@ -378,9 +378,9 @@ SPF は「IP を支配している者＝ドメインの正当な送信者」と�
 
 - **`-all` か `~all` か**。仕様上の差は「softfail だけで拒否 SHOULD NOT」であり、DMARC を公開するなら両方とも SPF fail として扱われる。Google は `~all`、Microsoft は `-all` を推奨していて、どちらも根拠がある。判断の軸は「DKIM と DMARC が整っているか」。DKIM が全送信経路に付き、DMARC で監視できているなら `-all` で早期拒否させる害は小さい。DKIM が付かない経路（古いシステム、社内の通知サーバ）が残っているなら、RFC 9989 第 7.1 節のとおり `-all` は DMARC レポートに現れない拒否を生むので `~all` で始める方が安全。いずれにせよ `?all` と `+all` は使わない。
 - **lookup 数は設計段階で管理する**。SaaS を足すたびに include が増える。(1) 送信サービスごとにサブドメインを分けて `MAIL FROM` / `From:` に使う（Microsoft も推奨。各サブドメインに 10 回の枠ができ、評判も分離できる）、(2) 自社 MTA は `ip4` / `ip6` で書き `a` / `mx` を避ける、(3) `include` の先を定期的に数える（CI で `dig` して再帰的に数えるスクリプトを置く）、(4) それでも超えるときだけ flattening を検討し、IP が動く大手（Microsoft 365、Google）は flatten しない、の順で考える。
-- **Return-Path ドメインを意識する**。Web アプリから ESP 経由で送る場合、SPF の対象は `From:` ではなく Return-Path（`MAIL FROM`）。ESP の既定ドメインのままなら自社の SPF は使われず、DMARC は DKIM だけで通る。SPF でも alignment したいなら、SES のカスタム MAIL FROM や SendGrid のカスタム Return-Path のように**自社サブドメインを Return-Path にし、そこに include を置く**。`aspf=r` なら `bounce.example.com` と `example.com` は一致する。
+- **Return-Path ドメインを意識する**。Web アプリから ESP 経由で送る場合、SPF の対象は `From:` ではなく Return-Path（`MAIL FROM`）。ESP の既定ドメインのままなら自社の SPF は使われず、DMARC は DKIM だけで通る。SPF でも ã¢ã©ã¤ã³ã¡ã³ã したいなら、SES のカスタム MAIL FROM や SendGrid のカスタム Return-Path のように**自社サブドメインを Return-Path にし、そこに include を置く**。`aspf=r` なら `bounce.example.com` と `example.com` は一致する。
 - **送らないドメイン・ホストにも SPF を置く**。パーキングドメインには `v=spf1 -all`。送信 MTA のホスト名（HELO に使う名前）には `v=spf1 a -all`。バウンス（空の `MAIL FROM`）は HELO 名で検査されるので、これが無いと DSN の SPF が none になる。
-- **SPF は DMARC の前提であって目的ではない**。共有インフラの問題（BreakSPF、`include:spf.protection.outlook.com` の 49 万 IP）は SPF の設計上の限界で、設定で直せない。From を守るのは DMARC の alignment、転送を越えるのは DKIM、将来的には DKIM2。SPF の役割は「DMARC の 2 つの経路のうち 1 つ」と「SMTP 早期段階での安価なフィルタ」に絞って考えるのが現実的。
+- **SPF は DMARC の前提であって目的ではない**。共有インフラの問題（BreakSPF、`include:spf.protection.outlook.com` の 49 万 IP）は SPF の設計上の限界で、設定で直せない。From を守るのは DMARC の ã¢ã©ã¤ã³ã¡ã³ã、転送を越えるのは DKIM、将来的には DKIM2。SPF の役割は「DMARC の 2 つの経路のうち 1 つ」と「SMTP 早期段階での安価なフィルタ」に絞って考えるのが現実的。
 - **Received-SPF より Authentication-Results を読む**。自社で受信側の処理（問い合わせフォームの転送、メール起点のワークフロー）を書く場合、SPF の結果は `Authentication-Results` の `spf=` から取り、自分の MTA の authserv-id が付いたものだけを信じる。`Received-SPF` は再現用の詳細情報で、順序規則に依存するため偽装耐性が弱い。
 - **IDN を使うなら A-label**。RFC 8616 により、SPF の DNS 名も `MAIL FROM` のドメインも A-label に変換してから評価される。日本語ドメインで送る場合、SPF レコードは Punycode の名前に置く。
 
