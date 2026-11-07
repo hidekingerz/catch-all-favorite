@@ -24,7 +24,7 @@ title: "DMARC 技術調査レポート — RFC 9989（DMARCbis）の仕組み・
 
 ### 1.1 解決したい問題
 
-メールの `From:` ヘッダは誰でも自由に書ける。SPF（RFC 7208）は SMTP の `MAIL FROM`（エンベロープ送信者）のドメインを、DKIM（RFC 6376）は署名の `d=` ドメインを認証するが、どちらも**利用者が目にする `From:` のドメインとは結び付いていない**。攻撃者は正規のドメインで SPF / DKIM を通しつつ、`From:` に銀行のドメインを書ける。
+メールの `From:` ヘッダは誰でも自由に書ける。SPF（RFC 7208）は SMTP の `MAIL FROM`（エンベロープFrom）のドメインを、DKIM（RFC 6376）は署名の `d=` ドメインを認証するが、どちらも**利用者が目にする `From:` のドメインとは結び付いていない**。攻撃者は正規のドメインで SPF / DKIM を通しつつ、`From:` に銀行のドメインを書ける。
 
 DMARC は、`From:` のドメイン（**Author Domain**）の所有者が DNS に TXT レコードを置き、(1) SPF / DKIM の認証結果と `From:` ドメインの**整合（Identifier Alignment）**を受信側に検証させ、(2) 検証に失敗したメールの扱いの希望（**Domain Owner Assessment Policy**）を伝え、(3) 自分のドメインがどう使われているかの**レポート**を受け取る仕組み。RFC 9989 §2.2 が明記するとおり、対象は **exact-domain spoofing（完全一致のドメイン偽装）だけ**で、似たドメイン名や表示名（display name）の偽装は対象外。
 
