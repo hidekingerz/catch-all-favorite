@@ -1,29 +1,51 @@
-# content/research/email 専用の表記辞書。共通辞書（prh-common.yml）に加えて適用する。
+# content/research/email 専用の表記辞書。
+# .textlint/email.json が共通辞書（prh-common.yml）と一緒に読み込む。
 version: 1
 rules:
+  # 「封筒〜」「エンベロープの送信者」など、派生形もすべてここに列挙する。
+  # 下の「封筒 → エンベロープ」より先に置くことで、1 回の --fix で収束させる。
   - expected: エンベロープFrom
     patterns:
       - エンベロープ送信者
+      - エンベロープの送信者
       - エンベロープの送信元
+      - 封筒送信者
+      - 封筒の送信者
       - 封筒の送信元
     specs:
       - from: SMTP のエンベロープ送信者
         to: SMTP のエンベロープFrom
+      - from: 封筒の送信者
+        to: エンベロープFrom
   - expected: エンベロープ
     pattern: 封筒
-  # DMARC の alignment。「整合性」（consistency）と「PTR の整合」は別概念なので対象外。
+
+  # DMARC の alignment。
+  # 除外: 「整合性」「不整合」「整合が取れ」「整合を取」（consistency の意味）、「PTR の整合」（DMARC ではない）。
+  # 「整合する / 整合しない / 整合させる」は email 配下では DMARC の意味で使うので置換する。
+  # consistency の意味で「整合する」と書きたいときは「整合性がある」などに言い換える。
   - expected: アラインメント
     patterns:
-      - /(?<!PTR の)整合(?!性)/
-      - /(?<![A-Za-z-])alignment(?![A-Za-z])/
+      - /(?<!不|PTR の|PTR　の)整合(?!性|が取|がと|を取|をと)/
+      - /(?<![A-Za-z（(\-])alignment(?![A-Za-z])/
     specs:
       - from: From の整合必須
         to: From のアラインメント必須
+      - from: SPF も DKIM も整合しない
+        to: SPF も DKIM もアラインメントしない
       - from: relaxed alignment 可
         to: relaxed アラインメント 可
       - from: 本文の整合性を保証する
         to: 本文の整合性を保証する
+      - from: 不整合がある
+        to: 不整合がある
+      - from: 整合が取れている
+        to: 整合が取れている
       - from: PTR の整合
         to: PTR の整合
       - from: Identifier Alignment
         to: Identifier Alignment
+      - from: アラインメント（alignment）
+        to: アラインメント（alignment）
+      - from: SPF alignment
+        to: SPF アラインメント

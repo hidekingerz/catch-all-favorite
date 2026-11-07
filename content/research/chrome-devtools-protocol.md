@@ -115,7 +115,7 @@ chrome --remote-debugging-pipe --user-data-dir=/tmp/cdp-profile
 
 起動すると stderr に `DevTools listening on ws://127.0.0.1:9222/devtools/browser/<uuid>` が出力され、同じ URL がプロファイル内の **`DevToolsActivePort`** ファイルにも書かれる。
 
-> **Chrome 136 からの変更（重要）**: 既定のユーザーデータディレクトリに対しては `--remote-debugging-port` / `--remote-debugging-pipe` が**無視される**ようになった。App-Bound Encryption 導入後、リモートデバッグ経由で Cookie を抜くマルウェアが増えたための対策で、**`--user-data-dir` で非標準ディレクトリを明示**しないとリモートデバッグは有効にならない。「普段使いの Chrome にそのまま `connectOverCDP` する」使い方はこれで塞がれた（2026-08 には認証済みセッション乗っ取りに DevTools を悪用する手法も報じられており、ポート公開は依然として攻撃面である）。
+> **Chrome 136 からの変更（重要）**: 既定のユーザデータディレクトリに対しては `--remote-debugging-port` / `--remote-debugging-pipe` が**無視される**ようになった。App-Bound Encryption 導入後、リモートデバッグ経由で Cookie を抜くマルウェアが増えたための対策で、**`--user-data-dir` で非標準ディレクトリを明示**しないとリモートデバッグは有効にならない。「普段使いの Chrome にそのまま `connectOverCDP` する」使い方はこれで塞がれた（2026-08 には認証済みセッション乗っ取りに DevTools を悪用する手法も報じられており、ポート公開は依然として攻撃面である）。
 
 ### 4.2 HTTP ディスカバリエンドポイント
 

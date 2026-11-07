@@ -19,14 +19,11 @@ jobs:
   content-guard:
     runs-on: ubuntu-latest
     steps:
-      - name: Validate changed files are report-only
-        id: guard
+      - name: List changed files
+        id: files
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # レポート系PR = 変更が content/ 配下と index.md のみ（allowlist 方式）。
-          # レポートは content/{catchup,research,security}/... に置かれ、一覧 index.md を伴う。
-          # content/ 配下に新カテゴリを足しても自動的に対象になる。
           files=$(gh api --paginate \
             "repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/files" \
             --jq '.[].filename')
@@ -36,8 +33,40 @@ jobs:
             echo "::error::変更ファイルを取得できませんでした。安全側に倒して fail します。"
             exit 1
           fi
+          # 後続ステップ（checkout で作業ツリーが入れ替わる）から読めるよう RUNNER_TEMP に置く。
+          printf '%s\n' "$files" > "$RUNNER_TEMP/changed-files.txt"
+          # 調査レポートを含む場合だけ表記チェックを走らせる（catchup PR は対象外）。
+          if grep -qE '^content/research/.*\.md$' "$RUNNER_TEMP/changed-files.txt"; then
+            echo "research=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # 表記揺れチェック（.textlint/ の辞書）。許可リスト判定より前に置くことで、
+      # 辞書や CI 設定を一緒に変える PR（許可リスト判定では fail する）でも lint 結果が見える。
+      # このジョブは必須チェックなので、揺れがあれば auto-merge も止まる。直し方: npm run lint:text:fix
+      - name: Checkout (for textlint)
+        if: steps.files.outputs.research == 'true'
+        uses: actions/checkout@v6
+      - name: Setup Node.js (for textlint)
+        if: steps.files.outputs.research == 'true'
+        uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Lint terminology in research reports
+        if: steps.files.outputs.research == 'true'
+        run: |
+          # lint に必要なのは textlint だけなので、各パッケージの install スクリプトは走らせない。
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run lint:text
+
+      - name: Validate changed files are report-only
+        id: guard
+        run: |
+          # レポート系PR = 変更が content/ 配下と index.md のみ（allowlist 方式）。
+          # レポートは content/{catchup,research,security}/... に置かれ、一覧 index.md を伴う。
+          # content/ 配下に新カテゴリを足しても自動的に対象になる。
           # 許可リスト(content/ または index.md)に該当しない変更ファイルを抽出する。
-          bad=$(printf '%s\n' "$files" | grep -vE '^(content/|index\.md$)' || true)
+          bad=$(grep -vE '^(content/|index\.md$)' "$RUNNER_TEMP/changed-files.txt" || true)
           if [ -n "$bad" ]; then
             echo "::error::content/ と index.md 以外の変更が含まれています（auto-merge 対象外）:"
             printf '%s\n' "$bad"
@@ -46,27 +75,6 @@ jobs:
           fi
           echo "content/ と index.md のみ。レポート系PRとして検証 OK。"
           echo "report=true" >> "$GITHUB_OUTPUT"
-          # 調査レポートを含む場合だけ表記チェックを走らせる（catchup PR は対象外）。
-          if printf '%s\n' "$files" | grep -qE '^content/research/.*\.md$'; then
-            echo "research=true" >> "$GITHUB_OUTPUT"
-          fi
-
-      # 表記揺れチェック（.textlint/ の辞書）。このジョブは必須チェックなので、
-      # 揺れがあれば auto-merge も止まる。直し方: npm run lint:text:fix
-      - name: Checkout (for textlint)
-        if: steps.guard.outputs.research == 'true'
-        uses: actions/checkout@v6
-      - name: Setup Node.js (for textlint)
-        if: steps.guard.outputs.research == 'true'
-        uses: actions/setup-node@v6
-        with:
-          node-version: '22'
-          cache: npm
-      - name: Lint terminology in research reports
-        if: steps.guard.outputs.research == 'true'
-        run: |
-          npm ci
-          npm run lint:text
 
   notify:
     # 通知は PR が開かれた時だけ（synchronize の度には鳴らさない）。

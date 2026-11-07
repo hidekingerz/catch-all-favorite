@@ -1,5 +1,10 @@
 {
   "rules": {
-    "prh": { "rulePaths": ["./prh-email.yml"] }
+    "prh": {
+      "rulePaths": ["./prh-common.yml", "./prh-email.yml"],
+      "checkBlockQuote": true,
+      "checkLink": true,
+      "checkEmphasis": true
+    }
   }
 }
