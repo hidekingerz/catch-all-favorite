@@ -346,6 +346,12 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 - [DKIM2 技術調査レポート — 関連 RFC・ドラフトの全体像と各社の対応状況](/content/research/email/dkim2)
 - [RFC 10080 技術調査レポート — メールの Expires ヘッダフィールドの一般利用化](/content/research/email/rfc10080-email-expires-header)
 
+### HTTP
+
+- [HTTP/1.1 技術調査レポート — RFC 9110〜9112 の仕組み・歴史・既知の問題と各社の対応状況](/content/research/http/http1)
+- [HTTP/2 技術調査レポート — RFC 9113 の仕組み・RFC 7540 からの変更点・既知の問題と各社の対応状況](/content/research/http/http2)
+- [HTTP/3 技術調査レポート — RFC 9114 と QUIC（RFC 9000）の仕組み・HTTP/2 との違い・既知の問題と各社の対応状況](/content/research/http/http3)
+
 ## セキュリティ（CVE）
 
 - [Next.js v16.2.6 セキュリティアドバイザリまとめ（13件）](/content/security/nextjs-v16.2.6-summary)

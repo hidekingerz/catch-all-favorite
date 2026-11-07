@@ -13,3 +13,22 @@ rules:
     pattern: ヘッダー
   - expected: パーサ
     pattern: パーサー
+  - expected: ブラウザ
+    pattern: ブラウザー
+  - expected: バッファ
+    pattern: バッファー
+  - expected: ロードバランサ
+    pattern: ロードバランサー
+  - expected: スケジューラ
+    pattern: スケジューラー
+  - expected: エンコーダ
+    pattern: エンコーダー
+  - expected: デコーダ
+    pattern: デコーダー
+  - expected: トレーラ
+    pattern: トレーラー
+  - expected: タイマ
+    pattern: タイマー
+  # 語中の長音は省かない
+  - expected: オーバーヘッド
+    pattern: オーバヘッド

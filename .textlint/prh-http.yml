@@ -1,0 +1,68 @@
+# content/research/http 専用の表記辞書。
+# .textlint/http.json が共通辞書（prh-common.yml）と一緒に読み込む。
+version: 1
+rules:
+  - expected: HoL ブロッキング
+    patterns:
+      - ヘッドオブラインブロッキング
+      - ヘッド・オブ・ライン・ブロッキング
+      - HOL ブロッキング
+      - HoLブロッキング
+      - HOLブロッキング
+      # 初出の「HoL ブロッキング（Head-of-Line blocking）」の括弧内は残す
+      - /(?<![A-Za-z（(\-])[Hh]ead-of-[Ll]ine [Bb]locking/
+    specs:
+      - from: ヘッドオブラインブロッキングが起きる
+        to: HoL ブロッキングが起きる
+      - from: HoL ブロッキング（Head-of-Line blocking）
+        to: HoL ブロッキング（Head-of-Line blocking）
+      - from: Head-of-Line blocking
+        to: HoL ブロッキング
+  - expected: コネクション移行
+    patterns:
+      - コネクションマイグレーション
+      - 接続移行
+      - 接続マイグレーション
+  - expected: 多重化
+    patterns:
+      - マルチプレキシング
+      - マルチプレクシング
+      - マルチプレックス化
+  - expected: ヘッダ圧縮
+    pattern: ヘッダー圧縮
+  - expected: 擬似ヘッダ
+    patterns:
+      - 疑似ヘッダ
+      - 擬似ヘッダー
+      - 疑似ヘッダー
+  - expected: 輻輳制御
+    pattern: 混雑制御
+  - expected: リクエストスマグリング
+    patterns:
+      - リクエスト・スマグリング
+      - リクエスト密輸
+  - expected: ミドルボックス
+    pattern: ミドルボックス機器
+  - expected: ハンドシェイク
+    pattern: ハンドシェーク
+  # RFC 9110 §3.7 の intermediary（プロキシ・ゲートウェイ・トンネルの総称）
+  - expected: 中間者
+    patterns:
+      - 仲介者
+      - 中継者
+  # RFC 9113 §9.1.1 の connection coalescing
+  - expected: コネクション合体
+    patterns:
+      - コネクション結合
+      - コネクション統合
+      - コネクションコアレッシング
+  - expected: HTTPS RR
+    patterns:
+      - HTTPS レコード
+      - HTTPSレコード
+      - HTTPS RR レコード
+    specs:
+      - from: DNS の HTTPS レコード
+        to: DNS の HTTPS RR
+      - from: HTTPS RR
+        to: HTTPS RR
