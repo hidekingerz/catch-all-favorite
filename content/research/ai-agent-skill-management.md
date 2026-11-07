@@ -9,7 +9,7 @@ title: "AIエージェント向けスキル管理ツール 技術調査レポー
 
 - **「package.json のようにスキルの配布元とバージョンを管理ファイルでリポジトリ管理し、メンバーが install で再現する」というワークフローは既に実現されている**。最も忠実に実装しているのは Microsoft の **APM**（`apm.yml` + `apm.lock.yaml` + `apm install`）。
 - **APM は「npm 型」、skills は「ベンダリング型」**。APM はマニフェスト+ロックファイルで宣言的に管理し複数エージェントへコンパイル展開する。skills はスキルファイル実体をプロジェクトにコピーして Git にコミットする。
-- APM はスキルだけでなく **instructions / prompts / agents / hooks / MCP サーバーまで単一の `apm.yml` で管理**できる。skills はスキル（SKILL.md）専用。
+- APM はスキルだけでなく **instructions / prompts / agents / hooks / MCP サーバまで単一の `apm.yml` で管理**できる。skills はスキル（SKILL.md）専用。
 - エコシステムの広さでは skills が先行: **対応エージェント 73+**（APM は 8）、公開カタログ **skills.sh** が存在し、Supabase など公式導入手順に `npx skills add` を採用するベンダーも出てきている。
 - **再現性・ガバナンス重視のチーム開発なら APM、手軽さと流通の広さなら skills**。SKILL.md 形式自体は両者共通のため、スキル資産は可搬でツール乗り換えコストは低い。
 
@@ -44,7 +44,7 @@ npm における `package.json` + `package-lock.json` + `npm install` に相当�
 | ロックファイル | ✅ `apm.lock.yaml`（整合性ハッシュ付き） | ❌ なし |
 | バージョン固定 | ✅ `#タグ` / `ref:`（タグ・ブランチ・SHA） | ❌ 明示機能なし（コミットされたファイルが事実上のスナップショット） |
 | 推移的依存解決 | ✅ npm / pip と同様 | ❌ なし |
-| 管理対象 | skills / instructions / prompts / agents / hooks / commands / MCP サーバー | skills（SKILL.md）のみ |
+| 管理対象 | skills / instructions / prompts / agents / hooks / commands / MCP サーバ | skills（SKILL.md）のみ |
 | 対応エージェント | 8（Copilot / Claude / Cursor / Codex / Gemini / Windsurf / Kiro / OpenCode） | 73+（Claude Code / Codex / Cursor / Cline / Copilot ほか） |
 | 配布元 | 任意の Git ホスト（GitHub / GitLab / Bitbucket / Azure DevOps / Gitea 等） | GitHub リポジトリ中心 |
 | 発見手段 | Git リポジトリ直接参照（中央レジストリなし） | **skills.sh**（公開カタログ+インストール数ランキング） |
@@ -129,7 +129,7 @@ npx skills update                                                  # 一括更�
 - **clone 後のセットアップ**: skills は不要（ファイルが既にある）。APM は `apm install` が必要で、CI やオンボーディング手順に 1 ステップ増える。
 - **出所の追跡（プロベナンス）**: APM はマニフェストに「どこから・どのバージョンか」が常に残る。skills はコピーされた時点で出所情報が薄れ、ローカル改変と上流の区別がつきにくい。
 - **リポジトリの見た目**: skills はエージェントごとにスキル実体が複製されるため、複数エージェント併用時は同内容のファイルが並ぶ。APM は成果物を生成するので `.gitignore` 運用も選べる。
-- **スキル以外の資産**: MCP サーバー設定・エージェント定義・hooks まで一元管理したいなら APM 一択。
+- **スキル以外の資産**: MCP サーバ設定・エージェント定義・hooks まで一元管理したいなら APM 一択。
 
 ## 5. 考察
 

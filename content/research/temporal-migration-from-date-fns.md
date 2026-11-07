@@ -32,7 +32,7 @@ Temporal API は ES2026 Stage 4 に到達し、Chrome 144+ / Firefox 139+ / Edge
 | Safari | Technology Preview のみ | ⚠️ フラグ付き実験的。リリース時期未公表 |
 | Node.js | 24+ | ✅ 完全安定サポート |
 
-**グローバルカバレッジ**: 約 64%（Can I use 基準）。iOS ユーザーがいるプロジェクトではポリフィル必須。
+**グローバルカバレッジ**: 約 64%（Can I use 基準）。iOS ユーザがいるプロジェクトではポリフィル必須。
 
 ### ポリフィル
 

@@ -1,0 +1,10 @@
+{
+  "rules": {
+    "prh": {
+      "rulePaths": ["./.textlint/prh-common.yml"],
+      "checkBlockQuote": true,
+      "checkLink": true,
+      "checkEmphasis": true
+    }
+  }
+}

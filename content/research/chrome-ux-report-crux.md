@@ -8,18 +8,18 @@ title: "Chrome UX Report（CrUX）技術調査レポート — データの仕�
 
 ## TL;DR
 
-- **CrUX は「実際の Chrome ユーザーが体験した性能指標」を、オリジン／URL 単位で集計して公開する Google のデータセット**。Core Web Vitals（LCP / INP / CLS）の**正本**であり、PageSpeed Insights・Search Console・Lighthouse の「フィールドデータ」はすべてここから来ている。Google 検索のページエクスペリエンス評価もこのデータに基づく。
-- 含まれるのは **Chrome（デスクトップ + Android）で使用統計の送信と履歴同期をオンにしたユーザー**の、**公開かつ十分なアクセスがあるページ**だけ。iOS Chrome・WebView・Edge などは含まれず、ログインが必要なページや低トラフィックのページは出てこない。
+- **CrUX は「実際の Chrome ユーザが体験した性能指標」を、オリジン／URL 単位で集計して公開する Google のデータセット**。Core Web Vitals（LCP / INP / CLS）の**正本**であり、PageSpeed Insights・Search Console・Lighthouse の「フィールドデータ」はすべてここから来ている。Google 検索のページエクスペリエンス評価もこのデータに基づく。
+- 含まれるのは **Chrome（デスクトップ + Android）で使用統計の送信と履歴同期をオンにしたユーザ**の、**公開かつ十分なアクセスがあるページ**だけ。iOS Chrome・WebView・Edge などは含まれず、ログインが必要なページや低トラフィックのページは出てこない。
 - 集計は **28 日ローリング（API / PSI / Search Console、毎日更新）** と **月次（BigQuery、翌月第 2 火曜）** の 2 系統。値は**ヒストグラムと p75**で、good / needs improvement / poor の閾値で 3 区分される。
 - 2025〜2026 の変化: **LCP 画像サブパート・RTT（往復遅延）追加、ECT（実効接続種別）を BigQuery から廃止（2025-02）**、**CrUX Dashboard（Looker Studio）廃止（2025-11 末）→ CrUX Vis へ**、**PSI API からの CrUX データ提供を終了予告（CrUX API へ移行）**、**広告メトリクス 4 種を追加（2026-09-15）**。
 - **開発者の使い方**は目的別に 4 つ: ①手早く見る = PSI / Search Console / CrUX Vis、②自動化・監視 = CrUX API（無料、150 クエリ/分、日次）と History API（週次 25〜40 期間）、③大規模分析・競合比較 = BigQuery（`chrome-ux-report.materialized.*`、月 1 TB 無料）、④デバッグ = DevTools Performance パネルの Field data 連携。
-- **自プロダクトの計測は CrUX だけでは足りない**。CrUX は Chrome の一部ユーザー・公開ページ・28 日遅延・オリジン／URL 粒度で、ログイン後画面・SPA のルート別・A/B テスト別・リリース直後の変化は見えない。**`web-vitals` ライブラリ（v6.2.2）で自前 RUM を持ち、CrUX と同じ定義（p75・navigationType・28 日）で突き合わせる**のが定石。Chrome 151（2026-08）で **soft navigation（SPA のルート遷移）の計測 API** が入ったが、**CrUX への反映は未定**。
+- **自プロダクトの計測は CrUX だけでは足りない**。CrUX は Chrome の一部ユーザ・公開ページ・28 日遅延・オリジン／URL 粒度で、ログイン後画面・SPA のルート別・A/B テスト別・リリース直後の変化は見えない。**`web-vitals` ライブラリ（v6.2.2）で自前 RUM を持ち、CrUX と同じ定義（p75・navigationType・28 日）で突き合わせる**のが定石。Chrome 151（2026-08）で **soft navigation（SPA のルート遷移）の計測 API** が入ったが、**CrUX への反映は未定**。
 
 ---
 
 ## 1. CrUX とは — 位置づけとデータの流れ
 
-CrUX（Chrome User Experience Report）は 2017 年に始まった、**Chrome が実ユーザーから収集した性能指標の公開データセット**である。「ラボデータ」（Lighthouse など、決められた環境での合成計測）に対して、**「フィールドデータ」（実ユーザーの端末・回線・操作で計測した値）**を提供する唯一の Google 公式ソースで、次のように使われている。
+CrUX（Chrome User Experience Report）は 2017 年に始まった、**Chrome が実ユーザから収集した性能指標の公開データセット**である。「ラボデータ」（Lighthouse など、決められた環境での合成計測）に対して、**「フィールドデータ」（実ユーザの端末・回線・操作で計測した値）**を提供する唯一の Google 公式ソースで、次のように使われている。
 
 ```
 Chrome（ユーザー端末）
@@ -41,7 +41,7 @@ Google 検索の**ページエクスペリエンス／Core Web Vitals のラン�
 
 ## 2. 方法論 — 誰の・どのページの・どう集計したデータか
 
-### 2.1 ユーザーの適格条件（4 条件すべて）
+### 2.1 ユーザの適格条件（4 条件すべて）
 
 | 条件 | 内容 |
 | --- | --- |
@@ -50,7 +50,7 @@ Google 検索の**ページエクスペリエンス／Core Web Vitals のラン�
 | 同期パスフレーズ未設定 | 独自パスフレーズで暗号化していると除外 |
 | 対応プラットフォーム | **デスクトップ Chrome（Windows / macOS / ChromeOS / Linux）と Android Chrome（Custom Tabs / WebAPK 含む）** |
 
-**含まれないもの**: iOS の Chrome（WebKit ベースで計測 API が無い）、Android WebView を使うネイティブアプリ、Edge / Brave などの他 Chromium ブラウザ、Firefox / Safari。したがって **CrUX は「Chrome ユーザーの一部」のサンプル**であり、自サイトの全訪問者ではない。日本の iPhone 比率を考えると、モバイルの CrUX は Android ユーザーの体験を表している点に注意。
+**含まれないもの**: iOS の Chrome（WebKit ベースで計測 API が無い）、Android WebView を使うネイティブアプリ、Edge / Brave などの他 Chromium ブラウザ、Firefox / Safari。したがって **CrUX は「Chrome ユーザの一部」のサンプル**であり、自サイトの全訪問者ではない。日本の iPhone 比率を考えると、モバイルの CrUX は Android ユーザの体験を表している点に注意。
 
 ### 2.2 オリジン／ページの適格条件
 
@@ -85,9 +85,9 @@ ECT の後継として **RTT（往復遅延）** がメトリクスとして追�
 ### 2.5 値の表現 — ヒストグラムと p75
 
 - 各メトリクスは **ビン（`start` / `end` / `density`）のヒストグラム**で提供される。API では good / needs improvement / poor の閾値で区切った **3 ビン**、BigQuery の生テーブルでは細かいビン。
-- **p75（75 パーセンタイル）**が「そのサイトの値」として使われる。「75% のユーザー体験がこの値以下」という意味で、Core Web Vitals の合否判定はこの p75 が good 閾値以内かどうか。
+- **p75（75 パーセンタイル）**が「そのサイトの値」として使われる。「75% のユーザ体験がこの値以下」という意味で、Core Web Vitals の合否判定はこの p75 が good 閾値以内かどうか。
 - パーセンタイルは粗いヒストグラムから**補間**されるため近似値。BigQuery の細かいビンの方が精度が高い。
-- **微小なランダムノイズ（fuzzing）**が付与され、少数ユーザーの逆算を防いでいる。
+- **微小なランダムノイズ（fuzzing）**が付与され、少数ユーザの逆算を防いでいる。
 
 ### 2.6 見落としやすい仕様
 
@@ -121,7 +121,7 @@ ECT の後継として **RTT（往復遅延）** がメトリクスとして追�
 
 ### 3.3 LCP 画像サブパート（2025-02 追加）
 
-LCP 要素が画像の場合の内訳。**「LCP が遅いのはサーバーか、画像の発見の遅れか、ダウンロードか、描画か」**を切り分けられる。
+LCP 要素が画像の場合の内訳。**「LCP が遅いのはサーバか、画像の発見の遅れか、ダウンロードか、描画か」**を切り分けられる。
 
 | API 名 | 内容 |
 | --- | --- |
@@ -276,7 +276,7 @@ WHERE date = '2026-08-01'
 ### 4.7 Chrome DevTools — ローカル計測と並べて見る
 
 - Performance パネルの **Live metrics** 画面に「Field data」があり、**Set up** で CrUX API から自オリジン／URL の 28 日データを取得して、**手元の LCP / INP / CLS の隣に表示**する（Chrome 130 前後から）。オリジン／URL、モバイル／デスクトップを切り替えられる。
-- 「手元では速いのにフィールドは遅い」ときは、**Environment settings** で CPU / ネットワークのスロットリングを実ユーザー分布に寄せる提案が出る。
+- 「手元では速いのにフィールドは遅い」ときは、**Environment settings** で CPU / ネットワークのスロットリングを実ユーザ分布に寄せる提案が出る。
 - トレース表示にも CrUX の LCP サブパートが並ぶ。広告メトリクスは **Ads パネル**。
 
 ### 4.8 使い分けの目安
@@ -298,10 +298,10 @@ WHERE date = '2026-08-01'
 
 | CrUX の制約 | 影響 |
 | --- | --- |
-| Chrome の一部ユーザーのみ | Safari / iOS / Firefox の体験が見えない。日本の iPhone ユーザーは丸ごと欠ける |
+| Chrome の一部ユーザのみ | Safari / iOS / Firefox の体験が見えない。日本の iPhone ユーザは丸ごと欠ける |
 | 公開ページ + しきい値以上のトラフィックのみ | **ログイン後の画面、管理画面、新機能のページ、低トラフィックのページ**が出ない |
 | 28 日ローリング | リリースの影響が出切るまで 4 週間。**リグレッションの即時検知に使えない** |
-| オリジン／URL × フォームファクターまで | **ユーザー属性・A/B テスト・リリース版・地域（API では）・ページ種別**で切れない |
+| オリジン／URL × フォームファクターまで | **ユーザ属性・A/B テスト・リリース版・地域（API では）・ページ種別**で切れない |
 | URL のクエリ除去 | `?tab=` などで画面が変わるページは混ざる |
 | SPA は 1 ページビュー | ルート遷移後の LCP / CLS が見えない（§5.5） |
 | 集計値のみ | **どの要素・どのスクリプトが原因か**は分からない |
@@ -347,7 +347,7 @@ onTTFB(sendToAnalytics);
 
 | 方式 | 向き | 備考 |
 | --- | --- | --- |
-| **自前エンドポイント → DB（BigQuery / ClickHouse など）** | コントロールしたい、既存の分析基盤がある | p75 を `APPROX_QUANTILES(value, 100)[OFFSET(75)]` 等で計算。`navigationType` / URL / リリース版 / ユーザー属性で任意に切れる |
+| **自前エンドポイント → DB（BigQuery / ClickHouse など）** | コントロールしたい、既存の分析基盤がある | p75 を `APPROX_QUANTILES(value, 100)[OFFSET(75)]` 等で計算。`navigationType` / URL / リリース版 / ユーザ属性で任意に切れる |
 | **GA4 + BigQuery エクスポート** | 導入コストを下げたい | イベント上限・サンプリングに注意。p75 は BigQuery 側で出す |
 | **RUM SaaS**（Vercel Speed Insights、Sentry、Datadog RUM、New Relic Browser、SpeedCurve、DebugBear、Cloudflare Web Analytics 等） | ダッシュボード・アラート・セッションリプレイまで欲しい | 多くが内部で `web-vitals` を使い、CrUX との比較ビューを持つ |
 | **CrUX API を日次で自前 DB に保存** | 「Google の成績表」の履歴を残したい | History API は 40 週まで。それ以上は自分で貯める |
@@ -364,16 +364,16 @@ onTTFB(sendToAnalytics);
 | ナビゲーション種別 | CrUX は bfcache / prerender も含む。`navigationType` を落とさず保存し、必要なら比率も比較 |
 | URL | クエリ・フラグメントを除去して集計 |
 | フォームファクター | UA ベースの phone / tablet / desktop に合わせる |
-| ボット・社内アクセス | 自前側から除外（CrUX は実ユーザーのみ） |
+| ボット・社内アクセス | 自前側から除外（CrUX は実ユーザのみ） |
 | iframe | `web-vitals` は iframe の中を見ないので、広告 iframe が多いページは CLS / LCP が CrUX より良く出る |
 | 非公開ページ | ログイン後などは CrUX に無いので比較対象から外す |
 
-それでも残る差は「Chrome の opt-in ユーザー」というサンプルの偏り（一般に低スペック・低速回線寄り）と、ヒストグラム補間・ノイズ付与によるもの。**数 % の差は正常**、傾向が逆なら計測実装を疑う。
+それでも残る差は「Chrome の opt-in ユーザ」というサンプルの偏り（一般に低スペック・低速回線寄り）と、ヒストグラム補間・ノイズ付与によるもの。**数 % の差は正常**、傾向が逆なら計測実装を疑う。
 
 ### 5.5 SPA と soft navigation
 
 - CrUX は今もハードナビゲーション単位。SPA ではランディングの 1 回だけが計測され、**ルート遷移後の体験は CrUX に出ない**。INP だけはページ滞在中の全インタラクションを見るので影響を受ける。
-- **Chrome 151（2026-08）で soft navigation の計測が正式化**: `soft-navigation` と `interaction-contentful-paint` の `PerformanceEntry` が追加され、「ユーザー操作 → URL 変更 → コンテンツ描画」の 3 条件で同一ドキュメント内ナビゲーションを検出する。
+- **Chrome 151（2026-08）で soft navigation の計測が正式化**: `soft-navigation` と `interaction-contentful-paint` の `PerformanceEntry` が追加され、「ユーザ操作 → URL 変更 → コンテンツ描画」の 3 条件で同一ドキュメント内ナビゲーションを検出する。
 - **`web-vitals` v6.0.0（2026-07）** は `reportSoftNavs: true` でルート遷移ごとに LCP / CLS / INP を報告する。既定は CrUX と同じ帰属（ハードナビゲーション単位）なので、**ルート別に見たい時だけオプトイン**する。
 - **CrUX への soft navigation 反映は時期未定**。Google は「API の評価段階であり、CrUX や検索シグナルへの反映を約束するものではない」と明言している。SPA のルート別性能は当面**自前 RUM でしか見えない**。
 
@@ -397,7 +397,7 @@ CI       Lighthouse はラボ値。フィールドの代替ではなく、リグ
 
 ## 6. まとめ
 
-- CrUX は「Chrome の opt-in ユーザーが、公開かつ一定以上のアクセスがあるページで体験した値」を 28 日 p75 で公開する、**Core Web Vitals の正本**。PSI / Search Console / DevTools / CrUX Vis はすべてこのデータの見え方の違いにすぎない。
+- CrUX は「Chrome の opt-in ユーザが、公開かつ一定以上のアクセスがあるページで体験した値」を 28 日 p75 で公開する、**Core Web Vitals の正本**。PSI / Search Console / DevTools / CrUX Vis はすべてこのデータの見え方の違いにすぎない。
 - 2025〜2026 年で **LCP サブパート・RTT・広告メトリクスが増え、Dashboard と PSI API 経由の CrUX データは廃止方向**。自動化は **CrUX API / History API**、分析は **BigQuery `materialized`** に寄せる。
 - 自プロダクトは **`web-vitals`（v6）で自前 RUM を持ち、p75・28 日・Chrome のみ・navigationType で CrUX と突き合わせる**。ログイン後画面・SPA のルート別・リリース直後の変化・原因要素は自前 RUM でしか見えない。soft navigation は Chrome 151 で計測可能になったが CrUX 反映は未定。
 

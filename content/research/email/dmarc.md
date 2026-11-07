@@ -270,7 +270,7 @@ example.com._report._dmarc.thirdparty.example.net.  IN TXT "v=DMARC1;"
 | errata | 15 件が未処理 | 3 文書で処理（IP 正規表現の削除、`v=DMARC1;` の表記統一、PSL 関連の削除など） |
 | IANA | Expert Review | DMARC タグ・結果名・認証メソッドの登録手続きを Specification Required に変更 |
 
-互換性について RFC は明確で、`v=DMARC1` は変わらず**既存レコードの再公開は不要**。ただし Tree Walk と PSL で Organizational Domain の答えが変わる場合があり（§C.3）、「strict ã¢ã©ã¤ã³ã¡ã³ã にして、使うすべての Author Domain に明示的にレコードを公開すれば完全に回避できる」と述べている。
+互換性について RFC は明確で、`v=DMARC1` は変わらず**既存レコードの再公開は不要**。ただし Tree Walk と PSL で Organizational Domain の答えが変わる場合があり（§C.3）、「strict アラインメント にして、使うすべての Author Domain に明示的にレコードを公開すれば完全に回避できる」と述べている。
 
 ## 6. 周辺仕様との関係
 
@@ -318,7 +318,7 @@ DKIM2（`draft-ietf-dkim-dkim2-spec`）は From ドメインと署名ドメイ�
 | 事業者 | 区分 | 内容 |
 |---|---|---|
 | **Google / Gmail** | 本番 | [Email sender guidelines](https://support.google.com/a/answer/81126): 2024-02-01 から、1 日 5,000 通以上を Gmail に送る送信者は SPF と DKIM の両方、**DMARC（`p=none` でよい）**、`From:` ドメインと SPF か DKIM のドメインのアラインメント、ワンクリック解除、迷惑メール率 0.3% 未満が必須。全送信者にも SPF か DKIM、PTR、TLS を要求 |
-| **Yahoo** | 本番 | [Sender Best Practices](https://senders.yahooinc.com/best-practices/): 2024-02 から同様。「`p=none` 以上の有効な DMARC ポリシー」、relaxed ã¢ã©ã¤ã³ã¡ã³ã 可、`rua` を強く推奨 |
+| **Yahoo** | 本番 | [Sender Best Practices](https://senders.yahooinc.com/best-practices/): 2024-02 から同様。「`p=none` 以上の有効な DMARC ポリシー」、relaxed アラインメント 可、`rua` を強く推奨 |
 | **Microsoft（Outlook.com / Hotmail / Live）** | 本番 | 2025-04-02 の [Tech Community 記事](https://techcommunity.microsoft.com/blog/microsoftdefenderforoffice365blog/strengthening-email-ecosystem-outlook%E2%80%99s-new-requirements-for-high%E2%80%90volume-senders/4399730): 1 日 5,000 通以上の送信者に SPF・DKIM・**DMARC（最低 `p=none`、SPF か DKIM とアラインメント）**。2025-05-05 から非準拠メールを迷惑メールフォルダへ、将来は `550 5.7.515 Access denied, sending domain [...] does not meet the required authentication level` で拒否（拒否開始日は未発表） |
 | **Apple（iCloud Mail）** | 本番 | [Postmaster 情報](https://support.apple.com/en-us/102322): 大量送信者は SPF・DKIM を使い、送信ドメインが DMARC ポリシーを公開していること、転送には ARC ヘッダ。通数のしきい値やアラインメントの記述は無い。icloud.com 自身の DMARC は `p=quarantine; sp=quarantine`（2026-11-06 に DNS で確認。開始時期は二次情報で 2018-07 とされる） |
 | 日本のキャリア | 本番（自ドメインのポリシー） | IIJ の Internet Week 2025 資料（2025-11-26）による `dig` 結果: docomo.ne.jp `p=quarantine; sp=quarantine; pct=100`、ezweb.ne.jp `p=reject`、i.softbank.jp `p=quarantine`、rakumail.jp `p=reject`、yahoo.co.jp `p=quarantine`。同資料は第 7 回 JPAAWG（2024）での国内 3 キャリアの `p=reject` に向けた発言を紹介し、「`p=reject` にしないと届かない時代」を予想している（二次情報） |
