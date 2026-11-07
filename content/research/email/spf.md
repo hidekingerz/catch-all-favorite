@@ -8,7 +8,7 @@ title: "SPF 技術調査レポート — RFC 7208 の仕組み・限界・DMARC 
 
 ## TL;DR
 
-- SPF は「**このドメインを `MAIL FROM`（エンベロープ送信者）や `HELO` に名乗ってよい送信 IP はどれか**」を DNS の TXT レコードで宣言し、受信側 MTA が接続元 IP と照合する仕組み。守るのは SMTP の封筒（RFC 5321）の識別子であって、**ユーザに見える `From:` ヘッダ（RFC 5322）は守らない**。
+- SPF は「**このドメインを `MAIL FROM`（エンベロープFrom）や `HELO` に名乗ってよい送信 IP はどれか**」を DNS の TXT レコードで宣言し、受信側 MTA が接続元 IP と照合する仕組み。守るのは SMTP のエンベロープ（RFC 5321）の識別子であって、**ユーザに見える `From:` ヘッダ（RFC 5322）は守らない**。
 - 現行仕様は **RFC 7208（2014年4月、Proposed Standard）**。2006年の RFC 4408（Experimental）を置き換えた。主な変更は、**SPF 専用 DNS レコード型（type 99）の廃止**、**void lookup の上限（2 回）の追加**、**`ptr` の非推奨化**、Authentication-Results ヘッダへの対応。RFC 7372・8553・8616 が更新している。SPF 自体の改訂ドラフトは 2026-11-06 時点で IETF に無い。
 - レコードは `v=spf1` で始まり、mechanism（`all` / `include` / `a` / `mx` / `ptr` / `ip4` / `ip6` / `exists`）に qualifier（`+` pass / `-` fail / `~` softfail / `?` neutral）を付けて左から順に評価する。modifier は `redirect=` と `exp=`。結果は **none / neutral / pass / fail / softfail / temperror / permerror** の 7 種。
 - **DNS を引く term（`include` / `a` / `mx` / `ptr` / `exists` / `redirect`）は合計 10 個まで**（MUST）。超えると permerror。さらに空応答・NXDOMAIN の「void lookup」は 2 回まで（SHOULD）。SaaS の include を重ねるとすぐ上限に達し、「SPF flattening」という回避策と業者が生まれた。
@@ -23,13 +23,13 @@ title: "SPF 技術調査レポート — RFC 7208 の仕組み・限界・DMARC 
 
 ## 1. SPF とは何か — 仕組みの概要
 
-### 1.1 守る対象は「封筒」の識別子
+### 1.1 守る対象はエンベロープの識別子
 
 メールには 2 種類の送信者がある。
 
 | 識別子 | 定義 | 誰が見るか | SPF の対象 |
 |---|---|---|---|
-| **`MAIL FROM`**（RFC5321.MailFrom、エンベロープ送信者、Return-Path、バウンスアドレス） | SMTP の `MAIL FROM:` コマンドで渡す。配送エラーの返送先 | MTA。ユーザは通常見ない | **対象（MUST）** |
+| **`MAIL FROM`**（RFC5321.MailFrom、エンベロープFrom、Return-Path、バウンスアドレス） | SMTP の `MAIL FROM:` コマンドで渡す。配送エラーの返送先 | MTA。ユーザは通常見ない | **対象（MUST）** |
 | **`HELO` / `EHLO`** | SMTP セッション冒頭で送信ホストが名乗るホスト名 | MTA | 対象（RECOMMENDED） |
 | **`From:` ヘッダ**（RFC5322.From） | メール本文のヘッダ。MUA が「差出人」として表示 | ユーザ | **対象外** |
 
