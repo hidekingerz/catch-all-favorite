@@ -19,7 +19,7 @@ title: "Trusted Types API 技術調査レポート — DOM XSS を型で封じ�
 
 ## 1. 背景 — なぜ「型」で DOM XSS を防ぐのか
 
-XSS には大きく「サーバー側でテンプレートに混入する」反射型・格納型と、**クライアント側 JS が DOM API に危険な文字列を渡してしまう DOM-based XSS** がある。後者は CSP（`script-src` の nonce / hash）でも止まらない。攻撃者のペイロードは外部スクリプトではなく、**正規のスクリプトが `innerHTML` に代入する文字列**の中にあるからだ。
+XSS には大きく「サーバ側でテンプレートに混入する」反射型・格納型と、**クライアント側 JS が DOM API に危険な文字列を渡してしまう DOM-based XSS** がある。後者は CSP（`script-src` の nonce / hash）でも止まらない。攻撃者のペイロードは外部スクリプトではなく、**正規のスクリプトが `innerHTML` に代入する文字列**の中にあるからだ。
 
 従来の対策は「`innerHTML` を使うたびにサニタイズを忘れない」という**人間の注意力**に依存していた。Trusted Types はこれを反転させる。
 
@@ -301,7 +301,7 @@ Step 5  強制モードへ
 - **DOMPurify のラップは循環に注意**。`createHTML: (s) => DOMPurify.sanitize(s)` というポリシーを、そのまま `TRUSTED_TYPES_POLICY` として DOMPurify に渡すと循環する。DOMPurify に `RETURN_TRUSTED_TYPE: true` を使わせるか、自前ポリシーで包むか、どちらか一方にする。
 - **`isHTML()` を使う**。`instanceof TrustedHTML` はプロトタイプ偽装で欺けるが、`trustedTypes.isHTML()` は内部スロットを見る。ライブラリ境界で型を検証するならこちら。
 - **Report-Only と既定ポリシーの相互作用**。Report-Only では既定ポリシーが `null` を返しても元の文字列が使われるため、「既定ポリシーで弾けている」ように見えて弾けていない。強制モードに切り替える前に、既定ポリシーの戻り値を必ず確認する。
-- **SSR は無関係**。Trusted Types はブラウザの DOM API に対する仕組みなので、サーバーレンダリングの出力（HTML 文字列）には介入しない。ハイドレーション後のクライアント側操作だけが対象。
+- **SSR は無関係**。Trusted Types はブラウザの DOM API に対する仕組みなので、サーバレンダリングの出力（HTML 文字列）には介入しない。ハイドレーション後のクライアント側操作だけが対象。
 - **CSP の `unsafe-eval` とは独立**。`require-trusted-types-for` は `eval` を禁止するのではなく、`TrustedScript` を要求する。`script-src` に `'unsafe-eval'` が無ければそもそも `eval` できない。
 
 ---

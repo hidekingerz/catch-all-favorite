@@ -1,0 +1,29 @@
+# content/research/email 専用の表記辞書。共通辞書（prh-common.yml）に加えて適用する。
+version: 1
+rules:
+  - expected: エンベロープFrom
+    patterns:
+      - エンベロープ送信者
+      - エンベロープの送信元
+      - 封筒の送信元
+    specs:
+      - from: SMTP のエンベロープ送信者
+        to: SMTP のエンベロープFrom
+  - expected: エンベロープ
+    pattern: 封筒
+  # DMARC の alignment。「整合性」（consistency）と「PTR の整合」は別概念なので対象外。
+  - expected: アラインメント
+    patterns:
+      - /(?<!PTR の)整合(?!性)/
+      - /(?<![A-Za-z-])alignment(?![A-Za-z])/
+    specs:
+      - from: From の整合必須
+        to: From のアラインメント必須
+      - from: relaxed alignment 可
+        to: relaxed アラインメント 可
+      - from: 本文の整合性を保証する
+        to: 本文の整合性を保証する
+      - from: PTR の整合
+        to: PTR の整合
+      - from: Identifier Alignment
+        to: Identifier Alignment

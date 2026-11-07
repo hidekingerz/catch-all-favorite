@@ -46,6 +46,27 @@ jobs:
           fi
           echo "content/ と index.md のみ。レポート系PRとして検証 OK。"
           echo "report=true" >> "$GITHUB_OUTPUT"
+          # 調査レポートを含む場合だけ表記チェックを走らせる（catchup PR は対象外）。
+          if printf '%s\n' "$files" | grep -qE '^content/research/.*\.md$'; then
+            echo "research=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # 表記揺れチェック（.textlint/ の辞書）。このジョブは必須チェックなので、
+      # 揺れがあれば auto-merge も止まる。直し方: npm run lint:text:fix
+      - name: Checkout (for textlint)
+        if: steps.guard.outputs.research == 'true'
+        uses: actions/checkout@v6
+      - name: Setup Node.js (for textlint)
+        if: steps.guard.outputs.research == 'true'
+        uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Lint terminology in research reports
+        if: steps.guard.outputs.research == 'true'
+        run: |
+          npm ci
+          npm run lint:text
 
   notify:
     # 通知は PR が開かれた時だけ（synchronize の度には鳴らさない）。

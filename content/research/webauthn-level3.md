@@ -11,10 +11,10 @@ title: "WebAuthn Level 3 調査レポート — W3C 勧告化と Level 2 から�
 - **2026-08-25、WebAuthn Level 3 が W3C 勧告になった。** パスキー（passkey）時代の実運用で使われてきた機能群——JSON シリアライズ、条件付きメディエーション（オートフィル UI・自動アップグレード）、Related Origin Requests、`prf` / `largeBlob` 拡張、クレデンシャル状態のシグナル API など——が正式な Web 標準として確定した。
 - Level 3 は [Level 2（2021-04-08 勧告）](https://www.w3.org/TR/webauthn-2/)の後継。2026-05-26 の Candidate Recommendation Snapshot から**実質的変更なし**で勧告化された。新機能の開発は **Level 4** で行われる。
 - RP（Relying Party）実装者に効く新機能の代表は次の 5 つ:
-  1. **JSON (de)serialization**（`toJSON()` / `parseCreationOptionsFromJSON()` / `parseRequestOptionsFromJSON()`）— サーバーとの往復で ArrayBuffer ↔ base64url 変換を手書きする必要がなくなる
+  1. **JSON (de)serialization**（`toJSON()` / `parseCreationOptionsFromJSON()` / `parseRequestOptionsFromJSON()`）— サーバとの往復で ArrayBuffer ↔ base64url 変換を手書きする必要がなくなる
   2. **条件付きメディエーション**の get（パスキーのフォームオートフィル）と create（パスワードログイン成功時などの「自動パスキーアップグレード」）
   3. **`PublicKeyCredential.getClientCapabilities()`** — クライアントの対応機能（`conditionalGet` / `hybridTransport` / `relatedOrigins` 等）を事前照会して UI を出し分けられる
-  4. **signal メソッド群**（`signalUnknownCredential` / `signalAllAcceptedCredentials` / `signalCurrentUserDetails`）— サーバー側で削除・変更されたクレデンシャルを認証器側にも反映し、「削除したはずのパスキーが候補に出る」問題を解消する
+  4. **signal メソッド群**（`signalUnknownCredential` / `signalAllAcceptedCredentials` / `signalCurrentUserDetails`）— サーバ側で削除・変更されたクレデンシャルを認証器側にも反映し、「削除したはずのパスキーが候補に出る」問題を解消する
   5. **Related Origin Requests** — `https://<RP ID>/.well-known/webauthn` の JSON で許可オリジンを列挙し、複数ドメイン（example.com / example.co.uk など）で同一 RP ID のパスキーを使えるようにする
 - 認証器・データ面では、**BE / BS フラグ**（バックアップ可否・バックアップ状態。同期パスキーの判別に使う）、clientData の **`topOrigin`**、**`hints`**（`security-key` / `client-device` / `hybrid`）、transport 値 **`hybrid`**（スマホ連携）、**compound attestation** などが追加された。
 - 一方で **`rp.name` や Android SafetyNet attestation の非推奨化、`tokenBinding` の予約化（[RESERVED]）、`uvm` 拡張の削除**、`attestation: "none"` でも **AAGUID をゼロ化しない**への変更、タイムアウト推奨値の明確化（推奨 5〜10 分・デフォルト 5 分）など、L2 前提の実装が見直しを要する変更もある。
@@ -37,18 +37,18 @@ W3C の Web Authentication Working Group は 2026-08-25、**Web Authentication: 
 
 | 機能 | 概要 |
 |---|---|
-| JSON (de)serialization | `PublicKeyCredential.prototype.toJSON()`、`parseCreationOptionsFromJSON()`、`parseRequestOptionsFromJSON()`。サーバーが返す JSON をそのまま `navigator.credentials.create()/get()` に渡し、結果もそのまま JSON で返せる。base64url 変換の自前実装（またはヘルパーライブラリ）が不要になる |
+| JSON (de)serialization | `PublicKeyCredential.prototype.toJSON()`、`parseCreationOptionsFromJSON()`、`parseRequestOptionsFromJSON()`。サーバが返す JSON をそのまま `navigator.credentials.create()/get()` に渡し、結果もそのまま JSON で返せる。base64url 変換の自前実装（またはヘルパーライブラリ）が不要になる |
 | 条件付きメディエーション（get） | `mediation: "conditional"` でフォームオートフィルにパスキー候補を出す、いわゆる **passkey autofill UI**。`isConditionalMediationAvailable()` で検出 |
 | 条件付きメディエーション（create） | create 側の条件付きメディエーション。パスワード等でのログイン直後に、モーダルを出さず**自動でパスキーを作成（アップグレード）**するフローを可能にする |
 | `getClientCapabilities()` | クライアント能力の照会 API。返り値はケイパビリティ名→boolean のレコードで、`ClientCapability` enum として `conditionalCreate` / `conditionalGet` / `hybridTransport` / `passkeyPlatformAuthenticator` / `userVerifyingPlatformAuthenticator` / `relatedOrigins` / `signalAllAcceptedCredentials` / `signalCurrentUserDetails` / `signalUnknownCredential` を定義。実装済み拡張は `extension:<拡張ID>` キーで報告される |
-| signal メソッド群 | RP がクレデンシャルの状態を認証器へ通知する静的メソッド。`signalUnknownCredential()`（サーバーが知らないクレデンシャル ID の通知→認証器側で削除・非表示）、`signalAllAcceptedCredentials()`（有効なクレデンシャル ID 一覧の通知）、`signalCurrentUserDetails()`（ユーザーの `name` / `displayName` 変更の反映）。プライバシー保護のため、**成功したかどうかは返さない**（resolve はオプションが整形式だったことのみを意味する） |
+| signal メソッド群 | RP がクレデンシャルの状態を認証器へ通知する静的メソッド。`signalUnknownCredential()`（サーバが知らないクレデンシャル ID の通知→認証器側で削除・非表示）、`signalAllAcceptedCredentials()`（有効なクレデンシャル ID 一覧の通知）、`signalCurrentUserDetails()`（ユーザの `name` / `displayName` 変更の反映）。プライバシー保護のため、**成功したかどうかは返さない**（resolve はオプションが整形式だったことのみを意味する） |
 | Related Origin Requests | RP ID のオリジンに `https://<RP ID>/.well-known/webauthn`（`application/json`）を置き、`{"origins": [...]}` で関連オリジンを列挙すると、列挙されたオリジンから同一 RP ID でクレデンシャルの作成・利用ができる。クライアントは最低 5 つの registrable origin label をサポートする義務がある。国別ドメインやブランドドメインを持つ大規模サイト向け |
-| `hints` | `PublicKeyCredentialHint` enum（`security-key` / `client-device` / `hybrid`）。RP が「ユーザーはこの方法で認証するはず」という優先順のヒントを渡し、クライアントの UI を誘導する。強制力はないが、`transports` / `authenticatorAttachment` と矛盾する場合は hints が優先 |
+| `hints` | `PublicKeyCredentialHint` enum（`security-key` / `client-device` / `hybrid`）。RP が「ユーザはこの方法で認証するはず」という優先順のヒントを渡し、クライアントの UI を誘導する。強制力はないが、`transports` / `authenticatorAttachment` と矛盾する場合は hints が優先 |
 | transport `hybrid` | `AuthenticatorTransport` に `hybrid` が追加。スマートフォン等を QR コード + BLE 近接で使う cross-device フロー（旧称 caBLE）を表す |
 | BE / BS フラグ | Authenticator data のフラグに **BE（Backup Eligibility）/ BS（Backup State）** が割り当てられた。クレデンシャルが同期（マルチデバイス）パスキーかどうか・現にバックアップされているかを RP が判別できる。credential record として保存し、変化を追跡することが推奨される |
 | `topOrigin` | クロスオリジン iframe から呼ばれた場合に、clientData へ最上位オリジンが記録される |
 | クロスオリジン iframe での create | L2 では get のみ許可されていた iframe 内の WebAuthn が、Permissions Policy（`publickey-credentials-create`）によるオプトインで create も可能に |
-| `prf` 拡張 | クレデンシャルに紐づく擬似ランダム関数（PRF）を評価する拡張（CTAP の `hmac-secret` ベース）。任意長の入力から 32 バイトの出力を得られ、**出力を対称鍵としてユーザーデータの暗号化に使う**のが代表的ユースケース。1 回のアサーションで 2 入力を評価でき、鍵ローテーションにも対応 |
+| `prf` 拡張 | クレデンシャルに紐づく擬似ランダム関数（PRF）を評価する拡張（CTAP の `hmac-secret` ベース）。任意長の入力から 32 バイトの出力を得られ、**出力を対称鍵としてユーザデータの暗号化に使う**のが代表的ユースケース。1 回のアサーションで 2 入力を評価でき、鍵ローテーションにも対応 |
 | `largeBlob` 拡張 | クレデンシャルに紐づく不透明データ（証明書など）を認証器に保存する拡張 |
 | compound attestation | 複数の attestation statement を束ねる `compound` フォーマット（§ 8.9） |
 | `attestationFormats` | create 時に RP が希望する attestation フォーマットを優先順で指定できる登録パラメータ |
@@ -71,10 +71,10 @@ W3C の Web Authentication Working Group は 2026-08-25、**Web Authentication: 
 
 ## RP 実装者への実務的影響
 
-- **サーバー・クライアント間の変換コードを標準 API に置き換えられる。** `parseCreationOptionsFromJSON()` / `toJSON()` を使えば、SimpleWebAuthn 等のライブラリが担ってきた base64url 変換層が薄くなる。ライブラリ側も L3 の JSON 形式（`PublicKeyCredentialCreationOptionsJSON` 等）に揃っており、サーバー実装の相互運用性が上がる。
-- **パスキー管理の UX 改善が標準 API でできる。** ユーザーがサーバー側でパスキーを削除・リネームした際に signal メソッドで認証器（パスキープロバイダ）へ伝えることで、「存在しないパスキーが選択肢に出て認証に失敗する」体験を防げる。対応状況は `getClientCapabilities()` で確認してから呼ぶ。
+- **サーバ・クライアント間の変換コードを標準 API に置き換えられる。** `parseCreationOptionsFromJSON()` / `toJSON()` を使えば、SimpleWebAuthn 等のライブラリが担ってきた base64url 変換層が薄くなる。ライブラリ側も L3 の JSON 形式（`PublicKeyCredentialCreationOptionsJSON` 等）に揃っており、サーバ実装の相互運用性が上がる。
+- **パスキー管理の UX 改善が標準 API でできる。** ユーザがサーバ側でパスキーを削除・リネームした際に signal メソッドで認証器（パスキープロバイダ）へ伝えることで、「存在しないパスキーが選択肢に出て認証に失敗する」体験を防げる。対応状況は `getClientCapabilities()` で確認してから呼ぶ。
 - **マルチドメイン展開の設計が変わる。** これまで RP ID の制約（origin の registrable domain suffix）でドメインごとにパスキーが分断されていたケースは、Related Origin Requests で単一 RP ID に集約できる。well-known JSON は HTTPS 必須・credential なし・リダイレクトも HTTPS 限定で取得される点に注意。
-- **同期パスキー前提の運用設計。** BS/BE フラグを credential record として保存すれば、「バックアップされていない単一デバイスクレデンシャルのユーザーに別の回復手段を促す」「同期状態の変化を検知する」といった運用が仕様に沿ってできる。
+- **同期パスキー前提の運用設計。** BS/BE フラグを credential record として保存すれば、「バックアップされていない単一デバイスクレデンシャルのユーザに別の回復手段を促す」「同期状態の変化を検知する」といった運用が仕様に沿ってできる。
 - **L2 時代の実装の点検ポイント**: `attestation: "none"` で AAGUID がゼロでなくなる前提の検証ロジック、`tokenBinding` を見るコード、SafetyNet 形式の受け入れ、`rp.name` 依存、極端に短い/長い `timeout` 指定は見直し対象。
 - **`prf` 拡張はエンドツーエンド暗号化の鍵管理に使える。** パスキーのアサーションなしには得られない 32 バイト出力を暗号鍵に使うことで、「パスキーで認証できる人だけが復号できる」データ保護が構成できる（1Password 等のパスキープロバイダや E2EE 系サービスで実用が進む領域）。
 

@@ -32,7 +32,7 @@ CDP（Chrome DevTools Protocol）は、Chromium / Chrome / Edge / Brave など�
 | **Puppeteer** | Google 製。Chrome では CDP が既定プロトコル。Firefox では WebDriver BiDi が既定 |
 | **Playwright** | Chromium ドライバは CDP。Firefox は Juggler、WebKit は独自プロトコル（後述） |
 | **Selenium 4** | WebDriver（HTTP）に加えて `DevTools` API で CDP を直接叩けた。**CDP API は非推奨で 5.0 で削除予定**、Firefox 向け CDP は 4.29 で削除済み |
-| **Chrome DevTools MCP**（`chrome-devtools-mcp`） | AI エージェント向け MCP サーバー。Puppeteer 経由で CDP を使う |
+| **Chrome DevTools MCP**（`chrome-devtools-mcp`） | AI エージェント向け MCP サーバ。Puppeteer 経由で CDP を使う |
 | **Node.js `--inspect`** | V8 Inspector が CDP の **`v8` サブセット**（`Runtime` / `Debugger` / `Profiler` / `HeapProfiler`）を実装。Chrome の `chrome://inspect` や VS Code のデバッガはこれに接続する |
 | **Lighthouse / Web Vitals 計測ツール** | `Tracing` / `Performance` / `Network` ドメインで計測 |
 
@@ -355,7 +355,7 @@ const page = context.pages()[0];
 2. **Playwright 独自プロトコル経由の `browserType.connect()`（`launchServer` と対）より忠実度が大きく劣る**。高度な用途は `connect()` を推奨。
 3. Playwright は特定の起動引数に依存しているため、**別途起動したブラウザに接続すると一部機能が壊れうる**。
 
-用途は「ユーザーがログイン済みの Chrome を使い回す」「リモートのヘッドレス Chrome サービス（Browserless 等）に繋ぐ」「Electron / CEF アプリのデバッグポートに繋ぐ」など。**Chrome 136 以降は既定プロファイルに対してポートが開かない**ため、前者は `--user-data-dir` で専用プロファイルを作る運用に変える必要がある。
+用途は「ユーザがログイン済みの Chrome を使い回す」「リモートのヘッドレス Chrome サービス（Browserless 等）に繋ぐ」「Electron / CEF アプリのデバッグポートに繋ぐ」など。**Chrome 136 以降は既定プロファイルに対してポートが開かない**ため、前者は `--user-data-dir` で専用プロファイルを作る運用に変える必要がある。
 
 ### 7.4 WebDriver BiDi との関係 — Playwright はまだ CDP に留まる
 
@@ -365,7 +365,7 @@ Playwright の立場は次の通り。
 
 - 2024-09 にメンテナ（Yury Semikhatsky）が **issue #32577「Current limitations blocking Playwright's WebDriver BiDi adoption」** を公開。実験実装でのテスト通過率は Chromium 61%・Firefox 38% で、仕様側の欠落として **ポップアップ／新規タブ読み込み前のビューポート設定、コンテキスト単位のプロキシ・証明書設定、レスポンスボディ取得、`resourceType`、ダウンロードのメタデータ、ロケール／タイムゾーン／UA エミュレーション、追加 HTTP ヘッダ、コンテキスト単位の preload script、オフラインモード、JS 無効化**などを列挙。
 - リポジトリには **`tests/bidi/`** と、BiDi 経由でシステムの Firefox を動かす **`moz-firefox` / `moz-firefox-beta` / `moz-firefox-nightly` チャンネル**（`_createBidiFirefoxChannel`）が存在する。`BIDI_FFPATH` / `BIDI_CRPATH` でバイナリを差し替えてテストする。
-- Mozilla 側は Bugzilla のメタバグ 1917540 で Playwright 向け高優先 API（ユーザーコンテキスト設定、位置情報等のエミュレーション）を順次実装中。
+- Mozilla 側は Bugzilla のメタバグ 1917540 で Playwright 向け高優先 API（ユーザコンテキスト設定、位置情報等のエミュレーション）を順次実装中。
 - 公式の説明は「**BiDi 対応は実験的。プロトコルが Playwright の全機能を賄えるほど成熟した時点で、将来のバージョンで自動的に移行するだろう**」。
 
 一方 Chrome 側の BiDi 実装 **chromium-bidi** は「**BiDi コマンドを CDP コマンドに変換する JavaScript 層（Mapper）**」としてブラウザ内で動く。つまり Chrome では **BiDi の下に CDP がある**構造で、CDP が廃止される見込みはない。Chrome チームも「BiDi は CDP を置き換えるものではなく、CDP は低レベル・Chromium 固有のデバッグ用途に最適化され続ける」と説明している。
@@ -390,7 +390,7 @@ CDP を有効にしていること自体はページからは見えないが、P
 
 ## 8. AI エージェントと CDP — Chrome DevTools MCP
 
-2025 年に Google が公開した **`chrome-devtools-mcp`** は、Claude Code や Gemini CLI などのコーディングエージェントに「動いている Chrome を操作・検査させる」MCP サーバーで、**Puppeteer（= CDP）を土台**にしている。提供するツールはナビゲーション、スクリーンショット、コンソール／ネットワークの読み取り、パフォーマンストレース（`Tracing`）と Insights の抽出など、CDP のドメインをほぼそのまま MCP ツールに写した形になっている。
+2025 年に Google が公開した **`chrome-devtools-mcp`** は、Claude Code や Gemini CLI などのコーディングエージェントに「動いている Chrome を操作・検査させる」MCP サーバで、**Puppeteer（= CDP）を土台**にしている。提供するツールはナビゲーション、スクリーンショット、コンソール／ネットワークの読み取り、パフォーマンストレース（`Tracing`）と Insights の抽出など、CDP のドメインをほぼそのまま MCP ツールに写した形になっている。
 
 Playwright 側の同種ツールは `@playwright/mcp` で、こちらは Playwright API（アクセシビリティツリーベースのスナップショット）を土台にしており、Chromium では最終的に CDP に落ちる。**「エージェントにブラウザを触らせる」文脈でも、Chromium 系の最下層は CDP**である。
 
@@ -412,7 +412,7 @@ Playwright 側の同種ツールは `@playwright/mcp` で、こちらは Playwri
 
 - CDP は「DevTools がブラウザと話す言葉」を外部に開いたもので、Chromium 自動化ツールの共通基盤。**58 ドメイン・661 コマンド**に及ぶが、安定と言えるのは 17 ドメインで、残りは tot 追随が前提。
 - 接続は WebSocket またはパイプ、`{id, method, params, sessionId}` の JSON。**ターゲット／セッション**と **`Target.setAutoAttach`** の理解が肝。**Chrome 136 以降は `--user-data-dir` 必須**。
-- Playwright にとって CDP は **Chromium ドライバの実装言語**であり、Firefox（Juggler）・WebKit（パッチ済み Inspector Protocol）とは別物。ユーザーは `newCDPSession` と `connectOverCDP` で CDP に降りられるが、いずれも Chromium 限定で、後者は公式に「`connect()` より低忠実度」。
+- Playwright にとって CDP は **Chromium ドライバの実装言語**であり、Firefox（Juggler）・WebKit（パッチ済み Inspector Protocol）とは別物。ユーザは `newCDPSession` と `connectOverCDP` で CDP に降りられるが、いずれも Chromium 限定で、後者は公式に「`connect()` より低忠実度」。
 - 標準化の流れは WebDriver BiDi だが、Playwright は仕様の欠落を理由に実験段階に留まり、Chrome の BiDi 実装自体が CDP 上の変換層である以上、**CDP は当面「Chromium の全能力に触れる唯一の道」であり続ける**。
 
 ---

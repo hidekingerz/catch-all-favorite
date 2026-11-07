@@ -54,7 +54,7 @@ title: "UAFX Dream '65 / Enigmatic '82 を Loupedeck CT から MIDI コントロ
 
 | PC 番号 | 呼び出されるプリセット |
 |---|---|
-| 0–127 | UAFX Control アプリでユーザーが各スロットに割り当てたプリセット（+ 任意で Bypass 状態）。工場出荷時の固定割当はなし |
+| 0–127 | UAFX Control アプリでユーザが各スロットに割り当てたプリセット（+ 任意で Bypass 状態）。工場出荷時の固定割当はなし |
 
 ## Dream '65 Reverb Amplifier の MIDI CC 一覧
 

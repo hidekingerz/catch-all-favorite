@@ -5,12 +5,18 @@
   "scripts": {
     "dev": "blume dev",
     "build": "blume build",
-    "preview": "blume preview"
+    "preview": "blume preview",
+    "lint:text": "textlint content/research && textlint --config .textlint/email.json content/research/email",
+    "lint:text:fix": "textlint --fix content/research && textlint --fix --config .textlint/email.json content/research/email"
   },
   "engines": {
     "node": ">=22.12"
   },
   "dependencies": {
     "blume": "^1.1.2"
+  },
+  "devDependencies": {
+    "textlint": "^15.8.0",
+    "textlint-rule-prh": "^6.1.1"
   }
 }

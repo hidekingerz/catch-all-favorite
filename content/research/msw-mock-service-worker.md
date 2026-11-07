@@ -14,7 +14,7 @@ title: "MSW (Mock Service Worker) 技術調査レポート"
 - Web標準（WHATWG Fetch API）に準拠しており、ハンドラ内で扱うのは素の `Request` / `Response` インスタンス。**MSW独自のDSLをほぼ覚えなくてよい**。
 - 使い方の基本は3ステップ: ① `handlers.ts` にハンドラを定義 → ② ブラウザは `setupWorker`、Node.jsは `setupServer` で統合 → ③ テストでは `server.use()` でシナリオ別に上書き。
 - ベストプラクティスは「`handlers.js` には**ハッピーパスだけ**を書き、エラー系はテスト内で `server.use()` によるランタイム上書きで表現する」。
-- モックされたリクエストは**DevToolsのNetworkタブに通常どおり表示される**（Sizeカラムが `(ServiceWorker)` になる）。monkey-patch系ツールと違い、ステータス・ヘッダー・ボディをNetworkタブでそのまま検証できる。デバッグはConsoleの `[MSW]` ログ＋ライフサイクルイベントAPI＋公式Runbookの4ステップで行う。
+- モックされたリクエストは**DevToolsのNetworkタブに通常どおり表示される**（Sizeカラムが `(ServiceWorker)` になる）。monkey-patch系ツールと違い、ステータス・ヘッダ・ボディをNetworkタブでそのまま検証できる。デバッグはConsoleの `[MSW]` ログ＋ライフサイクルイベントAPI＋公式Runbookの4ステップで行う。
 
 ---
 
@@ -55,9 +55,9 @@ MSWは mock という言葉を避け、**network behavior** と呼ぶ。「ネ�
 
 独自構文を発明せず、WHATWG Fetch API 仕様に乗る。インターセプトされたリクエストは本物の `Request` インスタンス、モックレスポンスは本物の `Response` インスタンスである。つまり **MSWを学ぶことがそのままHTTPの学習になる**し、逆にHTTPを知っていればMSW固有の学習コストは小さい。
 
-### 2-4. サーバー視点で書く
+### 2-4. サーバ視点で書く
 
-リクエストハンドラは「実際のサーバーがその条件下でどう振る舞うか」という**サーバーの視点**で書くことが推奨される。これによりハンドラが現実的で保守しやすくなる。
+リクエストハンドラは「実際のサーバがその条件下でどう振る舞うか」という**サーバの視点**で書くことが推奨される。これによりハンドラが現実的で保守しやすくなる。
 
 ---
 
@@ -67,7 +67,7 @@ MSWは mock という言葉を避け、**network behavior** と呼ぶ。「ネ�
 
 ブラウザでは [Service Worker API](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) を使う。Service Workerはページとネットワークの間に立つプロキシとして動作でき、MSWはここで `fetch` イベントを捕まえてハンドラに渡す。
 
-- アプリ側は「本番と同じURL」にリクエストを投げるだけ。**モックサーバーのURLに差し替える必要がない**
+- アプリ側は「本番と同じURL」にリクエストを投げるだけ。**モックサーバのURLに差し替える必要がない**
 - DevToolsのNetworkタブにもリクエストが（Service Worker経由として）記録され、デバッグ体験が本物に近い
 
 ### 3-2. Node.js: クラス拡張
@@ -190,11 +190,11 @@ enableMocking().then(() => {
 **レスポンスの構築**は `HttpResponse` クラスで行う（素の `Response` の拡張で、`Set-Cookie` などの制約を回避しつつ標準に準拠）:
 
 - `HttpResponse.json()` / `HttpResponse.text()` などのショートハンド
-- ステータスコード・ヘッダーの指定
+- ステータスコード・ヘッダの指定
 - ネットワークエラー（`HttpResponse.error()`）
 - バイナリ・ファイルアップロード・ストリーミング・リダイレクト
 - レスポンス遅延（`delay()`）によるタイミング制御
-- passthrough（モックせず実サーバーへ素通し）やレスポンスのパッチ/プロキシ
+- passthrough（モックせず実サーバへ素通し）やレスポンスのパッチ/プロキシ
 
 ```typescript
 import { http, HttpResponse, delay } from 'msw'
@@ -277,8 +277,8 @@ export const handlers = [
 押さえておくべきデフォルト挙動:
 
 - `ws.link()` のURLにはHTTPハンドラと同じ述語（相対/絶対URL・パスパラメータ・ワイルドカード・正規表現）が使える
-- **インターセプトされた接続はデフォルトでは実サーバーに接続しない**。実サーバーと繋ぎたい場合は `server.connect()` を明示的に呼ぶ
-- 実サーバー接続後は、クライアント→サーバー / サーバー→クライアントのイベントがデフォルトで転送される。`event.preventDefault()` で個別に遮断でき、**イベント単位のモック/素通しの混在**が可能
+- **インターセプトされた接続はデフォルトでは実サーバに接続しない**。実サーバと繋ぎたい場合は `server.connect()` を明示的に呼ぶ
+- 実サーバ接続後は、クライアント→サーバ / サーバ→クライアントのイベントがデフォルトで転送される。`event.preventDefault()` で個別に遮断でき、**イベント単位のモック/素通しの混在**が可能
 
 ---
 
@@ -358,14 +358,14 @@ export const handlers = [
 | --- | --- | --- | --- | --- |
 | **MSW** | ブラウザ + Node.js | Service Worker / クラス拡張 | ◎（WS・SSEも） | Worker スクリプトの配置が必要（ブラウザ） |
 | **nock** | Node.jsのみ | モジュールパッチ | ✕ | ブラウザ不可、クライアントによりアダプタが必要 |
-| **JSON Server** | 別プロセスのHTTPサーバー | 実サーバー起動 | ✕ | アプリ側でURLの差し替えが必要、リソース指向の暗黙ルート |
+| **JSON Server** | 別プロセスのHTTPサーバ | 実サーバ起動 | ✕ | アプリ側でURLの差し替えが必要、リソース指向の暗黙ルート |
 | **Mirage** | ブラウザのみ | fetch/XHRのmonkey-patch | △ | Node.js不可（テストランナーで使えない） |
 | **Cypress `cy.intercept()`** | Cypressテスト内のみ | ブラウザ全体のHTTPプロキシ | △ | Cypressの外では使えない |
 | **Playwright `page.route()`** | Playwrightテスト内のみ | DevTools Protocol | △ | Playwrightの外では使えない |
 
 MSWの優位点をまとめると:
 
-- **サーバーを立てないので初期化コストがゼロ**、アプリ側のコード変更も不要
+- **サーバを立てないので初期化コストがゼロ**、アプリ側のコード変更も不要
 - ブラウザとNode.jsで**同じモックを使い回せる**唯一級の選択肢
 - GraphQL・WebSocket・SSEの**ファーストクラスサポート**
 - テストフレームワークに縛られない独立レイヤーなので、**開発・テスト・Storybook・デモを1つの定義でカバー**できる
@@ -384,7 +384,7 @@ MSWの優位点をまとめると:
 | E2Eテスト（Playwright/Cypress）での外部API遮断 | ○ ツール内蔵機能との使い分けを検討 |
 | GraphQLアプリのテスト | ◎ MockProvider不要になる |
 | WebSocket/SSEを含むリアルタイム機能のテスト | ◎ 対応ライブラリ自体が希少 |
-| Node.jsサーバー間通信のモック | ○ nockと比較検討（MSWはブラウザ流用の利点あり） |
+| Node.jsサーバ間通信のモック | ○ nockと比較検討（MSWはブラウザ流用の利点あり） |
 
 ---
 
@@ -401,13 +401,13 @@ MSWのブラウザ統合はService Workerの `fetch` イベントで割り込む
 | 表示有無 | **通常のリクエストと同様に表示される**。「Fetch/XHR」フィルタにもそのまま載る |
 | Sizeカラム | **`(ServiceWorker)`** と表示される（Chrome/Edge）。これが「モックされた」ことの見分け方。Firefoxでは「転送量」欄に「service worker」と出る |
 | Status | ハンドラで返した値がそのまま表示される（200/400/500など）。`HttpResponse.error()` はネットワークエラー（failed）として表示 |
-| Headers / Response / Preview | `HttpResponse` で定義したヘッダーとボディが**本物のレスポンスとしてそのまま検証できる** |
+| Headers / Response / Preview | `HttpResponse` で定義したヘッダとボディが**本物のレスポンスとしてそのまま検証できる** |
 | Timing | Service Workerの処理時間（Startup / `respondWith`）が計測される。`delay()` を入れた場合はここに反映される |
 
 ポイントは2つ:
 
 1. **Mirage等のmonkey-patch系はNetworkタブに一切表示されない**（`window.fetch` 自体を差し替えるためリクエストがネットワーク層に到達しない）のに対し、MSWはネットワーク層を通るので**普段どおりのデバッグフローが使える**。これは公式が比較ページで強調する差別化点。
-2. リクエストが**2行に見えるケースがある**が正常である。`passthrough()` や未ハンドルのリクエストを素通しした場合、①ページが発行した元リクエスト（Service Workerが処理）と、②Service Worker自身が実サーバーへ再発行したリクエスト（イニシエータがWorker由来として表示される）の両方が記録されるため。モックで完結した場合は1行のみ。
+2. リクエストが**2行に見えるケースがある**が正常である。`passthrough()` や未ハンドルのリクエストを素通しした場合、①ページが発行した元リクエスト（Service Workerが処理）と、②Service Worker自身が実サーバへ再発行したリクエスト（イニシエータがWorker由来として表示される）の両方が記録されるため。モックで完結した場合は1行のみ。
 
 ### 12-2. Consoleタブ: `[MSW]` ログ
 

@@ -1,0 +1,15 @@
+# content/research 全体の表記辞書（textlint-rule-prh）。
+# expected が正しい表記、pattern が揺れ。specs は辞書自体のテストで、textlint 実行時に検証される。
+# インラインコードとコードブロックは検査対象外。
+# 新しい用語の表記を決めたらここに追記する。特定分野だけの用語は分野別の辞書（prh-email.yml など）へ。
+version: 1
+rules:
+  # 長音: 語尾の長音は付けない
+  - expected: ユーザ
+    pattern: ユーザー
+  - expected: サーバ
+    pattern: サーバー
+  - expected: ヘッダ
+    pattern: ヘッダー
+  - expected: パーサ
+    pattern: パーサー
