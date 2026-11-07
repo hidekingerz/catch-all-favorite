@@ -338,6 +338,11 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 ### メール技術
 
+- [SPF 技術調査レポート — RFC 7208 の仕組み・限界・DMARC との関係と各社の対応状況](/content/research/email/spf)
+- [DKIM 技術調査レポート — RFC 6376 の仕組み・関連 RFC・リプレイ問題と各社の対応状況](/content/research/email/dkim)
+- [DMARC 技術調査レポート — RFC 9989（DMARCbis）の仕組み・RFC 7489 からの変更点と各社の対応状況](/content/research/email/dmarc)
+- [ARC 技術調査レポート — RFC 8617 の仕組み・実験の結果・Historic 化の提案と各社の対応状況](/content/research/email/arc)
+- [MTA-STS 技術調査レポート — RFC 8461 の仕組み・TLSRPT・DANE との比較と各社の対応状況](/content/research/email/mta-sts)
 - [DKIM2 技術調査レポート — 関連 RFC・ドラフトの全体像と各社の対応状況](/content/research/email/dkim2)
 - [RFC 10080 技術調査レポート — メールの Expires ヘッダフィールドの一般利用化](/content/research/email/rfc10080-email-expires-header)
 
