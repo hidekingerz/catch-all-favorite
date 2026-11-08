@@ -29,12 +29,6 @@ rules:
     pattern: トレーラー
   - expected: タイマ
     pattern: タイマー
-  - expected: レンダラ
-    pattern: レンダラー
-  - expected: コンポジタ
-    pattern: コンポジター
-  - expected: ワーカ
-    pattern: ワーカー
   # 語中の長音は省かない
   - expected: オーバーヘッド
     pattern: オーバヘッド
