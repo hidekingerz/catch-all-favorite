@@ -313,6 +313,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 ## 技術調査レポート
 
+- [ブラウザの仕組み 技術調査レポート — Web アプリ開発者のためのプロセスモデル・レンダリング・イベントループ・ネットワーク・セキュリティ境界の全体像](/content/research/browser-internals)
 - [TypeSafe Jev でキャッチアップ記事の見出しを分類する検証レポート — System One モデルの使い方・精度・費用・運用要件](/content/research/typesafe-jev-headline-classification)
 - [Chrome UX Report（CrUX）技術調査レポート — データの仕組み・開発者の利用方法・自プロダクトの計測方法](/content/research/chrome-ux-report-crux)
 - [Trusted Types API 技術調査レポート — DOM XSS を型で封じる仕組みと 2026 年の対応状況](/content/research/trusted-types-api)
