@@ -35,6 +35,24 @@ rules:
     pattern: コンポジター
   - expected: ワーカ
     pattern: ワーカー
+  - expected: デザイナ
+    pattern: デザイナー
+  - expected: パラメータ
+    pattern: パラメーター
+  - expected: コネクタ
+    pattern: コネクター
+  - expected: フォルダ
+    pattern: フォルダー
+  - expected: スクリーンリーダ
+    pattern: スクリーンリーダー
   # 語中の長音は省かない
   - expected: オーバーヘッド
     pattern: オーバヘッド
+  # 用語
+  - expected: UX コピー
+    pattern: /UX ?ライティング/
+    specs:
+      - from: UXライティング
+        to: UX コピー
+  - expected: 雛形
+    pattern: ひな形
