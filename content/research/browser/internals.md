@@ -291,7 +291,7 @@ CORS は「サーバ側が `Access-Control-Allow-Origin` などで読み取り�
 
 Chrome 115（2023 年）以降、サードパーティ文脈のストレージは**オリジンだけでなく「トップレベルサイト × フレームのオリジン」**でキー付けされる（途中にクロスサイトの祖先がいるかを示す ancestor bit も加わる）。対象は IndexedDB、Cache Storage、localStorage / sessionStorage、Origin Private File System、Storage Buckets、Blob URL（Chrome 137 以降。トップレベルナビゲーションを除く）、サードパーティ文脈の Service Worker、通信 API（BroadcastChannel、SharedWorker、Web Locks）。`postMessage` は変わらない。Firefox（State Partitioning / Total Cookie Protection）と Safari（ITP）も同様の分割を先に行っている。
 
-含意: **自分のウィジェットが他社サイトに iframe で埋め込まれる場合、埋め込み先ごとに別のストレージを見る**。埋め込み先をまたいでログイン状態を保ちたいなら、Storage Access API でユーザの許可を得るか、設計を変える。サードパーティ Cookie の制限（Safari は既定でブロック、Firefox は既定でサイトごとに分割。Chrome は 2024-07 に廃止計画を撤回してユーザの選択に委ね、2025-04 には選択プロンプトの導入も取りやめたため、通常モードでは今も使える。詳細は [ブラウザのストレージレポート](/content/research/browser-storage) 6 節）と合わせて、「埋め込み型のアプリは埋め込み先の文脈で分離される」のが現在の前提。
+含意: **自分のウィジェットが他社サイトに iframe で埋め込まれる場合、埋め込み先ごとに別のストレージを見る**。埋め込み先をまたいでログイン状態を保ちたいなら、Storage Access API でユーザの許可を得るか、設計を変える。サードパーティ Cookie の制限（Safari は既定でブロック、Firefox は既定でサイトごとに分割。Chrome は 2024-07 に廃止計画を撤回してユーザの選択に委ね、2025-04 には選択プロンプトの導入も取りやめたため、通常モードでは今も使える。詳細は [ブラウザのストレージレポート](/content/research/browser/storage) 6 節）と合わせて、「埋め込み型のアプリは埋め込み先の文脈で分離される」のが現在の前提。
 
 ### 8.4 その他の境界
 

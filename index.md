@@ -313,8 +313,6 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 ## 技術調査レポート
 
-- [ブラウザのストレージ 技術調査レポート — Cookie・Web Storage・IndexedDB・Cache API・OPFS の使い分け、容量と退避、分割とサードパーティ Cookie の現状](/content/research/browser-storage)
-- [ブラウザの仕組み 技術調査レポート — Web アプリ開発者のためのプロセスモデル・レンダリング・イベントループ・ネットワーク・セキュリティ境界の全体像](/content/research/browser-internals)
 - [TypeSafe Jev でキャッチアップ記事の見出しを分類する検証レポート — System One モデルの使い方・精度・費用・運用要件](/content/research/typesafe-jev-headline-classification)
 - [Chrome UX Report（CrUX）技術調査レポート — データの仕組み・開発者の利用方法・自プロダクトの計測方法](/content/research/chrome-ux-report-crux)
 - [Trusted Types API 技術調査レポート — DOM XSS を型で封じる仕組みと 2026 年の対応状況](/content/research/trusted-types-api)
@@ -353,6 +351,11 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 - [HTTP/1.1 技術調査レポート — RFC 9110〜9112 の仕組み・歴史・既知の問題と各社の対応状況](/content/research/http/http1)
 - [HTTP/2 技術調査レポート — RFC 9113 の仕組み・RFC 7540 からの変更点・既知の問題と各社の対応状況](/content/research/http/http2)
 - [HTTP/3 技術調査レポート — RFC 9114 と QUIC（RFC 9000）の仕組み・HTTP/2 との違い・既知の問題と各社の対応状況](/content/research/http/http3)
+
+### ブラウザ
+
+- [ブラウザの仕組み 技術調査レポート — Web アプリ開発者のためのプロセスモデル・レンダリング・イベントループ・ネットワーク・セキュリティ境界の全体像](/content/research/browser/internals)
+- [ブラウザのストレージ 技術調査レポート — Cookie・Web Storage・IndexedDB・Cache API・OPFS の使い分け、容量と退避、分割とサードパーティ Cookie の現状](/content/research/browser/storage)
 
 ## セキュリティ（CVE）
 

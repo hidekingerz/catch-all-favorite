@@ -3,7 +3,7 @@ title: "ブラウザのストレージ 技術調査レポート — Cookie・Web
 ---
 
 > 発行日: 2026-11-09
-> テーマ: Web アプリ開発者がクライアント側にデータを置くときの判断材料として、ブラウザが提供するストレージ（Cookie、localStorage / sessionStorage、IndexedDB、Cache Storage、Origin Private File System、Storage Buckets）の性質と使い分け、オリジンごとの容量（クォータ）と退避（eviction）の規則、永続化の要求、ストレージ分割とサードパーティ Cookie の 2026 年時点の状況、Chrome・Firefox・Safari の違いを整理する。ブラウザ全体の構造は [ブラウザの仕組みレポート](/content/research/browser-internals) を参照
+> テーマ: Web アプリ開発者がクライアント側にデータを置くときの判断材料として、ブラウザが提供するストレージ（Cookie、localStorage / sessionStorage、IndexedDB、Cache Storage、Origin Private File System、Storage Buckets）の性質と使い分け、オリジンごとの容量（クォータ）と退避（eviction）の規則、永続化の要求、ストレージ分割とサードパーティ Cookie の 2026 年時点の状況、Chrome・Firefox・Safari の違いを整理する。ブラウザ全体の構造は [ブラウザの仕組みレポート](/content/research/browser/internals) を参照
 > 一次情報: [MDN: Storage quotas and eviction criteria](https://developer.mozilla.org/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria)（2026-01-05 更新）、[WebKit Blog: Updates to Storage Policy](https://webkit.org/blog/14403/updates-to-storage-policy/)（2023-08-10）、[WebKit Blog: Full Third-Party Cookie Blocking and More](https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/)（2020-03-24）、[MDN: State Partitioning（Firefox）](https://developer.mozilla.org/en-US/docs/Web/Privacy/Guides/State_Partitioning)、[Privacy Sandbox: Storage Partitioning](https://privacysandbox.google.com/cookies/storage-partitioning)、[Privacy Sandbox: Next steps（2025-04-22）](https://privacysandbox.google.com/blog/privacy-sandbox-next-steps)、[Privacy Sandbox: Feature status](https://privacysandbox.google.com/overview/status)（2026-08-14 更新）、[draft-ietf-httpbis-rfc6265bis-22](https://datatracker.ietf.org/doc/draft-ietf-httpbis-rfc6265bis/)、[Chrome: Storage Buckets](https://developer.chrome.com/docs/web-platform/storage-buckets)、[Chrome: IndexedDB durability defaults to relaxed](https://developer.chrome.com/blog/indexeddb-durability-mode-now-defaults-to-relaxed/)、MDN の各 API リファレンス
 
 ## TL;DR
@@ -32,7 +32,7 @@ title: "ブラウザのストレージ 技術調査レポート — Cookie・Web
 | Cookie | `Set-Cookie` / `document.cookie` / Cookie Store API | ドメイン + パス（分割時は トップレベルサイトも） |
 | HTTP キャッシュ | ブラウザが自動管理 | URL + トップレベルサイト（+ フレームのサイト） |
 
-HTTP キャッシュと bfcache は開発者が直接読み書きするストレージではないので、本レポートでは扱わない（[ブラウザの仕組みレポート](/content/research/browser-internals) の 7 節を参照）。
+HTTP キャッシュと bfcache は開発者が直接読み書きするストレージではないので、本レポートでは扱わない（[ブラウザの仕組みレポート](/content/research/browser/internals) の 7 節を参照）。
 
 ### 1.2 「best-effort」と「persistent」
 
@@ -104,7 +104,7 @@ web.dev は「localStorage と sessionStorage は避ける」としている。�
 - **トランザクションは自動コミット**される。保留中のリクエストが無くなってイベントループに制御が戻ると閉じるので、トランザクションの途中で無関係な `await fetch()` を挟むと `TransactionInactiveError` になる。読み書きは同じトランザクションの中で連続して行う。
 - **耐久性（durability）**: トランザクションの第 3 引数で `strict`（ディスクへの書き込みを確認してから `complete`）か `relaxed`（OS に渡した時点で `complete`）を選べる。**Chrome は 121 で既定を `strict` から `relaxed` に変え、Firefox と Safari に揃えた**。電源断で直前数秒の書き込みを失ってよくないデータ（決済の記録など）だけ `strict` を明示する。
 - スキーマ変更は `onupgradeneeded` でバージョンを上げて行う。別タブが古いバージョンで開いていると `blocked` になるので、`versionchange` イベントで接続を閉じる処理を入れておく。
-- 開いたままの接続は bfcache を阻害することがある（[ブラウザの仕組みレポート](/content/research/browser-internals) 3.1 節）。
+- 開いたままの接続は bfcache を阻害することがある（[ブラウザの仕組みレポート](/content/research/browser/internals) 3.1 節）。
 
 ### 2.4 Cache Storage（Cache API）
 
