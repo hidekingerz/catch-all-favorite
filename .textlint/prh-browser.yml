@@ -1,0 +1,43 @@
+# content/research/browser 専用の表記辞書。
+# .textlint/browser.json が共通辞書（prh-common.yml）と一緒に読み込む。
+version: 1
+rules:
+  # storage partitioning は「ストレージ分割」。分割された単位を指す「パーティション」はそのまま使う
+  - expected: ストレージ分割
+    patterns:
+      - ストレージパーティショニング
+      - ストレージのパーティショニング
+      - ストレージ・パーティショニング
+    specs:
+      - from: ストレージパーティショニングの対象
+        to: ストレージ分割の対象
+  # eviction は「退避」
+  - expected: 退避
+    patterns:
+      - エビクション
+      - 追い出し
+    specs:
+      - from: エビクションの条件
+        to: 退避の条件
+  - expected: クォータ
+    pattern: クオータ
+  # back/forward cache は「bfcache」（初出も英語表記のまま）
+  - expected: bfcache
+    patterns:
+      - BFCache
+      - BFcache
+      - バックフォワードキャッシュ
+    specs:
+      - from: BFCache に入る
+        to: bfcache に入る
+  - expected: サードパーティ Cookie
+    patterns:
+      - /サードパーティー?・?クッキー/
+      - サードパーティーCookie
+      - サードパーティー Cookie
+      - サードパーティCookie
+    specs:
+      - from: サードパーティークッキー
+        to: サードパーティ Cookie
+  - expected: Site Isolation
+    pattern: サイトアイソレーション

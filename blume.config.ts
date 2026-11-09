@@ -107,6 +107,12 @@ const buildResearchGroup = () => ({
         .sort()
         .map((s) => `/content/research/http/${s}`),
     },
+    {
+      label: "ブラウザ",
+      items: slugsIn("content/research/browser")
+        .sort()
+        .map((s) => `/content/research/browser/${s}`),
+    },
   ],
 });
 

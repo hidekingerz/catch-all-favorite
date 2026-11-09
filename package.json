@@ -6,8 +6,8 @@
     "dev": "blume dev",
     "build": "blume build",
     "preview": "blume preview",
-    "lint:text": "textlint content/research && textlint --config .textlint/email.json content/research/email && textlint --config .textlint/http.json content/research/http",
-    "lint:text:fix": "textlint --fix content/research && textlint --fix --config .textlint/email.json content/research/email && textlint --fix --config .textlint/http.json content/research/http"
+    "lint:text": "textlint content/research && textlint --config .textlint/email.json content/research/email && textlint --config .textlint/http.json content/research/http && textlint --config .textlint/browser.json content/research/browser",
+    "lint:text:fix": "textlint --fix content/research && textlint --fix --config .textlint/email.json content/research/email && textlint --fix --config .textlint/http.json content/research/http && textlint --fix --config .textlint/browser.json content/research/browser"
   },
   "engines": {
     "node": ">=22.12"

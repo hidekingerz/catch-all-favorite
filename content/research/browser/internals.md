@@ -10,12 +10,12 @@ title: "ブラウザの仕組み 技術調査レポート — Web アプリ開�
 
 - ブラウザは **1 つのプログラムではなく、役割の違う複数の OS プロセスの集合**。Chromium では「ブラウザプロセス（UI・調整）」「レンダラプロセス（サイトごと。DOM・CSS・JS）」「GPU / Viz プロセス（合成と描画）」「ネットワークやストレージなどのユーティリティ」に分かれ、Firefox（Fission）と WebKit（WebContent / Networking / GPU）も同じ方向にある。**クロスサイトの iframe も別プロセス**になる（Site Isolation）。目的はクラッシュの封じ込めとサンドボックス、そして Spectre 以降は「別サイトのメモリを同じプロセスに置かない」こと。
 - レンダラプロセスの **メインスレッド**は、HTML のパース、JS の実行、スタイル計算、レイアウト、ペイント（描画命令の生成）を 1 本で担う。**合成（コンポジット）だけはコンポジタスレッドと GPU 側**で行うので、`transform` / `opacity` のアニメーションとスクロールはメインスレッドが詰まっていても動く。これが「レイアウトを起こすプロパティを避けろ」の根拠。
-- 描画のタイミングは HTML 仕様の **イベントループ**が決める。タスクを 1 つ実行 → **マイクロタスク（Promise）を全部消化** → 描画の機会（通常 60 Hz、約 16.7 ms ごと）があれば **「描画の更新」**を実行する。描画の更新の中では、`resize` → `scroll` → メディアクエリ → アニメーション → **`requestAnimationFrame`** → スタイルとレイアウトの再計算 → `ResizeObserver` → **`IntersectionObserver`** → ペイント、の順に固定されている。`setTimeout(0)` は次のタスク、`queueMicrotask` は同じタスクの直後、`requestAnimationFrame` は次の描画の直前、`requestIdleCallback` は暇なとき、と使い分けの意味はここから来る。
+- 描画のタイミングは HTML 仕様の **イベントループ**が決める。タスクを 1 つ実行 → **マイクロタスク（Promise）を全部消化**、を繰り返す。描画の機会（通常 60 Hz なら約 16.7 ms ごと）が来ると、**「描画の更新」が rendering task source のタスクとして積まれ**、ほかのタスクと同じように順番に実行される。描画の更新の中では、`resize` → `scroll` → メディアクエリ → アニメーション → **`requestAnimationFrame`** → スタイルとレイアウトの再計算 → `ResizeObserver` → **`IntersectionObserver`** → ペイント、の順に固定されている。`setTimeout(0)` は次のタスク、`queueMicrotask` は同じタスクの直後、`requestAnimationFrame` は次の描画の直前、`requestIdleCallback` は暇なとき、と使い分けの意味はここから来る。
 - 入力は**ブラウザプロセスが受けてレンダラへ転送**する。イベントリスナがある領域は「速くスクロールできない領域」になり、コンポジタはメインスレッドの返事を待つ。`document.body` にまとめて付けたリスナはページ全体をその領域にする。`{ passive: true }` か CSS `touch-action` で回避できる。`mousemove` などは次の描画直前にまとめて 1 回配送される（`getCoalescedEvents()` で個別の座標を取れる）。
 - ネットワークは**ブラウザプロセス側のネットワークサービス**が担い、レンダラは直接ソケットを持たない。キャッシュは 3 層あり、役割が違う。**HTTP キャッシュ**（RFC 9111。鮮度は `s-maxage` → `max-age` → `Expires` → ヒューリスティックの順で決まり、stale になれば `ETag` で再検証）、**Service Worker の Cache Storage**（アプリが制御）、**bfcache**（ページ全体のスナップショット。戻る／進むを即時に。`unload` リスナや `Cache-Control: no-store` で無効になる）。
 - セキュリティ境界の基本単位は **オリジン（スキーム + ホスト + ポート）**。プロセス分離の単位は一段粗い **サイト（スキーム + eTLD+1）**。2023 年の Chrome 115 以降、localStorage や IndexedDB などのストレージは「**トップレベルサイト × フレームのオリジン**」で分割されるので、iframe に埋め込まれた自分のアプリは埋め込み先ごとに別のストレージを見る。`COOP` + `COEP` で**クロスオリジン分離**にすると `SharedArrayBuffer` と高精度タイマが使える。
 - これらは **Core Web Vitals** に直結する。LCP（2.5 秒）はナビゲーション〜最初のレンダリングのパイプライン、INP（200 ms）はイベントループでメインスレッドが空くまでの時間、CLS（0.1）はレイアウト段階の再計算。測り方と直し方の出発点は「どのプロセスのどのスレッドで、パイプラインのどの段が詰まっているか」。
-- エンジンは 3 つ。**Blink**（Chromium 系: Chrome・Edge・Opera・Samsung Internet など）、**WebKit**（Safari。iOS では 2024 年の EU 向けを除き全ブラウザが WebKit を使う）、**Gecko**（Firefox）。StatCounter の 2026 年 10 月の世界シェアは Chrome 68.8%、Safari 16.6%、Edge 5.4%、Firefox 2.6%。機能の「使えるか」の判断は **Baseline**（Chrome・Edge・Firefox・Safari で揃って使えるものを「Newly available」、その 30 か月後を「Widely available」）が標準の物差しになった。
+- エンジンは 3 つ。**Blink**（Chromium 系: Chrome・Edge・Opera・Samsung Internet など）、**WebKit**（Safari。iOS では原則として全ブラウザが WebKit を使う。2024 年に EU、2025 年 12 月に日本で他エンジンが認められた）、**Gecko**（Firefox）。StatCounter の 2026 年 10 月の世界シェアは Chrome 68.8%、Safari 16.6%、Edge 5.4%、Firefox 2.6%。機能の「使えるか」の判断は **Baseline**（Chrome・Edge・Firefox・Safari で揃って使えるものを「Newly available」、その 30 か月後を「Widely available」）が標準の物差しになった。
 
 ---
 
@@ -32,7 +32,7 @@ title: "ブラウザの仕組み 技術調査レポート — Web アプリ開�
 | ネットワーク | DNS、TLS、HTTP、HTTP キャッシュ、Cookie | ネットワークサービス（ブラウザプロセス内または独立） | ネットワーク（ソケット）プロセス | Networking プロセス |
 | ストレージ | IndexedDB、Cache Storage、localStorage の永続化 | ブラウザプロセス側 | 親プロセス側 | Networking プロセス（WebKit Docs の記述） |
 
-エンジンは 3 系統に収斂した。Blink は Chromium ベースのブラウザ全体（Chrome・Edge・Opera・Brave・Vivaldi・Samsung Internet・Arc など）で使われ、WebKit は Safari と iOS 上のすべてのブラウザ（2024 年の DMA 対応で EU では他エンジンが許可された）、Gecko は Firefox 系で使われる。StatCounter の 2026 年 10 月の世界シェアは Chrome 68.8%、Safari 16.6%、Edge 5.4%、Firefox 2.6%、Opera 2.2%、Samsung Internet 2.1%。**Blink が約 8 割、WebKit が約 2 割、Gecko が数%** という構図で、開発者が確認すべきエンジンの実質は Blink と WebKit の 2 つ、Baseline の基準では Gecko を含む 3 つ。
+エンジンは 3 系統に収斂した。Blink は Chromium ベースのブラウザ全体（Chrome・Edge・Opera・Brave・Vivaldi・Samsung Internet・Arc など）で使われ、WebKit は Safari と iOS 上のブラウザ（2024 年の DMA 対応で EU では他エンジンが許可され、日本でもスマートフォンソフトウェア競争促進法の全面施行に合わせて 2025 年 12 月に Apple が他エンジンを認めた。日本の件は報道による二次情報）、Gecko は Firefox 系で使われる。StatCounter の 2026 年 10 月の世界シェアは Chrome 68.8%、Safari 16.6%、Edge 5.4%、Firefox 2.6%、Opera 2.2%、Samsung Internet 2.1%。**Blink が約 8 割、WebKit が約 2 割、Gecko が数%** という構図で、開発者が確認すべきエンジンの実質は Blink と WebKit の 2 つ、Baseline の基準では Gecko を含む 3 つ。
 
 以下、Chromium の公開ドキュメントを軸に説明し、Firefox と WebKit の違いはそのつど補う。Chromium を軸にするのは文書が最も詳しいからで、設計の大筋（プロセス分離、メインスレッドとコンポジタの分離、GPU での合成）は 3 エンジンで共通している。
 
@@ -56,11 +56,11 @@ Chromium は最初から「タブごとにプロセス」で設計された。�
 
 | 項目 | Chromium | Firefox（Fission） | WebKit |
 |---|---|---|---|
-| 状態 | デスクトップでは Chrome 67（2018）から既定。**クロスサイト iframe も別プロセス**（out-of-process iframe） | 2021 年に Nightly / Beta で試験開始、その後デスクトップで既定。サイトの境界は Public Suffix List で判定 | Web ページごとに WebContent プロセス。クロスサイト iframe のプロセス分離の公式な状況は、本調査では一次資料を確認できなかった |
+| 状態 | デスクトップでは Chrome 67（2018）から既定。**クロスサイト iframe も別プロセス**（out-of-process iframe） | 2021 年に Nightly / Beta で試験開始。Firefox 94 から段階的に展開し、95 のリリースノートで全デスクトップユーザに有効と告知（既定化の設定変更は Bugzilla 上ではその後の版）。サイトの境界は Public Suffix List で判定 | Web ページごとに WebContent プロセス。クロスサイト iframe のプロセス分離の公式な状況は、本調査では一次資料を確認できなかった |
 | 部分適用 | Android（2 GB 以上）は、ログインしたサイトなど一部だけを専用プロセスにする部分的 Site Isolation。2 GB 未満・WebView・iOS 版は無し | — | — |
-| プロセスの再利用 | 上限を超えたら同じサイトのプロセスを再利用。iframe は上限以下でも積極的に再利用 | 8 個のコンテンツプロセス + 半特権 2 個が初期値 | — |
+| プロセスの再利用 | 上限を超えたら同じサイトのプロセスを再利用。iframe は上限以下でも積極的に再利用 | Fission 以前は 8 個のコンテンツプロセスにサイトを相乗りさせていた（2021-04 時点）。Fission では「サイトごとに別プロセス」 | — |
 
-Chromium の文書は、Site Isolation が守るものを 3 つの仕組みで説明している。(1) **ロックされたレンダラプロセス**（1 サイトの内容しか持たない）、(2) レンダラからの IPC をブラウザプロセス側で検査する、(3) **ORB（Opaque Response Blocking）**で、別サイトの機密レスポンス（HTML・JSON・XML など）がレンダラに渡る前にネットワーク側で止める。開発者の目に見えるのは (3) で、`<img src="https://other.example/api/data.json">` のような読み込みは中身がレンダラに届かない。
+Chromium の文書は、Site Isolation が守るものを 3 つの仕組みで説明している。(1) **ロックされたレンダラプロセス**（1 サイトの内容しか持たない）、(2) レンダラからの IPC をブラウザプロセス側で検査する、(3) **CORB（Cross-Origin Read Blocking）/ その後継の ORB（Opaque Response Blocking）**で、別サイトの機密レスポンス（HTML・JSON・XML など）がレンダラに渡る前にネットワーク側で止める。開発者の目に見えるのは (3) で、`<img src="https://other.example/api/data.json">` のような読み込みは中身がレンダラに届かない。
 
 ### 2.3 オリジン単位の分離と `document.domain`
 
@@ -174,10 +174,11 @@ web.dev の整理では、変更の種類で通る段が決まる。
 
 1. **タスクキュー**（複数ある。タイマ、ネットワーク、ユーザ操作、DOM 操作などのタスクソースごと）から、実行可能なタスクを 1 つ選び、実行する。どのキューから選ぶかは実装依存（ユーザ操作を優先してよい）。
 2. **マイクロタスクチェックポイント**を実行する。マイクロタスクキュー（Promise の反応、`queueMicrotask`、`MutationObserver`）が**空になるまで**実行する。途中で追加されたものも同じチェックポイントで実行される。
-3. その時点で**描画の機会（rendering opportunity）**があるドキュメントについて、**「描画の更新（update the rendering）」**を実行する。
-4. 実行可能なタスクも描画の更新も無ければ、**アイドル期間**を開始し、`requestIdleCallback` のコールバックを締め切り付きで実行する。
+3. タスクキューに実行可能なタスクが無ければ、**アイドル期間**を開始し、`requestIdleCallback` のコールバックを締め切り付きで実行する。締め切りは最大 50 ms 先で、次の描画やタイマが近ければそちらまで（人が知覚する前に新しい入力に応答するため）。
 
-描画の機会は「ユーザエージェントが描画できる」と判断したときで、通常はディスプレイのリフレッシュに合わせる。仕様は「60 Hz を目指すなら約 16.7 ms ごと」「追いつかなければ 30 回/秒に落とす」「非表示のページは描画の機会を持たない（`visibilityState` が `visible` でない）」と例示している。
+これとは並行して、ウィンドウのイベントループは**描画の機会（rendering opportunity）**を待ち、機会が来たら**「描画の更新（update the rendering）」を rendering task source のタスクとして積む**。描画の更新は、手順 1 で選ばれたときにほかのタスクと同じように実行される（どのキューを優先するかは実装依存）。以前の仕様は「タスクとマイクロタスクの後に描画の更新を行う」形で書かれていたが、現行の仕様はこの形に整理されている。
+
+描画の機会は「ユーザエージェントが描画できる」と判断したときで、通常はディスプレイのリフレッシュに合わせる。仕様は「60 Hz を目指すなら最大で約 16.7 ms ごと」「維持できなければ 30 回/秒に落とす」「見えていないページは 4 回/秒以下に落としてよい」と例示している。さらに、`visibilityState` が `hidden` の文書、描画がブロックされている文書、描画しても見た目が変わらず `requestAnimationFrame` のコールバックも無い文書は、描画の更新の対象から外される。
 
 ### 5.2 「描画の更新」の中の順序
 
@@ -185,7 +186,7 @@ web.dev の整理では、変更の種類で通る段が決まる。
 
 1. ドキュメントを reveal し、autofocus 候補を処理する
 2. **resize steps**（`resize` イベント）[CSSOM View]
-3. **scroll steps**（`scroll` / `scrollend` イベント）[CSSOM View]
+3. **scroll steps**（`scroll` イベント）[CSSOM View]
 4. **メディアクエリの評価と変更通知**（`MediaQueryList` の `change`）[CSSOM View]
 5. **アニメーションの更新とイベント送出**（CSS アニメーション / Web Animations の `animationstart` など）[Web Animations]
 6. フルスクリーンの手順 [Fullscreen]
@@ -203,7 +204,7 @@ web.dev の整理では、変更の種類で通る段が決まる。
 | DOM を変えた直後、同じタスク内で続きをやる | `queueMicrotask` / `await` | 描画の前に、同じチェックポイントで実行される。ただし大量に積むと描画が遅れる |
 | 次の描画の直前に、最新のレイアウト値で動かす | `requestAnimationFrame` | 手順 8。スタイル・レイアウト（手順 9）の直前なので、ここでの書き込みはこのフレームに反映される |
 | レイアウト後の値に反応する | `ResizeObserver` / `IntersectionObserver` | 手順 9 / 11。`scroll` イベントで `getBoundingClientRect()` を呼ぶより安く、正確 |
-| 重い処理を後回しにする | `setTimeout` / `scheduler.postTask` / `requestIdleCallback` | 別タスクになるので、間に描画の機会が挟まる。`requestIdleCallback` は手順 4 のアイドル期間 |
+| 重い処理を後回しにする | `setTimeout` / `scheduler.postTask` / `requestIdleCallback` | 別タスクになるので、間に描画の更新のタスクが入る余地ができる。`requestIdleCallback` は手順 3 のアイドル期間 |
 | 長いタスクを分割する | `await scheduler.yield()`（Chromium）、または `setTimeout(0)` で区切る | 1 タスクを 50 ms 未満に保つと入力の待ちが減る（INP の「長いタスク」の閾値） |
 
 `setTimeout(fn, 0)` のコールバックが同じフレーム内で何度も描画なしに連続することがある（仕様が「タイマのコールバックをまとめてもよい」と明記）ので、「`setTimeout` を使えば描画が挟まる」とは限らない点にも注意。
@@ -219,7 +220,7 @@ V8 は 4 段のティアで JS を実行する（2023 年 12 月の Maglev の�
 | 3 | Maglev（中間層 JIT、Chrome 117） | フィードバックに基づいて特化した機械語を、TurboFan の約 10 倍速く生成 |
 | 4 | TurboFan（最適化 JIT） | 投機的に最適化した最高速のコード。コンパイルは遅い |
 
-ホットな関数ほど上の段に上がり、投機が外れると（例: 同じプロパティに別の型が入る）**最適化解除（deopt）**されてインタプリタに戻る。開発者側の含意は「同じ形のオブジェクトを同じ順で作る」「関数の引数の型を揺らさない」「初期化時に一度しか走らないコードの最適化は期待しない」程度で、通常は書き方よりも**メインスレッドを占有する時間の長さ**の方が問題になる。SpiderMonkey（Baseline / Ion / Warp）と JavaScriptCore（LLInt / Baseline / DFG / FTL）も同じ多段構成。
+ホットな関数ほど上の段に上がり、投機が外れると（例: 同じプロパティに別の型が入る）**最適化解除（deopt）**されてインタプリタに戻る。開発者側の含意は「同じ形のオブジェクトを同じ順で作る」「関数の引数の型を揺らさない」「初期化時に一度しか走らないコードの最適化は期待しない」程度で、通常は書き方よりも**メインスレッドを占有する時間の長さ**の方が問題になる。SpiderMonkey（インタプリタ / Baseline Interpreter / Baseline Compiler / Warp で生成する Ion）と JavaScriptCore（LLInt / Baseline / DFG / FTL）も同じ多段構成。
 
 ### 5.4 ワーカ
 
@@ -290,7 +291,7 @@ CORS は「サーバ側が `Access-Control-Allow-Origin` などで読み取り�
 
 Chrome 115（2023 年）以降、サードパーティ文脈のストレージは**オリジンだけでなく「トップレベルサイト × フレームのオリジン」**でキー付けされる（途中にクロスサイトの祖先がいるかを示す ancestor bit も加わる）。対象は IndexedDB、Cache Storage、localStorage / sessionStorage、Origin Private File System、Storage Buckets、Blob URL（Chrome 137 以降。トップレベルナビゲーションを除く）、サードパーティ文脈の Service Worker、通信 API（BroadcastChannel、SharedWorker、Web Locks）。`postMessage` は変わらない。Firefox（State Partitioning / Total Cookie Protection）と Safari（ITP）も同様の分割を先に行っている。
 
-含意: **自分のウィジェットが他社サイトに iframe で埋め込まれる場合、埋め込み先ごとに別のストレージを見る**。埋め込み先をまたいでログイン状態を保ちたいなら、Storage Access API でユーザの許可を得るか、設計を変える。サードパーティ Cookie の制限（Chrome は 2025 年に全面廃止を撤回し、ユーザの選択に委ねる方針。Safari と Firefox は既定でブロック）と合わせて、「埋め込み型のアプリは埋め込み先の文脈で分離される」のが現在の前提。
+含意: **自分のウィジェットが他社サイトに iframe で埋め込まれる場合、埋め込み先ごとに別のストレージを見る**。埋め込み先をまたいでログイン状態を保ちたいなら、Storage Access API でユーザの許可を得るか、設計を変える。サードパーティ Cookie の制限（Safari は既定でブロック、Firefox は既定でサイトごとに分割。Chrome は 2024-07 に廃止計画を撤回してユーザの選択に委ね、2025-04 には選択プロンプトの導入も取りやめたため、通常モードでは今も使える。詳細は [ブラウザのストレージレポート](/content/research/browser/storage) 6 節）と合わせて、「埋め込み型のアプリは埋め込み先の文脈で分離される」のが現在の前提。
 
 ### 8.4 その他の境界
 

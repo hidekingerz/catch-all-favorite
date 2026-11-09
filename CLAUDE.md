@@ -6,6 +6,7 @@
   - `.textlint/prh-common.yml`: content/research 全体（長音: ユーザ・サーバ・ヘッダ・パーサ など）
   - `.textlint/prh-email.yml`: content/research/email だけ（エンベロープ、エンベロープFrom、アラインメント など）
   - `.textlint/prh-http.yml`: content/research/http だけ（HoL ブロッキング、コネクション移行、多重化 など）
+  - `.textlint/prh-browser.yml`: content/research/browser だけ（ストレージ分割、退避、bfcache、サードパーティ Cookie など）
   - 新しい分野のフォルダを作るときは、同じ形で `prh-<分野>.yml` と `<分野>.json` を足し、package.json の `lint:text` / `lint:text:fix` に追記する
 - PR を作る前に `npm run lint:text` を通す。自動で直せるものは `npm run lint:text:fix` で直る。
   CI（Content PR automation の content-guard）でも同じチェックが走り、落ちると auto-merge が止まる。
