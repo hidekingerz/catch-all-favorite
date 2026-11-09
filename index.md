@@ -9,6 +9,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### JSer.info
 
+- [JSer.info #782 キャッチアップ: 2026-11-09のJS](/content/catchup/jser-info/20261109)
 - [JSer.info #781 キャッチアップ: 2026-10-16のJS](/content/catchup/jser-info/20261016)
 - [JSer.info #780 キャッチアップ: 2026-09-29のJS](/content/catchup/jser-info/20260928)
 - [JSer.info #779 キャッチアップ: 2026-09-10のJS](/content/catchup/jser-info/20260910)
