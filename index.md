@@ -27,6 +27,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### This Week in React
 
+- [This Week in React 2026-11-11](/content/catchup/twir/20261111)
 - [This Week in React 2026-11-04](/content/catchup/twir/20261104)
 - [This Week in React 2026-10-28](/content/catchup/twir/20261028)
 - [This Week in React 2026-10-21](/content/catchup/twir/20261021)
@@ -94,6 +95,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Google Search Central
 
+- [Google 検索セントラル ブログ キャッチアップ: 2026-11-11](/content/catchup/google-search-blog/20261111)
 - [Google 検索セントラル ブログ キャッチアップ: 2026-11-04](/content/catchup/google-search-blog/20261104)
 - [Google 検索セントラル ブログ キャッチアップ: 2026-10-30](/content/catchup/google-search-blog/20261030)
 - [Google 検索セントラル ブログ キャッチアップ: 2026-10-06](/content/catchup/google-search-blog/20261006)
