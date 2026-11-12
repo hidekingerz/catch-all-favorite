@@ -1,0 +1,127 @@
+{
+  "checks": [
+    {
+      "name": "page-load",
+      "cmd": "node examples/01-page-load.mjs",
+      "expect": [
+        "GET /             → 200  text/html; charset=utf-8",
+        "GET /app.js       → 200  text/javascript",
+        "GET /cat.svg      → 200  image/svg+xml",
+        "GET /style.css    → 200  text/css",
+        "GET /api/message  → 200  application/json",
+        "合計 5 回"
+      ]
+    },
+    {
+      "name": "http-versions",
+      "cmd": "node examples/02-http-versions.mjs",
+      "expect": [
+        "HTTP/1.1",
+        "ブラウザが使ったコネクションの数: 6",
+        "サーバが同時に処理していた画像の最大数: 6",
+        "約 2 倍",
+        "HTTP/2",
+        "ブラウザが使ったコネクションの数: 1",
+        "サーバが同時に処理していた画像の最大数: 12",
+        "約 1 倍"
+      ]
+    },
+    {
+      "name": "http-versions-18",
+      "cmd": "node examples/02-http-versions.mjs 18",
+      "expect": [
+        "HTTP/1.1",
+        "ブラウザが使ったコネクションの数: 6",
+        "サーバが同時に処理していた画像の最大数: 6",
+        "約 3 倍",
+        "HTTP/2",
+        "ブラウザが使ったコネクションの数: 1",
+        "サーバが同時に処理していた画像の最大数: 18",
+        "約 1 倍"
+      ]
+    },
+    {
+      "name": "order",
+      "cmd": "node examples/03-order.mjs",
+      "expect": [
+        "1. 最初の行",
+        "2. 最後の行",
+        "3. Promise の then に渡した処理",
+        "4. setTimeout(0) に渡した処理"
+      ]
+    },
+    {
+      "name": "order-browser",
+      "cmd": "node examples/03-order-browser.mjs",
+      "expect": [
+        "1. 最初の行",
+        "2. 最後の行",
+        "3. Promise の then に渡した処理",
+        "4. setTimeout(0) に渡した処理"
+      ]
+    },
+    {
+      "name": "busy-starter",
+      "cmd": "node examples/03-busy.mjs starter",
+      "expect": [
+        "クリックから反応まで: 約 0.8 秒",
+        "重い処理の間に画面を更新できた回数: 0 回",
+        "判定: ✗ 重い処理が終わるまで、ボタンが反応しない"
+      ]
+    },
+    {
+      "name": "busy-answer",
+      "cmd": "node examples/03-busy.mjs answer",
+      "expect": [
+        "クリックから反応まで: 100 ミリ秒未満",
+        "重い処理の間に画面を更新できた回数: 10 回以上",
+        "判定: ✓ 重い処理の途中でも、ボタンが反応する"
+      ]
+    },
+    {
+      "name": "busy-promise",
+      "cmd": "node examples/03-busy.mjs promise",
+      "expect": [
+        "読み込んだファイル: work-promise.js",
+        "クリックから反応まで: 約 0.8 秒",
+        "重い処理の間に画面を更新できた回数: 0 回",
+        "判定: ✗ 重い処理が終わるまで、ボタンが反応しない"
+      ]
+    },
+    {
+      "name": "busy-once",
+      "cmd": "node examples/03-busy.mjs once",
+      "expect": [
+        "読み込んだファイル: work-once.js",
+        "判定: ✗ 重い処理が終わるまで、ボタンが反応しない"
+      ]
+    },
+    {
+      "name": "cache",
+      "cmd": "node examples/04-cache.mjs",
+      "expect": [
+        "1 ページ目を開いたとき",
+        "/long.css   Cache-Control: max-age=3600  届いた → 200",
+        "/check.css  Cache-Control: no-cache      届いた → 200",
+        "/never.css  Cache-Control: no-store      届いた → 200",
+        "2 ページ目を開いたとき",
+        "/long.css   Cache-Control: max-age=3600  サーバに届いていない",
+        "/check.css  Cache-Control: no-cache      届いた → 304",
+        "/never.css  Cache-Control: no-store      届いた → 200"
+      ]
+    },
+    {
+      "name": "storage",
+      "cmd": "node examples/05-storage.mjs",
+      "expect": [
+        "サーバ A の別のページを開いたとき",
+        "リクエストに付いた Cookie ヘッダ: session=abc123",
+        "リクエストに localStorage の値は: 含まれない",
+        "ページから読んだ localStorage の theme: dark",
+        "サーバ B（ポート番号だけが違う）のページを開いたとき",
+        "リクエストに付いた Cookie ヘッダ: session=abc123",
+        "ページから読んだ localStorage の theme: null"
+      ]
+    }
+  ]
+}

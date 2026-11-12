@@ -1,0 +1,76 @@
+{
+  "title": "ブラウザと HTTP の会話についていく",
+  "persona": "../../personas/frontend-newcomer.md",
+  "assumed": ["URL", "ブラウザ", "JavaScript"],
+  "aliases": {
+    "HoL ブロッキング": ["Head-of-Line"],
+    "HTTP キャッシュ": ["Cache-Control"],
+    "localStorage": ["ローカルストレージ"]
+  },
+  "chapters": [
+    {
+      "file": "01-quickstart.md",
+      "short": "ページを開く",
+      "kind": "quickstart",
+      "minutes": 10,
+      "requires": ["URL", "ブラウザ"],
+      "introduces": ["リクエスト", "レスポンス", "ヘッダ"],
+      "objectives": [
+        { "id": "count-requests", "text": "1 ページを開いたときにサーバへ届くリクエストを、HTML・追加の部品・JavaScript からの取得の 3 つに分けて数えられる" }
+      ]
+    },
+    {
+      "file": "02-http-versions.md",
+      "short": "HTTP の版",
+      "kind": "concept",
+      "minutes": 10,
+      "requires": ["リクエスト", "レスポンス"],
+      "introduces": ["コネクション", "多重化", "HoL ブロッキング"],
+      "objectives": [
+        { "id": "h2-meaning", "text": "「HTTP/2 にすると速い」と言われたとき、効果が出るページと出ないページを判定できる" }
+      ]
+    },
+    {
+      "file": "03-main-thread.md",
+      "short": "メインスレッド",
+      "kind": "practice",
+      "minutes": 12,
+      "requires": ["JavaScript"],
+      "introduces": ["メインスレッド", "長いタスク"],
+      "objectives": [
+        { "id": "order", "text": "setTimeout と Promise に渡した処理が、どの順で動くかを判定できる" },
+        { "id": "blocked-main", "text": "画面が固まったとき、重い処理が順番を譲っていないことが原因かを判定できる" }
+      ]
+    },
+    {
+      "file": "04-cache.md",
+      "short": "キャッシュ",
+      "kind": "concept",
+      "minutes": 10,
+      "requires": ["リクエスト", "レスポンス", "ヘッダ"],
+      "introduces": ["HTTP キャッシュ", "再検証"],
+      "objectives": [
+        { "id": "cache-kind", "text": "Cache-Control の値を見て、2 回目にサーバへ問い合わせないか、確認だけするか、毎回取り直すかを判定できる" }
+      ]
+    },
+    {
+      "file": "05-storage.md",
+      "short": "保存",
+      "kind": "concept",
+      "minutes": 12,
+      "requires": ["リクエスト", "ヘッダ"],
+      "introduces": ["Cookie", "localStorage", "オリジン"],
+      "objectives": [
+        { "id": "where-to-store", "text": "データを Cookie と localStorage のどちらに置くと、サーバに送られるか、別のオリジンから見えるかを判定できる" },
+        { "id": "can-vanish", "text": "ブラウザに置いたデータが消える条件から、消えて困るデータの置き場所を判定できる" }
+      ]
+    }
+  ],
+  "exercises": [
+    { "id": "ex-count", "chapter": "01-quickstart.md", "kind": "check", "answer": ["page-load"] },
+    { "id": "ex-eighteen", "chapter": "02-http-versions.md", "kind": "check", "answer": ["http-versions-18"] },
+    { "id": "ex-yield", "chapter": "03-main-thread.md", "kind": "write", "starter": ["busy-starter"], "answer": ["busy-answer"] },
+    { "id": "ex-second-visit", "chapter": "04-cache.md", "kind": "check", "answer": ["cache"] },
+    { "id": "ex-other-port", "chapter": "05-storage.md", "kind": "check", "answer": ["storage"] }
+  ]
+}

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>重い処理とクリック</title>
+</head>
+<body>
+  <button id="start">重い処理を始める</button>
+  <button id="ping">押してみる</button>
+  <p>画面を更新できた回数: <span id="frames">0</span></p>
+  <p>クリックから反応までの時間: <span id="delay">-</span></p>
+
+  <script type="module">
+    // ?work=starter なら work-starter.js、?work=answer なら work-answer.js を読み込む
+    const name = new URLSearchParams(location.search).get('work') ?? 'starter';
+    const { heavyWork } = await import(`./work-${name}.js`);
+
+    // 重い処理が動いている間に、画面を何回更新できたかを数える
+    let counting = false;
+    let frames = 0;
+    function countFrame() {
+      if (counting) {
+        frames++;
+        document.querySelector('#frames').textContent = frames;
+      }
+      requestAnimationFrame(countFrame);
+    }
+    requestAnimationFrame(countFrame);
+
+    document.querySelector('#start').addEventListener('click', () => {
+      // クリックの処理をいったん終えてから、重い処理を始める
+      setTimeout(async () => {
+        counting = true;
+        document.body.dataset.startedAt = Date.now();   // 03-busy.mjs が読む
+        await heavyWork();
+        counting = false;
+        document.body.dataset.doneAt = Date.now();      // 03-busy.mjs が読む
+        document.body.dataset.done = 'yes';
+      }, 0);
+    });
+
+    // ボタンが押された時刻（event.timeStamp）と、この処理が動いた時刻の差を出す
+    document.querySelector('#ping').addEventListener('click', (event) => {
+      const delay = Math.round(performance.now() - event.timeStamp);
+      document.querySelector('#delay').textContent = `${delay} ミリ秒`;
+      document.body.dataset.handledAt = Date.now();   // 03-busy.mjs が読む
+    });
+
+    document.body.dataset.ready = 'yes';
+  </script>
+</body>
+</html>

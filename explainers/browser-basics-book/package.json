@@ -1,0 +1,12 @@
+{
+  "name": "browser-basics-book",
+  "private": true,
+  "type": "module",
+  "description": "ブラウザと HTTP の速習本。検証と HTML 生成に使う依存だけを持つ",
+  "devDependencies": {
+    "@mizchi/vlmkit": "^0.24.0",
+    "marked": "^18.2.0",
+    "mermaid": "^12.3.0",
+    "playwright": "^1.65.0"
+  }
+}
