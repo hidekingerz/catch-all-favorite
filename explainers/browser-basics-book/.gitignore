@@ -1,0 +1,5 @@
+# explainer / first-reader の作業用ファイル
+.first-reader/
+figures/.figure-check/
+test-results/
+.vlmkit/

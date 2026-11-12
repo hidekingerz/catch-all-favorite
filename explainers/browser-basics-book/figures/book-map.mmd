@@ -1,0 +1,16 @@
+---
+config:
+  themeVariables:
+    fontSize: 20px
+  flowchart:
+    wrappingWidth: 480
+---
+flowchart BT
+  ch01["01 ページを開く"]
+  ch02["02 HTTP の版"]
+  ch03["03 メインスレッド"]
+  ch04["04 キャッシュ"]
+  ch05["05 保存"]
+  ch02 --> ch01
+  ch04 --> ch01
+  ch05 --> ch01

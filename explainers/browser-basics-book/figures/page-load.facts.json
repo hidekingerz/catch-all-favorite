@@ -1,0 +1,5 @@
+{
+  "labels": ["最初の 1 回", "HTML に書いてあった部品", "GET /style.css", "GET /cat.svg", "GET /app.js", "JavaScript が動いてから", "GET /api/message"],
+  "forbidden": ["favicon"],
+  "edges": ["html->parts", "parts->api"]
+}

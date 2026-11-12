@@ -1,0 +1,11 @@
+---
+config:
+  flowchart:
+    wrappingWidth: 480
+---
+flowchart TB
+    html["1. 最初の 1 回<br/>GET / で HTML を受け取る"]
+    parts["2. HTML に書いてあった部品<br/>GET /style.css<br/>GET /cat.svg<br/>GET /app.js"]
+    api["3. JavaScript が動いてから<br/>GET /api/message でデータを受け取る"]
+    html -->|HTML を読んで置き場所を知る| parts
+    parts -->|app.js が動く| api
