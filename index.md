@@ -124,6 +124,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Claude Code
 
+- [Claude Code キャッチアップ: 2026-11-12](/content/catchup/claude-code/20261112)
 - [Claude Code キャッチアップ: 2026-11-10](/content/catchup/claude-code/20261110)
 - [Claude Code キャッチアップ: 2026-11-06](/content/catchup/claude-code/20261106)
 - [Claude Code キャッチアップ: 2026-11-05](/content/catchup/claude-code/20261105)
@@ -234,6 +235,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Apple セキュリティリリース
 
+- [Apple セキュリティリリース キャッチアップ: 2026-11-12](/content/catchup/apple-security-releases/20261112)
 - [Apple セキュリティリリース キャッチアップ: 2026-11-10](/content/catchup/apple-security-releases/20261110)
 - [Apple セキュリティリリース キャッチアップ: 2026-11-02](/content/catchup/apple-security-releases/20261102)
 - [Apple セキュリティリリース キャッチアップ: 2026-10-27](/content/catchup/apple-security-releases/20261027)
