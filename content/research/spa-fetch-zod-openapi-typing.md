@@ -3,27 +3,29 @@ title: "SPAのfetch APIを zod・OpenAPI で型安全にする調査レポート
 ---
 
 > 発行日: 2026-06-08
-> テーマ: SPAで`fetch`を使ってAPIを叩くとき、**リクエストパラメータの型**・**レスポンスのパース型**を、**OpenAPI** と **Zod** を組み合わせて省力化する。さらに「スキーマから生成した型でモデルにパースする」までの現実的な構成を整理する
+> テーマ: SPAで`fetch`を使ってAPIを叩くとき、リクエストパラメータの型・レスポンスのパース型を、OpenAPIとZodを組み合わせて省力化する。さらに「スキーマから生成した型でモデルにパースする」までの現実的な構成を整理する
 
 ## TL;DR
 
-- `fetch`そのものはレスポンスを`any`（実質）で返す。**型を付ける**ことと**実行時に検証する**ことは別問題で、両方を一度に解決する銀の弾丸は「ソース・オブ・トゥルース（信頼できる単一の定義）を1つに絞ること」。
-- 信頼の起点をどこに置くかで構成が二分される:
-  - **スキーマ駆動（spec-first）**: OpenAPI仕様が正。仕様から **TS型** と **Zodスキーマ** と **APIクライアント** を生成する。バックエンドが別言語/別チームのときの定番。
-  - **コード駆動（code-first）**: Zodスキーマが正。Zodから **OpenAPI仕様** を出力する（Zod 4ネイティブの`z.toJSONSchema`、`zod-to-openapi`、Hey API等）。フロント/バックともTSで握れるときに強い。
-- **型だけ**で十分なら `openapi-typescript` + `openapi-fetch` が最軽量（**実行時コストゼロ**、パスパラメータ・クエリ・ボディ・レスポンスが全部型補完される）。ただし**実行時検証はしない**ので、バックエンドが仕様を破ったときに気づけない。
-- **実行時にもパースしたい**なら、`openapi-typescript`の型に **Zodの検証層**を足すか、最初から **Hey API（`@hey-api/openapi-ts` + Zodプラグイン）/ orval / openapi-zod-client** で **Zodスキーマごと生成**する。
-- 「**スキーマから型生成したものでパースしたい**」という要望そのものは、Zodの **`z.infer<typeof schema>`** が答え。スキーマを1つ書けば、`parse()`で実行時検証しつつ、`z.infer`で同じ定義から静的型が降ってくる（**二重管理が消える**）。
-- 推奨は **目的別**:
+- `fetch`そのものはレスポンスを`any`（実質）で返す。型を付けることと実行時に検証することは別問題で、両方を一度に解決する銀の弾丸は「ソース・オブ・トゥルース（信頼できる単一の定義）を1つに絞ること」。
+- 信頼の起点をどこに置くかで構成が二分される。
+  - スキーマ駆動（spec-first）: OpenAPI仕様が正。仕様からTS型とZodスキーマとAPIクライアントを生成する。バックエンドが別言語/別チームのときの定番。
+  - コード駆動（code-first）: Zodスキーマが正。ZodからOpenAPI仕様を出力する（Zod 4ネイティブの`z.toJSONSchema`、`zod-to-openapi`、Hey API等）。フロント/バックともTSで握れるときに強い。
+- 型だけで十分なら `openapi-typescript` + `openapi-fetch` が最軽量（実行時コストゼロ、パスパラメータ・クエリ・ボディ・レスポンスが全部型補完される）。ただし実行時検証はしないので、バックエンドが仕様を破ったときに気づけない。
+- 実行時にもパースしたいなら、`openapi-typescript`の型にZodの検証層を足すか、最初から Hey API（`@hey-api/openapi-ts` + Zodプラグイン）/ orval / openapi-zod-client でZodスキーマごと生成する。
+- 「スキーマから型生成したものでパースしたい」という要望そのものは、Zodの `z.infer<typeof schema>` が答え。スキーマを1つ書けば、`parse()`で実行時検証しつつ、`z.infer`で同じ定義から静的型が降ってくる（二重管理が消える）。
+- 推奨は目的別。
   - とにかく軽く・型補完だけ欲しい → `openapi-typescript` + `openapi-fetch`
-  - 型補完 ＋ レスポンスの実行時検証も欲しい → **Hey API（Zodプラグイン）** か **orval（zodモード）**
-  - フロント/バック両方TSで、Zodを正にしたい → **Zod 4 + `z.toJSONSchema` / ts-rest / zodios**
+  - 型補完 ＋ レスポンスの実行時検証も欲しい → Hey API（Zodプラグイン）かorval（zodモード）
+  - フロント/バック両方TSで、Zodを正にしたい → Zod 4 + `z.toJSONSchema` / ts-rest / zodios
 
 ---
 
-## 1. 問題の整理 ── 「型」と「実行時検証」は別物
+## 1. 問題の整理
 
-`fetch`の戻りは標準では型が付かない:
+「型」と「実行時検証」は別物。
+
+`fetch`の戻りは標準では型が付かない。
 
 ```ts
 const res = await fetch("/api/users/1");
@@ -35,21 +37,23 @@ user.naem; // ❌ typoしてもコンパイルが通る
 
 | やりたいこと | 性質 | 担う技術 |
 | --- | --- | --- |
-| ① リクエストの**パラメータ型**（パス/クエリ/ボディ）を補完したい | **コンパイル時** | TypeScript型（OpenAPIから生成 or 手書き） |
-| ② レスポンスを**型付きで受け取りたい** | **コンパイル時** | 同上 |
-| ③ レスポンスが**本当にその形か実行時に検証**したい | **実行時** | Zod 等のバリデータ |
+| ① リクエストのパラメータ型（パス/クエリ/ボディ）を補完したい | コンパイル時 | TypeScript型（OpenAPIから生成 or 手書き） |
+| ② レスポンスを型付きで受け取りたい | コンパイル時 | 同上 |
+| ③ レスポンスが本当にその形か実行時に検証したい | 実行時 | Zod 等のバリデータ |
 
-重要な事実: **TypeScriptの型はビルド時に消える**。`as User`しようが`openapi-typescript`の型を当てようが、**実行時にバックエンドが違う形を返したら何も起きない**（`undefined`が後段で爆発するだけ）。HTTP越しに来るデータは「外部入力」なので、本当に堅くしたいなら③の実行時検証が要る。これがZodを併用する動機。
+重要な事実: **TypeScriptの型はビルド時に消える**。`as User`しようが`openapi-typescript`の型を当てようが、実行時にバックエンドが違う形を返したら何も起きない（`undefined`が後段で爆発するだけ）。HTTP越しに来るデータは「外部入力」なので、本当に堅くしたいなら③の実行時検証が要る。これがZodを併用する動機。
 
 > 一言でいうと: **型生成（OpenAPI）＝開発体験と仕様追従、Zod＝実行時の安全網**。両者は競合せず役割が違う。
 
 ---
 
-## 2. 2つの設計方向 ── どちらを「正」にするか
+## 2. 2つの設計方向
+
+2つの設計方向はどちらを「正」にするかで分かれる。
 
 ### 2-1. スキーマ駆動（spec-first）
 
-OpenAPI（`openapi.yaml` / `openapi.json`）を**唯一の正**とし、そこから生成する。
+OpenAPI（`openapi.yaml` / `openapi.json`）を唯一の正とし、そこから生成する。
 
 ```
 openapi.yaml ──┬──> TypeScript型（openapi-typescript）
@@ -58,12 +62,12 @@ openapi.yaml ──┬──> TypeScript型（openapi-typescript）
 ```
 
 - 向いているケース: バックエンドが別言語・別チーム、複数クライアント（Web/モバイル）が同じ仕様を共有する、仕様がドキュメントとして先に存在する。
-- メリット: 仕様が変わればフロントの型・検証が**生成し直すだけ**で追従。フロント側の手書きが消える。
+- メリット: 仕様が変わればフロントの型・検証が生成し直すだけで追従。フロント側の手書きが消える。
 - デメリット: OpenAPI仕様の品質に全部依存する。仕様が雑だと生成物も雑。
 
 ### 2-2. コード駆動（code-first）
 
-Zodスキーマ（TS）を**唯一の正**とし、そこからOpenAPI仕様を**出力**する。
+Zodスキーマ（TS）を唯一の正とし、そこからOpenAPI仕様を出力する。
 
 ```
 Zodスキーマ(.ts) ──┬──> z.infer で静的型
@@ -72,16 +76,16 @@ Zodスキーマ(.ts) ──┬──> z.infer で静的型
 ```
 
 - 向いているケース: フロントもバックもTypeScript、いわゆるフルスタックTS（Next.js / Hono / tRPC / ts-rest）。
-- メリット: Zodを1か所書けば「型・実行時検証・APIドキュメント」が同期する。**二重管理が原理的に発生しない**。
+- メリット: Zodを1か所書けば「型・実行時検証・APIドキュメント」が同期する。二重管理が原理的に発生しない。
 - デメリット: バックがTSでないと成立しない。OpenAPIはあくまで副産物。
 
-> 本レポートの主眼（fetchで叩く側＝フロント）では、バックの仕様が既にOpenAPIで存在するなら **スキーマ駆動** が素直。フロント/バック両方を握れるなら **コード駆動** が最も二重管理を減らせる。
+> 本レポートの主眼（fetchで叩く側＝フロント）では、バックの仕様が既にOpenAPIで存在するならスキーマ駆動が素直。フロント/バック両方を握れるならコード駆動が最も二重管理を減らせる。
 
 ---
 
-## 3. 「スキーマから生成した型でパースする」の核心 ── `z.infer`
+## 3. 「スキーマから生成した型でパースする」の核心になる `z.infer`
 
-ユーザの要望「**モデルにパースする際に、スキーマから型生成したものでパースしたい**」の答えは、Zodの基本機能 `z.infer` に尽きる。**スキーマを1つ書けば型が自動で降りてくる**ので、型とバリデーションを別々に書く必要がない。
+ユーザの要望「モデルにパースする際に、スキーマから型生成したものでパースしたい」の答えは、Zodの基本機能 `z.infer` に尽きる。**スキーマを1つ書けば型が自動で降りてくる**ので、型とバリデーションを別々に書く必要がない。
 
 ```ts
 import { z } from "zod"; // v4 系
@@ -109,10 +113,10 @@ async function getUser(id: number): Promise<User> {
 }
 ```
 
-ポイント:
+ポイントは次のとおり。
 
-- `z.infer<typeof UserSchema>` が「**スキーマから型生成したもの**」。これでパースすれば、**実行時の保証**と**静的型**が同じ定義から来る。
-- 例外を投げたくないなら `safeParse`:
+- `z.infer<typeof UserSchema>` が「スキーマから型生成したもの」。これでパースすれば、実行時の保証と静的型が同じ定義から来る。
+- 例外を投げたくないなら `safeParse`。
 
   ```ts
   const r = UserSchema.safeParse(json);
@@ -122,30 +126,32 @@ async function getUser(id: number): Promise<User> {
 
 - 入力と出力で型が変わる変換（`z.coerce` や `.transform()`）を使うときは `z.input<>` / `z.output<>` を使い分ける。
 
-**この `z.infer` パターンが、スキーマ駆動でもコード駆動でも共通の土台**になる。違うのは「Zodスキーマを手書きするか、OpenAPIから生成するか」だけ。
+**この `z.infer` パターンがスキーマ駆動でもコード駆動でも共通の土台**になる。違うのは「Zodスキーマを手書きするか、OpenAPIから生成するか」だけ。
 
 ---
 
-## 4. ツール比較 ── 何を生成し、実行時検証があるか
+## 4. ツール比較
+
+何を生成し、実行時検証があるかでツールを比べる。
 
 | ツール | 入力→出力 | 生成物 | 実行時検証 | HTTPクライアント | 主な用途 |
 | --- | --- | --- | --- | --- | --- |
-| **openapi-typescript** | OpenAPI→TS | 型のみ（`paths`型） | ❌ なし | なし | 最軽量。型補完だけ欲しい |
-| **openapi-fetch** | （上の型を利用） | 型安全な`fetch`ラッパ | ❌ なし | 独自(fetchラップ) | ↑とセットで定番 |
-| **Hey API** (`@hey-api/openapi-ts`) | OpenAPI→TS | クライアント＋型＋**Zod**(プラグイン) | ✅ Zodプラグインで可 | fetch/axios選択可 | 生成クライアント＋検証 |
-| **orval** | OpenAPI→TS | クライアント＋**Zod**＋react-query等 | ✅ zodモードで可 | fetch/axios | RustなしのフルセットDX |
-| **openapi-zod-client** | OpenAPI→TS | **zodios**クライアント(Zod内蔵) | ✅ あり | axios(zodios) | Zod中心の生成クライアント |
-| **ts-rest** | TSの契約(Zod) | 型安全クライアント/サーバ | ✅ Zod契約 | fetch | code-first・RPC的契約 |
-| **zodios** | TSのZod定義 | 型安全クライアント | ✅ Zod | axios | code-first・Zod前提 |
-| **tRPC** | TSのprocedure | 型安全RPC | ✅(入力) | 独自 | フルスタックTS・非REST |
-| **Zod 4 `z.toJSONSchema`** | Zod→JSON Schema/OpenAPI | OpenAPI仕様 | （Zod自体が検証） | なし | code-firstで仕様を出力 |
-| **zod-to-openapi** | Zod→OpenAPI | OpenAPI仕様 | （同上） | なし | code-firstで仕様を出力 |
+| openapi-typescript | OpenAPI→TS | 型のみ（`paths`型） | ❌ なし | なし | 最軽量。型補完だけ欲しい |
+| openapi-fetch | （上の型を利用） | 型安全な`fetch`ラッパ | ❌ なし | 独自(fetchラップ) | ↑とセットで定番 |
+| Hey API (`@hey-api/openapi-ts`) | OpenAPI→TS | クライアント＋型＋Zod(プラグイン) | ✅ Zodプラグインで可 | fetch/axios選択可 | 生成クライアント＋検証 |
+| orval | OpenAPI→TS | クライアント＋Zod＋react-query等 | ✅ zodモードで可 | fetch/axios | RustなしのフルセットDX |
+| openapi-zod-client | OpenAPI→TS | zodiosクライアント(Zod内蔵) | ✅ あり | axios(zodios) | Zod中心の生成クライアント |
+| ts-rest | TSの契約(Zod) | 型安全クライアント/サーバ | ✅ Zod契約 | fetch | code-first・RPC的契約 |
+| zodios | TSのZod定義 | 型安全クライアント | ✅ Zod | axios | code-first・Zod前提 |
+| tRPC | TSのprocedure | 型安全RPC | ✅(入力) | 独自 | フルスタックTS・非REST |
+| Zod 4 `z.toJSONSchema` | Zod→JSON Schema/OpenAPI | OpenAPI仕様 | （Zod自体が検証） | なし | code-firstで仕様を出力 |
+| zod-to-openapi | Zod→OpenAPI | OpenAPI仕様 | （同上） | なし | code-firstで仕様を出力 |
 
-要点:
+要点は次のとおり。
 
-- **`openapi-typescript`系は「型だけ・実行時検証なし」**。最速・最軽量だが③（実行時検証）は別途。
-- **Hey API / orval / openapi-zod-client は Zodスキーマも生成**できるので、③まで含めて省力化できる。
-- **ts-rest / zodios / tRPC / Zod 4 `toJSONSchema`** は code-first（Zodが正）。
+- `openapi-typescript`系は「型だけ・実行時検証なし」。最速・最軽量だが③（実行時検証）は別途。
+- Hey API / orval / openapi-zod-client は Zodスキーマも生成できるので、③まで含めて省力化できる。
+- ts-rest / zodios / tRPC / Zod 4 `toJSONSchema` は code-first（Zodが正）。
 
 ---
 
@@ -153,7 +159,7 @@ async function getUser(id: number): Promise<User> {
 
 ### パターンA: 最軽量・型補完だけ（openapi-typescript + openapi-fetch）
 
-実行時検証は要らない／別レイヤでやる場合。**実行時コストはほぼゼロ**（生成物は純粋な型と薄いfetchラッパ）。
+実行時検証は要らない／別レイヤでやる場合。実行時コストはほぼゼロ（生成物は純粋な型と薄いfetchラッパ）。
 
 ```bash
 # 型を生成（CIやpreスクリプトで回す）
@@ -189,7 +195,7 @@ const created = await api.POST("/users", {
 
 ### パターンB: 型補完 ＋ 実行時検証（生成型 + Zod検証層）
 
-「`openapi-typescript`の型は便利だが、外部APIなので実行時にも守りたい」ケース。**境界（重要なエンドポイント）だけ**Zodを挟むのが現実的。
+「`openapi-typescript`の型は便利だが、外部APIなので実行時にも守りたい」ケース。境界（重要なエンドポイント）だけZodを挟むのが現実的。
 
 ```ts
 import { z } from "zod";
@@ -209,11 +215,11 @@ export async function fetchUser(id: number) {
 ```
 
 - メリット: 軽い生成物（型）はそのまま、検証は本当に必要な箇所だけに限定できる。
-- デメリット: Zodスキーマを手書きするので、OpenAPI定義との**二重管理**が発生する。これが嫌なら次のパターンC（Zodごと生成）。
+- デメリット: Zodスキーマを手書きするので、OpenAPI定義との二重管理が発生する。これが嫌なら次のパターンC（Zodごと生成）。
 
 ### パターンC: Zodスキーマごと生成（Hey API / orval）
 
-OpenAPIからZodスキーマまで生成し、二重管理を消す。**スキーマ駆動で③まで自動化**したい場合の本命。
+OpenAPIからZodスキーマまで生成し、二重管理を消す。スキーマ駆動で③まで自動化したい場合の本命。
 
 ```bash
 # Hey API の例（Zod プラグインを有効化）
@@ -224,13 +230,13 @@ npx @hey-api/openapi-ts \
 # 設定で plugins に 'zod' を加えると、各スキーマの Zod 版が出力される
 ```
 
-- 生成された Zodスキーマで `parse()` すれば、③が**仕様から自動追従**する。`z.infer`相当の型も生成物に含まれる。
-- **orval** も同様に `client: 'fetch'` + `zod` モードで、APIクライアント＋Zodスキーマ＋（任意で）react-queryフックまで生成できる。
-- 注意: orvalのZod生成は **split/標準モードで既知の不具合**が報告されており（GitHub issue #2933 等）、本番投入チームが後処理で回避している例がある。採用時は生成物を必ず確認する。
+- 生成された Zodスキーマで `parse()` すれば、③が仕様から自動追従する。`z.infer`相当の型も生成物に含まれる。
+- orvalも同様に `client: 'fetch'` + `zod` モードで、APIクライアント＋Zodスキーマ＋（任意で）react-queryフックまで生成できる。
+- 注意: orvalのZod生成はsplit/標準モードで既知の不具合が報告されており（GitHub issue #2933 等）、本番投入チームが後処理で回避している例がある。採用時は生成物を必ず確認する。
 
 ### パターンD: code-first（Zodが正、OpenAPIは出力）
 
-フロント/バックともTSで、Zodを唯一の正にしたいケース。Zod 4は **ネイティブで`z.toJSONSchema`** を持つ（`zod-to-json-schema`はもう不要）。
+フロント/バックともTSで、Zodを唯一の正にしたいケース。Zod 4はネイティブで`z.toJSONSchema`を持つ（`zod-to-json-schema`はもう不要）。
 
 ```ts
 import { z } from "zod";
@@ -246,38 +252,38 @@ const jsonSchema = z.toJSONSchema(UserSchema, { target: "openapi-3.0" });
 ```
 
 - `.meta()` に付けた `description` / `title` / `examples` は `z.globalRegistry` 経由で出力に反映される。
-- これでZodが「型(`z.infer`)・実行時検証(`parse`)・APIドキュメント(OpenAPI)」を**1ソースで賄う**。バックも `ts-rest` / `zodios` / Hono+`@hono/zod-openapi` などZodベースなら契約をそのまま共有できる。
+- これでZodが「型(`z.infer`)・実行時検証(`parse`)・APIドキュメント(OpenAPI)」を1ソースで賄う。バックも `ts-rest` / `zodios` / Hono+`@hono/zod-openapi` などZodベースなら契約をそのまま共有できる。
 
 ---
 
 ## 6. 落とし穴・注意点
 
-- **型 ≠ 実行時保証**: `openapi-typescript`だけだと「コンパイルは通るが本番で`undefined`爆発」が起こりうる。クリティカルな境界はZodで`parse`する。
-- **二重管理**: 「OpenAPI手書き」＋「Zod手書き」は最悪。どちらかを正にして他方を生成する（パターンC or D）。
-- **Zod v3 / v4 の差**: v4で`z.string().email()`等が`z.email()`などトップレベルに移動・一部非推奨化。`z.toJSONSchema`はv4の新機能。生成ツール（orval等）は**インストール済みZodのバージョンを検出**して出力を変える実装が増えているが、混在に注意。
-- **バンドルサイズ**: Zodは実行時ライブラリなのでSPAのバンドルに乗る。全レスポンスを検証すると重い → **境界・重要エンドポイントに絞る**、もしくはより軽量な`valibot`を検討（tree-shakingに強い）。
-- **生成物の品質**: orvalのZod生成バグ（#2933）のように、生成系は仕様の書き方次第で破綻する。生成物をコミットして差分レビューする運用が安全。
-- **`coerce`/`transform`時の入出力型**: 変換を挟むと入力型と出力型がズレる。クライアント側で`z.input`/`z.output`を取り違えない。
+- 型 ≠ 実行時保証: `openapi-typescript`だけだと「コンパイルは通るが本番で`undefined`爆発」が起こりうる。クリティカルな境界はZodで`parse`する。
+- 二重管理: 「OpenAPI手書き」＋「Zod手書き」は最悪。どちらかを正にして他方を生成する（パターンC or D）。
+- Zod v3 / v4 の差: v4で`z.string().email()`等が`z.email()`などトップレベルに移動・一部非推奨化。`z.toJSONSchema`はv4の新機能。生成ツール（orval等）はインストール済みZodのバージョンを検出して出力を変える実装が増えているが、混在に注意。
+- バンドルサイズ: Zodは実行時ライブラリなのでSPAのバンドルに乗る。全レスポンスを検証すると重い → 境界・重要エンドポイントに絞る、もしくはより軽量な`valibot`を検討（tree-shakingに強い）。
+- 生成物の品質: orvalのZod生成バグ（#2933）のように、生成系は仕様の書き方次第で破綻する。生成物をコミットして差分レビューする運用が安全。
+- `coerce`/`transform`時の入出力型: 変換を挟むと入力型と出力型がズレる。クライアント側で`z.input`/`z.output`を取り違えない。
 
 ---
 
-## 7. 結論 ── 要望へのマッピング
+## 7. 結論
 
-ユーザの要望は「fetchの**リクエストパラメータ型**・**レスポンスパース型**を、**zod/openapiで楽に**し、**スキーマから生成した型でパース**したい」だった。これに対する最短経路:
+ユーザの要望は「fetchのリクエストパラメータ型・レスポンスパース型を、zod/openapiで楽にし、スキーマから生成した型でパースしたい」だった。これに対する最短経路を要望へのマッピングとして示す。
 
 | 要望 | 解 |
 | --- | --- |
 | リクエスト（パス/クエリ/ボディ）の型補完 | `openapi-typescript` + `openapi-fetch`（`api.GET("/users/{id}", { params })`） |
 | レスポンスの型付き受け取り | 同上（`data`が仕様の型に確定） |
-| レスポンスの**実行時パース** | Zodの`schema.parse()`／`safeParse()` を境界に挿す |
-| **スキーマから型生成してパース** | `type User = z.infer<typeof UserSchema>`（スキーマ1つで型と検証を兼ねる） |
-| OpenAPIとZodの**二重管理を消す** | スキーマ駆動なら **Hey API(Zodプラグイン) / orval** でZodごと生成。code-firstなら **Zod 4 `z.toJSONSchema`** で逆生成 |
+| レスポンスの実行時パース | Zodの`schema.parse()`／`safeParse()` を境界に挿す |
+| スキーマから型生成してパース | `type User = z.infer<typeof UserSchema>`（スキーマ1つで型と検証を兼ねる） |
+| OpenAPIとZodの二重管理を消す | スキーマ駆動なら Hey API(Zodプラグイン) / orval でZodごと生成。code-firstなら Zod 4 `z.toJSONSchema` で逆生成 |
 
-**おすすめの初手**:
+おすすめの初手は次のとおり。
 
-1. バックの仕様がOpenAPIで存在する → **`openapi-typescript` + `openapi-fetch`** で①②を即達成。実行時検証が要る境界だけ手書きZod、または不要なら型だけで運用。
-2. 実行時検証も全面的に省力化したい → **Hey API（Zodプラグイン）** か **orval（zodモード）** で③まで生成。
-3. フロント/バック両方TSで握れる → **Zod 4 を正**にして `z.toJSONSchema` でOpenAPIを出力（または `ts-rest` / `zodios`）。これが二重管理ゼロで最もスケールする。
+1. バックの仕様がOpenAPIで存在する → `openapi-typescript` + `openapi-fetch` で①②を即達成。実行時検証が要る境界だけ手書きZod、または不要なら型だけで運用。
+2. 実行時検証も全面的に省力化したい → Hey API（Zodプラグイン）かorval（zodモード）で③まで生成。
+3. フロント/バック両方TSで握れる → Zod 4 を正にして `z.toJSONSchema` でOpenAPIを出力（または `ts-rest` / `zodios`）。これが二重管理ゼロで最もスケールする。
 
 ---
 
