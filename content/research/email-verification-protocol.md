@@ -7,13 +7,13 @@ title: "Email Verification Protocol（EVP）技術調査レポート"
 
 ## TL;DR
 
-- EVP は「**確認メールを送らずに**、ユーザがそのメールアドレスを支配していることを検証する」プロトコル。**ブラウザが Verifier（サイト）と Issuer（メールプロバイダ）の間を仲介する3パーティモデル**で、OTP 入力の摩擦とプライバシー漏洩の両方を解消する。
-- 仕様は2層構成: **IETF ドラフト（`draft-hardt-email-verification`、Dick Hardt 作）**がバックエンドプロトコルを、**WICG の Email Verification API** がフロントエンド（HTML/ブラウザ挙動）を定義する。どちらも 2026年6月時点の**初期ドラフト**。
-- トークンは **SD-JWT+KB 形式**: Issuer が発行する EVT（`evt+jwt`、ブラウザの公開鍵に `cnf` でバインド）と、ブラウザが作る KB-JWT（`aud`=RP origin、`nonce`、`sd_hash`）を `~` で連結した `EVT~KB-JWT`。
+- EVP は「**確認メールを送らずに**、ユーザがそのメールアドレスを支配していることを検証する」プロトコル。ブラウザが Verifier（サイト）と Issuer（メールプロバイダ）の間を仲介する3パーティモデルで、OTP 入力の摩擦とプライバシー漏洩の両方を解消する。
+- 仕様は2層構成: IETF ドラフト（`draft-hardt-email-verification`、Dick Hardt 作）がバックエンドプロトコルを、WICG の Email Verification API がフロントエンド（HTML/ブラウザ挙動）を定義する。どちらも 2026年6月時点の初期ドラフト。
+- トークンは SD-JWT+KB 形式: Issuer が発行する EVT（`evt+jwt`、ブラウザの公開鍵に `cnf` でバインド）と、ブラウザが作る KB-JWT（`aud`=RP origin、`nonce`、`sd_hash`）を `~` で連結した `EVT~KB-JWT`。
 - **Issuer は「どのサイトで検証されたか」を知らない**（issuer blinding）。さらに `private_email` でサイト固有のプライベートアドレス（Apple の Hide My Email 相当）を要求でき、サイト間のアドレス相関を防げる。
-- ディスカバリは **DNS TXT レコード**（`_email-verification.<domain> IN TXT "iss=..."`) + **`/.well-known/email-verification`**。SPF/DKIM/DMARC と同様に DNS を信頼アンカーにする設計。
-- **Chrome がオリジントライアルを開始済みで、Gmail が Issuer として参加**。RP 側は HTML に `autocomplete="email-verification-token"` の hidden input を置くだけで、あとはブラウザが自動でトークンを埋める。
-- 注意: EVP が証明するのは「**アドレスの支配**」であって「**メールが届くこと**」ではない（ソーシャルログインと同じトレードオフ）。また SPF/DKIM/DMARC（送信ドメイン認証）とは**目的が別物**。
+- ディスカバリは DNS TXT レコード（`_email-verification.<domain> IN TXT "iss=..."`) + `/.well-known/email-verification`。SPF/DKIM/DMARC と同様に DNS を信頼アンカーにする設計。
+- Chrome がオリジントライアルを開始済みで、Gmail が Issuer として参加。RP 側は HTML に `autocomplete="email-verification-token"` の hidden input を置くだけで、あとはブラウザが自動でトークンを埋める。
+- 注意: EVP が証明するのは「**アドレスの支配**」であって「**メールが届くこと**」ではない（ソーシャルログインと同じトレードオフ）。また SPF/DKIM/DMARC（送信ドメイン認証）とは目的が別物。
 
 ---
 
@@ -21,14 +21,14 @@ title: "Email Verification Protocol（EVP）技術調査レポート"
 
 新規登録・アカウント復旧で定番の「確認コードをメールで送る」方式には、構造的な問題が2つある。
 
-1. **摩擦（friction）**: ユーザはメールクライアントに切り替え、届くのを待ち、コードをコピーして戻る必要がある。遅延・迷惑メール振り分け・タイプミスで離脱が発生する。
-2. **プライバシー漏洩**:
-   - メールプロバイダは、確認メールの受信によって「ユーザがどのサービスに登録したか」を知る。
-   - サービス側は、同じメールアドレスをキーに**サイト横断でユーザを相関**できる。
+1. 摩擦（friction）: ユーザはメールクライアントに切り替え、届くのを待ち、コードをコピーして戻る必要がある。遅延・迷惑メール振り分け・タイプミスで離脱が発生する。
+2. プライバシー漏洩
+   - メールプロバイダは確認メールの受信によって「ユーザがどのサービスに登録したか」を知る。
+   - サービス側は同じメールアドレスをキーにサイト横断でユーザを相関できる。
 
 EVP はこの2つを同時に解決する。検証はページ内で即座に完了し（メール送信なし）、Issuer は検証先の RP を知らず、必要ならサイト固有アドレスで RP 間の相関も断てる。
 
-## 2. アーキテクチャ: 3パーティモデル
+## 2. 3パーティモデルのアーキテクチャ
 
 ```
 Verifier (RP)  ←──  Browser  ──→  Issuer (メールプロバイダ)
@@ -39,35 +39,37 @@ Verifier (RP)  ←──  Browser  ──→  Issuer (メールプロバイダ)
 
 | 役割 | 誰 | やること |
 | --- | --- | --- |
-| **Verifier（RP）** | メール検証したいサイト | セッション束縛の nonce を発行し、受け取った `EVT~KB-JWT` を検証 |
-| **Browser** | Chrome 等 | Issuer をディスカバリし、一時鍵ペアを生成して EVT を要求。EVT を RP origin + nonce に束縛する KB-JWT を作成 |
-| **Issuer** | メールプロバイダ | ユーザのセッション（Cookie / WebAuthn）を確認し、ブラウザの公開鍵にバインドした EVT を発行 |
+| Verifier（RP） | メール検証したいサイト | セッション束縛の nonce を発行し、受け取った `EVT~KB-JWT` を検証 |
+| Browser | Chrome 等 | Issuer をディスカバリし、一時鍵ペアを生成して EVT を要求。EVT を RP origin + nonce に束縛する KB-JWT を作成 |
+| Issuer | メールプロバイダ | ユーザのセッション（Cookie / WebAuthn）を確認し、ブラウザの公開鍵にバインドした EVT を発行 |
 
 ポイントは**責務の分離によるプライバシー設計**。Issuer への発行リクエストに RP の情報は含まれず（Referer/Origin も送らない）、RP への束縛はブラウザが KB-JWT で行う。
 
-### プロトコルフロー（IETF ドラフト §2）
+### プロトコルフロー
+
+IETF ドラフト §2 のフロー。
 
 1. ブラウザが Issuer のアカウント情報を把握（FedCM 的な push/pull + Login Status API）
-2. RP サーバが 128bit の **nonce** を生成しセッションに束縛、ページに埋め込む
+2. RP サーバが 128bit の nonce を生成しセッションに束縛、ページに埋め込む
 3. ユーザがオートフィルからメールアドレスを選択
-4. ブラウザが **Issuer ディスカバリ**（DNS TXT → well-known）を実行し、**一時鍵ペア**を生成、HTTP Message Signatures（RFC 9421）で署名したリクエストを送信
+4. ブラウザが Issuer ディスカバリ（DNS TXT → well-known）を実行し、一時鍵ペアを生成、HTTP Message Signatures（RFC 9421）で署名したリクエストを送信
 5. Issuer が署名を検証し、ユーザを認証（Cookie、なければ WebAuthn も可）
-6. Issuer が **EVT** を発行して返す
-7. ブラウザが EVT を検証し、**KB-JWT** を作成して `EVT~KB-JWT` に連結
+6. Issuer が EVT を発行して返す
+7. ブラウザが EVT を検証し、KB-JWT を作成して `EVT~KB-JWT` に連結
 8. ブラウザが hidden input に `EVT~KB-JWT` を自動入力し、フォーム送信で RP へ届く
 9. RP が両トークンを検証
 
-## 3. トークン形式（SD-JWT+KB）
+## 3. SD-JWT+KB のトークン形式
 
-### 3.1 EVT（Email Verification Token）— Issuer が発行
+### 3.1 Issuer が発行する EVT（Email Verification Token）
 
-ヘッダ:
+ヘッダは次のとおり。
 
 ```json
 { "alg": "EdDSA", "kid": "2024-08-19", "typ": "evt+jwt" }
 ```
 
-ペイロード:
+ペイロードは次のとおり。
 
 ```json
 {
@@ -86,10 +88,10 @@ Verifier (RP)  ←──  Browser  ──→  Issuer (メールプロバイダ)
 }
 ```
 
-- `cnf.jwk` がブラウザの一時公開鍵。**EVT 単体では RP に提示できない**（鍵の所有証明が必要）。
+- `cnf.jwk` がブラウザの一時公開鍵。EVT 単体では RP に提示できない（鍵の所有証明が必要）。
 - 鍵は検証ごとに使い捨てなので、Issuer 側でもトークン単位の相関がしにくい。
 
-### 3.2 KB-JWT（Key Binding JWT）— ブラウザが作成
+### 3.2 ブラウザが作成する KB-JWT（Key Binding JWT）
 
 ```json
 { "alg": "EdDSA", "typ": "kb+jwt" }
@@ -105,7 +107,7 @@ Verifier (RP)  ←──  Browser  ──→  Issuer (メールプロバイダ)
 ```
 
 - `aud` で RP origin に、`nonce` でセッションに束縛。`sd_hash` は EVT のハッシュ。
-- 最終形は **`<EVT>~<KB-JWT>`**（チルダ連結。SD-JWT+KB と互換の形式）。
+- 最終形は `<EVT>~<KB-JWT>`（チルダ連結。SD-JWT+KB と互換の形式）。
 
 ### 3.3 発行エンドポイントへのリクエスト
 
@@ -131,17 +133,17 @@ Signature-Key: hwk=...   ← ブラウザの公開鍵
 
 ## 4. ディスカバリ
 
-### 4.1 DNS（メールドメイン → Issuer の委譲）
+### 4.1 DNS によるメールドメイン → Issuer の委譲
 
 ```
 _email-verification.example.com   IN TXT   "iss=issuer.example"
 ```
 
-独自ドメインで Web ホスティングがなくても設定でき、MX/SPF/DKIM と同じ運用に乗る。仕様は DNS 偽装による Issuer すり替えを防ぐため **DoH/DoT の利用を推奨**している。
+独自ドメインで Web ホスティングがなくても設定でき、MX/SPF/DKIM と同じ運用に乗る。仕様は DNS 偽装による Issuer すり替えを防ぐため DoH/DoT の利用を推奨している。
 
 ### 4.2 Issuer メタデータ
 
-`https://<issuer>/.well-known/email-verification`:
+`https://<issuer>/.well-known/email-verification` のメタデータは次のとおり。
 
 ```json
 {
@@ -157,9 +159,9 @@ WICG 側（ブラウザのアカウント把握）は FedCM の `/.well-known/we
 
 ## 5. 実装サンプル
 
-> ⚠️ EVP は初期ドラフト + オリジントライアル段階。API・フォーマットは今後**後方互換性なく変わり得る**（Chrome チームも明言。例: リクエストボディの form-urlencoded → JSON 移行が予告済み）。以下は 2026-07 時点の仕様に基づくサンプル。
+> EVP は初期ドラフト + オリジントライアル段階。API・フォーマットは今後、後方互換性なく変わり得る（Chrome チームも明言。例: リクエストボディの form-urlencoded → JSON 移行が予告済み）。以下は 2026-07 時点の仕様に基づくサンプル。
 
-### 5.1 RP（Verifier）側: HTML
+### 5.1 RP（Verifier）側の HTML
 
 必要なのはフォームに2つの input を置くことだけ。対応ブラウザ + ユーザが Issuer にログイン済みなら、ブラウザが hidden input にトークンを自動入力する。
 
@@ -177,12 +179,12 @@ WICG 側（ブラウザのアカウント把握）は FedCM の `/.well-known/we
 </form>
 ```
 
-- `nonce` は**セッションに束縛した一意な値**をサーバで生成して埋め込む（リプレイ防止の要）。
-- トークンが埋まらなかった場合（非対応ブラウザ、Issuer 未対応、未ログイン等）は、**従来の OTP メールにフォールバック**する設計にする。
+- `nonce` はセッションに束縛した一意な値をサーバで生成して埋め込む（リプレイ防止の要）。
+- トークンが埋まらなかった場合（非対応ブラウザ、Issuer 未対応、未ログイン等）は、従来の OTP メールにフォールバックする設計にする。
 
-### 5.2 RP 側: サーバでのトークン検証（Node.js + jose）
+### 5.2 RP 側のサーバでのトークン検証
 
-検証は5ステップ: ① `~` で分割 → ② クレーム検証 → ③ 鍵束縛（`cnf` と `sd_hash`）検証 → ④ DNS でドメイン→Issuer の委譲確認 → ⑤ Issuer の JWKS で EVT 署名検証。
+検証は5ステップ: ① `~` で分割 → ② クレーム検証 → ③ 鍵束縛（`cnf` と `sd_hash`）検証 → ④ DNS でドメイン→Issuer の委譲確認 → ⑤ Issuer の JWKS で EVT 署名検証。以下は Node.js + jose でのサンプル。
 
 ```typescript
 import { createRemoteJWKSet, jwtVerify, decodeJwt, calculateJwkThumbprint } from "jose";
@@ -248,9 +250,9 @@ export async function verifyEvt(params: {
 1. DNS TXT: `_email-verification.<mail-domain> IN TXT "iss=accounts.issuer.example"`
 2. `/.well-known/email-verification`（§4.2 のメタデータ）
 3. `/.well-known/web-identity` + アカウントエンドポイント（FedCM 互換。ブラウザがログイン中アカウントを把握するため）
-4. **Login Status API**: ログイン/ログアウト時に `Set-Login: logged-in` ヘッダ（または JS API）でブラウザに通知
-5. **発行エンドポイント**: RFC 9421 の HTTP Message Signature を検証（60秒のタイムスタンプ窓）→ セッション Cookie（or WebAuthn）でユーザ認証 → リクエスト内の `email` がそのユーザのものであることを確認 → `cnf` にブラウザ公開鍵を入れた EVT を EdDSA で署名して返す
-6. **列挙攻撃対策**: アドレスの存在有無でレスポンス（内容・タイミング）を変えない
+4. Login Status API: ログイン/ログアウト時に `Set-Login: logged-in` ヘッダ（または JS API）でブラウザに通知
+5. 発行エンドポイント: RFC 9421 の HTTP Message Signature を検証（60秒のタイムスタンプ窓）→ セッション Cookie（or WebAuthn）でユーザ認証 → リクエスト内の `email` がそのユーザのものであることを確認 → `cnf` にブラウザ公開鍵を入れた EVT を EdDSA で署名して返す
+6. 列挙攻撃対策: アドレスの存在有無でレスポンス（内容・タイミング）を変えない
 
 ## 6. セキュリティとプライバシー
 
@@ -266,33 +268,35 @@ export async function verifyEvt(params: {
 
 ### 6.2 プライバシー設計
 
-- **Issuer blinding**: 発行リクエストに RP の情報を含めず、Referer/Origin も送らない。Issuer は「どこかで検証が行われた」ことしか知らない。
-- **プライベートアドレス**: `private_email` でサイト固有アドレスを発行（`is_private_email: true`）。RP 間の相関を防ぎ、ブラウザが RP ごとに `directed_email` を記憶して再利用する。
-- **一時鍵ペア**: 検証ごとに使い捨てで、鍵による横断的な追跡を防ぐ。
-- 一方で「**RP は、ユーザがその Issuer にログイン中かどうかを推測できる**」という固有のリークは残る（認証ベースの検証に共通の性質）。
+- Issuer blinding: 発行リクエストに RP の情報を含めず、Referer/Origin も送らない。Issuer は「どこかで検証が行われた」ことしか知らない。
+- プライベートアドレス: `private_email` でサイト固有アドレスを発行（`is_private_email: true`）。RP 間の相関を防ぎ、ブラウザが RP ごとに `directed_email` を記憶して再利用する。
+- 一時鍵ペア: 検証ごとに使い捨てで、鍵による横断的な追跡を防ぐ。
+- 一方で「RP は、ユーザがその Issuer にログイン中かどうかを推測できる」という固有のリークは残る（認証ベースの検証に共通の性質）。
 
 ## 7. 従来技術との関係
 
 | 技術 | 目的 | EVP との関係 |
 | --- | --- | --- |
-| OTP メール / マジックリンク | アドレス所有確認 | **置き換え対象**。ただし EVP は「届くこと」を保証しないので、到達性が重要な用途では併用 |
-| SPF / DKIM / DMARC | **送信者**のドメイン認証（なりすまし対策） | **別レイヤー**。EVP は受信者側の所有証明であり、これらを置き換えない |
-| ソーシャルログイン（OIDC） | ID 連携 | UX は近いが、EVP は**アカウント連携なし・IdP に RP を知られずに**メール検証だけを行える |
+| OTP メール / マジックリンク | アドレス所有確認 | 置き換え対象。ただし EVP は「届くこと」を保証しないので、到達性が重要な用途では併用 |
+| SPF / DKIM / DMARC | 送信者のドメイン認証（なりすまし対策） | 別レイヤー。EVP は受信者側の所有証明であり、これらを置き換えない |
+| ソーシャルログイン（OIDC） | ID 連携 | UX は近いが、EVP はアカウント連携なし・IdP に RP を知られずにメール検証だけを行える |
 | FedCM | ブラウザ仲介の ID 連携基盤 | EVP のブラウザ側実装は FedCM のディスカバリ / Login Status API を再利用 |
-| Apple Hide My Email | プライベートアドレス | EVP の `private_email` は同等機能の**標準化版** |
+| Apple Hide My Email | プライベートアドレス | EVP の `private_email` は同等機能の標準化版 |
 
-## 8. 現在のステータスと導入判断（2026-07 時点)
+## 8. 現在のステータスと導入判断
 
-- **仕様**: IETF `draft-hardt-email-verification-00`（バックエンド）+ WICG Email Verification API（フロントエンド、2026-06-17 Unofficial Proposal Draft）。**どちらも標準化前の初期段階**。
-- **実装**: **Chrome がオリジントライアル実施中、Gmail が Issuer として参加**（`@gmail.com` で試験可能）。デモ: Issuer 側 `rowan.fyi/made/email-provider` / RP 側 `rowan.fyi/made/email-verification`。更新は `evp-announce@chromium.org` で告知。
-- **現状の制約**:
+以下は 2026-07 時点の内容。
+
+- 仕様: IETF `draft-hardt-email-verification-00`（バックエンド）+ WICG Email Verification API（フロントエンド、2026-06-17 Unofficial Proposal Draft）。どちらも標準化前の初期段階。
+- 実装: Chrome がオリジントライアル実施中、Gmail が Issuer として参加（`@gmail.com` で試験可能）。デモ: Issuer 側 `rowan.fyi/made/email-provider` / RP 側 `rowan.fyi/made/email-verification`。更新は `evp-announce@chromium.org` で告知。
+- 現状の制約
   - ユーザが同一ブラウザプロファイルで Issuer にログイン済みであること
-  - メールアドレスは**オートフィルから選択**する必要がある（手入力対応は将来予定）
+  - メールアドレスはオートフィルから選択する必要がある（手入力対応は将来予定）
   - 初回はアドレスごとに1回パーミッションプロンプトが出る
   - トライアル中はトラフィック制限あり
-- **導入判断**:
-  - **今やる価値があるのは「試す」こと**: RP 側の実装コストは hidden input 1つ + サーバ検証のみで、非対応環境は既存 OTP フローに自然にフォールバックできる。プログレッシブエンハンスメントとして安全に導入実験ができる。
-  - **本番の主経路にするのは時期尚早**: 仕様・Chrome UX ともに後方互換なしの変更が予告されており、対応 Issuer も実質 Gmail のみ。
+- 導入判断
+  - 今やる価値があるのは「試す」こと。RP 側の実装コストは hidden input 1つ + サーバ検証のみで、非対応環境は既存 OTP フローに自然にフォールバックできる。プログレッシブエンハンスメントとして安全に導入実験ができる。
+  - 本番の主経路にするのは時期尚早。仕様・Chrome UX ともに後方互換なしの変更が予告されており、対応 Issuer も実質 Gmail のみ。
   - メール到達性の確認（ニュースレター配信可否など）が目的の場合、EVP は代替にならない点に注意。
 
 ---
