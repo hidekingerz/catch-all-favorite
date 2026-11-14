@@ -7,15 +7,15 @@ title: "MCPサーバー作成ベストプラクティス 技術調査レポー�
 
 ## TL;DR
 
-> **追記（2026-07-29）**: 2026-07-28 改訂は予定どおり**正式リリース**され、Anthropic は Claude 製品への展開開始を発表した。確定内容と本レポートへの影響は文末の[「追記: 2026-07-28 改訂の正式リリース」](#追記2026-07-29-2026-07-28-改訂の正式リリース)を参照。
+> 追記（2026-07-29）: 2026-07-28 改訂は予定どおり正式リリースされ、Anthropic は Claude 製品への展開開始を発表した。確定内容と本レポートへの影響は文末の[「追記: 2026-07-28 改訂の正式リリース」](#追記2026-07-29-2026-07-28-改訂の正式リリース)を参照。
 
-- **現行の安定版仕様は `2025-11-25`**。2026-07-28 に**プロトコル開始以来最大の改訂**（ステートレスコア・Extensions・Tasks・MCP Apps）が確定公開予定で、RC が既に出ている。今から作るサーバは「**ステートレス前提**」で設計しておくと移行コストが最小になる。
-- SDK は **TypeScript v1.x / Python v1.x が本番推奨**。両 SDK とも v2 が 2026-07 末の新仕様と同時に安定化予定（TS v2 はパッケージ名が `@modelcontextprotocol/sdk` → `@modelcontextprotocol/server` に変わる）。
-- ツール設計の定石は「**API のラッパーではなく、エージェントのワークフロー単位で切る**」。1サーバ = 1つの境界づけられたコンテキスト、ツール数は **5〜15 個**が目安。`list_*` より `search_*`、冗長な JSON より `response_format`（concise/detailed）でトークンを節約する。
-- **入力検証エラーはプロトコルエラーではなく `isError: true` のツール実行エラーで返す**（モデルが自己修正できる）。`outputSchema` + `structuredContent` で構造化出力を返すのが現行仕様の推奨。
-- トランスポートは **ローカル = stdio、リモート = Streamable HTTP** の二択（HTTP+SSE は非推奨済み）。stdio ではログを**必ず stderr へ**（stdout に書くとプロトコルが壊れる）。
-- 認可は **OAuth 2.1 ベース**。「**トークンパススルーは禁止**」「**セッションを認証に使わない**」が仕様上の MUST。スコープは最小から始めて `WWW-Authenticate` による段階的昇格（2025-11-25 で追加）を使う。
-- 2026-07-28 改訂で **Roots / Sampling / Logging が非推奨入り**（12ヶ月の削除猶予）。新規開発でこれらに強く依存するのは避ける。
+- 現行の安定版仕様は `2025-11-25`。2026-07-28 にプロトコル開始以来最大の改訂（ステートレスコア・Extensions・Tasks・MCP Apps）が確定公開予定で、RC が既に出ている。今から作るサーバは「**ステートレス前提**」で設計しておくと移行コストが最小になる。
+- SDK は TypeScript v1.x / Python v1.x が本番推奨。両 SDK とも v2 が 2026-07 末の新仕様と同時に安定化予定（TS v2 はパッケージ名が `@modelcontextprotocol/sdk` → `@modelcontextprotocol/server` に変わる）。
+- ツール設計の定石は「**API のラッパーではなく、エージェントのワークフロー単位で切る**」。1サーバ = 1つの境界づけられたコンテキスト、ツール数は 5〜15 個が目安。`list_*` より `search_*`、冗長な JSON より `response_format`（concise/detailed）でトークンを節約する。
+- 入力検証エラーはプロトコルエラーではなく `isError: true` のツール実行エラーで返す（モデルが自己修正できる）。`outputSchema` + `structuredContent` で構造化出力を返すのが現行仕様の推奨。
+- トランスポートはローカル = stdio、リモート = Streamable HTTP の二択（HTTP+SSE は非推奨済み）。stdio ではログを必ず stderr へ（stdout に書くとプロトコルが壊れる）。
+- 認可は OAuth 2.1 ベース。「トークンパススルーは禁止」「セッションを認証に使わない」が仕様上の MUST。スコープは最小から始めて `WWW-Authenticate` による段階的昇格（2025-11-25 で追加）を使う。
+- 2026-07-28 改訂で Roots / Sampling / Logging が非推奨入り（12ヶ月の削除猶予）。新規開発でこれらに強く依存するのは避ける。
 
 ---
 
@@ -27,24 +27,24 @@ title: "MCPサーバー作成ベストプラクティス 技術調査レポー�
 | --- | --- | --- |
 | 2025-06-18 | 旧安定版 | Streamable HTTP 確立、Elicitation、構造化ツール出力、RFC 8707 Resource Indicators 必須化 |
 | **2025-11-25** | **現行安定版** | OIDC Discovery 対応、アイコンメタデータ、段階的スコープ同意、URL モード Elicitation、Sampling へのツール呼び出し追加、実験的 Tasks、JSON Schema 2020-12 標準化 |
-| 2026-07-28 | RC（今月末確定予定） | **ステートレスコア**（initialize ハンドシェイク / セッション廃止）、Extensions フレームワーク、Tasks / MCP Apps の拡張化、認可強化、正式な非推奨ポリシー |
+| 2026-07-28 | RC（今月末確定予定） | ステートレスコア（initialize ハンドシェイク / セッション廃止）、Extensions フレームワーク、Tasks / MCP Apps の拡張化、認可強化、正式な非推奨ポリシー |
 
-2025-11-25 の主な変更点（開発者に影響が大きいもの）:
+2025-11-25 の主な変更点（開発者に影響が大きいもの）は次のとおり。
 
-- **入力検証エラーは「ツール実行エラー」で返す**ことが明確化（SEP-1303）。プロトコルエラーにするとモデルが自己修正できない。
-- **JSON Schema 2020-12 がデフォルト方言**に（SEP-1613）。
-- ツール・リソース・プロンプトに**アイコン**を付与可能に（SEP-973）。
-- **URL モード Elicitation**（SEP-1036）: サーバがユーザをブラウザ URL へ誘導できる。
-- **段階的スコープ同意**（SEP-835）: `WWW-Authenticate` の `scope` チャレンジで必要時に権限昇格。
-- stdio サーバは**あらゆるログを stderr に出してよい**ことが明文化。
-- Streamable HTTP で不正な Origin ヘッダには **HTTP 403** を返すことが必須化。
+- 入力検証エラーは「ツール実行エラー」で返すことが明確化（SEP-1303）。プロトコルエラーにするとモデルが自己修正できない。
+- JSON Schema 2020-12 がデフォルト方言に（SEP-1613）。
+- ツール・リソース・プロンプトにアイコンを付与可能に（SEP-973）。
+- URL モード Elicitation（SEP-1036）: サーバがユーザをブラウザ URL へ誘導できる。
+- 段階的スコープ同意（SEP-835）: `WWW-Authenticate` の `scope` チャレンジで必要時に権限昇格。
+- stdio サーバはあらゆるログを stderr に出してよいことが明文化。
+- Streamable HTTP で不正な Origin ヘッダには HTTP 403 を返すことが必須化。
 
 ### 1.2 SDK の状況
 
 | SDK | 本番推奨 | 次期版 |
 | --- | --- | --- |
 | TypeScript | `@modelcontextprotocol/sdk` v1.x | v2 beta（`@modelcontextprotocol/server` / `@modelcontextprotocol/client` に分割、zod v4、2026-07-28 に安定化予定） |
-| Python | `mcp` v1.28.x（FastMCP 同梱） | v2.0.0b1（アーキテクチャ刷新、2026-07-27 安定化予定。**v2 は本番利用非推奨**） |
+| Python | `mcp` v1.28.x（FastMCP 同梱） | v2.0.0b1（アーキテクチャ刷新、2026-07-27 安定化予定。v2 は本番利用非推奨） |
 
 **現時点の結論: 本番は v1.x で作り、v2 の安定化（今月末）を待ってから移行を計画する。** v1.x は v2 リリース後も最低6ヶ月はセキュリティ修正が提供される。
 
@@ -56,12 +56,12 @@ title: "MCPサーバー作成ベストプラクティス 技術調査レポー�
 
 MCP サーバを「雑多なツールの寄せ集めホスト」にしない。ドメイン単位（例: 注文管理、CI/CD、ドキュメント検索）で分割し、各サーバに明確な責務を1つ持たせる。
 
-- ツール数の目安: **5〜8 個が理想、8〜12 個は許容、15 個を超えたらサーバ分割を検討**。
+- ツール数の目安: 5〜8 個が理想、8〜12 個は許容、15 個を超えたらサーバ分割を検討。
 - ツールが多いほどクライアント側のコンテキストを消費し、モデルのツール選択精度も落ちる。「とりあえず全 API をツール化」は最悪手。
 
 ### 2.2 API ラッパーではなく「ワークフロー」を切り出す
 
-Anthropic の公式ガイダンス（Writing effective tools for agents）の中心的な主張。既存 REST API の 1:1 ラッパーは、エージェントに何度も往復を強いてトークンを浪費する。
+Anthropic の公式ガイダンス（Writing effective tools for agents）の中心的な主張。既存 REST API の 1:1 ラッパーはエージェントに何度も往復を強いてトークンを浪費する。
 
 - ❌ `list_users`, `list_events`, `create_event` を個別に呼ばせて空き時間を探させる
 - ⭕ `schedule_event`（空き検索+登録まで一括で行う意図レベルのツール）
@@ -70,10 +70,10 @@ Anthropic の公式ガイダンス（Writing effective tools for agents）の中
 
 ### 2.3 ステートレス設計をデフォルトに
 
-2026-07-28 改訂でプロトコル自体がステートレスコアに移行する。今から作るサーバは:
+2026-07-28 改訂でプロトコル自体がステートレスコアに移行する。今から作るサーバについては次のとおり。
 
-- ツールは**冪等・ステートレス**を基本とする（水平スケール・テスト容易性・ロードバランサ対応）。
-- 状態が避けられない場合は**インスタンス外部の永続ストア**（DB / Redis 等）に置き、セッション ID やインメモリ状態に依存しない。
+- ツールは冪等・ステートレスを基本とする（水平スケール・テスト容易性・ロードバランサ対応）。
+- 状態が避けられない場合はインスタンス外部の永続ストア（DB / Redis 等）に置き、セッション ID やインメモリ状態に依存しない。
 - 「sticky session が必要な設計」は新仕様で負債になる。
 
 ---
@@ -82,24 +82,24 @@ Anthropic の公式ガイダンス（Writing effective tools for agents）の中
 
 ### 3.1 命名と説明
 
-- ツール名は `snake_case`、**ドメインプレフィックス**を付ける（`asana_search_tasks`, `github_create_issue`）。複数サーバ併用時の衝突・混同を防ぐ。
-- `description` は「新入社員に渡す指示書」のつもりで書く。**いつ使うべきか / 使うべきでないか、必須と任意のパラメータ、返り値の形**を明示する。
+- ツール名は `snake_case`、ドメインプレフィックスを付ける（`asana_search_tasks`, `github_create_issue`）。複数サーバ併用時の衝突・混同を防ぐ。
+- `description` は「新入社員に渡す指示書」のつもりで書く。いつ使うべきか / 使うべきでないか、必須と任意のパラメータ、返り値の形を明示する。
 - パラメータ名は曖昧さを排除する: `user` ではなく `user_id`（`user` は名前なのかオブジェクトなのか ID なのか曖昧）。
 - 説明文の推敲は評価結果に基づいて反復する。Anthropic は「description の改善だけでエージェントの成功率が大きく向上した」と報告している。
 
-### 3.2 スキーマ: 入力も出力も厳格に
+### 3.2 スキーマは入力も出力も厳格に
 
 - `inputSchema` は厳格に型付けし、enum・範囲・デフォルト値まで定義する（JSON Schema 2020-12）。
-- 2025-06-18 以降は **`outputSchema` + `structuredContent`** で構造化出力を返せる。クライアント/モデル双方が結果を機械的に検証でき、後段処理が安定する。
+- 2025-06-18 以降は `outputSchema` + `structuredContent` で構造化出力を返せる。クライアント/モデル双方が結果を機械的に検証でき、後段処理が安定する。
 - 互換性のため、`structuredContent` を返す場合も同内容の JSON テキストを `content` に併記するのが SDK の標準動作。
 
 ### 3.3 トークン効率
 
 ツールのレスポンスが消費するトークンは、そのままモデルの思考に使えるトークンを削る。
 
-- **`response_format: "concise" | "detailed"` パラメータ**を設け、既定は concise にする（Anthropic の実測で最大 65% のトークン削減)。
+- `response_format: "concise" | "detailed"` パラメータを設け、既定は concise にする（Anthropic の実測で最大 65% のトークン削減)。
 - 大量件数はページネーション + 件数上限（`limit` のデフォルトと最大値）を必ず設ける。
-- UUID や内部 ID の羅列より、モデルが次のアクションに使える**意味のある識別子**（名前+ID など）を返す。
+- UUID や内部 ID の羅列より、モデルが次のアクションに使える意味のある識別子（名前+ID など）を返す。
 
 ### 3.4 エラーはモデルが自己修正できる形で返す
 
@@ -210,7 +210,7 @@ main().catch((err) => {
 
 ### 4.2 TypeScript: Streamable HTTP（ステートレス構成）
 
-リモート公開するならこちら。**リクエストごとにトランスポートを生成するステートレス構成**は、2026-07-28 のステートレスコアともそのまま整合する。
+リモート公開するならこちら。リクエストごとにトランスポートを生成するステートレス構成は、2026-07-28 のステートレスコアともそのまま整合する。
 
 ```typescript
 // src/http-server.ts
@@ -344,13 +344,13 @@ await server.connect(transport);
 
 | 用途 | 選択 | 注意点 |
 | --- | --- | --- |
-| ローカル（CLI ツール連携、開発者マシン） | **stdio** | stdout はプロトコル専用。ログは stderr。他プロセスからのアクセスを防げる |
-| リモート（SaaS、社内共有サーバ) | **Streamable HTTP** | 単一 `/mcp` エンドポイント。Origin 検証必須（不正なら 403）。ローカルバインドは `127.0.0.1` に |
+| ローカル（CLI ツール連携、開発者マシン） | stdio | stdout はプロトコル専用。ログは stderr。他プロセスからのアクセスを防げる |
+| リモート（SaaS、社内共有サーバ) | Streamable HTTP | 単一 `/mcp` エンドポイント。Origin 検証必須（不正なら 403）。ローカルバインドは `127.0.0.1` に |
 | HTTP+SSE（旧方式） | 使わない | 2025-03-26 で Streamable HTTP に置換済み。後方互換のためだけに残っている |
 
-- Streamable HTTP は「plain JSON レスポンス」と「SSE ストリーム」を状況で使い分けられる。**進捗通知や elicitation が不要な単純ツールなら `enableJsonResponse: true`（plain JSON）がスケールしやすい**。
-- 2025-11-25 で SSE の**ポーリング型運用**（サーバが任意に切断→クライアントが GET で再開）が公式化された。長時間接続の保持を前提にしない。
-- 2026-07-28 以降はセッションヘッダ（`Mcp-Session-Id`）自体が廃止される。**セッション ID に業務ロジックを載せない**こと。
+- Streamable HTTP は「plain JSON レスポンス」と「SSE ストリーム」を状況で使い分けられる。進捗通知や elicitation が不要な単純ツールなら `enableJsonResponse: true`（plain JSON）がスケールしやすい。
+- 2025-11-25 で SSE のポーリング型運用（サーバが任意に切断→クライアントが GET で再開）が公式化された。長時間接続の保持を前提にしない。
+- 2026-07-28 以降はセッションヘッダ（`Mcp-Session-Id`）自体が廃止される。セッション ID に業務ロジックを載せないこと。
 
 ---
 
@@ -358,23 +358,25 @@ await server.connect(transport);
 
 ### 6.1 認可（リモートサーバ）
 
-- ベースは **OAuth 2.1**。MCP サーバは OAuth の**リソースサーバ**であり、RFC 9728（Protected Resource Metadata）でオーソリゼーションサーバを広告する。
-- クライアントは **RFC 8707 Resource Indicators** で「このMCPサーバ向け」のトークンを取得する（2025-06-18 で必須化）。
-- 2025-11-25 で **OIDC Discovery 対応**と **Client ID Metadata Documents**（動的クライアント登録の代替）が追加され、エンタープライズ IdP との統合が現実的になった。
-- **スコープは最小で始める**。全スコープを最初に要求せず、特権操作が試みられた時に `WWW-Authenticate` の `scope` チャレンジで段階的に昇格させる。
+- ベースは OAuth 2.1。MCP サーバは OAuth のリソースサーバであり、RFC 9728（Protected Resource Metadata）でオーソリゼーションサーバを広告する。
+- クライアントは RFC 8707 Resource Indicators で「このMCPサーバ向け」のトークンを取得する（2025-06-18 で必須化）。
+- 2025-11-25 で OIDC Discovery 対応と Client ID Metadata Documents（動的クライアント登録の代替）が追加され、エンタープライズ IdP との統合が現実的になった。
+- スコープは最小で始める。全スコープを最初に要求せず、特権操作が試みられた時に `WWW-Authenticate` の `scope` チャレンジで段階的に昇格させる。
 
-### 6.2 仕様上の MUST（違反すると脆弱性になる）
+### 6.2 仕様上の MUST
 
-1. **トークンパススルー禁止**: クライアントから受け取ったトークンを検証せず下流 API に横流ししない。**自サーバ宛て（audience）に発行されたトークンのみ**受け入れる。
-2. **セッションを認証に使わない**: セッション ID はあくまで転送層の識別子。認可は毎リクエスト検証する。セッション ID は CSPRNG で生成し、可能なら `<user_id>:<session_id>` 形式でユーザにバインドする（セッションハイジャック対策）。
-3. **Confused Deputy 対策**: サードパーティ API への OAuth プロキシとして動く場合、静的 client_id での consent クッキー再利用を悪用されないよう、**クライアントごとの同意画面を必ず挟む**。redirect_uri は完全一致で検証する。
-4. **Origin 検証**: Streamable HTTP で不正な Origin には 403 を返す（DNS リビンディング対策）。
+次の MUST に違反すると脆弱性になる。
+
+1. トークンパススルー禁止: クライアントから受け取ったトークンを検証せず下流 API に横流ししない。自サーバ宛て（audience）に発行されたトークンのみ受け入れる。
+2. セッションを認証に使わない: セッション ID はあくまで転送層の識別子。認可は毎リクエスト検証する。セッション ID は CSPRNG で生成し、可能なら `<user_id>:<session_id>` 形式でユーザにバインドする（セッションハイジャック対策）。
+3. Confused Deputy 対策: サードパーティ API への OAuth プロキシとして動く場合、静的 client_id での consent クッキー再利用を悪用されないよう、クライアントごとの同意画面を必ず挟む。redirect_uri は完全一致で検証する。
+4. Origin 検証: Streamable HTTP で不正な Origin には 403 を返す（DNS リビンディング対策）。
 
 ### 6.3 プロンプトインジェクション / ツールポイズニング
 
-- ツールが返すデータ（Web ページ、Issue 本文、検索結果）は**信頼できない入力**。レスポンス内の指示をモデルが実行してしまう「間接プロンプトインジェクション」を前提に設計する。
-- 対策の基本は**最小権限**（読み取り専用トークン、スコープ分離）と**破壊的操作の human-in-the-loop**（`destructiveHint` + クライアント側承認）。
-- サーバ配布側は、ツール description に悪意ある指示を仕込む「ツールポイズニング」への警戒として、**依存する MCP サーバの description を監査対象にする**（バージョン固定・レビュー）。
+- ツールが返すデータ（Web ページ、Issue 本文、検索結果）は信頼できない入力。レスポンス内の指示をモデルが実行してしまう「間接プロンプトインジェクション」を前提に設計する。
+- 対策の基本は最小権限（読み取り専用トークン、スコープ分離）と破壊的操作の human-in-the-loop（`destructiveHint` + クライアント側承認）。
+- サーバ配布側は、ツール description に悪意ある指示を仕込む「ツールポイズニング」への警戒として、依存する MCP サーバの description を監査対象にする（バージョン固定・レビュー）。
 
 ---
 
@@ -382,33 +384,33 @@ await server.connect(transport);
 
 ### 7.1 開発ループ
 
-1. **MCP Inspector**（`npx @modelcontextprotocol/inspector`）でツールの疎通・スキーマ・レスポンスを対話確認する。
-2. **評価駆動で description を磨く**: 実タスクに近いプロンプト集を用意し、エージェントに解かせて成功率を測る。Anthropic の推奨プロセスは「プロトタイプ → 評価 → （エージェントと）協働改善」の反復。ツールの transcript を読み、モデルがどこで迷ったかを description に反映する。
+1. MCP Inspector（`npx @modelcontextprotocol/inspector`）でツールの疎通・スキーマ・レスポンスを対話確認する。
+2. 評価駆動で description を磨く: 実タスクに近いプロンプト集を用意し、エージェントに解かせて成功率を測る。Anthropic の推奨プロセスは「プロトタイプ → 評価 → （エージェントと）協働改善」の反復。ツールの transcript を読み、モデルがどこで迷ったかを description に反映する。
 3. ユニットテストはツールのハンドラ関数を直接呼ぶ形で書き、スキーマ検証は SDK に任せる。
 
 ### 7.2 ロギングと可観測性
 
-- stdio: **stderr に構造化ログ**。stdout 汚染は最も典型的な事故。
+- stdio: stderr に構造化ログ。stdout 汚染は最も典型的な事故。
 - HTTP: OpenTelemetry ベースのトレーシングを推奨。2026-07-28 改訂で W3C Trace Context の `_meta` 伝播が公式ドキュメント化される。
-- プロトコルの `logging` ケーパビリティは 2026-07-28 で**非推奨**になるため、新規で依存しない。
+- プロトコルの `logging` ケーパビリティは 2026-07-28 で非推奨になるため、新規で依存しない。
 
 ### 7.3 バージョニングと配布
 
-- ツールスキーマの変更は**加算的変更を優先**し、フィールド削除・意味変更はメジャーバージョンで。クライアント側のプロンプトはツール定義に依存しているため、破壊的変更の影響は API より大きい。
+- ツールスキーマの変更は加算的変更を優先し、フィールド削除・意味変更はメジャーバージョンで。クライアント側のプロンプトはツール定義に依存しているため、破壊的変更の影響は API より大きい。
 - 配布は MCP Registry（`server.json`）への登録が標準ルートになりつつある。`Implementation` の `description` フィールド（2025-11-25 追加）を registry と揃える。
 
 ---
 
-## 8. 2026-07-28 改訂への備え（アクションアイテム)
+## 8. 2026-07-28 改訂への備え
 
-今月末に確定する新仕様に向けて、今から作るサーバで意識すべきこと:
+今月末に確定する新仕様に向けて、今から作るサーバで意識すべきことをアクションアイテムとして挙げる。
 
-1. **ステートレスに作る**: `initialize` ハンドシェイクと `Mcp-Session-Id` は廃止される。セッションに依存した設計は移行コストが跳ね上がる。
-2. **Roots / Sampling / Logging に新規依存しない**: 12ヶ月の猶予付きで非推奨入り。Sampling の代替は LLM プロバイダ API の直接利用、Logging の代替は stderr / OpenTelemetry。
-3. **長時間処理は Tasks 拡張へ**: 2025-11-25 の実験的 Tasks API を使っている場合、拡張ベースのライフサイクル（`tasks/get` / `tasks/update` / `tasks/cancel`）への移行が必要。
-4. **リソース未検出エラーコードの変更**: `-32002` → 標準の `-32602` に変わる。エラーコードのマッチングをしている場合は要修正。
-5. **リスト系レスポンスにキャッシュヒント**: `ttlMs` / `cacheScope` が追加される。list 系ツールを持つサーバは対応するとクライアント体験が向上する。
-6. **UI が必要なら MCP Apps**: サンドボックス化された iframe でサーバ提供の HTML UI をレンダリングできる公式拡張（SEP-1865）が入る。独自のアウトオブバンド UI を作る前に検討する。
+1. ステートレスに作る: `initialize` ハンドシェイクと `Mcp-Session-Id` は廃止される。セッションに依存した設計は移行コストが跳ね上がる。
+2. Roots / Sampling / Logging に新規依存しない: 12ヶ月の猶予付きで非推奨入り。Sampling の代替は LLM プロバイダ API の直接利用、Logging の代替は stderr / OpenTelemetry。
+3. 長時間処理は Tasks 拡張へ: 2025-11-25 の実験的 Tasks API を使っている場合、拡張ベースのライフサイクル（`tasks/get` / `tasks/update` / `tasks/cancel`）への移行が必要。
+4. リソース未検出エラーコードの変更: `-32002` → 標準の `-32602` に変わる。エラーコードのマッチングをしている場合は要修正。
+5. リスト系レスポンスにキャッシュヒント: `ttlMs` / `cacheScope` が追加される。list 系ツールを持つサーバは対応するとクライアント体験が向上する。
+6. UI が必要なら MCP Apps: サンドボックス化された iframe でサーバ提供の HTML UI をレンダリングできる公式拡張（SEP-1865）が入る。独自のアウトオブバンド UI を作る前に検討する。
 
 ---
 
@@ -431,26 +433,30 @@ await server.connect(transport);
 
 ## 追記（2026-07-29）: 2026-07-28 改訂の正式リリース
 
-本文執筆時点（2026-07-04）で RC だった **`2026-07-28` 改訂が予定どおり正式公開**され、Anthropic も同日「[Bringing MCP 2026-07-28 to Claude](https://claude.com/blog/bringing-mcp-2026-07-28-to-claude)」で **Claude 製品への順次展開**を発表した（製品別の展開日程は未公表）。確定した changelog（[公式](https://modelcontextprotocol.io/specification/2026-07-28/changelog)）のうち、本文の予想からの差分・開発者影響が大きい点:
+本文執筆時点（2026-07-04）で RC だった `2026-07-28` 改訂が予定どおり正式公開され、Anthropic も同日「[Bringing MCP 2026-07-28 to Claude](https://claude.com/blog/bringing-mcp-2026-07-28-to-claude)」で Claude 製品への順次展開を発表した（製品別の展開日程は未公表）。確定した changelog（[公式](https://modelcontextprotocol.io/specification/2026-07-28/changelog)）のうち、本文の予想からの差分・開発者影響が大きい点は次のとおり。
 
-### 確定した主要変更（本文の予想との対応）
+### 確定した主要変更
+
+本文の予想との対応は次の表のとおり。
 
 | 本文での予想 | 確定内容 |
 |---|---|
-| ステートレスコア | 確定。`initialize` ハンドシェイク・`Mcp-Session-Id` 廃止。プロトコルバージョン・クライアント capabilities は**毎リクエストの `_meta`** で運ぶ（SEP-2575, SEP-2567） |
+| ステートレスコア | 確定。`initialize` ハンドシェイク・`Mcp-Session-Id` 廃止。プロトコルバージョン・クライアント capabilities は毎リクエストの `_meta` で運ぶ（SEP-2575, SEP-2567） |
 | Extensions フレームワーク | 確定。`ClientCapabilities`/`ServerCapabilities` に `extensions` フィールド追加 |
-| Tasks の拡張化 | 確定。`io.modelcontextprotocol/tasks` 拡張へ移動し、ブロッキングの `tasks/result` は**ポーリング型 `tasks/get`** に再設計 |
+| Tasks の拡張化 | 確定。`io.modelcontextprotocol/tasks` 拡張へ移動し、ブロッキングの `tasks/result` はポーリング型 `tasks/get` に再設計 |
 | Roots / Sampling / Logging 非推奨 | 確定（12ヶ月の削除猶予、[非推奨レジストリ](https://modelcontextprotocol.io/specification/2026-07-28/deprecated)で管理） |
 
-### 本文で触れていなかった確定事項（要注意）
+### 本文で触れていなかった確定事項
 
-- **`server/discover` RPC が必須化**: サーバは対応バージョン・capabilities・identity を広告する `server/discover` を MUST 実装
-- **サーバ発リクエストの廃止 → MRTR パターンへ**: `roots/list` / `sampling/createMessage` / `elicitation/create` のようなサーバ→クライアント要求は、`resultType: "input_required"` を返してクライアントが**元リクエストを再試行**する Multi Round-Trip Requests に置き換え（SEP-2322）。**全結果に `resultType` フィールドが必須**になった
-- **通知系の再編**: HTTP GET エンドポイントと `resources/subscribe` は **`subscriptions/listen`**（単一の長寿命 POST ストリーム）に統合。`ping`・`logging/setLevel` は削除、ログレベルは `_meta` の `io.modelcontextprotocol/logLevel` でリクエスト単位指定
-- **SSE 再開機構の削除**: `Last-Event-ID` によるストリーム再開・再配送は廃止。切断されたら**新しいリクエスト ID で再発行**が MUST
-- **キャッシュの一級市民化**: `tools/list` 等の一覧系は `ttlMs` / `cacheScope` が必須（`CacheableResult`）。`tools/list` は**決定的順序で返す**ことが SHOULD に（LLM のプロンプトキャッシュ効率に直結）
-- **認可まわり**: RFC 9207 の `iss` 検証がクライアント MUST に、**Dynamic Client Registration（RFC 7591）は非推奨**入りし Client ID Metadata Documents へ移行。資格情報は発行元 AS 単位で分離保存が MUST
-- **エラーコード再配置**: `-32020`〜`-32099` が MCP 仕様予約に。resource not found は `-32002` → `-32602` に変更
+次の事項は要注意。
+
+- `server/discover` RPC が必須化: サーバは対応バージョン・capabilities・identity を広告する `server/discover` を MUST 実装
+- サーバ発リクエストの廃止 → MRTR パターンへ: `roots/list` / `sampling/createMessage` / `elicitation/create` のようなサーバ→クライアント要求は、`resultType: "input_required"` を返してクライアントが元リクエストを再試行する Multi Round-Trip Requests に置き換え（SEP-2322）。全結果に `resultType` フィールドが必須になった
+- 通知系の再編: HTTP GET エンドポイントと `resources/subscribe` は `subscriptions/listen`（単一の長寿命 POST ストリーム）に統合。`ping`・`logging/setLevel` は削除、ログレベルは `_meta` の `io.modelcontextprotocol/logLevel` でリクエスト単位指定
+- SSE 再開機構の削除: `Last-Event-ID` によるストリーム再開・再配送は廃止。切断されたら新しいリクエスト ID で再発行が MUST
+- キャッシュの一級市民化: `tools/list` 等の一覧系は `ttlMs` / `cacheScope` が必須（`CacheableResult`）。`tools/list` は決定的順序で返すことが SHOULD に（LLM のプロンプトキャッシュ効率に直結）
+- 認可まわり: RFC 9207 の `iss` 検証がクライアント MUST に、Dynamic Client Registration（RFC 7591）は非推奨入りし Client ID Metadata Documents へ移行。資格情報は発行元 AS 単位で分離保存が MUST
+- エラーコード再配置: `-32020`〜`-32099` が MCP 仕様予約に。resource not found は `-32002` → `-32602` に変更
 
 ### 本レポートへの影響
 
