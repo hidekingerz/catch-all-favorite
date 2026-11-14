@@ -7,30 +7,30 @@ title: "React Compilerの最適化を効かせるための型・Lint整理"
 
 ## TL;DR
 
-- React Compilerは**コンポーネント/フックが純粋（pure）であること**を前提に自動メモ化する。純粋性を静的に証明できない箇所は**保守的に最適化をスキップ（bailout）**する。つまり「最適化が効くコードを書く＝Rules of Reactを守る」こと。
-- 役割分担はこう整理できる:
-  - **型（TypeScript）**: props/stateの**変異（mutation）を型レベルで防ぐ**（`readonly` / `Readonly<T>`）。ただしレンダー中の副作用そのものは検出できない。
-  - **Lint**: Rules of Reactの違反（純粋性・不変性・refの誤用・レンダー中のsetState等）を検出する。**コンパイラ由来の純粋性ルールを持つのは現状ESLint（`eslint-plugin-react-hooks` v6）が唯一**。
-  - **コンパイラ自身**: 最終的な番人。違反箇所はビルド時に診断＋スキップする。
+- React Compilerはコンポーネント/フックが純粋（pure）であることを前提に自動メモ化する。純粋性を静的に証明できない箇所は保守的に最適化をスキップ（bailout）する。つまり「最適化が効くコードを書く＝Rules of Reactを守る」こと。
+- 役割分担はこう整理できる。
+  - 型（TypeScript）: props/stateの変異（mutation）を型レベルで防ぐ（`readonly` / `Readonly<T>`）。ただしレンダー中の副作用そのものは検出できない。
+  - Lint: Rules of Reactの違反（純粋性・不変性・refの誤用・レンダー中のsetState等）を検出する。**コンパイラ由来の純粋性ルールを持つのは現状ESLint（`eslint-plugin-react-hooks` v6）が唯一**。
+  - コンパイラ自身: 最終的な番人。違反箇所はビルド時に診断＋スキップする。
 - 推奨は **TypeScript（readonly中心）＋ `eslint-plugin-react-hooks` v6（`recommended-latest`）** を軸に、速度が必要なら Biome / Oxlint を Rules of Hooks・exhaustive-deps の高速チェックとして併用する構成。
 
 ---
 
 ## 1. なぜ「純粋性」が最適化に効くのか
 
-React Compiler v1.0 は `useMemo` / `useCallback` / `React.memo` を手書きしなくても、コンポーネントとフックを自動でメモ化する。その前提が **Rules of React** で、特に純粋性が重要になる。
+React Compiler v1.0 は `useMemo` / `useCallback` / `React.memo` を手書きしなくても、コンポーネントとフックを自動でメモ化する。その前提が Rules of React で、特に純粋性が重要になる。
 
-コンパイラは「子コンポーネントのprops」や「effectの依存配列」など**同一性（identity）が意味を持つ位置に流れる値**を、その計算が純粋であると証明できる場合に限ってメモ化する。証明できなければ保守的に最適化を見送る。したがって、純粋でないコードは「壊れる」のではなく「**最適化されないまま残る**」。
+コンパイラは「子コンポーネントのprops」や「effectの依存配列」など同一性（identity）が意味を持つ位置に流れる値を、その計算が純粋であると証明できる場合に限ってメモ化する。証明できなければ保守的に最適化を見送る。したがって、純粋でないコードは「壊れる」のではなく「**最適化されないまま残る**」。
 
-最適化のために守るべき Rules of React（純粋性に関わる主なもの）:
+最適化のために守るべき Rules of React（純粋性に関わる主なもの）は次のとおり。
 
-- コンポーネント/フックは**冪等**で、レンダー中に副作用を起こさない
-- **props / state は不変**として扱い、変異しない
-- JSXで使った後の値を**後から書き換えない**
-- レンダー中に **ref を読み書きしない**
-- レンダー中に **setState を呼ばない**（制御された例外を除く）
-- レンダー中に `Date.now()` / `Math.random()` など**非決定的な値を読まない**
-- フックは**トップレベルでのみ**呼ぶ（Rules of Hooks）
+- コンポーネント/フックは冪等で、レンダー中に副作用を起こさない
+- props / state は不変として扱い、変異しない
+- JSXで使った後の値を後から書き換えない
+- レンダー中に ref を読み書きしない
+- レンダー中に setState を呼ばない（制御された例外を除く）
+- レンダー中に `Date.now()` / `Math.random()` など非決定的な値を読まない
+- フックはトップレベルでのみ呼ぶ（Rules of Hooks）
 
 ---
 
@@ -43,19 +43,19 @@ React Compiler v1.0 は `useMemo` / `useCallback` / `React.memo` を手書きし
 | 既存の手動メモ化を保持できない | `CannotPreserveMemoization` でそのコンポーネントを丸ごとスキップ |
 | 未対応構文を含む | 該当コンポーネント/フックをスキップして、残りはコンパイル |
 
-ポイントは**「全部か無か」ではなく関数単位でスキップ**される点。だからこそ、Lintで違反箇所を可視化して潰すほど、最適化のカバレッジが上がる。
+ポイントは「全部か無か」ではなく関数単位でスキップされる点。だからこそ、Lintで違反箇所を可視化して直すほど、最適化のカバレッジが上がる。
 
-> 重要: React公式は「**コンパイラを導入する前でも `eslint-plugin-react-hooks` でルール違反を洗い出せる**」という段階的アプローチを推奨している。Lint整備はコンパイラ採用の前提作業になる。
+> 重要: React公式は「コンパイラを導入する前でも `eslint-plugin-react-hooks` でルール違反を洗い出せる」という段階的アプローチを推奨している。Lint整備はコンパイラ採用の前提作業になる。
 
 ---
 
 ## 3. 型（TypeScript）でできること・できないこと
 
-TypeScriptは「副作用の有無」は判定できないが、**変異を型で禁止する**ことで純粋性違反の大きな一群（props/stateの書き換え）を未然に防げる。
+TypeScriptは「副作用の有無」は判定できないが、変異を型で禁止することで純粋性違反の大きな一群（props/stateの書き換え）を未然に防げる。
 
 ### できること
 
-- **propsを読み取り専用にする**: 関数コンポーネントのpropsはデフォルトで `Readonly` 相当だが、ネストしたオブジェクト/配列は浅い。深い不変を意図するなら明示する。
+- propsを読み取り専用にする: 関数コンポーネントのpropsはデフォルトで `Readonly` 相当だが、ネストしたオブジェクト/配列は浅い。深い不変を意図するなら明示する。
 
   ```ts
   type Props = Readonly<{
@@ -64,22 +64,26 @@ TypeScriptは「副作用の有無」は判定できないが、**変異を型�
   }>;
   ```
 
-- **`readonly` 修飾子 / `ReadonlyArray<T>` / `as const`** でデータ構造の変異を禁止する。
-- **`tsconfig` の `strict` 系**（特に `noUncheckedIndexedAccess`）で「使う前の値」の扱いを厳格化する。
+- `readonly` 修飾子 / `ReadonlyArray<T>` / `as const` でデータ構造の変異を禁止する。
+- `tsconfig` の `strict` 系（特に `noUncheckedIndexedAccess`）で「使う前の値」の扱いを厳格化する。
 
-### できないこと（Lint/コンパイラに任せる領域）
+### できないこと
 
-- レンダー中の `Date.now()` / `Math.random()` 呼び出しなど**非決定的な副作用**の検出
-- レンダー中の **ref 読み書き** や **setState** の検出
-- 毎レンダーで**コンポーネントを再生成している**（static-components違反）といったReact特有のパターン
+以下はLint/コンパイラに任せる領域。
+
+- レンダー中の `Date.now()` / `Math.random()` 呼び出しなど非決定的な副作用の検出
+- レンダー中の ref 読み書きや setState の検出
+- 毎レンダーでコンポーネントを再生成している（static-components違反）といったReact特有のパターン
 
 → 型は「変異の入り口を塞ぐ」ところまで。**Reactのレンダー意味論に踏み込む検査はLintの仕事**。
 
 ---
 
-## 4. Lint: 3ツールの守備範囲
+## 4. Lint 3ツールの守備範囲
 
-### 4-1. ESLint（`eslint-plugin-react-hooks` v6）— 唯一、コンパイラ由来の純粋性ルールを持つ
+### 4-1. ESLint（`eslint-plugin-react-hooks` v6）
+
+コンパイラ由来の純粋性ルールを持つのはESLint（`eslint-plugin-react-hooks` v6）が唯一。
 
 v6.x から、React Compilerが生成するルール群が `react-hooks/` プレフィックスでバンドルされた。純粋性・不変性に直結するのはこのセット。
 
@@ -96,7 +100,7 @@ v6.x から、React Compilerが生成するルール群が `react-hooks/` プレ
 | `react-hooks/error-boundaries` | try/catchではなくError Boundaryを使うべき箇所 |
 | `react-hooks/rules-of-hooks` / `react-hooks/exhaustive-deps` | 従来のコアルール |
 
-設定（ESLint v9 / flat config）:
+設定（ESLint v9 / flat config）は次のとおり。
 
 ```js
 // eslint.config.js
@@ -109,14 +113,16 @@ export default [
 ```
 
 - `recommended`: 安定版の推奨ルール
-- `recommended-latest`: 上記＋**コンパイラ由来の実験的（bleeding edge）ルール**。純粋性チェックを最大限効かせたいならこちら。
+- `recommended-latest`: 上記＋コンパイラ由来の実験的（bleeding edge）ルール。純粋性チェックを最大限効かせたいならこちら。
 
-### 4-2. Biome — Rules of Hooks系は速い、コンパイラ純粋性ルールは未提供
+### 4-2. Biome
 
-- `useExhaustiveDependencies`（依存配列）、`useHookAtTopLevel`（Rules of Hooks）など**フック系の基本ルールは高速に実行できる**。
-- **React Compiler専用の純粋性ルールは未実装**。これらはコンパイラ本体との統合が必要なため（議論: biomejs/biome #5290）。
+Rules of Hooks系は速い。コンパイラ純粋性ルールは未提供。
+
+- `useExhaustiveDependencies`（依存配列）、`useHookAtTopLevel`（Rules of Hooks）などフック系の基本ルールは高速に実行できる。
+- React Compiler専用の純粋性ルールは未実装。これらはコンパイラ本体との統合が必要なため（議論: biomejs/biome #5290）。
 - 既知の相性問題: `useExhaustiveDependencies` はコンパイラが自動ラップする関数に対して誤検知し得るため、`reactCompiler` オプションの追加が提案中（#5293）。
-- 型認識（type-aware）: Biome v2 でScanner＋型推論が入り、`noFloatingPromises` 等を**typescript-eslintの約85%の精度**で低コストに検出。ただし完全な型検査ではない。
+- 型認識（type-aware）: Biome v2 でScanner＋型推論が入り、`noFloatingPromises` 等をtypescript-eslintの約85%の精度で低コストに検出。ただし完全な型検査ではない。
 
 ```jsonc
 // biome.json
@@ -132,11 +138,13 @@ export default [
 }
 ```
 
-### 4-3. Oxlint（Oxc）— Rules of Hooksはネイティブ高速、コンパイラルールはJSプラグイン経由
+### 4-3. Oxlint（Oxc）
 
-- `react` / react-hooks 系のルール（rules-of-hooks、exhaustive-deps）は**Rustでネイティブ実装され高速**。
-- **React Compilerルールはネイティブには実装しない方針**（コンパイラ統合が必要なため）。ただし **JSプラグイン機能（`jsPlugins`）経由でコンパイラ由来ルールを読み込める**（デモ: `TheAlexLichter/oxlint-react-compiler-rules`、Issue: oxc #20791 / #15258）。`react-hooks` は予約名のため、JSプラグインでは別ネームスペースを使う。
-- 型認識（type-aware）: **tsgolint** により typescript-eslint の type-aware ルール 61個中59個をサポート。
+Rules of Hooksはネイティブ高速。コンパイラルールはJSプラグイン経由。
+
+- `react` / react-hooks 系のルール（rules-of-hooks、exhaustive-deps）はRustでネイティブ実装され高速。
+- React Compilerルールはネイティブには実装しない方針（コンパイラ統合が必要なため）。ただし JSプラグイン機能（`jsPlugins`）経由でコンパイラ由来ルールを読み込める（デモ: `TheAlexLichter/oxlint-react-compiler-rules`、Issue: oxc #20791 / #15258）。`react-hooks` は予約名のため、JSプラグインでは別ネームスペースを使う。
+- 型認識（type-aware）: tsgolint により typescript-eslint の type-aware ルール 61個中59個をサポート。
 
 ```jsonc
 // .oxlintrc.json（概念例。コンパイラルールはjsPlugins経由）
@@ -155,9 +163,9 @@ export default [
 
 | 観点 | TypeScript | ESLint (`react-hooks` v6) | Biome | Oxlint (Oxc) |
 | --- | --- | --- | --- | --- |
-| props/stateの**変異禁止**（型) | ◎ `readonly`/`Readonly<T>` | △（immutabilityルールで実行時パターンを検出） | × | × |
+| props/stateの変異禁止（型) | ◎ `readonly`/`Readonly<T>` | △（immutabilityルールで実行時パターンを検出） | × | × |
 | Rules of Hooks / exhaustive-deps | × | ◎ | ◎ | ◎（ネイティブ高速） |
-| **コンパイラ純粋性ルール**（purity/immutability/refs/setState等） | × | ◎（唯一ネイティブ提供） | ×（未実装） | △（JSプラグイン経由で可） |
+| コンパイラ純粋性ルール（purity/immutability/refs/setState等） | × | ◎（唯一ネイティブ提供） | ×（未実装） | △（JSプラグイン経由で可） |
 | static-components / preserve-manual-memoization | × | ◎ | × | △（JSプラグイン経由） |
 | 型認識（type-aware）lint | ―（型検査本体） | ◎ typescript-eslint | △ 部分推論（v2 Scanner） | ◎ tsgolint（59/61） |
 | 速度 | 遅め | 標準 | 速い | 最速級 |
@@ -168,22 +176,22 @@ export default [
 
 ## 6. 推奨スタックと組み合わせ方
 
-純粋性を最大限担保しつつ実用速度も確保する構成:
+純粋性を最大限担保しつつ実用速度も確保する構成は次のとおり。
 
-1. **型で変異を塞ぐ**（土台）
+1. 型で変異を塞ぐ（土台）
    - props/stateを `readonly` / `Readonly<T>` / `ReadonlyArray<T>` で固める
    - `tsconfig` は `strict` + `noUncheckedIndexedAccess`
 
-2. **純粋性Lintの本命は ESLint の `eslint-plugin-react-hooks` v6**
+2. 純粋性Lintの本命は ESLint の `eslint-plugin-react-hooks` v6
    - `recommended-latest` を有効化し、`purity` / `immutability` / `refs` / `set-state-in-*` / `static-components` / `preserve-manual-memoization` で違反を洗い出す
    - これがコンパイラのbailoutを減らす最重要施策
 
-3. **速度が要るならエディタ/コミット時に Biome か Oxlint を併用**
+3. 速度が要るならエディタ/コミット時に Biome か Oxlint を併用
    - Rules of Hooks・exhaustive-deps・フォーマットを高速チェック
    - 「高速な一次フィルタ（Biome/Oxlint）＋ CIで純粋性まで含む ESLint」の二段構えが現実的
    - OxlintはコンパイラルールもJSプラグインで取り込めるため、ESLintを段階的に置き換える選択肢にもなる
 
-4. **最後はコンパイラ自身**
+4. 最後はコンパイラ自身
    - 残ったbailoutはビルド診断で確認し、純粋性違反を順次修正してメモ化カバレッジを上げる
 
 ---

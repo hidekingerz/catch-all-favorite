@@ -8,11 +8,13 @@ title: "date-fns / date-fns-tz から Temporal API への移行可能性レポ�
 
 **移行は技術的に可能だが、現時点では「完全置き換え」ではなく「段階的移行」を推奨する。**
 
-Temporal API は ES2026 Stage 4 に到達し、Chrome 144+ / Firefox 139+ / Edge 144+ で利用可能。date-fns / date-fns-tz が担っていた日付演算・タイムゾーン処理の大半を置き換えられる。ただし **Safari が未対応（ポリフィル必須）**、**カスタムフォーマット文字列（`format(date, 'yyyy/MM/dd')`）に相当する API がない**、**相対時間表現（「2時間前」）は別途対応が必要** という制約があり、ドロップインリプレースにはならない。
+Temporal API は ES2026 Stage 4 に到達し、Chrome 144+ / Firefox 139+ / Edge 144+ で利用可能。date-fns / date-fns-tz が担っていた日付演算・タイムゾーン処理の大半を置き換えられる。ただし Safari が未対応（ポリフィル必須）、カスタムフォーマット文字列（`format(date, 'yyyy/MM/dd')`）に相当する API がない、相対時間表現（「2時間前」）は別途対応が必要という制約があり、ドロップインリプレースにはならない。
 
 ---
 
-## 1. Temporal API の現状（2026年4月時点）
+## 1. Temporal API の現状
+
+以下は 2026年4月時点の現状。
 
 ### 仕様策定
 
@@ -32,7 +34,7 @@ Temporal API は ES2026 Stage 4 に到達し、Chrome 144+ / Firefox 139+ / Edge
 | Safari | Technology Preview のみ | ⚠️ フラグ付き実験的。リリース時期未公表 |
 | Node.js | 24+ | ✅ 完全安定サポート |
 
-**グローバルカバレッジ**: 約 64%（Can I use 基準）。iOS ユーザがいるプロジェクトではポリフィル必須。
+グローバルカバレッジ: 約 64%（Can I use 基準）。iOS ユーザがいるプロジェクトではポリフィル必須。
 
 ### ポリフィル
 
@@ -76,7 +78,9 @@ Temporal API は ES2026 Stage 4 に到達し、Chrome 144+ / Firefox 139+ / Edge
 | `isWeekend(date)` | `[6, 7].includes(date.dayOfWeek)` | ✅ 1行で代替可能 |
 | `isValid(date)` | `try { Temporal.PlainDate.from(str) }` | ⚠️ バリデーション API はないが try-catch で代替 |
 
-### フォーマット（最大の差分）
+### フォーマット
+
+フォーマットが最大の差分。
 
 | date-fns | Temporal | 備考 |
 |---|---|---|
@@ -86,7 +90,9 @@ Temporal API は ES2026 Stage 4 に到達し、Chrome 144+ / Firefox 139+ / Edge
 | `formatDistance(a, b)` | ❌ なし | ⚠️ 相対時間（「3日前」）は Temporal の範囲外。`Intl.RelativeTimeFormat` で部分的に代替可能だが、date-fns の自動単位選択は自前実装が必要 |
 | `formatRelative(date, base)` | ❌ なし | ⚠️ 「昨日 14:30」のような表現は Temporal + Intl では直接できない |
 
-### タイムゾーン（date-fns-tz → Temporal）
+### タイムゾーン
+
+date-fns-tz → Temporal の対応。
 
 | date-fns-tz | Temporal | 備考 |
 |---|---|---|
@@ -106,11 +112,11 @@ date-fns-tz が内部で `Intl.DateTimeFormat` のハックを使って IANA タ
 
 ### カスタムフォーマット文字列
 
-**最大のギャップ。** date-fns の `format(date, 'yyyy/MM/dd (EEE) HH:mm')` のようなトークンベースのフォーマットは、Temporal に相当する API がない。
+最大のギャップ。date-fns の `format(date, 'yyyy/MM/dd (EEE) HH:mm')` のようなトークンベースのフォーマットは、Temporal に相当する API がない。
 
 Temporal の設計方針として「フォーマットは `Intl.DateTimeFormat` に委譲する」と明示されており、V1 では意図的に未実装。Temporal v2 提案（`js-temporal/proposal-temporal-v2#5`）でカスタムフォーマット文字列の追加が議論されているが、策定時期は未定。
 
-**対策**:
+対策は次のとおり。
 - `Intl.DateTimeFormat` + `formatToParts()` で組み立てる（冗長だが可能）
 - 軽量フォーマットヘルパーを自前で用意する
 - `date-fns` の `format()` のみ残す（Temporal オブジェクト → ISO 文字列 → date-fns format のブリッジ）
@@ -127,7 +133,9 @@ date-fns の `eachDayOfInterval` / `eachWeekOfInterval` / `closestTo` / `clamp` 
 
 ## 4. 移行戦略の選択肢
 
-### A. 段階的移行（推奨）
+### A. 段階的移行
+
+推奨する選択肢。
 
 ```
 現在: date-fns + date-fns-tz
@@ -142,8 +150,8 @@ Phase 3: Safari がネイティブ対応後、ポリフィル除去
          Temporal v2 のフォーマット API で置換
 ```
 
-**メリット**: リスクが小さい。各フェーズで動作確認可能。Safari 対応を待てる。
-**デメリット**: 完了まで時間がかかる。過渡期は date-fns と Temporal が混在する。
+メリット: リスクが小さい。各フェーズで動作確認可能。Safari 対応を待てる。
+デメリット: 完了まで時間がかかる。過渡期は date-fns と Temporal が混在する。
 
 ### B. 一括移行 + ポリフィル
 
@@ -154,17 +162,17 @@ Temporal（ネイティブ）+ temporal-polyfill-lite（Safari 向け）
   + 自前フォーマットヘルパー or Intl.DateTimeFormat
 ```
 
-codemod `date-fns-to-temporal` を活用して機械的に変換し、残りを手動で対応する。
+codemod `date-fns-to-temporal` を使って機械的に変換し、残りは手動で対応する。
 
-**メリット**: 依存ライブラリを一気に削減。コードベースが統一される。
-**デメリット**: ポリフィルのバンドルサイズ増加。カスタムフォーマットの書き直しが大量に発生する可能性。Safari ネイティブ対応まではポリフィルへの依存が残る。
+メリット: 依存ライブラリを一気に削減。コードベースが統一される。
+デメリット: ポリフィルのバンドルサイズ増加。カスタムフォーマットの書き直しが大量に発生する可能性。Safari ネイティブ対応まではポリフィルへの依存が残る。
 
-### C. date-fns v4 + interim（様子見）
+### C. date-fns v4 + interim
 
-date-fns チームが開発中の `date-fns/interim`（Temporal API の軽量サブセット）を使い、将来的に import パスを切り替えるだけで Temporal に移行する戦略。
+様子見の選択肢。date-fns チームが開発中の `date-fns/interim`（Temporal API の軽量サブセット）を使い、将来的に import パスを切り替えるだけで Temporal に移行する戦略。
 
-**メリット**: date-fns エコシステム内で完結。移行コストが最小。
-**デメリット**: interim はまだ WIP（リリース未公開）。時期が読めない。
+メリット: date-fns エコシステム内で完結。移行コストが最小。
+デメリット: interim はまだ WIP（リリース未公開）。時期が読めない。
 
 ---
 
@@ -191,15 +199,15 @@ date-fns チームが開発中の `date-fns/interim`（Temporal API の軽量サ
 
 **可能。ただし「完全置換」ではなく「大部分の置換 + フォーマット層の補完」が必要。**
 
-- 日付演算・タイムゾーン処理（date-fns-tz の領域）: **100% 置換可能で、むしろ Temporal の方が優れている**
-- フォーマット: **カスタムトークンベースのフォーマットが頻出するなら、フォーマット層だけ date-fns を残すか自前ヘルパーが必要**
+- 日付演算・タイムゾーン処理（date-fns-tz の領域）: 100% 置換可能で、むしろ Temporal の方が優れている
+- フォーマット: カスタムトークンベースのフォーマットが頻出するなら、フォーマット層だけ date-fns を残すか自前ヘルパーが必要
 
 ### 推奨アクション
 
-1. **まず date-fns v4 に更新し、date-fns-tz を統合する**（date-fns v4 は date-fns-tz の機能を本体に取り込み済み）。これだけでも依存を 1 つ減らせる
-2. **新規コードは Temporal で書く**（特にタイムゾーン処理、日付演算）
-3. **既存のフォーマット呼び出しは無理に書き換えない**。Temporal v2 のカスタムフォーマット API の策定を待つか、`Intl.DateTimeFormat` で要件が満たせる箇所から順次移行する
-4. **Safari 対応が必要なプロジェクトでは `temporal-polyfill-lite` を導入**し、Safari がネイティブ対応した時点で除去する
+1. まず date-fns v4 に更新し、date-fns-tz を統合する（date-fns v4 は date-fns-tz の機能を本体に取り込み済み）。これだけでも依存を 1 つ減らせる
+2. 新規コードは Temporal で書く（特にタイムゾーン処理、日付演算）
+3. 既存のフォーマット呼び出しは無理に書き換えない。Temporal v2 のカスタムフォーマット API の策定を待つか、`Intl.DateTimeFormat` で要件が満たせる箇所から順次移行する
+4. Safari 対応が必要なプロジェクトでは `temporal-polyfill-lite` を導入し、Safari がネイティブ対応した時点で除去する
 
 ## 参考リンク
 
