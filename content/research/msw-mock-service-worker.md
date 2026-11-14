@@ -3,34 +3,34 @@ title: "MSW (Mock Service Worker) 技術調査レポート"
 ---
 
 > 発行日: 2026-07-17（更新: 2026-07-18 DevToolsでの見え方とデバッグ方法を追記）
-> テーマ: APIモッキングライブラリ **MSW (Mock Service Worker)** の仕組み・設計思想・使い方・他ツールとの比較を、公式ドキュメント（https://mswjs.io/docs/ ）をもとに整理する
+> テーマ: APIモッキングライブラリ MSW (Mock Service Worker) の仕組み・設計思想・使い方・他ツールとの比較を、公式ドキュメント（https://mswjs.io/docs/ ）をもとに整理する
 
 ## TL;DR
 
-- MSWは**ブラウザとNode.jsの両方で動くAPIモッキングライブラリ**。アプリのコードを一切変えずに、**ネットワークレベル**でリクエストを横取りしてモックレスポンスを返す。
-- ブラウザでは **Service Worker API**、Node.jsでは `http` モジュール等の**クラス拡張**（モジュールパッチではない）で割り込む。fetch / Axios / React Query / Apollo など**リクエストクライアントを問わない**。
-- 対応プロトコルは **REST (HTTP)・GraphQL・WebSocket・SSE**。GraphQLとWebSocketをファーストクラスでサポートするモッキングライブラリは希少。
-- 最大の思想的特徴は「モック＝**ネットワーク挙動（network behavior）の契約的記述**」と捉え、**単一のハンドラ定義を開発・ユニットテスト・E2E・Storybook・デモで使い回す**こと（single source of truth）。
-- Web標準（WHATWG Fetch API）に準拠しており、ハンドラ内で扱うのは素の `Request` / `Response` インスタンス。**MSW独自のDSLをほぼ覚えなくてよい**。
+- MSWはブラウザとNode.jsの両方で動くAPIモッキングライブラリ。アプリのコードを一切変えずに、**ネットワークレベル**でリクエストを横取りしてモックレスポンスを返す。
+- ブラウザでは Service Worker API、Node.jsでは `http` モジュール等のクラス拡張（モジュールパッチではない）で割り込む。fetch / Axios / React Query / Apollo などリクエストクライアントを問わない。
+- 対応プロトコルは REST (HTTP)・GraphQL・WebSocket・SSE。GraphQLとWebSocketをファーストクラスでサポートするモッキングライブラリは希少。
+- 最大の思想的特徴は「モック＝ネットワーク挙動（network behavior）の契約的記述」と捉え、**単一のハンドラ定義を開発・ユニットテスト・E2E・Storybook・デモで使い回す**こと（single source of truth）。
+- Web標準（WHATWG Fetch API）に準拠しており、ハンドラ内で扱うのは素の `Request` / `Response` インスタンス。MSW独自のDSLをほぼ覚えなくてよい。
 - 使い方の基本は3ステップ: ① `handlers.ts` にハンドラを定義 → ② ブラウザは `setupWorker`、Node.jsは `setupServer` で統合 → ③ テストでは `server.use()` でシナリオ別に上書き。
-- ベストプラクティスは「`handlers.js` には**ハッピーパスだけ**を書き、エラー系はテスト内で `server.use()` によるランタイム上書きで表現する」。
-- モックされたリクエストは**DevToolsのNetworkタブに通常どおり表示される**（Sizeカラムが `(ServiceWorker)` になる）。monkey-patch系ツールと違い、ステータス・ヘッダ・ボディをNetworkタブでそのまま検証できる。デバッグはConsoleの `[MSW]` ログ＋ライフサイクルイベントAPI＋公式Runbookの4ステップで行う。
+- ベストプラクティスは「`handlers.js` にはハッピーパスだけを書き、エラー系はテスト内で `server.use()` によるランタイム上書きで表現する」。
+- モックされたリクエストはDevToolsのNetworkタブに通常どおり表示される（Sizeカラムが `(ServiceWorker)` になる）。monkey-patch系ツールと違い、ステータス・ヘッダ・ボディをNetworkタブでそのまま検証できる。デバッグはConsoleの `[MSW]` ログ＋ライフサイクルイベントAPI＋公式Runbookの4ステップで行う。
 
 ---
 
 ## 1. MSWとは何か
 
-MSW (Mock Service Worker) は、送信されるリクエストをインターセプトしてモックデータで応答する、**ブラウザ・Node.js両対応のAPIモッキングライブラリ**である。公式は自らを「ネットワーク挙動の単一の情報源（a single source of truth for your network behavior）」と位置づけている。
+MSW (Mock Service Worker) は、送信されるリクエストをインターセプトしてモックデータで応答する、ブラウザ・Node.js両対応のAPIモッキングライブラリである。公式は自らを「ネットワーク挙動の単一の情報源（a single source of truth for your network behavior）」と位置づけている。
 
 特徴は次の3点に集約される。
 
 | 特徴 | 内容 |
 | --- | --- |
-| **Agnostic（非依存）** | 環境・フレームワーク・ツールに依存しない。fetch / Axios / React Query / Apollo など、どのリクエストクライアントでも動く |
-| **Seamless（シームレス）** | ライブラリをパッチせず、Service Worker APIで**ネットワークレベル**の割り込みを行う。テスト対象コードの変更はゼロ |
-| **Reusable（再利用可能）** | 同じモック定義を開発・結合テスト・E2Eテスト・Storybook・ライブデモで使い回せる |
+| Agnostic（非依存） | 環境・フレームワーク・ツールに依存しない。fetch / Axios / React Query / Apollo など、どのリクエストクライアントでも動く |
+| Seamless（シームレス） | ライブラリをパッチせず、Service Worker APIでネットワークレベルの割り込みを行う。テスト対象コードの変更はゼロ |
+| Reusable（再利用可能） | 同じモック定義を開発・結合テスト・E2Eテスト・Storybook・ライブデモで使い回せる |
 
-対応するAPIの種類:
+対応するAPIの種類は次のとおり。
 
 - RESTful API（`http` 名前空間）
 - GraphQL のクエリ/ミューテーション（`graphql` 名前空間）
@@ -39,9 +39,9 @@ MSW (Mock Service Worker) は、送信されるリクエストをインターセ
 
 ---
 
-## 2. 設計思想（Philosophy）
+## 2. 設計思想
 
-MSWの設計思想は、他のモッキングツールとの差別化ポイントそのものなので押さえておく価値がある。
+MSWの設計思想（Philosophy）は、他のモッキングツールとの差別化ポイントそのものなので押さえておく価値がある。
 
 ### 2-1. モッキングは「独立したレイヤー」であるべき
 
@@ -49,7 +49,7 @@ MSWはテストフレームワークや開発ツールから独立して動く�
 
 ### 2-2. 「モック」ではなく「ネットワーク挙動」
 
-MSWは mock という言葉を避け、**network behavior** と呼ぶ。「ネットワーク挙動とは、ネットワークの期待される状態を契約のように記述したもの（a contract-like description of the network's expected state）」であり、"モック＝信頼できない偽物" というニュアンスから "意図した仕様の記述" へ捉え直している。
+MSWは mock という言葉を避け、network behavior と呼ぶ。「ネットワーク挙動とは、ネットワークの期待される状態を契約のように記述したもの（a contract-like description of the network's expected state）」であり、"モック＝信頼できない偽物" というニュアンスから "意図した仕様の記述" へ捉え直している。
 
 ### 2-3. Web標準に乗る
 
@@ -57,22 +57,22 @@ MSWは mock という言葉を避け、**network behavior** と呼ぶ。「ネ�
 
 ### 2-4. サーバ視点で書く
 
-リクエストハンドラは「実際のサーバがその条件下でどう振る舞うか」という**サーバの視点**で書くことが推奨される。これによりハンドラが現実的で保守しやすくなる。
+リクエストハンドラは「実際のサーバがその条件下でどう振る舞うか」というサーバの視点で書くことが推奨される。これによりハンドラが現実的で保守しやすくなる。
 
 ---
 
 ## 3. 動作の仕組み
 
-### 3-1. ブラウザ: Service Worker
+### 3-1. ブラウザのService Worker
 
 ブラウザでは [Service Worker API](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) を使う。Service Workerはページとネットワークの間に立つプロキシとして動作でき、MSWはここで `fetch` イベントを捕まえてハンドラに渡す。
 
-- アプリ側は「本番と同じURL」にリクエストを投げるだけ。**モックサーバのURLに差し替える必要がない**
+- アプリ側は「本番と同じURL」にリクエストを投げるだけ。モックサーバのURLに差し替える必要がない
 - DevToolsのNetworkタブにもリクエストが（Service Worker経由として）記録され、デバッグ体験が本物に近い
 
-### 3-2. Node.js: クラス拡張
+### 3-2. Node.jsのクラス拡張
 
-Node.jsにはService Workerがないため、`http` などの標準リクエストモジュールを**クラス拡張**でインターセプトする。nockのようなモジュールパッチ（monkey-patching）ではない点が公式に強調されている。これにより Jest / Vitest でのユニット・結合テストや、Node.jsプロセス上のSSR等でも同じハンドラが動く。
+Node.jsにはService Workerがないため、`http` などの標準リクエストモジュールをクラス拡張でインターセプトする。nockのようなモジュールパッチ（monkey-patching）ではない点が公式に強調されている。これにより Jest / Vitest でのユニット・結合テストや、Node.jsプロセス上のSSR等でも同じハンドラが動く。
 
 ---
 
@@ -84,9 +84,9 @@ Node.jsにはService Workerがないため、`http` などの標準リクエス�
 npm i msw --save-dev
 ```
 
-### 4-2. ハンドラの定義（ネットワークの記述）
+### 4-2. ハンドラの定義
 
-ハンドラはどの環境でも共通。これが「single source of truth」になる。
+ハンドラの定義（ネットワークの記述）はどの環境でも共通。これが「single source of truth」になる。
 
 ```typescript
 // src/mocks/handlers.ts
@@ -103,7 +103,7 @@ export const handlers = [
 ]
 ```
 
-### 4-3. Node.js統合（テスト用）
+### 4-3. テスト用のNode.js統合
 
 ```typescript
 // src/mocks/node.ts
@@ -135,7 +135,7 @@ test('responds with the user', async () => {
 })
 ```
 
-### 4-4. ブラウザ統合（開発用）
+### 4-4. 開発用のブラウザ統合
 
 まずCLIでWorkerスクリプトを公開ディレクトリに生成する。
 
@@ -153,7 +153,7 @@ import { handlers } from './handlers'
 export const worker = setupWorker(...handlers)
 ```
 
-アプリのエントリポイントで、**開発時のみ**有効化する。
+アプリのエントリポイントで、開発時のみ有効化する。
 
 ```javascript
 async function enableMocking() {
@@ -170,7 +170,7 @@ enableMocking().then(() => {
 })
 ```
 
-> ⚠️ Service Workerの登録は非同期。`worker.start()` を **await せずにアプリを描画するとレースコンディション**になり、初回リクエストがモックされないことがある。必ず起動完了を待ってから描画する。
+> Service Workerの登録は非同期。`worker.start()` を await せずにアプリを描画するとレースコンディションになり、初回リクエストがモックされないことがある。必ず起動完了を待ってから描画する。
 
 起動に成功するとコンソールに `[MSW] Mocking enabled.` が出る。
 
@@ -180,14 +180,14 @@ enableMocking().then(() => {
 
 `http` 名前空間でHTTPリクエストをインターセプトする。
 
-**リクエストの読み取り**:
+リクエストから読み取るものは次のとおり。
 
 - パスパラメータ（`/user/:id` の `params.id`）
 - クエリパラメータ
 - リクエストボディ（POST/PUTのペイロード）
 - Cookie
 
-**レスポンスの構築**は `HttpResponse` クラスで行う（素の `Response` の拡張で、`Set-Cookie` などの制約を回避しつつ標準に準拠）:
+レスポンスの構築は次のとおり `HttpResponse` クラスで行う（素の `Response` の拡張で、`Set-Cookie` などの制約を回避しつつ標準に準拠）。
 
 - `HttpResponse.json()` / `HttpResponse.text()` などのショートハンド
 - ステータスコード・ヘッダの指定
@@ -223,7 +223,7 @@ export const handlers = [
 
 ## 6. GraphQLモッキング
 
-`graphql` 名前空間でGraphQLのクエリ/ミューテーションをインターセプトする。Apollo / Relay / URQL / graphql-request / 素のfetch など、**GraphQL仕様に準拠したクライアントならどれでも動く**。
+`graphql` 名前空間でGraphQLのクエリ/ミューテーションをインターセプトする。Apollo / Relay / URQL / graphql-request / 素のfetch など、GraphQL仕様に準拠したクライアントならどれでも動く。
 
 ```typescript
 import { graphql, HttpResponse } from 'msw'
@@ -245,9 +245,9 @@ export const handlers = [
 ]
 ```
 
-利点:
+利点は次のとおり。
 
-- テストから `MockProvider` のようなクライアント固有のラッパーが不要になり、**GraphQLクライアントを差し替えてもモックはそのまま**
+- テストから `MockProvider` のようなクライアント固有のラッパーが不要になり、GraphQLクライアントを差し替えてもモックはそのまま
 - `graphql.link()` でエンドポイント別のハンドラ定義も可能
 - GraphQL Code Generator の型定義と統合して型安全なモックが書ける
 
@@ -274,11 +274,11 @@ export const handlers = [
 ]
 ```
 
-押さえておくべきデフォルト挙動:
+押さえておくべきデフォルト挙動は次のとおり。
 
 - `ws.link()` のURLにはHTTPハンドラと同じ述語（相対/絶対URL・パスパラメータ・ワイルドカード・正規表現）が使える
-- **インターセプトされた接続はデフォルトでは実サーバに接続しない**。実サーバと繋ぎたい場合は `server.connect()` を明示的に呼ぶ
-- 実サーバ接続後は、クライアント→サーバ / サーバ→クライアントのイベントがデフォルトで転送される。`event.preventDefault()` で個別に遮断でき、**イベント単位のモック/素通しの混在**が可能
+- インターセプトされた接続はデフォルトでは実サーバに接続しない。実サーバと繋ぎたい場合は `server.connect()` を明示的に呼ぶ
+- 実サーバ接続後は、クライアント→サーバ / サーバ→クライアントのイベントがデフォルトで転送される。`event.preventDefault()` で個別に遮断でき、イベント単位のモック/素通しの混在が可能
 
 ---
 
@@ -289,14 +289,14 @@ export const handlers = [
 | メソッド | 役割 |
 | --- | --- |
 | `server.listen()` | インターセプト開始（`beforeAll`） |
-| `server.use(...handlers)` | **ランタイムハンドラ**の追加。既存定義をテスト内で一時的に上書き |
+| `server.use(...handlers)` | ランタイムハンドラの追加。既存定義をテスト内で一時的に上書き |
 | `server.resetHandlers()` | ランタイムハンドラを破棄して初期状態へ（`afterEach`） |
 | `server.restoreHandlers()` | ワンタイム（`{ once: true }`）ハンドラの復元 |
 | `server.listHandlers()` | 現在のハンドラ一覧の確認（デバッグ用） |
 | `server.boundary()` | 並行テスト実行時にハンドラのスコープを閉じ込める |
 | `server.close()` | インターセプト終了（`afterAll`） |
 
-`server.listen({ onUnhandledRequest: 'error' })` のように、**ハンドラ未定義のリクエストをエラー扱い**にしてモック漏れを検知する運用もよく使われる。
+`server.listen({ onUnhandledRequest: 'error' })` のように、ハンドラ未定義のリクエストをエラー扱いにしてモック漏れを検知する運用もよく使われる。
 
 ### 8-2. エラー系は `server.use()` で上書き
 
@@ -315,10 +315,10 @@ test('handles server error', async () => {
 
 ## 9. ベストプラクティス
 
-公式が推奨する構成のポイント:
+公式が推奨する構成のポイントは次のとおり。
 
-1. **`handlers.js` にはハッピーパス（成功状態）だけを書く**。これがネットワークの信頼できるベースラインになり、エラー系はテスト内の `server.use()` で表現する
-2. **規模が大きくなったらドメイン別に分割**して合成する:
+1. `handlers.js` にはハッピーパス（成功状態）だけを書く。これがネットワークの信頼できるベースラインになり、エラー系はテスト内の `server.use()` で表現する
+2. 規模が大きくなったらドメイン別に分割して合成する
 
 ```
 mocks/
@@ -336,7 +336,7 @@ import { handlers as checkoutHandlers } from './checkout'
 export const handlers = [...userHandlers, ...checkoutHandlers]
 ```
 
-3. **繰り返しロジックは高階リゾルバに抽出**する（認証チェックなど）:
+3. 繰り返しロジックは高階リゾルバに抽出する（認証チェックなど）
 
 ```javascript
 import { http } from 'msw'
@@ -348,7 +348,7 @@ export const handlers = [
 ]
 ```
 
-4. データモデリング（リレーションを持つモックDB）が必要なら、Mirageのような組み込み機能ではなく**別パッケージ `@mswjs/data`** をオプトインで組み合わせる
+4. データモデリング（リレーションを持つモックDB）が必要なら、Mirageのような組み込み機能ではなく別パッケージ `@mswjs/data` をオプトインで組み合わせる
 
 ---
 
@@ -356,19 +356,19 @@ export const handlers = [
 
 | ツール | 動作環境 | 割り込み方式 | GraphQL/WS | 主な制約 |
 | --- | --- | --- | --- | --- |
-| **MSW** | ブラウザ + Node.js | Service Worker / クラス拡張 | ◎（WS・SSEも） | Worker スクリプトの配置が必要（ブラウザ） |
-| **nock** | Node.jsのみ | モジュールパッチ | ✕ | ブラウザ不可、クライアントによりアダプタが必要 |
-| **JSON Server** | 別プロセスのHTTPサーバ | 実サーバ起動 | ✕ | アプリ側でURLの差し替えが必要、リソース指向の暗黙ルート |
-| **Mirage** | ブラウザのみ | fetch/XHRのmonkey-patch | △ | Node.js不可（テストランナーで使えない） |
-| **Cypress `cy.intercept()`** | Cypressテスト内のみ | ブラウザ全体のHTTPプロキシ | △ | Cypressの外では使えない |
-| **Playwright `page.route()`** | Playwrightテスト内のみ | DevTools Protocol | △ | Playwrightの外では使えない |
+| MSW | ブラウザ + Node.js | Service Worker / クラス拡張 | ◎（WS・SSEも） | Worker スクリプトの配置が必要（ブラウザ） |
+| nock | Node.jsのみ | モジュールパッチ | ✕ | ブラウザ不可、クライアントによりアダプタが必要 |
+| JSON Server | 別プロセスのHTTPサーバ | 実サーバ起動 | ✕ | アプリ側でURLの差し替えが必要、リソース指向の暗黙ルート |
+| Mirage | ブラウザのみ | fetch/XHRのmonkey-patch | △ | Node.js不可（テストランナーで使えない） |
+| Cypress `cy.intercept()` | Cypressテスト内のみ | ブラウザ全体のHTTPプロキシ | △ | Cypressの外では使えない |
+| Playwright `page.route()` | Playwrightテスト内のみ | DevTools Protocol | △ | Playwrightの外では使えない |
 
-MSWの優位点をまとめると:
+MSWの優位点をまとめると次のとおり。
 
-- **サーバを立てないので初期化コストがゼロ**、アプリ側のコード変更も不要
-- ブラウザとNode.jsで**同じモックを使い回せる**唯一級の選択肢
-- GraphQL・WebSocket・SSEの**ファーストクラスサポート**
-- テストフレームワークに縛られない独立レイヤーなので、**開発・テスト・Storybook・デモを1つの定義でカバー**できる
+- サーバを立てないので初期化コストがゼロ、アプリ側のコード変更も不要
+- ブラウザとNode.jsで同じモックを使い回せる唯一級の選択肢
+- GraphQL・WebSocket・SSEのファーストクラスサポート
+- テストフレームワークに縛られない独立レイヤーなので、開発・テスト・Storybook・デモを1つの定義でカバーできる
 
 逆に言えば、「Node.jsのユニットテストだけで完結し、fetch以外の特殊なクライアントを使う」ような限定的ケースではnock等の方が薄く済む場合もある。
 
@@ -390,26 +390,26 @@ MSWの優位点をまとめると:
 
 ## 12. ブラウザDevToolsでの見え方とデバッグ方法
 
-> 補足: MSWに公式のブラウザ拡張機能は存在しない。ここでいう「拡張ツール」はブラウザ標準の**開発者ツール（DevTools）**を指す。Service Worker方式の利点として、**標準のDevToolsだけで本番同様のデバッグができる**ことがMSWの売りである。
+> 補足: MSWに公式のブラウザ拡張機能は存在しない。ここでいう「拡張ツール」はブラウザ標準の開発者ツール（DevTools）を指す。Service Worker方式の利点として、**標準のDevToolsだけで本番同様のデバッグができる**ことがMSWの売りである。
 
 ### 12-1. NetworkタブでのXHR/fetchの見え方
 
-MSWのブラウザ統合はService Workerの `fetch` イベントで割り込むため、`fetch` だけでなく **XMLHttpRequest（Axios等のXHRベースのクライアント）も同じように捕捉**される。Networkタブでの見え方は次のとおり。
+MSWのブラウザ統合はService Workerの `fetch` イベントで割り込むため、`fetch` だけでなく XMLHttpRequest（Axios等のXHRベースのクライアント）も同じように捕捉される。Networkタブでの見え方は次のとおり。
 
 | 観点 | 見え方 |
 | --- | --- |
-| 表示有無 | **通常のリクエストと同様に表示される**。「Fetch/XHR」フィルタにもそのまま載る |
-| Sizeカラム | **`(ServiceWorker)`** と表示される（Chrome/Edge）。これが「モックされた」ことの見分け方。Firefoxでは「転送量」欄に「service worker」と出る |
+| 表示有無 | 通常のリクエストと同様に表示される。「Fetch/XHR」フィルタにもそのまま載る |
+| Sizeカラム | `(ServiceWorker)` と表示される（Chrome/Edge）。これが「モックされた」ことの見分け方。Firefoxでは「転送量」欄に「service worker」と出る |
 | Status | ハンドラで返した値がそのまま表示される（200/400/500など）。`HttpResponse.error()` はネットワークエラー（failed）として表示 |
-| Headers / Response / Preview | `HttpResponse` で定義したヘッダとボディが**本物のレスポンスとしてそのまま検証できる** |
+| Headers / Response / Preview | `HttpResponse` で定義したヘッダとボディが本物のレスポンスとしてそのまま検証できる |
 | Timing | Service Workerの処理時間（Startup / `respondWith`）が計測される。`delay()` を入れた場合はここに反映される |
 
-ポイントは2つ:
+ポイントは2つある。
 
-1. **Mirage等のmonkey-patch系はNetworkタブに一切表示されない**（`window.fetch` 自体を差し替えるためリクエストがネットワーク層に到達しない）のに対し、MSWはネットワーク層を通るので**普段どおりのデバッグフローが使える**。これは公式が比較ページで強調する差別化点。
-2. リクエストが**2行に見えるケースがある**が正常である。`passthrough()` や未ハンドルのリクエストを素通しした場合、①ページが発行した元リクエスト（Service Workerが処理）と、②Service Worker自身が実サーバへ再発行したリクエスト（イニシエータがWorker由来として表示される）の両方が記録されるため。モックで完結した場合は1行のみ。
+1. Mirage等のmonkey-patch系はNetworkタブに一切表示されない（`window.fetch` 自体を差し替えるためリクエストがネットワーク層に到達しない）のに対し、MSWはネットワーク層を通るので普段どおりのデバッグフローが使える。これは公式が比較ページで強調する差別化点。
+2. リクエストが2行に見えるケースがあるが正常である。`passthrough()` や未ハンドルのリクエストを素通しした場合、①ページが発行した元リクエスト（Service Workerが処理）と、②Service Worker自身が実サーバへ再発行したリクエスト（イニシエータがWorker由来として表示される）の両方が記録されるため。モックで完結した場合は1行のみ。
 
-### 12-2. Consoleタブ: `[MSW]` ログ
+### 12-2. Consoleタブの `[MSW]` ログ
 
 `worker.start()` が成功すると `[MSW] Mocking enabled.` が出力される。以降、インターセプトしたリクエストごとに次の形式のログが出る（クリックで詳細グループが展開でき、対応したハンドラも確認できる）。
 
@@ -417,7 +417,7 @@ MSWのブラウザ統合はService Workerの `fetch` イベントで割り込む
 [MSW] 12:34:56 GET /user (200 OK)
 ```
 
-関連する `worker.start()` のオプション:
+関連する `worker.start()` のオプションは次のとおり。
 
 ```javascript
 worker.start({
@@ -429,20 +429,20 @@ worker.start({
 })
 ```
 
-**モック漏れの検知には `onUnhandledRequest: 'error'`** が有効。「ハンドラを書いたつもりなのにモックされない」場合、まずConsoleに warning が出ていないかを見るのが最短ルート。URLのtypoやパス述語の不一致はここで発覚する。
+モック漏れの検知には `onUnhandledRequest: 'error'` が有効。「ハンドラを書いたつもりなのにモックされない」場合、まずConsoleに warning が出ていないかを見るのが最短ルート。URLのtypoやパス述語の不一致はここで発覚する。
 
-### 12-3. Application パネル: Service Worker自体の状態確認
+### 12-3. Application パネルでのService Worker自体の状態確認
 
-DevToolsの **Application → Service Workers** で `mockServiceWorker.js` の登録状態を確認できる。ここはトラブルシューティングの起点になる。
+DevToolsの Application → Service Workers で `mockServiceWorker.js` の登録状態を確認できる。ここはトラブルシューティングの起点になる。
 
-- **登録確認**: `mockServiceWorker.js` が「activated and is running」になっているか。そもそも登録がなければ `npx msw init <PUBLIC_DIR>` の配置ミスを疑い、ブラウザで `/mockServiceWorker.js` を直接開いて404でないか確認する
-- **Unregister**: 古いWorkerが残って挙動が不可解なときは一度登録解除してリロードする
-- **Update on reload**: Workerスクリプト更新時の反映を確実にする
-- ⚠️ **「Bypass for network」を有効にするとService Workerが素通しになり、MSWのモックが一切効かなくなる**。「昨日まで動いていたモックが突然効かない」ときは、このチェックボックスが入っていないかを真っ先に確認する
+- 登録確認: `mockServiceWorker.js` が「activated and is running」になっているか。そもそも登録がなければ `npx msw init <PUBLIC_DIR>` の配置ミスを疑い、ブラウザで `/mockServiceWorker.js` を直接開いて404でないか確認する
+- Unregister: 古いWorkerが残って挙動が不可解なときは一度登録解除してリロードする
+- Update on reload: Workerスクリプト更新時の反映を確実にする
+- 「Bypass for network」を有効にするとService Workerが素通しになり、MSWのモックが一切効かなくなる。「昨日まで動いていたモックが突然効かない」ときは、このチェックボックスが入っていないかを真っ先に確認する
 
 ### 12-4. ライフサイクルイベントAPIによるトレース
 
-Networkタブ・Consoleより細かくリクエストの流れを追いたい場合は、**ライフサイクルイベントAPI**（`worker.events` / `server.events`）を使う。読み取り専用（挙動には影響しない）の観測用APIで、Node.js側（Networkタブが存在しない環境）でのデバッグ手段としても重要。
+Networkタブ・Consoleより細かくリクエストの流れを追いたい場合は、ライフサイクルイベントAPI（`worker.events` / `server.events`）を使う。読み取り専用（挙動には影響しない）の観測用APIで、Node.js側（Networkタブが存在しない環境）でのデバッグ手段としても重要。
 
 ```javascript
 worker.events.on('request:start', ({ request, requestId }) => {
@@ -465,18 +465,18 @@ worker.events.on('response:mocked', async ({ request, response }) => {
 
 主なイベント: `request:start` / `request:match` / `request:unhandled` / `request:end`、`response:mocked` / `response:bypass`（素通しされた本物のレスポンス）、`unhandledException`（リゾルバ内の例外）。
 
-あわせて `worker.listHandlers()` / `server.listHandlers()` で**現在有効なハンドラの一覧**（`server.use()` によるランタイム上書き含む）を確認できる。
+あわせて `worker.listHandlers()` / `server.listHandlers()` で現在有効なハンドラの一覧（`server.use()` によるランタイム上書き含む）を確認できる。
 
 ### 12-5. 公式Runbookの4ステップ・デバッグ手順
 
-「モックが効かない」ときに公式が推奨する切り分け順序:
+「モックが効かない」ときに公式が推奨する切り分け順序は次のとおり。
 
-1. **セットアップの検証** — `request:start` リスナーで、問題のリクエストがそもそもMSWに到達しているかを確認する。出てこなければ統合（`worker.start()` のawait漏れ、Workerの未登録など）の問題
-2. **ハンドラの検証** — リゾルバ内に `console.log` を置き、ハンドラがマッチしているかを確認する。出なければ**述語（URLパターン）の不一致**が原因
-3. **レスポンスの検証** — ダミーの固定レスポンスに差し替えて、レスポンス構築側の問題かを切り分ける
-4. **アプリケーションの検証** — ここまで正常なら、アプリ側のリクエスト/レスポンス処理ロジックを疑う
+1. セットアップの検証: `request:start` リスナーで、問題のリクエストがそもそもMSWに到達しているかを確認する。出てこなければ統合（`worker.start()` のawait漏れ、Workerの未登録など）の問題
+2. ハンドラの検証: リゾルバ内に `console.log` を置き、ハンドラがマッチしているかを確認する。出なければ述語（URLパターン）の不一致が原因
+3. レスポンスの検証: ダミーの固定レスポンスに差し替えて、レスポンス構築側の問題かを切り分ける
+4. アプリケーションの検証: ここまで正常なら、アプリ側のリクエスト/レスポンス処理ロジックを疑う
 
-よくあるハマりどころ（Runbookより）: SWR等の**リクエストライブラリのキャッシュがテスト間で残って古いモックが見える**、非同期UIの検証を `findBy*` ではなくタイムアウトで待っている、`jest.useFakeTimers` が `queueMicrotask` までモックして応答が返らない、など。
+よくあるハマりどころ（Runbookより）: SWR等のリクエストライブラリのキャッシュがテスト間で残って古いモックが見える、非同期UIの検証を `findBy*` ではなくタイムアウトで待っている、`jest.useFakeTimers` が `queueMicrotask` までモックして応答が返らない、など。
 
 ---
 
