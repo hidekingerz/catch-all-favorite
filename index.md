@@ -114,6 +114,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Firefox
 
+- [Firefox リリースノート キャッチアップ: 2026-11-15](/content/catchup/firefox/20261115)
 - [Firefox リリースノート キャッチアップ: 2026-10-08](/content/catchup/firefox/20261008)
 - [Firefox リリースノート キャッチアップ: 2026-09-28](/content/catchup/firefox/20260928)
 - [Firefox リリースノート キャッチアップ: 2026-09-23](/content/catchup/firefox/20260923)
