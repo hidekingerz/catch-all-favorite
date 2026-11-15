@@ -11,7 +11,7 @@ title: "CISA BOD 26-04 調査レポート — Prioritizing Security Updates Base
 - BOD 26-04「Prioritizing Security Updates Based on Risk」は 2026-06-10 発令。連邦民間行政機関（FCEB）の脆弱性修正ルールを、CVSS 深刻度ベースから「**公開露出 × KEV 掲載 × 攻撃自動化可能性 × 技術的影響**」の 4 変数リスクマトリクスへ全面転換した（[原文](https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk)）。
 - BOD 19-02（CVSS Critical 15日/High 30日）と BOD 22-01（KEV 2週間/6ヶ月）を明示的に廃止（supersedes and hereby revokes）し、1 本に統合。位置づけは「新領域」ではなく置き換え + 拡張。FAQ には「BOD 19-02 の廃止により、FCEB は脆弱性優先度付けに CVSS を使う義務がなくなった」と明記（[Implementation Guidance](https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk)）。
 - 最高リスク帯（公開露出 + KEV 掲載 + 自動化可能 or 全権掌握）は**3 暦日以内の修正 + フォレンジックトリアージ（侵害有無の確認）を義務化**。一方、最低リスク帯は「Fix on system upgrade（次回システム更改時で可）」と、初めて「低リスクの後回し」を公式に容認した。
-- 転換点は 4 つ: (1) CVSS 廃止 → SSVC ベースのリスク判断、(2) 一律期限 → 16 区分の傾斜期限（3日〜次回更改時）、(3) パッチ適用だけでなく侵害確認（forensic triage）を要求（「パッチ適用は一般に脅威アクターを追い出さない」）、(4) AI による悪用の高速化を明示的な根拠に採用。
+- 転換点は 6 つ: (1) CVSS 廃止 → SSVC ベースのリスク判断、(2) 一律期限 → 16 区分の傾斜期限（3日〜次回更改時）、(3) パッチ適用だけでなく侵害確認（forensic triage）を要求（「パッチ適用は一般に脅威アクターを追い出さない」）、(4) AI による悪用の高速化を明示的な根拠に採用、(5) 機械可読データ駆動の運用、(6) エッジ偏重の明確な理由付け。
 - 民間への強制力はないが、CISA 長官代行は「すべてのパートナーに同様のアクションの採用を強く推奨する」と表明（[プレスリリース](https://www.cisa.gov/news-events/news/cisa-issues-new-directive-improving-how-federal-agencies-prioritize-mitigation-cyber-vulnerabilities)）。日本の組織にとっても「CVSS 単独での優先度付けから、悪用実績（KEV）+ 露出 + 自動化可能性による優先度付けへ」という設計指針として参照価値が高い。
 
 ---
