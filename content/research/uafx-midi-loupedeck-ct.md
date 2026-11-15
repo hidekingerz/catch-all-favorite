@@ -9,7 +9,7 @@ title: "UAFX Dream '65 / Enigmatic '82 を Loupedeck CT から MIDI コントロ
 
 - UAFX ペダルの MIDI 入力は USB-C（クラスコンプライアント USB MIDI）のみ。5-pin DIN / TRS MIDI 端子はなく、Bluetooth MIDI も非対応。利用にはファームウェア UAFX 2.0 以降 + UAFX Control モバイルアプリ v3 以降が必須で、MIDI チャンネル（PC 用と CC 用で別々に設定可）は UAFX Control アプリから有効化する（デフォルトは無効）。
 - Loupedeck CT はネイティブ単体の MIDI コントローラーではなく、Loupedeck ソフトウェアの「MIDI プラグイン」経由で CC / PC / Note を送る（対応デバイスは CT と Live/S のみ）。ターゲットソフト側からは「Loupedeck デバイス」が MIDI コントロールサーフェス（MIDI ポート）として見える。
-- PC（Program Change）は 0–127 の 128 スロットに任意のプリセットを割り当てる方式で、固定のファクトリー PC マップは存在しない（割当は UAFX Control アプリで行う）。CC マップは両ペダルとも公式マニュアルに全表が掲載されており、本レポート末尾に転記した（MIDI CC 制御は現時点でオープンベータ）。
+- PC（Program Change）は 0–127 の 128 スロットに任意のプリセットを割り当てる方式で、固定のファクトリー PC マップは存在しない（割当は UAFX Control アプリで行う）。CC マップは両ペダルとも公式マニュアルに全表が掲載されており、本レポートの各ペダルの「MIDI CC 一覧」の節に転記した（MIDI CC 制御は現時点でオープンベータ）。
 - macOS 上の経路は「Loupedeck CT →（Loupedeck ソフト / MIDI プラグイン）→ Mac 内 MIDI ルーティング（DAW 等。IAC ドライバはアプリ間バス）→ USB-C → ペダル」。ただし **UA の公式ドキュメントが明示するサポート構成は「USB ホスト対応 MIDI インターフェース」経由のみ**で、「Mac を USB ホストにして直接 MIDI 送信する」構成そのものはサポート構成として明記されていない（後述の注意参照）。
 
 ## 対象製品と前提
@@ -207,7 +207,7 @@ Loupedeck CT は Mac 接続前提のデバイスなので構成 B には組み�
 - macOS 上で Loupedeck MIDI ポートがどう見えるかの明示記載: マニュアルの単一アプリ制限の注記は Windows のみ。macOS 側のポート名・挙動の公式記載は確認できず。
 - Logi Options+ に MIDI アクションがあるか: Logitech 移行後のドキュメントで Loupedeck CT の MIDI 機能に触れたものは確認できず（Loupedeck ソフトウェア 4.3〜6.x 系が引き続き CT の対応ソフトで、MIDI マニュアルは 4.3 Classic UI 版が最終。現行 support.loupedeck.com では該当ページがトップへリダイレクトされる）。
 - Loupedeck MIDI プラグインで送信先 MIDI ポート（例: ペダルのポート）を直接指定できるか: マニュアルに記載なし。記述上は「受け側ソフトが Loupedeck をコントロールサーフェスとして選ぶ」構造のため、本レポートではルーティングアプリを挟む構成とした。
-- 上記の CC 表の食い違い以外で、Dream '65 に CC 30（Room 相当）等の追加 CC があるか: マニュアル掲載の表が全てであり、掲載外の CC は確認できず。
+- Dream '65 の CC 表に無い CC 30（Enigmatic '82 では Room）等の追加 CC が Dream '65 にあるか: マニュアル掲載の表が全てであり、掲載外の CC は確認できず。
 
 ## 出典とした一次情報
 

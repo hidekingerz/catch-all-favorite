@@ -110,8 +110,12 @@ sendMail(Email("a@b.com"));   // ✅ コンストラクタ経由でのみ昇格
 例外を投げない `Result` 型を返す形にすると、よりこの哲学に沿う。
 
 ```ts
-function parseEmail(value: string): Email | undefined {
-  return /.../.test(value) ? (value as Email) : undefined;
+type Result<T, E> = { ok: true; value: T } | { ok: false; error: E };
+
+function parseEmail(value: string): Result<Email, string> {
+  return /.../.test(value)
+    ? { ok: true, value: value as Email }
+    : { ok: false, error: `Invalid email: ${value}` };
 }
 ```
 

@@ -73,7 +73,7 @@ HTTP の 3 つのバージョンは、URI もセマンティクスも共有し�
 
 | バージョン | 発行 | トランスポート | バージョンの決め方 |
 |---|---|---|---|
-| HTTP/1.1 | RFC 9112 | TCP（任意で TLS） | 開始行の `HTTP/1.1` で名乗る。他プロトコルへは `Upgrade` ヘッダ（第 4.6 節）。TLS 上では ALPN の `http/1.1` |
+| HTTP/1.1 | RFC 9112 | TCP（任意で TLS） | 開始行の `HTTP/1.1` で名乗る。他プロトコルへは `Upgrade` ヘッダ（第 4.5 節）。TLS 上では ALPN の `http/1.1` |
 | HTTP/2 | RFC 9113（2022-06、Proposed Standard） | TCP + TLS | ALPN（RFC 7301）で TLS ハンドシェイク中に `h2` を選ぶ。平文（`h2c`）は事前知識でのみ。HTTP/1.1 からの `Upgrade: h2c` は RFC 9113 で非推奨 |
 | HTTP/3 | RFC 9114（2022-06、Proposed Standard） | QUIC（UDP、TLS 1.3 内蔵） | サーバが `Alt-Svc`（RFC 7838）で `h3=":443"` を広告するか、DNS の HTTPS RR（RFC 9460）の `alpn="h3"` でクライアントが事前に知る。ALPN は `h3` |
 
