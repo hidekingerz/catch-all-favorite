@@ -96,6 +96,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Google Search Central
 
+- [Google 検索セントラル ブログ キャッチアップ: 2026-11-16](/content/catchup/google-search-blog/20261116)
 - [Google 検索セントラル ブログ キャッチアップ: 2026-11-11](/content/catchup/google-search-blog/20261111)
 - [Google 検索セントラル ブログ キャッチアップ: 2026-11-04](/content/catchup/google-search-blog/20261104)
 - [Google 検索セントラル ブログ キャッチアップ: 2026-10-30](/content/catchup/google-search-blog/20261030)
@@ -126,6 +127,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Claude Code
 
+- [Claude Code キャッチアップ: 2026-11-16](/content/catchup/claude-code/20261116)
 - [Claude Code キャッチアップ: 2026-11-13](/content/catchup/claude-code/20261113)
 - [Claude Code キャッチアップ: 2026-11-12](/content/catchup/claude-code/20261112)
 - [Claude Code キャッチアップ: 2026-11-10](/content/catchup/claude-code/20261110)
@@ -238,6 +240,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Apple セキュリティリリース
 
+- [Apple セキュリティリリース キャッチアップ: 2026-11-16](/content/catchup/apple-security-releases/20261116)
 - [Apple セキュリティリリース キャッチアップ: 2026-11-12](/content/catchup/apple-security-releases/20261112)
 - [Apple セキュリティリリース キャッチアップ: 2026-11-10](/content/catchup/apple-security-releases/20261110)
 - [Apple セキュリティリリース キャッチアップ: 2026-11-02](/content/catchup/apple-security-releases/20261102)
@@ -256,6 +259,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Apple Developer News
 
+- [Apple Developer News キャッチアップ: 2026-11-16](/content/catchup/apple-news/20261116)
 - [Apple Developer News キャッチアップ: 2026-11-10](/content/catchup/apple-news/20261110)
 - [Apple Developer News キャッチアップ: 2026-11-04](/content/catchup/apple-news/20261104)
 - [Apple Developer News キャッチアップ: 2026-11-03](/content/catchup/apple-news/20261103)
