@@ -27,6 +27,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### This Week in React
 
+- [This Week in React 2026-11-18](/content/catchup/twir/20261118)
 - [This Week in React 2026-11-11](/content/catchup/twir/20261111)
 - [This Week in React 2026-11-04](/content/catchup/twir/20261104)
 - [This Week in React 2026-10-28](/content/catchup/twir/20261028)
@@ -60,6 +61,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Chrome for Developers
 
+- [Chrome for Developers キャッチアップ: 2026-11-18](/content/catchup/chrome-blog/20261118)
 - [Chrome for Developers キャッチアップ: 2026-11-17](/content/catchup/chrome-blog/20261117)
 - [Chrome for Developers キャッチアップ: 2026-11-13](/content/catchup/chrome-blog/20261113)
 - [Chrome for Developers キャッチアップ: 2026-10-29](/content/catchup/chrome-blog/20261029)
@@ -260,6 +262,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Apple Developer News
 
+- [Apple Developer News キャッチアップ: 2026-11-18](/content/catchup/apple-news/20261118)
 - [Apple Developer News キャッチアップ: 2026-11-16](/content/catchup/apple-news/20261116)
 - [Apple Developer News キャッチアップ: 2026-11-10](/content/catchup/apple-news/20261110)
 - [Apple Developer News キャッチアップ: 2026-11-04](/content/catchup/apple-news/20261104)
