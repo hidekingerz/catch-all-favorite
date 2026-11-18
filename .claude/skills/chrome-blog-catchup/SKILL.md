@@ -24,7 +24,7 @@ Chrome for Developers ブログ（https://developer.chrome.com/blog）の新着�
 **記事一覧の取得はRSSフィードを主経路とする（ステップ1）。**
 WebSearch + バージョンURLプローブはフィードが古い場合（`lastBuildDate` が2週間以上前）のフォールバックとして使用する（ステップ1b）。
 
-> **RSSフィードについて**: 2026-06-23 以降一時停止し、2026-10-07 に一度復旧したが、**2026-10-28 に再び stale 化を確認**（`lastBuildDate: Wed, 07 Oct 2026` のまま約3週間更新なし）。フィードの stale 化が再発しているため、`lastBuildDate` が2週間以上古い場合は**必ずステップ1bのWebSearch + プローブへフォールバックすること**。フィードが正常に更新されていれば（`lastBuildDate` が2週間以内）RSSを一次ソースとして使用する。
+> **RSSフィードについて**: 2026-06-23 以降一時停止し、2026-10-07 に一度復旧したが、**2026-10-28 に再び stale 化を確認、2026-11-17 時点でも未回復**（`lastBuildDate: Wed, 07 Oct 2026` のまま約6週間更新なし）。フィードの長期 stale 化が継続しているため、現状は**ステップ1bのWebSearch + プローブを実質的な一次手段として使用する**。フィードが回復した場合（`lastBuildDate` が2週間以内に戻った場合）はRSSを一次ソースに戻す。
 
 - フィード内のリンクは `?hl=en` 付きで返ってくることがあるが、各記事は `?hl=ja` に差し替えると日本語版にアクセスできる。**記事に記録するURL・本文を取得するURLは `?hl=ja` に統一する。**
 
@@ -45,7 +45,7 @@ WebSearch + バージョンURLプローブはフィードが古い場合（`last
 - `lastBuildDate` が最近（2週間以内）であれば、フィード内の `<item>` を新しい順に処理し、記事URLとタイトルを取得する。
 - フィード内のリンクは `?hl=en` 付きで返ってくることがあるが、各記事は `?hl=ja` に差し替えると日本語版にアクセスできる。**記事に記録するURL・本文を取得するURLは `?hl=ja` に統一する。**
 
-> **注**: 2026-06-23 以降一時停止、2026-10-07 に一度復旧したが **2026-10-28 に再び stale 化を確認**（`lastBuildDate: Wed, 07 Oct 2026` のまま約3週間更新なし）。代替 URL（`/blog/feed.xml`・`/feed.xml`）も参照可能だが、公式 URL `https://developer.chrome.com/static/blog/feed.xml` を使うこと。
+> **注**: 2026-06-23 以降一時停止、2026-10-07 に一度復旧したが **2026-10-28 に再び stale 化を確認、2026-11-17 時点でも未回復**（`lastBuildDate: Wed, 07 Oct 2026` のまま約6週間更新なし）。現状は `lastBuildDate` が確実に2週間超のため、ステップ1b へ直接進むこと。代替 URL（`/blog/feed.xml`・`/feed.xml`）も参照可能だが、公式 URL `https://developer.chrome.com/static/blog/feed.xml` を使うこと。
 
 ステップ1で新着が見つからなければ（フィードが古い場合を含む）、ステップ1bに進む。
 
@@ -57,14 +57,14 @@ WebSearch + バージョンURLプローブはフィードが古い場合（`last
 
 **(b) WebSearch での探索（先に実施）**: WebSearch が利用可能なら「site:developer.chrome.com/blog 直近1か月」または「developer.chrome.com/blog <直近月名> 2026」を検索し、見つかった記事URL（`developer.chrome.com/blog/` 配下のもののみ採用。他ドメインは使わない）を候補に加える。バージョン別記事だけでなくポリシー更新・機能紹介など非定型の記事もカバーできる。
 
-**(a) 定番シリーズ記事のバージョン探索（WebSearch の補完として実施）**: Chrome はリリースサイクルに沿って定番記事が出る。既存のキャッチアップファイルから最後に把握した Chrome バージョン N を起点に、N〜N+3 について以下のURLを curl で確認する（HTTP 200 かつ canonical URL がそのスラッグを含むタイトルが取れれば記事が存在する）。Chrome のリリースサイクルは約 2 週間なので、30 日分の範囲を探索する。**現在の起点: Chrome 157（`chrome-157-beta` が 2026-10-18 収録済み）。次回以降は 157 を含む範囲（157〜160）で探索すること（2026-10-29 更新）**:
+**(a) 定番シリーズ記事のバージョン探索（WebSearch の補完として実施）**: Chrome はリリースサイクルに沿って定番記事が出る。既存のキャッチアップファイルから最後に把握した Chrome バージョン N を起点に、N〜N+3 について以下のURLを curl で確認する（HTTP 200 かつ canonical URL がそのスラッグを含むタイトルが取れれば記事が存在する）。Chrome のリリースサイクルは約 2 週間なので、30 日分の範囲を探索する。**現在の起点: Chrome 159（`chrome-159-beta` が 2026-11-13 収録済み、`new-in-devtools-december-2026` が 2026-11-17 収録済み）。次回以降は 159 を含む範囲（159〜162）で探索すること（2026-11-18 更新）**:
 
 > **DevTools 記事について**: `new-in-devtools-N`（バージョン番号スラッグ）は `/docs/devtools/release-notes` へのソフト404リダイレクトになっており、記事としては存在しない（実績: 152〜155 等）。DevTools 記事は **月名スラッグ**（例: `new-in-devtools-october-2026`、`new-in-devtools-november-2026`）で公開されており、バージョンプローブでは検出できない。これらは **ステップ1b(b) の WebSearch** で `site:developer.chrome.com/blog <月名> <年>` を検索することでカバーされる。
 
 > **WebGPU 記事について**: WebGPU の "What's New" 記事は `new-in-webgpu-N`（単一バージョン）ではなく、**2バージョンを統合した `new-in-webgpu-N-(N+1)` 形式**（例: `new-in-webgpu-153-154`）で公開される。このため下記ループに `new-in-webgpu-$v-$((v+1))` を含めており、v=N のときに `new-in-webgpu-N-(N+1)` が自動的にプローブ対象になる（2026-09-18 追加）。
 
 ```bash
-for v in 157 158 159 160; do  # 例: chrome-157-beta が記録済みの場合
+for v in 159 160 161 162; do  # 例: chrome-159-beta が記録済みの場合
   for slug in "new-in-chrome-$v" "chrome-$v-beta" "new-in-devtools-$v" "new-in-webgpu-$v-$((v+1))"; do
     code=$(curl -sL -o /tmp/cb-probe.html -w '%{http_code}' "https://developer.chrome.com/blog/$slug")
     # ソフト404チェック: canonical URL がこのスラッグを含まない場合はリダイレクト扱いで除外
@@ -146,7 +146,7 @@ Chrome for Developers ブログは不定期更新（概ね週数本）なので�
 | 失敗 | 対処 |
 |------|------|
 | `/blog` 一覧ページを取得して記事が取れない | 一覧ページはJSレンダリング。RSSフィード（ステップ1）または WebSearch + プローブ（ステップ1b）を使う |
-| **RSSフィードが古いまま「新着なし」と判定** | `lastBuildDate` を確認する。2週間以上古ければステップ1b（WebSearch + プローブ）へフォールバックする。`lastBuildDate` が最近ならRSSが主経路（ステップ1）。フィードは2026-10-07時点で一度復旧したが2026-10-28に再びstale化を確認。2週間超の場合は必ずステップ1bへ |
+| **RSSフィードが古いまま「新着なし」と判定** | `lastBuildDate` を確認する。2週間以上古ければステップ1b（WebSearch + プローブ）へフォールバックする。フィードは2026-10-07に一度復旧したが2026-10-28に再びstale化、2026-11-17時点でも未回復（約6週間 stale）。現状は実質常にステップ1bが必要 |
 | フィードURLを推測して404 | `https://developer.chrome.com/static/blog/feed.xml` を使う。推測しない |
 | 記事URLが `?hl=en` のまま | `?hl=ja` に差し替えて統一する |
 | **代替フィード URL を試す** | `/blog/feed.xml`・`/feed.xml` も参照可能だが、公式 URL `https://developer.chrome.com/static/blog/feed.xml` を使うこと。代替 URL の探索は不要 |
