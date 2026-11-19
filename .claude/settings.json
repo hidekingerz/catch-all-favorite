@@ -10,5 +10,8 @@
         ]
       }
     ]
+  },
+  "enabledPlugins": {
+    "content-search@hidekingerz": true
   }
 }
