@@ -61,6 +61,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Chrome for Developers
 
+- [Chrome for Developers キャッチアップ: 2026-11-21](/content/catchup/chrome-blog/20261121)
 - [Chrome for Developers キャッチアップ: 2026-11-18](/content/catchup/chrome-blog/20261118)
 - [Chrome for Developers キャッチアップ: 2026-11-17](/content/catchup/chrome-blog/20261117)
 - [Chrome for Developers キャッチアップ: 2026-11-13](/content/catchup/chrome-blog/20261113)
@@ -118,6 +119,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Firefox
 
+- [Firefox リリースノート キャッチアップ: 2026-11-21](/content/catchup/firefox/20261121)
 - [Firefox リリースノート キャッチアップ: 2026-11-15](/content/catchup/firefox/20261115)
 - [Firefox リリースノート キャッチアップ: 2026-10-08](/content/catchup/firefox/20261008)
 - [Firefox リリースノート キャッチアップ: 2026-09-28](/content/catchup/firefox/20260928)
