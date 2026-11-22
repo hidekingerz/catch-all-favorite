@@ -61,6 +61,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Chrome for Developers
 
+- [Chrome for Developers キャッチアップ: 2026-11-22](/content/catchup/chrome-blog/20261122)
 - [Chrome for Developers キャッチアップ: 2026-11-21](/content/catchup/chrome-blog/20261121)
 - [Chrome for Developers キャッチアップ: 2026-11-18](/content/catchup/chrome-blog/20261118)
 - [Chrome for Developers キャッチアップ: 2026-11-17](/content/catchup/chrome-blog/20261117)
