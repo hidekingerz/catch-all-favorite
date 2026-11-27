@@ -122,6 +122,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### Firefox
 
+- [Firefox リリースノート キャッチアップ: 2026-11-27](/content/catchup/firefox/20261127)
 - [Firefox リリースノート キャッチアップ: 2026-11-21](/content/catchup/firefox/20261121)
 - [Firefox リリースノート キャッチアップ: 2026-11-15](/content/catchup/firefox/20261115)
 - [Firefox リリースノート キャッチアップ: 2026-10-08](/content/catchup/firefox/20261008)
@@ -229,6 +230,7 @@ description: 毎週の情報のキャッチアップ情報を管理するサイ�
 
 #### iOS & iPadOS リリースノート
 
+- [iOS & iPadOS リリースノート キャッチアップ: 2026-11-27](/content/catchup/ios-release-notes/20261127)
 - [iOS & iPadOS リリースノート キャッチアップ: 2026-11-03](/content/catchup/ios-release-notes/20261103)
 - [iOS & iPadOS リリースノート キャッチアップ: 2026-10-19](/content/catchup/ios-release-notes/20261019)
 - [iOS & iPadOS リリースノート キャッチアップ: 2026-10-14](/content/catchup/ios-release-notes/20261014)
